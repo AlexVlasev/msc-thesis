@@ -5,67 +5,62 @@
 \contentsline {chapter}{List of Figures}{viii}{chapter*.5}
 \contentsline {chapter}{Glossary}{ix}{chapter*.6}
 \contentsline {chapter}{Acknowledgments}{x}{chapter*.7}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Suggested Thesis Organization}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Making Cross-References}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Managing Bibliographies with BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m }{3}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Describing References}{3}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Citing References}{4}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Formatting Cited References}{5}{subsection.1.3.3}
-\contentsline {section}{\numberline {1.4}Typesetting Tables}{5}{section.1.4}
-\contentsline {section}{\numberline {1.5}Figures, Graphics, and Special Characters}{6}{section.1.5}
-\contentsline {section}{\numberline {1.6}Special Characters and Symbols}{7}{section.1.6}
-\contentsline {section}{\numberline {1.7}Changing Page Widths and Heights}{8}{section.1.7}
-\contentsline {subsection}{\numberline {1.7.1}The \texttt {geometry} Package}{8}{subsection.1.7.1}
-\contentsline {subsection}{\numberline {1.7.2}Changing Page Layout Values By Hand}{9}{subsection.1.7.2}
-\contentsline {subsection}{\numberline {1.7.3}Making Temporary Changes to Page Layout}{9}{subsection.1.7.3}
-\contentsline {section}{\numberline {1.8}Keeping Track of Versions with Revision Control}{10}{section.1.8}
-\contentsline {section}{\numberline {1.9}Recommended Packages}{10}{section.1.9}
-\contentsline {subsection}{\numberline {1.9.1}Typesetting}{10}{subsection.1.9.1}
-\contentsline {subsection}{\numberline {1.9.2}Figures, Tables, and Document Extracts}{11}{subsection.1.9.2}
-\contentsline {subsection}{\numberline {1.9.3}Bibliography Related Packages}{11}{subsection.1.9.3}
-\contentsline {section}{\numberline {1.10}Moving On}{12}{section.1.10}
-\contentsline {section}{\numberline {1.11}Brief Note on Notation}{12}{section.1.11}
-\contentsline {section}{\numberline {1.12}Introduction to Methods - 1D random walks}{14}{section.1.12}
-\contentsline {subsection}{\numberline {1.12.1}Derivation of the functional equation}{14}{subsection.1.12.1}
-\contentsline {subsection}{\numberline {1.12.2}Solving the functional equation for various $s$}{19}{subsection.1.12.2}
-\contentsline {subsubsection}{The $s_{-1} = 0$ case.}{19}{subsubsection*.11}
-\contentsline {subsubsection}{The $s_{-1} \not =0$ case.}{21}{subsubsection*.12}
-\contentsline {subsubsection}{1-dimensional case conclusion}{24}{subsubsection*.13}
-\contentsline {section}{\numberline {1.13}(Old ways. Should delete?) 2D stuff}{25}{section.1.13}
-\contentsline {subsection}{\numberline {1.13.1}Deriving the functional equation for the 2D unlabelled random walks}{25}{subsection.1.13.1}
-\contentsline {subsection}{\numberline {1.13.2})Deriving the functional equation for the 2D labelled random walks}{25}{subsection.1.13.2}
-\contentsline {subsection}{\numberline {1.13.3}Simplifying the 2D functional equation}{28}{subsection.1.13.3}
-\contentsline {subsection}{\numberline {1.13.4}Generalization to $d$ dimensions.}{31}{subsection.1.13.4}
-\contentsline {section}{\numberline {1.14}Operators}{36}{section.1.14}
-\contentsline {subsection}{\numberline {1.14.1}Definitions}{36}{subsection.1.14.1}
-\contentsline {subsection}{\numberline {1.14.2}Commutativity properties}{37}{subsection.1.14.2}
-\contentsline {subsection}{\numberline {1.14.3}Kernels, eigenvalues and eigenfunctions}{38}{subsection.1.14.3}
-\contentsline {subsubsection}{Operator $L$}{38}{subsubsection*.14}
-\contentsline {subsubsection}{Operator $E$}{39}{subsubsection*.15}
-\contentsline {subsubsection}{Operator $B$}{40}{subsubsection*.16}
-\contentsline {subsubsection}{Compounded operators}{40}{subsubsection*.17}
-\contentsline {section}{\numberline {1.15}Higher-dimensional labelled walks}{40}{section.1.15}
-\contentsline {subsection}{\numberline {1.15.1}Using Operators to Derive the Functional Equation}{40}{subsection.1.15.1}
-\contentsline {subsection}{\numberline {1.15.2}Generalizations to the functional equation}{42}{subsection.1.15.2}
-\contentsline {subsection}{\numberline {1.15.3}Coefficient Extraction}{44}{subsection.1.15.3}
-\contentsline {subsection}{\numberline {1.15.4}Further functional equations}{46}{subsection.1.15.4}
-\contentsline {subsection}{\numberline {1.15.5}Using the formal inverse for iteration}{48}{subsection.1.15.5}
-\contentsline {section}{\numberline {1.16}Specializing to 2 dimensions}{49}{section.1.16}
-\contentsline {subsection}{\numberline {1.16.1}Introduction}{49}{subsection.1.16.1}
-\contentsline {subsection}{\numberline {1.16.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{50}{subsection.1.16.2}
-\contentsline {subsection}{\numberline {1.16.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{51}{subsection.1.16.3}
-\contentsline {subsection}{\numberline {1.16.4}Simple case: Factoring $S$ into a product}{53}{subsection.1.16.4}
-\contentsline {subsection}{\numberline {1.16.5}Kernel Group Considerations}{56}{subsection.1.16.5}
-\contentsline {section}{\numberline {1.17}Solving basic 2D cases}{58}{section.1.17}
-\contentsline {subsection}{\numberline {1.17.1}Cases 1.1, 1.2, 1.3}{58}{subsection.1.17.1}
-\contentsline {subsection}{\numberline {1.17.2}Case 2.2 - group of order 1}{59}{subsection.1.17.2}
-\contentsline {subsection}{\numberline {1.17.3}Case 2.3 - group of order 2}{61}{subsection.1.17.3}
-\contentsline {section}{\numberline {1.18}Solving case 3.3 - supersymmetric models of order 4}{63}{section.1.18}
-\contentsline {subsection}{\numberline {1.18.1}Cartesian model: steps N, S, E, W}{64}{subsection.1.18.1}
-\contentsline {subsection}{\numberline {1.18.2}Diagonal model: steps NE, NW, SE, SW}{64}{subsection.1.18.2}
-\contentsline {subsection}{\numberline {1.18.3}The almost-full model: missing steps E and W}{73}{subsection.1.18.3}
-\contentsline {subsection}{\numberline {1.18.4}The full model: all steps available}{73}{subsection.1.18.4}
-\contentsline {subsection}{\numberline {1.18.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{73}{subsection.1.18.5}
-\contentsline {section}{\numberline {1.19}A little aside}{73}{section.1.19}
-\contentsline {chapter}{\numberline {A}Supporting Materials}{76}{appendix.A}
+\contentsline {section}{\numberline {0.1}Brief Note on Notation}{1}{section.0.1}
+\contentsline {chapter}{\numberline {1}Introduction to Methods - 1D random walks}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Derivation of the functional equation}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Solving the functional equation for various $s$}{8}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}The $s_{-1} = 0$ case.}{9}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}The $s_{-1} \not =0$ case.}{10}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}1-dimensional case conclusion}{14}{subsection.1.2.3}
+\contentsline {chapter}{\numberline {2}Operators}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Definitions}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}Commutativity properties}{16}{section.2.2}
+\contentsline {section}{\numberline {2.3}Kernels, eigenvalues and eigenfunctions}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Operator $L$}{18}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Operator $E$}{18}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Operator $B$}{19}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Compounded operators}{19}{subsection.2.3.4}
+\contentsline {chapter}{\numberline {3}Higher-dimensional labelled walks}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}Using Operators to Derive the Functional Equation}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}Generalizations to the functional equation}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}Coefficient Extraction}{24}{section.3.3}
+\contentsline {section}{\numberline {3.4}Further functional equations}{26}{section.3.4}
+\contentsline {section}{\numberline {3.5}Using the formal inverse for iteration}{28}{section.3.5}
+\contentsline {chapter}{\numberline {4}Specializing to 2 dimensions}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{31}{section.4.3}
+\contentsline {section}{\numberline {4.4}Simple case: Factoring $S$ into a product}{33}{section.4.4}
+\contentsline {section}{\numberline {4.5}Kernel Group Considerations}{36}{section.4.5}
+\contentsline {chapter}{\numberline {5}Solving basic 2D cases}{39}{chapter.5}
+\contentsline {section}{\numberline {5.1}Cases 1.1, 1.2, 1.3}{39}{section.5.1}
+\contentsline {section}{\numberline {5.2}Case 2.2 - group of order 1}{40}{section.5.2}
+\contentsline {section}{\numberline {5.3}Case 2.3 - group of order 2}{42}{section.5.3}
+\contentsline {chapter}{\numberline {6}Solving case 3.3 - supersymmetric models of order 4}{44}{chapter.6}
+\contentsline {section}{\numberline {6.1}Cartesian model: steps N, S, E, W}{45}{section.6.1}
+\contentsline {section}{\numberline {6.2}Diagonal model: steps NE, NW, SE, SW}{46}{section.6.2}
+\contentsline {section}{\numberline {6.3}The almost-full model: missing steps E and W}{54}{section.6.3}
+\contentsline {section}{\numberline {6.4}The full model: all steps available}{54}{section.6.4}
+\contentsline {section}{\numberline {6.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{54}{section.6.5}
+\contentsline {chapter}{\numberline {7}A little aside}{55}{chapter.7}
+\contentsline {chapter}{\numberline {8}How To Use the template}{58}{chapter.8}
+\contentsline {section}{\numberline {8.1}Suggested Thesis Organization}{59}{section.8.1}
+\contentsline {section}{\numberline {8.2}Making Cross-References}{59}{section.8.2}
+\contentsline {section}{\numberline {8.3}Managing Bibliographies with BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m }{60}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Describing References}{60}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Citing References}{61}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}Formatting Cited References}{62}{subsection.8.3.3}
+\contentsline {section}{\numberline {8.4}Typesetting Tables}{62}{section.8.4}
+\contentsline {section}{\numberline {8.5}Figures, Graphics, and Special Characters}{63}{section.8.5}
+\contentsline {section}{\numberline {8.6}Special Characters and Symbols}{64}{section.8.6}
+\contentsline {section}{\numberline {8.7}Changing Page Widths and Heights}{65}{section.8.7}
+\contentsline {subsection}{\numberline {8.7.1}The \texttt {geometry} Package}{65}{subsection.8.7.1}
+\contentsline {subsection}{\numberline {8.7.2}Changing Page Layout Values By Hand}{66}{subsection.8.7.2}
+\contentsline {subsection}{\numberline {8.7.3}Making Temporary Changes to Page Layout}{66}{subsection.8.7.3}
+\contentsline {section}{\numberline {8.8}Keeping Track of Versions with Revision Control}{67}{section.8.8}
+\contentsline {section}{\numberline {8.9}Recommended Packages}{67}{section.8.9}
+\contentsline {subsection}{\numberline {8.9.1}Typesetting}{67}{subsection.8.9.1}
+\contentsline {subsection}{\numberline {8.9.2}Figures, Tables, and Document Extracts}{68}{subsection.8.9.2}
+\contentsline {subsection}{\numberline {8.9.3}Bibliography Related Packages}{68}{subsection.8.9.3}
+\contentsline {section}{\numberline {8.10}Moving On}{69}{section.8.10}
+\contentsline {chapter}{\numberline {A}Supporting Materials}{70}{appendix.A}
