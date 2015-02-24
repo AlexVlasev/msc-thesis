@@ -1,0 +1,38 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+\chapter{Other Flavoured Walks}
+\label{sec:OtherWalks}
+
+%================================
+\section{Walks with other constraints}
+\label{sec:Constraints}
+%================================
+
+Random walk models with additional constraints are handled naturally via the operator notation and herein lies the full power of the framework. The operator notation makes for a quick and easy derivation of master functional equations for most such models. Using extraction operators we can constrain random walks within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes of course). Furthermore using labeling operators we can easily track the behavior of random walks as they cross or interact with boundaries or interact with objects.
+
+%================================
+\section{Self-avoiding walks}
+\label{sec:SAWs}
+%================================
+
+This one is a bit more ad hoc because we have to keep a history of where the random walks go. Furthermore the operators involved require a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $n^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial.
+
+%================================
+\section{Other exotic walks}
+\label{sec:Exotic}
+%================================
+
+Here we'll have a small exploration of other exotic random walk models.
+
+%================================
+\section{Reformulations of Problems}
+\label{sec:Reform}
+%================================
+
+\subsection{Using labeling operators instead of extraction operators}
+An initially promising idea is to use a labelling operator instead of an extraction operator with the goal of removing those labeled walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and we may get further issues. So, instead of 
+
+\subsection{Considering a symmetrical super-problem}
+An extension of the previous idea is to symmetrize the problem by also labeling parts on the other side of the origin. Instead of just labeling walks on the axes and on lines where one coordinate is $-1$ we can also label walks on lines with one coordinate $+1$. This leads to a symmetrical arrangement of labeling operations on both sides of the origin. We can skip the labeling of the axes if we don't wish to investigate wall interactions.
+
+\endinput

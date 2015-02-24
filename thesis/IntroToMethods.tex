@@ -1,0 +1,281 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+\chapter{Introduction to Methods - 1D random walks}
+\label{ch:IntroToMethods}
+
+%=======================================
+\section{Derivation of the functional equation}
+\label{sec:DerFxnEqn}
+%=======================================
+
+In the interest of working out higher dimensional labelled walks' problems it is very useful to first visit the 1-dimensional case which will illustrate a lot of the methods that will later come into play. The 1-dimensional case will also give us a clearer picture as to how things work in higher dimensions (although the picture becomes more complicated). We'll treat the problem using generating functions. We'll use lower case letters and not quite the full notation because it is not necessary. In one dimension, on one axis, we'll use steps of length at most 1. If we have a random walk ending at coordinate $i$ we can either step back adding $-1$ to the coordinate, step forward adding $+1$ to the coordinate or staying in one place, adding $0$ to the coordinate. This can be somewhat formalized by using polynomials. Ending a walk at coordinate $i$ will be encoded with a monomial $x^i$. Then stepping backwards, forwards or staying in one place will be denoted with $x^{i-1}$, $x^i$ and $x^{i+1}$ respectively. This is the same as multiplying by $1/x = \ol{x}, 1, x$ in each case. We can encode this information is a Laurent step polynomial $s$ defined as
+\[
+	s = s_{-1}\ol{x} + s_0 + s_1 x
+\]
+Here $s_i$ will be either 0 or 1 for any specific $i$, tracking whether we have allowed those kinds of steps or not. Keeping this in mind, there are 8 possible step sets because we have two options for each $s_i$. We keep track of the length of a random walk with powers of $t$ and we keep track of its endpoint with powers of $x$. We'll also label every interaction with the origin by multiplying by $a$ every time a walk steps on the origin. We'll keep the walks on the non-negative axis.
+
+Long story short we can find the generating function in a very simple, brute force manner, even for higher dimensions. We start with the empty walk denoted by 1 since it starts and ends on the origin without taking a step, so no $t$, $x$ or label $a$. Then try out each step from $s$ and eliminate those that take us past the origin in the negative direction. If we step on the origin we multiply by $a$. Those walks that remain are then multiplied by $t$ since they are not of length 1. We can proceed iteratively $k$ tiems to obtain random walks on the non-negative axis of length $k$. Adding up the results allows us to write the generating function up to $O(t^k)$. It will prove very useful to think about operators so we can formalize this notion in terms of operators. For example, here we are taking walks of length $k-1$, trying all options of $s$ (this is like multiplying by $s$), removing all the walks that end up on the negative axis (this is like removing the $\ol{x}$ term) and labeling those that end on the origin (this is like multiplying the $x^0$ coefficient by $a$). Let $D$ stand for the operator that cleans up the walks and labels the valid ones. Then if $q_k$ stands for the labelled walks of length $k$, then the $k$-th term of $q$ is $q_k t^k$ and we have
+\[
+	q_{k+1}t^{k+1} = t D (s q_k t^k)
+\]
+Thus we can write the generating function $q$ iteratively
+\[
+	q = \sum_{k=0}^\infty t^k(Ds)^k(1)
+\]
+where we're iteratively applying $Ds$ to 1 to obtain all labelled walks. We can treat this operator $Ds$ as a formal variable and write
+\[
+	q = \sum_{k=0}^\infty (tDs)^k(1) = \frac{1}{1-tDs}(1)
+\]
+and then this gives us a functional equation for $q$
+\[
+	(1-tDs)q  =1 
+\]
+There is another way of deriving this equation while not treating $Ds$ as a formal variable. Instead of applying the operator iteratively we can apply it on the generating function as a whole. The product $tsq$ is the generating for all random walks that end with $x$-coordinate greater or equal to $-1$ where some steps end up on $x$-coordinate 0 without being labelled. We can apply $D$ on this product to remove the terms ending at $x$-coordinate $-1$ and label those that end up on $x$-coordinate 0. This leaves us with all the valid walks encoded in the generating function $q$ without the empty walk 1. Therefore we can write a functional equation for $q$ as
+\[
+	q = 1 + D(tsq) = 1 + tDs(q)
+\]
+and we ca re-write this as $(1-tDs)q  =1$ as before. Now, we have to say a few words about what the operator $D$ actually is. First we are removing all the walks that end on $x$-coordinate equal to $-1$ which can be handled by the operator $E = 1 - \ol{x}[\ol{x}]$ which removes those walks. Then the labelling can be handled by the operator $L = 1 + (a-1) [x^0] = 1 + b[x^0]$ where $b = a-1$. Therefore we can write $D  = LE$
+\begin{align*}
+	D &= LE = (1 - \ol{x}[\ol{x}])(1 + b[x^0]) \\
+	&= 1 + b[x^0] - \ol{x}[\ol{x}]-\ol{x}[\ol{x}]b[x^0]\\
+	&=1 + b[x^0] - \ol{x}[\ol{x}]
+\end{align*}
+since the last term vanishes on all generating functions. We could have also applied the operators in reverse to get the same result. Thiscommutativity  makes sense because on the level of the function they are operator interacting with different monomials. We can now expand the functional equation to the following
+\begin{align*}
+	1 &= q - tLE(sq) = q - t(sq + b(sq)_0 - \ol{x}(sq)_{-1}) \\
+	&=  q - t(sq + b(s_{-1}q_1 + s_0q_0 + s_1 q_{-1}) - \ol{x}(s_{-1}q_0))\\
+	&= q - t(sq + b(s_{-1}q_1 + s_0q_0) - \ol{x}(s_{-1}q_0))
+\end{align*}
+since $q_{-1} = 0$. We can rewrite this equation in the following form
+\[
+	(1-ts)q - t(bs_0-\ol{x}s_{-1})q_0 -bts_{-1}q_1 = 1
+\]
+Here $q_0 = q(0)$ and $q_1 = q'(0)$ where $q = q(x)$. In the interest of simplifying this equation we can eliminate the $q_1$ term by extracting the $x^0$ coefficient from the whole equation
+\begin{align*}
+	 1 &= q_0 - t(s_{-1}q_1 +s_0 q_0 + s_1 q_{-1}) - tbs_0q_0 - bts_{-1}q_1\\
+	 &= q_0 - t(s_{-1}q_1 +s_0 q_0) - tbs_0q_0 - bts_{-1}q_1\\
+	 &=(1-ts_0-tbs_0)q_0 - (ts_{-1}+bts_{-1})q_1\\
+	 &= (1-ats_0)q_0-t(s_{-1}+bs_{-1})q_1\\
+	 &=(1-ats_0)q_0-ats_{-1}q_1
+\end{align*}
+We can solve this equation for $q_1$
+\[
+	ts_{-1}q_1 = \ol{a}((1-ats_0)q_0-1)
+\]
+and substitute the result into the functional equation (for now we don't worry about the possibility of $s_{-1} = 0$ because it leads to the same thing anyway).
+\begin{align*}
+	1 &= (1-ts)q - t(bs_0-\ol{x}s_{-1})q_0 - c((1-ats_0)q_0-1)\\
+	& = (1-ts)q - (c(1-ats_0)+ bts_0-t\ol{x}s_{-1})q_0 + c\\
+	& = (1-ts)q - (c - bt s_0 + bt s_0-t\ol{x}s_{-1})q_0 + c \\
+	& = (1-ts)q - (c -t\ol{x}s_{-1})q_0 + c \\
+\end{align*}
+and therefore we can rewrite the equation as
+\[
+	(1-ts)q - (c -t\ol{x}s_{-1})q_0 = \ol{a}
+\]
+since $1 - c = 1 - (1-\ol{a}) = \ol{a}$. This process is rather complicated, even though it can be done for higher dimensional problems as well (as you can see in various previous approaches). Also there is an issue that we need to consider every time we are solving an equation in order to substitute quantities back into the equation. This is where the operator notation comes to the resque. It turns out the the $L$ operator is invertible with inverse given by
+\[
+	L^{-1} = M = 1 -  c[x^0]
+\]
+and we can apply it on the functional equation. The RHS is simply $M(1) = 1 - c = \ol{a}$ and the LHS is
+\begin{align*}
+	M(1-tLEs)q &= Mq - tEsq \\
+	&= (q-cq_0) - t(sq - \ol{x}s_{-1}q_0) \\
+	&= (1-ts)q - (c-t\ol{x}s_{-1})q_0 
+\end{align*}
+and we've derived the same equation but in a much neater way. This will prove crucial later on when we derive a functional equation for higher dimensional problems. Although it can be done directly with a lot of effort it's much better to just use the operator notation. The derivation is brought down from about a dozen pages to one or two. The operator notation will also allow us to solve some multidimensional problems directly or with the help of lower dimensional problems.
+
+We can extract the $x^0$ coefficient from the final functional equation again and although we can do this directly, we'll use the operator notation to tidy up the process. This will show up later when dealing with higher dimensional problems
+\begin{align*}
+	[x^0]M &= [x^0]-[x^0]c[x^0] = [x^0]-c[x^0] = \ol{a}[x^0]\\
+	[x^0]E &= [x^0] - [x^0]\ol{x}[\ol{x}] = [x^0]
+\end{align*}
+Then we extract the $x^0$ from the functional equation
+\[
+	[x^0]\ol{a} = \ol{a} = [x^0](M - tEs)q = ([x^0]M - t[x^0]Es)q = (\ol{a}[x^0]-t[x^0]s)q = [x^0](\ol{a}-ts)q
+\]
+Therefore the extraction leads to
+\[
+	[x^0](1-ast)q = 1
+\]
+We could extract higher coefficients from the functional equation too. Let $k\ge 1$. Then
+\begin{align*}
+	[x^k]M &= [x^k]-[x^k]c[x^0] = [x^k]\\
+	[x^k]E &= [x^k] - [x^k]\ol{x}[\ol{x}] = [x^k]
+\end{align*}
+Therefore
+\[
+	[x^k]\ol{a} = 0 = [x^k](M - tEs)q = ([x^k]M - t[x^k]Es)q = ([x^k] - t[x^k]s)q = [x^k](1-ts)q
+\]
+That is
+\[
+	[x^k](1-ts)q = 0
+\]
+and we can readily extract whichever coefficients we want. The first equation leads to
+\[
+	(1-ats_0)q_0-ats_{-1}q_1 = 1
+\]
+and the second leads to
+\begin{align*}
+	q_k - t(s_{-1}q_{k+1}+s_0q_k+s_1 q_{k-1}) &= 0\\
+	 (1-s_0t) q_k -t(s_{-1}q_{k+1} + s_1 q_{k-1} &= 0
+\end{align*}
+%=======================================
+\section{Solving the functional equation for various $s$}
+\label{sec:Solving1D}
+%=======================================
+In this section we'll solve all 8 one-dimensional problems fully. Some cases are easier to deal with than others. As we'll see later in the higher dimensional cases, some problems are easierto solve than others. This difficulty tends to scale up with the inclusion of certain steps with negative direction.
+%=======================================
+\subsection{The $s_{-1} = 0$ case.}
+%=======================================
+This condition allows us to solve explicitly for $q_0$.
+\[
+	q_0 = \frac{1}{1-as_0t}
+\]
+We can substitute this expression in the functional equation and obtain
+\[
+	q =\frac{\ol{a}}{1-st}\left(1 + \frac{b}{{1-as_0t}}\right) = \frac{1-s_0t}{(1-st)(1-as_0t)}
+\]
+This takes care of half of the cases! What happens when we set $a = 1$, corresponding to setting $b =0$ or extracting the $b^0$ coefficient from the equation? This corresponds to unlabelling the random walks. We obtain
+\[
+	[b^0]q = \wh{q} =  \frac{1-s_0t}{(1-st)(1-s_0t)}
+\]
+We'll note that
+\[
+	(1-as_0t)q-(1-s_0t)\wh{q} = 0
+\]
+This can also be written in operator form with $B = 1 - [b^0]$
+\[
+	B((1-as_0t)q) = 0
+\]
+This relates the labelled generating function to the unlabelled generating function! it says we can obtain the labelled generating function from the unlabelled one by the following relation
+\[
+	q = \frac{1-as_0t}{1-s_0t}\wh{q}
+\]
+We can also establish such as relationship for $q_0$ although the derivation here will be trivial. Extracting $[x^0]$ from the equation leads to
+\[
+	B((1-as_0t)q_0) = 0
+\]
+and
+\[
+	q_0 = \frac{1-as_0t}{1-s_0t}\wh{q_0}
+\]
+The relationship between $q$ and $\wh q$ is no accident but it tends to happen fairly often in the higher dimensional cases that we've considered. The functional equation in the $s_{-1} = 0$ case is easier to solve most likely because when $s_{-1} = 0$, walks don't go beyond the origin in the negative direction. Consequently the $E$ operator acts as the identity on the generating function. and the functional equation reads as
+\[
+   (M-ts)q = q- cq_0 - tsq = (1-ts)q - c q_0 = \ol{a}
+\]
+%=======================================
+\subsection{The $s_{-1} \neq 0$ case.}
+%=======================================
+The functional equation in the $s_{-1} \neq 0$ is also not difficult to solve. We'll try to apply the kernel method whenever possible. It requires finding an $x$ value that makes the kernel $1 - ts$ equal to zero in the functional equation
+\[
+	(1-ts)q - (c -t\ol{x})q_0 = \ol{a}
+\]
+Such a solution will exist since $s_{-1} = 1$ and therefore the equation $1 - ts = 0$ is non-trivial. Let one such solution be $x = \sigma$ and suppose that we can plug it into the functional equation. Then the kernel vanishes, taking $q$ away with it and we obtain
+\[
+	- (c - t\ol{\sigma})q_0 = \ol{a}
+\]
+We can solve for $q_0$ explicitly again
+\[
+	q_0 = \frac{\ol{a}}{\ol{\sigma}t-c}
+\]
+We can now solve for $q$
+\[
+	q = \frac{\ol{a}}{1-ts}\left(1 - \frac{t\ol{x}-c}{t\ol{\sigma}-c}\right) = \frac{t}{1-ts}\left(\frac{\ol{x}-\ol{\sigma}}{b-a\ol{\sigma}t}\right)
+\]
+We note that we can apply the $B$ operator again
+\[
+	B((a\ol{\sigma}t-b)q) = 0
+\]
+or written out explicitly
+\[
+	(a\ol{\sigma}t-b)q - (\ol{\sigma}t)\wh{q} = 0
+\]
+This also allows us to write the labelled generating function in terms of the unlabelled generating function
+\[
+	q = \frac{\ol{\sigma}t}{a\ol{\sigma}t-b}\wh q =  \frac{t}{at-b\sigma}\wh q
+\]
+We can also work with $q_0$ at this stage. We find
+\[
+	[x_0]B((a\ol{\sigma}t-b)q) = B((a\ol{\sigma}t-b)q_0) = 0
+\]
+too. This ends up being the same as
+\[
+	(a\ol{\sigma}t-b)q_0 - (\ol{\sigma}t)\wh{q_0} = 0
+\]
+with solution
+\[
+	q_0 = \frac{t}{at-b\sigma}\wh{q_0}
+\]
+The final task for this section will be to find what $\sigma$ will be for various cases. We already know $s_{-1} = 0$ so the result depend on $s_0$ and $s_1$. In general the kernel is zero when
+\begin{align*}
+	t s &= 1\\
+	t(s_{-1} + s_0 x + s_1 x^2) &= x\\
+	ts_1 x^2 -(1-s_0t)x + ts_{-1} &= 0
+\end{align*}
+When $s_1 \neq 0$ this is quadratic with two roots that are functions of $t$. We have to pick the one which has no singularity at $t = 0$. When $s_1 = 0$ we have a linear equation which may have a single root.
+When $s_1 = 0$ we have the equation $(1-s_0t)x = t$ so the single root is
+\[
+	\sigma = \frac{t}{1-s_0t}
+\]
+When $s_1 = 1$ we have the equation $tx^2 -(1-s_0t)x + t = 0$ with roots
+\[
+\sigma = \frac{1-s_0t - \sqrt{(1-s_0t)^2-4t^2}}{2t}, \quad \sigma^\ast = \frac{1-s_0t + \sqrt{(1-s_0t)^2-4t^2}}{2t}
+\]
+The two roots multiply to 1 so $\ol{\sigma} = \sigma^\ast$. Later we shall have a little table tabulating all the results.
+Note that in the relationship between the labelled and unlabelled $q_0$ we have
+\[
+	q_0 = \frac{t}{at-b\sigma}\wh{q_0}
+\]
+where $\sigma$ is a function containing a square root, i.e. not a polynomial. However we can go at the problem from a different angle to obtain a polynomial $f(a,t)$ for which $B(fq_0) = c$ which is not quite zero but it's a simpler relationship. This will also illustrate the group approach together with the kernel method. The two cases that we need to work on both have $s_{-1} = s_1 = 1$ with $s_0$ being 0 or 1. This means that $s$ is left invariant under sending $\ast: x \mapsto \ol{x}$. We can apply this on the functional equation and now have a system of two functional equations
+\begin{align*}
+	(1-ts)q - (c -t\ol{x})q_0 - \ol{a}=0\\
+	(1-ts)q^\ast - (c -tx)q_0 -\ol{a}=0
+\end{align*}
+We can multiply the first by $c -tx$, the second by $c -t\ol{x}$ and subtract the equations to eliminate the $q_0$ term. We can divide everything out by $1-ts$ and finally obtain
+\begin{align*}
+	(c-tx)q(x) - (c-t\ol{x})q(\ol{x}) -\frac{(c-tx-c+t\ol{x})}{1-ts}\ol{a} &= 0\\
+	(c-tx)q(x) - (c-t\ol{x})q(\ol{x}) -\ol{a}\delta &= 0
+\end{align*}
+where
+\[
+	\delta =\frac{t(\ol{x}-x)}{1-ts}
+\]
+and crucially it doesn't depent on $a$. We extract the $x^1$ coefficient from the equation to obtain an equation relating $q_1$ and $q_0$
+\[
+	c q_1 - t q_0 - \ol{a}\delta_1 = 0
+\]
+We can set $a = 1$ here so we get
+\[
+	-\delta_1 = t \wh{q_0}
+\]
+and we can bring this back to the original equation to get
+\begin{align*}
+	c q_1 &= t q_0 - \ol{a} t \wh{q_0}\\
+	b q_1 &= t (aq_0 - \wh{q_0})
+\end{align*}
+Earlier we had the equation
+\[
+	(1-as_0t)q_0 = 1 + a s_{-1} t q_1 = 1 + at q_1
+\]
+which we can solve for $q_1$ this time and insert the solution into the above equation
+\[
+	b ((1-as_0t)q_0-1) = t^2 a (aq_0 - \wh{q_0})
+\]
+Collecting coefficients and simplifying leads us to
+\begin{align*}
+	(b(1-as_0t)-a^2 t^2) q_0 -(-at^2)\wh{q_0} =& b\\
+	(c(1-as_0t)-a t^2) q_0 -(-t^2)\wh{q_0} =& c
+\end{align*}
+which gives $f(a,t) = c(1-as_0t)-a t^2$ so that
+\[
+	B((c(1-as_0t)-a t^2)q_0) = c.
+\]
+With two different approaches we obtained slightly different relationships upon applying the operator $B$.
+%=======================================
+\subsection{1-dimensional case conclusion}
+%=======================================
+In this section we were able to find explicit solutions for $q_0, q$ and also $B$-operator relationships for $q$ and $\wh q$. In higher dimensions this may not be quite possible but we should still be able to find $B$-operator relationships for the equivalent of $q_0$ and $\wh{q_0}$. Here is a table showing the results of this section. Here is a table showing detailed results for each of the 8 possible cases of random walks restricted to the non-negative axis.
+
+\endinput

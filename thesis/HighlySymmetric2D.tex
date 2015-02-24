@@ -1,0 +1,306 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+%=======================================
+\chapter{Highly-symmetric 2D models}
+%=======================================
+When we consider the supersymmetric cases the $x$-transformations are given by
+\[
+\bullet : x_1 \mapsto \ol{x_1},\quad\ast: x_2 \mapsto \ol{x_2}
+\]
+In each case we have
+\[
+  K^{\bullet} = K^{\ast} = K,\quad K_2^{\bullet} = K_2,\quad K_1^{\ast} = K_1
+\]
+while the others change in some way. The solutions eliminating the kernel also have a nice form
+\[
+    \sigma_i = \frac{1-S_i^0-\sqrt{(1-S_i^0)^2-4t^2 (S_i^1)^2}}{2tS_i^1},\quad\ol{\sigma_i} = \frac{1-S_i^0+\sqrt{(1-S_i^0)^2-4t^2 (S_i^1)^2}}{2tS_i^1}
+\]
+because we have
+\[
+	\ol{\sigma}_i = \frac{S_i^1}{S_i^{-1}}conj(\sigma_i) = conj(\sigma_i) 
+\]
+We can take the master equation and apply $\ast$ to it
+\begin{align*}
+-KQ + K_1 Q_1^0 + K_2 Q_2^0 - K_{1,2}Q_{1,2}^{0,0} + \alpha = 0\\
+-KQ^\ast \exx+ K_1 Q_1^{0,\ast} \exx+ K_2^\ast Q_2^0 - K_{1,2}^\ast Q_{1,2}^{0,0} + \alpha = 0
+\end{align*}
+From here on we will input $x_1 = \sigma_1$ to rid ourselves of the kernel $K$. There will be an overloading of notation
+\begin{align*}
+K_1 Q_1^0 + K_2 Q_2^0 - K_{1,2}Q_{1,2}^{0,0} + \alpha = 0\\
+K_1 Q_1^{0,\ast} \exx+ K_2^\ast Q_2^0 - K_{1,2}^\ast Q_{1,2}^{0,0} + \alpha = 0
+\end{align*}
+We can multiply both equation by something to clear $Q_2^0$ because it involves $\sigma_1$ while the other term involves only $x_2$. We have
+\begin{align*}
+K_1 K_2^\ast Q_1^0 +K_2^\ast K_2 Q_2^0 - K_2^\ast K_{1,2}Q_{1,2}^{0,0} + \alpha K_2^\ast= 0\\
+K_1 K_2 Q_1^{0,\ast} \exx+ K_2 K_2^\ast Q_2^0 - K_2 K_{1,2}^\ast Q_{1,2}^{0,0} + \alpha K_2 = 0
+\end{align*}
+We subtract these two equations to obtain
+\begin{align*}
+    K_1(K_2^\ast Q_1 - K_2 Q_1^\ast) - ( K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast)Q_{1,2}+\alpha (K_2^\ast - K_2) &= 0\\
+    K_2^\ast Q_1 - K_2 Q_1^\ast - \frac{ K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast}{K_1}Q_{1,2}+\alpha \frac{K_2^\ast - K_2}{K_1} &= 0\\
+\end{align*}
+The differences in solutions will occur from here on out.
+%=======================================
+\section{Cartesian model: steps N, S, E, W}
+%=======================================
+I haven't written it all up yet but we have the solution
+\[
+	Q = \frac{(1-b_1b_2 G)(\alpha - \ol{b}_1 K_1 \wh{K}_1^\bullet -\ol{b}_2K_2\wc{K}_2^\ast \wc{Q})}{K - \ol{c}_1 K_1 K_1^\bullet - \ol{c}_2 K_2 K_2^\ast}
+\]
+%=======================================
+\section{Diagonal model: steps NE, NW, SE, SW}
+%=======================================
+In this case the roots of the kernel become
+\[
+    \sigma_i = \frac{1-\sqrt{1-4t^2 (S_i^1)^2}}{2tS_i^1},\quad\ol{\sigma_i} = \frac{1+\sqrt{1-4t^2 (S_i^1)^2}}{2tS_i^1}
+\]
+with the extra property that
+\[
+   \sigma_1+\ol{\sigma_1} = \frac{1}{tS_1^{-1}}.
+\]
+First we have
+\begin{align*}
+K_2^\ast - K_2 
+&= t(\ol{x_2}-x_2)S_2^{-1}(\sigma_1)\\
+&=t(\ol{x_2}-x_2)(\ol{\sigma_1}+\sigma_1)\\
+&=\frac{\ol{x_2}-x_2}{\ol{x_2}+x_2}
+\end{align*}
+We have
+\begin{align*}
+K_2^\ast K_{1,2} - K_2 K_{1,2}^\ast &= (c_2-tx_2S_2^{-1})\left(c_1c_2 - t\ol{\sigma_1}\ol{x_2}\right)-(c_2-t\ol{x_2}S_2^{-1})\left(c_1c_2 - t\ol{\sigma_1}x_2\right)\\
+&=c_1c_2t(\ol{x_2}-x_2)S_2^{-1} - c_2t\ol{\sigma_1}(\ol{x_2}-x_2)\\
+&=c_2t(\ol{x_2}-x_2)(c_1(\sigma_1+\ol{\sigma_1})-\ol{\sigma_1})
+\end{align*}
+If we let $v = \ol{x_2}+x_2$ we find
+\[
+  \sigma_1 = \frac{1-\sqrt{1-4t^2v^2}}{2tv},\quad \ol{\sigma_1} = \frac{1+\sqrt{1-4t^2v^2}}{2tv}
+\]
+We have
+\begin{align*}
+(c_1(\sigma_1+\ol{\sigma_1})-\ol{\sigma_1})&= \frac{c1}{tv}-\frac{1+\sqrt{1-4t^2v^2}}{2tv}\\
+&=\frac{1}{\ol{x_2}+x_2}\left(-\ol{a_1}+\frac{1-\sqrt{1-4t^2v^2}}{2}\right)
+\end{align*}
+Also
+\begin{align*}
+K_1 &= c_1-tv\ol{\sigma_1} \\
+&= c_1-tv\frac{1+\sqrt{1-4t^2v^2}}{2tv}\\
+&=1-\ol{a_1}-\frac{1+\sqrt{1-4t^2v^2}}{2}\\
+&=-\ol{a_1}+\frac{1-\sqrt{1-4t^2v^2}}{2}
+\end{align*}
+Thus we finally have
+\begin{align*}
+\frac{1}{K_1}( K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast) 
+&= -\frac{c_2t(\ol{x_2}-x_2)(c_1(\sigma_1+\ol{\sigma_1})-\ol{\sigma_1})}{c_1-t\ol{\sigma_1}v}\\
+&= -\frac{c_2t(\ol{x_2}-x_2)(-1)}{tv}\\
+&= \frac{c_2(\ol{x_2}-x_2)}{\ol{x_2}+x_2}
+\end{align*}
+Thus the equation will now read as
+\[
+   K_2^\ast Q_1 - K_2 Q_1^\ast -\frac{c_2(\ol{x_2}-x_2)}{\ol{x_2}+x_2}Q_{1,2}+\alpha\frac{\ol{x_2}-x_2}{(\ol{x_2}+x_2)K_1}= 0
+\]
+We just need to take care of the remaining terms. We'll do this by multiplying by $\ol{x_2}+x_2$. We have
+\begin{align*}
+R^\ast \exx= (\ol{x_2}+x_2) K_2^\ast &= c_2(\ol{x_2}+x_2)-x_2 = c_2\ol{x_2}-\ol{a_2}x_2\\
+R = (\ol{x_2}+x_2) K_2 &= c_2(\ol{x_2}+x_2)-\ol{x_2} = c_2x_2-\ol{a_2}\ol{x_2}\\
+\end{align*}
+We have a couple of relations here
+\begin{align*}
+R^\ast - R &= v(K_2^\ast-K_2) = \ol{x_2}-x_2\\
+\ol{x_2}R^\ast - x_2 R &= \ol{x_2}c_2v-1- x_2 c_2v+1 \\
+& = c_2v(\ol{x_2}-x_2)
+\end{align*}
+The equation becomes
+\[
+(c_2\ol{x_2}-\ol{a_2}x_2)Q_1^0(x_2)+ (\ol{a_2}\ol{x_2}-c_2x_2) Q_1^0(\ol{x_2}) - c_2(\ol{x_2}-x_2)Q_{1,2}^{0,0}+(\ol{x_2}-x_2)\ol{K}_1\alpha = 0
+\]
+and it's ready for extraction. Let $\delta_0 = \ol{a_1}(\ol{x_2}-x_2)\ol{K}_1$. We re-write the equation as
+\[\label{zero-order}
+    R^\ast Q_1^0 -R Q_1^{0,\ast} - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0 = 0
+\]
+We'll use the master equation
+\[
+ (1-tS)Q - (c_1-t\ol{x_1}S_1^{-1}) Q_1^0- (c_2-t\ol{x_2}S_2^{-1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{-1,-1})Q_{1,2}^{0,0}  = \ol{a_1a_2}
+\]
+to further our work here. For diagonal steps it is
+\[
+ (1-tS)Q - (c_1-tv\ol{x_1}) Q_1^0- (c_2-t\ol{x_2}S_2^{-1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2})Q_{1,2}^{0,0}  = \ol{a_1a_2}
+\]
+extracting the $[x_1^0]$ coefficient yields
+\[
+   Q_1^0 = \ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^1
+\]
+We can extract higher coefficients too. Let $k\geq 1$. Then the $[x_2^k]$ coefficient is
+\begin{align*}
+0 &= Q_1^k-tS_{1}^{-1}Q_1^{k+1}-tS_1^{0}Q_1^k-tS_1^1Q_1^{k-1}-c_2\Qf{k,0} + t\ol{x_2}(\Sf{-1,-1}\Qf{k+1,0}+\Sf{0,-1}\Qf{k,0}+\Sf{1,-1}\Qf{k-1,0})\\
+&=Q_1^k-tvQ_1^{k+1}-tvQ_1^{k-1}-c_2\Qf{k,0} + t\ol{x_2}(\Qf{k+1,0}+\Qf{k-1,0})
+\end{align*}
+We can re-write the last one in a form more convenient for the next few steps
+\[\label{formula}
+   Q_1^k = tv(Q_1^{k+1}+Q_1^{k-1}) + c_2 \Qf{k,0} - t\ol{x_2}(\Qf{k+1,0}+\Qf{k-1,0})
+\]
+We'll use induction to prove a nice formula but for that we'll first need to establish another base case because of this splitting of cases for the coefficient extraction. We have
+\begin{align*}
+   Q_1^0 &= \ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^1\\
+   Q_1^{0,\ast} \exx&= \ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^{1,\ast}\\
+\end{align*}
+Combining them with equation (\ref{zero-order}) gives
+\begin{align*}
+0 &= R^\ast Q_1^0 -R Q_1^{0,\ast} - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0 \\
+&= R^\ast ( \ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^1) -R (\ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^{1,\ast}) - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0\\
+&=a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast}) + (R^\ast-R)(\ol{a_2}+c_2\Qf{0,0}) - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0\\
+& =a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast})+\ol{a_2}(\ol{x_2}-x_2)+\ol{a_2}\delta_0\\
+& =a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast})+\ol{a_2}((\ol{x_2}-x_2)+\delta_0)
+\end{align*}
+So we can write the equation
+\[
+        R^\ast Q_1^1-R Q_1^{1,\ast}+\ol{a_2}\delta_1 = 0
+\]
+where
+\[
+   \delta_1 = \frac{(\ol{x_2}-x_2)+\delta_0}{a_1tv}
+\]
+This equation together with equation (\ref{zero-order}) form the base cases for the following lemma
+\begin{lemma} Let $m\ge 0$ be an integer. Then
+\begin{align}\label{coeff-eqn}
+   R^\ast Q_1^m -R Q_1^{m,\ast} - c_2(\ol{x_2}-x_2)\Qf{m,0} +\ol{a_2}\delta_m = 0
+\end{align}
+where $\delta_m$ is not a function of $a_2$.
+\end{lemma}
+\begin{proof}We'll show this by induction. We have the base cases $m = 0$ and $m=1$. The latter one fits the pattern because $\Qf{1,0} = 0$ since we cannot have any walks end on coordinates $(1,0)$. Now we assume that the formula is true for all cases up to and including $m$. Then we use formula (\ref{formula})
+\begin{align*}
+& R^\ast Q_1^m -R Q_1^{m,\ast}\\
+=&tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}) + tv(R^\ast Q_1^{m-1}-R Q_1^{m-1,\ast})\\
+& + c_2(R^\ast-R)\Qf{m,0}-t(\ol{x_2}R^\ast-x_2 R)(\Qf{m+1,0}+\Qf{m-1,0})\\
+=& tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}) + tv(c_2(\ol{x_2}-x_2)\Qf{m-1,0}-\ol{a_2}\delta_{m-1})\\
+& + c_2(\ol{x_2}-x_2)\Qf{m,0}-c_2tv(\ol{x_2}-x_2)(\Qf{m+1,0}+\Qf{m-1,0})\\
+=& tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast})+ c_2(\ol{x_2}-x_2)\Qf{m,0}-c_2tv(\ol{x_2}-x_2)\Qf{m+1,0}) - \ol{a_2}tv\delta_{m-1})\\
+\end{align*}
+Combining this with equation (\ref{coeff-eqn}) leads to
+\begin{align*}
+0 &= tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast})-c_2tv(\ol{x_2}-x_2)\Qf{m+1,0} - \ol{a_2}tv\delta_{m-1} +\ol{a_2}\delta_m \\
+ 0 & = R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}-c_2(\ol{x_2}-x_2)\Qf{m+1,0}+ \ol{a_2}\delta_{m+1}
+\end{align*}
+where
+\[
+  \delta_{m+1} =\frac{\delta_m}{tv}-\delta_{m-1}
+\]
+This function $\delta_{m+1}$ is also not dependent on $a_2$ and this completes the proof!
+\end{proof}
+There is an equivalent statement for $Q_2^n$. We can expand $R^\ast$ and $R$ to a form we can use
+\[
+(c_2\ol{x_2}-\ol{a_2}x_2)Q_1^m(x_2) -( c_2x_2-\ol{a_2}\ol{x_2})Q_1^m(\ol{x_2}) - c_2(\ol{x_2}-x_2)\Qf{m,0} +\ol{a_2}\delta_m = 0
+\]
+We start by extracting the $[x_2^1]$ coefficient
+\begin{align*}
+& c_2\Qf{m,2}-\ol{a_2}\Qf{m,0}-c_2\Qf{m,0} +c_2\Qf{m,0}+ [x_2^1]\ol{a_2}\delta_m = 0\\
+& c_2\Qf{m,2}-\ol{a_2}\Qf{m,0}+ [x_2^1]\ol{a_2}\delta_m = 0
+\end{align*}
+We can also extract the $[x_2^{n+1}]$ coefficient for $n\geq 2$
+\[
+  c_2 Q_{1,2}^{m,n+2}-\ol{a_2}Q_{1,2}^{m,n}+[x_2^{n+1}]\ol{a_2}\delta_m= 0
+\]
+This formula also contains the $n = 0$ case so we treat them together. We can set $a_2 = 1$ to get
+\[
+    -\wc{Q}_{1,2}^{m,n}+[x_2^{n+1}]\delta_m = 0
+\]
+Substituting this back into the above equation gives
+\[
+     b_2 Q_{1,2}^{m,n+2} = Q_{1,2}^{m,n} - \wc{Q}_{1,2}^{m,n}
+\]
+An equivalent formula can be derived if the process is followed through the use of $x_1$ instead of $x_2$ in the analysis.
+\begin{corollary} For integers $m,n \ge 0$ we have the following relations
+\begin{align*}
+b_1 \Qf{m+2,n} &= Q_{1,2}^{m,n}-\wh{Q}_{1,2}^{m,n}\\
+b_2 \Qf{m,n+2} &= Q_{1,2}^{m,n}-\wc{Q}_{1,2}^{m,n}
+\end{align*}
+\end{corollary}
+
+We can sum up those equations to obtain functional equations
+\begin{corollary} For integers $m \ge 0$ we have the following relations
+\begin{align*}
+Q_1^m - \wh{Q}_1^m &= b_1 Q_1^{m+2}\\
+\wc{Q}_1^m - \wc{\wh{Q}}_1^m &= b_1 \wc{Q}_1^{m+2}\\
+x_1^2(Q_2^n-\wh{Q}_2^n) &= b_1 (Q_2^n - Q_{1,2}^{1,n}x_1 - Q_{1,2}^{0,n})\\
+x_1^2(\wc{Q}_2^n-\wc{\wh{Q}}_2^n) &= b_1 (\wc{Q}_2^n - \wc{Q}_{1,2}^{1,n}x_1 - \wc{Q}_{1,2}^{0,n})\\
+x_1^2(Q-\wh{Q}) &= b_1(Q-x_1Q_1^1-Q_1^0)\\
+x_1^2(\wc{Q}-\wc{\wh{Q}}) &= b_1(\wc{Q}-x_1\wc{Q}_1^1-\wc{Q}_1^0)
+\end{align*}
+\end{corollary}
+
+\begin{corollary} For integers $n \ge 0$ we have the following relations
+\begin{align*}
+Q_2^n-\wc{Q}_2^n &= b_2 Q_2^{n+2}\\
+\wh{Q}_2^n-\wc{\wh{Q}}_2^n &= b_2 \wh{Q}_2^{n+2}\\
+x_2^2(Q_1^m-\wc{Q}_1^m) &=  b_2 (Q_1^m - Q_{1,2}^{m,1}x_1 - Q_{1,2}^{m,0})\\
+x_2^2(\wh{Q}_1^m-\wc{\wh{Q}}_1^m) &=  b_2 (\wh{Q}_1^m - \wh{Q}_{1,2}^{m,1}x_1 - \wh{Q}_{1,2}^{m,0})\\
+x_2^2(Q-\wc{Q}) &= b_2(Q-x_2Q_2^1-Q_2^0)\\
+x_2^2(\wh{Q}-\wc{\wh{Q}}) &= b_2(\wh{Q}-x_2\wh{Q}_2^1-\wh{Q}_2^0)
+\end{align*}
+\end{corollary}
+Every other equation is obtained from the previous one by either setting $a_1 = 1$ or $a_2 = 1$. Here we can hope to set some telescoping sum type of thing in order to say more about $Q_{1,2}^{0,0}$
+
+Now we can move onto the main result about the diagonal walks and it is that the function for labelled walks ending at $(0,0)$ is connected to the functions for semi-labelled and unlabelled walks endind at $(0,0)$. We can use the master equation to extract the $[x_1^0x_2^0]$ and $[x_1^1x_2^1]$ coefficients yielding the following two relations
+\begin{align*}
+\Qf{0,0} &= 1 + ta_1a_2 \Qf{1,1}\\
+\Qf{1,1} &= t(\Qf{0,0}+\Qf{2,0}+\Qf{0,2}+\Qf{2,2})
+\end{align*}
+We also have
+\begin{align*}
+b_1b_2\Qf{2,2} &= b_1(\Qf{2,0}-\wc{Q}_{1,2}^{2,0})\\
+&= b_1 \Qf{2,0} - b_1\wc{Q}_{1,2}^{2,0}\\
+&= \Qf{0,0}-\wh{Q}_{1,2}^{0,0}-\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0}
+\end{align*}
+together with
+\begin{align*}
+b_1b_2\Qf{2,0} &= b_2 \Qf{0,0} - b_2 \wh{Q}_{1,2}^{0,0}\\
+b_1b_2\Qf{0,2} &= b_1 \Qf{0,0} - b_1 \wc{Q}_{1,2}^{0,0}
+\end{align*}
+We we have
+\begin{align*}
+b_1b_2\Qf{1,1} &= t(b_1b_2\Qf{0,0}+b_1b_2\Qf{2,0}+b_1b_2\Qf{0,2}+b_1b_2\Qf{2,2})\\
+&= t(b_1b_2\Qf{0,0}+ b_2 \Qf{0,0} - b_2 \wh{Q}_{1,2}^{0,0}+ b_1 \Qf{0,0} - b_1 \wc{Q}_{1,2}^{0,0}+\Qf{0,0}-\wh{Q}_{1,2}^{0,0}-\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\\
+&= t((b_1b_2+b_1+b_2+1)\Qf{0,0}-(b_2+1)\wh{Q}_{1,2}^{0,0}-(b_1+1)\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\\
+&=t(a_1a_2\Qf{0,0}-a_2\wh{Q}_{1,2}^{0,0}-a_1\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})
+\end{align*}
+We can finally write
+\begin{align*}
+b_1b_2\Qf{0,0} &= b_1b_2 + ta_1a_2b_1b_2\Qf{1,1}\\
+& =  b_1b_2 + t^2a_1a_2(a_1a_2\Qf{0,0}-a_2\wh{Q}_{1,2}^{0,0}-a_1\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})
+\end{align*}
+Let $G(b_1,b_2)$ stand for $Q(0,0,b_1,b_2)$ and $G_i$ has $b_i = 0$. Then we can write it all as
+\[
+   b_1b_2 G = b_1b_2 + t^2a_1a_2(a_1a_2G-a_2G_1-a_1G_2+G_{1,2})
+\]
+or written as a linear combination
+\[
+   (b_1b_2-t^2a_1^2a_2^2)G+t^2a_1a_2^2G_1 + t^2a_1^2a_2G_2 - t^2a_1a_2G_{1,2} = b_1b_2
+\]
+We can divide out by $a_1a_2$ and obtain the equation
+\[
+    (c_1c_2-a_1a_2t^2)G + a_2t^2G_1+a_1t^2G_2-t^2G_{1,2}=c_1c_2
+\]
+from which we can read off
+\[
+	f(a_1,a_2,t) = c_1c_2-a_1a_2t^2
+\]
+and
+\[
+    G = \frac{(c_1c_2-t^2(a_2G_1+a_1G_2-G_{1,2})}{f(a_1,a_2,t)}
+\]
+together with $B(fG) = c_1c_2$
+Also, we can solve for $Q_i^j$ and friends, in terms of various $[b_k^l]$ extractions, so overall it should lead to a relationship of the form $B(FQ) = 0$.
+%=======================================
+\section{The almost-full model: missing steps E and W}
+%=======================================
+
+%=======================================
+\section{The full model: all steps available}
+%=======================================
+
+%=======================================
+\section{Conjectured relationships depending on $\Sf{-1,-1}$}
+%=======================================
+As we have seen whenever $\Sf{-1,-1} = 0$, $\alpha$ and $G$ tend to go together in the equations, so in the end we have a solution that depends on $\beta(G)$ multiplied by $G_1,G_2$ and/or $G_{1,2}$. In the end this leads to a rational function solution for $G$ in terms of $G_1, G_2$ and $G_{1,2}$. It's then easy to conjecture that this happens whenever we can have such an algebraic relationship. The other part of the conjecture is that we'd have a linear relationship between $G, G_1,G_2$ and $G_{1,2}$ when $\Sf{-1,-1} \neq 0$.
+
+\endinput
