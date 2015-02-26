@@ -8,139 +8,207 @@
 
 In this section we'll make our way towards the larger problem of higher-dimensional labelled walks. The methods will be similar to those in the section on the one-dimensional problem but their complexity will rise substantially. Without the operator notation even the derivation of the functional equation is quite laborious. It's probably worth mentioning that we found the derivation the hard way first before we discovered we can use operators to simplify the process. What once took about a dozen pages now takes a just few. In this section we'll explore the properties of the operators that interest us, showing when the commute, if they have inverses, what their eigenvalues and eigenvectors are and so on.
 
-%=======================================
-\section{Definitions}
-\label{sec:Definitions}
-%=======================================
-
-We'll work with many dimensions directly as that doesn't really change the situation very much. Let $d$ be the number of dimensions. A walk in $d$ dimensions is valid with respect to coordinate $x_i$ if it never steps on a point with negative $x_i$ coordinate. A walk in $d$ dimensions is valid if it is valid with respect to all $x_i$ coordinates, that is it remains in the non-negative orthant. Let
-\[
-	E_i = 1 - \ol{x}_i[\ol{x}_i]
-\]
-be the extraction operator with respect to $x_i$. Applying it on an expression like $SQ$ yields the generating function for $x_i$-valid walks. Similarly let 
-\[
-	L_i = 1 + b_i [x_i^0]
-\]
-be the labelling operator with respect to the $x_i = 0$ hyperplane. This operator labels walks that end on the $x_i = 0$ hyperplane with the label $a_i$. Let
-\[
-	M_i = 1 - c_i[x_i^0].
-\]
-We can call this operator the de-labelling operator because it is the inverse of $L_i$, which we'll show later. Let
-\[
-	B_i = 1 - [b_i^0].
-\]
-We don't have a name for this operator yet but we use it when trying to establish a relationship between labelled and unlabelled quantities. Maybe we can call it the relator? Next let
-\[
-	P = P_d \ldots P_1
-\]
-For any operator $P$, omitting the subscript will mean
-\[
-	P = P_d\ldots P_1
-\]
 
 %=======================================
-\section{Commutativity properties}
-\label{sec:CommProp}
+\section{Homogeneous Operators}
 %=======================================
 
-Firstly we have that if $i \neq 0$
+%=======================================
+\subsection{Single 1D Operators}
+%=======================================
+
+We start off with the observation that an extraction operator $E$ is just a labeling operator $L$ with label $a = 0$. In other words, we can combine the discussion for $E$ and $L$ by combining the operators into one definition. For integer $n$ and a number $a$ let
 \[
-	[x^i][x^k] = 0
+	\Gamma_n(a) = 1 + (a-1)x^n[x^n] = 1  + bx^n[x^n]
 \]
-Then
-\[
-	[x^i]x^j[x^k] = \delta_{i,j}[x^k]
-\]
-This helps establish the commutativity properties of all the operators we have so far $E_i, L_i, M_i, D_i, B_i$. In general, if we have operators $A$ and $B$ given by
-\[
-	A(x) = \sum_k A_k x^k[x^k],\quad B(x) = \sum_k B_k x^k[x^k]
-\]
-then
+The operators commute because
 \begin{align*}
-	A(x)B(x) &= \left(\sum_k A_k x^k[x^k]\right)\left(\sum_k B_k x^k[x^k]\right)\\
-	& = \sum_{i,j}A_ix^i[x^i]B_jx^j[x^j] \\
-	&= \sum_{i,j}A_iB_j x^i\delta_{i,j}[x^j]\\
-	&= \sum_k A_kB_k x^k[x^k]
+	\Gamma_n(a_1)\Gamma_m(a_2) &= 1  +b_1x^n[x^n]+b_2x^m[x^m] + b_1b_2x^n[x^n]x^m[x_m] \\
+						&= 1  +b_1x^n[x^n]+b_2x^m[x^m] + b_1b_2\delta_{n,m}x^n[x_n]\\
+						&= 1  +b_1x^n[x^n]+b_2x^m[x^m] + b_1b_2x^m[x^m]x^n[x_n]\\
+						&= \Gamma_m(a_2)\Gamma_n(a_1)
 \end{align*}
-We obtain the same result if we reverse $A$ and $B$, so they commute. Now
-\begin{align*}
-	A(x)B(y) &= \left(\sum_k A_k x^k[x^k]\right)\left(\sum_k B_k y^k[y^k]\right)\\
-	& = \sum_{i,j}A_ix^i[x^i]B_jy^j[y^j]\\
-	& = \sum_{i,j}A_iB_jx^iy^j[x^iy^j]\\
-	& = \sum_{i,j}B_jy^j[y^j]A_ix^i[x^i]\\
-	& = \left(\sum_k B_k y^k[y^k]\right)\left(\sum_k A_k x^k[x^k]\right)\\
-	&  = B(y)A(x)
-\end{align*}
-So they commute. Our operators are of the form $1 + A(x)$ so they will commute. In general, as long as each coefficient extraction is only doing things on the level of the power of $x$ they are extracting, the operators will commute. If there is some mixing we'll potentially not have commuting operators. This allows us to later create easy generalizations of the labelling problem so far.
-
-%=======================================
-\section{Kernels, eigenvalues and eigenfunctions}
-\label{sec:KernelStuff}
-%=======================================
-
-%=======================================
-\subsection{Operator $L$}
-\label{sec:OpL}
-%=======================================
-
-Operator $L$ is invertible with inverse $M$
-\begin{align*}
-	L M &= (1+b[x^0])(1-c[x^0]) \\
-	& = 1+b[x^0]-c[x^0]-b[x^0]c[x^0]\\
-	& = 1 + (b-c-bc)[x^0]\\
-	& = 1 + (a-1-1+\ol{a}-a+1+1-\ol{a})[x^0]\\
-	& = 1.
-\end{align*}
-As a bonus we see that it has a trivial kernel. Next, we'll determine its eigenvalues. We expand the equation $Lf = \lambda f$ to get
-\begin{align*}
-	Lf &= f + b f_0 = \lambda f\\
-	(1-\lambda)f &= -bf_0\\
-	f&=\frac{b f_0}{\lambda - 1}
-\end{align*}
-Therefore we determine that $f$ is a constant with respect to $x$. So the operator's eigenvalues are all real functions $\lambda(a,t) \neq 1$ the eigenfunctions are $f(x,a,t) = \alpha/(\lambda - 1)$. This is admitedly not a very interesting situation. What if $\lambda = 1$. Then any function $f$ that is non-zero at $x = 0$ will be an eigenfunction, that is functions of the form $f(x,a,t) = x g(x,a,t)$ where $g$ is finite at $x = 0$.
-
-%=======================================
-\subsection{Operator $E$}
-\label{sec:OpE}
-%=======================================
-
-We take $E = 1 - \ol{x} [\ol{x}]$. We have
+The third term disappears when $n \neq m$. Because of the commutativity we can write a product of such operators in any order we like. We'll usually write them in alphabetical order. Next, we'll find the eigenvalues and eigenfunctions for single operators. Suppose that for some function $u \neq 0$
 \[
-	0 = E(f) = f - \ol{x}f_{-1} = 0
+	\Gamma_n(a) u  = \lambda u
 \]
-which means that $f$ is in the kernel of $E$ if $f = c\ol{x}$ for some constant. This shows that $E$ itself is not invertible with kernel generated by $\ol{x}$. Next we determine the eigenvalues
+where $a \neq 1$ (which would make $\Gamma_n(a) = 1$, the identity operator). We can write $u = u_n x^n + v$ where $v$ has no $x^n$ term. Therefore we find
+\[
+	0 = \Gamma_n(a) u - \lambda u = au_nx^n + v - \lambda u_n x^n -\lambda v = (a-\lambda)u_n x^n + (1-\lambda)v
+\]
+We have two cases
+\begin{itemize}
+\item If $v = 0$ then $u_n \neq 0$ and $\lambda = a$. The eigenfunction is $x^n$.
+\item If $v \neq 0$ then $\lambda = 1$ and $u_n = 0$. Here every $x^k$ for $k\neq n$ is an eigenfunction.
+\end{itemize}
+This shouldn't be surprising because $\Gamma_n$ acts as the identity for most of the function except for one term which it multiplies by $a$. Because of this action of $\Gamma_n$ a repeated application of the operator leads to a power of $a$. In other words
+\[
+	\Gamma_n(a)^m = 1 + (a^m-1)x^n[x^n] = \Gamma_n(a^m)
+\]
+When $a \neq 0$ the operator is invertible with inverse
+\[
+	\Gamma_n^{-1}(a) = 1 - \left(1- \frac{1}{a}\right)x^n[x^n]
+\]
+When $a = 0$ the operator has a non-trivial kernel generated by $x^n$. Furthermore when $a = 0$ the operator is idempotent which is natural given that it just removes the $x^n$ term from the expression it is applied to.
+
+We can think of minimal polynomials too. For example $\Gamma_n(0)$ is non-trivial so its minimal polynomial is not $X$ or $X-1$. However since it's idempotent, its minimal polynomial must divide $X(X-1)$ and since it's neither of the factors it must be the minimal polynomial. On the other hand $\Gamma_n(a)$ for $a\neq 0$ does not have a minimal polynomial because the powers of $a$ are independent from each other.
+
+%=======================================
+\subsection{Compounded 1D Operators}
+%=======================================
+
+What about a composition of operators? Let $\Gamma = \Gamma_{n_1}(a_1)\ldots\Gamma_{n_m}(a_m)$ where the powers $n_i$ are distinct; otherwise treat any repetitions using commutativity and the identity $\Gamma_n(a)^m = \Gamma_n(a^m)$. Using induction with the identity above gives
+\[
+	\Gamma = 1 + b_1x^{n_1}[x^{n_1}]+\cdots + b_mx^{n_m}[x^m]
+\]
+Letting $u = u_{n_1}x^{n_1}+\cdots+ u_{n_m}x^{n_m} + v$ in the same way as the single operator case and going through the calculation shows that the eigenvalues of $\Gamma$ are
+\begin{itemize}
+\item $\lambda = a_i$ for $1\leq i \leq m$ with eigenfunction $x^{n_i}$.
+\item $\lambda = 1$ with eigenfunctions $x^m$ where $m \neq n_i$ for any $i$.
+\end{itemize}
+
+When one or more of the $a_i$'s is zero we have a non-trivial kernel
+\[
+	\ker(\Gamma) = \langle x^m | m = n_i, a_i = 0\rangle
+\]
+
+%=======================================
+\subsection{Multidimensional Operators}
+%=======================================
+Multidimensional operators are ones composed of one-dimensional operators (whether single or compounded) and they can also be considered compounded. For this section we'll use superscript notation
+\[
+	\Gamma_n^{(k)}(a) = \Gamma^{(k)} = 1 + b_{k}x_k^n[x_k^n]
+\]
+Operators working on different dimensions commute with each other
+\[
+	\Gamma_n^{(i)}\Gamma_m^{(j)} = 1  +b_ix_i^n[x_i^n]+b_jx_j^m[x_j^m] + b_ib_jx_i^nx_j^m[x_i^n x_j^m]= \Gamma_m^{(j)}\Gamma_n^{(i)}.
+\]
+This allows us to write a multidimensional operator in terms of its constituent pieces in whichever order we prefer. We are of course interested in finding eigenvalues and eigenfunctions for such operators. We could either find those with the same method as before or we could find it via induction.
+
+\begin{proposition} Let $\Gamma = \Gamma^{(1)}\ldots \Gamma^{(d)}$. Then the eigenvalues/eigenfunctions of $\Gamma$ are the products of eigenvalues/eigenfunctions of the individual $\Gamma^{(i)}$'s. In particular the eigenvalues are products of $a$'s and the corresponding eigenfunctions are products of corresponding powers of $x$'s. The eigenvalue 1 has all the "unseen" monomials as its eigenfunctions. The kernel of $\Gamma$ consists of multiples of monomials associated to $a$'s that are zero.
+\end{proposition}
+\begin{proof} (actually don't know if this will work. The alternative proof is long-winded). We proceed by induction on $d \ge 1$. When $d = 1$ the statement is trivially true. Assuming the statement is true for a collection of $d-1$ operators we consider $\Gamma = \Gamma^{(1)}\ldots \Gamma^{(d)} = \Gamma' \Gamma^{(d)}$.
+\end{proof}
+What is the kernel of $\Gamma$?
+
+%=======================================
+\section{Inhomogeneous Operators}
+%=======================================
+ We'll call an operator inhomogeneous if it consists of a homogeneous operator $\Gamma$ and a laurent polynomial (possible infinite) $G$ and and acts in one of the following ways
+ \[
+	\Gamma S(u) = \Gamma(Su)\quad\text{or}\quad S\Gamma u = S\cdot \Gamma u
+ \]
+This kind of operator is important because it features quite a bit in the funcitonal equations of random walk models. We seek to find the eigenpairs for  inhomogeneous operators. Our first task is to show that these operators are equivalent in how they work. Suppose that $(\lambda, u)$ is an eigenpair of $\Gamma S$. Let $v = Su$. Then we have
+\[
+	S\Gamma S u = S\Gamma S \frac{v}{S} = S\Gamma v = S\lambda u = S\lambda \frac{v}{S} = \lambda v
+\]
+Therefore $\Gamma S$ and $S\Gamma$ have the same eigenvalues. The eigenvectors of $\Gamma S$ as the same as those for $S \Gamma$ by divided by $S$. Now if we pick $\lambda = 0$ to find the kernels of the operators we find
+\[
+	S\ker(\Gamma S) = \ker (S\Gamma) = \ker(\Gamma)
+\]
+and thus
+\[
+	\ker(\Gamma S) = \ol{S} \ker(\Gamma)
+\]
+The functions in this kernel are specifically those of the kernel of $\Gamma$ but multiplied by $1/S$.
+
+%=======================================
+\subsection{Single 1D Operators}
+%=======================================
+Let $G$ and $u$ be given as
+\[
+	S = \sum_k S_k x^k,\quad u = \sum_k u_k x^k
+\]
+where $u$ is an eigenfunction of $\Gamma S$. We have
 \begin{align*}
-	Ef &= f - \ol{x} f_{-1} = \lambda f\\
-	(1-\lambda)f &= f_{-1}\ol{x}\\
-	f&=\frac{f_{-1}}{x(\lambda - 1)}
+	0&=(\Gamma S-\lambda I) u \\
+	&= \sum_{k\neq n} x^k \left(\sum_i S_i u_{k-i} - \lambda u_i\right) + x^n \left(a\sum_i S_i u_{n-i} -\lambda u_n\right)
 \end{align*}
-If $f_{-1} = 0$ then $E$ acts as the identity operator so the eigenvalue is $\lambda = 1$ for every such function. If $f_{-1} \neq 0$ then
+which leads to the system of equations
+\begin{align*}
+	\lambda u_n &= a\sum_i S_i u_{n-i}\\
+	\lambda u_k &= \sum_i S_i u_{k-i}, \quad \text{if } k \neq n
+\end{align*}
+The analysis is non-trivial even for a simple function $S$ like $S = x$. We have
+\begin{align*}
+	\lambda u_n &= a u_{n-1}\\
+	\lambda u_k &= u_{k-1}, \quad \text{if } k \neq n
+\end{align*}
+We have a doubly-infinite recursion so we can pick an arbitrary initial condition. If $u_n = 0$ the rest of the terms will be zero as well so we must have $u_n \neq 0$. Set $u_n = 1$. Then via induction we can find
+\begin{align*}
+	u_{n+k} &= 1/\lambda^{k}, \quad \text{for $k \ge 0$}\\
+	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}
+\end{align*}
+Computing $u(x)$ formally leads to
+\begin{align*}
+	u(x) &=  \sum_{k=1}^{\infty} u_{n-k}x^{n-k}+\sum_{k=0}^{\infty} u_{n+k}x^{n+k}\\
+	        &= x^n\sum_{k=1}^{\infty}\left(\frac{\lambda}{ax}\right)^k +  x^n\sum_{k=0}^{\infty} \left(\frac{x}{\lambda}\right)^k\\
+	        &= \frac{x^{n-1}x}{ax-\lambda}-\frac{x^n\lambda}{x-\lambda}\\
+	        &=\lambda x^n\left(\frac{1}{\lambda -x}- \frac{1}{\lambda - ax}\right)\\
+	        &=-\frac{\lambda b x^{n+1}}{(\lambda-x)(\lambda-ax)}
+\end{align*}
+
+We could also try using the other definition. Let $u = u_nx^n + v$ where $u$ is now an eigenfunction of $S\Gamma$. Let $S = S_0 + S'$. Then we have
+\begin{align*}
+	S\Gamma u &= (S_0+S')(au_nx^n+v) = \lambda(u_nx^n+v)\\
+	0&=(au_nS_0-\lambda u_n+\sum_{k\neq n}S_k u_{n-k})x^n  + au_nS'x^n+S'v-\lambda v 
+\end{align*}
+We find that for example
 \[
-	Ef = \frac{f_{-1}}{x(\lambda - 1)} - \frac{1}{x}\frac{f_{-1}}{(\lambda - 1)} = 0
+	(\lambda - a S_0)u_n = \sum_{k\neq n}S_k u_{n-k}
 \]
-so the eigenvalue must be 0. Therefore there is a splitting between the functions $E$ acts on. Those without an $\ol{x}$ are preserved with eigenvalue 1. Those who have an $\ol{x}$ and other terms are not preserved. Finally, if $f$ is just such a term, we have eigenvalue 0, of course.
+which doesn't seem to help much. 
 
 %=======================================
-\subsection{Operator $B$}
-\label{sec:OpB}
+\section{Random Walks Operator}
 %=======================================
-
-The situation here is analogous to the one for $L$ with a different variable and coefficient $-1$.
-
-%=======================================
-\subsection{Compounded operators}
-\label{sec:CompoundOps}
-%=======================================
-
-Our first example concerns $ES$. Since the kernel of $E$ is generated by $\ol{x}$ then a function $f$ is in the kernel of $ES$ if and only if $fS$ is in the kernel of $E$. That is, the kernel of $ES$ is generated by
+In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laurent polynomial $S$ and some random walk operator $\Gamma$. We haven't made it rigorous yet but $\mc{L}$ is invertible with inverse
 \[
-	f = \frac{c}{xS} = \frac{c}{S_{-1}+S_0 x + S_1 x^2}
+	\mc{L}^{-1} = \sum_{k=0}^{\infty}t^k(\Gamma S)^k
 \]
-This function can have various forms depending on which coefficients are zero.
+where $(\Gamma S)^k$ is an iteration of the inhomogeneous operator with $(\Gamma S)^0 = I$. However this inverse is not easy to use as the iteration become quite complicated due to the nature of the random walks. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$.Then we calculate
+\begin{align*}
+	(\mc{L}-\lambda I) u &= u - \lambda u -t\Gamma Su\\
+	t \Gamma S u &= (1-\lambda)u = \mu u
+\end{align*}
+If $\lambda = 1$ we seek to find the kernel of $\Gamma S$ which we did in a previous section. The eigenfunctions of $\mc{L}$ for eigenvalue $\lambda = 1$ are the functions $u \in \ol{S}\ker{\Gamma}$.
 
-Finally we should look at the invertibility and other properties of the operator $1-tLES$ or even $M-tES$. Okay this is difficult. I'll have to spend more time on this later.
-%=======================================
-\subsection{Operator $\mc{L} = 1- tLES$}
-\label{sec:OpEqn}
-%=======================================
+Next let $u$ be given by a finite order Laurent series
+\[
+	u = u_n t^n + u_{n+1}t^{n+1} + \ldots
+\]
+where $u_n \neq 0$. Then we can re-write the functional equation as
+\[
+	t^{-n}(1-t\Gamma S)u = \lambda t^{-n}u.
+\]
+Letting $t \to 0$ in this equation yields
+\[
+	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0.
+\]
+Since $u_n \neq 0$ this implies that $\lambda = 1$ and again we see that $u \in \ol{S}\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will indeed be finite order Laurent series. For the remainder of the analysis we assume that $\lambda \neq 1$. This excludes finite order Laurent series so $u$ is necessarily given by an infinite order Laurent series.
+
+Let's investigate how how $\del_t$ interacts with $\mc{L}$.
+\begin{align*}
+	\del_t \mc{L} &= \del_t - \del_t(t\Gamma S) = \del_t - \Gamma S- t\Gamma S\del_t = \mc{L}\del_t - \Gamma S\\
+	\del_t^2 \mc{L} &= \mc{L}\del_t^2 - 2\del_t \Gamma S\\
+	\del_t^n \mc{L} &=\mc{L} \del_t^n - n\del_t^{n-1}\Gamma S
+\end{align*}
+for integer $n$. Another way to write these is with bracket notation
+\[
+	[\mc{L},\del_t^n] = \mc{L}\del_t^n-\del_t^n\mc{L} = n\del_t^{n-1}\Gamma S
+\]
+A question that pops up is how does $u$ relate to its derivatives.
+\[
+	\del_t \mc{L} u = \mc{L}u'-\Gamma S u = \lambda u'
+\]
+However
+\[
+	\Gamma S u =\frac{\mu u}{t}
+\]
+from before so
+\[
+	\mc{L}u' = \lambda u' + \frac{\mu u}{t}
+\]
+
+
 \endinput
