@@ -1,0 +1,219 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+\chapter{Hexagonal Walks}
+\label{ch:Hex}
+
+%============================
+\section{Introduction}
+%============================
+
+We'll tackle the problem of random walks on a honey-comb lattice. This is an example of a problem set on a different topology. It's our first problem dealing with a random walk model where the direction in which you go depends on where you are on the lattice. It can be interpreted as a random walk model on the plane where we have two distinct step polynomials depending on where we are. Because of this the flavour of the problem will be quite different. However it shall serve as a good example of the use of operators. We start by embedding the honeycomb lattice in $\ze^2$ where the first hexagon has coordinates
+\[
+	\{(0,0),(1,1),(1,2),(0,0),(-1,2),(-1,1)\}
+\]
+and the rest of the lattice is obtained by tiling the plane with this hexagon. As before we let $Q$ be the generating function for the random walks on the lattice where $x,y$ keep track of the endpoint of a walk and $t$ keeps track of its length. Of course, off the lattice the terms will have zero coefficients. Out of thin air we create two operators $C_1$ and $C_2$, acting on $Q$, which pick out all the bottom and top corners of the hexagon tiles respectively. By picking out we mean that $C_1$ results in the partial generating function corresponding the the coordinates given in the two situations. The condition is that $C_1+C_2 = 1$ the identity. These two locations give two distinct possibilities for step sets so we'll give them their own step polynomials. Let's call their respective step polynomials $S_1$ and $S_2$ given by
+\[
+	S_1 = (x+\ol{x})y + \ol{y},\quad S_2 = (x+\ol{x})\ol{y}+y
+\]
+Now we can continue to create a functional equation for the hexagonal model. We perform an iteration. We start with the empty walk with generating function $Q = 1$. Then for every iterate of $Q$ we create the next iterate by taking the walks enumerated in $Q$ and extending them by one step. Since we have two situations we need to extend by different steps in each case. That is we start with $Q$, extract the $S_1$-centric walks with $C_1Q$ and then extend them by multiplying with $S_1$. The result is that the new $Q$ is given by
+\[
+	Q = 1 + t(S_1 C_1 + S_2 C_2)Q = 1 + t\Sigma Q.
+\]
+We can also write this in the operator format as
+\[
+	(1-t\Sigma) Q = 1
+\]
+We may wish to restrict the random walks to the quarter plane or in some other way. To do this we need to also use an extraction operator $E$ that removes those walks that stray out of the boundaries. Since each step is of size at most 1 we only need to remove those walks that step 1 unit outside of the boundaries and $E$ is then easy to write. The iteration and functional equation are given by
+\[
+	Q = 1 + tE(S_1 C_1 + S_2 C_2)Q = 1 + tE\Sigma Q
+\]
+\[
+	(1-tE\Sigma)Q = 1
+\]
+Of course we can also label the walks that interact with specific locations. We repeate the work with the extra operator $L$. In general we can use an operator $\Gamma$ to encapsulate everything extra that we do. It remains to find the actual operators $C_1$ and $C_2$.
+
+%============================
+\section{Operators}
+%============================
+
+Before we find the operators we need to find which points they need to act on. We can find all the lower vertices by starting with the hexagon with lower vertex $(0,0)$ and translating it along the lattice. It's not difficult to see that the lower vertices of these hexagons are those with coordinates $(m,n)$ where
+\begin{itemize}
+\item $m \equiv 0\pmod{2}$, $n\equiv 0 \pmod 4$
+\item $ m \equiv 1 \pmod 2$, $n \equiv 2 \pmod 4$
+\end{itemize}
+The upper vertices of these hexagons are the above coordinates translated by $(0,3)$ in the vertical direction. Those are the coordinates $(m,n)$ where
+\begin{itemize}
+\item $m \equiv 0\pmod{2}$, $n\equiv 3 \pmod 4$
+\item $ m \equiv 1 \pmod 2$, $n \equiv 1 \pmod 4$
+\end{itemize}
+This allows us to write the operators as
+\begin{align*}
+	C_1 &= \sum_{m,n}\ext{x^{2m} y^{4n}} + \sum_{m,n}\ext{x^{2m+1} y^{4n+2}}\\
+	C_2 &= \sum_{m,n}\ext{x^{2m+1} y^{4n+1}} + \sum_{m,n}\ext{x^{2m} y^{4n+3}}\\
+\end{align*}
+We can write these operators more succinctly by using the following conventions
+\begin{align*}
+	d_{j,k}(z) &= \sum_{m}\ext{z^{jm+k}}\\
+	D_{ij} &= d_{2,i}(x)d_{4,j}(y)\\
+	D &= D_{00}
+\end{align*}
+Note that
+\[
+	D_{ij} = x^iy^jD\ol{x}^i\ol{y}^j
+\]
+This allows us to write the operators $C_1$ and $C_2$ succinctly as
+\begin{align*}
+	C_1 &= D_{00} + D_{12} = D + xy^2D\ol{x}\ol{y}^2\\
+	C_2 &= D_{03}+ D_{11} = y^3 D \ol{y}^3 +  xyD\ol{x}\ol{y}
+\end{align*}
+The functional equation now reads
+\[
+	(1 - t(S_1(D_{00} + D_{12})+S_2(D_{03}+D_{11}))Q = 1
+\]
+and analogously we can append an operator $\Gamma$ to to the expression.
+
+%============================
+\section{Group Structure}
+%============================
+
+There are nicer ways to express these extractions without performing the extractions themselves. Let $k$ be a positive integer and $w_k = e^{2\pi i/k}$. Then it is a somewhat well-known result that we can extract the coefficient $0 \pmod k$ of $f(x)$ with the following summation
+\[
+	d_{k,0}(x)f(x) = \frac{1}{k}\sum_{j=0}^{k-1} f(w_k^j x).
+\]
+This establishes the concrete operator representations
+\begin{align*}
+	d_{2,0}(x)f(x) &= \frac{1}{2}(f(x) + f(-x))\\
+	d_{4,0}(y)f(y) &= \frac{1}{4}(f(y)+f(iy)+f(-y)+f(-iy))
+\end{align*}
+Using this definition in the functional equation would lead to a functional equation relating $Q(x,y)$ to functions $Q$ evaluated at different arguments like $(-x,y)$, $(x,iy)$, etc. This allows us to explore the group structure of the functional equation. To this end let $g: x \mapsto -x$ and $h: y \mapsto i y$ be the two commuting operations and the group of symmetries be
+\[
+	G \cong \langle g\rangle \times \langle h\rangle \cong \langle-1\rangle\times\langle i\rangle
+\]
+It remains to see how these group actions affect the various quantities in the problem. First we deal with $S_1$ and $S_2$ and then with the operators $D_{jk}$. This will allow us to find how the actions affect $\Sigma$ and the functional equation as a whole. First we have the actions of $g$
+\begin{align*}
+	gS_1 &= S_1^\ast = -(x+\ol{x})y+\ol{y}\\
+	gS_2 &= S_2^\ast = -(x+\ol{x})\ol{y} + y
+\end{align*}
+Then the actions of $h$
+\begin{align*}
+	hS_1 &= i(x+\ol{x})y-i\ol{y} = -igS_1 = -iS_1^\ast\\
+	hS_2 &= -i(x+\ol{x})\ol{y}+iy = igS_2 = iS_2^\ast
+\end{align*}
+These relatons allows us to complete the rest of the relations iteratively (maybe a multiplication table would be good here)
+\begin{align*}
+	hS_1 &=-iS_1^\ast,\quad h^2 S_1 = -S_1,\quad h^3 S_1 = i S_1^\ast\\
+	ghS_1 &=-iS_1, \quad gh^2 S_1 = -S_1^\ast,\quad gh^3 S_1 =- i S_1\\
+	hS_2&= iS_2^\ast,\quad h^2 S_2 = -S_2,\quad h^3 S_2 = i S_2^\ast\\
+	ghS_2 &= iS_2,\quad gh^2 S_2 = -S_2^\ast,\quad gh^3 S_2 = -i S_2\\
+\end{align*}
+Now $g$ acts on $D_{jk}$ in the following way
+\begin{align*}
+	g(D_{jk}f(x,y)) &= g\sum_{m,n}\ext{x^{2m+j}y^{4m+k}}f(x,y)\\
+			    &= \sum_{m,n}(-x)^{2m+j}y^{4m+k}f_{2m+j,4m+k}\\
+			    &=(-1)^jD_{jk}f(x,y).
+\end{align*}
+Similarly $h$ acts on $D_{jk}$ in the following way
+\[
+	h(D_jk f(x,y)) = i^k D_{jk} f(x,y).
+\]
+Or specifically
+\begin{align*}
+	g D_{00} &= D_{00},\quad gD_{11} = -D_{11},\quad g D_{03} = D_{03},\quad  g D_{12} = -D_{12}\\
+	h D_{00} &= D_{00},\quad hD_{11} = iD_{11},\quad h D_{03} =-i D_{03},\quad  h D_{12} = -D_{12}\\
+\end{align*}
+We can now move on to finding the actions on the operator $\Sigma$. To spare some of the work it is enough to find the actions $1,gh,h^2$ and $gh^3$ since we'll have only 4 independent relations on the operators. Let 
+\[
+	A = S_1(D_{00} + D_{12}),\quad B = S_2(D_{11}+D_{03})
+\]
+Then
+\begin{align*}
+	\Sigma &= B+ A ,\quad gh\Sigma = B-iA\\
+	h^2\Sigma &= B - A ,\quad gh^3\Sigma =B+ iA
+\end{align*}
+We have
+\[
+	(1+h^2)\Sigma = gh(1+h^2)\Sigma = 2 B
+\]
+and
+\[
+	(1-h^2)\Sigma = igh(1-h^2) = 2A
+\]
+By using these eliminations we can write new forms of the functional equation. We have
+\[
+	\frac{1}{2}(1+h^2)(1-t\Sigma)Q = \left(\frac{1}{2}(1+h^2)-tB\right)Q
+\]
+and
+\[
+	\frac{1}{2}(1+h^2)(1) = \frac{1}{2}2 = 1
+\]
+so the functional equation is
+\[
+	\left(\frac{1}{2}(1+h^2)-tS_2(D_{11}+D_{03})\right)Q = 1
+\]
+Repeating the analysis with the other relations yields
+\[
+	\left(\frac{1}{2}(1-h^2)-tS_1(D_{00}+D_{12})\right)Q = 0
+\]
+The relations allow us to write two different representations of $\Sigma$
+\[
+2\Sigma = ((1+h^2) + igh(1-h^2))\Sigma =( (1-h^2)+gh(1+h^2))\Sigma
+\]
+Or in other words
+\begin{align*}
+	(1-h^2-igh(1-h^2))\Sigma = (1-h^2)(1-igh)\Sigma &= 0\\
+	(1+h^2-gh(1+h^2))\Sigma = (1+h^2)(1-gh)\Sigma &= 0
+\end{align*}
+We can use these on the functional equation to kill $\Sigma$
+\begin{align*}
+	(1-h^2)(1-igh)(1-t\Sigma)Q = (1-h^2)(1-igh)Q &= 0 = (1-h^2)(1-igh)1\\
+	 (1+h^2)(1-gh)(1-t\Sigma)Q = (1+h^2)(1-gh)Q &= 0 =  (1+h^2)(1-gh)1
+\end{align*}
+Finally we can write the two relations as
+\[
+	(1-h^2)(1-igh)Q = (1+h^2)(1-gh)Q = 0
+\]
+It is worth mentioning that $(1-h^2)Q\neq 0$ and so on. If we use the series definition for $Q$ here we find that these relations are saying nothing more than the fact that the terms of $Q$ corresponding to the "holes" inside the hexagons are zero.
+
+%============================
+\section{Finding the generating function $Q$}
+%============================
+
+Note that
+\begin{align*}
+	\frac{1}{2}(1+h^2)Q(x,y) = \frac{1}{2}(Q(x,y)+Q(x,-y)) &= C_1 Q\\
+	\frac{1}{2}(1-h^2)Q(x,y) =  \frac{1}{2}(Q(x,y)-Q(x,-y)) &= C_2 Q
+\end{align*}
+where the latter equalities follow since we are dealing with the even and odd $y$ parts of $Q$ respectively, which cover conditions $C_1$ and $C_2$. We can re-write the two functional equations from the previous section as
+\begin{align*}
+	C_1Q-tS_2C_2 Q &= 1\\
+	C_2Q-tS_1C_1Q &= 0
+\end{align*}
+This is a linear system in the quantities $C_1Q$ and $C_2 Q$. The associated determinant is $1-t^2S_1S_2 \neq 0$ so we find the unique solution to be
+\[
+	C_1Q = \frac{1}{1-t^2S_1S_2},\quad C_2Q = \frac{t S_1}{1-t^2 S_1S_2}
+\]
+Finally
+\[
+	Q = C_1 Q + C_2 Q = \frac{1+tS_1}{1-t^2 S_1S_2} = \sum_{k=0}^{\infty} t^{2k} S_1^k S_2^k +\sum_{k=0}^{\infty} t^{2k+1} S_1^{k+1} S_2^k
+\]
+An expanded version of $Q$ is
+\[
+	Q(x,y;t) = \frac{x^2y^2+txy(x+y^2+x^2y^2)}{x^2y^2-t^2(1+x^2+xy^2)(x+y^2+x^2y^2)}
+\]
+An alternative solution is using the properties of $\Sigma = \Sigma_1+\Sigma_2$ itself. First note that
+\[
+	\Sigma_1^2 = \Sigma_2^2 = 0
+\]
+for any input because the first application of $\Sigma_i$ takes a function and using $C_i$ outputs monomials that conform to $C_i$. However then we multiply these by $S_i$ which makes them no longer conform to $C_i$. The result follows. Therefore $\Sigma^k$ consists of of a sum of $k$-letter words on $\Sigma_1$ and $\Sigma_2$ without consecutive appearances. There are only two such sequences - one starting with $\Sigma_1$ and the other with $\Sigma_2$. Also $\Sigma_1 (1) = S_1$ but $\Sigma_2 (1) = 0$. Therefore
+\begin{align*}
+	Q &= \sum_{k=0}^{\infty} t^k \Sigma^k(1) = \\
+	   & = \sum_{k=0}^{\infty} t^{2k} ((\Sigma_1\Sigma_2)^k(1+t\Sigma_1)+(\Sigma_2\Sigma_1)^k(1+t\Sigma_2))(1)\\
+	   & = \sum_{k=0}^{\infty} t^{2k} ((\Sigma_1\Sigma_2)^kt\Sigma_1+(\Sigma_2\Sigma_1)^k)(1)\\
+\end{align*}
+and through some more manipulation we can get
+\[
+	Q=\sum_{k=0}^{\infty}t^{2k}(1+tS_1)(\Sigma_2\Sigma_1)^k(1) = (1+tS_1)\sum_{k=0}^{\infty}t^{2k}(S_1S_2)^k
+\]
+and the result follows.
+\endinput
