@@ -1,10 +1,10 @@
 \contentsline {chapter}{Abstract}{ii}{chapter*.1}
 \contentsline {chapter}{Preface}{iii}{chapter*.2}
 \contentsline {chapter}{Table of Contents}{iv}{chapter*.3}
-\contentsline {chapter}{List of Tables}{vii}{chapter*.4}
-\contentsline {chapter}{List of Figures}{viii}{chapter*.5}
-\contentsline {chapter}{Glossary}{ix}{chapter*.6}
-\contentsline {chapter}{Acknowledgments}{x}{chapter*.7}
+\contentsline {chapter}{List of Tables}{viii}{chapter*.4}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.5}
+\contentsline {chapter}{Glossary}{x}{chapter*.6}
+\contentsline {chapter}{Acknowledgments}{xi}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Introduction to Methods - 1D random walks}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Derivation of the functional equation}{3}{section.2.1}
@@ -20,55 +20,60 @@
 \contentsline {section}{\numberline {3.2}Inhomogeneous Operators}{18}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Single 1D Operators}{19}{subsection.3.2.1}
 \contentsline {section}{\numberline {3.3}Random Walks Operator}{20}{section.3.3}
-\contentsline {chapter}{\numberline {4}Unlabeled Walks}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Interactions with Operators}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Orbit Sums Notation}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Infinite Group Formulations}{23}{section.4.3}
-\contentsline {chapter}{\numberline {5}Higher-dimensional labelled walks}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Using Operators to Derive the Functional Equation}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}Generalizations to the functional equation}{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}Coefficient Extraction}{28}{section.5.3}
-\contentsline {section}{\numberline {5.4}Further functional equations}{30}{section.5.4}
-\contentsline {section}{\numberline {5.5}Using the formal inverse for iteration}{32}{section.5.5}
-\contentsline {chapter}{\numberline {6}Other Flavoured Walks}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Walks with other constraints}{33}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Regional Constraints}{33}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Labeling Special Locations}{35}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Self-avoiding walks}{36}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Eigenpairs}{38}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Generalizations}{39}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Other exotic walks}{40}{section.6.3}
-\contentsline {section}{\numberline {6.4}Reformulations of Problems}{40}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Using labeling operators instead of extraction operators}{40}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Considering a symmetrical super-problem}{40}{subsection.6.4.2}
-\contentsline {chapter}{\numberline {7}Hexagonal Walks}{41}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introduction}{41}{section.7.1}
-\contentsline {section}{\numberline {7.2}Operators}{43}{section.7.2}
-\contentsline {section}{\numberline {7.3}Group Structure}{44}{section.7.3}
-\contentsline {section}{\numberline {7.4}Finding the generating function $Q$}{47}{section.7.4}
-\contentsline {chapter}{\numberline {8}Specializing to 2 dimensions}{50}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{50}{section.8.1}
-\contentsline {section}{\numberline {8.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{51}{section.8.2}
-\contentsline {section}{\numberline {8.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{52}{section.8.3}
-\contentsline {section}{\numberline {8.4}Simple case: Factoring $S$ into a product}{53}{section.8.4}
-\contentsline {section}{\numberline {8.5}Kernel Group Considerations}{55}{section.8.5}
-\contentsline {section}{\numberline {8.6}Solving basic 2D models}{58}{section.8.6}
-\contentsline {subsection}{\numberline {8.6.1}Cases 1.1, 1.2, 1.3}{58}{subsection.8.6.1}
-\contentsline {subsection}{\numberline {8.6.2}Case 2.2 - group of order 1}{59}{subsection.8.6.2}
-\contentsline {subsection}{\numberline {8.6.3}Case 2.3 - group of order 2}{61}{subsection.8.6.3}
-\contentsline {chapter}{\numberline {9}Highly-symmetric 2D models}{63}{chapter.9}
-\contentsline {section}{\numberline {9.1}Cartesian model: steps N, S, E, W}{65}{section.9.1}
-\contentsline {section}{\numberline {9.2}Diagonal model: steps NE, NW, SE, SW}{68}{section.9.2}
-\contentsline {section}{\numberline {9.3}The almost-full model: missing steps E and W}{76}{section.9.3}
-\contentsline {section}{\numberline {9.4}The full model: all steps available}{76}{section.9.4}
-\contentsline {section}{\numberline {9.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{76}{section.9.5}
-\contentsline {chapter}{\numberline {10}Higher Group Orders - 4, 6 and 8}{77}{chapter.10}
-\contentsline {section}{\numberline {10.1}Nonsymmetric group of order 4}{77}{section.10.1}
-\contentsline {section}{\numberline {10.2}Group of order 6}{77}{section.10.2}
-\contentsline {section}{\numberline {10.3}Group of order 8}{77}{section.10.3}
-\contentsline {chapter}{\numberline {11}Epilogue}{78}{chapter.11}
-\contentsline {section}{\numberline {11.1}Discussion}{78}{section.11.1}
-\contentsline {section}{\numberline {11.2}Future Work}{78}{section.11.2}
-\contentsline {section}{\numberline {11.3}Conclusion}{78}{section.11.3}
-\contentsline {chapter}{\numberline {12}Miscellaneous Things}{79}{chapter.12}
-\contentsline {chapter}{\numberline {A}Supporting Materials}{82}{appendix.A}
+\contentsline {chapter}{\numberline {4}Higher-dimensional labelled walks}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Using Operators to Derive the Functional Equation}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Generalizations to the functional equation}{25}{section.4.2}
+\contentsline {section}{\numberline {4.3}Coefficient Extraction}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Further functional equations}{29}{section.4.4}
+\contentsline {section}{\numberline {4.5}Using the formal inverse for iteration}{31}{section.4.5}
+\contentsline {chapter}{\numberline {5}Other Flavoured Walks}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}Walks with other constraints}{32}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Regional Constraints}{32}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Labeling Special Locations}{34}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Self-avoiding walks}{35}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Eigenpairs}{37}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Generalizations}{38}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Other exotic walks}{39}{section.5.3}
+\contentsline {section}{\numberline {5.4}Reformulations of Problems}{39}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Using labeling operators instead of extraction operators}{39}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Considering a symmetrical super-problem}{39}{subsection.5.4.2}
+\contentsline {chapter}{\numberline {6}Hexagonal Walks}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{40}{section.6.1}
+\contentsline {section}{\numberline {6.2}Operators}{42}{section.6.2}
+\contentsline {section}{\numberline {6.3}Group Structure}{43}{section.6.3}
+\contentsline {section}{\numberline {6.4}Finding the generating function $Q$}{46}{section.6.4}
+\contentsline {chapter}{\numberline {7}Groups for walks with small steps}{49}{chapter.7}
+\contentsline {section}{\numberline {7.1}Coxeter Groups}{50}{section.7.1}
+\contentsline {section}{\numberline {7.2}Orbit Sums and Kernel Method}{52}{section.7.2}
+\contentsline {section}{\numberline {7.3}Half-Orbit Sums}{54}{section.7.3}
+\contentsline {section}{\numberline {7.4}Infinite Group Orbits}{55}{section.7.4}
+\contentsline {chapter}{\numberline {8}Specializing to 2 dimensions}{56}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{56}{section.8.1}
+\contentsline {section}{\numberline {8.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{57}{section.8.2}
+\contentsline {section}{\numberline {8.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{58}{section.8.3}
+\contentsline {section}{\numberline {8.4}Simple case: Factoring $S$ into a product}{59}{section.8.4}
+\contentsline {section}{\numberline {8.5}Kernel Group Considerations}{61}{section.8.5}
+\contentsline {section}{\numberline {8.6}Solving basic 2D models}{64}{section.8.6}
+\contentsline {subsection}{\numberline {8.6.1}Cases 1.1, 1.2, 1.3}{64}{subsection.8.6.1}
+\contentsline {subsection}{\numberline {8.6.2}Case 2.2 - group of order 1}{65}{subsection.8.6.2}
+\contentsline {subsection}{\numberline {8.6.3}Case 2.3 - group of order 2}{67}{subsection.8.6.3}
+\contentsline {chapter}{\numberline {9}Orbit Summation for Walks with Interactions}{69}{chapter.9}
+\contentsline {section}{\numberline {9.1}Group of order 4}{69}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}When is $\qopname \relax m{det}M_4 = 0$}{71}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}Using the Orbit Summation Method}{73}{subsection.9.1.2}
+\contentsline {chapter}{\numberline {10}Highly-symmetric 2D models}{74}{chapter.10}
+\contentsline {section}{\numberline {10.1}Cartesian model: steps N, S, E, W}{76}{section.10.1}
+\contentsline {section}{\numberline {10.2}Diagonal model: steps NE, NW, SE, SW}{79}{section.10.2}
+\contentsline {section}{\numberline {10.3}The almost-full model: missing steps E and W}{87}{section.10.3}
+\contentsline {section}{\numberline {10.4}The full model: all steps available}{87}{section.10.4}
+\contentsline {section}{\numberline {10.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{87}{section.10.5}
+\contentsline {chapter}{\numberline {11}Higher Group Orders - 4, 6 and 8}{88}{chapter.11}
+\contentsline {section}{\numberline {11.1}Nonsymmetric group of order 4}{88}{section.11.1}
+\contentsline {section}{\numberline {11.2}Group of order 6}{88}{section.11.2}
+\contentsline {section}{\numberline {11.3}Group of order 8}{88}{section.11.3}
+\contentsline {chapter}{\numberline {12}Epilogue}{89}{chapter.12}
+\contentsline {section}{\numberline {12.1}Discussion}{89}{section.12.1}
+\contentsline {section}{\numberline {12.2}Future Work}{89}{section.12.2}
+\contentsline {section}{\numberline {12.3}Conclusion}{89}{section.12.3}
+\contentsline {chapter}{\numberline {13}Miscellaneous Things}{90}{chapter.13}
+\contentsline {chapter}{\numberline {A}Supporting Materials}{93}{appendix.A}

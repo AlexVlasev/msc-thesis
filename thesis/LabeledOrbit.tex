@@ -1,0 +1,117 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+%====================================
+\chapter{Orbit Summation for Walks with Interactions}
+%====================================
+
+The orbit summation method works well with unlabeled walk models with finite groups. It is a natural question to consider extending it to the labeled walk models. The problem is that it is no longer easy to eliminate the unknown functions. The functional equation in two dimensions is
+\[
+	KQ  - K_1 Q_1^0 -  K_2 Q_2^0 + K_{1,2}Q_{1,2}^{0,0} = \alpha
+\]
+The group $G = G_S$ has two non-trivial generators $g_1$ and $g_2$ and $G$ has order 4, 6 or 8. We have the orbit summation operator $D_G$ which interprets the orbit summation method as an alternating sum of group actions.
+%====================================
+\section{Group of order 4}
+%====================================
+From a previous section we found that
+\[
+	D_G = 1-g_1-g_2+g_1g_2 = (1-g_1)(1-g_2) = \Delta_1\Delta_2
+\]
+where we define $\Delta_i = 1- g_i$. In the unlabeled orbit summation method we had a direct application of $D_G$ on the equations to perform the required cancellations. Here we will attempt to do something similar. Since the cancellations don't happen automatically if we use $D_G$ directly, we'll instead obtain a linear system of equations by applying the group operations on the original functional equation. Then we'll use linear algebra to find a solution where our variables will be the ones we wish to eliminate $Q_i^0$ and their images under the group actions. If the associated matrix has non-zero determinant we have a unique solution and unfortunately we won't be able to eliminate variables. However there are some cases where the determinant will be zero. Because of symmetry we expect to be able eliminate the desired variables. The group operations commute so we have
+\[
+	g_i Q_i^0 = Q_i^0,\quad g_ig_j Q_i^0 = g_j Q_i^0
+\]
+and therefore we have the variables that we wish to eliminate
+\[
+	E = \{Q_1^0,Q_2^0,g_2Q_1^0,g_1Q_2^0\}.
+\]
+This is looking promising since we have four equations and four unknowns that we wish to eliminate. We re-write the original equation in a format centered on these variables
+\[
+	 K_1 Q_1^0 +  K_2 Q_2^0 = KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha = \beta
+\]
+For brevity let $g_{12} = g_1g_2$
+\begin{align*}
+	 K_1 Q_1^0 +  K_2 Q_2^0 &= \beta\\
+	 g_1K_1 Q_1^0 + g_1K_2 g_1Q_2^0 &= g_1\beta = \beta_1\\
+	 g_2K_1 g_2Q_2^0 + g_2K_2 Q_2^0 &= g_2\beta = \beta_2\\
+	 g_{12}K_1 g_2Q_1^0 + g_{12}K_2 g_1Q_2^0 &= g_{12}\beta = \beta_{12}\\
+\end{align*}
+Using the displayed order of variables in $E$ as our order for the system we can write the associated matrix $M$ as
+\[
+	M_4 = \begin{bmatrix}
+	K_1 & K_2 & 0 & 0 \\
+	g_1 K_1 & 0 & 0 & g_1 K_2\\
+	0 & g_2 K_2 & g_2 K_1 & 0\\
+	0 & 0 & g_{12}K_1 & g_{12} K_2
+	\end{bmatrix}
+\]
+Its determinant is
+\begin{align*}
+	\det M_4 &= K_1 g_{12}K_1 g_1K_2g_2K_2 -g_1K_1g_2K_1K_2g_{12}K_2\\
+	& = K_1 g_{12}K_1 g_1K_2g_2K_2  -g_1(g_1K_1g_{12}K_1g_1K_2g_{2}K_2)\\
+	&=\Delta_1  (K_1 g_{12}K_1 g_1K_2g_2K_2)\\
+	&=\Delta_2 (g_1 K_1 g_2 K_1K_2 g_{12} K_2 )
+\end{align*}
+where the last form comes from doing the process in the same way but with $g_2$ instead.
+
+%====================================
+\subsection{When is $\det M_4 = 0$}
+%====================================
+
+  Now our task is to find where this determinant is zero. Clearly the expression withing each $\Delta$ must be in the kernel of the operator. To that end let's find when that happens. For a Laurent polynomial $f$ in the variables $x_i$ and $t$ we have
+\[
+	\Delta_k f = \sum_n f_n (1-g_k)x_k^n = \sum_n (f_n - f_{-n}\mu_k^{-n})x_i^n
+\]
+where $\mu_k = S_k^{-1}/S_k^1$. This implies that
+\begin{align*}
+	f_{n} &= f_{-n} \mu_k^{-n}\\
+	f_{n} (S_k^1)^n &= f_{-n}(S_k^{-1})^n
+\end{align*}
+for all $n \in \ze$. It's not clear if this will help us. However the models that exhibit groups of order 4 have at least one symmetry across a line - either vertical or horizontal symmetry. WLOG let the model have vertical symmetry. That is 
+\[
+	g_1(x_1) = x_1, \quad g_1(S_2^i) = S_2^i,\quad g_1(S_1^i) = S_1^{-i}
+\]
+This allows us to compute some things. For example
+\begin{align*}
+	g_1 K_2 &= c_2 - t\ol{x}_2 g_1S_2^{-1} = c_2 - t\ol{x}_2 S_2^{-1} = K_2
+	g_1g_2K_2 = g_2 g_1 K_2 = g_2
+\end{align*}
+Therefore $\Delta_1$ fixes both $K_2$ and $g_2K_2$.
+We see that the determinant is
+\[
+	\det M_4 = \Delta_1  (K_1K_2 g_{12}K_1 g_2K_2) = K_2 g_2K_2 \Delta_1  (K_1 g_{12}K_1)
+\]
+This is zero if and only if $\Delta_1  (K_1 g_{12}K_1) = 0$ so we have
+\begin{align*}
+	0&=\Delta_1  (K_1 g_{12}K_1) \\
+	&= K_1g_{12}K_1 - g_1 K_1 g_2 K_2 \\
+	&= (c_1-t\ol{x_1}S_1^{-1})(c_1-tx_1g_2S_1^{-1})-(c_1-tx_1S_1^{-1})(c_1-t\ol{x_1}g_2S_1^{-1})\\
+	&= c_1 t \ol{x}_1 (g_2 S_2^{-1} - S_2^{-1}) - c_1 t x_1 (g_2 S_2^{-1} - S_2^{-1})\\
+	&= c_1 t (\ol{x}_1-x_1)(g_2 S_1^{-1}-S_1^{-1})\\
+	& = -c_1 t(\ol{x}_1-x_1)\Delta_2(S_1^{-1})
+\end{align*}
+This is true if and only if
+\[
+	g_2 S_1^{-1} = S_1^{-1}
+\]
+We have
+\[
+	g_2 (\Sf{-1,-1}\ol{x}_2+\Sf{-1,0}+\Sf{-1,1}x_2) = \Sf{-1,-1}x_2 \ol{\mu}_2+\Sf{-1,0}+\Sf{-1,1}\ol{x}_2\mu_2
+\]
+and
+\[
+	\Sf{-1,-1}x_2 \ol{\mu}_2+\Sf{-1,1}\ol{x}_2\mu_2 = \Sf{-1,-1}\ol{x}_2+\Sf{-1,1}x_2
+\]
+which can be re-written succinctly as
+\[
+	\Sf{-1,-1} = \mu_2 S_{-1,1}
+\]
+If one of the $S$'s is zero so is the other and therefore by symmetry the model doesn't have diagonal steps. Since we have two non-trivial generators this implies that both $x_2$ and $\ol{x}_2$ are present in $S$, so the model trivially exhibits a symmetry about the $x_1$ axis. If the $S$'s are non-zero this implies $\mu_2$ is a constant and therefore $S_2^{-1} = S_2^1$. Again the model exhibits symmetry about the $x_1$ axis. This leads to a theorem of sorts. The determinant of $M_4$ is zero if and only if the model is highly-symmetric. These are the only cases where we have hope that the orbit summation method will extend to the labeled cases. Note that in the unlabeled case $c_1,c_2 = 0$ so the analysis yields a zero determinant in any group 4 case, confirming that we can use the orbit summation method.
+
+%====================================
+\subsection{Using the Orbit Summation Method}
+%====================================
+
+We are now ready to attempt using the orbit summation method in the highly symmetric cases. There are 8 such models but only 5 of them have dimension 2. Furthermore 2 of the models are reflections of each other so we are really left with 4 interesting cases - diagonal walks, full walks, full walks minus two horizontal steps.
+
+\endinput

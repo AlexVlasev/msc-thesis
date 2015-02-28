@@ -14,6 +14,7 @@ Random walk models with additional constraints are handled naturally via the ope
 \subsection{Regional Constraints}
 %================================
 
+(change this a bit. It's not so simple).
 To find the generating function for random walks confined within a region $D$ all we need to do is take all walks and remove those that venture outside of $D$. This cannot be done with the final form of the each random walk because it doesn't have memory. However we can do this as an iterative process. We grow random walks from within the region $D$ and once a walk ventures outside of $D$ we snip it using an operator $E$. By growing all random walks one step at a time and removing all those that venture outside of $D$ we will be left with only those that remain within at all times. It is not difficult to find what $E$ should be. Suppose we have the boundary $\del D$ on the integer lattice. We are allowed to have walks step on the boundary but not beyond it. Given a specific step set $S$ we can start with a generating function $B$ for step 0 walks originating on the boundary (basically the coordinates of $\del B$) and iterate by one step, that is, compute the product $SB$. We only keep the terms in this product that are outside of the boundary that is $B_0 = SB \cap D^c$ in terms of monomials. Then we can write the extraction operator as simple coefficient extraction featuring the terms in $B_0$. That is
 \[
 	E_0 = 1 - \sum_{e \in B_0} e[e]
