@@ -6,57 +6,57 @@
 %=======================================
 
 If we could prove the validity of one of the functional equations in the corollaries (5th row in each corollary) we would then be able to extract coefficients and obtain the formulas in the first corollary. However, since we have a direct proof already, this section is kind of irrelevant now. We'll just keep it for now because it has some interesting math. The steps from now on are almost exactly the same as those that you'd have to do to prove the Dyck path formula. We'll prove the last one involving a $b_1$ coefficient. First we have
-\begin{align*}
+\begin{align}
    K &= 1 - tS = 1 - t(x_1+\ol{x_1})(x_2+\ol{x_2})\\
    K_1 &= c_1 - t \ol{x_1} S_1^{-1} = c_1 + \wh{K}_1\\
    K_2 &= c_2 - t \ol{x_2} S_2^{-1}\\
    K_{1,2} &= c_1c_2 - t\ol{x_1x_2} = c_1c_2+\wh{K}_{1,2}
-\end{align*}
+\end{align}
 We also need the coefficient extractions
-\begin{align*}[x_1^0]:&\quad Q_1^0 - c_2Q_{1,2}^{0,0}-ta_1S_1^{-1}Q_1^1 =\ol{a_2}\\
+\begin{align}[x_1^0]:&\quad Q_1^0 - c_2Q_{1,2}^{0,0}-ta_1S_1^{-1}Q_1^1 =\ol{a_2}\\
 [x_1^0]: &Q_1^1-tS_1^{-1}Q_1^2-tS_1^{-1}Q_1^0+ t \ol{x_2}Q_{1,2}^{2,0}+t\ol{x_2}Q_{1,2}^{0,0} = 0\\
                 &-t\ol{x_1}S_1^{-1}Q_1^2+t\ol{x_1x_2}Q_{1,2}^{2,0} = t\ol{x_1}S_1^{-1}Q_1^0-t\ol{x_1x_2}Q_{1,2}^{0,0}-\ol{x_1}Q_1^1
-\end{align*}
+\end{align}
 which we'll use soon. We first start with
-\begin{align*}
+\begin{align}
 KQ &= K_1Q_1^0 + K_2 Q_2^0-K_{1,2}Q_{1,2}^{0,0} + \ol{a_1a_2}\\ 
       &= (c_1+\wh{K}_1)Q_1^0 + K_2 Q_2^0-(c_1c_2+\wh{K}_{1,2})Q_{1,2}^{0,0} + \ol{a_1a_2}\\
 K\wh{Q} &=\wh{K}_1\wh{Q}_1^0 + K_2 \wh{Q}_2^0-\wh{K}_{1,2}\wh{Q}_{1,2}^{0,0} + \ol{a_2}
-\end{align*}
+\end{align}
 Then we have
-\begin{align*}
+\begin{align}
 KQ-K\wh{Q} &= \wh{K}_1(Q_1^0-\wh{Q}_1^0)+\wh{K}_2(Q_2^0-\wh{Q}_2^0)-\wh{K}_{1,2}(Q_{1,2}^{0,0}-\wh{Q}_{1,2}^{0,0})+(c_1Q_1^0-c_1c_2Q_{1,2}^{0,0}+\ol{a_1a_2}-\ol{a_2})\\
                      &=\wh{K}_1(Q_1^0-\wh{Q}_1^0)+\wh{K}_2(Q_2^0-\wh{Q}_2^0)-\wh{K}_{1,2}(Q_{1,2}^{0,0}-\wh{Q}_{1,2}^{0,0}) + tb_1S_1^{-1}Q_1^1
-\end{align*}
+\end{align}
 Also
-\begin{align*}
+\begin{align}
  \wh{K}_1(Q_1^0-\wh{Q}_1^0) -\wh{K}_{1,2}(Q_{1,2}^{0,0}-\wh{Q}_{1,2}^{0,0})=&\wh{K}_1b_1Q_1^2-\wh{K}_{1,2}b_1Q_{1,2}^{2,0}\\
 =&b_1(\wh{K}_1Q_1^2-\wh{K}_{1,2}Q_{1,2}^{0,0}\\
 =&b_1(-t\ol{x_1}S_1^{-1}Q_1^2+t\ol{x_1x_2}Q_{1,2}^{2,0}) \\
 =&b_1(t\ol{x_1}S_1^{-1}Q_1^0-t\ol{x_1x_2}Q_{1,2}^{0,0}-\ol{x_1}Q_1^1)
-\end{align*}
+\end{align}
 Next
-\begin{align*}
+\begin{align}
 K_2(Q_2^0-\wh{Q}_2^0) &=(c_2 -t\ol{x_1}^2S_2^{-1})\ol{x_2}b_1(Q_2^0-Q_{1,2}^{0,0})\\ 
                                                      &=-t\ol{x_1}^2\ol{x_2}b_1S_2^{-1}(Q_2^0-Q_{1,2}^{0,0})+c_2b_1\ol{x_1}^2(Q_2^0-Q_{1,2}^{0,0})
-\end{align*}
+\end{align}
 We can finally combine these expressions into
-\begin{align*}
+\begin{align}
 x_1^2(KQ-K\wh{Q}) = b_1x_1^2(tS_1^{-1}Q_1^1+t\ol{x_1}S_1^{-1}Q_1^0-t\ol{x_1x_2}Q_{1,2}^{0,0}-\ol{x_1}Q_1^1-t\ol{x_1}^2\ol{x_2}S_2^{-1}(Q_2^0-Q_{1,2}^{0,0})+c_2\ol{x_1}^2(Q_2^0-Q_{1,2}^{0,0}))
-\end{align*}
+\end{align}
 We cancel out the $b_1$ and we have the equation
-\begin{align*}
+\begin{align}
 KQ-K(x_1Q_1^1+Q_1^0)) &= tx_1S_1^{-1}(x_1Q_1^1+Q_1^0) - (tx_1\ol{x_2}Q_{1,2}^{0,0}+x_1Q_1^1+t\ol{x_2}S_2^{-1}(Q_2^0-Q_{1,2}^{0,0}))-c_2(Q_2-Q_{1,2}^{0,0})
-\end{align*}
+\end{align}
 Note that
-\[
+\begin{align}
   K+tx_1S_1^{-1} = 1- t\ol{x_1}S_1^{-1}
-\]
+\end{align}
 Once we expand the $KQ$ term on the LHS we get
-\begin{align*}
+\begin{align}
 &c_1Q_1^0-t\ol{x_1}S_1^{-1}Q_1^0+c_2Q_2^0-t\ol{x_2}S_1^{-1}Q_2^0+c_1c_2Q_{1,2}^{0,0}+t\ol{x_1x_2}Q_{1,2}^{0,0}+\ol{a_1a_2}\\
 =&(1-t\ol{x_1}S_1^{-1})(x_1Q_1^1+Q_1^0)-x_1Q_1^1+t\ol{x_1x_2}Q_{1,2}^{0,0}-t\ol{x_2}S_2^{-1}Q_2^0+c_2(Q_2^0-Q_{1,2}^{0,0})
-\end{align*}
+\end{align}
 and after careful book-keeping all the terms cancel out one by one. This completes the long-winded proof of the identity.
 %=======================================
 

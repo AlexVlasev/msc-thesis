@@ -6,52 +6,52 @@
 %====================================
 
 The orbit summation method works well with unlabeled walk models with finite groups. It is a natural question to consider extending it to the labeled walk models. The problem is that it is no longer easy to eliminate the unknown functions. The functional equation in two dimensions is
-\[
+\begin{align}
 	KQ  - K_1 Q_1^0 -  K_2 Q_2^0 + K_{1,2}Q_{1,2}^{0,0} = \alpha
-\]
+\end{align}
 The group $G = G_S$ has two non-trivial generators $g_1$ and $g_2$ and $G$ has order 4, 6 or 8. We have the orbit summation operator $D_G$ which interprets the orbit summation method as an alternating sum of group actions.
 %====================================
 \section{Group of order 4}
 %====================================
 From a previous section we found that
-\[
+\begin{align}
 	D_G = 1-g_1-g_2+g_1g_2 = (1-g_1)(1-g_2) = \Delta_1\Delta_2
-\]
+\end{align}
 where we define $\Delta_i = 1- g_i$. In the unlabeled orbit summation method we had a direct application of $D_G$ on the equations to perform the required cancellations. Here we will attempt to do something similar. Since the cancellations don't happen automatically if we use $D_G$ directly, we'll instead obtain a linear system of equations by applying the group operations on the original functional equation. Then we'll use linear algebra to find a solution where our variables will be the ones we wish to eliminate $Q_i^0$ and their images under the group actions. If the associated matrix has non-zero determinant we have a unique solution and unfortunately we won't be able to eliminate variables. However there are some cases where the determinant will be zero. Because of symmetry we expect to be able eliminate the desired variables. The group operations commute so we have
-\[
+\begin{align}
 	g_i Q_i^0 = Q_i^0,\quad g_ig_j Q_i^0 = g_j Q_i^0
-\]
+\end{align}
 and therefore we have the variables that we wish to eliminate
-\[
+\begin{align}
 	E = \{Q_1^0,Q_2^0,g_2Q_1^0,g_1Q_2^0\}.
-\]
+\end{align}
 This is looking promising since we have four equations and four unknowns that we wish to eliminate. We re-write the original equation in a format centered on these variables
-\[
+\begin{align}
 	 K_1 Q_1^0 +  K_2 Q_2^0 = KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha = \beta
-\]
+\end{align}
 For brevity let $g_{12} = g_1g_2$
-\begin{align*}
+\begin{align}
 	 K_1 Q_1^0 +  K_2 Q_2^0 &= \beta\\
 	 g_1K_1 Q_1^0 + g_1K_2 g_1Q_2^0 &= g_1\beta = \beta_1\\
 	 g_2K_1 g_2Q_2^0 + g_2K_2 Q_2^0 &= g_2\beta = \beta_2\\
 	 g_{12}K_1 g_2Q_1^0 + g_{12}K_2 g_1Q_2^0 &= g_{12}\beta = \beta_{12}\\
-\end{align*}
+\end{align}
 Using the displayed order of variables in $E$ as our order for the system we can write the associated matrix $M$ as
-\[
+\begin{align}
 	M_4 = \begin{bmatrix}
 	K_1 & K_2 & 0 & 0 \\
 	g_1 K_1 & 0 & 0 & g_1 K_2\\
 	0 & g_2 K_2 & g_2 K_1 & 0\\
 	0 & 0 & g_{12}K_1 & g_{12} K_2
 	\end{bmatrix}
-\]
+\end{align}
 Its determinant is
-\begin{align*}
+\begin{align}
 	\det M_4 &= K_1 g_{12}K_1 g_1K_2g_2K_2 -g_1K_1g_2K_1K_2g_{12}K_2\\
 	& = K_1 g_{12}K_1 g_1K_2g_2K_2  -g_1(g_1K_1g_{12}K_1g_1K_2g_{2}K_2)\\
 	&=\Delta_1  (K_1 g_{12}K_1 g_1K_2g_2K_2)\\
 	&=\Delta_2 (g_1 K_1 g_2 K_1K_2 g_{12} K_2 )
-\end{align*}
+\end{align}
 where the last form comes from doing the process in the same way but with $g_2$ instead.
 
 %====================================
@@ -59,53 +59,53 @@ where the last form comes from doing the process in the same way but with $g_2$ 
 %====================================
 
   Now our task is to find where this determinant is zero. Clearly the expression withing each $\Delta$ must be in the kernel of the operator. To that end let's find when that happens. For a Laurent polynomial $f$ in the variables $x_i$ and $t$ we have
-\[
+\begin{align}
 	\Delta_k f = \sum_n f_n (1-g_k)x_k^n = \sum_n (f_n - f_{-n}\mu_k^{-n})x_i^n
-\]
+\end{align}
 where $\mu_k = S_k^{-1}/S_k^1$. This implies that
-\begin{align*}
+\begin{align}
 	f_{n} &= f_{-n} \mu_k^{-n}\\
 	f_{n} (S_k^1)^n &= f_{-n}(S_k^{-1})^n
-\end{align*}
+\end{align}
 for all $n \in \ze$. It's not clear if this will help us. However the models that exhibit groups of order 4 have at least one symmetry across a line - either vertical or horizontal symmetry. WLOG let the model have vertical symmetry. That is 
-\[
+\begin{align}
 	g_1(x_1) = x_1, \quad g_1(S_2^i) = S_2^i,\quad g_1(S_1^i) = S_1^{-i}
-\]
+\end{align}
 This allows us to compute some things. For example
-\begin{align*}
+\begin{align}
 	g_1 K_2 &= c_2 - t\ol{x}_2 g_1S_2^{-1} = c_2 - t\ol{x}_2 S_2^{-1} = K_2
 	g_1g_2K_2 = g_2 g_1 K_2 = g_2
-\end{align*}
+\end{align}
 Therefore $\Delta_1$ fixes both $K_2$ and $g_2K_2$.
 We see that the determinant is
-\[
+\begin{align}
 	\det M_4 = \Delta_1  (K_1K_2 g_{12}K_1 g_2K_2) = K_2 g_2K_2 \Delta_1  (K_1 g_{12}K_1)
-\]
+\end{align}
 This is zero if and only if $\Delta_1  (K_1 g_{12}K_1) = 0$ so we have
-\begin{align*}
+\begin{align}
 	0&=\Delta_1  (K_1 g_{12}K_1) \\
 	&= K_1g_{12}K_1 - g_1 K_1 g_2 K_2 \\
 	&= (c_1-t\ol{x_1}S_1^{-1})(c_1-tx_1g_2S_1^{-1})-(c_1-tx_1S_1^{-1})(c_1-t\ol{x_1}g_2S_1^{-1})\\
 	&= c_1 t \ol{x}_1 (g_2 S_2^{-1} - S_2^{-1}) - c_1 t x_1 (g_2 S_2^{-1} - S_2^{-1})\\
 	&= c_1 t (\ol{x}_1-x_1)(g_2 S_1^{-1}-S_1^{-1})\\
 	& = -c_1 t(\ol{x}_1-x_1)\Delta_2(S_1^{-1})
-\end{align*}
+\end{align}
 This is true if and only if
-\[
+\begin{align}
 	g_2 S_1^{-1} = S_1^{-1}
-\]
+\end{align}
 We have
-\[
+\begin{align}
 	g_2 (\Sf{-1,-1}\ol{x}_2+\Sf{-1,0}+\Sf{-1,1}x_2) = \Sf{-1,-1}x_2 \ol{\mu}_2+\Sf{-1,0}+\Sf{-1,1}\ol{x}_2\mu_2
-\]
+\end{align}
 and
-\[
+\begin{align}
 	\Sf{-1,-1}x_2 \ol{\mu}_2+\Sf{-1,1}\ol{x}_2\mu_2 = \Sf{-1,-1}\ol{x}_2+\Sf{-1,1}x_2
-\]
+\end{align}
 which can be re-written succinctly as
-\[
+\begin{align}
 	\Sf{-1,-1} = \mu_2 S_{-1,1}
-\]
+\end{align}
 If one of the $S$'s is zero so is the other and therefore by symmetry the model doesn't have diagonal steps. Since we have two non-trivial generators this implies that both $x_2$ and $\ol{x}_2$ are present in $S$, so the model trivially exhibits a symmetry about the $x_1$ axis. If the $S$'s are non-zero this implies $\mu_2$ is a constant and therefore $S_2^{-1} = S_2^1$. Again the model exhibits symmetry about the $x_1$ axis. This leads to a theorem of sorts. The determinant of $M_4$ is zero if and only if the model is highly-symmetric. These are the only cases where we have hope that the orbit summation method will extend to the labeled cases. Note that in the unlabeled case $c_1,c_2 = 0$ so the analysis yields a zero determinant in any group 4 case, confirming that we can use the orbit summation method.
 
 %====================================
@@ -113,125 +113,125 @@ If one of the $S$'s is zero so is the other and therefore by symmetry the model 
 %====================================
 
 We are now ready to attempt using the orbit summation method in the highly symmetric cases. There are 8 such models but only 5 of them have dimension 2. Furthermore 2 of the models are reflections of each other so we are really left with 4 interesting cases - diagonal walks, full walks, full walks minus two horizontal steps. If we are able to eliminate all the variables then we'll be left with a linear relation
-\[
+\begin{align}
 	\gamma \beta- \gamma_1 \beta_1-\gamma_2 \beta_2 + \gamma_{12}\beta_{12} = 0
-\]
+\end{align}
 where the choice of signs will make things neater later. Let $\bullet = g_1$ and $\ast = g_2$. First we have $K_2^\bullet = K_2$ and $K_1^\ast = K_1$. Then we let
-\[
+\begin{align}
 	x = Q_1^0, y= Q_2^0, u= Q_1^{0,\ast}, v = Q_2^{0,\bullet}
-\]
+\end{align}
 and
-\[
+\begin{align}
 	a = K_1, b = K_1^\bullet,c=K_2,d = K_2^\ast
-\]
+\end{align}
 Then the equations from the system can be described as
-\begin{align*}
+\begin{align}
 	\beta &= a x + c y,\quad \beta_1 = b x + c v\\
 	\beta_2 &= d y + a u,\quad \beta_{12} = b u + d v
-\end{align*}
+\end{align}
 Therefore the above equation needs to satisfy
-\begin{align*}
+\begin{align}
 	0 &= (ax+cy)\gamma - (bx+cv)\gamma_1 - (dy+au)\gamma_2 + (bu +dv) \gamma_{12}\\
 	   &= (a\gamma-b\gamma_1)x + (c\gamma-d\gamma_2)y + (b\gamma_{12}-a\gamma_2)u + (d\gamma_{12}-c\gamma_1)v
-\end{align*}
+\end{align}
 and in order to eliminate the variables $x,y,u,v$ we need to make all their coefficients zero. Therefore
-\[
+\begin{align}
 	a\gamma = b\gamma_1,\quad c\gamma = d\gamma_2, \quad b\gamma_{12} = a \gamma_2,\quad d\gamma_{12} = c\gamma_1
-\]
+\end{align}
 If we set $\gamma = 1$ then $\gamma_1 = a/b$, $\gamma_2 = c/d$ and $\gamma_{12} = (ac)/(bd)$. So we can multiply out by $bd$ to find the relation
-\[
+\begin{align}
 	bd\beta-ad\beta_1-cb \beta_2+ac \beta_{12} = 0
-\]
+\end{align}
 where we have successfully eliminated $Q_1^0, Q_2^0, Q_1^{0,\ast}$, and $  Q_2^{0,\bullet}$. Or written in terms of the $K$'s we have
-\[
+\begin{align}
 	K_1^{\bullet}K_2^{\ast}\beta^{}-K_1^{}K_2^{\ast}\beta^{\bullet}-K_1^{\bullet}K_2^{}\beta^{\ast}+K_1^{}K_2^{}\beta^{\bullet\ast} = 0
-\]
+\end{align}
 Written in operator notation this equation becomes much nicer
-\[
+\begin{align}
 	(1-\bullet)(1-\ast)(K_1^\bullet K_2^\ast \beta) = \Delta(K_1^\bullet K_2^\ast \beta) = 0
-\]
+\end{align}
 Let $K_0 = K_1^\bullet K_2^\ast$. We can now write this equation in another way
-\begin{align*}
+\begin{align}
 	\Delta(K_0\beta) &= \Delta(K_0(KQ + K_{1,2}Q_{1,2}^{0,0} - \alpha)) \\
 	&= \Delta(K_0 KQ) +\Delta(K_0 K_{1,2}Q_{1,2}^{0,0}) - \Delta(K_0\alpha)\\
 	&= K\Delta(K_0 Q) + \Delta(K_0 K_{1,2})Q_{1,2}^{0,0} - \Delta(K_0)\alpha
-\end{align*}
+\end{align}
 where the last line follows from $\Delta$ fixing $K$ and functions without variables $x_i$. All that remains is to calculate the various quantities.
-\begin{align*}
+\begin{align}
 	\Delta g_iK_i = - \Delta K_i = - (c_i-tx_iS_i^{-1}-c_i + t\ol{x}_i S_i^{-1}) = -t(\ol{x}_i-x_i)S_i^{-1}
-\end{align*}
+\end{align}
 Therefore
-\[
+\begin{align}
 	\Delta K_0 = \Delta_1 (K_1^\bullet) \Delta_2 (K_2^\ast) = t^2(\ol{x}_1-x_1)(\ol{x}_2-x_2)S_1^{-1}S_2^{-1}
-\]
+\end{align}
 Next
-\[
+\begin{align}
 	\Delta(K_0 K_{1,2}) = \Delta_1 K_1^\bullet \Delta_2 K_2^\ast K_{1,2} = \Delta_1 K_1^\bullet (K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast)
-\]
+\end{align}
 We calculate the quantity in parentheses as
-\begin{align*}
+\begin{align}
 	&K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast =\\
 	=& (c_2-tx_2S_2^{-1})(c_1c_2-t\ol{x_1}\ol{x_2}S_{1,2}^{-1,-1})-(c_2-t\ol{x_2}S_2^{-1})(c_1c_2-t\ol{x_1}x_2S_{1,2}^{-1,-1})\\
 	=&c_1c_2tS_2^{-1}(\ol{x_2}-x_2) - c_2t\ol{x_2}S_{1,2}^{-1,-1}(\ol{x_2}-x_2)\\
 	=&c_2t(\ol{x_2}-x_2)(c_1S_2^{-1}-\ol{x_1}S_{1,2}^{-1,-1})
-\end{align*}
+\end{align}
 and thus
-\begin{align*}
+\begin{align}
 	\Delta(K_0 K_{1,2})  &= c_2t(\ol{x_2}-x_2) \Delta_1 K_1^\bullet (c_1S_2^{-1}-\ol{x_1}S_{1,2}^{-1,-1})\\
 	&=c_2t(\ol{x_2}-x_2) \Delta_1 K_1^\bullet (c_1S_2^{-1}-\ol{x_1}S_{1,2}^{-1,-1})\\
-\end{align*}
+\end{align}
 To compute this note that
-\[
+\begin{align}
 \Delta_1 K_1^\bullet c_1 S_2^{-1} = c_1 S_2^{-1}\Delta_1 K_1^\bullet = -c_1t S_2^{-1}(\ol{x}_1-x_1)
-\]
+\end{align}
 and
-\[
+\begin{align}
 	\Delta_1 K_1^\bullet \ol{x_1}S_{1,2}^{-1,-1} = S_{1,2}^{-1,-1}\Delta_1 K_1^\bullet \ol{x_1} = c_1 (\ol{x}_1-x_1)S_{1,2}^{-1,-1}
-\]
+\end{align}
 Finally
-\[
+\begin{align}
 	\Delta(K_0 K_{1,2}) = c_1c_2t(\ol{x}_1-x_1)(\ol{x}_2-x_2)(t S_1^{-1} S_2^{-2}-S_{1,2}^{-1,-1}).
-\]
+\end{align}
 Combining terms and manipulating things a bit leads us to the equation
-\[
+\begin{align}
 	\Delta(K_0 Q) = \alpha t(\ol{x}_1-x_1)(\ol{x}_2-x_2)(tS_1^{-1}S_2^{-1} - b_1b_2(tS_1^{-1}S_2^{-1}-\Sf{-1,-1})\Qf{0,0})
-\]
+\end{align}
 or
-\[
+\begin{align}
 	\Delta(K_0 Q) = \alpha t(\ol{x}_1-x_1)(\ol{x}_2-x_2)(tS_1^{-1}S_2^{-1}(1 - b_1b_2\Qf{0,0}) + \Sf{-1,-1}\Qf{0,0})
-\]
+\end{align}
 
 %====================================
 \subsection{Similarities between labeled and unlabeled versions}
 %====================================
 
 We start with the observation that $\Delta \equiv D_G$ for the case of highly-symmetric random walk models
-\[
+\begin{align}
 	D_G(K_1^\bullet K_2^\ast(KQ + K_{1,2}Q_{1,2}^{0,0} - \alpha)) = 0
-\]
+\end{align}
 If we move down the the unlabelled case (assuming we can do with through this equation) we have
-\begin{align*}
+\begin{align}
 	K_1^\bullet \mapsto - t x_1 S_1^{-1}\\
 	K_2^\ast \mapsto - t x_2 S_2^{-1}\\
 	K_{1,2} \mapsto - t \ol{x}_1\ol{x}_2 S_{1,2}^{-1,-1}
-\end{align*}
+\end{align}
 and the equation becomes
-\[
+\begin{align}
 	t^2S_1^{-1}S_2^{-1}D_G(x_1x_2(KQ -t \ol{x}_1\ol{x}_2S_{1,2}^{-1,-1}Q_{1,2}^{0,0}-1)
-\]
+\end{align}
 since $\Delta$ fixes $S_i^{-1}$. The $\Qf{0,0}$ quantity disappears after the action of $D_G$ and we arrive at
-\[
+\begin{align}
 	D_G'(KQ-1) = 0
-\]
+\end{align}
 which was the orbit sum equation.
 %====================================
 \section{Group of order 6}
 %====================================
 
 Here we have some interactions as well but the problem is harder. We still have that $g_i Q_i^0 = Q_i^0$. We need to see what kind of expressions we get from the $Q_i^0$. Here we tabulate the sequences of operations $g_1$ and $g_2$ and which parts of those sequences survive application on $Q_1^0,Q_2^0, K_1$ and $K_2$. For example
-\[
+\begin{align}
 g_{2121}Q_1^0 = g_{212}Q_1^0 = g_{121} Q_1^0 = g_{12}Q_1^0
-\]
+\end{align}
 so the table has $12$ in the appropriate rown/column.
 
 \begin{center}
@@ -248,12 +248,12 @@ so the table has $12$ in the appropriate rown/column.
 \end{center}
 
 As the talbe shows we really have only 6 variables. Let
-\begin{align*}
+\begin{align}
 	u_1 &= Q_1^0,\quad u_2 = g_2 Q_1^0,\quad u_3 = g_{12}Q_1^0\\
 	v_1 &= Q_2^0,\quad v_2 = g_1 Q_2^0,\quad v_3 = g_{21}Q_2^0\\
-\end{align*}
+\end{align}
 Also there are 10 different $K_1$'s and $K_2$'s which we label sequentially as $A_1,\ldots,A_6$ and $B_1,\ldots,B_6$ respectively. We have the associated $ 6 \times 6$ matrix
-\[
+\begin{align}
 	M_6 = \begin{bmatrix}
 	A_1& & & B_1 & & \\
 	A_2& & & & B_2& \\
@@ -262,15 +262,15 @@ Also there are 10 different $K_1$'s and $K_2$'s which we label sequentially as $
 	& & A_5& & B_5& \\
 	&A_6 & &B_6 & & \\
 	\end{bmatrix}
-\]
+\end{align}
 with determinant
-\[
+\begin{align}
 	\det M_6 = A_2A_4A_6 B_1 B_3 B_5 - A_1 A_3 A_5 B_2 B_4 B_6
-\]
+\end{align}
 What is nice about these coefficients is that $A_1 = g_1 A_2$ and so on and thus we can write
-\[
+\begin{align}
 	\det M_6 = \Delta_1 (A_2A_4A_6 B_1 B_3 B_5) = \Delta_1(g_1K_1 g_{121}K_1g_{12}K_1 K_2 g_{21}K_2 g_{12}K_2)
-\]
+\end{align}
 We can easily check the relationships $A$'s and $B$'s in the two group cases. For the models with the first group
 \begin{itemize}
 \item $S = x_1\ol{x}_2+\ol{x}_1+x_2$ : $A_1 = A_6, A_2 = A_5, A_3 = A_4$ and $B_1 = B_4, B_2 = B_3, B_5 = B_6$.
@@ -286,15 +286,15 @@ For the models with the second group we have
 For the cases with relations it is clear that $\det M_6 = 0$. Using a computer we can easily check that the determinant is not zero in the cases without nontrivial relations. It's worth mentioning that so far all groups that have had determinant zero have been crystallographic but as we can see not all crystallographic groups end up having determinant zero. 
 
 We seek the same type of relation on $\beta$ and its orbit as before so we'll use $D_G$ as inspiration. We have the following
-\begin{align*}
+\begin{align}
 0=&\gamma\beta-\gamma_{1}\beta_{1}+\gamma_{21}\beta_{21}-\gamma_{121}\beta_{121}+\gamma_{12}\beta_{12}-\gamma_{2}\beta_{2}\\
 	=&\gamma (A_1 u_1 + B_1 v_1) - \gamma_{2} (A_6 u_2 + B_6 v_1) - \gamma_{1} A_2 u_1 + B_2 v_2) \\&+  \gamma_{12} (A_5 u_3 + B_5 v_2) + \gamma_{21}(A_3 u_2 + B_3 v_3) - \gamma_{121} (A_4 u_3 + B_4 v_3).
-\end{align*}
+\end{align}
 Expanding out and collecting terms leads to the following equations
-\begin{align*}
+\begin{align}
 	 A_1 \gamma&= A_2 \gamma_{1},   \quad A_3 \gamma_{21} = A_6 \gamma_{2}, \quad A_5 \gamma_{12} = A_4 \gamma_{121}\\
 	 B_1 \gamma &= B_6\gamma_{2},  \quad  B_5 \gamma_{12}= B_2 \gamma_{1},  \quad B_3 \gamma_{21} = B_4 \gamma_{121}
-\end{align*}
+\end{align}
 This system of equations doesn't have a nontrivial symbolic solution so we need to use the relations here. There is a rational solution in each case with relations where $\gamma$ is a free variable. We set $\gamma$ to be the least common multiple of the denominators. In the six cases we've performed the calculations and checked that indeed $K_0 = \gamma$ in each case.
 \begin{itemize}
 \item $S = x_1\ol{x}_2+\ol{x}_1+x_2$ : $\quad\gamma = K_0 =  A_3 A_5 B_6 = g_{21}(K_1) g_{12}(K_1) g_{2}(K_2)$
@@ -308,18 +308,18 @@ Here we've picked the respresentations of $A$'s and $B$' with the least number o
 %====================================
 The analysis for groups of order 8 is quite similar so we shall omit it. Here are the results. 
 The two models are
-\[
+\begin{align}
 	S = x_1+\ol{x}_1+x_1\ol{x}_2+\ol{x}_1x_2\quad\quad S  = x_1+\ol{x}_1+x_1x_2+\ol{x}_1\ol{x}_2
-\]
+\end{align}
 The relations are the same in both models
-\begin{align*}
+\begin{align}
 	A_1 &= A_6, A_2 = A_5, A_3 = A_4, A_7 = A_8\\
 	B_1 &= B_4, B_2 = B_3, B_4 = B_8, B_6 = B_7
-\end{align*}
+\end{align}
 In both cases
-\[
+\begin{align}
 	\gamma = K_0 =  A_2 A_3 B_5 B_6 = g_1(K_1) g_{21}(K_1) g_{212}(K_2) g_{1212}(K_2)
-\]
+\end{align}
 Here's we've also written them in their shortest forms.
 
 %====================================

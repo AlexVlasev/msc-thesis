@@ -2,7 +2,7 @@
 %%!TEX root = diss.tex
 
 %=======================================
-\chapter{Higher-dimensional labelled walks}
+\chapter{Higher-dimensional walks}
 %=======================================
 
 %=======================================
@@ -10,210 +10,210 @@
 %=======================================
 
 As in the 1D case we'll take the generating function $Q$, multiply it by $tSQ$ to obtain all the generating function for all walks counted in $Q$ and taken a step further by the step set $S$. Not all of these are valid so we need to remove the ones that are not. We can apply operator $E_1$ to retain only those walks that are $x_1$-valid. We can apply $E_2$ on the remaining walks to retain only those walks that are $x_2$-valid as well. We continue like this until $E_d$ is applied and we only have valid walks remaining. Then we can take care of the labelling by applying operator $L_1$. This takes all the walks counted in $tSQ$ that have ended on the $x_1 = 0$ hyperplane, removes then and re-adds their labelled versions. We can continue applying operators $L_i$ until $L_d$. In the end we've retained all the valid walks that are also properly re-labelled as they have interacted with the hyperplanes $x_i = 0$. This quatity is $tLE(SQ)$. The only walk from $Q$ that is not present is $1$, the empty walk. Therefore we have our functional equation
-\[
+\begin{align}
 	Q = 1 + tLE(SQ)
-\]
+\end{align}
 which we can re-write as
-\[
+\begin{align}
 	(1-tLES)Q = 1
-\]
+\end{align}
 We can apply the operator $M$ on this to obtain
-\[
+\begin{align}
 	M(1) = \sum_{I\subseteq [d]}c_I = \ol{a}_{[d]}
-\]
+\end{align}
 and
-\[
+\begin{align}
    (M-tES)Q = \ol{a}_{[d]}
-\]
+\end{align}
 This equation will contain many less terms. To see this we take a look at the $L_iE_i$ operator
-\[
+\begin{align}
 	L_iE_i = 1 + b_i[x_i^0]-\ol{x_i}[\ol{x_i}]
-\]
+\end{align}
 which increases the number of terms in the equation by a factor of 3. That is we would have $3^d$ terms relating to $SQ$ by the end of applying $LE$. Not to mention that each extraction from $SQ$ introduces at most 3 terms. On the other hand once we apply the operator $M$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from there. For the case of walks of step size at most 1 and labelling the hyperplane interactions, these terms turn out to be mostly the same. We have a lot fewer terms overall in the latter representation. In this case we can write out the functional equation explicitly. Firstly,
-\[
+\begin{align}
 	M Q = (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q = \sum_{I\subseteq [d]} (-1)^{|I|} c_I[x_I^\oo]Q =  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
-\]
+\end{align}
 and
-\begin{align*}
+\begin{align}
 	 ESQ &= (1-\ol{x}_1[\ol{x}_1])\ldots(1-\ol{x}_d[\ol{x_d}])(SQ) \\
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I [x_I^{-\one}](SQ) \\
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I S_I^{-\one}Q_I^\oo
-\end{align*}
+\end{align}
 Therefore the functional equation is
-\[
+\begin{align}
     \sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol{x_I}S_{I}^{-\one})Q_I^\oo = \ol{a_{[d]}}
-\]
+\end{align}
 or if we let $K_I = c_I-t \ol{x_I}S_{I}^{-\one}$ we have
-\[
+\begin{align}
    \sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo = \ol{a_{[d]}}.
-\]
+\end{align}
 %=======================================
 \section{Generalizations to the functional equation}
 %=======================================
 Using the operator notation we can handle generalizations fairly easily. First we can consider a more general step set. Let $n_i$ be non-negative integers for $1\leq i \leq d$. Then let $S$ be a step set for which no step backtracks more than $n_i$ units in the negative $x_i$ direction. The positive direction is bounded. Then we can write the extraction operators as
-\[
+\begin{align}
 E_ i =1-\ol{x}_i[\ol{x}_i]-\ldots -\ol{x}_i^{n_i}[\ol{x}_i^{n_i}]
-\]
+\end{align}
 The reason why this works is that this operator must remove all walks that are not $x_i$-valid and this operator removes all the walks once they step beyond the $x_i = 0$ plane. Of course we could easily generalize to exclude certain step sizes. For example, if the walks have a certain step length, they might be able to jump over wide boundaries (this might be useful in some models). Another example is where we might want to look at all quarter plane walks that don't step at a certain point with coordinates $(m,n)$. Then we can write an operator
-\[
+\begin{align}
    E(m,n)= 1- x_1^m x_2^n [x_1^m x_2^n]
-\]
+\end{align}
 that we'd apply on $SQ$ to remove those walks that end on $(m,n)$.
 
 Next we take care of labelling. We might want to label the interactions not just with the boundaries but also with specific hyperplanes. For example, if we want to label the boundary interactions and also the interactions with the closest 2 hyperplanes near the $x_i = 0$ hyperplane in the direction of the $x_i$ axis we'd write
-\[
+\begin{align}
     L_i = 1+ b_{i,0}[x_i^0]+ b_{i,1}x_i^1[x_i^1]+ b_{i,2}x_i^2[x_i^2]
-\]
+\end{align}
 Of course we can also easily label the interactions with specific points. If we want to label the interactions with point $(m,n)$ with a label $a_{m,n}$ we write
-\[
+\begin{align}
 	L(m,n)= 1 + b_{m,n}x_1^m x_2^n[x_1^m x_2^n]
-\]
+\end{align}
 It might be interesting to consider the interactions of quarter plane walks with the line $x_2 = (q/r)x_1$ for some coprime integers $q, r$. For this we need the label
-\[
+\begin{align}
    L = 1 + b\sum_{k=0}^{\infty}x_1^{qk}x_2^{rk}[x_1^{qk} x_2^{rk}]
-\]
+\end{align}
 This is going to get a little crazy right away so I'm sorry. I just thought of the most general thing I could. All these operators can be thought of as belonging to a family of more generalized operators
-\[
+\begin{align}
     \Gamma_k(x_1,\ldots,x_d) = \sum_{\substack{I\subseteq [d]\\ |I| = k}}\sum_{J \in \ze^k} \gamma_{I,J} x_I^J[x_I^J]
-\]
+\end{align}
 For example the last one can be written as
-\[
+\begin{align}
     L = 1 + b \Gamma_1(x_1^qx_2^r)
-\]
+\end{align}
 for $\gamma_k = 1$ and the first one in the section as
-\[
+\begin{align}
   E_i = 1 - \Gamma_1(\ol{x}_1)
-\]
+\end{align}
 with the sequence $\gamma_k = 1$ for $0\leq k \leq n_i$. It's more of a thought right now, not something we'll really look into. It suffices to say that all of these operators will commute because there is no mixing of terms in the extractions they perform. We may ask questions about inverses and kernels. The operators $E$ remove terms from the function they are applied on so they are irreversible and so have a non-zero kernel. The labelling operators change terms by a constant so it is enough to remove those constants. For example for the first labelling operator
-\[
+\begin{align}
 	M_i = 1- c_{i,0}[x_i^0]- c_{i,1}x_i^1[x_i^1]- c_{i,2}x_i^2[x_i^2]
-\]
+\end{align}
 and then
-\[
+\begin{align}
 	M(m,n)= 1 - c_{m,n}x_1^m x_2^n[x_1^m x_2^n]
-\]
+\end{align}
 This is because $-c = 1/a - $ so the operator removes the old term and replaces it with one multiplied by $1/a$. This discussion allows us to still write the functional equation as
-\[
+\begin{align}
 	(1- tLES)Q = 1
-\]
+\end{align}
 and upon applying $M$ we have
-\[
+\begin{align}
 	(M - tES)Q = M(1)
-\]
+\end{align}
 where $M(1)$ will depend only on the labelling of contacts with the hyperplanes $x_i = 0$ and not any other points. We could write out explicit equations for some operators.
 
 %=======================================
 \section{Coefficient Extraction}
 %=======================================
 We can perform coefficient extraction like in the 1-dimensional case. The operator $[x_i^k]$ will commute with all $M_j, E_j$ with $j\neq i$ so that we only need to consider the action on the operators $M_i$ and $E_i$. We've already done so in the 1-dimensional case. The zeroth power extraction yields
-\begin{align*}
+\begin{align}
 	[x_i^0]M_i &= [x_i^0]-[x_i^0]c_i[x_i^0] = [x_i^0]-c_i[x_i^0] = \ol{a_i}[x_i^0]\\
 	[x_i^0]E_i &= [x_i^0] - [x_i^0]\ol{x_i}[\ol{x_i}] = [x_i^0]
-\end{align*}
+\end{align}
 and the $k$-th power extraction for $k\ge 1$ yields
-\begin{align*}
+\begin{align}
 	[x_i^k]M_i &= [x_i^k]-[x_i^k]c_i[x_i^0] = [x_i^k]\\
 	[x_i^k]E_i &= [x_i^k] - [x_i^k]\ol{x_i}[\ol{x_i}] = [x_i^k]
-\end{align*}
+\end{align}
 So, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ from the picture while for $k = 0$ it removes $E_i$ but leaves a residual $\ol{a_i}$ behind for $M_i$. Therefore if we extract $[x_I^\oo]$ from the functional equation we have
-\begin{align*}
+\begin{align}
 	[x_I^\oo]a_{[d]} =\ol{a}_{[d]} &= [x_I^\oo](M_{[d]} - tE_{[d]}S)Q \\
 	= &\left(\ol{a}_{I}M_{[d]\backslash I}[x_I^\oo] - tE_{[d]\backslash I}[x_I^\oo]S\right)Q\\
 	= &[x_I^\oo](\ol{a}_{I}M_{[d]\backslash I}- tE_{[d]\backslash I}S)Q
-\end{align*}
+\end{align}
 so that
-\[
+\begin{align}
 	\ol{a}_{[d]\backslash I} = [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q
-\]
+\end{align}
 Written in another way this becomes
-\[
+\begin{align}
 	\ol{a}_I = [x_{[d]\backslash I}^\oo](M_I - a_{[d]\backslash I} tE_I S)Q
-\]
+\end{align}
 and we can use whichever notation is more useful at the time. The latter notation underscores the idea that when we extract coefficients for walks that end at some hyperplane intersection we are having a reduced version of the functional equation at the cost of an added $a$ term. When we extract a general term we can use the operator $[x_I^\oo x_J^P]$ where $P$ is a set of powers greater than 0 and $I\cap J = \emptyset$, $|P| \ge 1$ and $I\cup J = K$. We find
-\begin{align*}
+\begin{align}
 	 [x_I^\oo x_J^P] a_{[d]} = 0 &= [x_I^\oo x_J^P](M_{[d]} - tE_{[d]}S)Q \\
 	 &= [x_I^\oo x_J^P](\ol{a}_{I} M_{[d]\backslash K} - t E_{[d]\backslash K} S)Q
-\end{align*}
+\end{align}
 which we can write as
-\[
+\begin{align}
 	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0
-\]
+\end{align}
 If $I$ is empty then
-\[
+\begin{align}
 	[x_J^P]( M_{[d]\backslash J} - t E_{[d]\backslash J} S)Q = 0
-\]
+\end{align}
 The problem with a lot of things in this section is that they are not really practical beyond providing a shortcut for some of the calculations so we don't have to do them by hand every time. Also they provide a broader idea of having multiple kernels in one problem. Perhaps things will be clearer when we specialize to the 2-dimensional problem.
 
 %=======================================
 \section{Further functional equations}
 %=======================================
 We can try going a little further in the coefficient extraction to come up with an equation that looks like the original functional equation. We know that
-\[
+\begin{align}
 	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I
-\]
+\end{align}
 where $R_I$ is a collection of $S_I^{-P} Q_I^{P}$ terms that involves sets $P$ whose terms are not all zero. We can use this inside the functional equation
-\begin{align*}
+\begin{align}
 	\ol{a}_{[d]\backslash I} &= M_{[d]\backslash I}[x_I^\oo]Q- a_{I}t E_{[d]\backslash I}[x_I^\oo](SQ)\\
 	& = M_{[d]\backslash I}Q_I^\oo- a_{I}t E_{[d]\backslash I}(S_I^\oo Q_I^\oo + R_I)\\
 	& = (M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo  -a_{I}t E_{[d]\backslash I}R_I
-\end{align*}
+\end{align}
 so we can re-write the functional equation as
-\[
+\begin{align}
 	(M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo = a_I(\ol{a}_{[d]}+t R_I')
-\]
+\end{align}
 where $R_I' =  E_{[d]\backslash I}R_I$. We can calculate the following terms
-\[
+\begin{align}
 	M_{[d]\backslash I}Q_I^\oo = \sum_{J \subseteq [d]\backslash I} (-1)^{|J|}c_J Q_{I,J}^{\oo,\oo}
-\]
+\end{align}
 and
-\[
+\begin{align}
 	a_I t E_{[d]\backslash I}S_I^\oo Q_I^\oo = \sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}a_I t\ol{x}_J S_{I,J}^{\oo,-\one}Q_{I,J}^{\oo,\oo}
-\]
+\end{align}
 so the functional equation can be written as
-\[
+\begin{align}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}(c_J - a_I t\ol{x}_J S_{I,J}^{\oo,-\one})Q_{I,J}^{\oo,\oo} = a_I(\ol{a}_{[d]}+t R_I')
-\]
+\end{align}
 This suggests the notation
-\[
+\begin{align}
 	K_J(I) = c_J - a_I t\ol{x}_J S_{I,J}^{\oo,-\one}
-\]
+\end{align}
 where when $I = \emptyset$, $K_J(I) = K_J$ from before. This allows us to write the $2^d$ functional equations in the simplified form
-\[
+\begin{align}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}K_J (I) Q_{I,J}^{\oo,\oo} = \ol{a}_{[d]\backslash I}+a_I t  R_I'
-\]
+\end{align}
 where the $R_I'$ term involves only higher order coefficient extractions from $Q$, that is not all the powers are zero. Now, to calculate the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{-P} Q_I^{P}$ for various nonnegative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables so they don't have non-negative coefficients. Let $sq = S_I^{-P} Q_I^{P}$. Then
-\begin{align*}
+\begin{align}
 	E_j sq &= sq - \ol{x}_j(sq)_j^{-1} \\ 
 	&= sq - \ol{x}_j(s_j^{-1}q_j^0+s_j^{0}q_j^{-1}+s_j^{1}q_j^{-2})\\
 	& = sq - \ol{x}_js_j^{-1}q_j^0
-\end{align*}
+\end{align}
 Hence
-\begin{align*}
+\begin{align}
 	E_{K} sq &= \sum_{J\subseteq K} (-1)^{|J|}\ol{x}_J s_J^{-\one} q_J^\oo
-\end{align*}
+\end{align}
 Finally we can write
-\begin{align*}
+\begin{align}
 	R_I' &= E_{[d]\backslash I} R_I \\
 	& = \sum_{P > \oo} E_{[d]\backslash I}S_I^{-P}Q_I^P\\
 	& = \sum_{P > \oo} \sum_{J \subseteq [d]\backslash I} (-1)^{|J|} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\\
 	& = \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\\
-\end{align*}
+\end{align}
 This is not a very nice formula to use but it should do for now.
 %=======================================
 \section{Using the formal inverse for iteration}
 %=======================================
 In a previous subsection we obtained the equation
-\[
+\begin{align}
 	(1-tLES)Q = 1
-\]
+\end{align}
 Let $D = LE$. Then we can think of the formal inverse of this operator against some norm $||tDS||$ or even formally. Formally
-\[
+\begin{align}
 	(1-tDS)^{-1} = \frac{1}{1-tDS} = \sum_{k=0}^{\infty}t^k(DS)^k
-\]
+\end{align}
 so we can write the solution for $Q$ as
-\[
+\begin{align}
 Q = \sum_{k=0}^{\infty}t^k (DS)^k(1)
-\]
+\end{align}
 where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $DS$ applied to it. It can be done fairly efficiently on a computer. Interestingly enough this is just a formalization of the brute force method of determining the functional equation - by taking a previous set of walks, extending them by 1 step, removing the ones that fall outside of the quarter plane and finally labelling the ones that have interacted with the hyperplanes $x_i = 0$ in the process. We could attempt to write a closed form for the operator application but it becomes messy fairly fast, even for one dimension.
 
 \endinput

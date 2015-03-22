@@ -1,7 +1,7 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
-\chapter{Other Flavoured Walks}
-\label{sec:OtherWalks}
+\chapter{Discussion on Random Walk Model Generalizations}
+\label{sec:GeneralizedWalks}
 
 %================================
 \section{Walks with other constraints}
@@ -16,50 +16,50 @@ Random walk models with additional constraints are handled naturally via the ope
 
 (change this a bit. It's not so simple).
 To find the generating function for random walks confined within a region $D$ all we need to do is take all walks and remove those that venture outside of $D$. This cannot be done with the final form of the each random walk because it doesn't have memory. However we can do this as an iterative process. We grow random walks from within the region $D$ and once a walk ventures outside of $D$ we snip it using an operator $E$. By growing all random walks one step at a time and removing all those that venture outside of $D$ we will be left with only those that remain within at all times. It is not difficult to find what $E$ should be. Suppose we have the boundary $\del D$ on the integer lattice. We are allowed to have walks step on the boundary but not beyond it. Given a specific step set $S$ we can start with a generating function $B$ for step 0 walks originating on the boundary (basically the coordinates of $\del B$) and iterate by one step, that is, compute the product $SB$. We only keep the terms in this product that are outside of the boundary that is $B_0 = SB \cap D^c$ in terms of monomials. Then we can write the extraction operator as simple coefficient extraction featuring the terms in $B_0$. That is
-\[
+\begin{align}
 	E_0 = 1 - \sum_{e \in B_0} e[e]
-\]
+\end{align}
 This is the most accurate representation of what we want $E$ to be. However it's useful to simplify the discussion by taking advantage of a trivial fact: the effect of $E_0$ doesn't change if we add some more terms from the outside of the region that can be reached from the boundary. As an illustration, for quarter-plane walks with small steps $E_0$ is composed of the terms $e[e]$ where $e = x_1^{-1}x_2^{i}$ or $e = x_1^i x_2^{-1}$ for $i \ge -1$. However it's much useful to add in those terms with powers $(-1,i)$ or $(i,-1$ for $i < -1$. In this case the new operator is
-\begin{align*}
+\begin{align}
 	E &= 1+\ext{\ol{x}_1\ol{x}_2}\sum_{i=-\infty}^\infty(\ext{\ol{x}_1x_2^i}+ \ext{x_1^{i}\ol{x}_2}) = \\
 	   &= 1 - \ext{\ol{x}_1}\sum_{i=-\infty}^\infty\ext{x_2^i}+ \ext{\ol{x}_2}\sum_{i=-\infty}^\infty\ext{x_1^{i}} + \ext{\ol{x}_1\ol{x}_2}\\
 	   &=1 - \ext{\ol{x}_1}+ \ext{\ol{x}_2} + \ext{\ol{x}_1\ol{x}_2}\\
 	   &=(1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2}).
 	   & = E_1E_2
-\end{align*}
+\end{align}
 This operator is much easier to work with. If we want to enumerate walks with small steps in the upper half-plane we should use $E = E_2$. If we have to enumerate walks with small steps within a semi-infinite strip with coordinates $x_1 \ge 0$ and $0\leq x_2 \leq n$ we can use
-\[
+\begin{align}
 	E = (1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2}-\ext{x_2^{n+1}})
-\]
+\end{align}
 For walks within a rectangle of sides $m,n$ in the positive quarter plane
-\[
+\begin{align}
 	E = (1-\ext{\ol{x}_2}-\ext{x_2^{m+1}})(1-\ext{\ol{x}_2}-\ext{x_2^{n+1}})
-\]
+\end{align}
 For walks on the quarter plane within a rectangle of sides $2m+1,2n+1$ centered at the origin, we have
-\[
+\begin{align}
 	E =(1-\ext{\ol{x}_2^{m+1}}-\ext{x_2^{m+1}})(1-\ext{\ol{x}_2^{n+1}}-\ext{x_2^{n+1}})
-\]
+\end{align}
 
 %================================
 \subsection{Labeling Special Locations}
 %================================
 The analysis works in the same way as the one for the regional constraints. If we have different regions with different labels we can just split the work into independent cases. Let $D$ be the region which we wish to label with a boundary $\del D$ on the integer lattice. Let $B$ be the boundary Laurent polynomial. Then our labeling operator is simply
-\[
+\begin{align}
 	L_0 = 1 + (a-1)\sum_{e \in B} e[e]
-\]
+\end{align}
 As was the case before we want to add in some more terms to $L_0$ to make it easier to use. For example - in the case of quarter-plane walks with small steps we want to label walks visiting the axes. To label those that touch the $x_1$-axis (second coordinate is 0) we set the region to be the upper quarter plane with boundary the $x_1$-axis. Therefore we let
-\[
+\begin{align}
 	L_2 = 1 + b_2\sum_{i=-\infty}^\infty \ext{x_1^ix_2^0} = 1 + b_2 \ext{x_2^0}\sum_{i=-\infty}^\infty \ext{x_1^i} = 1 + b_2\ext{x_2^0}
-\]
+\end{align}
 Similarly
-\[
+\begin{align}
 	L_1 = 1+ b_1\ext{x_1^0}
-\]
+\end{align}
 and finally
-\begin{align*}
+\begin{align}
 	L = L_0 = L_1L_2 &= (1+ b_1\ext{x_1^0}) (1+ b_2\ext{x_2^0})\\
 	&= 1 + b_1\ext{x_1^0}+b_2\ext{x_2^0}+b_1b_2\ext{x_1^0x_2^0}
-\end{align*}
+\end{align}
 
 %================================
 \section{Self-avoiding walks}
@@ -67,106 +67,106 @@ and finally
 %================================
 
 This one is a bit more ad hoc because we have to keep a history of where the random walks go. Furthermore the operators involved require a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $n^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
-\[
+\begin{align}
 \Gamma_{i,j} = 1+b_{i,j}\ext{x_1^ix_2^j}
-\]
+\end{align}
 where as usual $b_{i,j} = a_{i,j}-1$. This operator takes a generating function and labels the monomial $x_1^ix_2^j$. We'll be using a lot of these together so we let
-\[
+\begin{align}
 \Gamma_n = \prod_{-n\leq i,j\leq n}\Gamma_{i,j}
-\]
+\end{align}
 To find a functional equation for SAWs on the plane we perform an iteration. Let $Q$ be the generating function for walks with history, that is they have a label for each coordinate they pass through and let $Q^{\leq n}$ be the truncated version of this generating function. It's given by
-\[
+\begin{align}
 Q^{\leq n} = \sum_{k=0}^{n} Q_k t^k
-\]
+\end{align}
 where the initial condition is $Q_0 = a_{0,0}$. Starting from $Q_n$ we can find $Q_{n+1}$ by iterating with the step set $S$, labeling with $\Gamma_{n+1}$ as follows
-\[
+\begin{align}
 	Q_{n+1} = \Gamma_{n+1}SQ_n
-\]
+\end{align}
 Using a computer we can easily iterate this to get more and more steps. We can also get $Q^{\leq n+1}$ from $Q^{\leq n}$ since
-\begin{align*}
+\begin{align}
 	t\Gamma_{n+1}SQ^{\leq n} & = \sum_{k=0}^n \Gamma_{n+1}SQ_kt^{k+1}\\
 	& = \sum_{k=0}^n \Gamma_{k+1}SQ_kt^{k+1}\\
 	& = \sum_{k=0}^n Q_{k+1}t^{k+1}\\
 	&= Q^{\leq n+1}-Q_0
-\end{align*}
+\end{align}
 or in other words
-\[
+\begin{align}
 	 Q^{\leq n+1} = a_{0,0} + t\Gamma_{n+1}SQ^{\leq n}
-\]
+\end{align}
 In the interest of finding a functional equation we would like to take the limiit of this as $n \to \infty$. For this we define $\Gamma$ to be the operator labeling all monomials $x_1^ix_2^j$ and acting in the following way
-\[
+\begin{align}
 	\Gamma x^i y^j = \Gamma_{\max(|i|,|j|)} x^i y^j
-\]
+\end{align}
 and extended by linearity. The limiting process is
-\[
+\begin{align}
 	Q = a_{0,0} + t \Gamma SQ
-\]
+\end{align}
 We finally have the functional equation for random walks with full history
-\[
+\begin{align}
 	(1 -t\Gamma S)Q = a_{0,0}.
-\]
+\end{align}
 From this we can obtain the generating function $W$ for the SAWs by removing all walks with power of label $a_{i,j}$ greater than 1. For this we need a removal operator. Let
-\begin{align*}
+\begin{align}
 	R_{i,j} &= \ext{a_{i,j}^0} + \ext{a_{i,j}}\\
 	R_n &= \prod_{-n\leq i,j \leq n} R_{i,j}\\
 	R &= \lim_{n\to \infty} R_n
-\end{align*}
+\end{align}
 where the limit is understood as in the example of $\Gamma$ above. The solution for $Q$ can also be restated as
-\[
+\begin{align}
 	Q = \sum_{k=0}^{\infty} t^k (\Gamma S)^{k}(a_{0,0}) = \sum_{k=0}^{\infty} t^k (\Gamma_k S)^{k}(a_{0,0}) 
-\]
+\end{align}
 We can either redo the analysis applying $R$ at every iteration or we can apply $R$ to $Q$ and get
-\[
+\begin{align}
 	W = RQ = \sum_{k=0}^{\infty} t^k R(\Gamma S)^{k}(a_{0,0}) = \sum_{k=0}^{\infty} t^k (R\Gamma S)^{k}(a_{0,0}) 
-\]
+\end{align}
 We can write this as a functional equation
-\[
+\begin{align}
 	\mc{L} W = (1-t\Sigma)W = (1-tR\Gamma S)W = a_{0,0}
-\]
+\end{align}
 %================================
 \subsection{Eigenpairs}
 %================================
 We can try finding eigenvalues and eigenfunctions of $\mc{L}$. Let $\mc{L}u = \lambda u$. Writing it out leaves us with
-\[
+\begin{align}
 	t\Sigma u = (1-\lambda)u
-\]
+\end{align}
 So if $\lambda = 1$, $u\in \ker(\Sigma)$. That is $R\Gamma S u = 0$. In other words $\Gamma S u$ has only terms that involve powers greater than 1 of $a_{i,j}$ for various $i,j$. Suppose that
-\[
+\begin{align}
 	\Gamma S u = a_{i,j}^2 f(x_1,x_2)
-\]
+\end{align}
 Then
-\[
+\begin{align}
 	u  = \frac{a_{i,j}^2}{S}\Gamma^{-1}(f)
-\]
+\end{align}
 So we here we can let
-\[
+\begin{align}
 		f = a_{k,l}^m x_1^rx_2^s t^n
-\]
+\end{align}
 and we find that
-\[
+\begin{align}
 	u =  \frac{a_{i,j}^2 a_{k,l}^m}{a_{r,s}S}x_1^r x_2^s t^n
-\]
+\end{align}
 Thus the kernel of $\Sigma$ is generated by these functions for all coefficients $i,j,k,l,r,s,n \in \ze$ and $m\ge 0$. This may perhaps prove useful later on. Now, if we look at eigenvalues $\lambda \neq 1$ we have to solve the equation
-\[
+\begin{align}
 	t \Sigma u = (1-\lambda) u
-\]
+\end{align}
 Because of the $t$, if $u$ is a finite order laurent series in $t$ with first non-zero coeficient $u_n$. We find that since $\Sigma$ does not affect the $t$ monomials
-\[
+\begin{align}
 	\Sigma u_n = \mu u_{n-1} = 0
-\]
+\end{align}
 and this forces all $u_k$ coefficients to be zero. Therefore $\Sigma$ has no other eigenvalues except 1 among the finite order power series in $t$.
 %================================
 \subsection{Generalizations}
 %================================
 
 The discussion lends itself nicely to generalization where now we have $d$ variables and operators $\Gamma_{i_1,\ldots,l_d}$, $R_{i_1,\ldots,i_d}$, etc defined analogously. The eigenpair discussion works out in the same way with eigenfunctions for $\lambda = 1$
-\[
+\begin{align}
 	u = \frac{a_{i_1,\ldots,i_d}^2 a_{j_1,\ldots,j_d}^m}{a_{k_1,\ldots,k_d}S}x_1^{r_1}\ldots x_d^{r_d} t^n
-\]
+\end{align}
 We can also constrain the SAWs on a part of the plane with an extraction operator $E$ and label special locations with an operator $L$. The functional equation is
-\[
+\begin{align}
 	(1- tLE\Sigma)W = a_{0,\ldots,0}
-\]
+\end{align}
 for arbitrary number of dimensions, with region constraints and labeling of special locations.
 %================================
 \section{Other exotic walks}

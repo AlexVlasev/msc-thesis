@@ -6,6 +6,28 @@
 \label{ch:Intro}
 %=======================================
 
+In this work we'll attempt to further the mathematics of the enumeration of discrete random walks. Typically those problems take place on a cubical lattice and one may often investigate random walk models with different steps and various constraints to smaller regions. In this work we'll tackle the problem of random walk models with interactions and specifically counting these interactions. But before we get to it we'll go through some of the history of the problem.
+
+As with any enumeration problem we start simple with a two-dimensional random walk model with possible steps - up, down, left and right. A typical question we can answer is how many walks of length $n$ are there? In this case we have $4^n$. We can compe up with more complicated models with various step lengths and directions. There has been a lot of work done in restricting such models to parts of the plane - half-plane and quarter plane. There have been models on semi-infinite strips and wedges. There have been generalizations to more dimensions like random walks in the positive orthant, sometimes in the full generality of $d$ dimensions. Another type of discrete random walk model is that of self-avoiding walks. One may investigate these on the plane or on a different lattice (like a honeycomb lattice). Further we may try to answer questions about walks interacting with interfaces - quarterplane walks interacting with the axes or a pair of random walks interacting with each other. In this work we'll mainly investigate random walks with interactions in 2 or more dimensions. In a few cases we'll touch upon random walks on other lattices and self-avoiding walks.
+
+The natural question is why study these objects in the first place? There are natural applications in the world of biology where one can investigate simple protein models - chains of atoms. Self-avoiding walks naturally fit into this narrative. If one wishes to model interactions between proteins (or other chains) with some interface, one can use interacting random walks in order to gain insight into the large-scale properties of protein-like structure. Mathematically speaking, the subject of random walk enumeration is rich. The main tool is the generating function tracking various parameters of random walks - length, coordinates, number of interactions with other objects, etc. In two or more dimensions we find a rich theory of functional equations involving these generating functions. The solutions to those equations often depend sensitively to the step set present and on the geometry of the region involved. Interactions tend to complicate the matter even further. 
+
+One of the most pertinent questions in this field has to do with the D-finiteness of the random walk generating functions in the variable keeping track of length (typically $t$). If a generating function is D-finite we can obtain a differential equation for it and perhaps solve it explicitly. It turns out that many interesting models lead to generating functions that are not D-finite. There has been a full classification of two-dimensional random walks without interactions on the full plane, half plane and quarter plane. There has been a partial classification for three-dimensional random walks without interactions for step sets of size at most 6. Such classification has not been performed for random walks with interactions. Although it's worth mentioning that when a model with no interaction leads to a non-D-finite generating function, then the generating function for the interacting case must also be non-D-finite. It's probably a good guess that there are D-finite non-interacting models which has a non-D-finite interacting counterpart. Typical tools for obtaining information about the random walk generating function are group theory for obtaining more functional equations or a simplified one and complex analysis for solving problems pertaining to D-finiteness. More specifically we have the orbit method, the vanishing kernel method, iteration of roots and so on.
+
+So far most discrete random walk models have not needed much special notation or special tools in order to derive functional equations for the generating functions involved and solve them. This has been true for the non-interacting two and three-dimensional problems on the full, half, quarter, etc regions. However, if we are to tackle more general problems like walks with interactions in more dimensions and/or domains of interest we need more powerful notation. Even deriving the two-dimensional functional equations for walks with interactions is pain-staking. Putting it into a simpler form can be a time-consuming task.
+
+A dreamy goal is to make the process fully automatic. We should be able to input a random walk model (step set, domain, interactions) into an algorithm that will output several items in order of increasing utility - a functional equation for the generating function, a reduced such equation for easier solving and hopefully a solution for the equation and/or showing that it is/isn't D-finite. In this work we achieve part of the goal - the first two outputs of this algorithm. Some of the main results are that for a lot of random walk problems we can write an operator equation for the generating function that we can either solve iteratively or simplify to a form more conducive to further analysis with group theory and other tools. The work hints at a deeper theory of coefficient extraction equations which are similar to differential equations. Instead of derivatives we have coefficient extractions. The connection is made exact by noting that coefficient extraction is the same as taking a derivative and evaluating at zero for that specific variable, modulo a constant. Surely we should see further development in a theory of ordinary and partial coefficient extraction equations.
+
+In the first few chapters we go through motivating examples which will serve as a springboard into further generalizations. First we'll start off with one-dimensional random walks with and without interactions in Chapter 2. Then we'll quickly move on to two-dimensional random walks in Chapter 3. On the way we'll develop some of the basic operator theory involved in the random walk models. In Chapter 4 we'll make a detour to random walks on a honeycomb lattice - a problem that will show some of the group-theoretic and operator tools. In Chapter 5 we'll tackle the $d$-dimensional random walk model functional equations using operators. In chapter 6 we'll finally go through operators in a much generality as we can, deriving all sorts of properties for them along the way. In chapter 7 we'll discuss generalizations of the random walk models and we'll push the operator notation as far as we can to see what kind of problem we can hope to tackle with the theory.
+
+In Chapter 8 we'll become more practical and deal with group-theoretic operators relevant to both two-dimensional and higher-dimensional random walk models. In Chapter 9 we extend the persistent kernel method as much as we can for the two-dimensional interacting walks. Then in Chapter 10 we attempt to solve as many highly-symmetrical two-dimensional interacting models as we can via the vanishing kernel method. In Chapter 11 we work on some models with higher group orders.
+
+
+
+%=======================================
+
+\endinput
+
 We'll investigate the generating functions for quarter-plane walks where we track how many times these walks touch the walls. 
 \begin{itemize}
 \item $Q$ is the generating function.
@@ -31,18 +53,6 @@ So we have
 So far we won't extract $a$'s because we have an unobvious choice between extracting $a,b$ or $c$ with various pros/cons. For example it may sometimes be easier to extract $b_1^k$ than $a_1^k$ but there's the added cost that the extracted term counts walks with varying powers of $k$. We usually won't extract with respect to $t$.
 
 
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-%=======================================
-
-\endinput
 
 %=======================================
 \chapter{(Old ways. Should delete?) 2D stuff}
@@ -104,64 +114,64 @@ in order to take care of the relabelling. Finally the term that we need to add t
 	t(a_1-1)(a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1}) 
 \]
 This is our final step in the construction becuase we've taken care of all possible cases. The argument will be generalized to $d$ dimensions in a later section. The lengthy inclusion-exclusion-type derivation yields the labelled equation
-\begin{align*}
+\begin{align}
 Q = 1 &+ tSQ - t \ol{x_2}\es{2}{-1}\Q{2}{0} - t\ol{x_1}\es{1}{-1}\Q{1}{0}+t\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}\\
 	&+ t(a_1-1)(\es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})\\
 	&+ t(a_2-1)(\es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})\\
 	&+t(a_1-1)(a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})
-\end{align*}
+\end{align}
 
 %=======================================
 \section{Simplifying the 2D functional equation}
 %=======================================
 
 As we saw in the previous section the functional equation for labelled 2D walks is
-\begin{align*}
+\begin{align}
 Q = 1 &+ tSQ - t \ol{x_2}\es{2}{-1}\Q{2}{0} - t\ol{x_1}\es{1}{-1}\Q{1}{0}+t\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}\\
 	&+ t(a_1-1)(\es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})\\
 	&+ t(a_2-1)(\es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})\\
 	&+t(a_1-1)(a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})
-\end{align*}
+\end{align}
 The equation can be greatly simplified by eliminating terms that involve quarter-plane walks not ending on the axes or the origin. For that we'll first extract some coefficients.
-\begin{align*}
+\begin{align}
 Q_1^0 = 1 &+  t a_1 (S_1^{-1}Q_1^1+S_1^0 Q_1^0-\ol x_2 \Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})\\
                    &+ta_1 (a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})\\
 Q_2^0 = 1 &+  t a_2 (S_2^{-1}Q_2^1+S_2^0 Q_2^0-\ol x_1 \Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})\\
                    &+ta_2 (a_1-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})\\
 \Qf{0,0} = 1 &+  t a_1 a_2 (\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})
-\end{align*}
+\end{align}
 There is a hidden pattern in the form of the sumands in these extractions. Let
 \[
       A = SQ -  \ol{x_2}\es{2}{-1}\Q{2}{0} -\ol{x_1}\es{1}{-1}\Q{1}{0}+\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}
 \]
 Extracting coefficients yields
-\begin{align*}
+\begin{align}
 A_1^0 &= \es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0}\\
 A_2^0 &= \es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0}\\
 \aye{1,2}{0,0} &= \Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1}
-\end{align*}
+\end{align}
 A quick visual inspection shows that the $A$ terms are involved in the functional equation and the $Q$-extractions. This allow us to re-write the above equations in a much neater format. Using $b_i = a_1 - 1$ the equations become
-\begin{align*}
+\begin{align}
 Q &= 1+ tA + tb_1A_1^0+tb_2 A_2^0 + tb_1b_2 \aye{1,2}{0,0}\\
 Q_1^0 & = 1+t a_1 A_1^0 + ta_1b_2 \aye{1,2}{0,0}\\
 Q_2^0 & = 1+t a_2 A_2^0 + ta_2b_1 \aye{1,2}{0,0}\\
 \Qf{0,0} &= 1+ t a_1a_2 \aye{1,2}{0,0}
-\end{align*}
+\end{align}
 Assuming the $A$-terms are non-zero we can back-substitute the $A$'s in order to obtain an equation relating $Q, Q_1^0, Q_2^0$ and $\Qf{0,0}$. In other words, we'll obtain a functional equation that relates $Q$ to $Q$'s counting walks ending on the axes or the origit. First
 \[
 	\aye{1,2}{0,0} = \frac{\Qf{0,0}-1}{ta_1a_2}
 \]
 and then
-\begin{align*}
+\begin{align}
 	A_1^0 = \frac{Q_1^0-1}{ta_1}-(a_2-1)\aye{1,2}{0,0} &= \frac{Q_1^0-1}{ta_1}-(a_2-1)\frac{\Qf{0,0}-1}{ta_1a_2}\\
 	A_2^0 = \frac{Q_2^0-1}{ta_2}-(a_1-1)\aye{1,2}{0,0} &= \frac{Q_2^0-1}{ta_2}-(a_1-1)\frac{\Qf{0,0}-1}{ta_1a_2}\\
-\end{align*}
+\end{align}
 We can substitute these expressions into the initial equation along with $c_i = b_i/a_i = 1-\ol{a_i}$
-\begin{align*}
+\begin{align}
 	Q &= 1+ tA + tb_1A_1^0+tb_2 A_2^0 + tb_1b_2 \aye{1,2}{0,0}\\
 	    &= 1+ t A + tb_1\left(\frac{Q_1^0-1}{ta_1}-b_2\frac{\Qf{0,0}-1}{ta_1a_2}\right)+ tb_2\left(\frac{Q_2^0-1}{ta_2}-b_1\frac{\Qf{0,0}-1}{ta_1a_2}\right)+ tb_1b_2\frac{\Qf{0,0}-1}{ta_1a_2}\\
 	    &= 1+ tA + c_1(Q_1^0-1)+c_2(Q_2^0-1)-c_1c_2(\Qf{0,0}-1)
-\end{align*}
+\end{align}
 Expanding the definition of $A$ and re-arranging terms gives the following functional equation for $Q$ relating it to $Q_1^0$, $Q_2^0$ and $\Qf{0,0}$.
 \[
 	 Q(1-tS) - (c_1-t\ol{x_1}S_1^{-1})Q_1^0 - (c_2-t\ol{x_2}S_2^{-1})Q_2^0 + (c_1c_2-t\ol{x_1}\ol{x_2}\Sf{-1,-1})\Qf{0,0} = \ol{a_1 a_2}
@@ -179,11 +189,11 @@ This equation is an important milestone in further analysing the labelled quarte
 	A_1^0 = \frac{Q_1^0-1}{ta_1},\quad    A_2^0 = \frac{Q_2^0-1}{ta_2}
 \]
 So we obtain
-\begin{align*}
+\begin{align}
 	Q &= 1+ tA + tb_1A_1^0+tb_2 A_2^0 + tb_1b_2 \aye{1,2}{0,0}\\
 	    &= 1+ t A + tb_1\frac{Q_1^0-1}{ta_1}+ tb_2\frac{Q_2^0-1}{ta_2}\\
 	    &= 1+ tA + c_1(Q_1^0-1)+c_2(Q_2^0-1)
-\end{align*}
+\end{align}
 Expanding the definition of $A$ and re-arranging terms gives the following functional equation for $Q$ relating it to $Q_1^0$ and $Q_2^0$.
 \[
 	 Q(1-tS) - (c_1-t\ol{x_1}S_1^{-1})Q_1^0 - (c_2-t\ol{x_2}S_2^{-1})Q_2^0 = \ol{a_1 a_2} - c_1c_2
