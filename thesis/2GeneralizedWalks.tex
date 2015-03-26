@@ -1,84 +1,153 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
 \chapter{Discussion on Random Walk Model Generalizations}
-\label{sec:GeneralizedWalks}
 
 %================================
-\section{Walks with other constraints}
-\label{sec:Constraints}
+\section{Introduction}
 %================================
 
-Random walk models with additional constraints are handled naturally via the operator notation and herein lies the full power of the framework. The operator notation makes for a quick and easy derivation of master functional equations for most such models. Using extraction operators we can constrain random walks within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes of course). Furthermore using labeling operators we can easily track the behavior of random walks as they cross or interact with boundaries or interact with objects. The exposition can be combined to talk about a lebeling operator $\Gamma$ and then setting some of the labels equal to zero to make it an extraction operator.
+The operator notation makes it easy to handle more complicated random walk problems and in this section we'll attempt ot push the notation to its limits. Let's suppose we would like to enumerate random walks constrained to be within a region $\mc{D}$ in space. We would also like to mark any interactions with certain locations ${\mc{D}}_0$ within $\mc{D}$. To do this we can start as before by extending the walks enumerated by $Q$ by one step. We do this by calculating the product $SQ$. Some walks venture outside of the region $\mc{D}$ so we remove them with an operator $E$. Then we count all the interactions by marking walks ending up on ${\mc{D}}_0$ using an operator operator $L$. Since we have an extra step now, we also need to multiply by $t$. We obtain the expression $tLESQ$. As before we need to find out how this expression relates to $Q$. The only walks we've omited are those of length 0. That is if $[t^0]Q = q$ we have
+\begin{align}
+(1-tLES)Q = q
+\end{align}
+We can also write this as
+\begin{align}
+(L^{-1}-tES)Q = L^{-1}q = \alpha
+\end{align}
+We have obtained the functional equation for the generating function that enumerates random walks
+\begin{itemize}
+\item beginning in locations enumerated by $q$
+\item evolving with a step Laurent polynomial $S$
+\item constrained to evolve in a region $\mc{D}$
+\item interacting with region ${\mc{D}}_0 \subseteq \mc{D}$
+\end{itemize}
+The second form of the functional equation should have less terms than the first one by virtue of separating $L$ and $E$ from one another. Using extraction operators we can constrain random walks to lie within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes of course). Furthermore using marking operators we can easily track the behavior of random walks as they cross or interact with boundaries or interact with regions within. For example we may consider walks interacting with the boundary of a box within a region in space. We can also take on the problem from another perspective. Instead of removing walks that stray outside of the boundary of $\mc{D}$ we can just mark them for later deletion. This allows us to consider a more holistic problem where we combine the operators $L$ and $E$ into one called $\Gamma$. That is in the case where we mark some walks for deletion with parameter $a$ we obtain a functional equation
+\begin{align}
+(1-t\Gamma S)\tilde Q = q
+\end{align}
+where $\tilde Q = Q + O(a)$ and $Q$ is the generating function in the previous functional equations. We just need to extract $[a^0]$ from $\tilde Q$ to obtain $Q$. Since the two problems are equivalent we can use the latter to combine the discussion of the marking operators. Before we proceed we should mention that a previous discussion on the kernel form applies here as well since it was mostly a symbolic calculation. We have
+\begin{align}
+q = (1-tLES)Q = Q -t(LE-1+1)SQ = (1-tS)Q - t(LE-1)(SQ)
+\end{align}
+so
+\begin{align}
+	KQ = q - t(1-LE)SQ.
+\end{align}
+The second kernel form is obtained via
+\begin{align}
+	\alpha = (L^{-1}-1)Q +Q-tSQ -t(E-1)SQ = KQ - (1-L^{-1})Q+ t(1-E)SQ
+\end{align}
+which leads to
+\begin{align}
+	KQ = \alpha + (1-L^{-1})Q - t(1-E)SQ
+\end{align}
+If we want to emphasize the relationship with $KQ$ itself we have
+\begin{align}
+	KQ = L^{-1}(q) + (1-L^{-1})Q +(1-E)KQ
+\end{align}
+which follows from $(1-E)Q = Q-Q = 0$. If we decide not to mark any of the walks we have the simpler Kernel form
+\begin{align}
+	(1-tES)Q = Q - EQ +E(KQ) = E(KQ)
+\end{align}
+so we have the functional equation
+\begin{align}
+	E(KQ) = q
+\end{align}
+which as before suggests writing $Q = \tilde W/K$ which yields
+\begin{align}
+	E(\tilde W) = q
+\end{align}
+as a functional equation defining the unmarked generating function. The beauty of all these equations is that they are all relative to an arbitrary domain $\mc{D}$ with interaction domain ${\mc{D}}_0$.
 
 %================================
-\subsection{Regional Constraints}
+\section{Marking Operators}
 %================================
 
-(change this a bit. It's not so simple).
-To find the generating function for random walks confined within a region $D$ all we need to do is take all walks and remove those that venture outside of $D$. This cannot be done with the final form of the each random walk because it doesn't have memory. However we can do this as an iterative process. We grow random walks from within the region $D$ and once a walk ventures outside of $D$ we snip it using an operator $E$. By growing all random walks one step at a time and removing all those that venture outside of $D$ we will be left with only those that remain within at all times. It is not difficult to find what $E$ should be. Suppose we have the boundary $\del D$ on the integer lattice. We are allowed to have walks step on the boundary but not beyond it. Given a specific step set $S$ we can start with a generating function $B$ for step 0 walks originating on the boundary (basically the coordinates of $\del B$) and iterate by one step, that is, compute the product $SB$. We only keep the terms in this product that are outside of the boundary that is $B_0 = SB \cap D^c$ in terms of monomials. Then we can write the extraction operator as simple coefficient extraction featuring the terms in $B_0$. That is
+We'll take care of regional constraints and interactions in one discussion. Suppose that we wish to mark points $p \in P\subseteq \ze^d$ with labels $a_p$ via an operator $\Gamma_P$. It can be written as
 \begin{align}
-	E_0 = 1 - \sum_{e \in B_0} e[e]
+	\Gamma_P = 1 + \sum_{p\in P}(a_p-1) \ext{x_{[d]}^p}
 \end{align}
-This is the most accurate representation of what we want $E$ to be. However it's useful to simplify the discussion by taking advantage of a trivial fact: the effect of $E_0$ doesn't change if we add some more terms from the outside of the region that can be reached from the boundary. As an illustration, for quarter-plane walks with small steps $E_0$ is composed of the terms $e[e]$ where $e = x_1^{-1}x_2^{i}$ or $e = x_1^i x_2^{-1}$ for $i \ge -1$. However it's much useful to add in those terms with powers $(-1,i)$ or $(i,-1$ for $i < -1$. In this case the new operator is
+The form $(a_p-1)$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion $P = {\mc{D}}^c$ and $a_p = a$. The good thing is that in a lot of cases we don't need all the terms in the operator and in some cases we even find the operator has a portion that factors. We just need to ensure that we mark all the walks that touch the boundaries or go within the region marked for deletion. For example we can take the walks in one dimensions on the non-negative axis with steps of size at most $n$ in the negative direction. Then we can demonstrate the truncation with
 \begin{align}
-	E &= 1+\ext{\ol{x}_1\ol{x}_2}\sum_{i=-\infty}^\infty(\ext{\ol{x}_1x_2^i}+ \ext{x_1^{i}\ol{x}_2}) = \\
-	   &= 1 - \ext{\ol{x}_1}\sum_{i=-\infty}^\infty\ext{x_2^i}+ \ext{\ol{x}_2}\sum_{i=-\infty}^\infty\ext{x_1^{i}} + \ext{\ol{x}_1\ol{x}_2}\\
-	   &=1 - \ext{\ol{x}_1}+ \ext{\ol{x}_2} + \ext{\ol{x}_1\ol{x}_2}\\
-	   &=(1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2}).
-	   & = E_1E_2
+	\Gamma = 1 + (a-1)\sum_{k=1}^{\infty} \ext{\ol{x}^k} = 1 + (a-1)\sum_{k=1}^{n} \ext{\ol{x}^k}
 \end{align}
-This operator is much easier to work with. If we want to enumerate walks with small steps in the upper half-plane we should use $E = E_2$. If we have to enumerate walks with small steps within a semi-infinite strip with coordinates $x_1 \ge 0$ and $0\leq x_2 \leq n$ we can use
+We only need to consider how far a walk can step outside of the region $\mc{D}$ via the step set in $S$. In two dimensions we have
 \begin{align}
-	E = (1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2}-\ext{x_2^{n+1}})
+	\Gamma = 1 + (a-1)\sum_{m\text{ or }n < 0}^{\infty} \ext{\ol{x}_1^m \ol{x}_2^n}
 \end{align}
-For walks within a rectangle of sides $m,n$ in the positive quarter plane
+Without $a$ this reduces to
 \begin{align}
-	E = (1-\ext{\ol{x}_2}-\ext{x_2^{m+1}})(1-\ext{\ol{x}_2}-\ext{x_2^{n+1}})
+	\Gamma = 1- \ext{\ol{x}_1}- \ext{\ol{x}_2}+ \ext{\ol{x}_1\ol{x}_2} = (1-\ext{x}_1)(1-\ext{x}_2)
 \end{align}
-For walks on the quarter plane within a rectangle of sides $2m+1,2n+1$ centered at the origin, we have
+in which case we also see that the operator can factor into two or more operators sometimes. When the boundary is complicated we may not find an a finite form for $\Gamma$ let alone see any factoring. However, there are some nice special cases where we can say a lot about the operator $\Gamma$. We can build the theory. We have only finitely many steps (and sizes of steps) in $S$. We say $\Gamma$ is finite if it can be represented by finitely many coefficient extraction terms. Suppose that $\mc{D}$ is a finite box in $\ze^d$. Then $\Gamma$ is finite. To see this suppose that $B$ has $x_k$ coordinates in the interval $[a_k,b_k]$ and that stepping outside from $B$ from within $B$ via step polynomial $S$ leads to $x_k$ coordinates within the interval $[m_k,n_k]$. Then $\Gamma$ can be written finitely with extraction part
 \begin{align}
-	E =(1-\ext{\ol{x}_2^{m+1}}-\ext{x_2^{m+1}})(1-\ext{\ol{x}_2^{n+1}}-\ext{x_2^{n+1}})
+	\Gamma_{B^c} = \sum_{k=1}^{d} \left(\sum_{i= m_k}^{a_k-1}\ext{x_k^i}+\sum_{i= b_k+1}^{n_k}\ext{x_k^i}\right)
 \end{align}
+ The discussion continues for semi-infinite and infinite boxes with finite marked regions within. The analysis is the same as above except that now one or more of $a_k, b_k$ may be infinite, in which case we actually lose parts of $\Gamma_{B^c}$ and the operator is still finite. We should see if we can do regions whose complements are boxes and then build up to finite regions and intersections of finite regions with boxes.
+ 
+\begin{definition} A coefficient extraction operator $\Gamma$ in the variables $x_1,\ldots,x_d$ is of finite type if it can be written in a form with only finitely man terms like
+\begin{align}
+	\Gamma = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} x_I^J[x_I^J]
+\end{align}
+where each $|J| < \infty$. Then $\Gamma$ is of infinite type if it's not of finite type. We'll just say $\Gamma$ is finite or infinite.
+\end{definition}
 
-%================================
-\subsection{Labeling Special Locations}
-%================================
-The analysis works in the same way as the one for the regional constraints. If we have different regions with different labels we can just split the work into independent cases. Let $D$ be the region which we wish to label with a boundary $\del D$ on the integer lattice. Let $B$ be the boundary Laurent polynomial. Then our labeling operator is simply
+\begin{definition} A random walk model with finitely many steps is of finite type if its extraction and marking operator $\Gamma$ is of finite type and its starting condition $q$ is of finite degree. If not, the model is of infinite type.
+\end{definition}
+Not surprisingly all the models so far has been of finite type. In the next section we'll see the model of self-avoiding walks is most likely of infinite type.
+
+\begin{theorem} The generating function $Q$ for a random walk model of finite type is D-finite in the variables $x_1,\ldots,x_d$.
+\end{theorem}
+\begin{proof} We'll use the kernel form for the functional equation
 \begin{align}
-	L_0 = 1 + (a-1)\sum_{e \in B} e[e]
+	KQ + t(1- \Gamma)SQ = q.
 \end{align}
-As was the case before we want to add in some more terms to $L_0$ to make it easier to use. For example - in the case of quarter-plane walks with small steps we want to label walks visiting the axes. To label those that touch the $x_1$-axis (second coordinate is 0) we set the region to be the upper quarter plane with boundary the $x_1$-axis. Therefore we let
+Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and is of finite type.We'll prove this by finding the differential equation explicitly. Since the model is of finite type we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ that we see on either side. Once we multiply by $x_k^{A_k}$ we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$
 \begin{align}
-	L_2 = 1 + b_2\sum_{i=-\infty}^\infty \ext{x_1^ix_2^0} = 1 + b_2 \ext{x_2^0}\sum_{i=-\infty}^\infty \ext{x_1^i} = 1 + b_2\ext{x_2^0}
+	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
 \end{align}
-Similarly
+and we obtain a polynomial equation in the variables $x_1,\ldots,x_d$. We take the derivative operator
 \begin{align}
-	L_1 = 1+ b_1\ext{x_1^0}
+	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\ldots\del_d^{A_d+B_d+1}
 \end{align}
-and finally
+and apply it to both sides of the equation to get
 \begin{align}
-	L = L_0 = L_1L_2 &= (1+ b_1\ext{x_1^0}) (1+ b_2\ext{x_2^0})\\
-	&= 1 + b_1\ext{x_1^0}+b_2\ext{x_2^0}+b_1b_2\ext{x_1^0x_2^0}
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0
 \end{align}
+which follows since we're taking more derivatives than the degrees of the monomials which clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of it beind inhomogeneous. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the LHS of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before but this time it may have lower $A$ and $B$ values since we are not taking $q$ into account. We have
+\begin{align}
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)
+\end{align}
+\end{proof}
+For example let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the LHS and RHS respectively. We see that $A_k = 3$ and $B_k = 6$. Then we're taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In The second scheme we take $A_k = 3$ still but $B_k = 4$ and we are taking the 8-th derivative w.r.t. $x_k$ this time. Even in the quarter-plane we have models that have a generating function that is not D-finite (with respect to the $t$ variable) but it turns out that every model so far considered is D-finite in the $x_1,\ldots,x_d$ variables.
+
+In order to solve the differential equation we need to investigate the kernel of the differential operator.
+\begin{corollary}
+The generating function $Q$ of a finite random model is given by
+\begin{align}
+	x_{[d]}^{A}KQ(x_1,\ldots,x_d;t) = \sum_{i=1}^d \sum_{j=0}^{B_i}Aij(x_1,\ldots,x_{i-1},x_i,\ldots, x_d,t) x_i^j
+\end{align}
+where $A_{ij}$ are functions that need to be determined.
+\end{corollary}
+We could have also obtained this kind of solution from going through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
 
 %================================
 \section{Self-avoiding walks}
-\label{sec:SAWs}
 %================================
 
-This one is a bit more ad hoc because we have to keep a history of where the random walks go. Furthermore the operators involved require a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $n^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
+We can handle self-avoiding random walks with this theory. If we pick a marking operator $\Gamma$ that marks every location on the plane this will allow us to track the random walks' history. All we'll need to do in the end is remove those walks which have stepped at some location more than once. However we'll do this problem in a bit more detail as it serves as an example of the theory. To use the generating function iteration properly we need a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $(2n+1)^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
 \begin{align}
 \Gamma_{i,j} = 1+b_{i,j}\ext{x_1^ix_2^j}
 \end{align}
-where as usual $b_{i,j} = a_{i,j}-1$. This operator takes a generating function and labels the monomial $x_1^ix_2^j$. We'll be using a lot of these together so we let
+where as usual $b_{i,j} = a_{i,j}-1$. This operator takes a generating function and marks the monomial $x_1^ix_2^j$. We'll be using a lot of these together so we let
 \begin{align}
 \Gamma_n = \prod_{-n\leq i,j\leq n}\Gamma_{i,j}
 \end{align}
-To find a functional equation for SAWs on the plane we perform an iteration. Let $Q$ be the generating function for walks with history, that is they have a label for each coordinate they pass through and let $Q^{\leq n}$ be the truncated version of this generating function. It's given by
+To find a functional equation for SAWs on the plane we perform an iteration. Let $Q$ be the generating function for walks with history, that is they have a mark for each coordinate they pass through and let $Q^{\leq n}$ be the truncated version of this generating function. It's given by
 \begin{align}
 Q^{\leq n} = \sum_{k=0}^{n} Q_k t^k
 \end{align}
-where the initial condition is $Q_0 = a_{0,0}$. Starting from $Q_n$ we can find $Q_{n+1}$ by iterating with the step set $S$, labeling with $\Gamma_{n+1}$ as follows
+where the initial condition is $Q_0 = a_{0,0}$. Starting from $Q_n$ we can find $Q_{n+1}$ by iterating with the step set $S$, marking with $\Gamma_{n+1}$ as follows
 \begin{align}
 	Q_{n+1} = \Gamma_{n+1}SQ_n
 \end{align}
@@ -93,7 +162,7 @@ or in other words
 \begin{align}
 	 Q^{\leq n+1} = a_{0,0} + t\Gamma_{n+1}SQ^{\leq n}
 \end{align}
-In the interest of finding a functional equation we would like to take the limiit of this as $n \to \infty$. For this we define $\Gamma$ to be the operator labeling all monomials $x_1^ix_2^j$ and acting in the following way
+In the interest of finding a functional equation we would like to take the limiit of this as $n \to \infty$. For this we define $\Gamma$ to be the operator marking all monomials $x_1^ix_2^j$ and acting in the following way
 \begin{align}
 	\Gamma x^i y^j = \Gamma_{\max(|i|,|j|)} x^i y^j
 \end{align}
@@ -105,7 +174,7 @@ We finally have the functional equation for random walks with full history
 \begin{align}
 	(1 -t\Gamma S)Q = a_{0,0}.
 \end{align}
-From this we can obtain the generating function $W$ for the SAWs by removing all walks with power of label $a_{i,j}$ greater than 1. For this we need a removal operator. Let
+From this we can obtain the generating function $W$ for the SAWs by removing all walks with power of mark $a_{i,j}$ greater than 1. For this we need a removal operator. Let
 \begin{align}
 	R_{i,j} &= \ext{a_{i,j}^0} + \ext{a_{i,j}}\\
 	R_n &= \prod_{-n\leq i,j \leq n} R_{i,j}\\
@@ -163,27 +232,178 @@ The discussion lends itself nicely to generalization where now we have $d$ varia
 \begin{align}
 	u = \frac{a_{i_1,\ldots,i_d}^2 a_{j_1,\ldots,j_d}^m}{a_{k_1,\ldots,k_d}S}x_1^{r_1}\ldots x_d^{r_d} t^n
 \end{align}
-We can also constrain the SAWs on a part of the plane with an extraction operator $E$ and label special locations with an operator $L$. The functional equation is
+We can also constrain the SAWs on a part of the plane with an extraction operator $E$ and mark special locations with an operator $L$. The functional equation is
 \begin{align}
 	(1- tLE\Sigma)W = a_{0,\ldots,0}
 \end{align}
-for arbitrary number of dimensions, with region constraints and labeling of special locations.
+for arbitrary number of dimensions, with region constraints and marking of special locations.
+
 %================================
-\section{Other exotic walks}
-\label{sec:Exotic}
+\section{Coefficient Extraction Equations}
 %================================
 
-Here we'll have a small exploration of other exotic random walk models.
+The work so far is strongly hinting towards a theory of ordinary and partial coefficient extraction equations - OCEs and PCEs. Here we'll work out some of the theory. We start with a partial coefficient extraction operator of finite type
+\begin{definition}$\mc{L}$ is a coefficient operator if
+\begin{align}
+	\mc{L} = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J}[x_I^J] = K + \mc{E}
+\end{align}
+where $K$ is the kernel of the operator, $\mc{E}$ is the pure extraction part
+\begin{align}
+	\mc{E}  = \sum_{\substack{I\subseteq [d],I\neq \emptyset\\ J \subseteq \ze^d}}a_{I,J}[x_I^J]
+\end{align}
+and all the coefficients are Laurent polynomials in the $x$ variables and perhaps some other variables. The operator is ordinary if $d = 1$ and partial if $d \ge 2$. The operator is either of monomial type where the coefficients are monomials or of polynomial type if one or more coefficients is a Laurent polynomial in $x_1,\ldots,x_d$.
+\end{definition}
+\begin{definition} An ordinary/partial coefficient equation (OCE/PCE) is one of the form $\mc{L} Q = q$ for some functions $Q$ and $q$ where $\mc{L}$ is an ordinary/partial coefficient operator. The equation is homogeneous if $q = 0$ and inhomogeneous if $q \neq 0$.
+\end{definition}
+The question is whether we can solve these kinds of equations in general and what their solutions may look like. In the previous section we found that if $\mc{L}$ is finite then the function $Q$ is D-finite in the $x$ variables while it may not necessarily be D-finite in the $t$ variable or any other variable (parameter) that appears in the coefficients.
+
+\begin{example} The operator $\Gamma$ in this section is a partial coefficient operator with monomial coefficients.
+\end{example}
+
+\begin{example} We can transform the functional equation for a finite random walk model into a PCE. To do so we note that $K$ is the same in both forms. The part requiring some work is the one that has to do with the term $(1-\Gamma)SQ$ which is a pure extraction of $SQ$. We can expand $S$ into its monomials. Then $(1-\Gamma)S$ fully expands into monomials of the form
+\begin{align}
+	a_{I,J}\ext{x_I^J}x_A^B
+\end{align}
+we can pull terms inside $[x_I^J]$ from the right. In the end the $S$ is absorbed within the operator and istead of having monomial coefficients it now has polynomial coefficients. It may be useful to write an operator $\mc{L}$ in the form
+\begin{align}
+	\mc{L} = K + \Gamma'S
+\end{align}
+for some monomial operator $\Gamma'$.
+\end{example}
+
+\begin{example} Here is an example that may hint at the flavour of the OCE/PCE problems. Suppose we start with the fibonacci recurrence relation
+\begin{align}
+F_{n+2} =F_{n+1}+F_n
+\end{align}
+with some initial conditions for $f_0$ and $f_1$. We can perform the standard generating function solution approach via summing all equations. Let
+\begin{align}
+	F(x) = \sum_{n=0}^\infty F_n x^n
+\end{align}
+be the generating function for the fibonacci-like numbers. Note that $[x^n] F(x) = F_n$. We have
+\begin{align}
+	F_{n+2} &= F_{n+1}+F_n\\
+	F_{n+2} x^{n+2}&= F_{n+1}x^{n+2}+F_nx^{n+2}\\
+	\sum_{n=0}^{\infty} F_{n+2} x^{n+2}&= x\sum_{n=0}^{\infty}F_{n+1}x^{n+1}+x^2\sum_{n=0}^{\infty}F_nx^n\\
+	F - F_1 x - F_0 &= x (F-F_0) + x^2 F
+\end{align}
+Pulling like terms together and putting everything on one side gives
+\begin{align}
+	(1-x - x^2) F - x F_1 + (x-1) F_0 = 0
+\end{align}
+This is a homogeneous OCE with ordinary coefficient operator$\mc{L}$ (Fibonacci operator?) with kernel $K = 1 - x - x^2$ and polynomial coefficients
+\begin{align}
+	\mc{L} = (1-x-x^2) + (x-1)[x^0]-x[x] = K + \mc{E}
+\end{align}
+The typical solution to the problem specifies initial conditions $F_0$ and $F_1$ and solves the problem as
+\begin{align}
+	F(x) = \frac{(x-1)F_0-x F_1}{1-x-x^2} = \frac{{\mc{E}}(F)}{K}
+\end{align}
+That is, it relies on the initial condition for $\mc{E}$ in order to solve the equation. We also see that if we don't specify the initial conditions we don't get a unique solution. In the random walks models we have unique solutions because of the iterative nature of the problems. With these points in mind we may try the vanishing kernel method by supplying a root of $K$ namely $x = \sigma$. These roots are
+\begin{align}
+\sigma_1 = -\varphi, \sigma_2 = \ol{\varphi}
+\end{align}
+where $\varphi$ is the golden ratio. Then plugging either one of these into the OCE leads to
+\begin{align}
+(\sigma-1)F_0 = \sigma F_1
+\end{align}
+\begin{align}
+	 F_1 &= (1-\ol{\sigma}_1)F_0 = \varphi F_0\\
+	 \text{ or } F_1 &=(1-\ol{\sigma}_2)F_0 = -\ol{\varphi} F_0
+\end{align}
+That is, if we want the vanishing kernel method to work we must have that $F_1$ is related to $F_0$ directly via the golden ratio. By induction we can show that $F_n = \varphi^n F_0$ in the first case and $F_n = (-\ol{\varphi})^n F_0$ in the second case.
+
+What about the persistent kernel method? We want to apply a transformation $y = y(x)$ to $K$ that leaves it the same. That is
+\begin{align}
+	K(y) = 1 - y - y^2 = K(x) = 1 - x - x^2
+\end{align}
+Collecting terms on one side yields
+\begin{align}
+	(y-x)(1+x+y) = 0
+\end{align}
+That is, the group $G$ that preserves the kernel is composed of the identity transformation and the the transformation $g(x) = -x-1$. We want a $F(-1-x)$ to converge which may not necessarily be true. Instead we multiply the whole functional equation by $\ol{x}$ to find
+\begin{align}
+\ol{x} \mc{L} = (\ol{x}-1-x) + (1-\ol{x})[x^0]-[x^1]
+\end{align}
+This new kernel $K$ is nicer. We have
+\begin{align}
+	K = \ol{x}-1-x = \ol{y}-1-y
+\end{align}
+rearranging this equality gives
+\begin{align}
+	(y-x)(1+\ol{x}\ol{y}) = 0
+\end{align}
+and thus the group $G$ is generated by the identity transformation and $g(x) = -\ol{x}$ which is of order 2, so $|G| = 2$. We have the two equation
+\begin{align}
+KF +(1-\ol{x})F_0 - F_1 &= 0\\
+KgF + (1+x)F_0  - F_1 &=0
+\end{align}
+Furthermore emulating the orbit method we have
+\begin{align}
+	(1-g)xKF = K(xF+\ol{x}gF)  = (x+\ol{x})(F_1-F_0)
+\end{align}
+If $F_1 \neq F_0$ we can write
+\begin{align}
+	xF+\ol{x}gF &= \frac{(x+\ol{x})}{K}(F_1-F_0) \\
+	&= \frac{1+x^2}{1-x-x^2}(F_1-F_0) \\
+	&= (1+x+3x^2+O(x^3))(F_1-F_0)
+\end{align}
+Extracting the $[x]$ coefficient yields
+\begin{align}
+	F_0 +[x^2]F(-\ol{x}) = F_0 = F_1 - F_0
+\end{align}
+so $F_1= 2 F_0$ and we find
+\begin{align}
+	xF+\ol{x}F(-\ol{x}) = F_0 \frac{1+x^2}{1-x-x^2}
+\end{align}
+Taking the positive part of this yields
+\begin{align}
+	xF= F_0 \frac{1+x^2}{1-x-x^2}
+\end{align}
+\end{example}
+I think there is something wrong with the example but that's just me. We can demonstrate the D-finiteness by taking the second derivative of $xKF$
+\begin{align}
+	\del_x^2((1-x - x^2) F - x F_1 + (x-1) F_0) = \del_x^2(xKF) = 0
+\end{align}
+
+%================================
+\section{Connection with Fredholm Theory}
+%================================
+Suppose that we are given the equation in the form
+
+\begin{align}
+	(1-t\Gamma S)Q = q
+\end{align}
+\endinput
 
 %================================
 \section{Reformulations of Problems}
-\label{sec:Reform}
 %================================
 
-\subsection{Using labeling operators instead of extraction operators}
-An initially promising idea is to use a labelling operator instead of an extraction operator with the goal of removing those labeled walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and we may get further issues. So, instead of 
-
+\subsection{Using marking operators instead of extraction operators}
+An initially promising idea is to use a marking operator instead of an extraction operator with the goal of removing those marked walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and $Q$ will no longer be a power series in the $x$ variables. We may get further issues. Instead of $E = 1- \ext{\ol{x}}$ we take $\tilde E = 1 + (a_{-1}-1)\ext{x}$ with the idea that if we set $a_{-1} = 0$ we'll obtain $E$. To this end the functional equation is
+\begin{align}
+	(1-tL\tilde E S)\tilde Q = 1
+\end{align}
+which after inversion turns into
+\begin{align}
+	(\tilde E^{-1} L^{-1} -tS) \tilde Q = \tilde E^{-1} L^{-1} 1 = \alpha
+\end{align}
+One benefit of this is that we don't have a mixing between the $E$, $L$ operators and $S$. The downside is we have more $Q$ extractions on their own. We can write this in kernel form as
+\begin{align}
+	K \tilde Q = \alpha + (1 - L^{-1}\tilde E^{-1}) \tilde Q
+\end{align}
+where the operator $1- L^{-1}\tilde E^{-1}$ is composed entirely of coefficient extractions.
 \subsection{Considering a symmetrical super-problem}
-An extension of the previous idea is to symmetrize the problem by also labeling parts on the other side of the origin. Instead of just labeling walks on the axes and on lines where one coordinate is $-1$ we can also label walks on lines with one coordinate $+1$. This leads to a symmetrical arrangement of labeling operations on both sides of the origin. We can skip the labeling of the axes if we don't wish to investigate wall interactions.
+An extension of the previous idea is to symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines where one coordinate is $-1$ we can also mark walks on lines with one coordinate $+1$. This leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
+\begin{align}
+	(1- tLS)\tilde Q = (1- t L_{-1}L_0L_1 S)\tilde Q = 1
+\end{align}
+We can skip the marking of the axes with $L_0$ if we don't wish to investigate wall interactions. In general we may mark more locations in space so we can combine all of these operators into one called $L$. Then we have
+\begin{align}
+	(1- tLS)\tilde Q = 1
+\end{align}
+or in kernel forms
+\begin{align}
+	K\tilde Q = L^{-1}(1) + (1- L^{-1})\tilde Q
+\end{align}
 
-\endinput

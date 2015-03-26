@@ -164,9 +164,9 @@ which doesn't seem to help much.
 %=======================================
 In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laurent polynomial $S$ and some random walk operator $\Gamma$. We haven't made it rigorous yet but $\mc{L}$ is invertible with inverse
 \begin{align}
-	\mc{L}^{-1} = \sum_{k=0}^{\infty}t^k(\Gamma S)^k
+	{\mc{L}}^{-1} = \sum_{k=0}^{\infty}t^k(\Gamma S)^k
 \end{align}
-where $(\Gamma S)^k$ is an iteration of the inhomogeneous operator with $(\Gamma S)^0 = I$. However this inverse is not easy to use as the iteration become quite complicated due to the nature of the random walks. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$.Then we calculate
+where $(\Gamma S)^k$ is an iteration of the inhomogeneous operator with $(\Gamma S)^0 = 1$. However this inverse is not easy to use as the iteration become quite complicated due to the nature of the random walks. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$.Then we calculate
 \begin{align}
 	(\mc{L}-\lambda I) u &= u - \lambda u -t\Gamma Su\\
 	t \Gamma S u &= (1-\lambda)u = \mu u
@@ -187,7 +187,11 @@ Letting $t \to 0$ in this equation yields
 \end{align}
 Since $u_n \neq 0$ this implies that $\lambda = 1$ and again we see that $u \in \ol{S}\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will indeed be finite order Laurent series. For the remainder of the analysis we assume that $\lambda \neq 1$. This excludes finite order Laurent series so $u$ is necessarily given by an infinite order Laurent series.
 
-Let's investigate how how $\del_t$ interacts with $\mc{L}$.
+
+%=======================================
+\section{Interaction with $\del_t$}
+%=======================================
+Here we'll investigate $\del_t$ interacts with $\mc{L}$.
 \begin{align}
 	\del_t \mc{L} &= \del_t - \del_t(t\Gamma S) = \del_t - \Gamma S- t\Gamma S\del_t = \mc{L}\del_t - \Gamma S\\
 	\del_t^2 \mc{L} &= \mc{L}\del_t^2 - 2\del_t \Gamma S\\
@@ -197,18 +201,29 @@ for integer $n$. Another way to write these is with bracket notation
 \begin{align}
 	[\mc{L},\del_t^n] = \mc{L}\del_t^n-\del_t^n\mc{L} = n\del_t^{n-1}\Gamma S
 \end{align}
-A question that pops up is how does $u$ relate to its derivatives.
-\begin{align}
-	\del_t \mc{L} u = \mc{L}u'-\Gamma S u = \lambda u'
-\end{align}
-However
-\begin{align}
-	\Gamma S u =\frac{\mu u}{t}
-\end{align}
-from before so
-\begin{align}
-	\mc{L}u' = \lambda u' + \frac{\mu u}{t}
-\end{align}
 
-
+%=======================================
+\section{Interaction with $\del_i$}
+%=======================================
+Let's take the operator $\Gamma_n(a) = 1 + b x^n[x^n]$ again. Let $\del_k = \del/\del_k$ and in this case just $\del$. We have
+\begin{align}
+	\del \Gamma_n(a) = \del + b\del(x^n[x^n]) = \del + bnx^{n-1}[x^n]
+\end{align}
+Now if $n\ge 0$ we have
+\begin{align}
+	\del^{n+1}\Gamma_n(a)  = \del^{n+1} + b\del^{n+1}(x^n)[x^n] = \del^{n+1}
+\end{align}
+If $n\leq 0$ taking derivatives will yield ever greater powers of $\ol{x}$ so we want to pre-multiply by a power of $x$ first.
+\begin{align}
+	\del x^{-n} \Gamma_{n}(a) = \del x^{-n} + b\del [x^n] = \del x^{-n} = -nx^{-n-1} + x^{-n}\del
+\end{align}
+If we have more terms in an operator then we need to multiply by a power of $x$ to clear out any negative powers of $x$. Then we take the lowest order derivative in order to clear out all the extraction terms. Suppose that
+\begin{align}
+	\Gamma = 1 + \sum_{i=0}^{m} a_i \ext{x^i} - \sum_{i=1}^n b_i\ext{\ol{x}^i}
+\end{align}
+where $m$ and $n$ are non-negative. We need to pre-multiply by $x^n$ to clear out all the negative powers of $x$. Then we have
+\begin{align}
+	x^n\Gamma = x^n + \sum_{i=0}^{m} a_i \ext{x^{i+n}} - \sum_{i=1}^n b_i\ext{x^{n-i}}
+\end{align}
+This operator is cleared by $\del^{m+n+1}$
 \endinput
