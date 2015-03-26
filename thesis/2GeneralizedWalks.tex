@@ -369,10 +369,52 @@ I think there is something wrong with the example but that's just me. We can dem
 \section{Connection with Fredholm Theory}
 %================================
 Suppose that we are given the equation in the form
-
 \begin{align}
-	(1-t\Gamma S)Q = q
+	KQ +t\Gamma'SQ = q
 \end{align}
+where
+\begin{align}
+	\Gamma' = \sum_{I,J}a_{I,J} x_I^J[x_I^J]
+\end{align}
+where we only have finite-sized $J$'s and $\emptyset \neq I\subseteq [d]$. From complex analysis we know that for a function $f(x)$ given by a power series and for $x$ within the region of convergence
+\begin{align}
+	[x^n]f(x) = f_n = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z^{n+1}}dz
+\end{align}
+and
+\begin{align}
+	f(x) = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z-x}dz
+\end{align}
+where in the first case $\gamma$ winds CCW around the origin within the region of convergence and in the second case $\gamma$ winds around $x$ within the region of convergence. The idea is to combine these two expressions for many dimensions (at least formally) to represent the operator $\mc{L}$ in integral form. We have for $|I| = n$
+\begin{align}
+	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^{n}}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}}dz_I
+\end{align}
+where $f$ has $x_i = z_i$ for $i \in I$ and the rest are still $x$'s. If we use this representation we'll have different numbers of iterations of the integral for different coefficient. We might as well go all-out and write
+\begin{align}
+	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}(z-x)_{I^c}}dz_{[d]}
+\end{align}
+where now $x_i = z_i$ in $f$ and 
+\begin{align}
+	(z-x)_P = \prod_{p\in P} (z_p-x_p)
+\end{align}
+This allows us to write The operator like this
+\begin{align}
+	(K+t\Gamma'S)Q&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \left(\frac{K}{(z-x)_{[d]}} +t S\sum_{I,J}\frac{a_{I,J}}{z_I^{J+1}(z-x)_{I^c}}\right)Q dz_{[d]}\\
+	& = \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{1}{(z-x)_{[d]}}\left(K +t S\sum_{I,J}\frac{a_{I,J}(z-x)_I}{z_I^{J+1}}\right)Q dz_{[d]}\\
+	&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma R_0Q dz_{[d]}
+\end{align}
+Now to turn this into a $d$-dimensional Fredholm problem we'll need to parametrize the integral. One way that might work is to set $z_k = r_k \exp(i\theta_k)$ and $x_k = s_k e^{i\phi_k}$. Since $dz_k = r_k i e^{i\theta_k}$ we have
+\begin{align}
+(K+t\Gamma'S)Q = \frac{r_{[d]}}{(2\pi)^d}\int_0^{2\pi}\cdots\int_0^{2\pi} e^{i\theta_1}\ldots e^{i\theta_d}R_0Q d\theta_{[d]} = q(\phi_1,\ldots,\phi_d)
+\end{align}
+so if we write
+\begin{align}
+R = \exp(i(\theta_1+\ldots + \theta_d))R_0(\phi_1,\ldots,\phi_d,\theta_1,\ldots,\theta_d)
+\end{align}
+we have the inhomogeneous Fredholm equation of the first kind in $d$ dimensions
+\begin{align}
+	\int_0^{2\pi}\cdots\int_0^{2\pi} RQ d\theta_1\ldots d\theta_d= g
+\end{align}
+where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\theta_k$'s. Perhaps Fredholm theory can be applied in solving the random walk models in man dimensions. Perhaps this will also lead to a good inner product on the space where $Q$ lives.
 \endinput
 
 %================================

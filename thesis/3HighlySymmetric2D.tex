@@ -4,7 +4,7 @@
 %=======================================
 \chapter{Highly-symmetric 2D models}
 %=======================================
-When we consider the supersymmetric cases the $x$-transformations are given by
+When we consider the highly-symmetric cases the $x$-transformations are given by
 \begin{align}
 \bullet : x_1 \mapsto \ol{x_1},\quad\ast: x_2 \mapsto \ol{x_2}
 \end{align}
@@ -46,7 +46,8 @@ The differences in solutions will occur from here on out. We have
 \end{align}
 Next
 \begin{align}
-	K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast &= (c_2-tx_2S_2^{-1})(c_1c_2-t\ol{x_1}\ol{x_2}S_{1,2}^{-1,-1})-(c_2-t\ol{x_2}S_2^{-1})(c_1c_2-t\ol{x_1}x_2S_{1,2}^{-1,-1})\\
+	K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast &= (c_2-tx_2S_2^{-1})(c_1c_2-t\ol{x_1}\ol{x_2}S_{1,2}^{-1,-1})\\
+	&\quad-(c_2-t\ol{x_2}S_2^{-1})(c_1c_2-t\ol{x_1}x_2S_{1,2}^{-1,-1})\\
 	&=c_1c_2tS_2^{-1}(\ol{x_2}-x_2) - c_2t\ol{x_2}S_{1,2}^{-1,-1}(\ol{x_2}-x_2)\\
 	&=c_2t(\ol{x_2}-x_2)(c_1S_2^{-1}(\sigma_1)-\ol{x_1}S_{1,2}^{-1,-1})
 \end{align}
@@ -231,7 +232,8 @@ extracting the $[x_1^0]$ coefficient yields
 \end{align}
 We can extract higher coefficients too. Let $k\geq 1$. Then the $[x_2^k]$ coefficient is
 \begin{align}
-0 &= Q_1^k-tS_{1}^{-1}Q_1^{k+1}-tS_1^{0}Q_1^k-tS_1^1Q_1^{k-1}-c_2\Qf{k,0} + t\ol{x_2}(\Sf{-1,-1}\Qf{k+1,0}+\Sf{0,-1}\Qf{k,0}+\Sf{1,-1}\Qf{k-1,0})\\
+0 &= Q_1^k-tS_{1}^{-1}Q_1^{k+1}-tS_1^{0}Q_1^k-tS_1^1Q_1^{k-1}-c_2\Qf{k,0} \\ 
+&\quad+ t\ol{x_2}(\Sf{-1,-1}\Qf{k+1,0}+\Sf{0,-1}\Qf{k,0}+\Sf{1,-1}\Qf{k-1,0})\\
 &=Q_1^k-tvQ_1^{k+1}-tvQ_1^{k-1}-c_2\Qf{k,0} + t\ol{x_2}(\Qf{k+1,0}+\Qf{k-1,0})
 \end{align}
 We can re-write the last one in a form more convenient for the next few steps
@@ -246,8 +248,10 @@ We'll use induction to prove a nice formula but for that we'll first need to est
 Combining them with equation (\ref{zero-order}) gives
 \begin{align}
 0 &= R^\ast Q_1^0 -R Q_1^{0,\ast} - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0 \\
-&= R^\ast ( \ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^1) -R (\ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^{1,\ast}) - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0\\
-&=a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast}) + (R^\ast-R)(\ol{a_2}+c_2\Qf{0,0}) - c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0\\
+&= R^\ast ( \ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^1) -R (\ol{a_2}+c_2\Qf{0,0} + a_1tvQ_1^{1,\ast}) \\
+&\quad- c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0\\
+&=a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast}) + (R^\ast-R)(\ol{a_2}+c_2\Qf{0,0}) \\
+&\quad- c_2(\ol{x_2}-x_2)\Qf{0,0} +\ol{a_2}\delta_0\\
 & =a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast})+\ol{a_2}(\ol{x_2}-x_2)+\ol{a_2}\delta_0\\
 & =a_1tv(R^\ast Q_1^1-R Q_1^{1,\ast})+\ol{a_2}((\ol{x_2}-x_2)+\delta_0)
 \end{align}
@@ -268,12 +272,13 @@ where $\delta_m$ is not a function of $a_2$.
 \end{lemma}
 \begin{proof}We'll show this by induction. We have the base cases $m = 0$ and $m=1$. The latter one fits the pattern because $\Qf{1,0} = 0$ since we cannot have any walks end on coordinates $(1,0)$. Now we assume that the formula is true for all cases up to and including $m$. Then we use formula (\ref{formula})
 \begin{align}
-& R^\ast Q_1^m -R Q_1^{m,\ast}\\
-=&tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}) + tv(R^\ast Q_1^{m-1}-R Q_1^{m-1,\ast})\\
-& + c_2(R^\ast-R)\Qf{m,0}-t(\ol{x_2}R^\ast-x_2 R)(\Qf{m+1,0}+\Qf{m-1,0})\\
-=& tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}) + tv(c_2(\ol{x_2}-x_2)\Qf{m-1,0}-\ol{a_2}\delta_{m-1})\\
-& + c_2(\ol{x_2}-x_2)\Qf{m,0}-c_2tv(\ol{x_2}-x_2)(\Qf{m+1,0}+\Qf{m-1,0})\\
-=& tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast})+ c_2(\ol{x_2}-x_2)\Qf{m,0}-c_2tv(\ol{x_2}-x_2)\Qf{m+1,0}) - \ol{a_2}tv\delta_{m-1})\\
+	& R^\ast Q_1^m -R Q_1^{m,\ast}\\
+	=&tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}) + tv(R^\ast Q_1^{m-1}-R Q_1^{m-1,\ast})\\
+	& + c_2(R^\ast-R)\Qf{m,0}-t(\ol{x_2}R^\ast-x_2 R)(\Qf{m+1,0}+\Qf{m-1,0})\\
+	=& tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast}) + tv(c_2(\ol{x_2}-x_2)\Qf{m-1,0}-\ol{a_2}\delta_{m-1})\\
+	& + c_2(\ol{x_2}-x_2)\Qf{m,0}-c_2tv(\ol{x_2}-x_2)(\Qf{m+1,0}+\Qf{m-1,0})\\
+	=& tv(R^\ast Q_1^{m+1}-R Q_1^{m+1,\ast})+ c_2(\ol{x_2}-x_2)\Qf{m,0}\\
+	&-c_2tv(\ol{x_2}-x_2)\Qf{m+1,0}) - \ol{a_2}tv\delta_{m-1})
 \end{align}
 Combining this with equation (\ref{coeff-eqn}) leads to
 \begin{align}
@@ -288,7 +293,8 @@ This function $\delta_{m+1}$ is also not dependent on $a_2$ and this completes t
 \end{proof}
 There is an equivalent statement for $Q_2^n$. We can expand $R^\ast$ and $R$ to a form we can use
 \begin{align}
-(c_2\ol{x_2}-\ol{a_2}x_2)Q_1^m(x_2) -( c_2x_2-\ol{a_2}\ol{x_2})Q_1^m(\ol{x_2}) - c_2(\ol{x_2}-x_2)\Qf{m,0} +\ol{a_2}\delta_m = 0
+0 &=(c_2\ol{x_2}-\ol{a_2}x_2)Q_1^m(x_2) -( c_2x_2-\ol{a_2}\ol{x_2})Q_1^m(\ol{x_2}) \\
+&\quad- c_2(\ol{x_2}-x_2)\Qf{m,0} +\ol{a_2}\delta_m 
 \end{align}
 We start by extracting the $[x_2^1]$ coefficient
 \begin{align}
@@ -358,9 +364,11 @@ b_1b_2\Qf{0,2} &= b_1 \Qf{0,0} - b_1 \wc{Q}_{1,2}^{0,0}
 We we have
 \begin{align}
 b_1b_2\Qf{1,1} &= t(b_1b_2\Qf{0,0}+b_1b_2\Qf{2,0}+b_1b_2\Qf{0,2}+b_1b_2\Qf{2,2})\\
-&= t(b_1b_2\Qf{0,0}+ b_2 \Qf{0,0} - b_2 \wh{Q}_{1,2}^{0,0}+ b_1 \Qf{0,0} - b_1 \wc{Q}_{1,2}^{0,0}+\Qf{0,0}-\wh{Q}_{1,2}^{0,0}-\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\\
-&= t((b_1b_2+b_1+b_2+1)\Qf{0,0}-(b_2+1)\wh{Q}_{1,2}^{0,0}-(b_1+1)\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\\
-&=t(a_1a_2\Qf{0,0}-a_2\wh{Q}_{1,2}^{0,0}-a_1\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})
+	&= t(b_1b_2\Qf{0,0}+ b_2 \Qf{0,0} - b_2 \wh{Q}_{1,2}^{0,0}+ b_1 \Qf{0,0} \\
+	&\quad- b_1 \wc{Q}_{1,2}^{0,0}+\Qf{0,0}-\wh{Q}_{1,2}^{0,0}-\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\\
+	&= t((b_1b_2+b_1+b_2+1)\Qf{0,0}-(b_2+1)\wh{Q}_{1,2}^{0,0}\\
+	&\quad-(b_1+1)\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\\
+	&=t(a_1a_2\Qf{0,0}-a_2\wh{Q}_{1,2}^{0,0}-a_1\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})
 \end{align}
 We can finally write
 \begin{align}

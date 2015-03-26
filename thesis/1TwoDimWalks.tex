@@ -7,7 +7,10 @@
 %=======================================
 \section{Introduction}
 %=======================================
-The power of the operator notation really starts to show here as it allows us to easily derive functional equations for the two-dimensional problem. Take the operator $E$ to be defined as $E = E_1 E_2$ where $E_k = 1 - \ext{\ol{x_k}}$ and $L = L_1 L_2$ where $L_k = 1 + (a_k-1)[x_k^0]$. As before we start with the empty walk with monomial 1. Then to find $Q$ we take $SQ$ to obtain all possible extensions of walks enumerated by $Q$. Then we need to remove all walks stepping outside of the quarter plane. Such walks have either $x_1$ or $x_2$ to a negative power (or both) so if we take $ESQ$ we remove all problematic walks. Now we need to mark those walks stepping on the axes so we calculate $LESQ$. Since all the walks enumerated here has one more step we need to keep track of that by multiplying with $t$. The only missing walk is the empty walk. This yields $Q = 1  +t LES Q$ or in operator form
+The power of the operator notation really starts to show here as it allows us to easily derive functional equations for the two-dimensional problem.
+\begin{definition} Let $Q = Q(x_1,x_2,a_1,a_2;t)$ be the generating function enumerating two-dimensional quarter-plane random walks with interactions with the axes. Here the step Laurent polynomial is $S = S(x_1,x_2)$ and will be made explicit if the context requires it. The $x$'s indicate the ending coordinates of each walk while the $a$'s count its interactions with the axes.
+\end{definition}
+Here the operators $E$ and $L$ are defined as $E = E_1 E_2$ where $E_k = 1 - \ext{\ol{x_k}}$ and $L = L_1 L_2$ where $L_k = 1 + (a_k-1)[x_k^0]$. As before we start with the empty walk with monomial 1. Then to find $Q$ we take $SQ$ to obtain all possible extensions of walks enumerated by $Q$. Then we need to remove all walks stepping outside of the quarter plane. Such walks have either $x_1$ or $x_2$ to a negative power (or both) so if we take $ESQ$ we remove all problematic walks. Now we need to mark those walks stepping on the axes so we calculate $LESQ$. Since all the walks enumerated here has one more step we need to keep track of that by multiplying with $t$. The only missing walk is the empty walk. This yields $Q = 1  +t LES Q$ or in operator form
 \begin{align}
 	(1- tLES)Q = 1
 \end{align}
@@ -15,6 +18,12 @@ But we know that the operator $L$ is invertible with inverse $L^{-1} = L_1^{-1}L
 \begin{align}
 	(L^{-1}-tES)Q = L^{-1}1 = \ol{a}_1\ol{a}_2 = \alpha.
 \end{align}
+\begin{prop} The function $Q$ satisfies the following functional equations
+\begin{align}
+	(1- tLES)Q &= 1\\
+	(L^{-1}-tES)Q &= \alpha
+\end{align}
+\end{prop}
 We shall expand the equation to its explicit form. We have
 \begin{align}
 	L^{-1} Q = (1-c_1[x_1^0])(1-c_2[x_2^0]) Q = Q - c_1 Q_1^0 - c_2 Q_2^0 + c_1c_2 \Qf{0,0}
@@ -28,18 +37,27 @@ We skipped some steps in the latter calculation. It may seem like there should b
 \begin{align*}
 	(1-tS)Q - (c_1-t\ol{x_1}S_1^{-1}) Q_1^0- (c_2-t\ol{x_2}S_2^{-1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{-1,-1})Q_{1,2}^{0,0}  = \ol{a_1a_2}
 \end{align*}
-We can write $K_I = c_I - t\ol{x}_I S_I^{-1}$ for sets $I$ to simplify the equation to
+\begin{definition} For $I \subseteq [d]$ let
+\begin{align}
+K_I = c_I - t\ol{x}_I S_I^{-1}
+\end{align}
+where if $I = \emptyset$, $K_I = K$.
+\end{definition}
+This allows us to re-write the equation neatly.
+\begin{corollary} The function $Q$ satisfies the functional equation
 \begin{align}
 	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{1,2} \Qf{0,0} = \ol{a}_1\ol{a}_2
 \end{align}
-We can also perform coefficient extractions like in the one-dimensional case and obtain further functional equations
+\end{corollary}
+We can also perform coefficient extractions like in the one-dimensional case and obtain further functional equations.
+\begin{corollary} The function $Q$ satisfies the additional functional equations
 \begin{align*}
-(1-tS)Q - (c_1-t\ol{x_1}S_1^{-1}) Q_1^0- (c_2-t\ol{x_2}S_2^{-1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{-1,-1})Q_{1,2}^{0,0}  &= \ol{a_1a_2}\\
 (1-ta_1 S_1^0)Q_1^0 - (c_2-ta_1\ol{x_2}S_{1,2}^{0,-1})Q_{1,2}^{0,0} - a_1 t(S_1^{-1}Q_1^1-\ol{x_2}S_{1,2}^{-1,-1}Q_{1,2}^{1,0}) &=\ol{a_2}\\
 (1-ta_2 S_2^0)Q_2^0 - (c_1-ta_2\ol{x_1}S_{1,2}^{-1,0})Q_{1,2}^{0,0} -a_2t(S_2^{-1}Q_2^1-\ol{x_1}S_{1,2}^{-1,-1}Q_{1,2}^{0,1}) &=\ol{a_1}\\
 (1-a_1 a_2 t \Sf{0,0})Q_{1,2}^{0,0} - ta_1a_2t(\Sf{-1,-1}\Qf{1,1}+\Sf{-1,0}\Qf{1,0}+\Sf{0,-1}\Qf{0,1})&= 1
 \end{align*}
-We'll mostly work on walks with step sets that don't allow staying in one spot ($\Sf{0,0} = 0$). Sometimes we might though.
+where $\Sf{0,0} = 1$ if we have resting steps.
+\end{corollary}
 
 We should contrast this quick analysis to the one done without the operator notation. We would have to go through an inclusion-exclusion process that can be rather complicated and prone to error. It doesn't work out too badly when dealing with walks without interactions. However, once we consider the interactions the complexity of the process blows up. This is due to having the $LE$ operator together. We would obtain a large equation. Then we wouldn't think about inverting operators because we don't see any. The only visible way to go is through coefficient extraction of the equation. Then we may notice that we can backsubstitute terms and end up with the equation above in terms of $K_I$'s. This process would take several pages and doesn't generalize nicely. However the operator notation allows us to skip the back-substitution step entirely by just inverting $L$ and separating the $L$ and $E$ operators which reduces the number of terms. The case for general dimension $d$ follows nicely and we write it out at a later point.
 %=======================================
@@ -67,7 +85,7 @@ Before we consider walks that come back to the origin we'll look at the behavior
 \section{Simple case: Factoring $S$ into a product}
 %=======================================
 
-There's something we can say about the case where $S$ factors as $S = S_1(x_1)S_2(x_2)$. We have
+We take a moment to mention a result that falls out of the operator notation and which was covered in more generality by Steve et al. We have a special case when $S$ factors as $S = S_1(x_1)S_2(x_2)$. We have
 \begin{align}
 	 (DS)^k = (D_1D_2S_1S_2)^k = (D_1S_1)^k(D_2S_2)^k
 \end{align}
@@ -87,7 +105,7 @@ and by reversing the iteration we obtain the functional equation
 \begin{align}
 	(1-tD_iS_i)Q_i = 1
 \end{align}
-In other words, $Q_i(x_i,a_i,t)$ is the generating function for a 1-dimensional problem with Laurent step polynomial $S_i(x_i)$. In the case of a factoring of this sort, we are able to glue the 2-dimensional solution out of two 1-dimensional solutions. If we want to look at the generating function for quarter plane walks of length $k$ it is enough to look at the product of two generating functions for one-dimensional walks of length $k$. Also, we can write
+In other words, $Q_i(x_i,a_i,t)$ is the generating function for a 1-dimensional problem with Laurent step polynomial $S_i(x_i)$. In the case of a factoring of this sort, we are able to glue the 2-dimensional solution out of two 1-dimensional solutions. (Of course this generalizes easily to many dimensions and gives an infinite family of solutions to higher-dimensional problems where $S$ factors into lower dimensional $S_i$'s). If we want to look at the generating function for quarter plane walks of length $k$ it is enough to look at the product of two generating functions for one-dimensional walks of length $k$. Also, we can write
 \begin{align}
 	Q &= Q_1 \odot Q_2, \quad \wh Q = \wh Q_1 \odot Q_2\\
 	\wc Q &= Q_1 \odot \wc Q_2, \quad \wc{\wh Q}  = \wh Q_1 \odot \wc Q_2
