@@ -71,9 +71,14 @@
 \contentsline {section}{\numberline {10.3}The almost-full model: missing steps E and W}{113}{section.10.3}
 \contentsline {section}{\numberline {10.4}The full model: all steps available}{113}{section.10.4}
 \contentsline {section}{\numberline {10.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{113}{section.10.5}
-\contentsline {chapter}{\numberline {11}Epilogue}{114}{chapter.11}
-\contentsline {section}{\numberline {11.1}Discussion}{114}{section.11.1}
-\contentsline {section}{\numberline {11.2}Future Work}{114}{section.11.2}
-\contentsline {section}{\numberline {11.3}Conclusion}{114}{section.11.3}
-\contentsline {chapter}{\numberline {12}Miscellaneous Things}{115}{chapter.12}
-\contentsline {chapter}{\numberline {A}Supporting Materials}{118}{appendix.A}
+\contentsline {chapter}{\numberline {11}Group of Order 8}{114}{chapter.11}
+\contentsline {section}{\numberline {11.1}Preparation}{114}{section.11.1}
+\contentsline {section}{\numberline {11.2}The $\sigma _1$ substitution}{116}{section.11.2}
+\contentsline {section}{\numberline {11.3}The $\sigma _2$ substitution}{117}{section.11.3}
+\contentsline {section}{\numberline {11.4}Partial Orbital Operators}{118}{section.11.4}
+\contentsline {chapter}{\numberline {12}Epilogue}{121}{chapter.12}
+\contentsline {section}{\numberline {12.1}Discussion}{121}{section.12.1}
+\contentsline {section}{\numberline {12.2}Future Work}{121}{section.12.2}
+\contentsline {section}{\numberline {12.3}Conclusion}{121}{section.12.3}
+\contentsline {chapter}{\numberline {13}Miscellaneous Things}{122}{chapter.13}
+\contentsline {chapter}{\numberline {A}Supporting Materials}{125}{appendix.A}
