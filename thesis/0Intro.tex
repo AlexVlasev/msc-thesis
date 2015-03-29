@@ -6,6 +6,12 @@
 \label{ch:Intro}
 %=======================================
 
+%=======================================
+\section{Recent History}
+%=======================================
+\ac{PDE}
+\acf{ODE}
+\ac{PDE}
 In this work we'll attempt to further the mathematics of the enumeration of discrete random walks. Typically those problems take place on a cubical lattice and one may often investigate random walk models with different steps and various constraints to smaller regions. In this work we'll tackle the problem of random walk models with interactions and specifically counting these interactions. But before we get to it we'll go through some of the history of the problem.
 
 As with any enumeration problem we start simple with a two-dimensional random walk model with possible steps - up, down, left and right. A typical question we can answer is how many walks of length $n$ are there? In this case we have $4^n$. We can compe up with more complicated models with various step lengths and directions. There has been a lot of work done in restricting such models to parts of the plane - half-plane and quarter plane. There have been models on semi-infinite strips and wedges. There have been generalizations to more dimensions like random walks in the positive orthant, sometimes in the full generality of $d$ dimensions. Another type of discrete random walk model is that of self-avoiding walks. One may investigate these on the plane or on a different lattice (like a honeycomb lattice). Further we may try to answer questions about walks interacting with interfaces - quarterplane walks interacting with the axes or a pair of random walks interacting with each other. In this work we'll mainly investigate random walks with interactions in 2 or more dimensions. In a few cases we'll touch upon random walks on other lattices and self-avoiding walks.
@@ -18,281 +24,27 @@ So far most discrete random walk models have not needed much special notation or
 
 A dreamy goal is to make the process fully automatic. We should be able to input a random walk model (step set, domain, interactions) into an algorithm that will output several items in order of increasing utility - a functional equation for the generating function, a reduced such equation for easier solving and hopefully a solution for the equation and/or showing that it is/isn't D-finite. In this work we achieve part of the goal - the first two outputs of this algorithm. Some of the main results are that for a lot of random walk problems we can write an operator equation for the generating function that we can either solve iteratively or simplify to a form more conducive to further analysis with group theory and other tools. The work hints at a deeper theory of coefficient extraction equations which are similar to differential equations. Instead of derivatives we have coefficient extractions. The connection is made exact by noting that coefficient extraction is the same as taking a derivative and evaluating at zero for that specific variable, modulo a constant. Surely we should see further development in a theory of ordinary and partial coefficient extraction equations.
 
-In the first few chapters we go through motivating examples which will serve as a springboard into further generalizations. First we'll start off with one-dimensional random walks with and without interactions in Chapter 2. Then we'll quickly move on to two-dimensional random walks in Chapter 3. On the way we'll develop some of the basic operator theory involved in the random walk models. In Chapter 4 we'll make a detour to random walks on a honeycomb lattice - a problem that will show some of the group-theoretic and operator tools. In Chapter 5 we'll tackle the $d$-dimensional random walk model functional equations using operators. In chapter 6 we'll finally go through operators in a much generality as we can, deriving all sorts of properties for them along the way. In chapter 7 we'll discuss generalizations of the random walk models and we'll push the operator notation as far as we can to see what kind of problem we can hope to tackle with the theory.
+\cite{bousquet2010walks}
+
+%=======================================
+\section{Thesis Objectives}
+%=======================================
+
+In a few words - in this thesis we aim to generalize and automate. The mathematicians who study random walk enumeration have as a goal to classify random walks according to various characteristics like step set, dimension, group size associated to the kernel, and perhaps most importantly - D-finitenes. They also dream of being able to make the process automatic whenever it is possible. In this thesis we aim to further the study of random walk models towards this goal of automatization. We might as well be as optimistic as possible and suppose that a general algorithm exists that takes an arbitrary random walk model - in arbitrarily many dimensions, with arbitrary finite step sets and with arbitrary constraints, and outputs various data about the model - functional equation for the generating function, a solution and information about the model's D-finiteness. It is only logical that if such an algorithm were to exist it would not have difficulty with the particulars of the random walk model. While this kind of algorithm may be too strong to envision (it may be the case that there are atrocious random walk models which we cannot solve), the idea of the existence of such an algorithm has been a strong motivator in our pursuit of generalization. This thesis succeeds in demonstrating that the first task is achievable. For a vast assortment of random walk models we can almost-automatically write down a functional equation for its generating function counting length, position and interactions of the random walks. The equation looks like
+\begin{align}
+	(1- t\Gamma S) Q = q
+\end{align}
+where $\Gamma$ is an operator on the variables of $Q$, $S$ is the Laurent step polynomial (keeping inventory of the steps in polynomial form) and $q$ is some Laurent polynomial initial condition. The operator idea is powerful and we'll use it as much as we can in this thesis. A secondary achievement is the furthering of the theory of the orbit summation method which along with the obstinate kernel method combine in a nicer theory of operators consisting of group actions. However time and space have not been sufficient to go too far in these lines. Near the end we present some solutions and partial solutions to random walk problems in two dimensions with interactions. 
+
+%=======================================
+\section{Layout of Thesis}
+%=======================================
+
+In the first few chapters we go through motivating examples which will serve as a springboard into further generalizations. First we'll start off with one-dimensional random walks with and without interactions in \autoref{ch:1DExample}. Then we'll quickly move on to two-dimensional random walks in \autoref{ch:2DWalks}. On the way we'll develop some of the basic operator theory involved in the random walk models. In Chapter 4 we'll make a detour to random walks on a honeycomb lattice - a problem that will show some of the group-theoretic and operator tools. In Chapter 5 we'll tackle the $d$-dimensional random walk model functional equations using operators. In chapter 6 we'll finally go through operators in a much generality as we can, deriving all sorts of properties for them along the way. In chapter 7 we'll discuss generalizations of the random walk models and we'll push the operator notation as far as we can to see what kind of problem we can hope to tackle with the theory.
 
 In Chapter 8 we'll become more practical and deal with group-theoretic operators relevant to both two-dimensional and higher-dimensional random walk models. In Chapter 9 we extend the persistent kernel method as much as we can for the two-dimensional interacting walks. Then in Chapter 10 we attempt to solve as many highly-symmetrical two-dimensional interacting models as we can via the vanishing kernel method. In Chapter 11 we work on some models with higher group orders.
-
-
 
 %=======================================
 
 \endinput
-
-We'll investigate the generating functions for quarter-plane walks where we track how many times these walks touch the walls. 
-\begin{itemize}
-\item $Q$ is the generating function.
-\item Powers of variables $x_i$ keep track of the $i$-th coordinate of the endpoint of a random walk. For example the monomial $x_1^3x_2^1x_4^7$ counts how many walks end at $(3,1,0,7)$.
-\item Powers of variables $a_i$ keep track of the number of times a random walk passes through a point with $i$-th coordinate equal to zero. For example the monomial $a_1^2a_2$ counts how many times the random walks have passed through points with coordinates $(0,j)$ and $(i,0)$ respectively.
-\item Powers of $t$ count the length of random walks.
-\item Variables with overline are reciprocals like $\ol{x_1} = 1/x_1$.
-\item $S$ is the Laurent polynomial generating function for the allowed step set. For example for the steps $\{$N, E, SW$\}$ we have $S = x_2 + x_1+\ol{x_1}\ol{x_2}$.
-\item We'll often use $b_i = a_1-1$ and $c_i = b_i/a_i = 1-\ol{a_i}$.
-\end{itemize}
-Next we have some notation on extraction of coefficients
-\begin{itemize}
-\item $[d] = (1,\ldots,d)$ as a sequence.
-\item For a sequence $I = (i_1,\ldots, i_n)$ and a sequence $P = (p_1,\ldots,p_n)$, $x_I^P = x_{i_1}^{p_1}\ldots x_{i_n}^{p_n}$. For example $x_{[3]}^{(1,0,2)} = x_1^1x_2^0x_3^2 = x_1x_3^2$. We'll usually use this notation for when we have general sequences, not in the case of the example which we would write out explicitly.
-\item $[u_I^P]$ stands for extracting the coefficient infront of $u_I^P$ in the generating function expansion.
-\item $Q_{I}^J = [x_I^P]Q$ and similarly $S_I^J =[x_I^J]S$. For example if $I = (1,3)$, $J = {0,1}$, (omiting parentheses) $Q_I^J = Q_{1,3}^{0,1}$. We will sometimes write $(Q_I^P)_J^R = Q_{I,J}^{P,R}$
-\item For a set $I$, $\oo$ and $\one$ stand for sequences of $|I|$ zeros and ones respectively. For example for $I \subseteq [d]$ we might have $S_I^{-\one}Q_I^{\oo}$. Analogously we will write $(Q_I^{\one})_J^\oo = Q_{I,J}^{\one,\oo}$
-\end{itemize}
-So we have
-\[
-	Q(x_1,x_2,a_1,a_2;t) = \sum_{i,j,k} \Qf{i,j}x_1^i x_2^j t^k
-\]
-So far we won't extract $a$'s because we have an unobvious choice between extracting $a,b$ or $c$ with various pros/cons. For example it may sometimes be easier to extract $b_1^k$ than $a_1^k$ but there's the added cost that the extracted term counts walks with varying powers of $k$. We usually won't extract with respect to $t$.
-
-
-
-%=======================================
-\chapter{(Old ways. Should delete?) 2D stuff}
-%=======================================
-
-%=======================================
-\section{Deriving the functional equation for the 2D unlabelled random walks}
-%=======================================
-
-We begin constructing a functional equation for $Q$, the generating function for the quarter-plane walks with steps from $S$ (we'll use it for both the step set and the laurent polynomial). We use the inclusion-exclusion principle. We start with 1 (I'm not sure exactly where it comes). When we are far from the origin and the axes we can step in any of the directions from $S$. So we'll add $tSQ$ because the walks will now have 1 more step and any of the walks counted by $Q$ should be in there as well.
-
-However, we've overdone it because the expression $tSQ$ also counts those walks that end up below the $x_1$ axis or on the left of the $x_2$ axis. We must subtract those invalid walks. A walk will become invalid with respect to the $x_1$ axis if it start at coordinate $(i,0)$ for some $i$, that is the $x_1$ axis and the next step leads it below the $x_1$ axis, that is with negative $x_2$ coordinate. The walks starting on the $x_1$ axis are those counted by $Q_2^0$. The steps in the negative $x_2$ directions are those counted by $S_2^{-1}$. The term we need to remove is $t\ol{x_2}S_2^{-1}Q_2^0$ where the $t$ is due to the increase in step number. Analogously we need to remove the term $\ol{x_1}S_1^{-1}Q_1^0$.
-
-However, there is a problem. We've removed too many terms, namely those that count walks on the origin and go in the SW direction, because this is the common direction counted by both the terms in the previous paragraph. Thus we need to add in the term involving walks starting at the origin (counted by $\Qf{0,0}$) and moving in the SW direction (steps counted by $\Sf{-1,-1}$). The term is $t\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}$. Since this covers all cases we immediately have the functional equation
-\[
-Q = 1 + tSQ - t \ol{x_2}\es{2}{-1}\Q{2}{0} - t\ol{x_1}\es{1}{-1}\Q{1}{0}+t\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}
-\]
-
-%=======================================
-\section{Deriving the functional equation for the 2D labelled random walks}
-%=======================================
-
-To derive the functional equation for the labelled random walks we start with the equation for the unlabelled walks and modify it to add terms counting interactions with the walls. Each of the terms will rely on inclusion-exclusion to arrive at a valid expression. First, we need to identify which terms will count walks that will have to be labelled on their step, remove those terms and add them back in with a multiplication by $a_i$.
-
-We start with identifying which terms will be labelled on the next step due to an interaction with the $x_1$-axis. We have two cases
-\begin{itemize}
-	\item Walks ending on the $x_1$-axis (counted by $Q_2^0$) moving in the positive or negative $x_1$ direction (steps counted by $S_2^0$). The term is $tS_2^0 Q_2^0$.
-	\item Walks ending one unit above the $x_1$-axis (counted by $Q_2^1$) moving in the negative $x_2$ direction (steps counted by $S_2^{-1}$). The term is $tS_2^{-1} Q_2^1$.
-\end{itemize}
-However, we've over-reached in this tally and we need to remove those terms that count invalid quarter-plane walks, namely those that also end up beyond the $x_2$ axis on the next step. 
-\begin{itemize}
-	\item Walks ending on the $x_1$-axis and the $x_2$-axis (counted by $\Qf{0,0}$) travelling in the negative $x_1$ direction (steps counted by $\Sf{-1,0}$). The term is $t\ol{x_1}\Sf{-1,0}\Qf{0,0}$
-	\item Walks ending one unit above the $x_1$-axis and on the $x_2$-axis (counted by $\Qf{0,1}$) traveling in the negative $x_2$ direction and negative $x_1$ direction. The term is $t\ol{x_1}\Sf{-1,-1}\Qf{0,1}$.
-\end{itemize}
-So the quarter-plane walks that need to be labelled with $a_2$ for every time they touch the $x_1$ axis are given by the term
-\[
-	t(\es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})
-\]
-We need to remove this term and add it back again with a label $a_2$ because the term counts those walks that will interact with the $x_1$ axis on their next step. Thus overall we need to add
-\[
-	t(a_2-1)(\es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})
-\]
-to the unlabelled functional equation. Analogously we need to add
-\[
-	t(a_1-1)(\es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})
-\]
-to the equation. However, we've mislabelled walks that would end at the origin on their next step. We've given them $a_1$ as a label in one case and $a_2$ as a label in the other case. Furthermore we've removed two copies of each due to the two terms. Therefore, we need to add back one of the terms, remove the terms with labels $a_1$ and $a_2$ and relabel them properly with label $a_1a_2$. There are three types of walks ending on the origin
-\begin{itemize}
-	\item Walks ending on point $(0,1)$ (counted by $\Qf{0,1}$) and then stepping South, i.e. step is $(0,-1)$ (counted by $\Sf{0,-1}$). The term is $t\Sf{0,-1}\Qf{0,1}$.
-	\item Walks ending on point $(1,0)$ (counted by $\Qf{1,0}$) and then stepping West, i.e. step is $(-1,0)$ (counted by $\Sf{-1,0}$). The term is $t\Sf{-1,0}\Qf{1,0}$.
-	\item Walks ending on point $(1,1)$ (counted by $\Qf{1,1}$) and then stepping Southwest, i.e. step is $(-1,-1)$ ( counted by $\Sf{-1,-1}$). The term is $t\Sf{-1,-1}\Qf{1,1}$.
-\end{itemize}
-We'll need to multiply the terms by the following
-\[
-	 a_1a_2-a_1-a_2+1 = (a_1-1)(a_2-1)
-\]
-in order to take care of the relabelling. Finally the term that we need to add to the equation is
-\[
-	t(a_1-1)(a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1}) 
-\]
-This is our final step in the construction becuase we've taken care of all possible cases. The argument will be generalized to $d$ dimensions in a later section. The lengthy inclusion-exclusion-type derivation yields the labelled equation
-\begin{align}
-Q = 1 &+ tSQ - t \ol{x_2}\es{2}{-1}\Q{2}{0} - t\ol{x_1}\es{1}{-1}\Q{1}{0}+t\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}\\
-	&+ t(a_1-1)(\es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})\\
-	&+ t(a_2-1)(\es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})\\
-	&+t(a_1-1)(a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})
-\end{align}
-
-%=======================================
-\section{Simplifying the 2D functional equation}
-%=======================================
-
-As we saw in the previous section the functional equation for labelled 2D walks is
-\begin{align}
-Q = 1 &+ tSQ - t \ol{x_2}\es{2}{-1}\Q{2}{0} - t\ol{x_1}\es{1}{-1}\Q{1}{0}+t\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}\\
-	&+ t(a_1-1)(\es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})\\
-	&+ t(a_2-1)(\es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})\\
-	&+t(a_1-1)(a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})
-\end{align}
-The equation can be greatly simplified by eliminating terms that involve quarter-plane walks not ending on the axes or the origin. For that we'll first extract some coefficients.
-\begin{align}
-Q_1^0 = 1 &+  t a_1 (S_1^{-1}Q_1^1+S_1^0 Q_1^0-\ol x_2 \Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0})\\
-                   &+ta_1 (a_2-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})\\
-Q_2^0 = 1 &+  t a_2 (S_2^{-1}Q_2^1+S_2^0 Q_2^0-\ol x_1 \Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0})\\
-                   &+ta_2 (a_1-1)(\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})\\
-\Qf{0,0} = 1 &+  t a_1 a_2 (\Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1})
-\end{align}
-There is a hidden pattern in the form of the sumands in these extractions. Let
-\[
-      A = SQ -  \ol{x_2}\es{2}{-1}\Q{2}{0} -\ol{x_1}\es{1}{-1}\Q{1}{0}+\ol{x_1}\ol{x_2}\Sf{-1,-1}\Qf{0,0}
-\]
-Extracting coefficients yields
-\begin{align}
-A_1^0 &= \es{1}{-1}\Q{1}{1}+\es{1}{0}\Q{1}{0}-\ol{x_2}\Sf{-1,-1}\Qf{1,0}-\ol{x_2}\Sf{0,-1}\Qf{0,0}\\
-A_2^0 &= \es{2}{-1}\Q{2}{1}+\es{2}{0}\Q{2}{0}-\ol{x_1}\Sf{-1,-1}\Qf{0,1}-\ol{x_1}\Sf{-1,0}\Qf{0,0}\\
-\aye{1,2}{0,0} &= \Sf{0,-1}\Qf{0,1}+\Sf{-1,0}\Qf{1,0}+\Sf{-1,-1}\Qf{1,1}
-\end{align}
-A quick visual inspection shows that the $A$ terms are involved in the functional equation and the $Q$-extractions. This allow us to re-write the above equations in a much neater format. Using $b_i = a_1 - 1$ the equations become
-\begin{align}
-Q &= 1+ tA + tb_1A_1^0+tb_2 A_2^0 + tb_1b_2 \aye{1,2}{0,0}\\
-Q_1^0 & = 1+t a_1 A_1^0 + ta_1b_2 \aye{1,2}{0,0}\\
-Q_2^0 & = 1+t a_2 A_2^0 + ta_2b_1 \aye{1,2}{0,0}\\
-\Qf{0,0} &= 1+ t a_1a_2 \aye{1,2}{0,0}
-\end{align}
-Assuming the $A$-terms are non-zero we can back-substitute the $A$'s in order to obtain an equation relating $Q, Q_1^0, Q_2^0$ and $\Qf{0,0}$. In other words, we'll obtain a functional equation that relates $Q$ to $Q$'s counting walks ending on the axes or the origit. First
-\[
-	\aye{1,2}{0,0} = \frac{\Qf{0,0}-1}{ta_1a_2}
-\]
-and then
-\begin{align}
-	A_1^0 = \frac{Q_1^0-1}{ta_1}-(a_2-1)\aye{1,2}{0,0} &= \frac{Q_1^0-1}{ta_1}-(a_2-1)\frac{\Qf{0,0}-1}{ta_1a_2}\\
-	A_2^0 = \frac{Q_2^0-1}{ta_2}-(a_1-1)\aye{1,2}{0,0} &= \frac{Q_2^0-1}{ta_2}-(a_1-1)\frac{\Qf{0,0}-1}{ta_1a_2}\\
-\end{align}
-We can substitute these expressions into the initial equation along with $c_i = b_i/a_i = 1-\ol{a_i}$
-\begin{align}
-	Q &= 1+ tA + tb_1A_1^0+tb_2 A_2^0 + tb_1b_2 \aye{1,2}{0,0}\\
-	    &= 1+ t A + tb_1\left(\frac{Q_1^0-1}{ta_1}-b_2\frac{\Qf{0,0}-1}{ta_1a_2}\right)+ tb_2\left(\frac{Q_2^0-1}{ta_2}-b_1\frac{\Qf{0,0}-1}{ta_1a_2}\right)+ tb_1b_2\frac{\Qf{0,0}-1}{ta_1a_2}\\
-	    &= 1+ tA + c_1(Q_1^0-1)+c_2(Q_2^0-1)-c_1c_2(\Qf{0,0}-1)
-\end{align}
-Expanding the definition of $A$ and re-arranging terms gives the following functional equation for $Q$ relating it to $Q_1^0$, $Q_2^0$ and $\Qf{0,0}$.
-\[
-	 Q(1-tS) - (c_1-t\ol{x_1}S_1^{-1})Q_1^0 - (c_2-t\ol{x_2}S_2^{-1})Q_2^0 + (c_1c_2-t\ol{x_1}\ol{x_2}\Sf{-1,-1})\Qf{0,0} = \ol{a_1 a_2}
-\]
-The form is suggestive so for $I\subseteq [2]$ we let
-\[
-	 K_I = c_I - t \ol{x_I}S_{I}^{-\one}
-\]
- be the kernels with respect to $S$. When $I = \emptyset$ we just write $K = 1 - tS$. This allows us to re-write the above equation in the following compact way
-\[
-	   KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{1,2}Q_{1,2}^{0,0}= \ol{a_1a_2}
-\]
-This equation is an important milestone in further analysing the labelled quarter plane walks. Before we go on though, we need to say a few words about the cases when one or more of the $A$'s is 0. If $A_1^0 = 0$ or $A_2^0 = 0$, this also means $A_{1,2}^{0,0} = 0$. This in turn makes the respective $Q$'s equal to 1. For example, if only $A_{1,2}^{0,0} = 0$ then $\Sf{-1,-1}$, $\Sf{-1,0}$ and $\Sf{0,-1}$ are all zero, together with $Q_{1,2}^{0,0} = 1$.(Note: I now realize that this is not completely necessary. One could tell aprior if one or more of the $Q$'s will be zero based on the step sets we have. We either have no positive steps or no negative steps for $A_{1,2}^{0,0}$ to be identially zero. This also suggest that we might be able to perform a different derivation that will focus on going forward rather than backward like this). Then
-\[
-	A_1^0 = \frac{Q_1^0-1}{ta_1},\quad    A_2^0 = \frac{Q_2^0-1}{ta_2}
-\]
-So we obtain
-\begin{align}
-	Q &= 1+ tA + tb_1A_1^0+tb_2 A_2^0 + tb_1b_2 \aye{1,2}{0,0}\\
-	    &= 1+ t A + tb_1\frac{Q_1^0-1}{ta_1}+ tb_2\frac{Q_2^0-1}{ta_2}\\
-	    &= 1+ tA + c_1(Q_1^0-1)+c_2(Q_2^0-1)
-\end{align}
-Expanding the definition of $A$ and re-arranging terms gives the following functional equation for $Q$ relating it to $Q_1^0$ and $Q_2^0$.
-\[
-	 Q(1-tS) - (c_1-t\ol{x_1}S_1^{-1})Q_1^0 - (c_2-t\ol{x_2}S_2^{-1})Q_2^0 = \ol{a_1 a_2} - c_1c_2
-\]
-We have a similar situation if any of the other $A$'s are zero.
-%=======================================
-\section{Generalization to $d$ dimensions.}
-%=======================================
-
-This section needs a major re-work since I'm not 100 percent clear on the validity of this derivation.
-
-The notation so far has helped push the derivation of the functional equation forward. It also gives us a good idea how to generalize the building process for the functional equation to more dimensions and more general step sets. From now on we fix the numbe of dimensions to $d$ and the step lengts to 1 in any of the coordinates. The 2D derivation used progressive coefficient extractions to signify interactions with more and more axes simultaneously. In $d$ dimensions we have interactions with hyperplanes defined by setting a single coordinate to zero. i.e. the hyperplanes defined by $x_i$ for $i$ between 1 and $d$. We'll first derive the unlabelled version of the functional equation. We start with $Q$ on the LHS and 1 on the RHS and progressively add/subtract terms to/from the RHS.
-
-First we add the term extending arbitrary p-ve orthant walks (counted by $Q$) by one step in any of the directions (counted by a Laurent polynomial $S$). This gives a term $tSQ$ but also intorduces invalid walks that reach beyond the boundary of the p-ve orthant. That is one or more of their coordinates become negative. We need to remove those terms. For coordinate $1\leq i \leq d$ we remove those walks that step beyond the hyperplane $x_i = 0$. These are all the walks ending with coordinate $x_i = 0$ (counted by $Q_i^0$) stepping in the negative $x_i$-direction (steps counted by $S_i^{-1}$). The term that we need to add to the equation so far is
-\[
-	\sum_{i=1}^d (-1)^1\ol{x_i}S_i^{-1}Q_i^0
-\]
-We've removed too many walks though. To be specific we've over-removed the walks that end at points with at leats 2 coordinates equal to zero. This will be the basis step in the following induction. Assume that at step $1\leq k \leq d$ in the process we add the term
-\[
-	\sum_{\substack{J\subseteq [d]\\|J|=k}}(-1)^{|J|} \ol{x_J}S_{J}^{-\one}Q_{J}^{\oo}
-\]
-where we've over-compensated for the walks that end on points with at least $k+1$ coordinates equal to 0. Let $J$ be a set of $k+1$ coordinates. We'll determine the compensating term for those walks that end at points with coordinates $x_j = 0$, $j\in J$ (some more coordinates may be zero too). These are counted by the term $Q_J^\oo$. We need to compensate for steps counted in the previous step, that is, steps that go in the negative $x_j$ direction for each $j\in J$ (steps counted by $S_J^{-\one}$). The term is $tS_J^{-\one}Q_J^\oo$. Adding all these terms up yields the compensatory term
-\[
-	\sum_{\substack{J\subseteq [d]\\|J|=k+1}}(-1)^{|J|} \ol{x_J}S_{J}^{-\one}Q_{J}^{\oo}
-\]
-where we've again over-compensated for those coordinates that end at points with at least $k+2$ coordinates, unless this is larger than $d$. This completes the induction. Combining all the compesatory terms into one major term gives
-\[
-     A = \sum_{J\subseteq [d]}(-1)^{|J|} \ol{x_J}S_{J}^{-\one}Q_{J}^{\oo}
-\]
-and the unlabelled problem has an equation that reads as
-\begin{align}
-     Q = 1 + tA.
-\end{align}
-We can also prove this combinatorially. All terms in $A$ except the first term $SQ$ deal with removing walks that end at hyperplanes and intersections of hyperplanes. Suppose we have an orthant walk $w$ ending at a point with exactly $k$ coordinates equal to zero. Let $I$ be list those coordinates. All the other coordinates are non-zero, so we are allowed to step in those negative directions. Thus to make an invalid walk out of $w$, we need to step in at least one negative $x_i$ direction for some $i \in I$. This type of walk is counted on the RHS in every term $S_J^{-\one}Q_J^\oo$ where $J\cap I \neq \emptyset$. There are $|I|$ choose $|J| = k$ yada yada yada. They all add up and we get 1.
-
-I wonder if there is a direct way to get this.
-
-We first start with walks ending on no hyperplanes. Then we remove those that end on a hyperplane and go strictly beyond on the next step. Then we add back those that end on two hyperplanes simultaneously and go strictly beyond both. This means they have to go in direction that is negative with respect to both. Suppose that we've compensated for walks up to but not including those that end on $k$ hyperplanes. We've overcompensated for those that end on $k$ hyperplanes and go strictly beyond all $k$ of them. This means that we need to compensate back for those walks that end on $k$ hyperplanes and take a step in the negative direction with respect to all $k$ hyperplanes. The term describing walks that end on $k$ hyperplanes (listed in $I$) and go in the negative direction with respect to all $k$ of them is $tS_I^{-\one}Q_I^\oo$. The inclusion-exclusion process yields the formula directly.
-
-Next we start working on the labelled version. What does $A$ represent? Here $A$ stands for allowed walks in the functional equation for the generating function. Indeed $A$ contains only valid walks. Because $Q = 1 + tA$ this means that $A$ contains all allowed walks except the empty walk. The way we build the next part is to consider which allowed walks we are going to label. First we label with $a_i$ those that end on hyperplane $x_i = 0$ and move in an allowed direction. Those walks are counted by $A_i^0$. We need to multiply this term by $b_i$ to remove the unlabelled ones and add in the labelled ones. However, we've mislabelled those allowed walks that end on two hyperplanes. Those are counted by $A_{i,j}^{0,0}$. They've been labelled by $a_i$, $a_j$ and removed twice from the allowed walks, so we need to multiply the term by $b_ib_j$. Suppose that we've completed the process up to but not including step $k$. We've overcompensated for allowed walks on $k$ hyperplanes listed in $I$. Those are counted by $A_I^\oo$. We need to multiply this by some term involving labels to offset the wrong labels from the previous step. 
-
-Because the relabelling in the previous step for a given term $A_J^\oo$ ends up with label $a_J$, the previous step has mislabelled the walks counted by $A_I^\oo$ with labels $a_J$ for $J\subseteq I$ and $|J| < |I|$. That is we need to multiply $A_I^\oo$ with
-\[
-    a_I - \sum_{J\subseteq I,|J|<|I|}(-1)^{|I|-|J|}a_J = b_I
-\]
-This gives the labelled equation
-\begin{align}\label{equation}
-   Q = 1 + t \sum_{I\subseteq [d]}b_I A_I^{\oo}
-\end{align}
-We can write out the coefficient extraction explicitly as
-\[
-Q = 1  +t\sum_{\substack{I,J\subseteq[d]\\ I\cap J = \emptyset}}b_I\ol{x_J}\sum_{K\subseteq I}\left(S_{J,K}^{-\one,-\one}Q_{J,K}^{\oo,-\one}+S_{J,K}^{-\one,\oo}Q_{J,K}^{\oo,\oo}\right)
-\]
-although this doesn't seem to be necessary. Next, we perform coefficient extractions on equation (\ref{equation}) to obtain the following formula
-\begin{align}
-  Q_{J}^{\oo} &= 1 + t\sum_{I\subseteq [d]}b_I A_{I\cup J}^{\oo}\\
-                        &= 1 + t a_J \exxx\sum_{I\subseteq[d]\backslash J}\exx b_I A_{I,J}^{\oo,\oo}
-\end{align}
-even though the second equation takes a little bit of work. Before we continue we have to make sure we know what to do if any of the $A$'s are equal to zero. The following lemma characterizes this situation
-\begin{lemma} $A_{I}^{\oo} \equiv 0$ if and only if $S_{J,I}^{-\one,P} \equiv$ 0 for all $J \subseteq [d]\backslash I$ and $P \in \{-1,0\}^{|I|}$.
-\end{lemma}
-alternatively, since $S_{J_1,I}^{-\one,P} \equiv 0 \Rightarrow S_{J_2,I}^{-\one,P} \equiv 0$ for $J_1\subseteq J_2$ based on simple extraction, then it only suffices to look at $S_{I}^{P}$ Therefore we can re-write the lemma as
-\begin{lemma} $A_{I}^{\oo} \equiv 0$ if and only if $S_{I}^{P} \equiv$ 0 for all $P \in \{-1,0\}^{|I|}$. In particular $A_I^{\oo} \equiv 0 \Rightarrow S_I^{-\one} \equiv 0 $.
-\end{lemma}
-The second part of the lemma guarantees that if an $A$ is zero then the corresponding $S$ will be zero in the specific term $K$ in the master equation. The next part takes some effort but we can use backward induction on $|I|$ to show that
-\begin{align}
-A_I^\oo = \frac{(-1)^{|I|}}{t b_I} \sum_{I\subseteq J \subseteq [d]}(-1)^{|J|} c_J (Q_J^\oo - 1)
-\end{align}
-Substituting these terms back into equation (\ref{equation}) yields the following calculation
-\begin{align}
-Q & = 1 + tA + t\sum_{\emptyset \neq I \subseteq [d]}b_I \frac{(-1)^{|I|}}{t b_I} \sum_{I\subseteq J \subseteq [d]}(-1)^{|J|} c_J (Q_J^\oo - 1)\\
-    &= 1+ tA +\sum_{\emptyset \neq I \subseteq [d]}(-1)^{|I|} \sum_{I\subseteq J \subseteq [d]}(-1)^{|J|} c_J (Q_J^\oo - 1)
-\end{align}
-For each $I$ we are taking all sets inbetween $I$ and $[d]$ for the latter sum. How many times do we see every subset $J$? We see it once for every subset $I$. There are $2^{|J|} -1 $ such subsets because $I \neq \emptyset$. Since $J$ is non-empty, the number is odd so we have
-\begin{align}
-Q & = 1 + tA +\sum_{\emptyset \neq J \subseteq [d]}(-1)^{|J|+1} c_J (Q_J^\oo - 1)\\
-   & = 1 +  t\sum_{J\subseteq [d]}(-1)^{|J|} \ol{x_J}S_{J}^{-\one}Q_{J}^{\oo} +\sum_{\emptyset \neq J \subseteq [d]}(-1)^{|J|+1} c_J (Q_J^\oo - 1)\\
-   & = 1 + \sum_{\emptyset \neq J \subseteq [d]}(-1)^{|J|} c_J + tSQ  - \sum_{\emptyset \neq J \subseteq [d]}(-1)^{|J|}( c_J- t\ol{x_J}S_{J}^{-\one})Q_{J}^{\oo}
-\end{align}
-The sum of $c_J$'s combines with 1 to create $\ol{a_{[d]}}$. Rerranging everything else to the LHS leaves us with the $d$-dimensional master equation
-\begin{theorem} Given a step set in $d\geq 1$ dimensions with Laurent polynomial $S$, the labelled generating function satisfies the following functional equation
-\[
-    \sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol{x_I}S_{I}^{-\one})Q_I^\oo = \ol{a_{[d]}}
-\]
-or if we let $K_I = c_I-t \ol{x_I}S_{I}^{-\one}$ we have
-\[
-   \sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo = \ol{a_{[d]}}.
-\]
-\end{theorem}
-We also have a corollary that takes care of all the cases where $S_I^{-\one} = 0$. We have a modified formula
-\begin{corollary} For everything as in the theorem we have
-\[
-     \sum_{\substack{I \subseteq [d]\\A_I^\oo \neq 0}}(-1)^{|I|}(c_I-t \ol{x_I}S_{I}^{-\one})Q_I^\oo = f(a_1,a_2,\ldots,a_d)
-\]
-where
-\[
-    f(a_1,a_2,\ldots,a_d) =  \ol{a_{[d]}} - \sum_{\substack{I \subseteq [d]\\A_I^\oo \neq 0}} (-1)^{|I|} c_I
-\]
-which could easily be simplified further, now that I think about it.
-\end{corollary}
-
 

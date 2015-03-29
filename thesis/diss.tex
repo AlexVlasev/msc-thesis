@@ -33,7 +33,11 @@
 \documentclass[gpscopy,onehalfspacing,11pt]{ubcdiss}
 
 % For your own copies (looks nicer)
-% \documentclass[balanced,twoside,11pt]{ubcdiss}
+%\documentclass[balanced,twoside,11pt]{ubcdiss}
+
+ \usepackage[margin=1.25 in,top=1.5 in,bottom=1.5 in]{geometry}
+ \setlength{\oddsidemargin}{+0.5in}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,9 +55,12 @@
 %% (And shouldn't you be writing? :-)
 %%
 
+
+
+
 %% NFSS font specification (New Font Selection Scheme)
-\usepackage{times,mathptmx,courier}
-\usepackage{amsmath,amsthm,amssymb,graphicx}
+\usepackage{times,courier}
+\usepackage{amsmath,amsthm,amssymb,mathabx}
 \usepackage[scaled=.92]{helvet}
 
 %% Math or theory people may want to include the handy AMS macros
@@ -376,8 +383,8 @@
 \acresetall	% reset all acronyms used so far
 
 %    1. Main Part
-\include{0Intro}
 \include{0Preliminaries}
+\include{0Intro}
 \include{1OneDimWalks}
 \include{1TwoDimWalks}
 \include{1HexWalks}
@@ -389,7 +396,7 @@
 \include{3HighlySymmetric2D}
 \include{3HigherGroupOrder}
 \include{4Epilogue}
-\include{4Misc}
+%\include{4Misc}
 %\include{TemplateInfo}
 
 
@@ -403,13 +410,13 @@
 \bibliography{biblio}
 \end{singlespace}
 
-\appendix
+%\appendix
 %    5. Appendices (including copies of all required UBC Research
 %       Ethics Board's Certificates of Approval)
 %\include{reb-coa}	% pdfpages is useful here
-\include{appendix}
+%\include{appendix}
 
-\backmatter
+%\backmatter
 %    6. Index
 % See the makeindex package: the following page provides a quick overview
 % <http://www.image.ufl.edu/help/latex/latex_indexes.shtml>

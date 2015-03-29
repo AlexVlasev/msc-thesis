@@ -60,6 +60,14 @@
 
 %My Own Stuff
 
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{theorem} \newtheorem{definition}[theorem]{Definition}
+\theoremstyle{theorem} \newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{theorem} \newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{theorem} \newtheorem{prop}[theorem]{Proposition}
+\theoremstyle{definition} \newtheorem{example}[theorem]{Example}
+
 \newcommand{\en}{\mathbb{N}}
 \newcommand{\ze}{\mathbb{Z}}
 \newcommand{\re}{\mathbb{R}}
@@ -69,15 +77,7 @@
 \newcommand{\one}{\mathbb{I}}
 \newcommand{\del}{\partial}
 
-
-\newtheorem{theorem}{Theorem}
-\theoremstyle{theorem} \newtheorem{definition}[theorem]{Definition}
-\theoremstyle{theorem} \newtheorem{lemma}[theorem]{Lemma}
-\theoremstyle{theorem} \newtheorem{corollary}[theorem]{Corollary}
-\theoremstyle{theorem} \newtheorem{prop}[theorem]{Proposition}
-\theoremstyle{definition} \newtheorem{example}[theorem]{Example}
-
-\newcommand{\mc}[1]{\mathop{\mathcal{#1}}}
+\newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\deff}{\mathop{\mathrm{def}}}
 \newcommand{\mdeff}{\mathop{\mathrm{mdef}}}
 
@@ -96,7 +96,7 @@
 \newcommand{\sign}{\mathop{\mathrm{sign}}}
 
 \newcommand{\wh}{\widehat}
-\newcommand{\wc}{\widehat}
+\newcommand{\wc}{\widecheck}
 
 \newcommand{\exx}{\!\!}
 \newcommand{\exxx}{\!\!\!}
