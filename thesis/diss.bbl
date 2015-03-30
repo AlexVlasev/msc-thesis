@@ -1,13 +1,179 @@
-\begin{thebibliography}{1}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{10}
 
-\bibitem[Bousquet-M{\'e}lou and Mishna(2010)]{bousquet2010walks}
-M.~Bousquet-M{\'e}lou and M.~Mishna.
-\newblock Walks with small steps in the quarter plane.
-\newblock \emph{Contemp. Math}, 520:\penalty0 1--40, 2010.
+\bibitem{monforte2013formal}
+A.~A. Monforte and M.~Kauers, ``Formal laurent series in several variables,''
+  {\em Expositiones Mathematicae}, vol.~31, no.~4, pp.~350--367, 2013.
+
+\bibitem{goulden2004comb}
+I.~P. Goulden and D.~M. Jackson, {\em Combinatorial enumeration}.
+\newblock Courier Corporation, 2004.
+
+\bibitem{gessel1980factorization}
+I.~M. Gessel, ``A factorization for formal laurent series and lattice path
+  enumeration,'' {\em Journal of Combinatorial Theory, Series A}, vol.~28,
+  no.~3, pp.~321--337, 1980.
+
+\bibitem{bousquet2000linear}
+M.~Bousquet-M{\'e}lou and M.~Petkov{\v{s}}ek, ``Linear recurrences with
+  constant coefficients: the multivariate case,'' {\em Discrete Mathematics},
+  vol.~225, no.~1, pp.~51--75, 2000.
+
+\bibitem{duchon2000enumeration}
+P.~Duchon, ``On the enumeration and generation of generalized dyck words,''
+  {\em Discrete Mathematics}, vol.~225, no.~1, pp.~121--135, 2000.
+
+\bibitem{banderier2002basic}
+C.~Banderier and P.~Flajolet, ``Basic analytic combinatorics of directed
+  lattice paths,'' {\em Theoretical Computer Science}, vol.~281, no.~1,
+  pp.~37--80, 2002.
+
+\bibitem{mishna2009classifying}
+M.~Mishna, ``Classifying lattice walks restricted to the quarter plane,'' {\em
+  Journal of Combinatorial Theory, Series A}, vol.~116, no.~2, pp.~460--477,
+  2009.
+
+\bibitem{bousquet2010walks}
+M.~Bousquet-M{\'e}lou and M.~Mishna, ``Walks with small steps in the quarter
+  plane,'' {\em Contemp. Math}, vol.~520, pp.~1--40, 2010.
+
+\bibitem{bousquet2005walks}
+M.~Bousquet-M{\'e}lou {\em et~al.}, ``Walks in the quarter plane: Kreweras’
+  algebraic model,'' {\em The Annals of Applied Probability}, vol.~15, no.~2,
+  pp.~1451--1491, 2005.
+
+\bibitem{bostan2010complete}
+A.~Bostan and M.~Kauers, ``The complete generating function for gessel walks is
+  algebraic,'' {\em Proceedings of the American Mathematical Society},
+  vol.~138, no.~9, pp.~3063--3078, 2010.
+
+\bibitem{kauers2014walks}
+M.~Kauers and R.~Yatchak, ``{Walks in the Quarter Plane with Multiple Steps},''
+  {\em CHECK IT!}, November 2014.
+
+\bibitem{kurkova2011explicit}
+I.~Kurkova and K.~Raschel, ``Explicit expression for the generating function
+  counting gessel's walks,'' {\em Advances in Applied Mathematics}, vol.~47,
+  no.~3, pp.~414--433, 2011.
+
+\bibitem{bostan2014non}
+A.~Bostan, K.~Raschel, and B.~Salvy, ``Non-d-finite excursions in the quarter
+  plane,'' {\em Journal of Combinatorial Theory, Series A}, vol.~121,
+  pp.~45--63, 2014.
+
+\bibitem{melczer2014singularity}
+S.~Melczer and M.~Mishna, ``Singularity analysis via the iterated kernel
+  method,'' {\em Combinatorics, Probability and Computing}, vol.~23, no.~05,
+  pp.~861--888, 2014.
+
+\bibitem{melczer2014variants}
+S.~R. Melczer, {\em Variants of the kernel method for lattice path models}.
+\newblock PhD thesis, SIMON FRASER UNIVERSITY, 2014.
+
+\bibitem{gessel1992random}
+I.~M. Gessel and D.~Zeilberger, ``Random walk in a weyl chamber,'' {\em
+  Proceedings of the American Mathematical Society}, vol.~115, no.~1,
+  pp.~27--31, 1992.
+
+\bibitem{grabiner1993random}
+D.~J. Grabiner and P.~Magyar, ``Random walks in weyl chambers and the
+  decomposition of tensor powers,'' {\em Journal of Algebraic Combinatorics},
+  vol.~2, no.~3, pp.~239--260, 1993.
+
+\bibitem{bostan2014three}
+A.~Bostan, M.~Bousquet-M{\'e}lou, M.~Kauers, and S.~Melczer, ``On 3-dimensional
+  lattice walks confined to the positive octant,'' {\em arXiv preprint
+  arXiv:1409.3669}, 2014.
+
+\bibitem{van2004multiple}
+E.~J. Van~Rensburg and A.~Rechnitzer, ``Multiple markov chain monte carlo study
+  of adsorbing self-avoiding walks in two and in three dimensions,'' {\em
+  Journal of Physics A: Mathematical and General}, vol.~37, no.~27, p.~6875,
+  2004.
+
+\bibitem{brak2009self}
+R.~Brak, P.~Dyke, J.~Lee, A.~Owczarek, T.~Prellberg, A.~Rechnitzer, and
+  S.~Whittington, ``A self-interacting partially directed walk subject to a
+  force,'' {\em Journal of Physics A: Mathematical and Theoretical}, vol.~42,
+  no.~8, p.~085001, 2009.
+
+\bibitem{chan2012monte}
+Y.-b. Chan and A.~Rechnitzer, ``A monte carlo study of non-trapped
+  self-avoiding walks,'' {\em Journal of Physics A: Mathematical and
+  Theoretical}, vol.~45, no.~40, p.~405004, 2012.
+
+\bibitem{bacher2011weakly}
+A.~Bacher and M.~Bousquet-M{\'e}lou, ``Weakly directed self-avoiding walks,''
+  {\em Journal of Combinatorial Theory, Series A}, vol.~118, no.~8,
+  pp.~2365--2391, 2011.
+
+\bibitem{bedini2014lattice}
+A.~Bedini, A.~L. Owczarek, and T.~Prellberg, ``Lattice polymers with two
+  competing collapse interactions,'' {\em Journal of Physics A: Mathematical
+  and Theoretical}, vol.~47, no.~14, p.~145002, 2014.
+
+\bibitem{dagrosa2015writhe}
+E.~Dagrosa, A.~Owczarek, and T.~Prellberg, ``Writhe-induced knotting in a
+  lattice polymer,'' {\em Journal of Physics A: Mathematical and Theoretical},
+  vol.~48, no.~6, p.~065002, 2015.
+
+\bibitem{niederhausen2005random}
+H.~Niederhausen, ``Random walks in octants, and related structures,'' {\em
+  Journal of statistical planning and inference}, vol.~135, no.~1,
+  pp.~165--196, 2005.
+
+\bibitem{niederhausen2005note}
+H.~Niederhausen, ``A note on the enumeration of diffusion walks in the first
+  octant by their number of contacts with the diagonal,'' {\em Journal of
+  Integer Sequences}, vol.~8, no.~2, p.~3, 2005.
+
+\bibitem{brak2005directed}
+R.~Brak, A.~L. Owczarek, A.~Rechnitzer, and S.~G. Whittington, ``A directed
+  walk model of a long chain polymer in a slit with attractive walls,'' {\em
+  Journal of Physics A: Mathematical and General}, vol.~38, no.~20, p.~4309,
+  2005.
+
+\bibitem{owczarek2012enumeration}
+A.~L. Owczarek and T.~Prellberg, ``Enumeration of area-weighted dyck paths with
+  restricted height,'' {\em Aust. J. Comb}, 2012.
+
+\bibitem{tabbara2014exact}
+R.~Tabbara, A.~Owczarek, and A.~Rechnitzer, ``An exact solution of two friendly
+  interacting directed walks near a sticky wall,'' {\em Journal of Physics A:
+  Mathematical and Theoretical}, vol.~47, no.~1, p.~015202, 2014.
+
+\bibitem{gessel1990symmetric}
+I.~M. Gessel, ``Symmetric functions and p-recursiveness,'' {\em Journal of
+  Combinatorial Theory, Series A}, vol.~53, no.~2, pp.~257--285, 1990.
+
+\bibitem{chyzak2005effective}
+F.~Chyzak, M.~Mishna, and B.~Salvy, ``Effective scalar products of d-finite
+  symmetric functions,'' {\em Journal of Combinatorial Theory, Series A},
+  vol.~112, no.~1, pp.~1--43, 2005.
+
+\bibitem{mishna2005holonomic}
+M.~Mishna, {\em A holonomic systems approach to algebraic combinatorics}.
+\newblock Montr{\'e}al: Universit{\'e} du Qu{\'e}bec {\`a} Montr{\'e}al, 2005.
+
+\bibitem{bostan2009automatic}
+A.~Bostan and M.~Kauers, ``Automatic classification of restricted lattice
+  walks,'' {\em DMTCS Proceedings}, no.~01, pp.~201--215, 2009.
+
+\bibitem{kauers2011computational}
+M.~Kauers and D.~Zeilberger, ``The computational challenge of enumerating
+  high-dimensional rook walks,'' {\em Advances in Applied Mathematics},
+  vol.~47, no.~4, pp.~813--819, 2011.
+
+\bibitem{johnson2013towards}
+S.~Johnson, M.~Mishna, and K.~Yeats, ``Towards a combinatorial understanding of
+  lattice path asymptotics,'' {\em arXiv preprint arXiv:1305.7418}, 2013.
+
+\bibitem{melczer2014asymptotic}
+S.~Melczer and M.~Mishna, ``Asymptotic lattice path enumeration using
+  diagonals,'' {\em Probabilistic, Combinatorial and Asymptotic Methods for the
+  Analysis of Algorithms}, p.~313, 2014.
+
+\bibitem{melczer2014enumerating}
+S.~Melczer and M.~Mishna, ``Enumerating lattice paths with symmetries through
+  multivariate diagonals,'' {\em arXiv preprint arXiv:1402.1230}, 2014.
 
 \end{thebibliography}

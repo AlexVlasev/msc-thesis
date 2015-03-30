@@ -6,88 +6,85 @@
 \contentsline {chapter}{Glossary}{x}{chapter*.6}
 \contentsline {chapter}{Acknowledgments}{xi}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Preliminaries}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Formal Power/Laurent Series}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Generating Functions}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Coefficient Extraction}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}Functional Equations}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Random Walk Models}{2}{section.1.5}
-\contentsline {section}{\numberline {1.6}Thesis Notation}{5}{section.1.6}
-\contentsline {chapter}{\numberline {2}Introduction}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Recent History}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Thesis Objectives}{9}{section.2.2}
-\contentsline {section}{\numberline {2.3}Layout of Thesis}{10}{section.2.3}
-\contentsline {chapter}{\numberline {3}One-dimensional random walks}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Derivation of the functional equation}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Solving the functional equation for various $s$}{16}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}The $S_{-1} = 0$ case.}{17}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}The $S_{-1} \neq 0$ case.}{18}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}1-dimensional case conclusion}{21}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Two-dimensional Random Walks}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{25}{section.4.2}
-\contentsline {section}{\numberline {4.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{26}{section.4.3}
-\contentsline {section}{\numberline {4.4}Simple case: Factoring $S$ into a product}{26}{section.4.4}
-\contentsline {section}{\numberline {4.5}Kernel Group Considerations}{29}{section.4.5}
-\contentsline {section}{\numberline {4.6}Solving basic 2D models}{31}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Cases 1.1, 1.2, 1.3}{31}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Case 2.2 - group of order 1}{32}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Case 2.3 - group of order 2}{34}{subsection.4.6.3}
-\contentsline {chapter}{\numberline {5}Hexagonal Walks}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{36}{section.5.1}
-\contentsline {section}{\numberline {5.2}Operators}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Group Structure}{39}{section.5.3}
-\contentsline {section}{\numberline {5.4}Finding the generating function $Q$}{42}{section.5.4}
-\contentsline {chapter}{\numberline {6}Higher-dimensional walks}{45}{chapter.6}
-\contentsline {section}{\numberline {6.1}Using Operators to Derive the Functional Equation}{45}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coefficient Extraction}{47}{section.6.2}
-\contentsline {section}{\numberline {6.3}Further functional equations}{48}{section.6.3}
-\contentsline {section}{\numberline {6.4}Using the formal inverse for iteration}{51}{section.6.4}
-\contentsline {section}{\numberline {6.5}Kernel Form}{52}{section.6.5}
-\contentsline {section}{\numberline {6.6}Walks without interactions}{52}{section.6.6}
-\contentsline {chapter}{\numberline {7}Operators}{55}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous Operators}{55}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Single 1D Operators}{55}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Compounded 1D Operators}{57}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Multidimensional Operators}{57}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Inhomogeneous Operators}{58}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Single 1D Operators}{59}{subsection.7.2.1}
-\contentsline {section}{\numberline {7.3}Random Walks Operator}{60}{section.7.3}
-\contentsline {section}{\numberline {7.4}Interaction with $\partial _t$}{61}{section.7.4}
-\contentsline {section}{\numberline {7.5}Interaction with $\partial _i$}{62}{section.7.5}
-\contentsline {chapter}{\numberline {8}Discussion on Random Walk Model Generalizations}{63}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{63}{section.8.1}
-\contentsline {section}{\numberline {8.2}Marking Operators}{65}{section.8.2}
-\contentsline {section}{\numberline {8.3}Self-avoiding walks}{68}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Eigenpairs}{71}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Generalizations}{72}{subsection.8.3.2}
-\contentsline {section}{\numberline {8.4}Coefficient Extraction Equations}{72}{section.8.4}
-\contentsline {section}{\numberline {8.5}Connection with Fredholm Theory}{76}{section.8.5}
-\contentsline {chapter}{\numberline {9}Groups for walks with small steps}{79}{chapter.9}
-\contentsline {section}{\numberline {9.1}Coxeter Groups}{81}{section.9.1}
-\contentsline {section}{\numberline {9.2}Orbit Sums and Kernel Method}{83}{section.9.2}
-\contentsline {section}{\numberline {9.3}Half-Orbit Sums}{85}{section.9.3}
-\contentsline {section}{\numberline {9.4}Infinite Group Orbits}{85}{section.9.4}
-\contentsline {chapter}{\numberline {10}Orbit Summation for Walks with Interactions}{87}{chapter.10}
-\contentsline {section}{\numberline {10.1}Group of order 4}{87}{section.10.1}
-\contentsline {subsection}{\numberline {10.1.1}When is $\qopname \relax m{det}M_4 = 0$?}{89}{subsection.10.1.1}
-\contentsline {subsection}{\numberline {10.1.2}Analogue of the Orbit Summation Method}{91}{subsection.10.1.2}
-\contentsline {subsection}{\numberline {10.1.3}Similarities between labeled and unlabeled versions}{94}{subsection.10.1.3}
-\contentsline {section}{\numberline {10.2}Group of order 6}{94}{section.10.2}
-\contentsline {section}{\numberline {10.3}Group of order 8}{97}{section.10.3}
-\contentsline {section}{\numberline {10.4}Infinite Groups}{97}{section.10.4}
-\contentsline {chapter}{\numberline {11}Highly-symmetric 2D models}{98}{chapter.11}
-\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{100}{section.11.1}
-\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{103}{section.11.2}
-\contentsline {section}{\numberline {11.3}The almost-full model: missing steps E and W}{110}{section.11.3}
-\contentsline {section}{\numberline {11.4}The full model: all steps available}{110}{section.11.4}
-\contentsline {section}{\numberline {11.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{110}{section.11.5}
-\contentsline {chapter}{\numberline {12}Group of Order 8}{112}{chapter.12}
-\contentsline {section}{\numberline {12.1}Preparation}{112}{section.12.1}
-\contentsline {section}{\numberline {12.2}The $\sigma _1$ substitution}{114}{section.12.2}
-\contentsline {section}{\numberline {12.3}The $\sigma _2$ substitution}{115}{section.12.3}
-\contentsline {section}{\numberline {12.4}Partial Orbital Operators}{116}{section.12.4}
-\contentsline {chapter}{\numberline {13}Epilogue}{118}{chapter.13}
-\contentsline {section}{\numberline {13.1}Discussion}{118}{section.13.1}
-\contentsline {section}{\numberline {13.2}Future Work}{118}{section.13.2}
-\contentsline {section}{\numberline {13.3}Conclusion}{118}{section.13.3}
-\contentsline {chapter}{Bibliography}{119}{chapter*.8}
+\contentsline {section}{\numberline {1.1}Formal Series}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Random Walk Models}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Thesis Notation}{4}{section.1.3}
+\contentsline {chapter}{\numberline {2}Introduction}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Recent History}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Thesis Objectives}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}Layout of Thesis}{9}{section.2.3}
+\contentsline {chapter}{\numberline {3}One-dimensional random walks}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}Derivation of the functional equation}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}Solving the functional equation for various $s$}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The $S_{-1} = 0$ case.}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}The $S_{-1} \neq 0$ case.}{17}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}1-dimensional case conclusion}{20}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Two-dimensional Random Walks}{22}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{22}{section.4.1}
+\contentsline {section}{\numberline {4.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{25}{section.4.3}
+\contentsline {section}{\numberline {4.4}Simple case: Factoring $S$ into a product}{25}{section.4.4}
+\contentsline {section}{\numberline {4.5}Kernel Group Considerations}{28}{section.4.5}
+\contentsline {section}{\numberline {4.6}Solving basic 2D models}{30}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Cases 1.1, 1.2, 1.3}{30}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Case 2.2 - group of order 1}{31}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Case 2.3 - group of order 2}{33}{subsection.4.6.3}
+\contentsline {chapter}{\numberline {5}Hexagonal Walks}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Operators}{36}{section.5.2}
+\contentsline {section}{\numberline {5.3}Group Structure}{38}{section.5.3}
+\contentsline {section}{\numberline {5.4}Finding the generating function $Q$}{41}{section.5.4}
+\contentsline {chapter}{\numberline {6}Higher-dimensional walks}{44}{chapter.6}
+\contentsline {section}{\numberline {6.1}Using Operators to Derive the Functional Equation}{44}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coefficient Extraction}{46}{section.6.2}
+\contentsline {section}{\numberline {6.3}Further functional equations}{47}{section.6.3}
+\contentsline {section}{\numberline {6.4}Using the formal inverse for iteration}{50}{section.6.4}
+\contentsline {section}{\numberline {6.5}Kernel Form}{51}{section.6.5}
+\contentsline {section}{\numberline {6.6}Walks without interactions}{51}{section.6.6}
+\contentsline {chapter}{\numberline {7}Operators}{54}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous Operators}{54}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Single 1D Operators}{54}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Compounded 1D Operators}{56}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Multidimensional Operators}{56}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Inhomogeneous Operators}{57}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Single 1D Operators}{58}{subsection.7.2.1}
+\contentsline {section}{\numberline {7.3}Random Walks Operator}{59}{section.7.3}
+\contentsline {section}{\numberline {7.4}Interaction with $\partial _t$}{60}{section.7.4}
+\contentsline {section}{\numberline {7.5}Interaction with $\partial _i$}{61}{section.7.5}
+\contentsline {chapter}{\numberline {8}Discussion on Random Walk Model Generalizations}{62}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{62}{section.8.1}
+\contentsline {section}{\numberline {8.2}Marking Operators}{64}{section.8.2}
+\contentsline {section}{\numberline {8.3}Self-avoiding walks}{67}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Eigenpairs}{70}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Generalizations}{71}{subsection.8.3.2}
+\contentsline {section}{\numberline {8.4}Coefficient Extraction Equations}{71}{section.8.4}
+\contentsline {section}{\numberline {8.5}Connection with Fredholm Theory}{75}{section.8.5}
+\contentsline {chapter}{\numberline {9}Groups for walks with small steps}{78}{chapter.9}
+\contentsline {section}{\numberline {9.1}Coxeter Groups}{80}{section.9.1}
+\contentsline {section}{\numberline {9.2}Orbit Sums and Kernel Method}{82}{section.9.2}
+\contentsline {section}{\numberline {9.3}Half-Orbit Sums}{84}{section.9.3}
+\contentsline {section}{\numberline {9.4}Infinite Group Orbits}{84}{section.9.4}
+\contentsline {chapter}{\numberline {10}Orbit Summation for Walks with Interactions}{86}{chapter.10}
+\contentsline {section}{\numberline {10.1}Group of order 4}{86}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}When is $\qopname \relax m{det}M_4 = 0$?}{88}{subsection.10.1.1}
+\contentsline {subsection}{\numberline {10.1.2}Analogue of the Orbit Summation Method}{90}{subsection.10.1.2}
+\contentsline {subsection}{\numberline {10.1.3}Similarities between labeled and unlabeled versions}{93}{subsection.10.1.3}
+\contentsline {section}{\numberline {10.2}Group of order 6}{93}{section.10.2}
+\contentsline {section}{\numberline {10.3}Group of order 8}{96}{section.10.3}
+\contentsline {section}{\numberline {10.4}Infinite Groups}{96}{section.10.4}
+\contentsline {chapter}{\numberline {11}Highly-symmetric 2D models}{97}{chapter.11}
+\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{99}{section.11.1}
+\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{102}{section.11.2}
+\contentsline {section}{\numberline {11.3}The almost-full model: missing steps E and W}{109}{section.11.3}
+\contentsline {section}{\numberline {11.4}The full model: all steps available}{109}{section.11.4}
+\contentsline {section}{\numberline {11.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{109}{section.11.5}
+\contentsline {chapter}{\numberline {12}Group of Order 8}{111}{chapter.12}
+\contentsline {section}{\numberline {12.1}Preparation}{111}{section.12.1}
+\contentsline {section}{\numberline {12.2}The $\sigma _1$ substitution}{113}{section.12.2}
+\contentsline {section}{\numberline {12.3}The $\sigma _2$ substitution}{114}{section.12.3}
+\contentsline {section}{\numberline {12.4}Partial Orbital Operators}{115}{section.12.4}
+\contentsline {chapter}{\numberline {13}Epilogue}{117}{chapter.13}
+\contentsline {section}{\numberline {13.1}Discussion}{117}{section.13.1}
+\contentsline {section}{\numberline {13.2}Future Work}{117}{section.13.2}
+\contentsline {section}{\numberline {13.3}Conclusion}{117}{section.13.3}
+\contentsline {chapter}{Bibliography}{118}{chapter*.8}

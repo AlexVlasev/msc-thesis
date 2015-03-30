@@ -8,36 +8,24 @@
 In these pages we'll set up some of the basic tools and notation that we'll use in our study of random walk models. This chapter will not be comprehensive. For more information on each section please consult the cited literature.
 
 %========================
-\section{Formal Power/Laurent Series}
+\section{Formal Series}
 %========================
 We will work in the setting of formal power series and Laurent series. Issues with convergence will not be addressed in much detail. If we are given a ring $R$ we may construct several formal objects with a commutative indeterminate $x$ with coefficients in $R$
 \begin{itemize}
-\item $R[x]$: Ring of polynomials
-\item $R[x,1/x]$: Ring of Laurent polynomials
-\item $R[[x]]$: Ring of formal power series
-\item $R((x))$: Field of formal Laurent series
+\item $R[x]$: Ring of polynomials with monomials $x^k$ for integers $k\ge 0$.
+\item $R[x,1/x]$: Ring of Laurent polynomials with monomials $x^k$ for integers $k$.
+\item $R[[x]]$: Ring of formal power series with monomials $x^k$ for integers $k \ge 0$.
+\item $R((x))$: Field of formal Laurent series with monomials $x^k$ for integers $k$.
 \end{itemize}
-Of course we can also define their multivariate analogues and in this case we'll use the iterative construction. We will use all of these extensively. When we work with a combination of objects coming from different rings/fields over the indeterminate $x$ we'll consider all objects as part of the most general ring/field at the time. If in doubt, we'll always work in the field of formal Laurent series.
-%========================
-\section{Generating Functions}
-%========================
-Given a sequence $(w_n)$ we may consider its generating function $W(x)$ given by $\sum_{n} w_n x^n$ which lives appropriately in one of the rings over $x$. The multivariate case for a multi-index sequence $(w_{n_1,\ldots,n_m})$ is defined analogously as
+We can also define their multivariate analogues like $\Rpring{x}{n}$, $\Rlring{x}{n}$ and their series counterparts $\Rpsring{x}{n}$ and $\Rlsring{x}{n}$. For a thorough treatment of the subject please see \cite{monforte2013formal}. When we work with a combination of objects coming from different rings/fields over the indeterminate $x$ we'll consider all objects as part of the most general ring/field at the time. If in doubt, we'll always work in the field of formal Laurent series. Given a sequence $(w_n)$ we may consider its generating function $W(x)$ given by $\sum_{n} w_n x^n$ which lives appropriately in one of the rings over $x$. The multivariate case for a multi-index sequence $(w_{n_1,\ldots,n_m})$ is defined analogously as
 \begin{align}
 	W(x_1,\ldots,x_d) = \sum_{n_1,\ldots,n_m} w_{n_1,\ldots,n_m} x_1^{n_1}\ldots x_m^{n_m}
 \end{align}
-whenever this series is a formal Laurent series.
-%========================
-\section{Coefficient Extraction}
-%========================
-When we solve enumeration problems via generating functions we often need to extract particular coefficients from the formal polynomial/series. In the one-variable case we have the coefficient extraction operators on formal series
+whenever this series is a formal Laurent series. When we solve enumeration problems via generating functions we often need to extract particular coefficients from the formal polynomial/series. In the one-variable case we have the coefficient extraction operators on formal series
 \begin{align}
 	[x^n] W(x) = w_n
 \end{align}
-The multivariate case is handled analogously with the caveat that whenever the number of variables extracted is less than the number of variables present we extract by treating these remaining variables as parameters. Sometimes we'll need to be careful with the extraction of specific coefficients in multivariate series.
-%========================
-\section{Functional Equations}
-%========================
-In the broadest sense in this thesis we'll discuss functional equations which may involve a function $F$, the function evaluated at various arguments and various coefficient extractions of $F$. This will be done via operators so in the end we'll have a functional equation involving $F$ and operators. We'll write the identity operator as 1.
+The multivariate case is handled analogously with the caveat that whenever the number of variables extracted is less than the number of variables present we extract by treating these remaining variables as parameters. For a more detailed discussion please consult \cite{goulden2004comb}. When we deal random walk generating functions we often work with functional equations. In the broadest sense in this thesis we'll discuss functional equations which may involve a function $F$, the function evaluated at various arguments and various coefficient extractions of $F$. This will be done via operators so in the end we'll have a functional equation involving $F$ and operators. We'll write the identity operator as 1.
 %========================
 \section{Random Walk Models}
 %========================

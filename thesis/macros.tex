@@ -78,6 +78,19 @@
 \newcommand{\del}{\partial}
 
 \newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\row}[2]{#1_1,\ldots, #1_#2}
+
+\newcommand{\pring}[3]{#1[\row #2#3]}
+\newcommand{\lring}[3]{#1[#2_1,\ol{#2_1},\ldots,#2_#3,\ol{#2}_#3]}
+\newcommand{\psring}[3]{#1[[\row #2#3]]}
+\newcommand{\lsring}[3]{#1((\row #2#3))}
+
+\newcommand{\Rpring}[2]{R[#1_1,\ldots,#1_#2]}
+\newcommand{\Rlring}[2]{R[#1_1,\ol{#1_1},\ldots,#1_#2,\ol{#1}_#2]}
+\newcommand{\Rpsring}[2]{R[[#1_1,\ldots,#1_#2]]}
+\newcommand{\Rlsring}[2]{R((#1_1,\ldots,#1_#2))}
+
+
 \newcommand{\deff}{\mathop{\mathrm{def}}}
 \newcommand{\mdeff}{\mathop{\mathrm{mdef}}}
 
