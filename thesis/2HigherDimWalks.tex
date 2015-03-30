@@ -32,7 +32,6 @@ This equation will contain many less terms. To see this we take a look at the $L
 which increases the number of terms in the equation by a factor of 3. That is we would have $3^d$ terms relating to $SQ$ by the end of applying $LE$. Not to mention that each extraction from $SQ$ introduces 2 terms. On the other hand once we apply the operator $L^{-1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
 \begin{align}
 	L^{-1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
-	&= \sum_{I\subseteq [d]} (-1)^{|I|} c_I[x_I^\oo]Q \\
 	&=  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
 \end{align}
 and
@@ -41,12 +40,13 @@ and
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I [x_I^{-\one}](SQ) \\
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I S_I^{-\one}Q_I^\oo
 \end{align}
+where the last line follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$.
 Therefore the functional equation is
 \begin{align}
     \sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol{x_I}S_{I}^{-\one})Q_I^\oo = \ol{a_{[d]}}
 \end{align}
 As in the two-dimensional case we let $K_I = c_I-t \ol{x_I}S_{I}^{-\one}$ where if $I =\emptyset$ we have the empty products and empty extractions leaving us with $K_{\emptyset} = K$. Finally we can write the master equation in $d$-dimensions.
-\begin{theorem} The function $Q$ satisfies the functional equation
+\begin{theorem} The full generating function $Q$ for random walks with interactions satisfies the functional equation
 \begin{align}
    \sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo= \ol{a}_{[d]}
 \end{align}
@@ -169,15 +169,15 @@ In a previous subsection we obtained the equation
 \begin{align}
 	(1-tLES)Q = 1
 \end{align}
-Let $D = LE$. Then we can think of the formal inverse of this operator against some norm $||tDS||$ or even formally. Formally
+Let $D = LE$. Then we can think of the formal inverse of this operator given as Neumann series as
 \begin{align}
 	(1-tDS)^{-1} = \frac{1}{1-tDS} = \sum_{k=0}^{\infty}t^k(DS)^k
 \end{align}
-so we can write the solution for $Q$ as
+We can write a series solution for $Q$ as
 \begin{align}
 Q = \sum_{k=0}^{\infty}t^k (DS)^k(1)
 \end{align}
-where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $DS$ applied to it. It can be done fairly efficiently on a computer. 
+where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $DS$ applied to it. It can be easily implemented in symbollica calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way - by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane and finally mark the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We haven't been able to find closed forms for the repeated operator applications in general. Here's an example that illustrates the use of the operators.
 \begin{example} Let $S = x_1+\ol{x}_1+x_2+\ol{x}_2 = S_1(x_1)+S_2(x_2)$. We start with $DS^0(1) = 1$. Then
 \begin{align}
 	DS^1(1) &= LE(S_1+S_2) =L(x_1+x_2) = a_2x_1+a_1x_2\\
@@ -192,12 +192,10 @@ which allows us to write
 \end{align}
 \end{example}
 
-Interestingly enough this is just a formalization of the brute force method of determining the functional equation - by taking a previous set of walks, extending them by 1 step, removing the ones that fall outside of the quarter plane and finally labelling the ones that have interacted with the hyperplanes $x_i = 0$ in the process. We could attempt to write a closed form for the operator application but it becomes messy fairly fast, even for one dimension.
-
 %=======================================
 \section{Kernel Form}
 %=======================================
-We can write out the functional equations in a way that highlights the kernel $K$ in the equation. This suggests that $K$ is indeed special. We start out like
+We can write out the functional equations in a way that highlights the kernel $K$ in the equation. This confirms that $K$ is indeed special in some way. It's not so surprising that a lot of the tools in the analysis of random walk models use $K$. We start out as follows
 \begin{align}
 	1 &= Q - tLESQ = Q +LE(-tS+1-1)Q \\
 	&= Q+ LEKQ - LEQ = (1-L)Q + LEKQ 
@@ -227,7 +225,7 @@ The operators $1-M$ and $1-E$ are purely extractions . The last kernel form show
 %=======================================
 \section{Walks without interactions}
 %=======================================
-The Kernel forms above suggest an easy route for dealing with the models without interactions. Those models are equivalent to setting all the $a_k =1$ which removes any marking or unmarking operators. The first kernel form reduces to the simple functional equation
+The Kernel forms above suggest an easier route for dealing with the models without interactions. Those models are equivalent to setting all the $a_k =1$ which removes any marking or unmarking operators. The first kernel form reduces to the simple functional equation
 \begin{align}
 	 E(KQ) = 1
 \end{align}
