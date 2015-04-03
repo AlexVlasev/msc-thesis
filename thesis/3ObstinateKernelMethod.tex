@@ -1,12 +1,25 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
 
-
+%=======================================
+\chapter{Obstinate Kernel Method}
+\label{ch:OKM}
+%=======================================
+%=======================================
+\section{Non-Interacting Case}
+%=======================================
+%=======================================
+\section{Interacting Case}
+%=======================================
+%=======================================
+\subsection{Group of order 4}
+%=======================================
+%=======================================
+\subsection{Group of order 6}
+%=======================================
 %========================
-\chapter{Group of Order 8}
+\subsection{Group of order 8}
 %========================
-
-\section{Preparation}
 There are 2 non-isomorphic cases of random walk models on the plane that have group of order 8. They have step polynomials
 \begin{align}
 S &= \ol{x}_1+x_1+\ol{x}_1x_2+x_1\ol{x}_2\\
@@ -57,7 +70,7 @@ In the rest of this calculation we need to eliminate the kernel term via a subst
 For each $\sigma_k$ we're going to obtain 3 additional functional equations to complement the master equation and then we'll substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just won't include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We'll also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note we'll also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra but because of the complexity and symmetry involved in the coefficients it's best to investigate the explicit simplification of the equations.
 
 %========================
-\section{The $\sigma_1$ substitution}
+\subsubsection{The $\sigma_1$ substitution}
 %========================
 A simple but tedious check shows that there are no non-trivial relations for $A$, $B$ and application of elements from the $\sigma_1$ orbit besides $A_{212} = A$.
 \begin{align}
@@ -90,7 +103,7 @@ We obtain the expression for the coefficient of $\gamma$ by following the transf
 \end{align}
 
 %========================
-\section{The $\sigma_2$ substitution}
+\subsubsection{The $\sigma_2$ substitution}
 %========================
 A simple but tedious check shows that there are no non-trivial relations for $A$, $B$ and application of elements from the $\sigma_2$ orbit besides $B_{121} = B$. The relations between the $Q$'s are
 \begin{align}
@@ -123,7 +136,7 @@ We obtain the expression for the coefficient of $\gamma$ by following the transf
 \end{align}
 
 %========================
-\section{Partial Orbital Operators}
+\subsubsection{Partial Orbital Operators}
 %========================
 We may think of the elimination of $Q$'s with undesirable arguments as a transformation of the original functional equation. We take two functional equations and produce one with a function eliminated. Then we take both of these to produce the final equation. Each of these steps may be done with such an operator. For example the first transformation becomes
 \begin{align}
@@ -187,5 +200,6 @@ and
 \begin{align}
 	g_L(XY) = - X g_L(Y) + g_L(X)Y = g_L(X)Y - X g_L(Y)
 \end{align}
+
 
 \endinput
