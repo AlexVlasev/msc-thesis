@@ -15,7 +15,7 @@ In the interest of working out higher dimensional walk problems it is very usefu
 \end{align}
 Here $S_i$ will be either 0 or 1 for any specific $i$, tracking whether we have allowed those kinds of steps or not. Keeping this in mind, there are 8 possible step sets because we have two options for each $S_i$. We keep track of the length of a random walk with powers of $t$ and we keep track of itS endpoint with powers of $x$. We'll also mark every interaction with the origin by multiplying by $a$ every time a walk steps on the origin. We'll keep the walks on the non-negative axis.
 
-Long story short we can find the generating function in a very simple, brute force manner, even for higher dimensions. We start with the empty walk denoted by 1 since it startS and enDS on the origin without taking a step, so no $t$, $x$ or mark $a$. Then try out each step from $s$ and eliminate those that take us past the origin in the negative direction. If we step on the origin we multiply by $a$. Those walks that remain are then multiplied by $t$ since they are not of length 1. We can proceed iteratively $k$ tiems to obtain random walks on the non-negative axis of length $k$. Adding up the resultS allows us to write the generating function up to $O(t^k)$. It will prove very useful to think about operators so we can formalize this notion in terms of operators. For example, here we are taking walks of length $k-1$, trying all options of $s$ (this is like multiplying by $s$), removing all the walks that end up on the negative axis (this is like removing the $\ol{x}$ term) and marking those that end on the origin (this is like multiplying the $x^0$ coefficient by $a$). Let $D$ stand for the operator that cleans up the walks and marks the valid ones. Then if $Q_k$ stands for the marked walks of length $k$, then the $k$-th term of $Q$ is $Q_k t^k$ and we have
+Long story short we can find the generating function in a very simple, brute force manner, even for higher dimensions. We start with the empty walk denoted by 1 since it starts and ends on the origin without taking a step, so no $t$, $x$ or mark $a$. Then try out each step from $s$ and eliminate those that take us past the origin in the negative direction. If we step on the origin we multiply by $a$. Those walks that remain are then multiplied by $t$ since they are not of length 1. We can proceed iteratively $k$ tiems to obtain random walks on the non-negative axis of length $k$. Adding up the resultS allows us to write the generating function up to $O(t^k)$. It will prove very useful to think about operators so we can formalize this notion in terms of operators. For example, here we are taking walks of length $k-1$, trying all options of $s$ (this is like multiplying by $s$), removing all the walks that end up on the negative axis (this is like removing the $\ol{x}$ term) and marking those that end on the origin (this is like multiplying the $x^0$ coefficient by $a$). Let $D$ stand for the operator that cleans up the walks and marks the valid ones. Then if $Q_k$ stands for the marked walks of length $k$, then the $k$-th term of $Q$ is $Q_k t^k$ and we have
 \begin{align}
 	Q_{k+1}t^{k+1} = t D (S Q_k t^k)
 \end{align}
@@ -143,7 +143,7 @@ and the second leads to
 	 (1-S_0t) Q_k -t(S_{-1}Q_{k+1} + S_1 Q_{k-1} &= 0
 \end{align}
 %=======================================
-\section{Solving the functional equation for various $s$}
+\section{Solving the functional equation for various $S$}
 \mark{sec:Solving1D}
 %=======================================
 In this section we'll solve all 8 one-dimensional problems fully. Some cases are easier to deal with than others. As we'll see later in the higher dimensional cases, some problems are easierto solve than others. This difficulty tends to scale up with the inclusion of certain steps with negative direction.
@@ -232,7 +232,7 @@ We can also work with $Q_0$ at this stage. We find
 \begin{align}
 	[x_0]B((a\ol{\sigma}t-b)Q) = B((a\ol{\sigma}t-b)Q_0) = 0
 \end{align}
-too. This enDS up being the same as
+too. This ends up being the same as
 \begin{align}
 	(a\ol{\sigma}t-b)Q_0 - (\ol{\sigma}t)\wh{Q_0} = 0
 \end{align}
@@ -240,7 +240,7 @@ with solution
 \begin{align}
 	Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}
 \end{align}
-The final task for this section will be to find what $\sigma$ will be for various cases. We already know $S_{-1} = 0$ so the result depend on $S_0$ and $S_1$. In general the kernel is zero when
+The final task for this section will be to find what $\sigma$ will be for various cases. We already know $S_{-1} \neq 0$ so the result depend on $S_0$ and $S_1$. In general the kernel is zero when
 \begin{align}
 	t s &= 1\\
 	t(S_{-1} + S_0 x + S_1 x^2) &= x\\
@@ -255,8 +255,7 @@ When $S_1 = 1$ we have the equation $tx^2 -(1-S_0t)x + t = 0$ with roots
 \begin{align}
 \sigma = \frac{1-S_0t - \sqrt{(1-S_0t)^2-4t^2}}{2t}, \quad \sigma^\ast = \frac{1-S_0t + \sqrt{(1-S_0t)^2-4t^2}}{2t}
 \end{align}
-The two roots multiply to 1 so $\ol{\sigma} = \sigma^\ast$. Later we shall have a little table tabulating all the resultS.
-Note that in the relationship between the marked and unmarked $Q_0$ we have
+The two roots multiply to 1 so $\ol{\sigma} = \sigma^\ast$. Note that in the relationship between the marked and unmarked $Q_0$ we have
 \begin{align}
 	Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}
 \end{align}
@@ -310,6 +309,19 @@ With two different approaches we obtained slightly different relationships upon 
 %=======================================
 \subsection{1-dimensional case conclusion}
 %=======================================
-In this section we were able to find explicit solutions for $Q_0, Q$ and also $B$-operator relationships for $Q$ and $\wh Q$. In higher dimensions this may not be quite possible but we should still be able to find $B$-operator relationships for the equivalent of $Q_0$ and $\wh{Q_0}$. Here will be a table showing the resultS of this section. Here is a table showing detailed resultS for each of the 8 possible cases of random walks restricted to the non-negative axis.
+In this section we were able to find explicit solutions for $Q_0, Q$ and also $B$-operator relationships for $Q$ and $\wh Q$. In higher dimensions this may not be quite possible but we should still be able to find $B$-operator relationships for the equivalent of $Q_0$ and $\wh{Q_0}$. Here will be a table showing the resultS of this section. Here is a table showing detailed resuls for each of the 8 possible cases of random walks restricted to the non-negative axis.
+ \begin{table}
+    \caption{One-dimensional Generating functions}
+    \label{tbl:table1d}
+    \centering
+    \begin{tabular}{ccccc}
+    \toprule
+    Case & $S$ & $Q_0$ & $Q$ & $f(a,t)$\\
+    \midrule
+    $S_{-1} = 0$ & $S_0 + S_1 x$ & $\dfrac{1}{1- a S_0t}$ & $\dfrac{1-S_0 t}{(1-tS)(1-atS_0)}$ & $1-atS_0 $ \\
+    $S_{-1} = 1$ & $1+S_0+S_1 x$ & $\dfrac{\sigma}{at - b\sigma}$ & $\dfrac{t(x- \sigma)}{x(1-tS)(at-b\sigma)}$ & $a\ol \sigma t-b$\\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
 \endinput
