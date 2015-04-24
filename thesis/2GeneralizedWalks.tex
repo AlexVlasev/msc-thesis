@@ -6,68 +6,83 @@
 \section{Introduction}
 %================================
 
-The operator notation makes it easy to handle more complicated random walk problems and in this section we'll attempt ot push the notation to its limits. Let's suppose we would like to enumerate random walks constrained to be within a region $\mc{D}$ in space. We would also like to mark any interactions with certain locations ${\mc{D}}_0$ within $\mc{D}$. To do this we can start as before by extending the walks enumerated by $Q$ by one step. We do this by calculating the product $SQ$. Some walks venture outside of the region $\mc{D}$ so we remove them with an operator $E$. Then we count all the interactions by marking walks ending up on ${\mc{D}}_0$ using an operator operator $L$. Since we have an extra step now, we also need to multiply by $t$. We obtain the expression $tLESQ$. As before we need to find out how this expression relates to $Q$. The only walks we've omited are those of length 0. That is if $[t^0]Q = q$ we have
+In this chapter we'll push the operator notation further to see what kinds of random walk models have a relatively easy functional equation to write. We start with the following definition for a random walk model in $\ze^d$.
+\begin{definition} Let $\mc{D}_0 \subseteq \mc{D}$ be regions in $\ze^d$ and $S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model $\mc{M}$ with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location later on.
+\end{definition}
+In other words, we are given a set of steps $\mc{S}$ and a starting location in $\mc{D}$. Then we want to evolve the random walks restricted to the region $\mc{D}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$ and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
+\begin{definition} Let $\mc{M}$ be a random walk model and $Q$ its associated generating function counting length with $t$, ending locations with $\row xd$ and interactions with $\mc{D}_0$ with some multi-index variable $a$. We write
 \begin{align}
-(1-tLES)Q = q
+	Q = Q(\row xd,a;t) = \sum_{k=0}^{\infty} q_k(\row xd, a)t^k
 \end{align}
-We can also write this as
+where $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
+\end{definition}
+\begin{definition} Suppose $D$ is an operator involving the $x$ and $a$ variables but not $t$. We shall apply $D$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following linearized way
 \begin{align}
-(L^{-1}-tES)Q = L^{-1}q = \alpha
+	DF = \sum_{k=0}^\infty D(f_k) t^k
 \end{align}
-We have obtained the functional equation for the generating function that enumerates random walks
-\begin{itemize}
-\item beginning in locations enumerated by $q$
-\item evolving with a step Laurent polynomial $S$
-\item constrained to evolve in a region $\mc{D}$
-\item interacting with region ${\mc{D}}_0 \subseteq \mc{D}$
-\end{itemize}
-The second form of the functional equation should have less terms than the first one by virtue of separating $L$ and $E$ from one another. Using extraction operators we can constrain random walks to lie within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes of course). Furthermore using marking operators we can easily track the behavior of random walks as they cross or interact with boundaries or interact with regions within. For example we may consider walks interacting with the boundary of a box within a region in space. We can also take on the problem from another perspective. Instead of removing walks that stray outside of the boundary of $\mc{D}$ we can just mark them for later deletion. This allows us to consider a more holistic problem where we combine the operators $L$ and $E$ into one called $\Gamma$. That is in the case where we mark some walks for deletion with parameter $a$ we obtain a functional equation
+to avoid issues of expanding $F$ in Laurent series in some of the $x$ variables.
+\end{definition}
+
+\begin{definition} Let $\mc{M}$ be a given model. We'll denote with $S$ the Laurent polynomial (or series) keeping inventory of the stes $\mc{S}$. Let $K = 1-tS$ be the Kernel of $\mc{M}$. Let $E$ be an operator that eliminates monomials $x_{[d]}^P$ when $P$ is not in $\mc{D}$. Let $L$ be an operator that marks (or labels) monomials $x_{[d]}^P$ for $P \in \mc{D}_0$ in a specified way in the model. Note that $L$ is invertible with inverse $L^{-1}$ that is given by marking with $1/a$ instead.
+\end{definition}
+
+This operator notation allows us to write down functional equations for $Q$ really quickly. We have
+\begin{theorem} Let $\mc{M}$ be a random walk model and $Q$ its associated generating function with an initial term $q_0 = q$. Then $Q$ satisfies the following functional equations
 \begin{align}
-(1-t\Gamma S)\tilde Q = q
+	(1-tLES)Q &= q\\
+	(L^{-1}-tES)Q &= L^{-1}(q) = \alpha
 \end{align}
-where $\tilde Q = Q + O(a)$ and $Q$ is the generating function in the previous functional equations. We just need to extract $[a^0]$ from $\tilde Q$ to obtain $Q$. Since the two problems are equivalent we can use the latter to combine the discussion of the marking operators. Before we proceed we should mention that a previous discussion on the kernel form applies here as well since it was mostly a symbolic calculation. We have
+\end{theorem}
+\begin{proof} The second functional equation is obtained by applying $L^{-1}$ on the first one. It only remains to show that the first functional equation holds. We do this via iteration. We start with $Q$ and multiply it with $tS$. This gives $tSQ$ or an enumeration of all walks extended by a single step. Here the power of $t$ is raised by one to keep track of this extension. Then we apply $E$ to this result to eliminate all random walks that venture outside of the region $\mc{D}$. Finally we mark those walks that have arrived at locations in $\mc{D}_0$ by applying $L$ to $E(tSQ)$. The resulting expression is almost $Q$ but with one term missing, namely $q_0 = q$. That is we have transformed $Q$ to itself in a non-trivial way giving us the functional equation
 \begin{align}
-q = (1-tLES)Q = Q -t(LE-1+1)SQ = (1-tS)Q - t(LE-1)(SQ)
+	Q = q + LE(tSQ) = q + tLE(SQ)
 \end{align}
-so
+which we re-write in the form at the start of the theorem.
+\end{proof}
+\begin{corollary} We have the following kernel forms
 \begin{align}
-	KQ = q - t(1-LE)SQ.
+	KQ &= q - t(1-LE)SQ\\
+	KQ &=\alpha + (1-L^{-1})Q -t(1-E)SQ.
 \end{align}
-The second kernel form is obtained via
+If there is no extraction involved we have the kernel forms
 \begin{align}
-	\alpha = (L^{-1}-1)Q +Q-tSQ -t(E-1)SQ = KQ - (1-L^{-1})Q+ t(1-E)SQ
+	KQ &= q - t(1-L)SQ\\
+	KQ &=\alpha + (1-L^{-1})Q.
 \end{align}
-which leads to
+If there is no marking involved then we have the simple kernel form
 \begin{align}
-	KQ = \alpha + (1-L^{-1})Q - t(1-E)SQ
+	E(KQ) = q.
 \end{align}
-If we want to emphasize the relationship with $KQ$ itself we have
+\end{corollary}
+ The kernel forms are obtained as before since it was mostly a symbollic calculation. We use the fact that $EQ = Q$ since $Q$ is already composed of terms living in $\mc{D}$. We won't consider more general functional equation statements in this work. It is possible to also consider step sets $\mc{S}$ varrying with location as we saw in the honey-comb lattice chapter but writing a functional equation for this type of problem will be left as a (rather long) exercise to the reader.
+
+The second form of the functional equation involving $L^{-1}$ should have less terms than the first one by virtue of separating $L$ and $E$ from one another. Using extraction operators we can constrain random walks to lie within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes of course). Furthermore using marking operators we can easily track the behavior of random walks as they cross or interact with boundaries or interact with regions within. For example we may consider walks interacting with the boundary of a box within some region in space. 
+
+\begin{example} We can also consider a different approach where instead of removing walks that venture outside of $\mc{D}$ we just mark them with some variable $z$ for later deletion. Suppose we are given some $\mc{M}$ and we want to frame in this new way. We have a new random walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc{D}_0 \cup \mc{D}^c$ where we mark monomials in $\mc{D}^c$ with $z$ and those in $\mc{D}_0$ as in $\mc{M}$. Here $\widetilde{E}$ is the identity since we don't remove any walks. We have the functional equations
 \begin{align}
-	KQ = L^{-1}(q) + (1-L^{-1})Q +(1-E)KQ
+(1-t\widetilde{L} S)\widetilde Q &= q\\
+(\widetilde{L}^{-1}-tS) Q &= \widetilde{\alpha}
 \end{align}
-which follows from $(1-E)Q = Q-Q = 0$. If we decide not to mark any of the walks we have the simpler Kernel form
+and kernel forms
 \begin{align}
-	(1-tES)Q = Q - EQ +E(KQ) = E(KQ)
+	K\widetilde Q &= q - t(1-\widetilde L)S \widetilde Q\\
+	K\widetilde Q &=\widetilde \alpha + (1-\widetilde{L}^{-1}) \widetilde Q.
 \end{align}
-so we have the functional equation
-\begin{align}
-	E(KQ) = q
-\end{align}
-which as before suggests writing $Q = \tilde W/K$ which yields
-\begin{align}
-	E(\tilde W) = q
-\end{align}
-as a functional equation defining the unmarked generating function. The beauty of all these equations is that they are all relative to an arbitrary domain $\mc{D}$ with interaction domain ${\mc{D}}_0$.
+where $\widetilde Q = Q + O(z)$ wher $Q$ is the generating function associated with model $\mc{M}$. We just need to extract $[z^0]$ from $\widetilde Q$ to obtain $Q$. 
+\end{example}
+
+We can talk about some of the abstract properties of the operators $L$ and $E$. The operator $E$ has the eigenvalues 1 or 0 for monomials $x_{[d]}^P$ where $P \in \mc{D}$ or $P \in \mc{D}^c$ respectively. The latter characterizes the monomials contained in $\ker E$. Similarly $L$ has eigenvalues 1 for when $P \in \mc{D}_0^c$ and the marking monomial $a$ for when $P\in \mc{D}_0$. Here $a$ will varry from point to point. Also $L^{-1}$ will have the reciprocal eigenvalues of $L$.
+
+The task for the rest of the chapter is to come up with representations for the operators involved. In general this should not be an easy task because if we could express arbitrary operators $L$ and $E$ with a small number of coefficient extractions we'd also be able to use this scheme to compress data without loss, which is impossible in general.
 
 %================================
 \section{Marking Operators}
 %================================
-
-We'll take care of regional constraints and interactions in one discussion. Suppose that we wish to mark points $p \in P\subseteq \ze^d$ with labels $a_p$ via an operator $\Gamma_P$. It can be written as
+The example in the previous section shows that we can talk about marking operators on their own without considering operators $E$. Alternatively, the operators $E$ are just marking operators which apply a label $a = 0$. Therefore we can combine the discussions for operators $L$ and $E$ into one holistic approach. Whenever invertibility is concerned the discussion will apply to operators $L$ only. Suppose that we wish to mark points $p \in P\subseteq \ze^d$ with labels $a_p$ via an operator $\Gamma_P$. It can be written as
 \begin{align}
 	\Gamma_P = 1 + \sum_{p\in P}(a_p-1) \ext{x_{[d]}^p}
 \end{align}
-The form $(a_p-1)$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion $P = {\mc{D}}^c$ and $a_p = a$. The good thing is that in a lot of cases we don't need all the terms in the operator and in some cases we even find the operator has a portion that factors. We just need to ensure that we mark all the walks that touch the boundaries or go within the region marked for deletion. For example we can take the walks in one dimensions on the non-negative axis with steps of size at most $n$ in the negative direction. Then we can demonstrate the truncation with
+The form $a_p-1$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion $P = {\mc{D}}^c$ and $a_p = a$. The good thing is that in a lot of cases we don't need all the terms in the operator and in some cases we even find the operator has a portion that factors. We just need to ensure that we mark all the walks that touch the boundaries or go within the region marked for deletion. For example we can take the walks in one dimensions on the non-negative axis with steps of size at most $n$ in the negative direction. Then we can demonstrate the truncation with
 \begin{align}
 	\Gamma = 1 + (a-1)\sum_{k=1}^{\infty} \ext{\ol{x}^k} = 1 + (a-1)\sum_{k=1}^{n} \ext{\ol{x}^k}
 \end{align}
@@ -102,7 +117,7 @@ Not surprisingly all the models so far has been of finite type. In the next sect
 \begin{align}
 	KQ + t(1- \Gamma)SQ = q.
 \end{align}
-Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and is of finite type.We'll prove this by finding the differential equation explicitly. Since the model is of finite type we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ that we see on either side. Once we multiply by $x_k^{A_k}$ we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$
+Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and is of finite type. We'll prove this by finding the differential equation explicitly. Since the model is of finite type we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ that we see on either side. Once we multiply by $x_k^{A_k}$ we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$
 \begin{align}
 	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
 \end{align}
@@ -232,11 +247,19 @@ The discussion lends itself nicely to generalization where now we have $d$ varia
 \begin{align}
 	u = \frac{a_{i_1,\ldots,i_d}^2 a_{j_1,\ldots,j_d}^m}{a_{k_1,\ldots,k_d}S}x_1^{r_1}\ldots x_d^{r_d} t^n
 \end{align}
-We can also constrain the SAWs on a part of the plane with an extraction operator $E$ and mark special locations with an operator $L$. The functional equation is
+We can also constrain the SAWs on a part of $\ze^d$ with an extraction operator $E$ and mark special locations with an operator $L$. The functional equation is
 \begin{align}
 	(1- tLE\Sigma)W = a_{0,\ldots,0}
 \end{align}
 for arbitrary number of dimensions, with region constraints and marking of special locations.
+
+
+\endinput
+%================================================================
+%================================================================
+%================================================================
+%================================================================
+%================================================================
 
 %================================
 \section{Coefficient Extraction Equations}
@@ -321,7 +344,6 @@ we have the inhomogeneous Fredholm equation of the first kind in $d$ dimensions
 	\int_0^{2\pi}\cdots\int_0^{2\pi} RQ d\theta_1\ldots d\theta_d= g
 \end{align}
 where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\theta_k$'s. Perhaps Fredholm theory can be applied in solving the random walk models in man dimensions. Perhaps this will also lead to a good inner product on the space where $Q$ lives.
-\endinput
 
 %================================
 \section{Reformulations of Problems}

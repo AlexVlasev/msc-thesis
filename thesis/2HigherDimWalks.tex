@@ -15,21 +15,25 @@ As mentioned previously, the generalization to higher-dimensions is straight-for
 \end{align}
 which we can re-write as
 \begin{align}
-	(1-tLES)Q = 1
+	(1-tLES)Q = 1\,.
 \end{align}
-We can apply the operator $L^{-1}$ on this to obtain
+We can apply the operator $L^{-1}$ and obtain the equation
 \begin{align}
 	L^{-1}(1) = \sum_{I\subseteq [d]}c_I = \ol{a}_{[d]}
 \end{align}
-and
+which allows us to write down the following result.
+\begin{prop} The $d-$dimensional random walk model with small steps in the positive orthant and marking of hyperplane $x_k=0$ interactions has a generating function $Q$ satisfying the functional equations
 \begin{align}
-   (L^{-1}-tES)Q = \ol{a}_{[d]}
+	(1-tLES)Q &= 1\,,\\
+	(L^{-1}-tES)Q &= \ol{a}_{[d]}
 \end{align}
-This equation will contain many less terms. To see this we take a look at the $L_iE_i$ operator
+where $L$, $E$, $L^{-1}$ are of the form $D = D_1\cdots D_d$.
+\end{prop}
+The second equation contains many less terms. To see this we take a look at the $L_kE_k$ operator
 \begin{align}
-	L_iE_i = 1 + b_i[x_i^0]-\ol{x_i}[\ol{x_i}]
+	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}
 \end{align}
-which increases the number of terms in the equation by a factor of 3. That is we would have $3^d$ terms relating to $SQ$ by the end of applying $LE$. Not to mention that each extraction from $SQ$ introduces 2 terms. On the other hand once we apply the operator $L^{-1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
+which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{-1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
 \begin{align}
 	L^{-1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
 	&=  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
@@ -43,7 +47,7 @@ and
 where the last line follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$.
 Therefore the functional equation is
 \begin{align}
-    \sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol{x_I}S_{I}^{-\one})Q_I^\oo = \ol{a_{[d]}}
+    \sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol{x_I}S_{I}^{-\one})Q_I^\oo = \ol{a_{[d]}}\,.
 \end{align}
 As in the two-dimensional case we let $K_I = c_I-t \ol{x_I}S_{I}^{-\one}$ where if $I =\emptyset$ we have the empty products and empty extractions leaving us with $K_{\emptyset} = K$. Finally we can write the master equation in $d$-dimensions.
 \begin{theorem} The full generating function $Q$ for random walks with interactions satisfies the functional equation
@@ -58,13 +62,13 @@ As in the two-dimensional case we can now perform coefficient extractions with $
 %=======================================
 We can perform coefficient extraction like in the 1-dimensional case. The operator $[x_i^k]$ will commute with all $M_j, E_j$ with $j\neq i$ so that we only need to consider the action on the operators $M_i = L_i^{-1}$ and $E_i$. We've already done so in the 1-dimensional case. The zeroth power extraction yields
 \begin{align}
-	[x_i^0]M_i &= [x_i^0]-[x_i^0]c_i[x_i^0] = [x_i^0]-c_i[x_i^0] = \ol{a_i}[x_i^0]\\
+	[x_i^0]M_i &= [x_i^0]-[x_i^0]c_i[x_i^0] = [x_i^0]-c_i[x_i^0] = \ol{a_i}[x_i^0]\,,\\
 	[x_i^0]E_i &= [x_i^0] - [x_i^0]\ol{x_i}[\ol{x_i}] = [x_i^0]
 \end{align}
 and the $k$-th power extraction for $k\ge 1$ yields
 \begin{align}
-	[x_i^k]M_i &= [x_i^k]-[x_i^k]c_i[x_i^0] = [x_i^k]\\
-	[x_i^k]E_i &= [x_i^k] - [x_i^k]\ol{x_i}[\ol{x_i}] = [x_i^k]
+	[x_i^k]M_i &= [x_i^k]-[x_i^k]c_i[x_i^0] = [x_i^k]\,,\\
+	[x_i^k]E_i &= [x_i^k] - [x_i^k]\ol{x_i}[\ol{x_i}] = [x_i^k]\,.
 \end{align}
 So, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ from the picture while for $k = 0$ it removes $E_i$ but leaves a residual $\ol{a_i}$ behind for $M_i$. Therefore if we extract $[x_I^\oo]$ from the functional equation we have
 \begin{align}
@@ -74,7 +78,7 @@ So, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ from the
 \end{align}
 so that
 \begin{align}
-	\ol{a}_{[d]\backslash I} = [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q
+	\ol{a}_{[d]\backslash I} = [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q\,.
 \end{align}
 Written in another way this becomes
 \begin{align}
@@ -87,13 +91,13 @@ and we can use whichever notation is more useful at the time. The latter notatio
 \end{align}
 which we can write as
 \begin{align}
-	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0
+	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0\,.
 \end{align}
 If $I$ is empty then
 \begin{align}
-	[x_J^P]( M_{[d]\backslash J} - t E_{[d]\backslash J} S)Q = 0
+	[x_J^P]( M_{[d]\backslash J} - t E_{[d]\backslash J} S)Q = 0\,.
 \end{align}
-The problem with a lot of things in this section is that they are not really practical beyond providing a shortcut for some of the calculations so we don't have to do them by hand every time. Also they provide a broader idea of having multiple kernels in one problem. Perhaps things will be clearer when we specialize to the 2-dimensional problem.
+The main role of these calculations is to provide a shortcut for some of the manual calculations.
 
 %=======================================
 \section{Further functional equations}
@@ -122,7 +126,7 @@ and
 \end{align}
 so the functional equation can be written as
 \begin{align}
-	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}(c_J - a_I t\ol{x}_J S_{I,J}^{\oo,-\one})Q_{I,J}^{\oo,\oo} = a_I(\ol{a}_{[d]}+t R_I')
+	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}(c_J - a_I t\ol{x}_J S_{I,J}^{\oo,-\one})Q_{I,J}^{\oo,\oo} = a_I(\ol{a}_{[d]}+t R_I')\,.
 \end{align}
 This suggests the notation
 \begin{definition} For sets $I$ and $J$ we write
@@ -131,7 +135,7 @@ This suggests the notation
 \end{align}
 where when $I = \emptyset$, $K_J(I) = K_J$.
 \end{definition}
- This notation allows us to write the $2^d$ functional equations in the simplified form
+ This notation allows us to write the $2^d$ functional equations in a simplified form.
 \begin{corollary} For $I \subseteq [d]$ the function $Q$ satisfies the functional equation
 \begin{align}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}K_J (I) Q_{I,J}^{\oo,\oo} = \ol{a}_{[d]\backslash I}+a_I t  R_I'
@@ -142,45 +146,44 @@ Now, to calculate the $R_I'$ terms we first determine what $R_I$ is. It is a sum
 \begin{align}
 	E_j sq &= sq - \ol{x}_j(sq)_j^{-1} \\ 
 	&= sq - \ol{x}_j(s_j^{-1}q_j^0+s_j^{0}q_j^{-1}+s_j^{1}q_j^{-2})\\
-	& = sq - \ol{x}_js_j^{-1}q_j^0
+	& = sq - \ol{x}_js_j^{-1}q_j^0\,.
 \end{align}
 Hence
 \begin{align}
-	E_{K} sq &= \sum_{J\subseteq K} (-1)^{|J|}\ol{x}_J s_J^{-\one} q_J^\oo
+	E_{K} sq &= \sum_{J\subseteq K} (-1)^{|J|}\ol{x}_J s_J^{-\one} q_J^\oo\,.
 \end{align}
 Finally we can write
 \begin{align}
 	R_I' &= E_{[d]\backslash I} R_I \\
 	& = \sum_{P > \oo} E_{[d]\backslash I}S_I^{-P}Q_I^P\\
 	& = \sum_{P > \oo} \sum_{J \subseteq [d]\backslash I} (-1)^{|J|} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\\
-	& = \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\\
+	& = \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\,.
 \end{align}
-
 \begin{prop} The functions $R_I'$ are given by
 \begin{align}
-	R_I' =  \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\\
+	R_I' =  \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\,.
 \end{align}
 \end{prop}
-This formula is mostly of theoretical value although it can be used to speed up writing things out by hand.
+This formula is mostly of theoretical value although it can be used to speed up manual calculations.
 %=======================================
 \section{Using the formal inverse for iteration}
 %=======================================
 In a previous subsection we obtained the equation
 \begin{align}
-	(1-tLES)Q = 1
+	(1-tLES)Q = 1\,.
 \end{align}
 Let $D = LE$. Then we can think of the formal inverse of this operator given as Neumann series as
 \begin{align}
-	(1-tDS)^{-1} = \frac{1}{1-tDS} = \sum_{k=0}^{\infty}t^k(DS)^k
+	(1-tDS)^{-1} = \frac{1}{1-tDS} = \sum_{k=0}^{\infty}t^k(DS)^k\,.
 \end{align}
-We can write a series solution for $Q$ as
+We can write the series solution
 \begin{align}
 Q = \sum_{k=0}^{\infty}t^k (DS)^k(1)
 \end{align}
-where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $DS$ applied to it. It can be easily implemented in symbollica calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way - by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane and finally mark the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We haven't been able to find closed forms for the repeated operator applications in general. Here's an example that illustrates the use of the operators.
+where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $DS$ applied to it. It can be easily implemented in symbolic calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way - by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane and finally mark the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We haven't been able to find closed forms for the repeated operator applications in general. Here's an example that illustrates the use of the operators.
 \begin{example} Let $S = x_1+\ol{x}_1+x_2+\ol{x}_2 = S_1(x_1)+S_2(x_2)$. We start with $DS^0(1) = 1$. Then
 \begin{align}
-	DS^1(1) &= LE(S_1+S_2) =L(x_1+x_2) = a_2x_1+a_1x_2\\
+	DS^1(1) &= LE(S_1+S_2) =L(x_1+x_2) = a_2x_1+a_1x_2\,,\\
 	DS^2(1) &= LE(S_1+S_2)(a_2x_1+a_1x_2) \\
 	&= LE(a_2S_1x_1+a_1x_2S_2 + a_2x_1S_2+a_1x_2S_1)\\
 	&= L(a_2S_1x_1+a_1x_2S_2+(a_1+a_2)x_1x_2)\\
@@ -188,7 +191,7 @@ where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the seri
 \end{align}
 which allows us to write
 \begin{align}
-	Q & = 1 + (a_2x_1+a_1x_2)t + \left(a_1a_2(a_1+a_2)+(a_2^2x_1^2+a_1^2x_2^2)+(a_1+a_2)x_1x_2\right)t^2+\ldots
+	Q & = 1 + (a_2x_1+a_1x_2)t + \left(a_1a_2(a_1+a_2)+(a_2^2x_1^2+a_1^2x_2^2)+(a_1+a_2)x_1x_2\right)t^2+\cdots\,.
 \end{align}
 \end{example}
 
@@ -206,28 +209,34 @@ where we have $EQ = Q$ since $Q$ only has non-negative powers of $x_k$. Next we 
 \end{align}
 and finish off the calculation with
 \begin{align}
-	KQ + (1-L)Q - (1-LE)KQ = 1
+	KQ + (1-L)Q - (1-LE)KQ = 1\,.
 \end{align}
 We can also start with the reduced form
 \begin{align}
 	\alpha = MQ - tESQ = MQ - EQ + EKQ = (M-1)Q + EKQ
 \end{align}
-here we can expand $E = E-1 + 1$ to find
+where we can expand $E = E-1 + 1$ to find
 \begin{align}
 	KQ = \alpha +(1-M)Q + (1-E)KQ = \alpha + (1-M)Q - t(1-E)SQ
 \end{align}
 where the last step follows from
 \begin{align}
-	(1-E)KQ = (1-E)(Q - tSQ) = -t(1-E)SQ
+	(1-E)KQ = (1-E)(Q - tSQ) = -t(1-E)SQ\,.
 \end{align}
 The operators $1-M$ and $1-E$ are purely extractions . The last kernel form shows more clearly where the $K_I$'s come from in the functional equation above.
+\begin{prop} The first and second kernel forms are
+\begin{align}
+	KQ & = 1 - (1-L)Q  +(1-LE)KQ\,,\\
+	KQ &= \alpha + (1-L^{-1})Q +(1-E)KQ\,.
+\end{align}
+\end{prop}
 
 %=======================================
 \section{Walks without interactions}
 %=======================================
 The Kernel forms above suggest an easier route for dealing with the models without interactions. Those models are equivalent to setting all the $a_k =1$ which removes any marking or unmarking operators. The first kernel form reduces to the simple functional equation
 \begin{align}
-	 E(KQ) = 1
+	 E(KQ) = 1\,.
 \end{align}
 This suggests using the following substitution
 \begin{align}
@@ -239,35 +248,34 @@ so we have
 \end{align}
 where  $\Gamma = \Gamma_1\ldots\Gamma_d$ and 
 \begin{align}
-	\Gamma_k = x_kE_k\ol{x}_k = x_k(1-\ext{\ol{x}_k})\ol{x}_k = 1 - [x_k]^0
+	\Gamma_k = x_kE_k\ol{x}_k = x_k(1-\ext{\ol{x}_k})\ol{x}_k = 1 - [x_k]^0\,.
 \end{align}
 Therefore we have the functional equation for $W$ as
 \begin{prop} Let $W = x_{[d]}KQ$ where $Q$ is the generating function for walks without interactions in the positive orthant
 \begin{align}
-	\Gamma W = \sum_{I\subseteq [d]}(-1)^{|I|} W_I^\oo= x_{[d]}
+	\Gamma W = \sum_{I\subseteq [d]}(-1)^{|I|} W_I^\oo= x_{[d]}\,.
 \end{align}
 \end{prop}
 For example in two dimensions we have
 \begin{align}
-	W(x_1,x_2) - W_1^0(x_2) -W_2^0(x_1) + W_{1,2}^{0,0} = x_1x_2
+	W(x_1,x_2) - W_1^0(x_2) -W_2^0(x_1) + W_{1,2}^{0,0} = x_1x_2\,.
 \end{align}
 Thus we can write the solution to the problem as
 \begin{align}
-	Q = \frac{1}{x_{[d]}K}\left(x_{[d]}-\sum_{\emptyset \neq I\subseteq [d]}(-1)^{|I|} W_I^\oo\right)
+	Q = \frac{1}{x_{[d]}K}\left(x_{[d]}-\sum_{\emptyset \neq I\subseteq [d]}(-1)^{|I|} W_I^\oo\right)\,.
 \end{align}
 In two dimensions this becomes
 \begin{align}
-	Q(x_1,x_2) = \frac{x_1x_2+W_1^0(x_2)+W_2^0(x_1)-W_{1,2}^{0,0}}{x_1x_2(1-tS)}
+	Q(x_1,x_2) = \frac{x_1x_2+W_1^0(x_2)+W_2^0(x_1)-W_{1,2}^{0,0}}{x_1x_2(1-tS)}\,.
 \end{align}
 Of course each $W_I^\oo$ depends on $Q_I^\oo$ so we could have seen this relationship from the master functional equation for $Q$ too.
 Interestingly enough this calculation points to a differential equation. Clearly, $W$ satisfies the differential equations
 \begin{align}
 	\del_1\del_2 W &= 1
 \end{align}
-and in general
 \begin{prop} The function $Q$ for walks without interactions is D-finite in the $x_1,\ldots,x_d$ variables since it satisfies the inhomogeneous PDE
 \begin{align}
-	\del_1\ldots\del_d W = \del_1\ldots\del_d (x_1\ldots x_d KQ) = 1
+	\del_1\ldots\del_d W = \del_1\ldots\del_d (x_1\ldots x_d KQ) = 1\,.
 \end{align}
 \end{prop}
 We'll see a more general relationship in a later chapter.
