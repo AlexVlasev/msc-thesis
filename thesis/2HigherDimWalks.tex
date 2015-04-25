@@ -196,40 +196,35 @@ which allows us to write
 \end{example}
 
 %=======================================
-\section{Kernel Form}
+\section{Kernel Forms}
 %=======================================
-We can write out the functional equations in a way that highlights the kernel $K$ in the equation. This confirms that $K$ is indeed special in some way. It's not so surprising that a lot of the tools in the analysis of random walk models use $K$. We start out as follows
+We can write out the functional equations in a way that highlights the kernel $K$ in the equation. We start out as follows
 \begin{align}
-	1 &= Q - tLESQ = Q +LE(-tS+1-1)Q \\
-	&= Q+ LEKQ - LEQ = (1-L)Q + LEKQ 
+	(1-tLES)Q &= 1\\
+	(1-t(LE-1+1)S)Q &=1\\
+	KQ + t(1-LE)SQ &= 1\,.
 \end{align}
-where we have $EQ = Q$ since $Q$ only has non-negative powers of $x_k$. Next we can write
+This is the form we see in the master functional equation. Another way we could have expanded is as follows
 \begin{align}
-	(1-L)Q + LEKQ = (1- L)Q + (LE-1)KQ + KQ
+\begin{split}
+	(1-tLES)Q &= 1\\
+	(1+LE(1-tS-1))Q &= 1\\
+	LEKQ+(1-LE)Q &= 1\\
+	LEKQ+(1-L)Q &= 1
+\end{split}	
 \end{align}
-and finish off the calculation with
+where $EQ = Q$ since $Q$ is already of a valid form. We can go with both ways at the same time as well.
 \begin{align}
-	KQ + (1-L)Q - (1-LE)KQ = 1\,.
+	KQ + t(1-LE)SQ &= 1\\
+	KQ + (1-LE)(1-tS-1)Q &=1\\
+	KQ + (1-LE)KQ - (1-L)Q &= 1\.
 \end{align}
-We can also start with the reduced form
+We can apply the inverse $L^{-1}$ to those equations too, in particular on the second one.
 \begin{align}
-	\alpha = MQ - tESQ = MQ - EQ + EKQ = (M-1)Q + EKQ
+\begin{split}
+	L^{-1}(LEKQ+(1-LE)Q) &= 1
+\end{split}	
 \end{align}
-where we can expand $E = E-1 + 1$ to find
-\begin{align}
-	KQ = \alpha +(1-M)Q + (1-E)KQ = \alpha + (1-M)Q - t(1-E)SQ
-\end{align}
-where the last step follows from
-\begin{align}
-	(1-E)KQ = (1-E)(Q - tSQ) = -t(1-E)SQ\,.
-\end{align}
-The operators $1-M$ and $1-E$ are purely extractions . The last kernel form shows more clearly where the $K_I$'s come from in the functional equation above.
-\begin{prop} The first and second kernel forms are
-\begin{align}
-	KQ & = 1 - (1-L)Q  +(1-LE)KQ\,,\\
-	KQ &= \alpha + (1-L^{-1})Q +(1-E)KQ\,.
-\end{align}
-\end{prop}
 
 %=======================================
 \section{Walks without interactions}

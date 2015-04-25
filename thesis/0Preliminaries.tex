@@ -10,7 +10,7 @@ In these pages we'll set up some of the basic tools and notation that we'll use 
 %========================
 \section{Formal Series}
 %========================
-We will work in the setting of formal power series and Laurent series. Issues with convergence will not be addressed in much detail. If we are given a ring $R$ we may construct several formal objects with a commutative indeterminate $x$ with coefficients in $R$
+We will work in the setting of formal power series and Laurent series. Issues with convergence will not be addressed in much detail. If we are given a ring $R$ we may construct several formal objects with a commutative indeterminate $x$ with coefficients in $R$.
 \begin{itemize}
 \item $R[x]$: Ring of polynomials with monomials $x^k$ for integers $k\ge 0$.
 \item $R[x,1/x]$: Ring of Laurent polynomials with monomials $x^k$ for integers $k$.
@@ -23,7 +23,7 @@ We can also define their multivariate analogues like $\Rpring{x}{n}$, $\Rlring{x
 \end{align}
 whenever this series is a formal Laurent series. When we solve enumeration problems via generating functions we often need to extract particular coefficients from the formal polynomial/series. In the one-variable case we have the coefficient extraction operators on formal series
 \begin{align}
-	[x^n] W(x) = w_n
+	[x^n] W(x) = w_n\,.
 \end{align}
 The multivariate case is handled analogously with the caveat that whenever the number of variables extracted is less than the number of variables present we extract by treating these remaining variables as parameters. For a more detailed discussion please consult \cite{goulden2004comb}. When we deal random walk generating functions we often work with functional equations. In the broadest sense in this thesis we'll discuss functional equations which may involve a function $F$, the function evaluated at various arguments and various coefficient extractions of $F$. This will be done via operators so in the end we'll have a functional equation involving $F$ and operators. We'll write the identity operator as 1.
 %========================
@@ -38,7 +38,7 @@ In this work we'll investigate random walk models on the $n$-dimensional lattice
 \end{itemize}
 It is natural to consider the generating function that will keep track of all the information characterizing the random walks in the model. For each random walk $w$ its length $|w|$ will be the total number of steps that it was taken and we'll keep track of it via a parameter $t$. We'll keep track of its endpoint coordinates in $\ze^n$ by the indeterminates $x_1,\ldots,x_n$ and its interactions with $\mc{D}_0$ via marking parameters $a_m$ where $m$ is some specific subscript index. The marking is highly dependent on the geometry of $\mc{D}_0$ and the way we want to count interactions. If the end coordinates of the random walk are $(m_1,\ldots,m_n)$ and if the marking monomial (a product of $a_m$'s) is $a(w)$ we can write the generating  function for the random walk model as
 \begin{align}
-	Q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{M}} a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}
+	Q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{M}} a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}\,.
 \end{align}
 Other important objects are the step polynomial (or characteristic polynomial) $S(x_1,\ldots,x_n)$ defined by
 \begin{align}
@@ -46,28 +46,28 @@ Other important objects are the step polynomial (or characteristic polynomial) $
 \end{align}
 and the starting polynomial
 \begin{align}
-	q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{Q}}  a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}
+	q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{Q}}  a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}\,.
 \end{align}
 Usually we see $S$ a Laurent polynomial of degree (or valuation) 1 in each variable and we have $q = 1$. Note that in all of these quantities the variables $a_m$ have been supressed from the notation. We can include those too whenever necessary especially if there are only finitely many of them. Furthermore it'll be useful to use the quantities $b = a - 1$ and $c = b/a = 1- \ol{a}$.
 \begin{example} To illustrate the notation we'll investigate a random walk model on the plane. We'll look at random walks starting at the origin, restricted to the quarter plane, and which have only small diagonal steps. We'll count their interactions with the axes. In our terminology we have a random walk model $\mc{M}$ with $\mc{S}$ given by
 \begin{align}
-	\mc{S} = \{(-1,-1),(1,-1),(-1,1),(1,1)\}.
+	\mc{S} = \{(-1,-1),(1,-1),(-1,1),(1,1)\}\,.
 \end{align}
 The region $\mc{D}$ consists of all points in $\ze^2$ with non-negative coordinates. Next $\mc{D}_0$ is composed of the two non-negative axes with overlap at the origin - we'll count visits to the origin as visits to each axis. Finally $\mc{Q}$ consists of the empty walk. In the language of generating functions we have $q = 1$ and
 \begin{align}
-	S &= S(x_1,x_2)  = x_1+\ol{x}_1+x_2+\ol{x}_2 = (x_1+\ol{x}_1)(x_2 + \ol{x}_2)
+	S &= S(x_1,x_2)  = x_1+\ol{x}_1+x_2+\ol{x}_2 = (x_1+\ol{x}_1)(x_2 + \ol{x}_2)\,.
 \end{align}
-We have a choice in naming the variables counting the interactions so we'll go with their defining quality (as this proves notationally simpler later on) - we mark the locations where one coordinate is zero. That is mark walks ending on $x_k = 0$ by incrementing the power of $a_k$ in the generating function. In this model the only first step we can take is $(1,1)$ which contributes a monomial $x_1x_2t$. From here on we can build on the single random walk of size one by taking a step in any of the four directions. This action lead to the following monomials
+We have a choice in naming the variables counting the interactions so we'll go with their defining quality (as this proves notationally simpler later on) - we mark the locations where one coordinate is zero. That is mark walks ending on $x_k = 0$ by incrementing the power of $a_k$ in the generating function. In this model the only first step we can take is $(1,1)$ which contributes a monomial $x_1x_2t$. From here on we can build on the single random walk of size one by taking a step in any of the four directions. This action lead to the following monomials.
 \begin{itemize}
-\item $(1,1)$: monomial $x_1^2x_2^2 t^2$ since there are no interactions.
-\item $(1,-1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$-axis with coordinate $x_2 = 0$.
-\item $(-1,1)$: monomial  $a_1x_2^2 t^2$ since the walk lands on the $x_2$-axis with coordinate $x_1 = 0$.
-\item $(-1,-1)$: monomial  $a_1a_2 t^2$ since the walk lands on the origin which is on both axes.
+	\item $(1,1)$: monomial $x_1^2x_2^2 t^2$ since there are no interactions.
+	\item $(1,-1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$-axis with coordinate $x_2 = 0$.
+	\item $(-1,1)$: monomial  $a_1x_2^2 t^2$ since the walk lands on the $x_2$-axis with coordinate $x_1 = 0$.
+	\item $(-1,-1)$: monomial  $a_1a_2 t^2$ since the walk lands on the origin which is on both axes.
 \end{itemize}
 Since we've seen all the random walks of size at most 2 we see that the generating function $Q = Q(x_1,x_2;t)$ starts as
 \begin{align}
 	Q  &=  1 + x_1x_2 t + (a_1a_2 + a_1x_2+a_2x_1 +x_1x_2)t^2 + \cdots\\
-	& = 1 + x_1x_2 t+ (a_1+x_1)(a_2+x_2)t^2 + \cdots
+	& = 1 + x_1x_2 t+ (a_1+x_1)(a_2+x_2)t^2 + \cdots\,.
 \end{align}
 The fact that the first few coefficients factor in this case may be unexpected but it is due to the factoring of $S(x_1,x_2)$ itself. We'll see a more general result later.
 \end{example}
@@ -83,30 +83,30 @@ In the interest of generalizing the problem-solving strategies involved in rando
 \end{align}
 with the special cases
 \begin{align}
-	x_I^{\one} = x_I, \quad x_I^{-\one} = \frac{1}{x_I} = \ol{x}_I
+	x_I^{\one} = x_I, \quad x_I^{-\one} = \frac{1}{x_I} = \ol{x}_I\,.
 \end{align}
 \end{definition}
 \begin{definition} For sequences $I,J$ as before and indeterminate $x$ we denote the coefficient extraction 
 \begin{align}
 	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J
 \end{align}
-with special cases
+with special cases:
 \begin{itemize}
-\item $F_I^{J} = F$ if $I$ is empty.
-\item $F_I^J = F_J$ if $I$ is the full set of variables ordered unambiguously.
+	\item $F_I^{J} = F$ if $I$ is empty.
+	\item $F_I^J = F_J$ if $I$ is the full set of variables ordered unambiguously.
 \end{itemize}
 We'll primarily be using this notation for extractions w.r.t. the $x$ variables in the generating functions but sometimes we'll be using such a coefficient extraction w.r.t. to other variables, most commonly $t$. We'll never mix such extractions with this notation.
 \end{definition}
-\begin{example}Here we'll illustrate the notation. If $Q(x_1,x_2;t)$ is given as in the previous example we have
+\begin{example}Here's an illustrative example of the notation. If $Q(x_1,x_2;t)$ is given as in the previous example we have
 \begin{align}
-	Q_1^0 = [x_1^0]Q(x_1,x_2) = Q(0,x_2) &= 1 + a_1(x_2+a_2)t^2+\cdots\\
-	\Qf{0,0} = Q_{0,0} = Q(0,0) &= 1 + a_1a_2 t^2+\cdots
+	Q_1^0 = [x_1^0]Q(x_1,x_2) = Q(0,x_2) &= 1 + a_1(x_2+a_2)t^2+\cdots\,,\\
+	\Qf{0,0} = Q_{0,0} = Q(0,0) &= 1 + a_1a_2 t^2+\cdots\,.
 \end{align}
 Furthermore we may write
 \begin{align}
 	S_1^{-1} &= [\ol{x}_1](x_1+\ol{x}_1)(x_2+\ol{x}_2) = x_2+\ol{x}_2
 \end{align}
-and $\Sf{\pm 1,\pm1}  = 1$
+and $\Sf{\pm 1,\pm1}  = 1$.
 \end{example}
 
 \endinput

@@ -14,7 +14,7 @@ Why do we study random walks? Apart from being an interesting mathematical objec
 With the terminology from autoref{ch:Preliminaries} in place we are ready to discuss some of the recent history of random walk enumeration. In the most basic case random walks starting at the origin on $d$ dimensions have no restrictions $\mc{D}$ is the whole space and there are no interactions. We can enumerate these walks easily by writing the full generating function
 \begin{align}
 	Q(\row xd;t) &= \frac{1}{1-tS(\row xd)} \\
-			&= 1 + tS(\row xd) + t^2 S(\row xd)^2 + \cdots
+			&= 1 + tS(\row xd) + t^2 S(\row xd)^2 + \cdots\,.
 \end{align}
 This works since we can use each individual steps and every walk is uniquely represented by a sequence of steps from $\mc{S}$. This works for arbitrary initial conditions too since we can start the walks at any point and evolve them. The coefficients of each power of $t$ are Laurent polynomials in the variables $\row xd$. If we have the generating function for a random walk model we have a lot of information at our hands. Replacing $x_k$ with $0$ for each $k$ gives us the generating function for walks returning to the origing. Similarly taking higher derivatives and evaluating at zero allows us to find the number of walks ending at specific points. If we set all the $x_k = 1$ inf $Q$ we obtain the length generating function for the random walks in the plane. There are numerous questions we can ask about each of those characteristics of the model.
 

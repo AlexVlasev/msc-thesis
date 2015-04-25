@@ -40,8 +40,8 @@
 \contentsline {section}{\numberline {6.2}Coefficient Extraction}{46}{section.6.2}
 \contentsline {section}{\numberline {6.3}Further functional equations}{47}{section.6.3}
 \contentsline {section}{\numberline {6.4}Using the formal inverse for iteration}{50}{section.6.4}
-\contentsline {section}{\numberline {6.5}Kernel Form}{51}{section.6.5}
-\contentsline {section}{\numberline {6.6}Walks without interactions}{52}{section.6.6}
+\contentsline {section}{\numberline {6.5}Kernel Forms}{51}{section.6.5}
+\contentsline {section}{\numberline {6.6}Walks without interactions}{51}{section.6.6}
 \contentsline {chapter}{\numberline {7}Operators}{54}{chapter.7}
 \contentsline {section}{\numberline {7.1}Homogeneous Operators}{54}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Single 1D Operators}{54}{subsection.7.1.1}
@@ -78,15 +78,14 @@
 \contentsline {subsubsection}{The $\sigma _1$ substitution}{99}{subsubsection*.9}
 \contentsline {subsubsection}{The $\sigma _2$ substitution}{100}{subsubsection*.10}
 \contentsline {subsubsection}{Partial Orbital Operators}{101}{subsubsection*.11}
-\contentsline {section}{\numberline {10.3}Ore Operators}{103}{section.10.3}
 \contentsline {chapter}{\numberline {11}Highly-symmetric 2D models}{104}{chapter.11}
-\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{106}{section.11.1}
-\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{109}{section.11.2}
+\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{105}{section.11.1}
+\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{108}{section.11.2}
 \contentsline {section}{\numberline {11.3}The almost-full model: missing steps E and W}{116}{section.11.3}
 \contentsline {section}{\numberline {11.4}The full model: all steps available}{116}{section.11.4}
 \contentsline {section}{\numberline {11.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{116}{section.11.5}
-\contentsline {chapter}{\numberline {12}Epilogue}{118}{chapter.12}
-\contentsline {section}{\numberline {12.1}Discussion}{118}{section.12.1}
-\contentsline {section}{\numberline {12.2}Future Work}{118}{section.12.2}
-\contentsline {section}{\numberline {12.3}Conclusion}{118}{section.12.3}
-\contentsline {chapter}{Bibliography}{119}{chapter*.12}
+\contentsline {chapter}{\numberline {12}Epilogue}{117}{chapter.12}
+\contentsline {section}{\numberline {12.1}Discussion}{117}{section.12.1}
+\contentsline {section}{\numberline {12.2}Future Work}{117}{section.12.2}
+\contentsline {section}{\numberline {12.3}Conclusion}{117}{section.12.3}
+\contentsline {chapter}{Bibliography}{118}{chapter*.12}

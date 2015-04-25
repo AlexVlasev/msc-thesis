@@ -116,11 +116,11 @@ Therefore
 	B_1 B_2 Q = Q-\wh Q -\wc Q + \wc{\wh Q} &= (Q_1 - \wh Q_1)\odot (Q_2 - \wc Q_2) \\
 	B_1B_2(Q_1\odot Q_2) &=( B_1 Q_1) \odot ( B_2 Q_2)\,.
 \end{align}
-In general if we are applying operators that don't involve $t$ to a Hadamard product with respect to $t$ we can treat the operator as a constant with respect to $t$ and apply it on whichever term we would like to. If it applies to both terms then we have to apply it to their mixture in a non-trivial way. For example, each of the $Q_i$'s solves a 1-dimensional problem and therefore we have a relationship of the type $B_i (f_i Q_i) = g_i$ for some $f_i$ and $g_i$. Then we can write
+In general if we are applying operators that don't involve $t$ to a Hadamard product with respect to $t$ we can treat the operator as a constant with respect to $t$ and apply it on whichever term we would like to. If it applies to both terms then we have to apply it to their mixture in a nontrivial way. For example, each of the $Q_i$'s solves a 1-dimensional problem and therefore we have a relationship of the type $B_i (f_i Q_i) = g_i$ for some $f_i$ and $g_i$. Then we can write
 \begin{align}
 	B_1 B_2 (f_1 Q_1 \odot f_2 Q_2) = ( B_1 f_1 Q_1) \odot ( B_2 f_2 Q_2) = g_1 \odot g_2
 \end{align}
-but so far this is not a relationship of the type $B_1B_2 (fQ) = g$ since taking out the functions $f_1$ and $f_2$ from within the Hadamard product is non-trivial in general. One might be tempted to say that $f = f_1 \odot f_2$ but that would be incorrect. It would be neat to see if there is a way to find $f$ in terms of $f_1$ and $f_2$.
+but so far this is not a relationship of the type $B_1B_2 (fQ) = g$ since taking out the functions $f_1$ and $f_2$ from within the Hadamard product is nontrivial in general. One might be tempted to say that $f = f_1 \odot f_2$ but that would be incorrect. It would be neat to see if there is a way to find $f$ in terms of $f_1$ and $f_2$.
 
 There is a way to see the Hadamard product solution without the iteration method. Suppose that $Q_i$ is a solution to the functional equation $(M_i - tE_iS_i)Q_i = \ol{a}_i$ for $i = 1$ and $i = 2$. Then we claim that $Q = Q_1 \odot Q_2$ is a solution to the functional equation $(M - tES)Q = \ol{a}_1\ol{a}_2$. To this end we calculate
 \begin{align}
@@ -169,7 +169,7 @@ We have cases
 \item $\alpha \neq 0, \gamma = 0$. Here $y = x$ as well.
 \item $\alpha \neq 0, \gamma \neq 0$. Here we either have $y = x$ or $X\neq x$ and $y = \ol{x}\alpha/\gamma = \ol{x} S_{-1}/S_1$.
 \end{itemize}
-In conclusion, either every transformation works and we don't have an interesting case or we have the identity transformation plus a possible second one. The last transformation creates a non-trivial group and we can have groups of various orders. Let
+In conclusion, either every transformation works and we don't have an interesting case or we have the identity transformation plus a possible second one. The last transformation creates a nontrivial group and we can have groups of various orders. Let
 \begin{align}
 	g_1 : x_1 \mapsto \ol{x_1}\frac{S_1^{-1}}{S_1^{1}},\quad g_2 : x_2 \mapsto \ol{x_2}\frac{S_2^{-1}}{S_2^{1}}
 \end{align}
