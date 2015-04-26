@@ -11,7 +11,7 @@
 
 In the interest of working out higher dimensional walk problems it is very useful to first visit the 1-dimensional case which will illustrate a lot of the methoDS that will later come into play. The 1-dimensional case will also give us a clearer picture as to how things work in higher dimensions (although the picture becomes more complicated). We'll treat the problem using generating functions. We'll use lower case letters and not quite the full notation because it is not necessary. In one dimension, on one axis, we'll use steps of length at most 1. If we have a random walk ending at coordinate $i$ we can either step back adding $-1$ to the coordinate, step forward adding $+1$ to the coordinate or staying in one place, adding $0$ to the coordinate. This can be somewhat formalized by using polynomials. Ending a walk at coordinate $i$ will be encoded with a monomial $x^i$. Then stepping backwards, forwards or staying in one place will be denoted with $x^{i-1}$, $x^i$ and $x^{i+1}$ respectively. This is the same as multiplying by $1/x = \ol{x}, 1, x$ in each case. We can encode this information is a Laurent step polynomial $s$ defined as
 \begin{align}
-	S = S_{-1}\ol{x} + S_0 + S_1 x\,.
+	S = S_{\um 1}\ol{x} + S_0 + S_1 x\,.
 \end{align}
 Here $S_i$ will be either 0 or 1 for any specific $i$, tracking whether we have allowed those kinds of steps or not. Keeping this in mind, there are 8 possible step sets because we have two options for each $S_i$. We keep track of the length of a random walk with powers of $t$ and we keep track of itS endpoint with powers of $x$. We'll also mark every interaction with the origin by multiplying by $a$ every time a walk steps on the origin. We'll keep the walks on the non-negative axis.
 
@@ -58,30 +58,30 @@ Therefore
 This commutativity  makes sense because on the level of the function they are operator interacting with different monomials. We can now expand the functional equation to the following
 \begin{align}
 	1 &= Q - tLE(SQ) = Q - t(SQ + b(SQ)_0 - \ol{x}(SQ)_{-1}) \\
-	&=  q - t(SQ + b(S_{-1}Q_1 + S_0Q_0 + S_1 Q_{-1}) - \ol{x}(S_{-1}Q_0))\\
-	&= Q - t(SQ + b(S_{-1}Q_1 + S_0Q_0) - \ol{x}(S_{-1}Q_0))
+	&=  q - t(SQ + b(S_{\um 1}Q_1 + S_0Q_0 + S_1 Q_{-1}) - \ol{x}(S_{\um 1}Q_0))\\
+	&= Q - t(SQ + b(S_{\um 1}Q_1 + S_0Q_0) - \ol{x}(S_{\um 1}Q_0))
 \end{align}
 since $Q_{-1} = 0$. We can rewrite this equation in the following form
 \begin{align}
-	(1-tS)Q - t(bS_0-\ol{x}S_{-1})Q_0 -btS_{-1}Q_1 = 1\,.
+	(1-tS)Q - t(bS_0-\ol{x}S_{\um 1})Q_0 -btS_{\um 1}Q_1 = 1\,.
 \end{align}
 Here $Q_0 = Q(0)$ and $Q_1 = Q'(0)$ where $Q = Q(x)$. In the interest of simplifying the equation we can eliminate the $Q_1$ term by extracting the $x^0$ coefficient from the whole equation
 \begin{align}
-	 1 &= Q_0 - t(S_{-1}Q_1 +S_0 Q_0 + S_1 Q_{-1}) - tbS_0Q_0 - btS_{-1}Q_1\\
-	 &=(1-atS_0)Q_0-atS_{-1}Q_1\,.
+	 1 &= Q_0 - t(S_{\um 1}Q_1 +S_0 Q_0 + S_1 Q_{-1}) - tbS_0Q_0 - btS_{\um 1}Q_1\\
+	 &=(1-atS_0)Q_0-atS_{\um 1}Q_1\,.
 \end{align}
 We can solve this equation for $Q_1$
 \begin{align}
-	tS_{-1}Q_1 = \ol{a}((1-atS_0)Q_0-1)
+	tS_{\um 1}Q_1 = \ol{a}((1-atS_0)Q_0-1)
 \end{align}
-and substitute the result into the functional equation (for now we don't worry about the possibility of $S_{-1} = 0$ because it leads to the same thing anyway). Then
+and substitute the result into the functional equation (for now we don't worry about the possibility of $S_{\um 1} = 0$ because it leads to the same thing anyway). Then
 \begin{align}
-	1 &= (1-tS)Q - t(bS_0-\ol{x}S_{-1})Q_0 - c((1-atS_0)Q_0-1)\\
-	& = (1-tS)Q - (c -t\ol{x}S_{-1})Q_0 + c
+	1 &= (1-tS)Q - t(bS_0-\ol{x}S_{\um 1})Q_0 - c((1-atS_0)Q_0-1)\\
+	& = (1-tS)Q - (c -t\ol{x}S_{\um 1})Q_0 + c
 \end{align}
 and therefore we can rewrite the equation as
 \begin{align}
-	(1-tS)Q - (c -t\ol{x}S_{-1})Q_0 = \ol{a}
+	(1-tS)Q - (c -t\ol{x}S_{\um 1})Q_0 = \ol{a}
 \end{align}
 since $1 - c = 1 - (1-\ol{a}) = \ol{a}$. This process is rather complicated, even though it can be done for higher dimensional problems as well (as you can see in various previous approaches). Also there is an issue that we need to consider every time we are solving an equation in order to substitute quantities back into the equation. This is where the operator notation comes to the rescue. It turns out the the $L$ operator is invertible with inverse given by
 \begin{align}
@@ -90,13 +90,13 @@ since $1 - c = 1 - (1-\ol{a}) = \ol{a}$. This process is rather complicated, eve
 and we can apply it on the functional equation. The RHS is simply $M(1) = 1 - c = \ol{a}$ and automatically the LHS is
 \begin{align}
 	M(1-tLES)Q &= Mq - tESQ \\
-	&= (q-cQ_0) - t(SQ - \ol{x}S_{-1}Q_0) \\
-	&= (1-tS)Q - (c-t\ol{x}S_{-1})Q_0 
+	&= (q-cQ_0) - t(SQ - \ol{x}S_{\um 1}Q_0) \\
+	&= (1-tS)Q - (c-t\ol{x}S_{\um 1})Q_0 
 \end{align}
 and we've derived the same equation but in a much neater way. 
-\begin{prop} The one-dimensional random walk model with laurent step polynomial $S = S_{-1}\ol{x}+S_0 + S_1 x$ has a generating function $Q$ satisfying the functional equation
+\begin{prop} The one-dimensional random walk model with laurent step polynomial $S = S_{\um 1}\ol{x}+S_0 + S_1 x$ has a generating function $Q$ satisfying the functional equation
 \begin{align}
-	(M-tES)Q = (1-tS)Q-(c-t\ol{x}S_{-1})Q_0 = \ol{a}\,.
+	(M-tES)Q = (1-tS)Q-(c-t\ol{x}S_{\um 1})Q_0 = \ol{a}\,.
 \end{align}
 \end{prop}
 This will prove crucial later on when we derive a functional equation for higher dimensional problems. Although it can be done directly with a lot of effort it's much better to just use the operator notation. The derivation is brought down from about a dozen pages to one or two. The operator notation will also allow us to solve some multidimensional problems directly or with the help of lower dimensional problems.
@@ -133,16 +133,16 @@ That is
 \end{align}
 and we can readily extract whichever coefficients we want. The first equation leads to
 \begin{align}
-	(1-atS_0)Q_0-atS_{-1}Q_1 = 1
+	(1-atS_0)Q_0-atS_{\um 1}Q_1 = 1
 \end{align}
 and the second leads to
 \begin{align}
-	Q_k - t(S_{-1}Q_{k+1}+S_0Q_k+S_1 Q_{k-1}) &= 0\\
-	 (1-S_0t) Q_k -t(S_{-1}Q_{k+1} + S_1 Q_{k-1} &= 0\,.
+	Q_k - t(S_{\um 1}Q_{k+1}+S_0Q_k+S_1 Q_{k-1}) &= 0\\
+	 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1} &= 0\,.
 \end{align}
 %=======================================
 \section{Solving the functional equation for various $S$}
-\mark{sec:Solving1D}
+\label{sec:Solving1D}
 %=======================================
 In this section we'll solve all 8 one-dimensional problems fully. Some cases are easier to deal with than others. As we'll see later in the higher dimensional cases, some problems are easierto solve than others. This difficulty tends to scale up with the inclusion of certain steps with negative direction.
 %=======================================
@@ -153,7 +153,7 @@ This condition allows us to solve explicitly for $Q_0$
 	Q_0 = \frac{1}{1-aS_0t}\,.
 \end{align}
 We can substitute this expression in the functional equation and obtain
-\begin{prop} When $S_{-1} = 0$ we have
+\begin{prop} When $S_{\um 1} = 0$ we have
 \begin{align}
 	Q(x,a;t) =\frac{\ol{a}}{1-st}\left(1 + \frac{b}{{1-aS_0t}}\right) = \frac{1-S_0t}{(1-st)(1-aS_0t)}\,.
 \end{align}
@@ -167,7 +167,7 @@ We'll note that
 	(1-aS_0t)Q-(1-S_0t)\wh{Q} = 0\,.
 \end{align}
 This can also be written in operator form with $B = 1 - [b^0]$
-\begin{prop} When $S_{-1} = 0$ we have
+\begin{prop} When $S_{\um 1} = 0$ we have
 \begin{align}
 	B((1-aS_0t)Q) = 0\,.
 \end{align}
@@ -184,18 +184,18 @@ and
 \begin{align}
 	Q_0 = \frac{1-aS_0t}{1-S_0t}\wh{Q_0}
 \end{align}
-The relationship between $Q$ and $\wh Q$ is no accident but it tends to happen fairly often in the higher dimensional cases that we've considered. The functional equation in the $S_{-1} = 0$ case is easier to solve most likely because when $S_{-1} = 0$, walks don't go beyond the origin in the negative direction. Consequently the $E$ operator actS as the identity on the generating function. and the functional equation reaDS as
+The relationship between $Q$ and $\wh Q$ is no accident but it tends to happen fairly often in the higher dimensional cases that we've considered. The functional equation in the $S_{\um 1} = 0$ case is easier to solve most likely because when $S_{\um 1} = 0$, walks don't go beyond the origin in the negative direction. Consequently the $E$ operator actS as the identity on the generating function. and the functional equation reaDS as
 \begin{align}
    (M-tS)Q = Q- cQ_0 - tSQ = (1-tS)Q - c Q_0 = \ol{a}\,.
 \end{align}
 %=======================================
 \subsection{The $S_{-1} \neq 0$ case.}
 %=======================================
-The functional equation in the $S_{-1} \neq 0$ is also not difficult to solve. We'll try to apply the kernel method whenever possible. It requires finding an $x$ value that makes the kernel $1 - tS$ equal to zero in the functional equation
+The functional equation in the $S_{\um 1} \neq 0$ is also not difficult to solve. We'll try to apply the kernel method whenever possible. It requires finding an $x$ value that makes the kernel $1 - tS$ equal to zero in the functional equation
 \begin{align}
 	(1-tS)Q - (c -t\ol{x})Q_0 = \ol{a}\,.
 \end{align}
-Such a solution will exist since $S_{-1} = 1$ and therefore the equation $1 - tS = 0$ is nontrivial. Let one such solution be $x = \sigma$ and suppose that we can plug it into the functional equation. Then the kernel vanishes, taking $Q$ away with it and we obtain
+Such a solution will exist since $S_{\um 1} = 1$ and therefore the equation $1 - tS = 0$ is nontrivial. Let one such solution be $x = \sigma$ and suppose that we can plug it into the functional equation. Then the kernel vanishes, taking $Q$ away with it and we obtain
 \begin{align}
 	- (c - t\ol{\sigma})Q_0 = \ol{a}\,.
 \end{align}
@@ -211,7 +211,7 @@ We note that we can apply the $B$ operator again
 \begin{align}
 	B((a\ol{\sigma}t-b)Q) = 0\,.
 \end{align}
-\begin{prop} When $S_{-1} \neq 0$ we have
+\begin{prop} When $S_{\um 1} \neq 0$ we have
 \begin{align}
 	Q &= \frac{t}{1-tS}\left(\frac{\ol{x}-\ol{\sigma}}{b-a\ol{\sigma}t}\right)\\
 	0 &=B((a\ol{\sigma}t-b)Q) 
@@ -237,11 +237,11 @@ with solution
 \begin{align}
 	Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}\,.
 \end{align}
-The final task for this section will be to find what $\sigma$ will be for various cases. We already know $S_{-1} \neq 0$ so the result depend on $S_0$ and $S_1$. In general the kernel is zero when
+The final task for this section will be to find what $\sigma$ will be for various cases. We already know $S_{\um 1} \neq 0$ so the result depend on $S_0$ and $S_1$. In general the kernel is zero when
 \begin{align}
 	t s &= 1\\
-	t(S_{-1} + S_0 x + S_1 x^2) &= x\\
-	tS_1 x^2 -(1-S_0t)x + tS_{-1} &= 0\,.
+	t(S_{\um 1} + S_0 x + S_1 x^2) &= x\\
+	tS_1 x^2 -(1-S_0t)x + tS_{\um 1} &= 0\,.
 \end{align}
 When $S_1 \neq 0$ this is quadratic with two roots that are functions of $t$. We have to pick the one which has no singularity at $t = 0$. When $S_1 = 0$ we have a linear equation which may have a single root.
 When $S_1 = 0$ we have the equation $(1-S_0t)x = t$ so the single root is
@@ -256,7 +256,7 @@ The two roots multiply to 1 so $\ol{\sigma} = \sigma^\ast$. Note that in the rel
 \begin{align}
 	Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}
 \end{align}
-where $\sigma$ is a function containing a square root, i.e. not a polynomial. However we can go at the problem from a different angle to obtain a polynomial $f(a,t)$ for which $B(fQ_0) = c$ which is not quite zero but it's a simpler relationship. This will also illustrate the group approach together with the kernel method. The two cases that we need to work on both have $S_{-1} = S_1 = 1$ with $S_0$ being 0 or 1. This means that $s$ is left invariant under sending $\ast: x \mapsto \ol{x}$. We can apply this on the functional equation and now have a system of two functional equations
+where $\sigma$ is a function containing a square root, i.e. not a polynomial. However we can go at the problem from a different angle to obtain a polynomial $f(a,t)$ for which $B(fQ_0) = c$ which is not quite zero but it's a simpler relationship. This will also illustrate the group approach together with the kernel method. The two cases that we need to work on both have $S_{\um 1} = S_1 = 1$ with $S_0$ being 0 or 1. This means that $s$ is left invariant under sending $\ast: x \mapsto \ol{x}$. We can apply this on the functional equation and now have a system of two functional equations
 \begin{align}
 	(1-tS)Q - (c -t\ol{x})Q_0 - \ol{a}=0\,,\\
 	(1-tS)Q^\ast - (c -tx)Q_0 -\ol{a}=0\,.
@@ -285,7 +285,7 @@ and we can bring this back to the original equation to get
 \end{align}
 Earlier we had the equation
 \begin{align}
-	(1-aS_0t)Q_0 = 1 + a S_{-1} t Q_1 = 1 + at Q_1
+	(1-aS_0t)Q_0 = 1 + a S_{\um 1} t Q_1 = 1 + at Q_1
 \end{align}
 which we can solve for $Q_1$ this time and insert the solution into the above equation
 \begin{align}
@@ -297,7 +297,7 @@ Collecting coefficients and simplifying leads us to
 	(c(1-aS_0t)-a t^2) Q_0 -(-t^2)\wh{Q_0} =& c
 \end{align}
 which gives $f(a,t) = c(1-aS_0t)-a t^2$ so that
-\begin{prop} When $S_{-1} = S_1 = 1$ we have
+\begin{prop} When $S_{\um 1} = S_1 = 1$ we have
 \begin{align}
 	B((c(1-aS_0t)-a t^2)Q_0) = c.
 \end{align}
@@ -315,8 +315,8 @@ In this section we were able to find explicit solutions for $Q_0, Q$ and also $B
     \toprule
     Case & $S$ & $Q_0$ & $Q$ & $f(a,t)$\\
     \midrule
-    $S_{-1} = 0$ & $S_0 + S_1 x$ & $\dfrac{1}{1- a S_0t}$ & $\dfrac{1-S_0 t}{(1-tS)(1-atS_0)}$ & $1-atS_0 $ \\
-    $S_{-1} = 1$ & $1+S_0+S_1 x$ & $\dfrac{\sigma}{at - b\sigma}$ & $\dfrac{t(x- \sigma)}{x(1-tS)(at-b\sigma)}$ & $a\ol \sigma t-b$\\
+    $S_{\um 1} = 0$ & $S_0 + S_1 x$ & $\dfrac{1}{1- a S_0t}$ & $\dfrac{1-S_0 t}{(1-tS)(1-atS_0)}$ & $1-atS_0 $ \\
+    $S_{\um 1} = 1$ & $1+S_0+S_1 x$ & $\dfrac{\sigma}{at - b\sigma}$ & $\dfrac{t(x- \sigma)}{x(1-tS)(at-b\sigma)}$ & $a\ol \sigma t-b$\\
     \bottomrule
     \end{tabular}
 \end{table}

@@ -17,25 +17,25 @@ which we can re-write as
 \begin{align}
 	(1-tLES)Q = 1\,.
 \end{align}
-We can apply the operator $L^{-1}$ and obtain the equation
+We can apply the operator $L^{\um 1}$ and obtain the equation
 \begin{align}
-	L^{-1}(1) = \sum_{I\subseteq [d]}c_I = \ol{a}_{[d]}
+	L^{\um 1}(1) = \sum_{I\subseteq [d]}c_I = \ol{a}_{[d]}
 \end{align}
 which allows us to write down the following result.
 \begin{prop} The $d-$dimensional random walk model with small steps in the positive orthant and marking of hyperplane $x_k=0$ interactions has a generating function $Q$ satisfying the functional equations
 \begin{align}
 	(1-tLES)Q &= 1\,,\\
-	(L^{-1}-tES)Q &= \ol{a}_{[d]}
+	(L^{\um 1}-tES)Q &= \ol{a}_{[d]}
 \end{align}
-where $L$, $E$, $L^{-1}$ are of the form $D = D_1\cdots D_d$.
+where $L$, $E$, $L^{\um 1}$ are of the form $D = D_1\cdots D_d$.
 \end{prop}
 The second equation contains many less terms. To see this we take a look at the $L_kE_k$ operator
 \begin{align}
 	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}
 \end{align}
-which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{-1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
+which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{\um 1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
 \begin{align}
-	L^{-1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
+	L^{\um 1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
 	&=  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
 \end{align}
 and
@@ -60,7 +60,7 @@ As in the two-dimensional case we can now perform coefficient extractions with $
 %=======================================
 \section{Coefficient Extraction}
 %=======================================
-We can perform coefficient extraction like in the 1-dimensional case. The operator $[x_i^k]$ will commute with all $M_j, E_j$ with $j\neq i$ so that we only need to consider the action on the operators $M_i = L_i^{-1}$ and $E_i$. We've already done so in the 1-dimensional case. The zeroth power extraction yields
+We can perform coefficient extraction like in the 1-dimensional case. The operator $[x_i^k]$ will commute with all $M_j, E_j$ with $j\neq i$ so that we only need to consider the action on the operators $M_i = L_i^{\um 1}$ and $E_i$. We've already done so in the 1-dimensional case. The zeroth power extraction yields
 \begin{align}
 	[x_i^0]M_i &= [x_i^0]-[x_i^0]c_i[x_i^0] = [x_i^0]-c_i[x_i^0] = \ol{a_i}[x_i^0]\,,\\
 	[x_i^0]E_i &= [x_i^0] - [x_i^0]\ol{x_i}[\ol{x_i}] = [x_i^0]
@@ -106,7 +106,7 @@ We can try going a little further in the coefficient extraction to come up with 
 \begin{align}
 	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I
 \end{align}
-where $R_I$ is a collection of $S_I^{-P} Q_I^{P}$ terms that involves sets $P$ whose terms are not all zero. We can use this inside the functional equation
+where $R_I$ is a collection of $S_I^{\um P} Q_I^{P}$ terms that involves sets $P$ whose terms are not all zero. We can use this inside the functional equation
 \begin{align}
 	\ol{a}_{[d]\backslash I} &= M_{[d]\backslash I}[x_I^\oo]Q- a_{I}t E_{[d]\backslash I}[x_I^\oo](SQ)\\
 	& = M_{[d]\backslash I}Q_I^\oo- a_{I}t E_{[d]\backslash I}(S_I^\oo Q_I^\oo + R_I)\\
@@ -142,11 +142,11 @@ where when $I = \emptyset$, $K_J(I) = K_J$.
 \end{align}
 where the $R_I'$ term involves only higher order coefficient extractions from $Q$, that is not all the powers are zero.
 \end{corollary}
-Now, to calculate the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{-P} Q_I^{P}$ for various nonnegative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables so they don't have non-negative coefficients. Let $sq = S_I^{-P} Q_I^{P}$. Then
+Now, to calculate the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{\um P} Q_I^{P}$ for various nonnegative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables so they don't have non-negative coefficients. Let $sq = S_I^{\um P} Q_I^{P}$. Then
 \begin{align}
-	E_j sq &= sq - \ol{x}_j(sq)_j^{-1} \\ 
-	&= sq - \ol{x}_j(s_j^{-1}q_j^0+s_j^{0}q_j^{-1}+s_j^{1}q_j^{-2})\\
-	& = sq - \ol{x}_js_j^{-1}q_j^0\,.
+	E_j sq &= sq - \ol{x}_j(sq)_j^{\um 1} \\ 
+	&= sq - \ol{x}_j(s_j^{\um 1}q_j^0+s_j^{0}q_j^{\um 1}+s_j^{1}q_j^{-2})\\
+	& = sq - \ol{x}_js_j^{\um 1}q_j^0\,.
 \end{align}
 Hence
 \begin{align}
@@ -155,13 +155,13 @@ Hence
 Finally we can write
 \begin{align}
 	R_I' &= E_{[d]\backslash I} R_I \\
-	& = \sum_{P > \oo} E_{[d]\backslash I}S_I^{-P}Q_I^P\\
-	& = \sum_{P > \oo} \sum_{J \subseteq [d]\backslash I} (-1)^{|J|} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\\
-	& = \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\,.
+	& = \sum_{P > \oo} E_{[d]\backslash I}S_I^{\um P}Q_I^P\\
+	& = \sum_{P > \oo} \sum_{J \subseteq [d]\backslash I} (-1)^{|J|} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\\
+	& = \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\,.
 \end{align}
 \begin{prop} The functions $R_I'$ are given by
 \begin{align}
-	R_I' =  \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{-P,-\one}Q_{I,J}^{P,\oo}\,.
+	R_I' =  \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\,.
 \end{align}
 \end{prop}
 This formula is mostly of theoretical value although it can be used to speed up manual calculations.
@@ -174,7 +174,7 @@ In a previous subsection we obtained the equation
 \end{align}
 Let $D = LE$. Then we can think of the formal inverse of this operator given as Neumann series as
 \begin{align}
-	(1-tDS)^{-1} = \frac{1}{1-tDS} = \sum_{k=0}^{\infty}t^k(DS)^k\,.
+	(1-tDS)^{\um 1} = \frac{1}{1-tDS} = \sum_{k=0}^{\infty}t^k(DS)^k\,.
 \end{align}
 We can write the series solution
 \begin{align}
@@ -217,12 +217,12 @@ where $EQ = Q$ since $Q$ is already of a valid form. We can go with both ways at
 \begin{align}
 	KQ + t(1-LE)SQ &= 1\\
 	KQ + (1-LE)(1-tS-1)Q &=1\\
-	KQ + (1-LE)KQ - (1-L)Q &= 1\.
+	KQ + (1-LE)KQ - (1-L)Q &= 1\,.
 \end{align}
-We can apply the inverse $L^{-1}$ to those equations too, in particular on the second one.
+We can apply the inverse $L^{\um 1}$ to those equations too, in particular on the second one.
 \begin{align}
 \begin{split}
-	L^{-1}(LEKQ+(1-LE)Q) &= 1
+	L^{\um 1}(LEKQ+(1-LE)Q) &= 1
 \end{split}	
 \end{align}
 

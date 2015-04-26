@@ -14,11 +14,11 @@ In each case we have
 \end{align}
 while the others change in some way. The solutions eliminating the kernel also have a nice form
 \begin{align}
-	\sigma_i = \frac{1-S_i^0-\sqrt{(1-S_i^0)^2-4t^2 (S_i^1)^2}}{2tS_i^1},\quad\ol{\sigma_i} = \frac{1-S_i^0+\sqrt{(1-S_i^0)^2-4t^2 (S_i^1)^2}}{2tS_i^1}
+	\sigma_k = \frac{1-S_k^0-\sqrt{(1-S_k^0)^2-4t^2 (S_k^1)^2}}{2tS_k^1},\quad\ol{\sigma_k} = \frac{1-S_k^0+\sqrt{(1-S_k^0)^2-4t^2 (S_k^1)^2}}{2tS_k^1}
 \end{align}
 because we have
 \begin{align}
-	\ol{\sigma}_i = \frac{S_i^1}{S_i^{-1}}conj(\sigma_i) = conj(\sigma_i) \,.
+	\ol{\sigma}_k = \frac{S_k^1}{S_k^{\um 1}}conj(\sigma_k) = conj(\sigma_k) \,.
 \end{align}
 We can take the master equation and apply $\ast$ to it
 \begin{align}
@@ -47,10 +47,10 @@ The differences in solutions will occur from here on out. We have
 Next
 \begin{align}
 	K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast 
-		&= (c_2-tx_2S_2^{-1})(c_1c_2-t\ol{x_1}\ol{x_2}S_{1,2}^{-1,-1})\\
-		&\quad-(c_2-t\ol{x_2}S_2^{-1})(c_1c_2-t\ol{x_1}x_2S_{1,2}^{-1,-1})\\
-		&=c_1c_2tS_2^{-1}(\ol{x_2}-x_2) - c_2t\ol{x_2}S_{1,2}^{-1,-1}(\ol{x_2}-x_2)\\
-		&=c_2t(\ol{x_2}-x_2)(c_1S_2^{-1}(\sigma_1)-\ol{x_1}S_{1,2}^{-1,-1})\,.
+		&= (c_2-tx_2S_2^{-1})(c_1c_2-t\ol{x_1}\ol{x_2}S_{1,2}^{\um 1,\um 1})\\
+		&\quad-(c_2-t\ol{x_2}S_2^{-1})(c_1c_2-t\ol{x_1}x_2S_{1,2}^{\um 1,\um 1})\\
+		&=c_1c_2tS_2^{-1}(\ol{x_2}-x_2) - c_2t\ol{x_2}S_{1,2}^{\um 1,\um 1}(\ol{x_2}-x_2)\\
+		&=c_2t(\ol{x_2}-x_2)(c_1S_2^{-1}(\sigma_1)-\ol{x_1}S_{1,2}^{\um 1,\um 1})\,.
 \end{align}
 %=======================================
 \section{Cartesian model: steps N, S, E, W}
@@ -154,7 +154,7 @@ This expression is as perplexing as it is complicated. Why should the $K$'s be c
 %=======================================
 In this case the roots of the kernel become
 \begin{align}
-	\sigma_i = \frac{1-\sqrt{1-4t^2 (S_i^1)^2}}{2tS_i^1},\quad\ol{\sigma_i} = \frac{1+\sqrt{1-4t^2 (S_i^1)^2}}{2tS_i^1}
+	\sigma_k = \frac{1-\sqrt{1-4t^2 (S_k^1)^2}}{2tS_k^1},\quad\ol{\sigma_k} = \frac{1+\sqrt{1-4t^2 (S_k^1)^2}}{2tS_k^1}
 \end{align}
 with the extra property that
 \begin{align}
@@ -221,7 +221,7 @@ and it's ready for extraction. Let $\delta_0 = \ol{a_1}(\ol{x_2}-x_2)\ol{K}_1$. 
 \end{align}
 We'll use the master equation
 \begin{align}
-(1-tS)Q - (c_1-t\ol{x_1}S_1^{-1}) Q_1^0- (c_2-t\ol{x_2}S_2^{-1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{-1,-1})Q_{1,2}^{0,0}  = \ol{a_1a_2}
+(1-tS)Q - (c_1-t\ol{x_1}S_1^{-1}) Q_1^0- (c_2-t\ol{x_2}S_2^{-1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{\um 1,\um 1})Q_{1,2}^{0,0}  = \ol{a_1a_2}
 \end{align}
 to further our work here. For diagonal steps it is
 \begin{align}
@@ -234,7 +234,7 @@ extracting the $[x_1^0]$ coefficient yields
 We can extract higher coefficients too. Let $k\geq 1$. Then the $[x_2^k]$ coefficient is
 \begin{align}
 	0 &= Q_1^k-tS_{1}^{-1}Q_1^{k+1}-tS_1^{0}Q_1^k-tS_1^1Q_1^{k-1}-c_2\Qf{k,0} \\ 
-	   &\quad+ t\ol{x_2}(\Sf{-1,-1}\Qf{k+1,0}+\Sf{0,-1}\Qf{k,0}+\Sf{1,-1}\Qf{k-1,0})\\
+	   &\quad+ t\ol{x_2}(\Sf{\um 1,\um 1}\Qf{k+1,0}+\Sf{0,\um 1}\Qf{k,0}+\Sf{1,\um 1}\Qf{k-1,0})\\
 	   &=Q_1^k-tvQ_1^{k+1}-tvQ_1^{k-1}-c_2\Qf{k,0} + t\ol{x_2}(\Qf{k+1,0}+\Qf{k-1,0})\,.
 \end{align}
 We can re-write the last one in a form more convenient for the next few steps
@@ -376,7 +376,7 @@ We can finally write
 	b_1b_2\Qf{0,0} &= b_1b_2 + ta_1a_2b_1b_2\Qf{1,1}\\
 		& =  b_1b_2 + t^2a_1a_2(a_1a_2\Qf{0,0}-a_2\wh{Q}_{1,2}^{0,0}-a_1\wc{Q}_{1,2}^{0,0}+\wc{\wh{Q}}_{1,2}^{0,0})\,.
 \end{align}
-Let $G(b_1,b_2)$ stand for $Q(0,0,b_1,b_2)$ and $G_i$ has $b_i = 0$. Then we can write it all as
+Let $G(b_1,b_2)$ stand for $Q(0,0,b_1,b_2)$ and $G_k$ has $b_k = 0$. Then we can write it all as
 \begin{align}
 	b_1b_2 G = b_1b_2 + t^2a_1a_2(a_1a_2G-a_2G_1-a_1G_2+G_{1,2})
 \end{align}
@@ -396,7 +396,7 @@ and
 \begin{align}
 	G = \frac{(c_1c_2-t^2(a_2G_1+a_1G_2-G_{1,2})}{f(a_1,a_2,t)}
 \end{align}
-where $B(fG) = c_1c_2$. Also, we can solve for $Q_i^j$ and other terms, in terms of various $[b_k^l]$ extractions, so overall it should lead to a relationship of the form $B(FQ) = 0$.
+where $B(fG) = c_1c_2$. Also, we can solve for $Q_k^j$ and other terms, in terms of various $[b_k^l]$ extractions, so overall it should lead to a relationship of the form $B(FQ) = 0$.
 %=======================================
 \section{The almost-full model: missing steps E and W}
 %=======================================
@@ -408,6 +408,6 @@ where $B(fG) = c_1c_2$. Also, we can solve for $Q_i^j$ and other terms, in terms
 %=======================================
 \section{Conjectured relationships depending on $\Sf{-1,-1}$}
 %=======================================
-As we have seen whenever $\Sf{-1,-1} = 0$, $\alpha$ and $G$ tend to go together in the equations, so in the end we have a solution that depends on $\beta(G)$ multiplied by $G_1,G_2$ and/or $G_{1,2}$. In the end this leads to a rational function solution for $G$ in terms of $G_1, G_2$ and $G_{1,2}$. It's then easy to conjecture that this happens whenever we can have such an algebraic relationship. The other part of the conjecture is that we'd have a linear relationship between $G, G_1,G_2$ and $G_{1,2}$ when $\Sf{-1,-1} \neq 0$.
+As we have seen whenever $\Sf{\um 1,\um 1} = 0$, $\alpha$ and $G$ tend to go together in the equations, so in the end we have a solution that depends on $\beta(G)$ multiplied by $G_1,G_2$ and/or $G_{1,2}$. In the end this leads to a rational function solution for $G$ in terms of $G_1, G_2$ and $G_{1,2}$. It's then easy to conjecture that this happens whenever we can have such an algebraic relationship. The other part of the conjecture is that we'd have a linear relationship between $G, G_1,G_2$ and $G_{1,2}$ when $\Sf{\um 1,\um 1} \neq 0$.
 
 \endinput

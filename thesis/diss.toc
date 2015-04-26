@@ -65,27 +65,22 @@
 \contentsline {subsection}{\numberline {9.2.2}Walks with unconstrained steps}{85}{subsection.9.2.2}
 \contentsline {section}{\numberline {9.3}Interacting Models}{86}{section.9.3}
 \contentsline {subsection}{\numberline {9.3.1}Groups of order 4}{87}{subsection.9.3.1}
-\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{88}{subsubsection*.8}
+\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{89}{subsubsection*.8}
 \contentsline {subsection}{\numberline {9.3.2}Groups of order 6}{93}{subsection.9.3.2}
 \contentsline {subsection}{\numberline {9.3.3}Groups of order 8}{96}{subsection.9.3.3}
-\contentsline {subsection}{\numberline {9.3.4}Infinite Groups}{96}{subsection.9.3.4}
-\contentsline {chapter}{\numberline {10}Obstinate Kernel Method}{97}{chapter.10}
-\contentsline {section}{\numberline {10.1}Non-Interacting Case}{97}{section.10.1}
-\contentsline {section}{\numberline {10.2}Interacting Case}{97}{section.10.2}
-\contentsline {subsection}{\numberline {10.2.1}Group of order 4}{97}{subsection.10.2.1}
-\contentsline {subsection}{\numberline {10.2.2}Group of order 6}{97}{subsection.10.2.2}
-\contentsline {subsection}{\numberline {10.2.3}Group of order 8}{97}{subsection.10.2.3}
-\contentsline {subsubsection}{The $\sigma _1$ substitution}{99}{subsubsection*.9}
-\contentsline {subsubsection}{The $\sigma _2$ substitution}{100}{subsubsection*.10}
-\contentsline {subsubsection}{Partial Orbital Operators}{101}{subsubsection*.11}
-\contentsline {chapter}{\numberline {11}Highly-symmetric 2D models}{104}{chapter.11}
-\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{105}{section.11.1}
-\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{108}{section.11.2}
-\contentsline {section}{\numberline {11.3}The almost-full model: missing steps E and W}{116}{section.11.3}
-\contentsline {section}{\numberline {11.4}The full model: all steps available}{116}{section.11.4}
-\contentsline {section}{\numberline {11.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{116}{section.11.5}
-\contentsline {chapter}{\numberline {12}Epilogue}{117}{chapter.12}
-\contentsline {section}{\numberline {12.1}Discussion}{117}{section.12.1}
-\contentsline {section}{\numberline {12.2}Future Work}{117}{section.12.2}
-\contentsline {section}{\numberline {12.3}Conclusion}{117}{section.12.3}
-\contentsline {chapter}{Bibliography}{118}{chapter*.12}
+\contentsline {subsection}{\numberline {9.3.4}Infinite Groups}{97}{subsection.9.3.4}
+\contentsline {chapter}{\numberline {10}Obstinate Kernel Method}{99}{chapter.10}
+\contentsline {section}{\numberline {10.1}Group of order 4}{101}{section.10.1}
+\contentsline {section}{\numberline {10.2}Group of order 6}{103}{section.10.2}
+\contentsline {section}{\numberline {10.3}Group of order 8 (re-do some of the stuff here)}{105}{section.10.3}
+\contentsline {chapter}{\numberline {11}Highly-symmetric 2D models}{108}{chapter.11}
+\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{109}{section.11.1}
+\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{112}{section.11.2}
+\contentsline {section}{\numberline {11.3}The almost-full model: missing steps E and W}{120}{section.11.3}
+\contentsline {section}{\numberline {11.4}The full model: all steps available}{120}{section.11.4}
+\contentsline {section}{\numberline {11.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{120}{section.11.5}
+\contentsline {chapter}{\numberline {12}Epilogue}{121}{chapter.12}
+\contentsline {section}{\numberline {12.1}Discussion}{121}{section.12.1}
+\contentsline {section}{\numberline {12.2}Future Work}{121}{section.12.2}
+\contentsline {section}{\numberline {12.3}Conclusion}{121}{section.12.3}
+\contentsline {chapter}{Bibliography}{122}{chapter*.9}

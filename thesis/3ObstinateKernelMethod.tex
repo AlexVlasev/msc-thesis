@@ -5,169 +5,255 @@
 \chapter{Obstinate Kernel Method}
 \label{ch:OKM}
 %=======================================
-%=======================================
-\section{Non-Interacting Case}
-%=======================================
-%=======================================
-\section{Interacting Case}
-%=======================================
-%=======================================
-\subsection{Group of order 4}
-%=======================================
-%=======================================
-\subsection{Group of order 6}
-%=======================================
-%========================
-\subsection{Group of order 8}
-%========================
-There are 2 non-isomorphic cases of random walk models on the plane that have group of order 8. They have step polynomials
-\begin{align}
-S &= \ol{x}_1+x_1+\ol{x}_1x_2+x_1\ol{x}_2\,,\\
-S &= \ol{x}_1+x_1+\ol{x}_1\ol{x}_2+x_1x_2\,.
-\end{align}
-We'll work on the first one since it has already been covered in the two-friendly-walks paper and this will provide us with an opportunity to compare. Here
-\begin{align}
-	S_1^{-1} &= 1+x_2\,,\quad S_1^0 = 0\,,\quad S_1^1 = 1+\ol{x}_2\,,\\
-	S_2^{-1} &= x_1\,,\quad S_2^0 = x_1+\ol{x}_1\,,\quad S_2^1 = \ol{x}_1\,,
-\end{align}
-which give
-\begin{align}
-	A = K_1 = c_1 - t\ol{x}_1(1+x_2)\,,\quad B = K_2 = c_2 - t x_1\ol{x}_2\,.
-\end{align}
-Note that since $\Sf{-1,-1} = 0$,
-\begin{align}
-	K_{12} = c_1c_2
-\end{align}
-and we can combine the $\alpha$ term with $K_{1,2}Q_{1,2}^{0,0}$ in one with
-\begin{align}
-	\gamma = \ol{a}_1\ol{a}_2(1-b_1b_2\Qf{0,0})
-\end{align}
-The master functional equation is
-\begin{align}
--KQ + K_1 Q_1^0 + K_2 Q_2^0 +\gamma = 0\,.
-\end{align}
-The roots of the kernel are
-\begin{align}
-	\sigma_1^\pm &= \frac{1\pm\sqrt{1-4t^2(1+x_2)(1+\ol{x}_2)}}{2t(1+\ol{x}_2)}\,,\\
-	\sigma_2^\pm &= \frac{1-t(x_1+\ol{x}_1) \pm \sqrt{(1-t(x_1+\ol{x}_1))^2 - 4t^2}}{2t\ol{x}_1}\,,
-\end{align}
-and as in the paper we pick $\sigma_k = \sigma_k^{-}$ because they are power series in $t$. Next we determine the birational transformations that leave the kernel unchanged. They are
-\begin{align}
-	g_1: x_1 \mapsto \ol{x}_1x_2\,,\quad g_2: x_2 \mapsto x_1^2 \ol{x}_2\,.
-\end{align}
-Simply iterating $g_1$ and $g_2$  shows that the group $G$ has order 8. For the rest of the analysis we'll need the following notation.
-\begin{definition} For a concatenated list $L = L_1L_2\ldots L_n$of integer indices let $g_L = g_{L_1}\ldots g_{L_n}$ and for some term $X$ (for example $A$ or $B$) we let $X_L = g_L(X)$.
+
+Another tool at our disposal is the Obstinate Kernel method. The idea is similar to the weighted Algebraic Kernel method in that we produce more functional equations from the master equation via group actions $g \in G$. The difference is that here we also set one of $x_1 = \sigma_1$, $x_2 = \sigma_2$ equal to a root of $K$ in order to eliminate the $KQ$ term from the equations. This leaves equations that only include the other variable. It turns out that some combinations of substitutions and group operations don't lead to valid functional equations. This happens when one of the $Q_k^0$ terms is not a formal power series in $t$. In all the cases with finite groups of order 4, 6 and 8 we find that there are 2 roots of $K$ for each $x_k$ and that one root is in $O(t)$ and the other in $O(1/t)$. Generally it works out better if we use the $O(t)$ roots because that at least guarantees that the $Q_k^0$ terms remain as formal power series in $t$. However, sometimes (two friendly walks) even the $O(1/t)$ term may lead to a valid power series. 
+
+It may not be necessary but it will be sufficient if a combination of a substitution $x_k = \sigma_k$ and a group action $g_L$ together give a power series in $t$ when applied to single variables like $x_1$ or $x_2$. For example we would hope that $g_L(x_j)|_{x_k=\sigma_k}$ is a power series in $t$ for some $i,j,L$. Again, this is not a necessary condition but it will be sufficient to show that a lot of the cases involved produce enough different equations to allow us to go through the Obstinate Kernel method. For those cases that we obtain less equations, it is likely that we'll be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in (two friendly walks).
+
+\begin{definition} A function $f(\row xd;t)$ is admissible if it is a power series in $t$. Furthermore $f$ is $k$-admissible if $f|_{x_k=\sigma_k}$ is admissible for an admissible $\sigma_k$ root. A tuple of functions is admissible if each element of the tuple is admissible.
 \end{definition}
-The elements in the orbit are $id$, $g_1$, $g_{21}$, $g_{121}$, etc. Since eventually we reach the identity again we can work backwards and have the $g$ terms meet in the middle. The orbit is then given by
-\begin{align}
-	Orbit(G) = \{id, g_1, g_{21},g_{121},g_{2121}=g_{1212}, g_{212},g_{12},g_{2}\}\,.
-\end{align}
-In the rest of this calculation we need to eliminate the kernel term via a substitution of $\sigma_k$ in the master equation (We'll overload the notation as before). Then we'll need some extra functional equations that are obtained by application of terms from the orbit. However not all such applications are valid. We require that the $\sigma_k$ term appears in the numerator inside the functions $Q$. We can check that to use the sigma values we need to use the following transformations
-\begin{align}
-	\sigma_1: id, g_2, g_{21}, g_{212}\,,\\
-	\sigma_2: id, g_1, g_{12}, g_{121}
-\end{align}
-For each $\sigma_k$ we're going to obtain 3 additional functional equations to complement the master equation and then we'll substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just won't include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We'll also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note we'll also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra but because of the complexity and symmetry involved in the coefficients it's best to investigate the explicit simplification of the equations.
 
-%========================
-\subsubsection{The $\sigma_1$ substitution}
-%========================
-A simple but tedious check shows that there are no nontrivial relations for $A$, $B$ and application of elements from the $\sigma_1$ orbit besides $A_{212} = A$.
-\begin{align}
-	g_{21}Q_1 = g_2 Q_1\,,\quad g_2 Q_2 &= Q_2\,,\quad g_{212} Q_2= g_{21} Q_2\,.
-\end{align}
-The functional equations have the terms
-\begin{align}
-	id:&\quad AQ_1+BQ_2\,, \\
-	g_2:&\quad A_2 g_2Q_1 + B_2 Q_2\\
-	g_{21}:&\quad A_{21}g_2Q_1 + B_{21}g_{21}Q_2\,, \\
-	g_{212}:&\quad A_{212} g_{212}Q_1 + B_{212} g_{21}Q_2\,.
-\end{align}
-To eliminate variables we'll take do the following transformations of the equations
-\begin{align}
-	(1) &= B_2 id - B g_2 \Longrightarrow AB_2 Q_1 - A_2 B g_2 Q_1\,,\\
-	(2) &= B_{212} g_{21} - B_{21} g_{212} \Longrightarrow A_{21}B_{212} g_2 Q_1 - A_{212} B_{21} g_{212} Q_1\,,
-\end{align}
-and finally we'll take
-\begin{align}
-	(3) &= A_{21}B_{212}(1) + A_2 B (2)\\
-	&\Longrightarrow A_{21}B_{212}A B_2 Q_1 - A_2 B A_{212} B_{21} g_{212} Q_1\,.
-\end{align}
-The resulting expression can be written more compactly as
-\begin{align}
-	(1-g_{212})(A_{21}B_{212}A B_2 Q_1)  = A (1-g_{212})(A_{21}B_{212} B_2 Q_1)\,.
-\end{align}
-We obtain the expression for the coefficient of $\gamma$ by following the transformations. We obtain the following term
-\begin{align}
-	[A_{21}B_{212}(B_2 - B)+A_2 B(B_{212} - B_{21})]\gamma\,.
-\end{align}
+\begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating steps and group $G$ of order 4. The actions $g \in G$ that preserve the admissibility are given in the following table
+\end{prop}
 
-%========================
-\subsubsection{The $\sigma_2$ substitution}
-%========================
-A simple but tedious check shows that there are no nontrivial relations for $A$, $B$ and application of elements from the $\sigma_2$ orbit besides $B_{121} = B$. The relations between the $Q$'s are
-\begin{align}
-	g_{1}Q_1 =  Q_1,\quad g_{121} Q_1= g_{12} Q_1, g_{12} Q_2 &= g_1Q_2\,.
-\end{align}
-The functional equations have the terms
-\begin{align}
-	id:&\quad AQ_1+BQ_2 \,,\\
-	g_1:&\quad A_1 Q_1 + B_1 g_1 Q_2\,,\\
-	g_{12}:&\quad A_{12}g_{12}Q_1 + B_{12}g_{1}Q_2\,, \\
-	g_{121}:&\quad A_{121} g_{12}Q_1 + B_{121} g_{121}Q_2\,.
-\end{align}
-To eliminate variables we'll take do the following transformations of the equations
-\begin{align}
-	(1) &= A_1 id - A g_1 \Longrightarrow A_1B Q_2 - A B_1 g_1 Q_2\,,\\
-	(2) &= A_{121} g_{12} - A_{12} g_{121} \Longrightarrow A_{121}B_{12} g_1 Q_2 - A_{12} B_{121} g_{121} Q_2\,,
-\end{align}
-and finally we'll take
-\begin{align}
-	(3) &= A_{121}B_{12}(1) + A B_1 (2)\,,\\
-	&\Longrightarrow A_{121}B_{12}A_1 B Q_2 - A B_1 A_{12} B_{121} g_{121} Q_2\,.
-\end{align}
-The resulting expression may be written more compactly as
-\begin{align}
-	(1-g_{121})(A_{121}B_{12}A_1 B Q_2) = B(1-g_{121})(A_1A_{121}B_{12}Q_2)\,.
-\end{align}
-We obtain the expression for the coefficient of $\gamma$ by following the transformations to
-\begin{align}
-	[A_{121}B_{12}(A_1 - A)+A B_1(A_{121} - A_{12})]\gamma\,.
-\end{align}
+When $|G| = 6$ we have a richer situation.
 
-%========================
-\subsubsection{Partial Orbital Operators}
-%========================
-We may think of the elimination of $Q$'s with undesirable arguments as a transformation of the original functional equation. We take two functional equations and produce one with a function eliminated. Then we take both of these to produce the final equation. Each of these steps may be done with such an operator. For example the first transformation becomes
+\begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating steps and group $G$ of order 4, 6 or 8. Models with the same group have the same admissibility properties with respect to admissible when it comes to $x_1$, $x_2$ or the pair $(x_1,x_2)$.
+\end{prop}
+\begin{proof} We don't know of a conceptual proof of this fact so we performed the calculations on a computer. They are trivial computationally speaking. For a given model $\mc{M}$ we construct its $S$-polynomial which can be used to find the admissible roots $\sigma_k$ for $k =1,2$. We can use $S$ to express the generators $g_k$ and their action on the pair $(x_1,x_2)$. Once we have the generators we form the group $G$. Next, to check the admissibility of $f\in \{x_1,\,x_2,\,(x_1,x_2)\}$ all we need to do is find $|\orb_G(f)|$ and see if substituting $x_k = \sigma_k$ in the resulting expressions leads to admissible functions. The calculations can be done by hand but they are tedious so we've employed a computer to do the legwork. Then it is a trivial matter of checking the admissible properties for the various models and comparing the results. These are be summarized in the tables following this exposition.
+\end{proof}
+
+\begin{table}[H]
+\caption{$k$-admissibility of functions when $|G| = 4$.}
+\label{tbl:Admissibility4}
+\centering
+\begin{tabular}{cccc}
+\toprule
+	Type & $x_1$  & $x_2$ & $(x_1,x_2)$ \\
+\midrule
+	$1$-admissibility & $1,\, g_2$  & all $g\in G$ & $1,\, g_2$\\
+	$2$-admissibility & $1,\, g_1$  & all $g\in G$ & $1,\, g_1$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{$k$-admissibility of functions for $S11$, $S12$, $S13$. Here $|G| = 6$}
+\label{tbl:Admissibility61}
+\centering
+\begin{tabular}{cccc}
+\toprule
+	Type & $x_1$  & $x_2$ & $(x_1,x_2)$ \\
+\midrule
+	$1$-admissibility & $1,\, g_{2} ,\, g_{21} ,\, g_{121}$ & $1,\, g_{1} ,\, g_{2} ,\, g_{21}$ & $1,\, g_{2} ,\, g_{21} $ \\
+	$2$-admissibility & $1,\, g_{1} ,\, g_{2} ,\, g_{12}$ & $1,\, g_{1} ,\, g_{12} ,\, g_{121}$ & $1,\, g_{1} ,\, g_{12}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{$k$-admissibility of functions for $S21$, $S22$, $S33$. Here $|G| = 6$}
+\label{tbl:Admissibility62}
+\centering
+\begin{tabular}{cccc}
+\toprule
+	Type & $x_1$  & $x_2$ & $(x_1,x_2)$ \\
+\midrule
+	$1$-admissibility & $1,\, g_{2} ,\, g_{21} ,\, g_{121}$ & $1,\, g_{1} ,\, g_{12} ,\, g_{121}$ & $1,\, g_{121}$ \\
+	$2$-admissibility & $1,\, g_{2} ,\, g_{21} ,\, g_{121}$ & $1,\, g_{1} ,\, g_{12} ,\, g_{121}$ & $1,\, g_{121}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{$k$-admissibility of functions for $S1$. Here $|G| = 8$.}
+\label{tbl:Admissibility81}
+\centering
+\begin{tabular}{cccc}
+\toprule
+	Type & $x_1$  & $x_2$ & $(x_1,x_2)$ \\
+\midrule
+	$1$-admissibility & $1,\, g_{2} ,\, g_{21} ,\, g_{212}$ & all $g\in G$ & $1,\, g_{2} ,\, g_{21} ,\, g_{212}$ \\
+	$2$-admissibility & $1,\, g_{1} ,\, g_{2} ,\, g_{12},\, g_{121},\, g_{2121}$ & $1,\, g_{1} ,\, g_{12} ,\, g_{121}$ & $1,\, g_{1} ,\, g_{12} ,\, g_{121}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{$k$-admissibility of functions for $S2$. Here $|G| = 8$.}
+\label{tbl:Admissibility82}
+\centering
+\begin{tabular}{cccc}
+\toprule
+	Type & $x_1$  & $x_2$ & $(x_1,x_2)$ \\
+\midrule
+	$1$-admissibility & $1,\, g_{2} ,\, g_{21} ,\, g_{212}$ & all $g\in G$ & $1,\, g_{2} ,\, g_{21} ,\, g_{212}$ \\
+	$2$-admissibility & $1,\, g_{2} ,\, g_{21} ,\, g_{121},\, g_{212},\, g_{2121}$ & $1,\, g_{1} ,\, g_{12} ,\, g_{121}$ & $1,\, g_{121}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+What this classification tells us is that we can easily treat all $|G| = 4$ models with the same method. When $|G| = 6$ we either have to do some more work in the $S2k$ cases to show that the functions are admissible with respect to one more group operation or just deal with them as they are. The situation is similar in the $|G| = 8$ case. Now suppose that we have a set of valid equations for a substitution $x_k = \sigma_k$. They are a linear system in the variable quantities $\Qf{0,0},\, Q_1^0,\, Q_2^0$ and their orbits under the set of valid group actions. We hope for a high level of redundancy in these equations. Then we can eliminate some variables by taking a weighted sum over the valid equations. That is we obtain a weighted Orbit Sum operator with only a few group operations perhaps. We also have to keep in mind that we are also making the substitution $x_k = \sigma_k$.
+
+We'll perform the first steps in the analysis of the Obstinate Kernel method for each situation that has $|G|/2$ $k$-admissible elements since that seems to work.
+%=======================================
+\section{Group of order 4}
+%=======================================
+The analysis in this case is the same whether we work with the $\sigma_1$ or $\sigma_2$ substitutions. We'll just work wit hthe $\sigma_1$ substitution and group actions $1,\, g_2$ where we let $g_2(F) = F^\ast$ to keep the notation cleaner. The functional equations corresponding the the group actions are
 \begin{align}
-	B_2 id - B g_2 = (1-g_2)B_2
+	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0} &= \alpha\,,\\
+	KQ^\ast - K_1^\ast Q_1^{0,\ast}- K_2^\ast Q_2^0 - K_{12}^\ast \Qf{0,0} &= \alpha\,.
 \end{align}
-that acts in the following way
+We'll eliminate $Q_2^0$ because once we maket the $\sigma_1$ substitution we would have a tough time trying to expand this into series. We do this by taking $K_2^\ast$ times the first equation and subtract $K_2$ times the second equation. This leads to the functional equation
 \begin{align}
-	 ((1-g_2)B_2)(f) = g_2(B)f - B g_2(f)\,.
+	K_2^\ast KQ - K_2 K Q^\ast- (K_2^\ast K_1 Q_1^0 - K_2 K_1^\ast Q_1^{0,\ast}) + (K_2^\ast K_{12}-K_2 K_{12}^\ast)\Qf{0,0} - \alpha(K_2^\ast - K_2) = 0
 \end{align}
-This inspires the following notation.
-\begin{definition} Let $L$ be a concatenated list and $X$ be some function. We define the following operator via its action on any function $F$
+where we can set $x_1 = \sigma_1$ to eliminate the $K$ term. We'll overload notation by not changing any of the symbols. From now on we'll know that $x_1 = \sigma_1$ in the equations that follow. We have
 \begin{align}
-	D_L(X)(F) = g_L(X) F - X g_L(F)\,.
+	(K_2^\ast K_1 Q_1^0 - K_2 K_1^\ast Q_1^{0,\ast}) - (K_2^\ast K_{12}-K_2 K_{12}^\ast)\Qf{0,0} + \alpha(K_2^\ast - K_2) = 0.
 \end{align}
+We can also think of this process as applying a weighted orbit sum over group actions that preserve the admissibility of functions in the master equation. The operator is
+\begin{align}
+	D_2 = g_2(K_2) - K_2 g_2 = (1-g_2)K_2^\ast
+\end{align}
+where the weights are given by pre-multiplying an expression by $K_2^\ast$ before applying the operator $\Delta_2 = 1-g_2$. The equation can be written as
+\begin{align}
+	0 &= D_2(KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0})\\
+	0 &= D_2(K_1Q_1^0) - D(K_{12})\Qf{0,0} + D(\alpha)	    
+\end{align}
+where the second one follow from substituting $x_1 = \sigma_1$. The situation is similar to the Algebraic Kernel method except that the operators there retain the $KQ$ term and its orbit while they eliminate the $Q_1^0$ and $Q_2^0$ terms and their orbits. Since we'll be using operators like $D_2$ we'll have some notation.
+\begin{definition} For a concatenated list $L = L_1L_2\ldots$ of positive integer indices let $g_L = g_{L_1}g_{L_2}\ldots$ whenever this group action makes sense. That is, either the list is finite or there is some form of convergence when $L$ is infinite.
 \end{definition}
-The notation is reminiscent of a derivative, specifically in the numerator of the quotient rule. So the first transformation can be written as
+\begin{definition} Let $L$ be a concatenated list and let $X$ be some function. The operator $D_L(X)$ is defined by its action on functions $F$ as
 \begin{align}
-	B_2 id - B g_2 = D_2(B)\,.
+	D_L(X_L)(F) = X_L F - X g_L(F) = (1-g_L)(X_L F)\,.
 \end{align}
-The second transformation is a little more involved
+We'll drop the $X$ from the notation if it's clear in context. (Note that $D_L(X)$ is essentially an Ore operator.)
+\end{definition}
+Before we go onto groups of order 6 we can expand some of the terms in the functional equation successfully. First
 \begin{align}
-	& B_{212} g_{21} - B_{21} g_{212}\\
-	=& g_{212}(B g_{2} - B_{2})\\
-	=& -g_{212}D_2(B)\,.
+\begin{split}
+	D_2(\alpha) &= \alpha(K_2^\ast -K_2) = \\
+			&= \alpha((c_2- tx_2\ol{\mu}_2 S_2^{\um 1})-(c_2- t\ol{x}_2 S_2^{\um 1}))\\
+			&= \alpha t(\ol{x}_2 - x_2\ol{\mu}_2(\sigma_1))S_2^{\um 1}(\sigma_1).
+\end{split}
 \end{align}
-The final transformation is
+Then
 \begin{align}
-	D^{(1)} &= A_{21}B_{212} D_2(B) - A_2 B g_{212} D_2(B)\\
-	&= (1-g_{212})(A_2 B)D_2(B)\\
-	&= D_{212}(A_2B) D_2(B)\,.
+\begin{split}
+	D_2(K_{12}) &=K_2^\ast K_{12}- K_2 K_{12}^\ast = \\
+			&=(c_2- tx_2\ol{\mu}_2 S_2^{\um 1})(c_1c_2-t\ol{\sigma}_1\ol{x}_2\Sf{\um 1,\um 1}) \\
+			&\quad-(c_2- t\ol{x}_2 S_2^{\um 1})(c_1c_2-t\ol{\sigma}_1x_2\ol{\mu}_2\Sf{\um 1,\um 1})\\
+			&=c_1c_2^2-c_1c_2tx_2\ol{\mu}_2S_2^{\um 1} - c_2t\ol{\sigma}_1\ol{x}_2\Sf{\um 1,\um 1}+ t^2\ol{\sigma}_1\ol{\mu}_2S_2^{\um 1}\Sf{\um 1,\um 1}\\
+			&\quad - c_1c_2^2+c_1c_2t\ol{x}_2S_2^{\um 1} + c_2t\ol{\sigma}_1x_2 \ol{\mu}_2\Sf{\um 1,\um 1}-  t^2\ol{\sigma}_1\ol{\mu}_2S_2^{\um 1}\Sf{\um 1,\um 1}\\
+			&=c_1c_2t(\ol{x}_2-x_2\ol{\mu}_2)S_2^{\um 1} - c_2t\ol{\sigma}_1(\ol{x}_2-x_2\ol{\mu}_2)\Sf{\um 1,\um 1}\\
+			&=c_2t(\ol{x}_2-x_2\ol{\mu}_2(\sigma_1))(c_1S_2^{\um 1}(\sigma_1) - \ol{\sigma}_1\Sf{\um 1,\um 1})\\
+\end{split}
 \end{align}
+These terms can both be simplified further but we would need to know more about the terms of $S$ and the properties of $\sigma_1$. The situation is similar for the $D_2(K_1Q_1^0)$ terms where we would expand and simplify the two terms $K_2^\ast K_1$ and $K_2 K_1^\ast$. If we were to work with $\sigma_2$ instead we would just have to switch all the numbers 1 and 2 around and use $g_1$ instead of $g_2$, perhaps with the symbol $\bullet$ instead of $\ast$.
+%=======================================
+\section{Group of order 6}
+%=======================================
+We can perform the Obstinate Kernel method on the three models in the first group. The $k$-admissibility of $(x_1,x_2)$ is preserved by actions $1,\, g_j,\, g_{jk}$ for $j \neq k$. For consistency we'll work on the $1$-admissible case. The actions are $1,\, g_2,\, g_{21}$. We have the table from the Algebraic Kernel method.
+\begin{table}[H]
+    \caption{Reductions of group actions $g \in G$ on $Q_1^0$ and $Q_2^0$.}
+    \label{tbl:tableG6}
+    \centering
+    \begin{tabular}{ccc}
+    \toprule
+    Sequence $L$ & $Q_1^0$ & $Q_2^0$ \\  
+    \midrule
+      $\emptyset$ & $\emptyset$ & $\emptyset$  \\
+      2 &  2& $\emptyset$ \\
+      21 &  2& 21  \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+In this group we have $g_2(x_1,x_2) = (x_1,x_1\ol{x}_2)$ and $g_{21}(x_1,x_2) = (\ol{x}_2,x_1\ol{x}_2)$ so the terms we wish to eliminate are those involving an $x_1$ because the substitution $x_1 = \sigma_1$ will make it difficult to expand the $Q$ functions into series. That is, we wish to eliminate $X_2 = g_2Q_1^0$ and $Y = Q_2^0$. Let
+\begin{align}
+	\beta = K_{12}\Qf{0,0} - \alpha = \alpha(b_1b_2\Qf{0,0}-1)
+\end{align}
+so that we have equations
+\begin{align}
+	AX+BY = \beta\com A_2X_2+B_2Y = \beta_2\com A_{21}X+B_{21}Y_{21} = \beta_{21}\,.		
+\end{align}
+We want a linear combination of $\beta, \beta_2, \beta_{21}$ that will eliminate $X_2$ and $Y$. We may write
+\begin{align}
+	a\beta - b\beta_2+c \beta_{21} = aAX + (aB-bB_2)Y + (cA_{21}-bA_2) + cB_{21}Y_{21} = aAX + cB_{21}Y_{21}
+\end{align}
+which means that
+\begin{align}
+	aB = bB_2\com cA_{21} = b A_2\,.
+\end{align}
+We don't want to have any denominators so when we solve for $a$, $b$ and $c$ we have a small solution
+\begin{align}
+	a = A_{21}B_2\com b= A_{21}B\com c = A_2B\,,
+\end{align}
+and these may or may not have common factors. In other words the elimination procedure yields
+\begin{align}
+\begin{split}
+	&AA_{21}B_2 Q_1^{0} + A_2BB_{21}g_{21}Q_2^{0} =A_{21}B_2\beta-A_{21}B \beta_2 + A_2 B \beta_{21}\\
+	&=(A_{21}B_2-A_{21}B+A_2B)\beta \,.
+\end{split}	
+\end{align}
+Here we may think of a weighted sum operator too. Let
+\begin{align}
+	D(F) = A_{21}B_2 F - A_{21}B g_2(F) + A_2B g_{21}(F) \,.
+\end{align}
+Then we can re-write the equation as
+\begin{align}
+	D(AX+BY) = AA_{21}B_2 Q_1^{0} + A_2BB_{21}g_{21}Q_2^{0} = \beta D(1)\,.
+\end{align}
+We may compute $D(1)$ for each case but the expressions are somewhat complicated. $D(1)$ for each of $S11$, $S12$ and $S13$ will contain a square root like in $\sigma_1$. So do the terms $AA_{21}B_2$ and $A_2BB_{21}$. It's worth mentioning that we can convert the equation to one with no square roots by collecting terms involving the square root on one side and squaring. Then we have a non-linear equation in $X$ and $Y$ with rational function coefficients. It's not clear how we could go further.
+%=======================================
+\section{Group of order 8 (re-do some of the stuff here)}
+%=======================================
+The the group $G$ has order 8 we only have two non-isomorphic models but we'll deal with the one with four group actions that preserve the admissibility of $(x_1,x_2)$. The actions are $1,\, g_2,\, g_{21},\, g_{212}$. The step polynomial is
+\begin{align}
+S &= \ol{x}_1+x_1+\ol{x}_1x_2+x_1\ol{x}_2\,.
+\end{align}
+This case has already been covered in (two friendly walks). From the previous chapter we have
+\begin{table}[H]
+\caption{Reductions of group actions $g \in G$ on $Q_1^0$ and $Q_2^0$\\that preserve $1$-admissibility.}
+\label{tbl:tableG6}
+\centering
+\begin{tabular}{ccc}
+\toprule
+	Sequence $L$ & $Q_1^0$ & $Q_2^0$ \\ 
+\midrule
+	$\emptyset$ & $\emptyset$ & $\emptyset$ \\
+	2 &  2& $\emptyset$ \\
+	21 &  2 & 21   \\
+	212 &  212 & 21  \\
+\bottomrule
+\end{tabular}
+\end{table}
+We'll 
+Let $\beta = K_{12}\Qf{0,0} - \alpha = \alpha(b_1b_2\Qf{0,0}-1)$, $X = Q_1^0$ and $Y = Q_2^0$. Note that $\beta$ is left unaffected by group actions. We have the four equations
+\begin{align}
+	AX+BY&= \beta\,, \\
+	A_2 X_2 + B_2 Y &=\beta\,,\\
+	A_{21}X_2+ B_{21}Y_{21} &= \beta\,, \\
+	A_{212} X_{212} + B_{212} Y_{21}&= \beta\,,
+\end{align}
+where we wish to eliminate variables $X$, $Y$ that contain $\sigma_1$ in their input. Those are $X_2$, $Y$ and $Y_{21}$ and we can eliminate them by first eliminating $Y$ and $Y_{21}$ from the first two and second two equations, and then eliminating $X_2$ from the resulting two equations. That is, we compute $B_2$ times the first equation minust $B$ times the second equation, and $B_{212}$ times the third equation minus $B_{21}$ from the last equation. In other words this is the same as if we apply the operators
+\begin{align}
+	B_2 - B g_2 &= D_2(B_2)\,,\\
+	B_{212} \,g_{21} - B_{21}z, g_{212} &= g_{212}(B g_2 - B_2) = - g_{212}D_2(B_2) \,,
+\end{align}
+to both sides of the master functional equation and substitute $x_1 = \sigma_1$. We obtain the equations
+\begin{align}
+	 AB_2 X - A_2 B X_2 &= \beta D_{2}(B_{2})(1)\,,\\
+	  A_{21}B_{212} X_2 - A_{212} B_{21} X_{212} &= \beta D_{212}(B_{21})(1)\,.
+\end{align}
+To eliminate the $X_2$ terms we take $A_{21}B_{212}$ times the first equation and add $A_2 B$ times the second equation. This is the same as applying to the functional equation he operator
+\begin{align}
+	D &=A_{21}B_{212} D_2(B_2) - A_2 B g_{212}D_2(B_2)\\
+	   &= (A_{21}B_{212} - A_2 B g_{212})D_2(B_2)\\
+	   &= (A_{21}B_{212} - g_{212}A_{21}B_{212})D_2(B_2)\\
+	   &= D_{212}(A_{21}B_{212})D_2(B_2)\,.
+\end{align}
+
 This operator is reminiscent of the Orbital operators that we've seen previously. It eliminates the $Q_2$ term with the undesirable argument and replaces it with a more desirable one. We can re-write the result as
 \begin{align}
  A (1-g_{212})(A_{21}B_{212} B_2 Q_1)= A D_{212}( A_2 B B_{21}) (Q_1)\,.
@@ -189,16 +275,52 @@ The resulting equations are actually better written out as
 \end{align}
 The interesting fact (as found in the paper) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though $\sigma_k$ contains a square root. The coefficients in front of $\gamma$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case.
 
-\begin{example}
-One can view $D_L(X)$ as an Ore operator via
-\begin{align}
-	g_L \cdot X = - X g_L + g_L(X)
-\end{align}
-and
-\begin{align}
-	g_L(XY) = - X g_L(Y) + g_L(X)Y = g_L(X)Y - X g_L(Y)\,.
-\end{align}
-\end{example}
 
 
 \endinput
+
+%================================================================
+%================================================================
+%================================================================
+
+Here
+\begin{align}
+	S_1^{\um 1} &= 1+x_2\com S_1^0 = 0\com S_1^1 = 1+\ol{x}_2\,,\\
+	S_2^{\um 1} &= x_1\com S_2^0 = x_1+\ol{x}_1\com S_2^1 = \ol{x}_1\,,
+\end{align}
+which give
+\begin{align}
+	A = K_1 = c_1 - t\ol{x}_1(1+x_2)\com B = K_2 = c_2 - t x_1\ol{x}_2\,.
+\end{align}
+Note that since $\Sf{\um 1,\um 1} = 0$,
+\begin{align}
+	K_{12} = c_1c_2
+\end{align}
+and we can combine the $\alpha$ term with $K_{1,2}Q_{1,2}^{0,0}$ in one with
+\begin{align}
+	\gamma = \ol{a}_1\ol{a}_2(1-b_1b_2\Qf{0,0})
+\end{align}
+The master functional equation is
+\begin{align}
+-KQ + K_1 Q_1^0 + K_2 Q_2^0 +\gamma = 0\,.
+\end{align}
+The roots of the kernel are
+\begin{align}
+	\sigma_1^\pm &= \frac{1\pm\sqrt{1-4t^2(1+x_2)(1+\ol{x}_2)}}{2t(1+\ol{x}_2)}\,,\\
+	\sigma_2^\pm &= \frac{1-t(x_1+\ol{x}_1) \pm \sqrt{(1-t(x_1+\ol{x}_1))^2 - 4t^2}}{2t\ol{x}_1}\,,
+\end{align}
+and as in the paper we pick $\sigma_k = \sigma_k^{-}$ because they are power series in $t$. Next we determine the birational transformations that leave the kernel unchanged. They are
+\begin{align}
+	g_1: x_1 \mapsto \ol{x}_1x_2\com g_2: x_2 \mapsto x_1^2 \ol{x}_2\,.
+\end{align}
+Simply iterating $g_1$ and $g_2$  shows that the group $G$ has order 8. For the rest of the analysis we'll need the following notation.
+The elements in the orbit are $id$, $g_1$, $g_{21}$, $g_{121}$, etc. Since eventually we reach the identity again we can work backwards and have the $g$ terms meet in the middle. The orbit is then given by
+\begin{align}
+	\orb(G) = \{id, g_1, g_{21},g_{121},g_{2121}=g_{1212}, g_{212},g_{12},g_{2}\}\,.
+\end{align}
+In the rest of this calculation we need to eliminate the kernel term via a substitution of $\sigma_k$ in the master equation (We'll overload the notation as before). Then we'll need some extra functional equations that are obtained by application of terms from the orbit. However not all such applications are valid. We require that the $\sigma_k$ term appears in the numerator inside the functions $Q$. We can check that to use the sigma values we need to use the following transformations
+\begin{align}
+	\sigma_1: id, g_2, g_{21}, g_{212}\,,\\
+	\sigma_2: id, g_1, g_{12}, g_{121}
+\end{align}
+For each $\sigma_k$ we're going to obtain 3 additional functional equations to complement the master equation and then we'll substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just won't include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We'll also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note we'll also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra but because of the complexity and symmetry involved in the coefficients it's best to investigate the explicit simplification of the equations.
