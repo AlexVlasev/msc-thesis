@@ -119,23 +119,34 @@ We can also think of this process as applying a weighted orbit sum over group ac
 where the weights are given by pre-multiplying an expression by $K_2^\ast$ before applying the operator $\Delta_2 = 1-g_2$. The equation can be written as
 \begin{align}
 	0 &= D_2(KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0})\\
-	0 &= D_2(K_1Q_1^0) - D(K_{12})\Qf{0,0} + D(\alpha)	    
+	0 &= D_2(K_1Q_1^0) - D_2(K_{12})\Qf{0,0} + D(\alpha)	    
 \end{align}
-where the second one follow from substituting $x_1 = \sigma_1$. The situation is similar to the Algebraic Kernel method except that the operators there retain the $KQ$ term and its orbit while they eliminate the $Q_1^0$ and $Q_2^0$ terms and their orbits. Since we'll be using operators like $D_2$ we'll have some notation.
+where the second one follow from substituting $x_1 = \sigma_1$.
+The situation is similar to the Algebraic Kernel method except that the operators there retain the $KQ$ term and its orbit while they eliminate the $Q_1^0$ and $Q_2^0$ terms and their orbits. Since we'll be using operators like $D_2$ we'll have some notation.
 \begin{definition} For a concatenated list $L = L_1L_2\ldots$ of positive integer indices let $g_L = g_{L_1}g_{L_2}\ldots$ whenever this group action makes sense. That is, either the list is finite or there is some form of convergence when $L$ is infinite.
 \end{definition}
-\begin{definition} Let $L$ be a concatenated list and let $X$ be some function. The operator $D_L(X)$ is defined by its action on functions $F$ as
+\begin{definition} Let $L$ be a concatenated list. Definte $\Delta_L = 1 - g_L$. Now let $X$ be some function. The operator $D_L[X]$ is defined by its action on functions $F$ as
 \begin{align}
-	D_L(X_L)(F) = X_L F - X g_L(F) = (1-g_L)(X_L F)\,.
+	D_L[X](F) =\Delta_L(XF) = (1-g_L)(XF) = XF-g_L(XF)\,.
 \end{align}
-We'll drop the $X$ from the notation if it's clear in context. (Note that $D_L(X)$ is essentially an Ore operator.)
+We'll drop the $X$ from the notation if it's clear in context. In particular $D_L[1] = \Delta_L$.
 \end{definition}
-Before we go onto groups of order 6 we can expand some of the terms in the functional equation successfully. First
+For example, $D_2 = D_2[g_2(K_2)]$.
+\begin{example} If we use $g_L(X)$ instead of $X$ in the above definition we obtain
+\begin{align}
+	D_L[g_L(X)] = g_L(X) - Xg_L
+\end{align}
+which is essentially an Ore operator. In our analysis we'll see these somewhat frequently.
+\end{example}
+%=======================================
+\subsection{Some Calculations}
+%=======================================
+Before we go onto groups of order 6 we can expand some of the terms in the functional equation. First
 \begin{align}
 \begin{split}
 	D_2(\alpha) &= \alpha(K_2^\ast -K_2) = \\
 			&= \alpha((c_2- tx_2\ol{\mu}_2 S_2^{\um 1})-(c_2- t\ol{x}_2 S_2^{\um 1}))\\
-			&= \alpha t(\ol{x}_2 - x_2\ol{\mu}_2(\sigma_1))S_2^{\um 1}(\sigma_1).
+			&= \alpha t(\ol{x}_2 - x_2\ol{\mu}_2(\sigma_1))S_2^{\um 1}(\sigma_1)\,.
 \end{split}
 \end{align}
 Then
@@ -150,7 +161,39 @@ Then
 			&=c_2t(\ol{x}_2-x_2\ol{\mu}_2(\sigma_1))(c_1S_2^{\um 1}(\sigma_1) - \ol{\sigma}_1\Sf{\um 1,\um 1})\\
 \end{split}
 \end{align}
-These terms can both be simplified further but we would need to know more about the terms of $S$ and the properties of $\sigma_1$. The situation is similar for the $D_2(K_1Q_1^0)$ terms where we would expand and simplify the two terms $K_2^\ast K_1$ and $K_2 K_1^\ast$. If we were to work with $\sigma_2$ instead we would just have to switch all the numbers 1 and 2 around and use $g_1$ instead of $g_2$, perhaps with the symbol $\bullet$ instead of $\ast$.
+Now if the model is symmetric in both directions we see that $g_2 S_1^{\um 1} = S_1^{\um 1}$ and so $g_2 K_1 = K_1$ and we may bring that factor outside of $D_2(K_1^\ast F) = K_1 D_2(F)$. It's worth investigating if this happens in other cases since this will make it easier to perform coefficient extraction later. We can answer this in the negative.
+\begin{prop} Suppose that a model with group of order 4 has symmetry around the $x_i$ axis and $j\neq i$. Then $D_i[g_iK_j] = K_jD_i[1] = K_j \Delta_i$ in the $\sigma_j$ substitution. Also $D_j[g_j(K_i)] = K_i D_j[1] = K_i \Delta_j$ if and only if the model is also symmetric around the $x_j$ axis. Thus we can bring out the $K$ term out of both operators if and only if the model is highly symmetric.
+\end{prop}
+\begin{proof} Assume that the model is symmetric around the $x_1$-axis, that is, it is vertically symmetric. This implies that $S_1^{\um 1} = S_1^1$ and $g_1(S_2^k) = S_2^k$ for all $k$. This immediately tells us that $g_1(K_2) = K_2$ and $D_1[g_1K_2] = K_2 \Delta_1$. This remains true when we substitute $x_2 = \sigma_2$. This would also be true for the other operator if the model is symmetric around the $x_2$-axis. Thus we only need to show the forward direction of the statement. We'll show that if the model is not highly symmetric, the factoring won't happen. It's enough to show that $g_2(K_1) \neq K_1$ even after the $x_1 = \sigma_1$ substitution is made.
+
+The solutions to $K = 0$ in the $x_1$ variable are
+\begin{align}
+	x_1 = \frac{(1-t S_1^0) \pm \sqrt{(1-tS_1^0)^2 - 4t^2(S_1^1)^2}}{2tS_1^1}\,.
+\end{align}
+If $\sigma_1 = u \pm v\sqrt{w}$ then it turns out that $\ol{\sigma}_1 = u \mp v\sqrt{w}$ due to the symmetry and
+\begin{align}
+	s = \sigma_1 + \ol{\sigma}_1 = 2u = \frac{1-tS_1^0}{t S_1^1}\,.
+\end{align}
+Now
+\begin{align}
+	g_2 K_1 = c_2 - t \ol{x}_1 g_2(S_1^{\um 1}(x_2)) = c_2 - t\ol{x}_1 S_1^{\um 1}(\ol{x}_2\mu_2(x_1))
+\end{align}
+and $g_2 K_1 = K_1$ if and only if
+\begin{align}
+	S_1^{\um 1}(\ol{x}_2\mu_2(x_1)) = S_1^{\um 1}(x_2)
+\end{align}
+upon making the substitution $x_1 = \sigma_1$. We'll first compute $\mu_2(\sigma_1)$. To that end we have
+\begin{align}
+	S_2^k(\sigma_1) = \Sf{0,k}+ \Sf{1,k}(\ol{\sigma}_1+ \sigma_1) = \Sf{0,k}+ \Sf{1,k}\frac{1-tS_1^0}{t S_1^1}
+\end{align}
+and
+\begin{align}
+	\mu_2(\sigma_1) = \frac{S_2^{\um 1}}{S_2^1} = \frac{ \Sf{0,\um 1}+ \Sf{1,\um 1}\frac{1-tS_1^0}{t S_1^1}}{\Sf{0,1}+ \Sf{1,1}\frac{1-tS_1^0}{t S_1^1}} = \frac{\Sf{1, \um 1}+t\left(\Sf{0,\um 1}S_1^1-\Sf{1,\um 1}S_1^0\right)}{\Sf{1, 1}+t\left(\Sf{0, 1}S_1^1-\Sf{1, 1}S_1^0\right)}\,.
+\end{align}
+This is a rational function in $x_2$. Using software we can easily compute this expression and further $S_1^{\um 1}(\ol{x}_2\mu_2(x_1))$ to show that we only have equality when the model is highly symmetric.
+
+\end{proof}
+In the next chapter we'll investigate the highly-symmetric models in more detail.
 %=======================================
 \section{Group of order 6}
 %=======================================
@@ -206,7 +249,7 @@ Then we can re-write the equation as
 \end{align}
 We may compute $D(1)$ for each case but the expressions are somewhat complicated. $D(1)$ for each of $S11$, $S12$ and $S13$ will contain a square root like in $\sigma_1$. So do the terms $AA_{21}B_2$ and $A_2BB_{21}$. It's worth mentioning that we can convert the equation to one with no square roots by collecting terms involving the square root on one side and squaring. Then we have a non-linear equation in $X$ and $Y$ with rational function coefficients. It's not clear how we could go further.
 %=======================================
-\section{Group of order 8 (re-do some of the stuff here)}
+\section{Group of order 8}
 %=======================================
 The the group $G$ has order 8 we only have two non-isomorphic models but we'll deal with the one with four group actions that preserve the admissibility of $(x_1,x_2)$. The actions are $1,\, g_2,\, g_{21},\, g_{212}$. The step polynomial is
 \begin{align}
@@ -236,44 +279,55 @@ Let $\beta = K_{12}\Qf{0,0} - \alpha = \alpha(b_1b_2\Qf{0,0}-1)$, $X = Q_1^0$ an
 	A_{21}X_2+ B_{21}Y_{21} &= \beta\,, \\
 	A_{212} X_{212} + B_{212} Y_{21}&= \beta\,,
 \end{align}
-where we wish to eliminate variables $X$, $Y$ that contain $\sigma_1$ in their input. Those are $X_2$, $Y$ and $Y_{21}$ and we can eliminate them by first eliminating $Y$ and $Y_{21}$ from the first two and second two equations, and then eliminating $X_2$ from the resulting two equations. That is, we compute $B_2$ times the first equation minust $B$ times the second equation, and $B_{212}$ times the third equation minus $B_{21}$ from the last equation. In other words this is the same as if we apply the operators
+where we wish to eliminate variables $X$, $Y$ that contain $\sigma_1$ in their input. Those are $X_2$, $Y$ and $Y_{21}$ and we can eliminate them by first eliminating $Y$ and $Y_{21}$ from the first two and second two equations, and then eliminating $X_2$ from the resulting two equations. That is, we compute $B_2$ times the first equation minus $B$ times the second equation, and $B_{212}$ times the third equation minus $B_{21}$ from the last equation. In other words this is the same as if we apply the operators
 \begin{align}
-	B_2 - B g_2 &= D_2(B_2)\,,\\
-	B_{212} \,g_{21} - B_{21}z, g_{212} &= g_{212}(B g_2 - B_2) = - g_{212}D_2(B_2) \,,
+	D_2[B_2] &= B_2 - B g_2\,,\\
+	- g_{212}D_2[B_2] &= g_{212}\,B g_2 - g_{212}\,B_2 =  B_{212} \,g_{21} - B_{21}\,  g_{212} 
 \end{align}
 to both sides of the master functional equation and substitute $x_1 = \sigma_1$. We obtain the equations
 \begin{align}
-	 AB_2 X - A_2 B X_2 &= \beta D_{2}(B_{2})(1)\,,\\
-	  A_{21}B_{212} X_2 - A_{212} B_{21} X_{212} &= \beta D_{212}(B_{21})(1)\,.
+	 AB_2 X - A_2 B X_2 &= \beta(B_2 - B)\,,\\
+	  A_{21}B_{212} X_2 - A_{212} B_{21} X_{212} &= \beta(B_{212}-B_{21})\,.
 \end{align}
-To eliminate the $X_2$ terms we take $A_{21}B_{212}$ times the first equation and add $A_2 B$ times the second equation. This is the same as applying to the functional equation he operator
+To eliminate the $X_2$ terms we take $A_{21}B_{212}$ times the first equation and add $A_2 B$ times the second equation. We have
 \begin{align}
-	D &=A_{21}B_{212} D_2(B_2) - A_2 B g_{212}D_2(B_2)\\
-	   &= (A_{21}B_{212} - A_2 B g_{212})D_2(B_2)\\
-	   &= (A_{21}B_{212} - g_{212}A_{21}B_{212})D_2(B_2)\\
-	   &= D_{212}(A_{21}B_{212})D_2(B_2)\,.
+	A_{21}B_{212}AB_2 X - A_2 BA_{212} B_{21} X_{212} = \beta(A_{21}B_{212}(B-B_2)+A_2 B(B_{212}-B_{21}))
 \end{align}
-
-This operator is reminiscent of the Orbital operators that we've seen previously. It eliminates the $Q_2$ term with the undesirable argument and replaces it with a more desirable one. We can re-write the result as
+We could obtain the same result by applying the following operator $D$ to both sides of the master functional equation.
 \begin{align}
- A (1-g_{212})(A_{21}B_{212} B_2 Q_1)= A D_{212}( A_2 B B_{21}) (Q_1)\,.
+	D &=A_{21}B_{212} D_2[B_2] - A_2 B g_{212}D_2[B_2]\\
+	   &= (A_{21}B_{212} - A_2 B g_{212})D_2[B_2]\\
+	   &= (A_{21}B_{212} - g_{212}A_{21}B_{212})D_2[B_2]\\
+	   &= D_{212}[A_{21}B_{212}]D_2[B_2]\,.
 \end{align}
-This leads to the following theorem.
-\begin{theorem} For the $\sigma_1$ substitution we have
+Starting from the master functional equation we have
 \begin{align}
-	0 = D^{(1)}(A Q_1 + B Q_2 + \gamma) = A D_{212}( A_2 B B_{21}) (Q_1)  +\gamma D_{212}(A_2B)(B_2 - B)\,.
+	D(RHS) &= D(\beta) = \beta D_{212}[A_{21}B_{212}](B_2-B)
 \end{align}
-Similarly for the $\sigma_2$ substitution we have
 \begin{align}
-	0 = D^{(2)}(A Q_1 + B Q_2 + \gamma) = B D_{121}( A A_{12} B_1) (Q_2)  +\gamma D_{121}(A B_1)(A_1 - A)\,.
+\begin{split}
+	D(LHS) &= D(AX+BY) = D(AX) \\
+		&= D_{212}[A_{21}B_{212}]D_2[B_2](AX)\\
+		&=D_{212}[A_{21}B_{212}](AB_2X - A_2BX_2)\\
+		&=D_{212}[A_{21}B_{212}](AB_2X)\\
+		&= D_{212}[AA_{21}B_2B_{212}](X)
+\end{split}
 \end{align}
+We note that $A_{212} = A$ so we can actually factor out $A$ from the operator. Finally we have the following theorem.
+\begin{theorem} For the first model with group of order 8 we have
+\begin{align}
+	D_{212}[A_{21}B_2B_{212}]\left(Q_1^0\right) = \frac{\beta}{A} D_{212}[A_{21}B_{212}](B_2-B)
+\end{align}
+where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$ and we only obtain an equality once we set $x_1 = \sigma_1$ in this expression.
 \end{theorem}
-The resulting equations are actually better written out as
+If we went through the $\sigma_2$ substitution instead, we would have onbtained an analogous statement which we show here without proof.
+\begin{theorem} For the first model with group of order 8 we have
 \begin{align}
-	\sigma_1: \quad D_{212}( A_2 B B_{21}) (Q_1)  +\gamma \frac{D_{212}(A_2B)(B_2 - B)}{A} &= 0\,,\\
-	\sigma_2: \quad D_{121}( A A_{12} B_1) (Q_2)  +\gamma \frac{D_{121}(A B_1)(A_1 - A)}{B} &=0\,.
+	D_{121}[B_{12}A_1A_{121}]\left(Q_2^0\right) = \frac{\beta}{B} D_{121}[B_{12}A_{121}](A_1-A)
 \end{align}
-The interesting fact (as found in the paper) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though $\sigma_k$ contains a square root. The coefficients in front of $\gamma$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case.
+where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$ and we only obtain an equality once we set $x_2 = \sigma_2$ in this expression.
+\end{theorem}
+The interesting fact (as found in the paper) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case. This is what allows the authors to obtain relationships between $\Qf{0,0}$ and setting one or more of $a_1$, $a_2$ equal to 1.
 
 
 

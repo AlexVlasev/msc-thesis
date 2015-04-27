@@ -71,16 +71,15 @@
 \contentsline {subsection}{\numberline {9.3.4}Infinite Groups}{97}{subsection.9.3.4}
 \contentsline {chapter}{\numberline {10}Obstinate Kernel Method}{99}{chapter.10}
 \contentsline {section}{\numberline {10.1}Group of order 4}{101}{section.10.1}
-\contentsline {section}{\numberline {10.2}Group of order 6}{103}{section.10.2}
-\contentsline {section}{\numberline {10.3}Group of order 8 (re-do some of the stuff here)}{105}{section.10.3}
-\contentsline {chapter}{\numberline {11}Highly-symmetric 2D models}{108}{chapter.11}
-\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{109}{section.11.1}
-\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{112}{section.11.2}
-\contentsline {section}{\numberline {11.3}The almost-full model: missing steps E and W}{120}{section.11.3}
-\contentsline {section}{\numberline {11.4}The full model: all steps available}{120}{section.11.4}
-\contentsline {section}{\numberline {11.5}Conjectured relationships depending on $S_{1,2}^{-1,-1}$}{120}{section.11.5}
-\contentsline {chapter}{\numberline {12}Epilogue}{121}{chapter.12}
-\contentsline {section}{\numberline {12.1}Discussion}{121}{section.12.1}
-\contentsline {section}{\numberline {12.2}Future Work}{121}{section.12.2}
-\contentsline {section}{\numberline {12.3}Conclusion}{121}{section.12.3}
-\contentsline {chapter}{Bibliography}{122}{chapter*.9}
+\contentsline {subsection}{\numberline {10.1.1}Some Calculations}{103}{subsection.10.1.1}
+\contentsline {section}{\numberline {10.2}Group of order 6}{105}{section.10.2}
+\contentsline {section}{\numberline {10.3}Group of order 8}{106}{section.10.3}
+\contentsline {chapter}{\numberline {11}OKM in Highly symmetric 2D models}{109}{chapter.11}
+\contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{110}{section.11.1}
+\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{113}{section.11.2}
+\contentsline {section}{\numberline {11.3}The full model}{120}{section.11.3}
+\contentsline {chapter}{\numberline {12}Epilogue}{123}{chapter.12}
+\contentsline {section}{\numberline {12.1}Discussion}{123}{section.12.1}
+\contentsline {section}{\numberline {12.2}Future Work}{123}{section.12.2}
+\contentsline {section}{\numberline {12.3}Conclusion}{123}{section.12.3}
+\contentsline {chapter}{Bibliography}{124}{chapter*.9}
