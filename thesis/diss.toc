@@ -1,10 +1,10 @@
 \contentsline {chapter}{Abstract}{ii}{chapter*.1}
 \contentsline {chapter}{Preface}{iii}{chapter*.2}
 \contentsline {chapter}{Table of Contents}{iv}{chapter*.3}
-\contentsline {chapter}{List of Tables}{viii}{chapter*.4}
-\contentsline {chapter}{List of Figures}{ix}{chapter*.5}
-\contentsline {chapter}{Glossary}{x}{chapter*.6}
-\contentsline {chapter}{Acknowledgments}{xi}{chapter*.7}
+\contentsline {chapter}{List of Tables}{vii}{chapter*.4}
+\contentsline {chapter}{List of Figures}{viii}{chapter*.5}
+\contentsline {chapter}{Glossary}{ix}{chapter*.6}
+\contentsline {chapter}{Acknowledgments}{x}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Preliminaries}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Formal Series}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Random Walk Models}{2}{section.1.2}
@@ -19,67 +19,64 @@
 \contentsline {subsection}{\numberline {3.2.1}The $S_{-1} = 0$ case.}{15}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}The $S_{-1} \neq 0$ case.}{17}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}1-dimensional case conclusion}{20}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Two-dimensional Random Walks}{22}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{22}{section.4.1}
-\contentsline {section}{\numberline {4.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{24}{section.4.2}
-\contentsline {section}{\numberline {4.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{25}{section.4.3}
-\contentsline {section}{\numberline {4.4}Simple case: Factoring $S$ into a product}{25}{section.4.4}
-\contentsline {section}{\numberline {4.5}Kernel Group Considerations}{28}{section.4.5}
-\contentsline {section}{\numberline {4.6}Solving basic 2D models}{30}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Cases 1.1, 1.2, 1.3}{30}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Case 2.2 - group of order 1}{31}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Case 2.3 - group of order 2}{33}{subsection.4.6.3}
-\contentsline {subsection}{\numberline {4.6.4}Summary of cases}{34}{subsection.4.6.4}
-\contentsline {chapter}{\numberline {5}Hexagonal Walks}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{36}{section.5.1}
-\contentsline {section}{\numberline {5.2}Operators}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Group Structure}{39}{section.5.3}
-\contentsline {section}{\numberline {5.4}Finding the generating function $Q$}{42}{section.5.4}
-\contentsline {chapter}{\numberline {6}Higher-dimensional walks}{44}{chapter.6}
-\contentsline {section}{\numberline {6.1}Using Operators to Derive the Functional Equation}{44}{section.6.1}
-\contentsline {section}{\numberline {6.2}Coefficient Extraction}{46}{section.6.2}
-\contentsline {section}{\numberline {6.3}Further functional equations}{47}{section.6.3}
-\contentsline {section}{\numberline {6.4}Using the formal inverse for iteration}{50}{section.6.4}
-\contentsline {section}{\numberline {6.5}Kernel Forms}{51}{section.6.5}
-\contentsline {section}{\numberline {6.6}Walks without interactions}{51}{section.6.6}
-\contentsline {chapter}{\numberline {7}Operators}{54}{chapter.7}
-\contentsline {section}{\numberline {7.1}Homogeneous Operators}{54}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Single 1D Operators}{54}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Compounded 1D Operators}{56}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Multidimensional Operators}{56}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Inhomogeneous Operators}{57}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Single 1D Operators}{57}{subsection.7.2.1}
-\contentsline {section}{\numberline {7.3}Random Walks Operator}{59}{section.7.3}
-\contentsline {section}{\numberline {7.4}Interaction with $\partial _t$}{60}{section.7.4}
-\contentsline {section}{\numberline {7.5}Interaction with $\partial _i$}{60}{section.7.5}
-\contentsline {chapter}{\numberline {8}Discussion on Random Walk Model Generalizations}{62}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{62}{section.8.1}
-\contentsline {section}{\numberline {8.2}Marking Operators}{65}{section.8.2}
-\contentsline {section}{\numberline {8.3}Self-avoiding walks}{68}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Eigenpairs}{71}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Generalizations}{72}{subsection.8.3.2}
-\contentsline {chapter}{\numberline {9}Algebraic Kernel method}{73}{chapter.9}
-\contentsline {section}{\numberline {9.1}Groups for walks with small steps}{73}{section.9.1}
-\contentsline {section}{\numberline {9.2}Non-interacting Models}{76}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}Walks with small steps}{76}{subsection.9.2.1}
-\contentsline {subsection}{\numberline {9.2.2}Walks with unconstrained steps}{85}{subsection.9.2.2}
-\contentsline {section}{\numberline {9.3}Interacting Models}{86}{section.9.3}
-\contentsline {subsection}{\numberline {9.3.1}Groups of order 4}{87}{subsection.9.3.1}
-\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{89}{subsubsection*.8}
-\contentsline {subsection}{\numberline {9.3.2}Groups of order 6}{93}{subsection.9.3.2}
-\contentsline {subsection}{\numberline {9.3.3}Groups of order 8}{96}{subsection.9.3.3}
-\contentsline {subsection}{\numberline {9.3.4}Infinite Groups}{97}{subsection.9.3.4}
-\contentsline {chapter}{\numberline {10}Obstinate Kernel Method}{99}{chapter.10}
-\contentsline {section}{\numberline {10.1}Group of order 4}{101}{section.10.1}
-\contentsline {subsection}{\numberline {10.1.1}Some Calculations}{103}{subsection.10.1.1}
-\contentsline {section}{\numberline {10.2}Group of order 6}{105}{section.10.2}
-\contentsline {section}{\numberline {10.3}Group of order 8}{106}{section.10.3}
-\contentsline {chapter}{\numberline {11}OKM in Highly symmetric 2D models}{109}{chapter.11}
+\contentsline {chapter}{\numberline {4}Two-dimensional Random Walks}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}{23}{section.4.2}
+\contentsline {section}{\numberline {4.3}Simple cases: Walks never leaving the origin and walks leaving the origin but never returning}{24}{section.4.3}
+\contentsline {section}{\numberline {4.4}Simple case: Factoring $S$ into a product}{24}{section.4.4}
+\contentsline {section}{\numberline {4.5}Kernel Group Considerations}{27}{section.4.5}
+\contentsline {section}{\numberline {4.6}Solving basic 2D models}{29}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Cases 1.1, 1.2, 1.3}{29}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Case 2.2 - group of order 1}{30}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Case 2.3 - group of order 2}{32}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}Summary of cases}{33}{subsection.4.6.4}
+\contentsline {chapter}{\numberline {5}Hexagonal Walks}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Operators}{36}{section.5.2}
+\contentsline {section}{\numberline {5.3}Group Structure}{38}{section.5.3}
+\contentsline {section}{\numberline {5.4}Finding the generating function $Q$}{41}{section.5.4}
+\contentsline {chapter}{\numberline {6}Higher-dimensional walks}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Using Operators to Derive the Functional Equation}{43}{section.6.1}
+\contentsline {section}{\numberline {6.2}Coefficient Extraction}{45}{section.6.2}
+\contentsline {section}{\numberline {6.3}Further functional equations}{46}{section.6.3}
+\contentsline {section}{\numberline {6.4}Using the formal inverse for iteration}{49}{section.6.4}
+\contentsline {section}{\numberline {6.5}Kernel Forms}{50}{section.6.5}
+\contentsline {section}{\numberline {6.6}Walks without interactions}{50}{section.6.6}
+\contentsline {chapter}{\numberline {7}Operators}{53}{chapter.7}
+\contentsline {section}{\numberline {7.1}Homogeneous Operators}{53}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Single 1D Operators}{53}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Compounded 1D Operators}{55}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Multidimensional Operators}{55}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Inhomogeneous Operators}{56}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Single 1D Operators}{56}{subsection.7.2.1}
+\contentsline {section}{\numberline {7.3}Random Walks Operator}{58}{section.7.3}
+\contentsline {section}{\numberline {7.4}Interaction with $\partial _t$}{59}{section.7.4}
+\contentsline {section}{\numberline {7.5}Interaction with $\partial _i$}{59}{section.7.5}
+\contentsline {chapter}{\numberline {8}Discussion on Random Walk Model Generalizations}{61}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{61}{section.8.1}
+\contentsline {section}{\numberline {8.2}Marking Operators}{64}{section.8.2}
+\contentsline {section}{\numberline {8.3}Self-avoiding walks}{67}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Eigenpairs}{70}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Generalizations}{71}{subsection.8.3.2}
+\contentsline {chapter}{\numberline {9}Algebraic Kernel method}{72}{chapter.9}
+\contentsline {section}{\numberline {9.1}Groups for walks with small steps}{72}{section.9.1}
+\contentsline {section}{\numberline {9.2}Non-interacting Models}{75}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Walks with small steps}{75}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}Walks with unconstrained steps}{84}{subsection.9.2.2}
+\contentsline {section}{\numberline {9.3}Interacting Models}{85}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}Groups of order 4}{86}{subsection.9.3.1}
+\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{88}{subsubsection*.8}
+\contentsline {subsection}{\numberline {9.3.2}Groups of order 6}{92}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.3}Groups of order 8}{95}{subsection.9.3.3}
+\contentsline {subsection}{\numberline {9.3.4}Infinite Groups}{96}{subsection.9.3.4}
+\contentsline {chapter}{\numberline {10}Obstinate Kernel Method}{98}{chapter.10}
+\contentsline {section}{\numberline {10.1}Group of order 4}{100}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}Some Calculations}{102}{subsection.10.1.1}
+\contentsline {section}{\numberline {10.2}Group of order 6}{104}{section.10.2}
+\contentsline {section}{\numberline {10.3}Group of order 8}{105}{section.10.3}
+\contentsline {chapter}{\numberline {11}OKM in Highly symmetric 2D models}{108}{chapter.11}
 \contentsline {section}{\numberline {11.1}Cartesian model: steps N, S, E, W}{110}{section.11.1}
-\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{113}{section.11.2}
-\contentsline {section}{\numberline {11.3}The full model}{120}{section.11.3}
+\contentsline {section}{\numberline {11.2}Diagonal model: steps NE, NW, SE, SW}{112}{section.11.2}
+\contentsline {section}{\numberline {11.3}The full model}{119}{section.11.3}
 \contentsline {chapter}{\numberline {12}Epilogue}{123}{chapter.12}
-\contentsline {section}{\numberline {12.1}Discussion}{123}{section.12.1}
-\contentsline {section}{\numberline {12.2}Future Work}{123}{section.12.2}
-\contentsline {section}{\numberline {12.3}Conclusion}{123}{section.12.3}
 \contentsline {chapter}{Bibliography}{124}{chapter*.9}

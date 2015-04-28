@@ -60,14 +60,16 @@ The region $\mc{D}$ consists of all points in $\ze^2$ with non-negative coordina
 We have a choice in naming the variables counting the interactions so we'll go with their defining quality (as this proves notationally simpler later on) - we mark the locations where one coordinate is zero. That is mark walks ending on $x_k = 0$ by incrementing the power of $a_k$ in the generating function. In this model the only first step we can take is $(1,1)$ which contributes a monomial $x_1x_2t$. From here on we can build on the single random walk of size one by taking a step in any of the four directions. This action lead to the following monomials.
 \begin{itemize}
 	\item $(1,1)$: monomial $x_1^2x_2^2 t^2$ since there are no interactions.
-	\item $(1,-1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$-axis with coordinate $x_2 = 0$.
-	\item $(-1,1)$: monomial  $a_1x_2^2 t^2$ since the walk lands on the $x_2$-axis with coordinate $x_1 = 0$.
-	\item $(-1,-1)$: monomial  $a_1a_2 t^2$ since the walk lands on the origin which is on both axes.
+	\item $(1,\um1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$-axis with coordinate $x_2 = 0$.
+	\item $(\um 1,1)$: monomial  $a_1x_2^2 t^2$ since the walk lands on the $x_2$-axis with coordinate $x_1 = 0$.
+	\item $(\um1,\um1)$: monomial  $a_1a_2 t^2$ since the walk lands on the origin which is on both axes.
 \end{itemize}
 Since we've seen all the random walks of size at most 2 we see that the generating function $Q = Q(x_1,x_2;t)$ starts as
 \begin{align}
+\begin{split}
 	Q  &=  1 + x_1x_2 t + (a_1a_2 + a_1x_2+a_2x_1 +x_1x_2)t^2 + \cdots\\
 	& = 1 + x_1x_2 t+ (a_1+x_1)(a_2+x_2)t^2 + \cdots\,.
+\end{split}
 \end{align}
 The fact that the first few coefficients factor in this case may be unexpected but it is due to the factoring of $S(x_1,x_2)$ itself. We'll see a more general result later.
 \end{example}
@@ -83,7 +85,7 @@ In the interest of generalizing the problem-solving strategies involved in rando
 \end{align}
 with the special cases
 \begin{align}
-	x_I^{\one} = x_I, \quad x_I^{-\one} = \frac{1}{x_I} = \ol{x}_I\,.
+	x_I^{\one} = x_I, \quad x_I^{\um\one} = \frac{1}{x_I} = \ol{x}_I\,.
 \end{align}
 \end{definition}
 \begin{definition} For sequences $I,J$ as before and indeterminate $x$ we denote the coefficient extraction 

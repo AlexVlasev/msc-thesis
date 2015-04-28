@@ -27,11 +27,11 @@ For integer $n$ and a number $a$ let
 \begin{lemma} The operators $\Gamma_m(a_1)$ and $\Gamma_n(a_2)$ commute.
 \end{lemma}
 \begin{proof} Whether the operators mark the same monomial or not, since they act by multiplication by $a_i$ it doesn't matter in which order we apply them. We can also see this computationally. If $m \neq n$
-\begin{align}
+\begin{align}\begin{split}
 	\Gamma_n(a_1)\Gamma_m(a_2) &= 1  +b_1x^n[x^n]+b_2x^m[x^m] + b_1b_2x^n[x^n]x^m[x_m] \\
 						&= 1  +b_1x^n[x^n]+b_2x^m[x^m]\\
 						&= \Gamma_m(a_2)\Gamma_n(a_1)\,.
-\end{align}
+\end{split}\end{align}
 The case for $m = n$ is analogous.
 \end{proof} 
 Because of the commutativity we can write a product of such operators in any order we like. We'll usually write them in alphabetical order. Next, we'll find the eigenvalues and eigenfunctions for single operators.
@@ -91,10 +91,10 @@ Multidimensional operators are ones composed of one-dimensional operators (wheth
 	\Gamma_n^{(k)}(a) = 1 + bx_k^n[x_k^n]\,.
 \end{align}
 Operators working on different dimensions commute with each other
-\begin{align}
+\begin{align}\begin{split}
 	\Gamma_n^{(i)}(a_1)\Gamma_m^{(j)}(a_2)&= 1  +b_1x_i^n[x_i^n]+a_2x_j^m[x_j^m] + a_1a_2x_i^nx_j^m[x_i^n x_j^m]\\
 	&= \Gamma_m^{(j)}(a_2)\Gamma_n^{(i)}(a_1)\,.
-\end{align}
+\end{split}\end{align}
 We can write $\Gamma^{(k)} = \Gamma_{n_1}(a_{k,n_1})\ldots\Gamma_{n_r}(a_{k,n_r})$ as before. This allows us to write a multidimensional operator in terms of its constituent pieces in whichever order we prefer. We are of course interested in finding eigenvalues and eigenfunctions for such operators. We could either find those with the same method as before or we could find it via induction.
 \begin{prop} All monomials $x_{[d]}^P$ are eigenfunctions of $\Gamma = \Gamma^{(1)}\ldots\Gamma^{(d)}$. Their eigenvalues are determined by the action of $\Gamma^{(k)}$ on $x_k^{P_k}$. That is, the eigenvalues are products of the eigenvalues produced by the single-dimensional operators.
 \end{prop}
@@ -150,18 +150,18 @@ We have a doubly-infinite recursion so we can pick an arbitrary initial conditio
 	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,.
 \end{align}
 Computing $u(x)$ formally leads to
-\begin{align}
+\begin{align}\begin{split}
 	u(x) &=  \sum_{k=1}^{\infty} u_{n-k}x^{n-k}+\sum_{k=0}^{\infty} u_{n+k}x^{n+k}\\
 	        &= x^n\sum_{k=1}^{\infty}\left(\frac{\lambda}{ax}\right)^k +  x^n\sum_{k=0}^{\infty} \left(\frac{x}{\lambda}\right)^k\\
 	        &= \frac{x^{n-1}x}{ax-\lambda}-\frac{x^n\lambda}{x-\lambda}\\
 	        &=\lambda x^n\left(\frac{1}{\lambda -x}- \frac{1}{\lambda - ax}\right)\\
 	        &=-\frac{\lambda b x^{n+1}}{(\lambda-x)(\lambda-ax)}\,.
-\end{align}
+\end{split}\end{align}
 We could also try using the other definition. Let $u = u_nx^n + v$ where $u$ is now an eigenfunction of $S\Gamma$. Let $S = S_0 + S'$. Then we have
-\begin{align}
+\begin{align}\begin{split}
 	S\Gamma u &= (S_0+S')(au_nx^n+v) = \lambda(u_nx^n+v)\\
 	0&=(au_nS_0-\lambda u_n+\sum_{k\neq n}S_k u_{n-k})x^n  + au_nS'x^n+S'v-\lambda v \,.
-\end{align}
+\end{split}\end{align}
 We find that for example
 \begin{align}
 	(\lambda - a S_0)u_n = \sum_{k\neq n}S_k u_{n-k}
@@ -176,10 +176,10 @@ In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laur
 	{\mc{L}}^{\um} = \sum_{k=0}^{\infty}t^k(\Gamma S)^k
 \end{align}
 where $(\Gamma S)^k$ is an iteration of the inhomogeneous operator with $(\Gamma S)^0 = 1$. However this inverse is not easy to use as the iteration become quite complicated due to the nature of the random walks. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$.Then we calculate
-\begin{align}
+\begin{align}\begin{split}
 	(\mc{L}-\lambda I) u &= u - \lambda u -t\Gamma Su\\
 	t \Gamma S u &= (1-\lambda)u = \mu u\,.
-\end{align}
+\end{split}\end{align}
 If $\lambda = 1$ we seek to find the kernel of $\Gamma S$ which we did in the previous section. The eigenfunctions of $\mc{L}$ for eigenvalue $\lambda = 1$ are the functions $u \in \ol{S}\ker{\Gamma}$.
 
 Next let $u$ be given by a finite order Laurent series

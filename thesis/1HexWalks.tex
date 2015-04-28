@@ -10,7 +10,7 @@
 
 We'll tackle the problem of random walks on a honey-comb lattice. This is an example of a problem set on a different topology. It's our first problem dealing with a random walk model where the direction in which you go depends on where you are on the lattice. It can be interpreted as a random walk model on the plane where we have two distinct step polynomials depending on where we are. Because of this the flavour of the problem will be quite different. However it shall serve as a good example of the use of operators. We start by embedding the honeycomb lattice in $\ze^2$ where the first hexagon has coordinates
 \begin{align}
-	\{(0,0),(1,1),(1,2),(0,0),(-1,2),(-1,1)\}
+	\{(0,0),(1,1),(1,2),(0,0),(\um1,2),(\um 1,1)\}
 \end{align}
 and the rest of the lattice is obtained by tiling the plane with this hexagon. As before we let $Q$ be the generating function for the random walks on the lattice where $x,y$ keep track of the endpoint of a walk and $t$ keeps track of its length. Of course, off the lattice the terms will have zero coefficients. Out of thin air we create two operators $C_1$ and $C_2$, acting on $Q$, which pick out all the bottom and top corners of the hexagon tiles respectively. By picking out we mean that $C_1$ results in the partial generating function corresponding the the coordinates given in the two situations. The condition is that $C_1+C_2 = 1$ the identity. These two locations give two distinct possibilities for step sets so we'll give them their own step polynomials. Let's call their respective step polynomials $S_1$ and $S_2$ given by
 \begin{align}
@@ -31,7 +31,7 @@ We may wish to restrict the random walks to the quarter plane or in some other w
 \begin{align}
 	(1-tE\Sigma)Q = 1\,.
 \end{align}
-Of course we can also label the walks that interact with specific locations. We repeate the work with the extra operator $L$. In general we can use an operator $\Gamma$ to encapsulate everything extra that we do. It remains to find the actual operators $C_1$ and $C_2$.
+Of course we can also label the walks that interact with specific locations. We repeat the work with the extra operator $L$. In general we can use an operator $\Gamma$ to encapsulate everything extra that we do. It remains to find the actual operators $C_1$ and $C_2$.
 
 %============================
 \section{Operators}
@@ -101,27 +101,27 @@ Then the actions of $h$
 	hS_2 &= -i(x+\ol{x})\ol{y}+iy = igS_2 = iS_2^\ast\,.
 \end{align}
 These relatons allows us to complete the rest of the relations iteratively (maybe a multiplication table would be good here)
-\begin{align}
+\begin{align*}
 	hS_1 &=-iS_1^\ast,\quad h^2 S_1 = -S_1,\quad h^3 S_1 = i S_1^\ast\,,\\
 	ghS_1 &=-iS_1, \quad gh^2 S_1 = -S_1^\ast,\quad gh^3 S_1 =- i S_1\,,\\
 	hS_2&= iS_2^\ast,\quad h^2 S_2 = -S_2,\quad h^3 S_2 = i S_2^\ast\,,\\
-	ghS_2 &= iS_2,\quad gh^2 S_2 = -S_2^\ast,\quad gh^3 S_2 = -i S_2\,.\\
-\end{align}
+	ghS_2 &= iS_2,\quad gh^2 S_2 = -S_2^\ast,\quad gh^3 S_2 = -i S_2\,.
+\end{align*}
 Now $g$ acts on $D_{jk}$ in the following way
-\begin{align}
+\begin{align}\begin{split}
 	g(D_{jk}f(x,y)) &= g\sum_{m,n}\ext{x^{2m+j}y^{4m+k}}f(x,y)\\
 			    &= \sum_{m,n}(-x)^{2m+j}y^{4m+k}f_{2m+j,4m+k}\\
 			    &=(-1)^jD_{jk}f(x,y)\,.
-\end{align}
+\end{split}\end{align}
 Similarly $h$ acts on $D_{jk}$ in the following way
 \begin{align}
 	h(D_jk f(x,y)) = i^k D_{jk} f(x,y)\,.
 \end{align}
 Or specifically
-\begin{align}
+\begin{align*}
 	g D_{00} &= D_{00},\quad gD_{11} = -D_{11},\quad g D_{03} = D_{03},\quad  g D_{12} = -D_{12}\,,\\
-	h D_{00} &= D_{00},\quad hD_{11} = iD_{11},\quad h D_{03} =-i D_{03},\quad  h D_{12} = -D_{12}\,.\\
-\end{align}
+	h D_{00} &= D_{00},\quad hD_{11} = iD_{11},\quad h D_{03} =-i D_{03},\quad  h D_{12} = -D_{12}\,.
+\end{align*}
 We can now move on to finding the actions on the operator $\Sigma$. To spare some of the work it is enough to find the actions $1,gh,h^2$ and $gh^3$ since we'll have only 4 independent relations on the operators. Let 
 \begin{align}
 	A = S_1(D_{00} + D_{12}),\quad B = S_2(D_{11}+D_{03})\,.
@@ -133,11 +133,8 @@ Then
 \end{align}
 We have
 \begin{align}
-	(1+h^2)\Sigma = gh(1+h^2)\Sigma = 2 B
-\end{align}
-and
-\begin{align}
-	(1-h^2)\Sigma = igh(1-h^2) = 2A\,.
+	(1+h^2)\Sigma &= gh(1+h^2)\Sigma = 2 B
+	(1-h^2)\Sigma &= igh(1-h^2) = 2A\,.
 \end{align}
 By using these eliminations we can write new forms of the functional equation. We have
 \begin{align}
@@ -192,21 +189,23 @@ where the latter equalities follow since we are dealing with the even and odd $y
 	C_2Q-tS_1C_1Q &= 0\,.
 \end{align}
 This is a linear system in the quantities $C_1Q$ and $C_2 Q$. The associated determinant is $1-t^2S_1S_2 \neq 0$ so we find the unique solution to be
-\begin{align}
+\begin{align}\begin{split}
 	C_1Q &= \frac{1}{1-t^2S_1S_2} = \frac{x^2y^2}{x^2y^2-t^2(x+y^2+x^2y^2)(1+x^2+xy^2)}\\
-		&= 1 + (3+\ol{x}^2+x^2+\ol{x}\ol{y}^2+x\ol{y}^2+y^2\ol{x}+xy^2)t^2 + \cdots\,,\\
+		&= 1 + (3+\ol{x}^2+x^2+\ol{x}\ol{y}^2+x\ol{y}^2+y^2\ol{x}+xy^2)t^2 + \cdots\,,
+\end{split}\end{align}
+\begin{align}\begin{split}
 	 C_2Q &= \frac{t S_1}{1-t^2 S_1S_2} = \frac{txy(x+(1+x^2)y^2)}{x^2y^2-t^2(x+y^2+x^2y^2)(1+x^2+xy^2)}\\
 		 &= (\ol{y}+y\ol{x}+xy)t + \cdots\,.
-\end{align}
+\end{split}\end{align}
 Finally
 \begin{align}
 	Q = C_1 Q + C_2 Q = \frac{1+tS_1}{1-t^2 S_1S_2} = \sum_{k=0}^{\infty} t^{2k} S_1^k S_2^k +\sum_{k=0}^{\infty} t^{2k+1} S_1^{k+1} S_2^k\,.
 \end{align}
 \begin{prop} The generating function $Q$ for unrestricted random walks on the honeycomb lattice is given by
-\begin{align}
+\begin{align}\begin{split}
 	Q(x,y;t) &= \frac{x^2y^2+txy(x+y^2+x^2y^2)}{x^2y^2-t^2(1+x^2+xy^2)(x+y^2+x^2y^2)}\\
 		&= 1  + (\ol{y}+y\ol{x}+xy)t + (3+\ol{x}^2+x^2+\ol{x}\ol{y}^2+x\ol{y}^2+y^2\ol{x}+xy^2)t^2 + \cdots\,.
-\end{align}
+\end{split}\end{align}
 \end{prop}
 
 \endinput

@@ -34,16 +34,16 @@ The second equation contains many less terms. To see this we take a look at the 
 	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}
 \end{align}
 which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{\um 1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
-\begin{align}
+\begin{align}\begin{split}
 	L^{\um 1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
 	&=  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
-\end{align}
+\end{split}\end{align}
 and
-\begin{align}
+\begin{align}\begin{split}
 	 ESQ &= (1-\ol{x}_1[\ol{x}_1])\ldots(1-\ol{x}_d[\ol{x_d}])(SQ) \\
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I [x_I^{-\one}](SQ) \\
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I S_I^{-\one}Q_I^\oo
-\end{align}
+\end{split}\end{align}
 where the last line follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$.
 Therefore the functional equation is
 \begin{align}
@@ -71,11 +71,11 @@ and the $k$-th power extraction for $k\ge 1$ yields
 	[x_i^k]E_i &= [x_i^k] - [x_i^k]\ol{x_i}[\ol{x_i}] = [x_i^k]\,.
 \end{align}
 So, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ from the picture while for $k = 0$ it removes $E_i$ but leaves a residual $\ol{a_i}$ behind for $M_i$. Therefore if we extract $[x_I^\oo]$ from the functional equation we have
-\begin{align}
+\begin{align}\begin{split}
 	[x_I^\oo]a_{[d]} =\ol{a}_{[d]} &= [x_I^\oo](M_{[d]} - tE_{[d]}S)Q \\
 	= &\left(\ol{a}_{I}M_{[d]\backslash I}[x_I^\oo] - tE_{[d]\backslash I}[x_I^\oo]S\right)Q\\
 	= &[x_I^\oo](\ol{a}_{I}M_{[d]\backslash I}- tE_{[d]\backslash I}S)Q
-\end{align}
+\end{split}\end{align}
 so that
 \begin{align}
 	\ol{a}_{[d]\backslash I} = [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q\,.
@@ -85,10 +85,10 @@ Written in another way this becomes
 	\ol{a}_I = [x_{[d]\backslash I}^\oo](M_I - a_{[d]\backslash I} tE_I S)Q
 \end{align}
 and we can use whichever notation is more useful at the time. The latter notation underscores the idea that when we extract coefficients for walks that end at some hyperplane intersection we are having a reduced version of the functional equation at the cost of an added $a$ term. When we extract a general term we can use the operator $[x_I^\oo x_J^P]$ where $P$ is a set of powers greater than 0 and $I\cap J = \emptyset$, $|P| \ge 1$ and $I\cup J = K$. We find
-\begin{align}
+\begin{align}\begin{split}
 	 [x_I^\oo x_J^P] a_{[d]} = 0 &= [x_I^\oo x_J^P](M_{[d]} - tE_{[d]}S)Q \\
 	 &= [x_I^\oo x_J^P](\ol{a}_{I} M_{[d]\backslash K} - t E_{[d]\backslash K} S)Q
-\end{align}
+\end{split}\end{align}
 which we can write as
 \begin{align}
 	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0\,.
@@ -107,11 +107,11 @@ We can try going a little further in the coefficient extraction to come up with 
 	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I
 \end{align}
 where $R_I$ is a collection of $S_I^{\um P} Q_I^{P}$ terms that involves sets $P$ whose terms are not all zero. We can use this inside the functional equation
-\begin{align}
+\begin{align}\begin{split}
 	\ol{a}_{[d]\backslash I} &= M_{[d]\backslash I}[x_I^\oo]Q- a_{I}t E_{[d]\backslash I}[x_I^\oo](SQ)\\
 	& = M_{[d]\backslash I}Q_I^\oo- a_{I}t E_{[d]\backslash I}(S_I^\oo Q_I^\oo + R_I)\\
 	& = (M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo  -a_{I}t E_{[d]\backslash I}R_I
-\end{align}
+\end{split}\end{align}
 so we can re-write the functional equation as
 \begin{align}
 	(M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo = a_I(\ol{a}_{[d]}+t R_I')
@@ -143,22 +143,22 @@ where when $I = \emptyset$, $K_J(I) = K_J$.
 where the $R_I'$ term involves only higher order coefficient extractions from $Q$, that is not all the powers are zero.
 \end{corollary}
 Now, to calculate the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{\um P} Q_I^{P}$ for various nonnegative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables so they don't have non-negative coefficients. Let $sq = S_I^{\um P} Q_I^{P}$. Then
-\begin{align}
+\begin{align}\begin{split}
 	E_j sq &= sq - \ol{x}_j(sq)_j^{\um 1} \\ 
 	&= sq - \ol{x}_j(s_j^{\um 1}q_j^0+s_j^{0}q_j^{\um 1}+s_j^{1}q_j^{-2})\\
 	& = sq - \ol{x}_js_j^{\um 1}q_j^0\,.
-\end{align}
+\end{split}\end{align}
 Hence
 \begin{align}
 	E_{K} sq &= \sum_{J\subseteq K} (-1)^{|J|}\ol{x}_J s_J^{-\one} q_J^\oo\,.
 \end{align}
 Finally we can write
-\begin{align}
+\begin{align}\begin{split}
 	R_I' &= E_{[d]\backslash I} R_I \\
 	& = \sum_{P > \oo} E_{[d]\backslash I}S_I^{\um P}Q_I^P\\
 	& = \sum_{P > \oo} \sum_{J \subseteq [d]\backslash I} (-1)^{|J|} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\\
 	& = \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\,.
-\end{align}
+\end{split}\end{align}
 \begin{prop} The functions $R_I'$ are given by
 \begin{align}
 	R_I' =  \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\,.
@@ -182,13 +182,13 @@ Q = \sum_{k=0}^{\infty}t^k (DS)^k(1)
 \end{align}
 where $(DS)^k(1) = DS(\ldots (DS(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $DS$ applied to it. It can be easily implemented in symbolic calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way - by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane and finally mark the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We haven't been able to find closed forms for the repeated operator applications in general. Here's an example that illustrates the use of the operators.
 \begin{example} Let $S = x_1+\ol{x}_1+x_2+\ol{x}_2 = S_1(x_1)+S_2(x_2)$. We start with $DS^0(1) = 1$. Then
-\begin{align}
+\begin{align*}
 	DS^1(1) &= LE(S_1+S_2) =L(x_1+x_2) = a_2x_1+a_1x_2\,,\\
 	DS^2(1) &= LE(S_1+S_2)(a_2x_1+a_1x_2) \\
 	&= LE(a_2S_1x_1+a_1x_2S_2 + a_2x_1S_2+a_1x_2S_1)\\
 	&= L(a_2S_1x_1+a_1x_2S_2+(a_1+a_2)x_1x_2)\\
 	&=a_1a_2^2+a_2^2x_1^2+a_1a_2^2+a_1^2x_2^2+(a_1+a_2)x_1x_2
-\end{align}
+\end{align*}
 which allows us to write
 \begin{align}
 	Q & = 1 + (a_2x_1+a_1x_2)t + \left(a_1a_2(a_1+a_2)+(a_2^2x_1^2+a_1^2x_2^2)+(a_1+a_2)x_1x_2\right)t^2+\cdots\,.
@@ -214,11 +214,11 @@ This is the form we see in the master functional equation. Another way we could 
 \end{split}	
 \end{align}
 where $EQ = Q$ since $Q$ is already of a valid form. We can go with both ways at the same time as well.
-\begin{align}
+\begin{align}\begin{split}
 	KQ + t(1-LE)SQ &= 1\\
 	KQ + (1-LE)(1-tS-1)Q &=1\\
 	KQ + (1-LE)KQ - (1-L)Q &= 1\,.
-\end{align}
+\end{split}\end{align}
 We can apply the inverse $L^{\um 1}$ to those equations too, in particular on the second one.
 \begin{align}
 \begin{split}

@@ -167,12 +167,12 @@ where the initial condition is $Q_0 = a_{0,0}$. Starting from $Q_n$ we can find 
 	Q_{n+1} = \Gamma_{n+1}SQ_n
 \end{align}
 Using a computer we can easily iterate this to get more and more steps. We can also get $Q^{\leq n+1}$ from $Q^{\leq n}$ since
-\begin{align}
+\begin{align}\begin{split}
 	t\Gamma_{n+1}SQ^{\leq n} & = \sum_{k=0}^n \Gamma_{n+1}SQ_kt^{k+1}\\
 	& = \sum_{k=0}^n \Gamma_{k+1}SQ_kt^{k+1}\\
 	& = \sum_{k=0}^n Q_{k+1}t^{k+1}\\
 	&= Q^{\leq n+1}-Q_0
-\end{align}
+\end{split}\end{align}
 or in other words
 \begin{align}
 	 Q^{\leq n+1} = a_{0,0} + t\Gamma_{n+1}SQ^{\leq n}

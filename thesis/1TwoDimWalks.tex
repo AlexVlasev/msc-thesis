@@ -30,13 +30,13 @@ We shall expand the equation to its explicit form. We have
 	L^{\um 1} Q = (1-c_1[x_1^0])(1-c_2[x_2^0]) Q = Q - c_1 Q_1^0 - c_2 Q_2^0 + c_1c_2 \Qf{0,0}
 \end{align}
 and
-\begin{align}
+\begin{align}\begin{split}
 	ESQ  &= (1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2})SQ \\
 	&= SQ - \ol{x}_1S_1^{\um 1}Q_1^0 - \ol{x}_2S_2^{\um 1}Q_2^0 + \ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}\Qf{0,0}
-\end{align}
+\end{split}\end{align}
 where in the calculation we've dropped terms like $Q_i^j$ for $j <0$ since the model is restricted ot the quarter plane. Combining all the terms computed so far leads to the master functional equation
 \begin{align*}
-	(1-tS)Q - (c_1-t\ol{x_1}S_1^{\um 1}) Q_1^0- (c_2-t\ol{x_2}S_2^{\um 1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{\um 1,\um 1})Q_{1,2}^{0,0}  = \ol{a_1a_2}\,.
+	(1-tS)Q - (c_1-t\ol{x}_1S_1^{\um 1}) Q_1^0- (c_2-t\ol{x}_2S_2^{\um 1}) Q_2^0+ (c_1c_2-t\ol{x_1x_2}S_{1,2}^{\um 1,\um 1})Q_{1,2}^{0,0}  = \ol{a_1a_2}\,.
 \end{align*}
 \begin{definition} For $I \subseteq [d]$ let
 \begin{align}
@@ -53,8 +53,8 @@ This allows us to re-write the equation neatly.
 We can also perform coefficient extractions like in the one-dimensional case and obtain further functional equations. The derivation is quite mechanical and very similar to the one-dimensional case.
 \begin{corollary} The generating function $Q$ satisfies the additional functional equations
 \begin{align*}
-(1-ta_1 S_1^0)Q_1^0 - (c_2-ta_1\ol{x_2}S_{1,2}^{0,\um 1})Q_{1,2}^{0,0} - a_1 t(S_1^{\um 1}Q_1^1-\ol{x_2}S_{1,2}^{\um 1,\um 1}Q_{1,2}^{1,0}) &=\ol{a_2}\,,\\
-(1-ta_2 S_2^0)Q_2^0 - (c_1-ta_2\ol{x_1}S_{1,2}^{\um 1,0})Q_{1,2}^{0,0} -a_2t(S_2^{\um 1}Q_2^1-\ol{x_1}S_{1,2}^{\um 1,\um 1}Q_{1,2}^{0,1}) &=\ol{a_1}\,,\\
+(1-ta_1 S_1^0)Q_1^0 - (c_2-ta_1\ol{x}_2S_{1,2}^{0,\um 1})Q_{1,2}^{0,0} - a_1 t(S_1^{\um 1}Q_1^1-\ol{x}_2S_{1,2}^{\um 1,\um 1}Q_{1,2}^{1,0}) &=\ol{a}_2\,,\\
+(1-ta_2 S_2^0)Q_2^0 - (c_1-ta_2\ol{x}_1S_{1,2}^{\um 1,0})Q_{1,2}^{0,0} -a_2t(S_2^{\um 1}Q_2^1-\ol{x}_1S_{1,2}^{\um 1,\um 1}Q_{1,2}^{0,1}) &=\ol{a}_1\,,\\
 (1-a_1 a_2 t \Sf{0,0})Q_{1,2}^{0,0} - ta_1a_2t(\Sf{\um 1,\um 1}\Qf{1,1}+\Sf{\um 1,0}\Qf{1,0}+\Sf{0,\um 1}\Qf{0,1})&= 1
 \end{align*}
 where $\Sf{0,0} = 1$ if we have resting steps and zero otherwise.
@@ -65,7 +65,7 @@ We should contrast this quick analysis to the one done without the operator nota
 \section{Investigating relationships between $G,G_1,G_2$ and $G_{1,2}$}
 %=======================================
 
-In this work we'll focus on investigating the properties of the function $G(a_1,a_2) = \Qf{0,0}(a_1,a_2)$. Let $G_1 = G(1,a_2)$, $G_2 = G(a_1,1)$ and $G_{1,2} = G(1,1)$. We could also see these as coefficient extractions of $G$ with respect to $b_1$, $b_2$ and $b_1b_2$, i.e. $G_{1,2} = [b_1^0b_2^0] G$. In previous works it has been shown that there is a relationship between these quantities depending on the particular step set $S$. In some cases (like diagonal walks $S = (x_1+\ol{x_1})(x_2+\ol{x_2})$) we have a linear relationship between these quantities. In other cases (like cartesian walks $S = x_1 +\ol{x}_1 + x_2 + \ol{x}_2$) we don't have such a linear relationship but we have a rational one, that is $G$ is a rational function of $G_1$, $G_2$ and $G_{1,2}$. The aim of the followin sections is to investigate when such relationships exist, when se have a relationship of that type and whether we have other cases.
+In this work we'll focus on investigating the properties of the function $G(a_1,a_2) = \Qf{0,0}(a_1,a_2)$. Let $G_1 = G(1,a_2)$, $G_2 = G(a_1,1)$ and $G_{1,2} = G(1,1)$. We could also see these as coefficient extractions of $G$ with respect to $b_1$, $b_2$ and $b_1b_2$, i.e. $G_{1,2} = [b_1^0b_2^0] G$. In previous works it has been shown that there is a relationship between these quantities depending on the particular step set $S$. In some cases (like diagonal walks $S = (x_1+\ol{x}_1)(x_2+\ol{x}_2)$) we have a linear relationship between these quantities. In other cases (like cartesian walks $S = x_1 +\ol{x}_1 + x_2 + \ol{x}_2$) we don't have such a linear relationship but we have a rational one, that is $G$ is a rational function of $G_1$, $G_2$ and $G_{1,2}$. The aim of the followin sections is to investigate when such relationships exist, when se have a relationship of that type and whether we have other cases.
 
 The work can be split into several cases - walks that never leave the origin and ones that leave but never return to the origin. In the first case the relationship is trivially $G-G_1 - G_2 + G_{1,2} = 0$ because $Q = 1$ itself and so $G = 1$. In the second case $Q$ may be more complicated but again $G = 1$ trivially since no walks end at the origin. This case satisfies the same relationship. However, once we move beyond this stage we need to consider the problem more carefully.
 
@@ -123,16 +123,16 @@ In general if we are applying operators that don't involve $t$ to a Hadamard pro
 but so far this is not a relationship of the type $B_1B_2 (fQ) = g$ since taking out the functions $f_1$ and $f_2$ from within the Hadamard product is nontrivial in general. One might be tempted to say that $f = f_1 \odot f_2$ but that would be incorrect. It would be neat to see if there is a way to find $f$ in terms of $f_1$ and $f_2$.
 
 There is a way to see the Hadamard product solution without the iteration method. Suppose that $Q_i$ is a solution to the functional equation $(M_i - tE_iS_i)Q_i = \ol{a}_i$ for $i = 1$ and $i = 2$. Then we claim that $Q = Q_1 \odot Q_2$ is a solution to the functional equation $(M - tES)Q = \ol{a}_1\ol{a}_2$. To this end we calculate
-\begin{align}
+\begin{align}\begin{split}
 	(M-tES)Q &= M (Q_1\odot Q_2) - tES(Q_1\odot Q_2)\\
 	& = (M_1Q_1\odot M_2Q_2) - t((E_1S_1Q_1)\odot (E_2S_2Q_2))\,.
-\end{align}
+\end{split}\end{align}
 Then we substitute $ M_i Q_i = \ol{a}_i + tE_iS_iQ_i$ into the first term to obtain
-\begin{align}
+\begin{align}\begin{split}
 	 (M_1Q_1\odot M_2Q_2) &= (\ol{a}_1+ t E_1 S_1 Q_1)\odot(\ol{a}_2 + t E_2 S_2 Q_2)\\
 	 & = \ol{a}_1\odot\ol{a}_2 + \ol{a}_1\odot (t E_2 S_2 Q_2) + \ol{a}_2\odot(t E_1 S_1 Q_1) \\
 	 &\quad+ (t E_1 S_1 Q_1)\odot(t E_2 S_2 Q_2))\,.
-\end{align}
+\end{split}\end{align}
 We have
 \begin{align}
 	\ol{a}_i\odot (t E_j S_j Q_j) = \ol{a}_i [t^0]t E_j S_j Q_j = 0
@@ -171,7 +171,7 @@ We have cases
 \end{itemize}
 In conclusion, either every transformation works and we don't have an interesting case or we have the identity transformation plus a possible second one. The last transformation creates a nontrivial group and we can have groups of various orders. Let
 \begin{align}
-	g_1 : x_1 \mapsto \ol{x_1}\frac{S_1^{\um 1}}{S_1^{1}},\quad g_2 : x_2 \mapsto \ol{x_2}\frac{S_2^{\um 1}}{S_2^{1}}
+	g_1 : x_1 \mapsto \ol{x}_1\frac{S_1^{\um 1}}{S_1^{1}},\quad g_2 : x_2 \mapsto \ol{x}_2\frac{S_2^{\um 1}}{S_2^{1}}
 \end{align}
 whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that is they are involutions. We have three cases for each $x$
 \begin{itemize}
@@ -183,7 +183,7 @@ whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that 
 
 \begin{itemize}
 \item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus means that we have no steps that go away from the origin. Therefore $S = \Sf{0,0}$. Thus we have only two models - no steps or a resting step. (I should include little diagrams with arrows like before).
-\item[Case 1.2]: Here any transformation applies on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ so the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$ in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x_1}$ step with a possible resting step.
+\item[Case 1.2]: Here any transformation applies on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ so the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$ in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x}_1$ step with a possible resting step.
 \item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$ and this means $S_2^{\um 1}, S_2^1 \neq 0$. This means we must have either both vertical steps $x_2$ and $\ol{x}_2$ in the 1.3 case or two horizontal steps $x_1$ and $\ol{x}_1$ in the 3.1 case.
 \item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be obtained by a rotation around the origing of 90, 180 and 270 degrees). The possible models are (I should include the drawings): $\{$N,E,NE$\}$, $\{$N,NE$\}$, $\{$E,NE$\}$, $\{$N,E$\}$, $\{$NE$\}$. In other words, the subsets of $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. This is a case of group $G(K)$ or order 1.
 \item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case). Also $S_1^{\um 1}, S_2^1 \neq 0$ so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed.This is a case of group $G(K)$ of order 2.
@@ -208,15 +208,15 @@ Both $Q_1$ and $Q_2$ are functions we solved for in the one-dimensional case
 	Q_1(x_1,a_1,t) = \frac{1}{1-a_1 t},\quad Q_2(x_2,a_2,t) = q(x_2,a_2,t)
 \end{align}
 for some solution $q$ from that section. Therefore
-\begin{align}
+\begin{align}\begin{split}
 	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
 	&= \frac{1}{1-a_1 t}\odot q(x_2,a_2,t) = q(x_2,a_2,a_1 t)\,.
-\end{align}
+\end{split}\end{align}
 Similarly in the 2.1, 3.1 cases
-\begin{align}
+\begin{align}\begin{split}
 	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
 	& =  q(x_1,a_1,t) \odot \frac{1}{1-a_2 t}= q(x_1,a_1,a_2 t)
-\end{align}
+\end{split}\end{align}
 and this completes the solution. What about the relationship with the $B_1B_2$ transformation? If $f(a,t)$ is the function that goes together with $q(x,a,t)$ then the function $F(a_1,a_2,t)$ that goes together with $Q(x_1,x_2,a_1,a_2,t)$ is given by
 \begin{align}
 	F(a_1,a_2,t) = f(a_2,a_1 t)\,.
@@ -235,10 +235,10 @@ We also have a lot of models that are essentially one-dimensional with a single 
 	q(x,a,t) = \frac{1-s_0 t}{(1-st)(1-a s_0 t)} = \frac{1-s_0 t}{(1-x_1s_1 t)(1-a s_0 t)}\,.
 \end{align}
 Then we have
-\begin{align}
+\begin{align}\begin{split}
 	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
 	&=  q(x_1,a_1,t) \odot \frac{1}{1-a_2 t}= q(x_1,a_1,a_2 t)
-\end{align}
+\end{split}\end{align}
 and therefore
 \begin{align}
 	Q(x_1,x_2,a_1,a_2,t) = \frac{1-a_2 \Sf{0,0} t}{(1-(x_1+\Sf{0,0})a_2 t)(1-a_1a_2 \Sf{0,0}t)}\,.
@@ -248,12 +248,12 @@ The interesting models in case 2.2 are those with non-negative steps that we lis
 	S = \alpha x_1 + \beta x_2 + \gamma x_1 x_2 + \delta\,.
 \end{align}
 The functional equation and its zero extractions are
-\begin{align}
+\begin{align}\begin{split}
 (1-tS)Q - c_1 Q_1^0- c_2 Q_2^0+ c_1c_2 Q_{1,2}^{0,0}  &= \ol{a_1a_2}\,,\\
-(1-ta_1 (\delta+\beta x_2))Q_1^0 - c_2Q_{1,2}^{0,0} &=\ol{a_2}\,,\\
-(1-ta_2 (\delta+\alpha x_1))Q_2^0 - c_1Q_{1,2}^{0,0}  &=\ol{a_1}\,,\\
+(1-ta_1 (\delta+\beta x_2))Q_1^0 - c_2Q_{1,2}^{0,0} &=\ol{a}_2\,,\\
+(1-ta_2 (\delta+\alpha x_1))Q_2^0 - c_1Q_{1,2}^{0,0}  &=\ol{a}_1\,,\\
 (1-a_1 a_2 t \delta)Q_{1,2}^{0,0} &= 1\,.
-\end{align}
+\end{split}\end{align}
 We solve the problem by a simple back-substitution of the variables.
 \begin{align}
 \Qf{0,0} & = \frac{1}{1-a_1a_2\delta t}\,,\\
@@ -269,7 +269,7 @@ where the last line explicitly shows that $Q$ is composed of functions that depe
 \end{align}
 works exactly. First
 \begin{align}
-B((1 - a_1 a_2 \delta t)\ol{a}_1\ol{a_2}) = B(\ol{a}_1\ol{a}_2 - t \delta) = B(\ol{a}_1\ol{a}_2) - B(t \delta) = \ol{a}_1\ol{a}_2- \ol{a}_2-\ol{a}_1 + 1 = c_1 c_2\,.
+B((1 - a_1 a_2 \delta t)\ol{a}_1\ol{a}_2) = B(\ol{a}_1\ol{a}_2 - t \delta) = B(\ol{a}_1\ol{a}_2) - B(t \delta) = \ol{a}_1\ol{a}_2- \ol{a}_2-\ol{a}_1 + 1 = c_1 c_2\,.
 \end{align}
 Then
 \begin{align}
@@ -281,12 +281,12 @@ Putting the two quantities together along with dividing by $1-tS$ shows that $B(
 \subsection{Case 2.3 - group of order 2}
 %=======================================
 There are two possibilities here - positive and negative. In the negative case $S_1^1 = 0$ and the steps have a non-positive $x_1$ component. Due to the fact that a lot of steps are not going to be taken by random walks in those models, all of these models reduce to the cases of $S$ consising of a rest step and maybe a single step in a positive direction. This takes care of 34 models (or 68 if we include a rest step). The interesting models are those with a positive $x_1$ component, or in other words, models where $S_1^{\um 1} = 0$. The calculations for these models become increasingly more complicated. The functional equation and its extracted forms read as
-\begin{align}
+\begin{align}\begin{split}
 (1-tS)Q - c_1 Q_1^0- (c_2 -t\ol{x}_2 S_1^{\um 1})Q_2^0+ c_1c_2 Q_{1,2}^{0,0}  &= \ol{a_1a_2}\,,\\
-(1-ta_1 S_1^0)Q_1^0 - (c_2 - ta_1 \ol{x}_2 \Sf{0,-1})Q_{1,2}^{0,0} &=\ol{a_2}\,,\\
-(1-ta_2 S_2^0)Q_2^0 - c_1Q_{1,2}^{0,0}  - a_2 t S_1^{\um 1} Q_2^1&=\ol{a_1}\,,\\
+(1-ta_1 S_1^0)Q_1^0 - (c_2 - ta_1 \ol{x}_2 \Sf{0,-1})Q_{1,2}^{0,0} &=\ol{a}_2\,,\\
+(1-ta_2 S_2^0)Q_2^0 - c_1Q_{1,2}^{0,0}  - a_2 t S_1^{\um 1} Q_2^1&=\ol{a}_1\,,\\
 (1-a_1 a_2 t \Sf{0,0})Q_{1,2}^{0,0} - ta_1 a_2 \Sf{0,-1} \Qf{0,1} &= 1\,.
-\end{align}
+\end{split}\end{align}
 We can identify a subproblem that is essentially one-dimensional and therefore already solved. For this we look at the second and fourth equations with the substitution $a_i = a, c_i = c, x_2 = x, ta_1 = \tau, S_1^0 = T, Q_1^0 (x_2)= q(x)$. These equations become
 \begin{align}
 (1-\tau T)q - (c - \tau  \ol{x} T_{-1})q_0 &=\ol{a}\,,\\
@@ -298,7 +298,7 @@ where $q_0 = q(a,\tau)$. This is the one-dimensional problem again. The solution
 \end{align}
 The reason the method worked in this case is that we have steps that keep a random walk staying on the $x_2$ axis and steps that take it away from the $x_2$ but no steps that have it return to it. This is similar to the case where a random walk leaves the $x_2$ axis never to come back. Essentially the problem splits into a one-dimensional one regarding the $x_2$ axis and a further 2D one once we step off the axis. We re-write the master equation as
 \begin{align}
-	(1-tS)Q - (c_2 -t\ol{x}_2 S_1^{\um 1})Q_2^0  &= \ol{a_1}(\ol{a}_2 + b_1 q  -b_1c_2q_0)  =\ol{a}_1\phi(x_2)\,.
+	(1-tS)Q - (c_2 -t\ol{x}_2 S_1^{\um 1})Q_2^0  &= \ol{a}_1(\ol{a}_2 + b_1 q  -b_1c_2q_0)  =\ol{a}_1\phi(x_2)\,.
 \end{align}
 Since $S_1^{\um 1},S_2^1 \neq 0$ we have a root $x_2 = \sigma_2$ that allows us to remove the $(1-tS)Q$ term and get
 \begin{align}

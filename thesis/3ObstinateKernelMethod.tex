@@ -117,10 +117,10 @@ We can also think of this process as applying a weighted orbit sum over group ac
 	D_2 = g_2(K_2) - K_2 g_2 = (1-g_2)K_2^\ast
 \end{align}
 where the weights are given by pre-multiplying an expression by $K_2^\ast$ before applying the operator $\Delta_2 = 1-g_2$. The equation can be written as
-\begin{align}
+\begin{align}\begin{split}
 	0 &= D_2(KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0})\\
 	0 &= D_2(K_1Q_1^0) - D_2(K_{12})\Qf{0,0} + D(\alpha)	    
-\end{align}
+\end{split}\end{align}
 where the second one follow from substituting $x_1 = \sigma_1$.
 The situation is similar to the Algebraic Kernel method except that the operators there retain the $KQ$ term and its orbit while they eliminate the $Q_1^0$ and $Q_2^0$ terms and their orbits. Since we'll be using operators like $D_2$ we'll have some notation.
 \begin{definition} For a concatenated list $L = L_1L_2\ldots$ of positive integer indices let $g_L = g_{L_1}g_{L_2}\ldots$ whenever this group action makes sense. That is, either the list is finite or there is some form of convergence when $L$ is infinite.
@@ -294,12 +294,12 @@ To eliminate the $X_2$ terms we take $A_{21}B_{212}$ times the first equation an
 	A_{21}B_{212}AB_2 X - A_2 BA_{212} B_{21} X_{212} = \beta(A_{21}B_{212}(B-B_2)+A_2 B(B_{212}-B_{21}))
 \end{align}
 We could obtain the same result by applying the following operator $D$ to both sides of the master functional equation.
-\begin{align}
+\begin{align}\begin{split}
 	D &=A_{21}B_{212} D_2[B_2] - A_2 B g_{212}D_2[B_2]\\
 	   &= (A_{21}B_{212} - A_2 B g_{212})D_2[B_2]\\
 	   &= (A_{21}B_{212} - g_{212}A_{21}B_{212})D_2[B_2]\\
 	   &= D_{212}[A_{21}B_{212}]D_2[B_2]\,.
-\end{align}
+\end{split}\end{align}
 Starting from the master functional equation we have
 \begin{align}
 	D(RHS) &= D(\beta) = \beta D_{212}[A_{21}B_{212}](B_2-B)
