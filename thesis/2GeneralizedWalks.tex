@@ -23,7 +23,7 @@ where $q_k$ are Laurent poynomials in the $x$ and $a$ variables.
 to avoid issues of expanding $F$ in Laurent series in some of the $x$ variables.
 \end{definition}
 
-\begin{definition} Let $\mc{M}$ be a given model. We'll denote with $S$ the Laurent polynomial (or series) keeping inventory of the stes $\mc{S}$. Let $K = 1-tS$ be the Kernel of $\mc{M}$. Let $E$ be an operator that eliminates monomials $x_{[d]}^P$ when $P$ is not in $\mc{D}$. Let $L$ be an operator that marks (or labels) monomials $x_{[d]}^P$ for $P \in \mc{D}_0$ in a specified way in the model. Note that $L$ is invertible with inverse $L^{\um 1}$ that is given by marking with $1/a$ instead.
+\begin{definition} Let $\mc{M}$ be a given model. We'll denote with $S$ the Laurent polynomial (or series) keeping inventory of the steps $\mc{S}$. Let $K = 1-tS$ be the Kernel of $\mc{M}$. Let $E$ be an operator that eliminates monomials $x_{[d]}^P$ when $P$ is not in $\mc{D}$. Let $L$ be an operator that marks (or labels) monomials $x_{[d]}^P$ for $P \in \mc{D}_0$ in a specified way in the model. Note that $L$ is invertible with inverse $L^{\um 1}$ that is given by marking with $1/a$ instead.
 \end{definition}
 
 This operator notation allows us to write down functional equations for $Q$ really quickly. We have
@@ -82,59 +82,74 @@ The example in the previous section shows that we can talk about marking operato
 \begin{align}
 	\Gamma_P = 1 + \sum_{p\in P}(a_p-1) \ext{x_{[d]}^p}
 \end{align}
-The form $a_p-1$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion $P = {\mc{D}}^c$ and $a_p = a$. The good thing is that in a lot of cases we don't need all the terms in the operator and in some cases we even find the operator has a portion that factors. We just need to ensure that we mark all the walks that touch the boundaries or go within the region marked for deletion. For example we can take the walks in one dimensions on the non-negative axis with steps of size at most $n$ in the negative direction. Then we can demonstrate the truncation with
+The form $a_p-1$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion $P = {\mc{D}}^c$ and $a_p = a$. In the models we have investigated so far we saw that we don't really need the whole operator but just some terms near the boundaries.
+\begin{example} If we consider random walks with small steps on the half-line in one dimension we have the operator
+\begin{align}
+	E = 1 - \sum_{n=1}^\infty \ext{\ol{x}_1^n}
+\end{align}
+but since we only have small steps there are no walks that go past $\ol{x}_1$ in the negative direction so we can instead use the operator $E' = 1- \ext{\ol{x}_1}$ to the same effect. Although the operators are different in form they are essentially the same with regards to the problem at hand. We'll say they are model-equivalent.
+\end{example}
+We may think of the random walk models as really living completely within the sumset $\mc{S}+\mc{D}$ of points that are combinations of points in $\mc{D}$ and steps $\mc{S}$. This is how far the model can reach from within $\mc{D}$ by taking a single step.
+\begin{definition} Given sets $A$ and $B$ we let their sumset be defined as
+\begin{align}
+	A+ B = \{a+b\,|\,a\in A,\, b\in B\}\,.
+\end{align}
+\end{definition}
+\begin{definition} Given a random walk model $\mc{M}$ with domain $\mc{D}$ and step set $\mc{S}$, define the reach of $\mc{M}$ be the sumset $\mc{D}+\mc{S}$.
+\end{definition}
+With this in mind we can define a notion of equivalence for operators.
+\begin{definition} Let $\mc{M}$ be a random walk model in $\ze^d$ and let $\Gamma$ and $\Gamma'$ be two operators acting on $\ze^d$. Then $\Gamma \equiv_{\mc{M}} \Gamma'$ if and only if $\Gamma$ and $\Gamma'$ act the same way on monomials from the reach of $\mc{M}$. That is, we call these operators model-equivalent if and only if $\Gamma  x^P = \Gamma' x^P$ for all $P\in \mc{D}+\mc{S}$.
+\end{definition}
+In the preceding example $E\equiv E'$ since they act the same way on monomials from the reach of $\mc{M}$, that is monomials $x_1^n$ for $n\ge \um 1$. Similarly in the two-dimensional problem we have an equivalence between the operator $E$ and the operator $E' = (1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2})$.
 \begin{align}
 	\Gamma = 1 + (a-1)\sum_{k=1}^{\infty} \ext{\ol{x}^k} = 1 + (a-1)\sum_{k=1}^{n} \ext{\ol{x}^k}
 \end{align}
-We only need to consider how far a walk can step outside of the region $\mc{D}$ via the step set in $S$. In two dimensions we have
+When the boundary of $\mc{D}$ is complicated we may not find nice model-equivalent operators but there are some cases where we can say something. In the usual problem we have an operator $E$ with infinitely many terms but instead we find that there is a model-equivalent operator $E'$ that is comprised of only finitely many terms. We may investigate which operators have finite equivalent operators.
+\begin{definition} Given a model $\mc{M}$, a coefficient extraction operator $\Gamma$ in the variables $\row xd$ is of finite type if it is equivalent to an operator $\Gamma'$ that only has finitely many coefficient extraction terms. That is,
 \begin{align}
-	\Gamma = 1 + (a-1)\sum_{m\text{ or }n < 0}^{\infty} \ext{\ol{x}_1^m \ol{x}_2^n}
+	\Gamma \equiv_{\mc M} \Gamma' = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} \ext{x_I^J}
 \end{align}
-Without $a$ this reduces to
-\begin{align}
-	\Gamma = 1- \ext{\ol{x}_1}- \ext{\ol{x}_2}+ \ext{\ol{x}_1\ol{x}_2} = (1-\ext{x}_1)(1-\ext{x}_2)
-\end{align}
-in which case we also see that the operator can factor into two or more operators sometimes. When the boundary is complicated we may not find an a finite form for $\Gamma$ let alone see any factoring. However, there are some nice special cases where we can say a lot about the operator $\Gamma$. We can build the theory. We have only finitely many steps (and sizes of steps) in $S$. We say $\Gamma$ is finite if it can be represented by finitely many coefficient extraction terms. Suppose that $\mc{D}$ is a finite box in $\ze^d$. Then $\Gamma$ is finite. To see this suppose that $B$ has $x_k$ coordinates in the interval $[a_k,b_k]$ and that stepping outside from $B$ from within $B$ via step polynomial $S$ leads to $x_k$ coordinates within the interval $[m_k,n_k]$. Then $\Gamma$ can be written finitely with extraction part
+where each $|J| < \infty$. We'll say that $\Gamma'$ is of infinite type if it's not of finite type.
+\end{definition}
+For most purposes we won't distinguish between $\Gamma$ and $\Gamma'$. A natural question is to consider which models $\mc{M}$ lead to operators of finite type.
+
+
+However, there are some nice special cases where we can say a lot about the operator $\Gamma$. We can build the theory. We have only finitely many steps (and sizes of steps) in $S$. We say $\Gamma$ is finite if it can be represented by finitely many coefficient extraction terms. Suppose that $\mc{D}$ is a finite box in $\ze^d$. Then $\Gamma$ is finite. To see this suppose that $B$ has $x_k$ coordinates in the interval $[a_k,b_k]$ and that stepping outside from $B$ from within $B$ via step polynomial $S$ leads to $x_k$ coordinates within the interval $[m_k,n_k]$. Then $\Gamma$ can be written finitely with extraction part
 \begin{align}
 	\Gamma_{B^c} = \sum_{k=1}^{d} \left(\sum_{i= m_k}^{a_k-1}\ext{x_k^i}+\sum_{i= b_k+1}^{n_k}\ext{x_k^i}\right)
 \end{align}
  The discussion continues for semi-infinite and infinite boxes with finite marked regions within. The analysis is the same as above except that now one or more of $a_k, b_k$ may be infinite, in which case we actually lose parts of $\Gamma_{B^c}$ and the operator is still finite. We should see if we can do regions whose complements are boxes and then build up to finite regions and intersections of finite regions with boxes.
- 
-\begin{definition} A coefficient extraction operator $\Gamma$ in the variables $x_1,\ldots,x_d$ is of finite type if it can be written in a form with only finitely man terms like
-\begin{align}
-	\Gamma = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} x_I^J[x_I^J]
-\end{align}
-where each $|J| < \infty$. Then $\Gamma$ is of infinite type if it's not of finite type. We'll just say $\Gamma$ is finite or infinite.
-\end{definition}
 
-\begin{definition} A random walk model with finitely many steps is of finite type if its extraction and marking operator $\Gamma$ is of finite type and its starting condition $q$ is of finite degree. If not, the model is of infinite type.
-\end{definition}
-Not surprisingly all the models so far has been of finite type. In the next section we'll see the model of self-avoiding walks is most likely of infinite type.
 
-\begin{theorem} The generating function $Q$ for a random walk model of finite type is D-finite in the variables $x_1,\ldots,x_d$.
+\begin{definition} A random walk model with finitely many steps is of finite type if its extraction and marking operators $E$ and $L$ are of finite type and its starting condition $q$ is of finite degree. Otherwise we say the model is of infinite type.
+\end{definition}
+\begin{example} All the models so far has been of finite type but not all models are of finite type. Consider a one-dimensional model on the whole line where we mark points $x_i$ with monomials $a_i$ using operator $L$. Then any equivalent marking operator $L'$ would have to have a term like $(a_i-1)\ext{x_1^i}$, otherwise it would not act the same way on monomials in the model's reach $\ze$. Therefore we must not have a finite operator $L'$ either.
+\end{example}
+Finite models are somewhat nice because they will have functional equations with finitely many terms and they'll perhaps be amenable to analysis of the sort we've performed for quarter-plane walk models. What follows is a rather easy application of the theory so far.
+\begin{theorem} The generating function $Q$ for a random walk model of finite type is D-finite in the variables $\row xd$.
 \end{theorem}
 \begin{proof} We'll use the kernel form for the functional equation
 \begin{align}
 	KQ + t(1- \Gamma)SQ = q.
 \end{align}
-Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and is of finite type. We'll prove this by finding the differential equation explicitly. Since the model is of finite type we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ that we see on either side. Once we multiply by $x_k^{A_k}$ we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$
+Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and is of finite type since $L$ and $E$ are finite. We'll prove the theorem by finding the differential equation explicitly. Since the model is of finite type we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ that we see on either side. Once we multiply by $x_k^{A_k}$ we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$
 \begin{align}
 	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
 \end{align}
-and we obtain a polynomial equation in the variables $x_1,\ldots,x_d$. We take the derivative operator
+and we obtain a polynomial equation in the variables $\row xd$. We take the derivative operator
 \begin{align}
 	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\ldots\del_d^{A_d+B_d+1}
 \end{align}
 and apply it to both sides of the equation to get
 \begin{align}
-	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0\,,
 \end{align}
-which follows since we're taking more derivatives than the degrees of the monomials which clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of it beind inhomogeneous. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the LHS of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before but this time it may have lower $A$ and $B$ values since we are not taking $q$ into account. We have
+which follows since we're taking more derivatives than the degrees of the monomials which clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of homogeneity if the degrees of $q$ are large. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the LHS of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before but this time it may have lower $A$ and $B$ values since we are not taking $q$ into account. We have
 \begin{align}
-	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)\,.
 \end{align}
 \end{proof}
-For example let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the LHS and RHS respectively. We see that $A_k = 3$ and $B_k = 6$. Then we're taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In The second scheme we take $A_k = 3$ still but $B_k = 4$ and we are taking the 8-th derivative w.r.t. $x_k$ this time. Even in the quarter-plane we have models that have a generating function that is not D-finite (with respect to the $t$ variable) but it turns out that every model so far considered is D-finite in the $x_1,\ldots,x_d$ variables.
+For example let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the LHS and RHS respectively. We see that $A_k = 3$ and $B_k = 6$. Then we're taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In The second scheme we take $A_k = 3$ still but $B_k = 4$ and we are taking the 8-th derivative w.r.t. $x_k$ this time. Even in the quarter-plane we have models that have a generating function that is not D-finite (with respect to the $t$ variable) but it turns out that every model so far considered is D-finite in the variables $\row xd$.
 
 In order to solve the differential equation we need to investigate the kernel of the differential operator.
 \begin{corollary}
@@ -150,7 +165,7 @@ We could have also obtained this kind of solution from going through the calcula
 \section{Self-avoiding walks}
 %================================
 
-We can handle self-avoiding random walks with this theory. If we pick a marking operator $\Gamma$ that marks every location on the plane this will allow us to track the random walks' history. All we'll need to do in the end is remove those walks which have stepped at some location more than once. However we'll do this problem in a bit more detail as it serves as an example of the theory. To use the generating function iteration properly we need a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $(2n+1)^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
+We can handle discrete self-avoiding random walks with this theory. If we pick a marking operator $\Gamma$ that marks every location on the plane this will allow us to track the random walks' history. All we'll need to do in the end is remove those walks which have stepped at some location more than once. However we'll do this problem in a bit more detail as it serves as an example of the theory. To use the generating function iteration properly we need a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $(2n+1)^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
 \begin{align}
 \Gamma_{i,j} = 1+b_{i,j}\ext{x_1^ix_2^j}
 \end{align}
@@ -189,7 +204,7 @@ We finally have the functional equation for random walks with full history
 \begin{align}
 	(1 -t\Gamma S)Q = a_{0,0}.
 \end{align}
-From this we can obtain the generating function $W$ for the SAWs by removing all walks with power of mark $a_{i,j}$ greater than 1. For this we need a removal operator. Let
+As in the example of an infinte marking operator, it stands to reason that $\Gamma$ is of infinite type as well. From the equation we can obtain the generating function $W$ for the SAWs by removing all walks with power of mark $a_{i,j}$ greater than 1. For this we need an operator that removes terms with more than one copy of any given label. Let
 \begin{align}
 	R_{i,j} &= \ext{a_{i,j}^0} + \ext{a_{i,j}}\\
 	R_n &= \prod_{-n\leq i,j \leq n} R_{i,j}\\
@@ -205,8 +220,9 @@ We can either redo the analysis applying $R$ at every iteration or we can apply 
 \end{align}
 We can write this as a functional equation
 \begin{align}
-	\mc{L} W = (1-t\Sigma)W = (1-tR\Gamma S)W = a_{0,0}
+	\mc{L} W = (1-t\Sigma)W = (1-tR\Gamma S)W = a_{0,0}.
 \end{align}
+It's not clear if the operator $R\Gamma$ is of finite type. Now it's enough to set all the remaining labels to 1 and we will obtain the full generating function of SAWs with steps from $\mc{S}$.
 %================================
 \subsection{Eigenpairs}
 %================================
