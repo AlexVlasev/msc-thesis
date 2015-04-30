@@ -7,7 +7,7 @@
 %================================
 
 In this chapter we'll push the operator notation further to see what kinds of random walk models have a relatively easy functional equation to write. We start with the following definition for a random walk model in $\ze^d$.
-\begin{definition} Let $\mc{D}_0 \subseteq \mc{D}$ be regions in $\ze^d$ and $S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model $\mc{M}$ with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location later on.
+\begin{definition} Let $\mc{D}_0 \subseteq \mc{D}$ be regions in $\ze^d$ and $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model $\mc{M}$ with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location later on.
 \end{definition}
 In other words, we are given a set of steps $\mc{S}$ and a starting location in $\mc{D}$. Then we want to evolve the random walks restricted to the region $\mc{D}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$ and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
 \begin{definition} Let $\mc{M}$ be a random walk model and $Q$ its associated generating function counting length with $t$, ending locations with $\row xd$ and interactions with $\mc{D}_0$ with some multi-index variable $a$. We write
@@ -16,9 +16,9 @@ In other words, we are given a set of steps $\mc{S}$ and a starting location in 
 \end{align}
 where $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
 \end{definition}
-\begin{definition} Suppose $D$ is an operator involving the $x$ and $a$ variables but not $t$. We shall apply $D$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following linearized way
+\begin{definition} Suppose $\Gamma$ is an operator involving the $x$ and $a$ variables but not $t$. We shall apply $D$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following linearized way
 \begin{align}
-	DF = \sum_{k=0}^\infty D(f_k) t^k
+	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k
 \end{align}
 to avoid issues of expanding $F$ in Laurent series in some of the $x$ variables.
 \end{definition}
@@ -183,10 +183,7 @@ where the initial condition is $Q_0 = a_{0,0}$. Starting from $Q_n$ we can find 
 \end{align}
 Using a computer we can easily iterate this to get more and more steps. We can also get $Q^{\leq n+1}$ from $Q^{\leq n}$ since
 \begin{align}\begin{split}
-	t\Gamma_{n+1}SQ^{\leq n} & = \sum_{k=0}^n \Gamma_{n+1}SQ_kt^{k+1}\\
-	& = \sum_{k=0}^n \Gamma_{k+1}SQ_kt^{k+1}\\
-	& = \sum_{k=0}^n Q_{k+1}t^{k+1}\\
-	&= Q^{\leq n+1}-Q_0
+	t\Gamma_{n+1}SQ^{\leq n} & = \sum_{k=0}^n \Gamma_{n+1}SQ_kt^{k+1}= \sum_{k=0}^n \Gamma_{k+1}SQ_kt^{k+1} = \sum_{k=0}^n Q_{k+1}t^{k+1} = Q^{\leq n+1}-Q_0
 \end{split}\end{align}
 or in other words
 \begin{align}
