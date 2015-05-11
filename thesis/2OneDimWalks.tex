@@ -93,7 +93,7 @@ We can rewrite this equation in the following form
 \begin{align}
 	(1-tS)Q - t(bS_0-\ol{x}S_{\um 1})Q_0 -btS_{\um 1}Q_1 = 1\,.
 \end{align}
-Here $Q_1^0 = Q(0)$ and $Q_1 = Q'(0)$ where $Q = Q(x)$. This agrees with the kind of equation we would obtain with older methods. In the interest of simplifying the equation we can eliminate the $Q_1^1$ term by applying $[x^0]$ to both sides of the equation.
+Here $Q_1^0 = Q(0)$ and $Q_1 = Q'(0)$ where $Q = Q(x)$. This agrees with the kind of equation we would obtain with older methods ZZCITEZZ. In the interest of simplifying the equation we can eliminate the $Q_1^1$ term by applying $[x^0]$ to both sides of the equation.
 \begin{align}
 \begin{split}
 	 1 &= Q_1^0 - t(S_{\um 1}Q_1 +S_0 Q_0) - tbS_0Q_0 - btS_{\um 1}Q_1\\
@@ -113,17 +113,21 @@ and substitute the result into the first functional equation (for now we don't w
 \end{align}
 and therefore we can rewrite the equation as
 \begin{align}
-\begin{split}
 	(1-tS)Q - (c -t\ol{x}S_{\um 1})Q_0 = \ol{a}
-\end{split}
 \end{align}
 since $1 - c = 1 - (1-\ol{a}) = \ol{a}$. We'll call this the master functional equation. 
 
-It turns out that the back substitution is unnecesary and this is a good thing because in higher dimensions we literally have to perform an exponential number of back substitutions to obtain such an equation. Previous approaches have had to put up with this and luckily only for two-dimensional problem with only a few back substitutions. The key here is to think about operators again. Marking a monomial is just done by a multiplication by the indeterminate $a$. This means that to undo the marking we just need to multiply by $1/a$. This tells us immediately that $L$ has an inverse
+\begin{example} When $S = x+\ol x$ we have the functional equation
+\begin{align}
+	(1-t(x+\ol x))Q - (c -t\ol{x})Q_0 = \ol{a}\,.
+\end{align}
+\end{example}
+
+It turns out that the back substitution is unnecesary and this is a good thing because in higher dimensions we literally have to perform an exponential number of back substitutions to obtain such an equation. Previous approaches ZZCITEZZ have had to put up with this and luckily only for two-dimensional problem with only a few back substitutions. The key here is to think about operators again. Marking a monomial is just done by a multiplication by the indeterminate $a$. This means that to undo the marking we just need to multiply by $1/a$. This tells us immediately that $L$ has an inverse
 \begin{align}
 	L^{\um 1} = M = 1 + \left(\frac 1a - 1\right)[x^0] = 1- c[x^0]\,,
 \end{align}
-which we allowed to apply onto the operator functional equation. The RHS is simply $L^{\um} (1) = 1 - c = \ol{a}$ and the LHS is
+which we allowed to apply onto the operator functional equation. The RHS is simply $L^{\um 1} (1) = 1 - c = \ol{a}$ and the LHS is
 \begin{align}
 	L^{\um 1}(1-tLES)Q &= L^{\um 1}Q - tESQ \\
 	&= (Q-cQ_0) - t(SQ - \ol{x}S_{\um 1}Q_0) \\
@@ -137,7 +141,7 @@ and we've arrived at the master functional equation in a much faster way. That's
 \end{align}
 and we call them the operator and master functional equations.
 \end{prop}
-The operator notation/perspective is powerful. It will allow us to derive functional equations for many random walk models in arbitrary dimensions with ease. Usually derivations have employed inclusion-exclusion and careful book-keeping to write master functional equations (or their precursors) in a direct manner. Unfortunately that approach is difficult to generalize to arbitrary dimensions and more dificult restrictions/marking.
+The operator notation/perspective is powerful. It will allow us to derive functional equations for many random walk models in arbitrary dimensions with ease. Usually derivations have employed inclusion-exclusion and careful book-keeping ZZCITEZZ to write master functional equations (or their precursors) in a direct manner. Unfortunately that approach is difficult to generalize to arbitrary dimensions and more dificult restrictions/marking.
 
 We can also deal with coefficient extraction in a neater way. Instead of extracting $[x^k]$ from the master functional equation it is better to first go through the operator equation since $[x^k]$ interacts with $L$ and $E$ in a nice way. We have
 \begin{align}
@@ -206,7 +210,7 @@ We can substitute this into the master functional equation.
 	Q(x,a;t) =\frac{\ol{a}}{1-tS}\left(1 + \frac{b}{{1-atS_0}}\right) = \frac{1-tS_0}{(1-tS)(1-atS_0)}\,.
 \end{align}
 \end{prop}
-This takes care of half of all 8 models. It's interesting to note a relationship between $Q(x,a;t)$ and $Q(x,1;t)$, where the latter function is the generating function for the unmarked problem which has been studies extensively in the literature. When we set $a = 1$ in the above equation we find
+This takes care of half of all 8 models. It's interesting to note a relationship between $Q(x,a;t)$ and $Q(x,1;t)$, where the latter function is the generating function for the unmarked problem which has been studies extensively in the literature. ZZCITEZZ When we set $a = 1$ in the above equation we find
 \begin{align}
 	[b^0]Q = \wh{Q} =  \frac{1-S_0t}{(1-st)(1-S_0t)}\,.
 \end{align}
@@ -235,11 +239,11 @@ Even such small example already show connections between $Q$ and $\wh Q$. It wil
 %=======================================
 \subsection{The $S_{-1} \neq 0$ case.}
 %=======================================
-In this case we will apply the Algebraic Kernel method whenever it is possible. It requires finding an $x$ value that makes the kernel $K = 1 - tS$ equal to zero in the functional equation
+In this case we will apply the Obstinate Kernel method whenever it is possible. ZZCITEZZ It requires finding an $x$ value that makes the kernel $K = 1 - tS$ equal to zero in the functional equation
 \begin{align}
 	(1-tS)Q - (c -t\ol{x})Q_0 = \ol{a}\,.
 \end{align}
-Such a solution will exist since $S_{\um 1} = 1$ and therefore the equation $1 - tS = 0$ is nontrivial and of degree at least 1. Let one such solution be $x = \sigma$ and suppose that we can substitute it into the functional equation. For now we have to assume that the whole term $KQ$ vanishes and we obtain
+Such a solution will exist since $S_{\um 1} = 1$ and therefore the equation $1 - tS = 0$ is nontrivial and of degree at least 1. Let one such solution be $x = \sigma$ and suppose that we can substitute it into the functional equation. ZZCITEZZ For now we have to assume that the whole term $KQ$ vanishes and we obtain
 \begin{align}
 	- (c - t\ol{\sigma})Q_0 = \ol{a}\,.
 \end{align}
@@ -249,7 +253,7 @@ Then
 \end{align}
 and we can now solve for $Q$ explicitly
 \begin{align}
-	Q = \frac{\ol{a}}{1-tS}\left(1 - \frac{t\ol{x}-c}{t\ol{\sigma}-c}\right) = \frac{t}{1-tS}\left(\frac{\ol{x}-\ol{\sigma}}{b-a\ol{\sigma}t}\right)\,.
+	Q = \frac{\ol{a}}{1-tS}\left(1 - \frac{t\ol{x}-c}{t\ol{\sigma}-c}\right) = \frac{t}{1-tS}\left(\frac{\ol{x}-\ol{\sigma}}{b-a\ol{\sigma}t}\right) = \frac{t(\sigma-x)}{x(1-tS)(b\sigma-at)}\,.
 \end{align}
 \begin{prop} For a random walk model with small steps on the half-line with $S_{\um 1} = 1$ let $\sigma$ be a root of $K$ that makes $KQ$ vanish. Then generating function $Q$ is given by
 \begin{align}
@@ -290,7 +294,7 @@ The two roots multiply to 1 so $\ol{\sigma} = \sigma^\ast$. Note that in the rel
 \begin{align}
 	Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}
 \end{align}
-where $\sigma$ is a function containing a square root, i.e. not a polynomial. However we can go at the problem from a different angle to obtain a polynomial $f(a,t)$ for which $B(fQ_0) = c$ which is not quite zero but it's a simpler relationship. This will also illustrate the group approach together with the kernel method. The two cases that we need to work on both have $S_{\um 1} = S_1 = 1$ with $S_0$ being 0 or 1. This means that $S$ is left invariant under sending $\ast: x \mapsto \ol{x}$. We can apply this on the functional equation and now have a system of two functional equations
+where $\sigma$ is a function containing a square root, i.e. not a polynomial. However we can go at the problem from a different angle - that of the Algebraic Kernel method used extensively in the quarter-plane model classification ZZCITEZZ. We obtain a polynomial $f(a,t)$ for which $B(fQ_0) = c$ which is not quite zero but it's a simpler relationship. This will also illustrate the group approach together with the kernel method. The two cases that we need to work on both have $S_{\um 1} = S_1 = 1$ with $S_0$ being 0 or 1. This means that $S$ is left invariant under sending $\ast: x \mapsto \ol{x}$. We can apply this on the functional equation and now have a system of two functional equations
 \begin{align}
 	(1-tS)Q - (c -t\ol{x})Q_0 - \ol{a}=0\,,\\
 	(1-tS)Q^\ast - (c -tx)Q_0 -\ol{a}=0\,.

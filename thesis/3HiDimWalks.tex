@@ -5,7 +5,7 @@
 \chapter{Higher Dimensional Random Walk Models}
 %=======================================
 
-We can easily generalize the one-dimensional results to two or more dimensions. In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems but when it comes to generalizing to higher dimensions, the process is clumsy and prone to error. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. But then we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$. 
+We can easily generalize the one-dimensional results to two or more dimensions. In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems but when it comes to generalizing to higher dimensions, the process is clumsy and prone to error. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. This is the usual procedure carried out in problems so far ZZCITEZZ. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. But then we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$. 
 
 The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term we start with $Q_1^0$ and multiply by $t\ol{x}_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally we add back in those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step so we multiply $\Qf{0,0}$ by $t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}$. What we've obtained is $Q$ again but with the $t^0$ term missing.
 
@@ -13,7 +13,7 @@ This leads to the functional equation for $Q$
 \begin{align}
 	Q = 1 + tSQ - t\ol{x}_1S_1^{\um 1}Q_1^0 - t\ol{x}_2S_2^{\um 2}Q_2^0 + t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}\Qf{0,0}
 \end{align}
-which is rather large even for two dimensions. The problem quickly runs into notational difficulties for $d$-dimensional problems but that can be dealt with by writing the equation as a sum over subsets of $[d]$. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This can be done by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$ but we won't go into the messy details. Instead we'll use the operator notation to handle the problem.
+which is rather large even for two dimensions. This agrees with the functional equation obtained before ZZCITEZZ. The problem quickly runs into notational difficulties for $d$-dimensional problems but that can be dealt with by writing the equation as a sum over subsets of $[d]$. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$ but we won't go into the messy details. Instead we'll use the operator notation to handle the problem in a slicker manner.
 %=======================================
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
@@ -181,7 +181,7 @@ This formula is mostly of theoretical value although it can be used to speed up 
 %=======================================
 \subsection{Formal Neumann series solution}
 %=======================================
-In a previous subsection we obtained the equation
+So far we've obtained the equation
 \begin{align}
 	(1-tLES)Q = 1\,.
 \end{align}
@@ -212,7 +212,7 @@ which allows us to write
 \subsection{Hadamard product solutions}
 %=======================================
 
-We take a moment to mention a result that falls out of the operator notation and which was covered in more generality by Steve et al. Whenever $S$ factors into terms that don't share variables we can identify a solution for the whole problem in terms of lower-dimensional problems.
+We take a moment to mention a result that falls out of the operator notation and which was covered in more generality in ZZCITEZZl. Whenever $S$ factors into terms that don't share variables we can identify a solution for the whole problem in terms of lower-dimensional problems.
 \begin{example} When $d = 2$ we have the special case $S = S_1(x_1)S_2(x_2)$. The operator $\Gamma S$ factors as
 \begin{align}
 	 \Gamma S = \Gamma_1\Gamma_2S_1S_2 = (\Gamma_1S_1)(\Gamma_2S_2)
@@ -353,13 +353,13 @@ Before we consider walks that come back to the origin we'll look at the behavior
 %=======================================
 \subsection{Kernel Group Considerations}
 %=======================================
-It is important to find more functional equations if we can. One way to do this is by applying a transformation on the pair $(x_1,x_2)$ that leaves as many parts of the functional equation as we can but still adding some information in the form of a new equation. One way to do this is to cosider mapping $x_1$ and $x_2$ to some quantities separately and then consider the full group generated by such maps. Since we usually eliminate the kernel in front of $Q$ it is useful to consider transformations that preserve the kernel.  We'll call this group $G(K)$, although it won't be the full group of rational transformations preserving the kernel. For example $(x_1,x_2) \mapsto (x_2,x_1)$ will not be in the group. Any transformation on $(x_1,x_2)$ that preserves the kernel $K = 1 -tS$ must necessarily preserve the step polynomial $S$. Here
+It is important to find more functional equations if we can. One way to do this is by applying a transformation on the pair $(x_1,x_2)$ that leaves as many parts of the functional equation as we can but still adding some information in the form of a new equation. One way to do this is to cosider mapping $x_1$ and $x_2$ to some quantities separately and then consider the full group generated by such maps. Since we usually eliminate the kernel in front of $Q$ it is useful to consider transformations that preserve the kernel. This is a fruitful approach in the noninteracting case and it has been covered in ZZCITEZZ. We'll call this group $G(K)$, although it won't be the full group of rational transformations preserving the kernel. For example $(x_1,x_2) \mapsto (x_2,x_1)$ will not be in the group. Any transformation on $(x_1,x_2)$ that preserves the kernel $K = 1 -tS$ must necessarily preserve the step polynomial $S$. Here
 \begin{align}
 	S = \alpha \ol{x} + \beta + \gamma x
 \end{align}
 where $x = x_1$ or $x_2$ and $\alpha,\beta,\gamma$ change correspondingly. We consider sending $x \mapsto y$ and solve for $y$ to determine the possible transformations we can perform. That is we have
 \begin{align}
-	\alpha \ol{x} + \gamma x &=\alpha \ol{y} + \gamma X\\
+	\alpha \ol{x} + \gamma x &=\alpha \ol{y} + \gamma y\\
 	(\alpha - \gamma xy)(y-x) &= 0\,.
 \end{align}
 We have cases
@@ -367,13 +367,13 @@ We have cases
 \item $\alpha = 0, \gamma = 0$. The equation is then trivially true and any transformation preserves the kernel although this is not very useful though.
 \item $\alpha = 0, \gamma \neq 0$. Then $ y = x$ and only the identity transformation preserves the kernel.
 \item $\alpha \neq 0, \gamma = 0$. Here $y = x$ as well.
-\item $\alpha \neq 0, \gamma \neq 0$. Here we either have $y = x$ or $X\neq x$ and $y = \ol{x}\alpha/\gamma = \ol{x} S_{\um 1}/S_1$.
+\item $\alpha \neq 0, \gamma \neq 0$. Here we either have $y = x$ or $y\neq x$ and $y = \ol{x}\alpha/\gamma = \ol{x} S_{\um 1}/S_1$.
 \end{itemize}
 In conclusion, either every transformation works and we don't have an interesting case or we have the identity transformation plus a possible second one. The last transformation creates a nontrivial group and we can have groups of various orders. Let
 \begin{align}
 	g_1 : x_1 \mapsto \ol{x}_1\frac{S_1^{\um 1}}{S_1^{1}},\quad g_2 : x_2 \mapsto \ol{x}_2\frac{S_2^{\um 1}}{S_2^{1}}
 \end{align}
-whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that is they are involutions. We have three cases for each $x$
+whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that is they are involutions. Contrast this suggestive notation to the notation in previous approaches in ZZCITEZZ and ZZCITEZZ. We have three cases for each $x$
 \begin{itemize}
 \item 1: Any transformation can be applied.
 \item 2: We only have the identity transformation.
@@ -385,8 +385,15 @@ whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that 
 \item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus means that we have no steps that go away from the origin. Therefore $S = \Sf{0,0}$. Thus we have only two models - no steps or a resting step. 
 \item[Case 1.2:] Here any transformation applies on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ so the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$ in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x}_1$ step with a possible resting step.
 \item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$ and this means $S_2^{\um 1}, S_2^1 \neq 0$. This means we must have either both vertical steps $x_2$ and $\ol{x}_2$ in the 1.3 case or two horizontal steps $x_1$ and $\ol{x}_1$ in the 3.1 case.
-\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be obtained by a rotation around the origing of 90, 180 and 270 degrees). The possible models are (I should include the drawings): $\{$N,E,NE$\}$, $\{$N,NE$\}$, $\{$E,NE$\}$, $\{$N,E$\}$, $\{$NE$\}$. In other words, the subsets of $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. This is a case of group $G(K)$ or order 1.
-\item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case). Also $S_1^{\um 1}, S_2^1 \neq 0$ so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed.This is a case of group $G(K)$ of order 2.
+\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be obtained by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
+\[
+	\modelgraph 01101000\quad\modelgraph 01001000\quad \modelgraph 00101000 \quad \modelgraph 01100000 \quad \modelgraph 00100000
+\]
+This is a case of group $G(K)$ or order 1.
+\item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. Also $S_1^{\um 1}, S_2^1 \neq 0$ so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed. This is a case of group $G(K)$ of order 2. Here are some but not all of these models.
+\[
+	\modelgraph 01101011\quad\modelgraph 00101011\quad\modelgraph 01001011\quad\modelgraph 01100011\quad \modelgraph 01101010\quad \modelgraph 01101001
+\]
 \item[Case 3.3:] This is the most interesting case with two transformations for $x_1$ and $x_2$ each. This means that there must be at least one step going in a positive and one going in a negative coordinate for each of $x_1$ and $x_2$. There are a lot of such cases (in the hundreds). Previous results show that the group $G(K)$ has orders 4, 6, 8 and infinity depending on the step set in question.
  \end{itemize}
  
@@ -531,203 +538,6 @@ We can give a short summary of the result via a table. Here $q$ stands for a one
     \end{tabular}
 \end{table}
 
-%==============================================================================
-%==============================================================================
-%==============================================================================
-
-%=======================================
-\section{Connections with spectral theory}
-%=======================================
-
-Here we'll explore some of the properties of the operators that interest us, showing when the commute, if they have inverses, what their eigenvalues and eigenvectors are and so on.
-
-
-%=======================================
-\subsection{Homogeneous Operators}
-%=======================================
-
-%=======================================
-\subsubsection{Single 1D Operators}
-%=======================================
-
-We start off with the observation that an extraction operator $E$ is just a marking operator $L$ with mark $a = 0$. In other words, we can combine the discussion for $E$ and $L$ by combining the operators into one definition. 
-\begin{definition}
-For integer $n$ and a number $a$ let
-\begin{align}
-	\Gamma_n(a) = 1 + (a-1)x^n[x^n] = 1  + bx^n[x^n]\,.
-\end{align}
-\end{definition}
-\begin{lemma} The operators $\Gamma_m(a_1)$ and $\Gamma_n(a_2)$ commute.
-\end{lemma}
-\begin{proof} Whether the operators mark the same monomial or not, since they act by multiplication by $a_i$ it doesn't matter in which order we apply them. We can also see this computationally. If $m \neq n$
-\begin{align}\begin{split}
-	\Gamma_n(a_1)\Gamma_m(a_2) &= 1  +b_1x^n[x^n]+b_2x^m[x^m] + b_1b_2x^n[x^n]x^m[x_m] \\
-						&= 1  +b_1x^n[x^n]+b_2x^m[x^m]\\
-						&= \Gamma_m(a_2)\Gamma_n(a_1)\,.
-\end{split}\end{align}
-The case for $m = n$ is analogous.
-\end{proof} 
-Because of the commutativity we can write a product of such operators in any order we like. We'll usually write them in alphabetical order. Next, we'll find the eigenvalues and eigenfunctions for single operators.
-
-We note further properties of $\Gamma_n(a)$. The first has to do with its eigenvalues and eigenfunctions. If $a = 1$ the operator acts as the identity so every function is an eigenfunction with eigenvalue 1. When $a \neq 1$ we see that the operator keeps all monomials the same except for the one it marks $x^n$ which will be an eigenfunction with eigenvalue $a$. It's worth seeing this proved in a linear algebra style both to illustrate the method and to act as a consistency check.
-\begin{prop} The operator $\Gamma_n(a)$ has eigenvalues $a$ and 1 with corresponding eigenfunctions $x^n$ for $a$ and $x^k$, $k \neq 1$ for 1.
-\end{prop}
-\begin{proof}
-Suppose that for some function $u \neq 0$ and $a \neq 1$
-\begin{align}
-	\Gamma_n(a) u  = \lambda u\,.
-\end{align}
-We can write $u = u_n x^n + v$ where $v$ has no $x^n$ term. Therefore we find
-\begin{align}
-	0 = \Gamma_n(a) u - \lambda u = au_nx^n + v - \lambda u_n x^n -\lambda v = (a-\lambda)u_n x^n + (1-\lambda)v\,.
-\end{align}
-We have two cases.
-\begin{itemize}
-\item If $v = 0$ then $u_n \neq 0$ and $\lambda = a$. The eigenfunction is $x^n$.
-\item If $v \neq 0$ then $\lambda = 1$ and $u_n = 0$. Here every $x^k$ for $k\neq n$ is an eigenfunction.
-\end{itemize}
-\end{proof}
-The second interesting property has to do with taking powers of $\Gamma_n(a)$, including inverses.
-\begin{prop} We have
-\begin{align}
-	\Gamma_n(a)^m =  \Gamma_n(a^m)
-\end{align}
-which holds true for all integers $m$ when $a \neq 0$ and all non-negative integers when $a =0$. In particular $\Gamma_n(0)^m = \Gamma_n(0)$.
-\end{prop}
-
-When $a = 0$ the operator has a nontrivial kernel generated by $x^n$. We can think of minimal polynomials too. For example $\Gamma_n(0)$ is nontrivial so its minimal polynomial is not $X$ or $X-1$. However since it's idempotent, its minimal polynomial must divide $X(X-1)$ and since it's neither of the factors it must be the minimal polynomial. On the other hand $\Gamma_n(a)$ for $a\neq 0$ does not have a minimal polynomial because the powers of $a$ are independent from each other.
-
-%=======================================
-\subsubsection{Compounded 1D Operators}
-%=======================================
-
-Naturally we are led to consider compounded operators and their properties. Let $\Gamma = \Gamma_{n_1}(a_1)\ldots\Gamma_{n_m}(a_m)$ where the powers $n_i$ are distinct; otherwise treat any repetitions using commutativity and the identity $\Gamma_n(a)^m = \Gamma_n(a^m)$. Using induction with the identity above gives
-\begin{align}
-	\Gamma = 1 + b_1x^{n_1}[x^{n_1}]+\cdots + b_mx^{n_m}[x^m]\,.
-\end{align}
-Letting $u = u_{n_1}x^{n_1}+\cdots+ u_{n_m}x^{n_m} + v$ in the same way as the single operator case and going through the calculation shows that the eigenvalues of $\Gamma$ are
-\begin{itemize}
-\item $\lambda = a_i$ for $1\leq i \leq m$ with eigenfunction $x^{n_i}$,
-\item $\lambda = 1$ with eigenfunctions $x^m$ where $m \neq n_i$ for any $i$.
-\end{itemize}
-
-When one or more of the $a_i$'s is zero we have a nontrivial kernel
-\begin{align}
-	\ker(\Gamma) = \langle x^m | m = n_i, a_i = 0\rangle\,.
-\end{align}
-
-%=======================================
-\subsection{Multidimensional Operators}
-%=======================================
-Multidimensional operators are ones composed of one-dimensional operators (whether single or compounded) and they can also be considered compounded. For this section we'll use superscript notation
-\begin{align}
-	\Gamma_n^{(k)}(a) = 1 + bx_k^n[x_k^n]\,.
-\end{align}
-Operators working on different dimensions commute with each other
-\begin{align}\begin{split}
-	\Gamma_n^{(i)}(a_1)\Gamma_m^{(j)}(a_2)&= 1  +b_1x_i^n[x_i^n]+a_2x_j^m[x_j^m] + a_1a_2x_i^nx_j^m[x_i^n x_j^m]\\
-	&= \Gamma_m^{(j)}(a_2)\Gamma_n^{(i)}(a_1)\,.
-\end{split}\end{align}
-We can write $\Gamma^{(k)} = \Gamma_{n_1}(a_{k,n_1})\ldots\Gamma_{n_r}(a_{k,n_r})$ as before. This allows us to write a multidimensional operator in terms of its constituent pieces in whichever order we prefer. We are of course interested in finding eigenvalues and eigenfunctions for such operators. We could either find those with the same method as before or we could find it via induction.
-\begin{prop} All monomials $x_{[d]}^P$ are eigenfunctions of $\Gamma = \Gamma^{(1)}\ldots\Gamma^{(d)}$. Their eigenvalues are determined by the action of $\Gamma^{(k)}$ on $x_k^{P_k}$. That is, the eigenvalues are products of the eigenvalues produced by the single-dimensional operators.
-\end{prop}
-This helps us characterize the kernel of $\Gamma$.
-\begin{corollary} The kernel of $\Gamma$ is generated by those monomials $x_{[d]}^P$ for which $\Gamma^{(k)}x_k^{P_k} = 0$ for some $k$.
-\end{corollary}
-
-%=======================================
-\subsection{Inhomogeneous Operators}
-%=======================================
- We'll call an operator inhomogeneous if it consists of a homogeneous operator $\Gamma$ and a laurent polynomial (possibly infinite) $S$ and and acts in one of the following ways
- \begin{align}
-	\Gamma S(u) = \Gamma(Su)\quad\text{or}\quad S\Gamma u = S\cdot \Gamma u\,.
- \end{align}
-This kind of operator is important because it features quite a bit in the funcitonal equations of random walk models. We seek to find the eigenpairs for  inhomogeneous operators. Our first task is to show that these operators are equivalent.
-\begin{prop} The two operators have the same eigenvalues with eigenfunctions differing by a multiple of $S$. That is $(\lambda,u)$ is an eigenpair for $\Gamma S$ if and only of $(\lambda, Su)$ is an eigenpair for $S \Gamma$. In particular, if $\lambda = 0$ we have
-\begin{align}
-	\ker(\Gamma S) = \ol{S} \ker(\Gamma)\,.
-\end{align}
-\end{prop}
-\begin{proof} Note that
-\begin{align}
-	\Gamma Su = \lambda u \quad \Longleftrightarrow \quad S\Gamma (Su) = \lambda (Su)\,.
-\end{align}
-Therefore the operators have the same eigenvalues and they have the eigenfunctions $u$ and $Su$ respectively. Now if we pick $\lambda = 0$ to find the kernels of the operators we find that $u \in \ker(\Gamma S)$ if and only if $Su \in \ker(S\Gamma) = \ker(\Gamma)$ which completes the proof.
-\end{proof}
-
-%=======================================
-\subsubsection{Single 1D Operators}
-%=======================================
-Let $G$ and $u$ be given as
-\begin{align}
-	S = \sum_k S_k x^k,\quad u = \sum_k u_k x^k
-\end{align}
-where $u$ is an eigenfunction of $\Gamma S$. We have
-\begin{align}
-	0&=(\Gamma S-\lambda I) u \\
-	&= \sum_{k\neq n} x^k \left(\sum_i S_i u_{k-i} - \lambda u_i\right) + x^n \left(a\sum_i S_i u_{n-i} -\lambda u_n\right)
-\end{align}
-which leads to the system of equations
-\begin{align}
-	\lambda u_n &= a\sum_i S_i u_{n-i}\,,\\
-	\lambda u_k &= \sum_i S_i u_{k-i}, \quad \text{if } k \neq n\,.
-\end{align}
-The analysis is nontrivial even for a simple function $S$ like $S = x$. We have
-\begin{align}
-	\lambda u_n &= a u_{n-1}\,,\\
-	\lambda u_k &= u_{k-1}, \quad \text{if } k \neq n\,.
-\end{align}
-We have a doubly-infinite recursion so we can pick an arbitrary initial condition. If $u_n = 0$ the rest of the terms will be zero as well so we must have $u_n \neq 0$. Set $u_n = 1$. Then via induction we can find
-\begin{align}
-	u_{n+k} &= 1/\lambda^{k}, \quad \text{for $k \ge 0$}\,,\\
-	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,.
-\end{align}
-Computing $u(x)$ formally leads to
-\begin{align}\begin{split}
-	u(x) &=  \sum_{k=1}^{\infty} u_{n-k}x^{n-k}+\sum_{k=0}^{\infty} u_{n+k}x^{n+k}\\
-	        &= x^n\sum_{k=1}^{\infty}\left(\frac{\lambda}{ax}\right)^k +  x^n\sum_{k=0}^{\infty} \left(\frac{x}{\lambda}\right)^k\\
-	        &= \frac{x^{n-1}x}{ax-\lambda}-\frac{x^n\lambda}{x-\lambda}\\
-	        &=\lambda x^n\left(\frac{1}{\lambda -x}- \frac{1}{\lambda - ax}\right)\\
-	        &=-\frac{\lambda b x^{n+1}}{(\lambda-x)(\lambda-ax)}\,.
-\end{split}\end{align}
-We could also try using the other definition. Let $u = u_nx^n + v$ where $u$ is now an eigenfunction of $S\Gamma$. Let $S = S_0 + S'$. Then we have
-\begin{align}\begin{split}
-	S\Gamma u &= (S_0+S')(au_nx^n+v) = \lambda(u_nx^n+v)\\
-	0&=(au_nS_0-\lambda u_n+\sum_{k\neq n}S_k u_{n-k})x^n  + au_nS'x^n+S'v-\lambda v \,.
-\end{split}\end{align}
-We find that for example
-\begin{align}
-	(\lambda - a S_0)u_n = \sum_{k\neq n}S_k u_{n-k}
-\end{align}
-which doesn't seem to help much. 
-
-%=======================================
-\subsection{Random Walks Operator}
-%=======================================
-In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laurent polynomial $S$ and some random walk operator $\Gamma$. We haven't made it rigorous yet but $\mc{L}$ is invertible with inverse
-\begin{align}
-	{\mc{L}}^{\um 1} = \sum_{k=0}^{\infty}t^k(\Gamma S)^k
-\end{align}
-where $(\Gamma S)^k$ is an iteration of the inhomogeneous operator with $(\Gamma S)^0 = 1$. However this inverse is not easy to use as the iteration become quite complicated due to the nature of the random walks. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$.Then we calculate
-\begin{align}\begin{split}
-	(\mc{L}-\lambda I) u &= u - \lambda u -t\Gamma Su\\
-	t \Gamma S u &= (1-\lambda)u = \mu u\,.
-\end{split}\end{align}
-If $\lambda = 1$ we seek to find the kernel of $\Gamma S$ which we did in the previous section. The eigenfunctions of $\mc{L}$ for eigenvalue $\lambda = 1$ are the functions $u \in \ol{S}\ker{\Gamma}$.
-
-Next let $u$ be given by a finite order Laurent series
-\begin{align}
-	u = u_n t^n + u_{n+1}t^{n+1} + \ldots
-\end{align}
-where $u_n \neq 0$. Then we can re-write the functional equation as
-\begin{align}
-	t^{-n}(1-t\Gamma S)u = \lambda t^{-n}u\,.
-\end{align}
-Letting $t \to 0$ in this equation yields
-\begin{align}
-	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0\,.
-\end{align}
-Since $u_n \neq 0$ this implies that $\lambda = 1$ and again we see that $u \in \ol{S}\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will indeed be finite order Laurent series. For the remainder of the analysis we assume that $\lambda \neq 1$. This excludes finite order Laurent series so $u$ is necessarily given by an infinite order Laurent series.
 
 
 \endinput

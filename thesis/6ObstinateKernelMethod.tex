@@ -6,7 +6,7 @@
 \label{ch:OKM}
 %=======================================
 
-Another tool at our disposal is the Obstinate Kernel method. The idea is similar to the weighted Algebraic Kernel method in that we produce more functional equations from the master equation via group actions $g \in G$. The difference is that here we also set one of $x_1 = \sigma_1$, $x_2 = \sigma_2$ equal to a root of $K$ in order to eliminate the $KQ$ term from the equations. This leaves equations that only include the other variable. It turns out that some combinations of substitutions and group operations don't lead to valid functional equations. This happens when one of the $Q_k^0$ terms is not a formal power series in $t$. In all the cases with finite groups of order 4, 6 and 8 we find that there are 2 roots of $K$ for each $x_k$ and that one root is in $O(t)$ and the other in $O(1/t)$. Generally it works out better if we use the $O(t)$ roots because that at least guarantees that the $Q_k^0$ terms remain as formal power series in $t$. However, sometimes (two friendly walks) even the $O(1/t)$ term may lead to a valid power series. 
+Another tool at our disposal is the Obstinate Kernel method which was used in the interacting case in ZZCITEZZ. The idea is similar to the weighted Algebraic Kernel method in that we produce more functional equations from the master equation via group actions $g \in G$. The difference is that here we also set one of $x_1 = \sigma_1$, $x_2 = \sigma_2$ equal to a root of $K$ in order to eliminate the $KQ$ term from the equations. This leaves equations that only include the other variable. It turns out that some combinations of substitutions and group operations don't lead to valid functional equations. This happens when one of the $Q_k^0$ terms is not a formal power series in $t$. In all the cases with finite groups of order 4, 6 and 8 we find that there are 2 roots of $K$ for each $x_k$ and that one root is in $O(t)$ and the other in $O(1/t)$. Generally it works out better if we use the $O(t)$ roots because that at least guarantees that the $Q_k^0$ terms remain as formal power series in $t$. However, sometimes (two friendly walks ZZCITEZZ) even the $O(1/t)$ term may lead to a valid power series. 
 
 It may not be necessary but it will be sufficient if a combination of a substitution $x_k = \sigma_k$ and a group action $g_L$ together give a power series in $t$ when applied to single variables like $x_1$ or $x_2$. For example we would hope that $g_L(x_j)|_{x_k=\sigma_k}$ is a power series in $t$ for some $i,j,L$. Again, this is not a necessary condition but it will be sufficient to show that a lot of the cases involved produce enough different equations to allow us to go through the Obstinate Kernel method. For those cases that we obtain less equations, it is likely that we'll be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in (two friendly walks).
 
@@ -255,7 +255,7 @@ The the group $G$ has order 8 we only have two non-isomorphic models but we'll d
 \begin{align}
 S &= \ol{x}_1+x_1+\ol{x}_1x_2+x_1\ol{x}_2\,.
 \end{align}
-This case has already been covered in (two friendly walks). From the previous chapter we have
+This case has already been covered in (two friendly walks ZZCITEZZ). From the previous chapter we have
 \begin{table}[H]
 \caption{Reductions of group actions $g \in G$ on $Q_1^0$ and $Q_2^0$\\that preserve $1$-admissibility.}
 \label{tbl:tableG6}
@@ -327,7 +327,7 @@ If we went through the $\sigma_2$ substitution instead, we would have onbtained 
 \end{align}
 where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$ and we only obtain an equality once we set $x_2 = \sigma_2$ in this expression.
 \end{theorem}
-The interesting fact (as found in the paper) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case. This is what allows the authors to obtain relationships between $\Qf{0,0}$ and setting one or more of $a_1$, $a_2$ equal to 1.
+The interesting fact (as found in ZZCITEZZ) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case. This is what allows the authors to obtain relationships between $\Qf{0,0}$ and setting one or more of $a_1$, $a_2$ equal to 1.
 
 
 
