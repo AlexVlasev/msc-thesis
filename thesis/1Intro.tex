@@ -28,12 +28,11 @@ When $G$ is finite (in the 23 non-equivalent cases) we obtain a D-finite generat
 
 Naturally we are led to invesitigating higher-dimensional variants of this problem. See \cite{gessel1992random} and \cite{grabiner1993random} for when $\mc{D}$ is a Weyl chamber. In three dimensions we have the recent partial classification \cite{bostan2014three} of random walk models with up to six steps where the authors extend the algebraic kernel method to handle the majority of finite group cases encountered.
 
-Another generalization is to consider walks with interactions and/or self-avoiding walks (or SAWs). These two types of generalizations have important applications in physics because they can be used to model polymers, proteins and other chains. For some research on SAWs with various interactions see \cite{van2004multiple},\cite{brak2009self} \cite{chan2012monte}, \cite{bacher2011weakly}, \cite{bedini2014lattice} and \cite{dagrosa2015writhe}. The topic of SAWs doesn't lend itself as nicely to using generating functions like the ones considered so far so as a simpler first step we can consider regular random walks with interactions. See \cite{niederhausen2005random} and \cite{niederhausen2005note} for walks with interactions in an octact. See \cite{brak2005directed}, \cite{owczarek2012enumeration}, and \cite{tabbara2014exact} for walks with interactions in the plane.
-
+Another generalization is to consider walks with interactions and/or self-avoiding walks (or SAWs). These two types of generalizations have important applications in physics because they can be used to model polymers, proteins and other chains. For some research on SAWs with various interactions see \cite{van2004multiple},\cite{brak2009self}, \cite{wong2014confining} \cite{chan2012monte}, \cite{bacher2011weakly}, \cite{bedini2014lattice} and \cite{dagrosa2015writhe}. The topic of SAWs doesn't lend itself as nicely to using generating functions like the ones considered so far so as a simpler first step we can consider regular random walks with interactions. See \cite{niederhausen2005random} and \cite{niederhausen2005note} for walks with interactions in an octact. See \cite{brak2005directed}, \cite{owczarek2012enumeration}, and \cite{tabbara2014exact} for walks with interactions in the plane.
 
 A long-standing dream goal in random walk enumeration research is the automatization of the process of determining characteristics of the models and similar problems. There has been some progress in this direction. See for example \cite{gessel1990symmetric} and \cite{chyzak2005effective} for details on symmetric functions, \cite{mishna2005holonomic} for a holonomic approach to combinatorics, \cite{bostan2009automatic} for automatic classification of lattice walks, and finally \cite{kauers2011computational} for some of the computational challenges involved in automation.
 
-A related subject of study is the asymptotics of random walks where some automation can be performed. See \cite{johnson2013towards}, \cite{melczer2014asymptotic} and \cite{melczer2014enumerating} for examples of the theory. A lot of the works mentioned so far have also discussed asymptotics.
+A related subject of study is the asymptotics of random walks where some automation can be performed. For examples of the theory see \cite{johnson2013towards}, \cite{melczer2014asymptotic} and \cite{melczer2014enumerating}. A lot of the works mentioned so far have also discussed asymptotics.
 
 %=======================================
 \section{Thesis Objectives}
@@ -84,10 +83,18 @@ The multivariate case is handled analogously with the caveat that whenever the n
 In this work we'll investigate random walk models on the $n$-dimensional lattice $\ze^n$. A specific model $\mc{M}$ will consist of several ingredients
 \begin{itemize}
 \item $\mc{S}$ : a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general this step set may differ from point to point (\eg a honeycomb lattice embedded in $\ze^2$). The steps themselves will be written as vectors $s = (s_1,\ldots, s_n)$. For example $\mc{S}$ could be a set of small steps defined by coordinates among $\{-1,0,1\}$. Another example is when we have more than one step of a given kind. 
-\item $\mc{D}$ : a domain for the random walks. This is the region in $\ze^n$ where the random walks will live. The easiest cases involve the whole space or a half-space. Starting with quarter-plane regions the analysis becomes rather complicated.
+\item $\mc{D}$ : a domain for the random walks. This is the region in $\ze^n$ where the random walks will live. The easiest cases involve the whole space or a half-space. Starting with quarter-plane regions the analysis becomes rather complicated. One can further constrain the walks to live on semi-infinite strips.
 \item $\mc{D}_0$ : an interaction domain for the random walks. This is a sub-region in $\mc{D}$ and we'll want to count how many times random walks interact with it by stepping on coordinates that are part of it. We may count different points from $\mc{D}_0$ in different ways. This less-studied paradigm may involve marking visits to the origin, axes in two dimensions, various higher-dimensional hyperplanes, a cone, infinite strip, the sides of a box and so on.
-\item $\mc{Q}$ : a set of random walks acting as an initial condition from which all other random walks evolve. This could be as trivial as starting with the empty walk ending at the origin to a set of infinitely many walks with some pattern.
+\item $\mc Q$ : a set of random walks acting as an initial condition from which all other random walks evolve. This could be as trivial as starting with the empty walk ending at the origin to a set of infinitely many walks with some pattern.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{image1}
+    \caption{The regions}
+    \label{fig:fig1}
+\end{figure}
+
 It is natural to consider the generating function that will keep track of all the information characterizing the random walks in the model. For each random walk $w$ its length $|w|$ will be the total number of steps that it was taken and we'll keep track of it via a parameter $t$. We'll keep track of its endpoint coordinates in $\ze^n$ by the indeterminates $x_1,\ldots,x_n$ and its interactions with $\mc{D}_0$ via marking parameters $a_m$ where $m$ is some specific subscript index. The marking is highly dependent on the geometry of $\mc{D}_0$ and the way we want to count interactions. If the end coordinates of the random walk are $(m_1,\ldots,m_n)$ and if the marking monomial (a product of $a_m$'s) is $a(w)$ we can write the generating  function for the random walk model as
 \begin{align}
 	Q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{M}} a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}\,.
@@ -105,11 +112,19 @@ Usually we see $S$ a Laurent polynomial of degree (or valuation) 1 in each varia
 \begin{align}
 	\mc{S} = \{(-1,-1),(1,-1),(-1,1),(1,1)\}\,.
 \end{align}
+\begin{figure}[H]
+    \centering
+\[
+	\modelgraphB 10100101
+\]
+    \caption{The model $\{$NW, NE, SW, SE$\}$}
+\end{figure}
 The region $\mc{D}$ consists of all points in $\ze^2$ with non-negative coordinates. Next $\mc{D}_0$ is composed of the two non-negative axes with overlap at the origin - we'll count visits to the origin as visits to each axis. Finally $\mc{Q}$ consists of the empty walk. In the language of generating functions we have $q = 1$ and
 \begin{align}
 	S &= S(x_1,x_2)  = x_1+\ol{x}_1+x_2+\ol{x}_2 = (x_1+\ol{x}_1)(x_2 + \ol{x}_2)\,.
 \end{align}
 We have a choice in naming the variables counting the interactions so we'll go with their defining quality (as this proves notationally simpler later on) - we mark the locations where one coordinate is zero. That is mark walks ending on $x_k = 0$ by incrementing the power of $a_k$ in the generating function. In this model the only first step we can take is $(1,1)$ which contributes a monomial $x_1x_2t$. From here on we can build on the single random walk of size one by taking a step in any of the four directions. This action lead to the following monomials.
+ZZPICTUREZZ
 \begin{itemize}
 	\item $(1,1)$: monomial $x_1^2x_2^2 t^2$ since there are no interactions.
 	\item $(1,\um1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$-axis with coordinate $x_2 = 0$.

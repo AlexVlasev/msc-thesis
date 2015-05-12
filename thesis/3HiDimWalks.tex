@@ -5,7 +5,23 @@
 \chapter{Higher Dimensional Random Walk Models}
 %=======================================
 
-We can easily generalize the one-dimensional results to two or more dimensions. In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems but when it comes to generalizing to higher dimensions, the process is clumsy and prone to error. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. This is the usual procedure carried out in problems so far ZZCITEZZ. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. But then we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$. 
+We can easily generalize the one-dimensional results to two or more dimensions. The following diagram illustrates the two-dimensional case.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{image3}
+    \caption{2D random walk model constraints}
+    \label{fig:plane}
+\end{figure}
+
+In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation see \cite{tabbara2014exact} where the authors have to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. But then we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{image4}
+    \caption{Inclusion-exclusion of regions}
+    \label{fig:inclusion}
+\end{figure}
 
 The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term we start with $Q_1^0$ and multiply by $t\ol{x}_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally we add back in those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step so we multiply $\Qf{0,0}$ by $t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}$. What we've obtained is $Q$ again but with the $t^0$ term missing.
 
@@ -13,7 +29,7 @@ This leads to the functional equation for $Q$
 \begin{align}
 	Q = 1 + tSQ - t\ol{x}_1S_1^{\um 1}Q_1^0 - t\ol{x}_2S_2^{\um 2}Q_2^0 + t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}\Qf{0,0}
 \end{align}
-which is rather large even for two dimensions. This agrees with the functional equation obtained before ZZCITEZZ. The problem quickly runs into notational difficulties for $d$-dimensional problems but that can be dealt with by writing the equation as a sum over subsets of $[d]$. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$ but we won't go into the messy details. Instead we'll use the operator notation to handle the problem in a slicker manner.
+which is rather large even for two dimensions. Contrast this notation to the one in \cite{bousquet2010walks} (page 10). The problem quickly runs into notational difficulties for $d$-dimensional problems but that can be dealt with by writing the equation as a sum over subsets of $[d]$ as is done for the noninteracting case in \cite{melczer2014variants}. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$ but we won't go into the messy details. Instead we'll use the operator notation to handle the problem in a slicker manner.
 %=======================================
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
@@ -37,7 +53,7 @@ which allows us to write down the following result.
 \end{align}
 where $L$, $E$, $L^{\um 1}$ are of the form $\Gamma = \Gamma_1\cdots \Gamma_d$.
 \end{prop}
-The second equation contains many less terms. To see this we take a look at the $L_kE_k$ operator
+Previously we've had to deal with coefficient extractions and back-substitution to find the expanded form of the second functional equation (page 9 of \cite{tabbara2014exact} and page 12 of \cite{wong2014confining}). Using the operator notation allows us to skip this process. In general the second functional equation has many less terms.To see this we take a look at the $L_kE_k$ operator
 \begin{align}
 	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}
 \end{align}
@@ -64,6 +80,11 @@ As in the two-dimensional case we let $K_I = c_I-t \ol{x}_IS_{I}^{\um \one}$ whe
 \end{align}
 where $K_I = (c_I-t \ol{x_I}S_{I}^{\um \one})$.
 \end{theorem}
+This is the interacting version of the functional eqaution obtained in \cite{melczer2014variants} which written our notation is
+\begin{align}
+	KQ - \sum_{\substack{I \subseteq [d]\\ I \neq \emptyset}}(-1)^{|I|}\ol{x}_IS_I^{\um \one}Q_I^{\oo} = 1\,.
+\end{align}
+
 
 %=======================================
 \section{Coefficient extractions}
@@ -212,7 +233,7 @@ which allows us to write
 \subsection{Hadamard product solutions}
 %=======================================
 
-We take a moment to mention a result that falls out of the operator notation and which was covered in more generality in ZZCITEZZl. Whenever $S$ factors into terms that don't share variables we can identify a solution for the whole problem in terms of lower-dimensional problems.
+We take a moment to mention a result that falls out of the operator notation and which was covered in more generality in \cite{bostan2014three} where the authors consider a generalization of the situation $S(x_1,x_2) = S_0(x_1)+S_1(x_1)S_2(x_2)$. We'll consider the simpler case $S = S_1(x_1)S_2(x_2)$ and its generalizations to many dimensions.
 \begin{example} When $d = 2$ we have the special case $S = S_1(x_1)S_2(x_2)$. The operator $\Gamma S$ factors as
 \begin{align}
 	 \Gamma S = \Gamma_1\Gamma_2S_1S_2 = (\Gamma_1S_1)(\Gamma_2S_2)
@@ -386,14 +407,22 @@ whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that 
 \item[Case 1.2:] Here any transformation applies on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ so the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$ in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x}_1$ step with a possible resting step.
 \item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$ and this means $S_2^{\um 1}, S_2^1 \neq 0$. This means we must have either both vertical steps $x_2$ and $\ol{x}_2$ in the 1.3 case or two horizontal steps $x_1$ and $\ol{x}_1$ in the 3.1 case.
 \item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be obtained by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
+\begin{figure}[H]
+    \centering
 \[
-	\modelgraph 01101000\quad\modelgraph 01001000\quad \modelgraph 00101000 \quad \modelgraph 01100000 \quad \modelgraph 00100000
+	\modelgraphB 01101000\quad\modelgraphB 01001000\quad \modelgraphB 00101000 \quad \modelgraphB 01100000 \quad \modelgraphB 00100000
 \]
+    \caption{Models from case 2.2}
+\end{figure}
 This is a case of group $G(K)$ or order 1.
 \item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. Also $S_1^{\um 1}, S_2^1 \neq 0$ so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed. This is a case of group $G(K)$ of order 2. Here are some but not all of these models.
+\begin{figure}[H]
+    \centering
 \[
-	\modelgraph 01101011\quad\modelgraph 00101011\quad\modelgraph 01001011\quad\modelgraph 01100011\quad \modelgraph 01101010\quad \modelgraph 01101001
+	\modelgraphB 01101011\quad\modelgraphB 00101011\quad\modelgraphB 01001011\quad\modelgraphB 01100011\quad \modelgraphB 01101010\quad \modelgraphB 01101001
 \]
+    \caption{Models from case 2.3}
+\end{figure}
 \item[Case 3.3:] This is the most interesting case with two transformations for $x_1$ and $x_2$ each. This means that there must be at least one step going in a positive and one going in a negative coordinate for each of $x_1$ and $x_2$. There are a lot of such cases (in the hundreds). Previous results show that the group $G(K)$ has orders 4, 6, 8 and infinity depending on the step set in question.
  \end{itemize}
  

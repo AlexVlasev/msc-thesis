@@ -6,13 +6,18 @@
 \section{Introduction}
 %================================
 
-In this chapter we'll push the operator notation further to see what kinds of random walk models have a relatively easy functional equation to write. We start with the following definition for a random walk model in $\ze^d$.
+In this chapter we'll push the operator notation further to see what kinds of random walk models have a relatively easy functional equation to write. We start with the following definition for a random walk model in $\ze^d$. Some of the models have more general step sets while others are set in more complicated regions. For example, Definition 1.1 of \cite{mishna2009classifying} has a functional equation for the noninteracting random walks on the quarter plane which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps.
 \begin{definition} Let $\mc{D}_0 \subseteq \mc{D}$ be regions in $\ze^d$ and $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model $\mc{M}$ with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location later on.
 \end{definition}
 In other words, we are given a set of steps $\mc{S}$ and a starting location in $\mc{D}$. Then we want to evolve the random walks restricted to the region $\mc{D}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$ and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
 
-\begin{example} Some examples of regions done in ZZCITEZZ
-\end{example}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{image1}
+    \caption{General regions in $\ze^2$}
+\end{figure}
+
+For example we may consider a semi-infinite strip on the plane as in \cite{brak2005directed}, \cite{wong2014confining} and \cite{owczarek2012enumeration}. In \cite{niederhausen2005note} the author considers random walks in an octant with interactions with the diagonal.
 
 \begin{definition} Let $\mc{M}$ be a random walk model and $Q$ its associated generating function counting length with $t$, ending locations with $\row xd$ and interactions with $\mc{D}_0$ with some multi-index variable $a$. We write
 \begin{align}
@@ -96,9 +101,18 @@ For most purposes we won't distinguish between $\Gamma$ and $\Gamma'$. A natural
 
 \begin{lemma} Let $\mc D$ be a $d$-dimensional box in $\ze^d$ and $|\mc S| < \infty$. Then the operator $\Gamma = LE$ is of finite type.
 \end{lemma}
-\begin{proof} The operator $L$ is finite since it only needs to mark finitely many points. We can find $E$ explicitly. Let the box have $x_k$ coordinates $[a_k,b_k]$. Suppose that the steps in $\mc S$ have $x_k$ coordinates of absolute size at most $n$. If $n = 0$ the walks don't change their $x_k$ coordinate and the walks don't venture past the boundaries in that coordinate. When $n > 0$ we need to remove all monomials $x^P$ with $P_k \in [a_k-n,a_k-1]\cup [b_k+1,b_k+n]$. This immediately gives us the operator
+\begin{proof} The operator $L$ is finite since it only needs to mark finitely many points. We can find $E$ explicitly. Let the box have $x_k$ coordinates $[a_k,b_k]$. Suppose that the steps in $\mc S$ have $x_k$ coordinates of absolute size at most $n_k$. If $n_k = 0$ the walks don't change their $x_k$ coordinate and the walks don't venture past the boundaries in that coordinate. When $n_k > 0$ we need to remove all monomials $x^P$ with $P_k \in [a_k-n_k,a_k-1]\cup [b_k+1,b_k+n_k]$. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{image5}
+    \caption{Finite region enclosed in box $B$}
+    \label{fig:finitebox}
+\end{figure}
+
+This immediately gives us the operator
 \begin{align}
-	E_k = 1 - \sum_{j=1}^n \ext{x_k^{a_k-j}}+\ext{x_k{b_k+j}i}\,,
+	E_k = 1 - \sum_{j=1}^{n_k} \ext{x_k^{a_k-j}}+\ext{x_k^{b_k+j}}\,,
 \end{align}
 which is equal to $E_k = 1$ when $n = 0$. Applying $E_1,\ldots, E_d$ sequentially ensures that we remove all monomials outside of $\mc D$. That is, $E = E_1\cdots E_d$. Since each of the operators is finite so is their composition $\Gamma = LE$.
 \end{proof}
@@ -237,6 +251,10 @@ We could have also obtained this kind of solution from going through the calcula
 %================================
 \section{Examples of regions we can consider}
 %================================
+
+ZZPICTUREZZ
+
+ZZPICTUREZZ
 
 \begin{example}[Self-avoiding walks]
 
