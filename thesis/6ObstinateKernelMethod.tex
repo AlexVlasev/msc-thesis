@@ -8,7 +8,7 @@
 
 Another tool at our disposal is the Obstinate Kernel method which was used in the interacting case in \cite{tabbara2014exact}. The idea is similar to the weighted algebraic kernel method in that we produce more functional equations from the master equation via group actions $g \in G$. The difference is that here we also set one of $x_1 = \sigma_1$, $x_2 = \sigma_2$ equal to a root of $K$ in order to eliminate the $KQ$ term from the equations. This leaves equations that only include the other variable. It turns out that some combinations of substitutions and group operations don't lead to valid functional equations. This happens when one of the $Q_k^0$ terms is not a formal power series in $t$. In all the cases with finite groups of order 4, 6 and 8 we find that there are 2 roots of $K$ for each $x_k$ and that one root is in $O(t)$ and the other in $O(1/t)$. Generally it works out better if we use the $O(t)$ roots because that at least guarantees that the $Q_k^0$ terms remain as formal power series in $t$. However, sometimes (page 11 of \cite{tabbara2014exact}) even the $O(1/t)$ term may lead to a valid power series. 
 
-It may not be necessary but it will be sufficient if a combination of a substitution $x_k = \sigma_k$ and a group action $g_L$ together give a power series in $t$ when applied to single variables like $x_1$ or $x_2$. For example we would hope that $g_L(x_j)|_{x_k=\sigma_k}$ is a power series in $t$ for some $i,j,L$. Again, this is not a necessary condition but it will be sufficient to show that a lot of the cases involved produce enough different equations to allow us to go through the Obstinate Kernel method. For those cases that we obtain less equations, it is likely that we'll be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in (two friendly walks).
+It may not be necessary but it will be sufficient if a combination of a substitution $x_k = \sigma_k$ and a group action $g_L$ together give a power series in $t$ when applied to single variables like $x_1$ or $x_2$. For example we would hope that $g_L(x_j)|_{x_k=\sigma_k}$ is a power series in $t$ for some $i,j,L$. Again, this is not a necessary condition but it will be sufficient to show that a lot of the cases involved produce enough different equations to allow us to go through the Obstinate Kernel method. For those cases that we find less equations, it is likely that we'll be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in (two friendly walks).
 
 \begin{definition} A function $f(\row xd;t)$ is admissible if it is a power series in $t$. Furthermore $f$ is $k$-admissible if $f|_{x_k=\sigma_k}$ is admissible for an admissible $\sigma_k$ root. A tuple of functions is admissible if each element of the tuple is admissible.
 \end{definition}
@@ -93,7 +93,7 @@ When $|G| = 6$ we have a richer situation.
 \end{tabular}
 \end{table}
 
-What this classification tells us is that we can easily treat all $|G| = 4$ models with the same method. When $|G| = 6$ we either have to do some more work in the $S2k$ cases to show that the functions are admissible with respect to one more group operation or just deal with them as they are. The situation is similar in the $|G| = 8$ case. Now suppose that we have a set of valid equations for a substitution $x_k = \sigma_k$. They are a linear system in the variable quantities $\Qf{0,0},\, Q_1^0,\, Q_2^0$ and their orbits under the set of valid group actions. We hope for a high level of redundancy in these equations. Then we can eliminate some variables by taking a weighted sum over the valid equations. That is we obtain a weighted Orbit Sum operator with only a few group operations perhaps. We also have to keep in mind that we are also making the substitution $x_k = \sigma_k$.
+What this classification tells us is that we can easily treat all $|G| = 4$ models with the same method. When $|G| = 6$ we either have to do some more work in the $S2k$ cases to show that the functions are admissible with respect to one more group operation or just deal with them as they are. The situation is similar in the $|G| = 8$ case. Now suppose that we have a set of valid equations for a substitution $x_k = \sigma_k$. They are a linear system in the variable quantities $\Qf{0,0},\, Q_1^0,\, Q_2^0$ and their orbits under the set of valid group actions. We hope for a high level of redundancy in these equations. Then we can eliminate some variables by taking a weighted sum over the valid equations. That is, we attain a weighted Orbit Sum operator with only a few group operations perhaps. We also have to keep in mind that we are also making the substitution $x_k = \sigma_k$.
 
 We'll perform the first steps in the analysis of the Obstinate Kernel method for each situation that has $|G|/2$ $k$-admissible elements since that seems to work.
 %=======================================
@@ -132,7 +132,7 @@ The situation is similar to the Algebraic Kernel method except that the operator
 We'll drop the $X$ from the notation if it's clear in context. In particular $D_L[1] = \Delta_L$.
 \end{definition}
 For example, $D_2 = D_2[g_2(K_2)]$.
-\begin{example} If we use $g_L(X)$ instead of $X$ in the above definition we obtain
+\begin{example} If we use $g_L(X)$ instead of $X$ in the above definition we find
 \begin{align}
 	D_L[g_L(X)] = g_L(X) - Xg_L
 \end{align}
@@ -301,7 +301,7 @@ To eliminate the $X_2$ terms we take $A_{21}B_{212}$ times the first equation an
 \begin{align}
 	A_{21}B_{212}AB_2 X - A_2 BA_{212} B_{21} X_{212} = \beta(A_{21}B_{212}(B-B_2)+A_2 B(B_{212}-B_{21}))
 \end{align}
-We could obtain the same result by applying the following operator $D$ to both sides of the master functional equation.
+We could recover the same result by applying the following operator $D$ to both sides of the master functional equation.
 \begin{align}\begin{split}
 	D &=A_{21}B_{212} D_2[B_2] - A_2 B g_{212}D_2[B_2]\\
 	   &= (A_{21}B_{212} - A_2 B g_{212})D_2[B_2]\\
@@ -333,9 +333,9 @@ If we went through the $\sigma_2$ substitution instead, we would have onbtained 
 \begin{align}
 	D_{121}[B_{12}A_1A_{121}]\left(Q_2^0\right) = \frac{\beta}{B} D_{121}[B_{12}A_{121}](A_1-A)
 \end{align}
-where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$ and we only obtain an equality once we set $x_2 = \sigma_2$ in this expression.
+where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$ and we only attain an equality once we set $x_2 = \sigma_2$ in this expression.
 \end{theorem}
-The interesting fact (as found in \cite{tabbara2014exact}) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case. This is what allows the authors to obtain relationships between $\Qf{0,0}$ and setting one or more of $a_1$, $a_2$ equal to 1.
+The interesting fact (as found in \cite{tabbara2014exact}) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and unlikely to be done easily by hand. The square root part does not depend on $a_2$ in the first case and $a_1$ in the second case. This is what allows the authors to find relationships between $\Qf{0,0}$ and setting one or more of $a_1$, $a_2$ equal to 1.
 
 
 
@@ -385,4 +385,4 @@ In the rest of this calculation we need to eliminate the kernel term via a subst
 	\sigma_1: id, g_2, g_{21}, g_{212}\,,\\
 	\sigma_2: id, g_1, g_{12}, g_{121}
 \end{align}
-For each $\sigma_k$ we're going to obtain 3 additional functional equations to complement the master equation and then we'll substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just won't include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We'll also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note we'll also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra but because of the complexity and symmetry involved in the coefficients it's best to investigate the explicit simplification of the equations.
+For each $\sigma_k$ we're going to find 3 additional functional equations to complement the master equation and then we'll substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just won't include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We'll also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note we'll also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra but because of the complexity and symmetry involved in the coefficients it's best to investigate the explicit simplification of the equations.

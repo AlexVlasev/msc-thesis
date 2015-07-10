@@ -71,9 +71,9 @@ The example in the previous section shows that we can talk about marking operato
 The form $a_p-1$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion $P = {\mc{D}}^c$ and $a_p = a$. In the models we have investigated so far we saw that we don't really need the whole operator but just some terms near the boundaries.
 \begin{example} If we consider random walks with small steps on the half-line in one dimension we have the operator
 \begin{align}
-	E = 1 - \sum_{n=1}^\infty \ext{\ol{x}_1^n}
+	E = 1 - \sum_{n=1}^\infty \ext{\ol{x}_1^n}\,,
 \end{align}
-but since we only have small steps there are no walks that go past $\ol{x}_1$ in the negative direction so we can instead use the operator $E' = 1- \ext{\ol{x}_1}$ to the same effect. Although the operators are different in form they are essentially the same with regards to the problem at hand. We'll say they are model-equivalent.
+but since we only have small steps, there are no walks that go past $\ol{x}_1$ in the negative direction so we can instead use the operator $E' = 1- \ext{\ol{x}_1}$ to the same effect. Although the operators are different in form they are essentially the same with regards to the problem at hand. We'll say they are model-equivalent.
 \end{example}
 We may think of the random walk models as really living completely within the sumset $\mc{S}+\mc{D}$ of points that are combinations of points in $\mc{D}$ and steps $\mc{S}$. This is how far the model can reach from within $\mc{D}$ by taking a single step.
 \begin{definition} Given sets $A$ and $B$ we let their sumset be defined as
@@ -90,7 +90,7 @@ In the preceding example $E\equiv E'$ since they act the same way on monomials f
 \begin{align}
 	\Gamma = 1 + (a-1)\sum_{k=1}^{\infty} \ext{\ol{x}^k} = 1 + (a-1)\sum_{k=1}^{n} \ext{\ol{x}^k}
 \end{align}
-When the boundary of $\mc{D}$ is complicated we may not find nice model-equivalent operators but there are some cases where we can say something. In the usual problem we have an operator $E$ with infinitely many terms but instead we find that there is a model-equivalent operator $E'$ that is comprised of only finitely many terms. We may investigate which operators have finite equivalent operators.
+When the boundary of $\mc{D}$ is complicated we may not find nice model-equivalent operators, but there are some cases where we can say something. In the usual problem we have an operator $E$ with infinitely many terms but instead we find that there is a model-equivalent operator $E'$ that is comprised of only finitely many terms. We may investigate which operators have finite equivalent operators.
 \begin{definition} Given a model $\mc{M}$, a coefficient extraction operator $\Gamma$ in the variables $\row xd$ is of finite type if it is equivalent to an operator $\Gamma'$ that only has finitely many coefficient extraction terms. That is,
 \begin{align}
 	\Gamma \equiv_{\mc M} \Gamma' = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} \ext{x_I^J}
@@ -223,7 +223,7 @@ Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and is of finite ty
 \begin{align}
 	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
 \end{align}
-and we obtain a polynomial equation in the variables $\row xd$. We take the derivative operator
+and we attain a polynomial equation in the variables $\row xd$. We take the derivative operator
 \begin{align}
 	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\ldots\del_d^{A_d+B_d+1}
 \end{align}
@@ -246,7 +246,7 @@ The generating function $Q$ of a finite random model is given by
 \end{align}
 where $A_{ij}$ are functions that need to be determined.
 \end{corollary}
-We could have also obtained this kind of solution from going through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
+We could have also found this kind of solution from going through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
 
 %================================
 \section{Examples of regions we can consider}
@@ -294,7 +294,7 @@ We finally have the functional equation for random walks with full history
 \begin{align}
 	(1 -t\Gamma S)Q = a_{0,0}.
 \end{align}
-As in the example of an infinte marking operator, it stands to reason that $\Gamma$ is of infinite type as well. From the equation we can obtain the generating function $W$ for the SAWs by removing all walks with power of mark $a_{i,j}$ greater than 1. For this we need an operator that removes terms with more than one copy of any given label. Let
+As in the example of an infinte marking operator, it stands to reason that $\Gamma$ is of infinite type as well. From the equation we can retrieve the generating function $W$ for the SAWs by removing all walks with power of mark $a_{i,j}$ greater than 1. For this we need an operator that removes terms with more than one copy of any given label. Let
 \begin{align}
 	R_{i,j} &= \ext{a_{i,j}^0} + \ext{a_{i,j}}\\
 	R_n &= \prod_{-n\leq i,j \leq n} R_{i,j}\\
@@ -312,7 +312,7 @@ We can write this as a functional equation
 \begin{align}
 	\mc{L} W = (1-t\Sigma)W = (1-tR\Gamma S)W = a_{0,0}.
 \end{align}
-It's not clear if the operator $R\Gamma$ is of finite type. Now it's enough to set all the remaining labels to 1 and we will obtain the full generating function of SAWs with steps from $\mc{S}$.
+It's not clear if the operator $R\Gamma$ is of finite type. Now it's enough to set all the remaining labels to 1 and we will procure the full generating function of SAWs with steps from $\mc{S}$.
 
 The discussion lends itself nicely to generalization where now we have $d$ variables and operators $\Gamma_{i_1,\ldots,l_d}$, $R_{i_1,\ldots,i_d}$, etc defined analogously. The eigenpair discussion works out in the same way with eigenfunctions for $\lambda = 1$
 \begin{align}

@@ -14,7 +14,7 @@ We can easily generalize the one-dimensional results to two or more dimensions. 
     \label{fig:plane}
 \end{figure}
 
-In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation see \cite{tabbara2014exact} where the authors have to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. But then we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$.
+In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation see \cite{tabbara2014exact} where the authors have to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. However, we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$.
  
 \begin{figure}[H]
     \centering
@@ -29,11 +29,11 @@ This leads to the functional equation for $Q$
 \begin{align}
 	Q = 1 + tSQ - t\ol{x}_1S_1^{\um 1}Q_1^0 - t\ol{x}_2S_2^{\um 2}Q_2^0 + t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}\Qf{0,0}
 \end{align}
-which is rather large even for two dimensions. Contrast this notation to the one in \cite{bousquet2010walks} (page 10). The problem quickly runs into notational difficulties for $d$-dimensional problems but that can be dealt with by writing the equation as a sum over subsets of $[d]$ as is done for the noninteracting case in \cite{melczer2014variants}. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$ but we won't go into the messy details. Instead we'll use the operator notation to handle the problem in a slicker manner.
+which is rather large even for two dimensions. Contrast this notation to the one in \cite{bousquet2010walks} (page 10). The problem quickly runs into notational difficulties for $d$-dimensional problems, but that can be dealt with by writing the equation as a sum over subsets of $[d]$ as is done for the noninteracting case in \cite{melczer2014variants}. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$, but we won't go into the messy details. Instead we'll use the operator notation to handle the problem in a slicker manner.
 %=======================================
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
-If we use operators we can obtain the generalizations to higher-dimensions in a straight-forward manner. As before we start with $Q$ and extend the random walks by multiplying by $tS$. Then we apply some abstract operator $E$ to remove all the walks that venture outside of the positive orthant (nonzero coordinates $x_k$). Finally we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we've extended all walks by one step we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
+If we use operators we can retrieve the generalizations to higher-dimensions in a straight-forward manner. As before we start with $Q$ and extend the random walks by multiplying by $tS$. Then we apply some abstract operator $E$ to remove all the walks that venture outside of the positive orthant (nonzero coordinates $x_k$). Finally we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we've extended all walks by one step we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
 \begin{align}
 	Q = 1 + LE(tSQ)
 \end{align}
@@ -57,7 +57,7 @@ Previously we've had to deal with coefficient extractions and back-substitution 
 \begin{align}
 	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}
 \end{align}
-which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{\um 1}$ we introduce $2^d$ terms relating to $Q$ but then since we only have $E$ applied on $SQ$ we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
+which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{\um 1}$ we introduce $2^d$ terms relating to $Q$, but since we only have $E$ applied on $SQ$, we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
 \begin{align}\begin{split}
 	L^{\um 1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
 	&=  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
@@ -80,7 +80,7 @@ As in the two-dimensional case we let $K_I = c_I-t \ol{x}_IS_{I}^{\um \one}$ whe
 \end{align}
 where $K_I = (c_I-t \ol{x_I}S_{I}^{\um \one})$.
 \end{theorem}
-This is the interacting version of the functional eqaution obtained in \cite{melczer2014variants} which written our notation is
+This is the interacting version of the functional equation found in \cite{melczer2014variants} which written our notation is
 \begin{align}
 	KQ - \sum_{\substack{I \subseteq [d]\\ I \neq \emptyset}}(-1)^{|I|}\ol{x}_IS_I^{\um \one}Q_I^{\oo} = 1\,.
 \end{align}
@@ -92,7 +92,7 @@ This is the interacting version of the functional eqaution obtained in \cite{mel
 %=======================================
 \subsection{Using operator notation for fast coefficient extraction}
 %=======================================
-As in the two-dimensional case we can now perform coefficient extractions with $[x_I^\oo]$ to obtain further functional equations relating $Q_I^\oo$ to other $Q$ terms of the same variables or fewer variables. The operator $[x_i^k]$ commutes with all $M_j, E_j$ with $j\neq i$ so we only need to consider the action on the operators $M_i = L_i^{\um 1}$ and $E_i$. We've already done so in the one-dimensional case. The zeroth power extraction yields
+As in the two-dimensional case we can now perform coefficient extractions with $[x_I^\oo]$ to attain further functional equations relating $Q_I^\oo$ to other $Q$ terms of the same variables or fewer variables. The operator $[x_i^k]$ commutes with all $M_j, E_j$ with $j\neq i$ so we only need to consider the action on the operators $M_i = L_i^{\um 1}$ and $E_i$. We've already done so in the one-dimensional case. The zeroth power extraction yields
 \begin{align}
 	[x_i^0]M_i &= [x_i^0]-[x_i^0]c_i[x_i^0] = [x_i^0]-c_i[x_i^0] = \ol{a_i}[x_i^0]\,,\\
 	[x_i^0]E_i &= [x_i^0] - [x_i^0]\ext{\ol{x}_i} = [x_i^0]
@@ -134,7 +134,7 @@ The main role of these calculations is to provide a shortcut for manual calculat
 %=======================================
 \subsection{Further functional equations}
 %=======================================
-We need to go further in order to obtain equations similar to the master functional equation. We know that
+We need to go further in order to find equations similar to the master functional equation. We know that
 \begin{align}
 	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I
 \end{align}
@@ -250,7 +250,7 @@ where $\odot_t$ denotes the Hadamard product of two power series with respect to
 \begin{align}
 	Q_i(a_i,x_i;t)= \sum_{k = 0}^{\infty} t^k (\Gamma_iS_i)^k
 \end{align}
-and by reversing the iteration we obtain the functional equations
+and by reversing the iteration we reach the functional equations
 \begin{align}
 	(1-t\Gamma_iS_i)Q_i = 1
 \end{align}
@@ -406,7 +406,7 @@ whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that 
 \item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus means that we have no steps that go away from the origin. Therefore $S = \Sf{0,0}$. Thus we have only two models - no steps or a resting step. 
 \item[Case 1.2:] Here any transformation applies on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ so the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$ in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x}_1$ step with a possible resting step.
 \item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$ and this means $S_2^{\um 1}, S_2^1 \neq 0$. This means we must have either both vertical steps $x_2$ and $\ol{x}_2$ in the 1.3 case or two horizontal steps $x_1$ and $\ol{x}_1$ in the 3.1 case.
-\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be obtained by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
+\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be differ by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
 \begin{figure}[H]
     \centering
 \[
@@ -536,7 +536,7 @@ The reason the method worked in this case is that we have steps that keep a rand
 \begin{align}
 	(1-tS)Q - (c_2 -t\ol{x}_2 S_1^{\um 1})Q_2^0  &= \ol{a}_1(\ol{a}_2 + b_1 q  -b_1c_2q_0)  =\ol{a}_1\phi(x_2)\,.
 \end{align}
-Since $S_1^{\um 1},S_2^1 \neq 0$ we have a root $x_2 = \sigma_2$ that allows us to remove the $(1-tS)Q$ term and get
+Since $S_1^{\um 1},S_2^1 \neq 0$ we have a root $x_2 = \sigma_2$ that allows us to remove the $(1-tS)Q$ term and find that
 \begin{align}
 	Q_2^0  &=-\frac{\ol{a}_1\phi(\sigma_2)}{ c_2 -t\ol{\sigma}_2 S_1^{\um 1}}
 \end{align}
@@ -544,7 +544,7 @@ so this allows us to write $Q$ as
 \begin{align}
 	Q = \frac{1}{1-tS}\left(\ol{a}_1\phi(x_2) - \frac{c_2 -t\ol{x}_2 S_1^{\um 1}}{c_2 -t\ol{\sigma}_2 S_1^{\um 1}}\ol{a}_1\phi(\sigma_2)\right)\,.
 \end{align}
-Of course, this can be expanded and simplified based on what $q$ and $q_0$ are from the one-dimensional setting but the important thing is that we can obtain the solution in this case via one-dimensional equations.
+Of course, this can be expanded and simplified based on what $q$ and $q_0$ are from the one-dimensional setting but the important thing is that we can build the solution in this case via one-dimensional equations.
 
 %=======================================
 \subsection{Summary}
