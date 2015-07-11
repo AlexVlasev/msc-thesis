@@ -4,26 +4,26 @@
 \chapter{Further research directions}
 %==============================================================================
 
-In this thesis we explored the usefulness of using operators to simplify the derivation of functional equations pertaining to random walk models on $\ze^d$ and to simplify the first steps in solutions to the problems. The sleek approach of operators makes us wonder if we can extend the work further into territories like Sturm-Liouville theory where we may investigate the spectra of operators and find alternative solutions to the functional equations via eigenfunctions and eigenvalues of these operators. For this to work we need a suitable inner product for which we may investigate if the operators are self-adjoint and so on. Unfortunately, we haven't found such suitable inner products apart from inner products on symmetric functions which may be promising. In this chapter we'll only provide the start of such analysis which may be undertaken as future research.
+So far we have explored the using operators to simplify the derivation of functional equations pertaining to random walk models on $\ze^d$ and to simplify the first steps in solutions to these problems. It would be great to know if we can extend the work further into a territory like Sturm-Liouville theory where we may investigate the spectra of operators and find alternative solutions to the functional equations via eigenfunction expansions. For this to work, we need a suitable inner product that will allow us to answer questions like if the operators are self-adjoint. Unfortunately, we haven't found such suitable inner products apart from inner products on symmetric functions. While they seem promising, we haven't been able to go far enough with them. In this chapter we'll provide the start of such analysis which may be undertaken in future research.
 
 %=======================================
 \section{Operators}
 %=======================================
 
-The operators we've seen in this thesis are almost invariably marking operators (like $L$ and $E$), marking operators in combination of multiplication by another function (like $\Gamma S$) or a combination of operators (like $L^{\um 1} - tES$). In this order we'll investigate the operators' properties, eigenvalues, eigenvectors, kernels and invertibility.
+The operators we've seen so far are almost invariably marking operators, like $L$ and $E$, marking operators in combination of multiplication by another function, like $\Gamma S$, or a combination of operators, like $L^{\um 1} - tES$. In this order we'll find out their properties - eigenvalues, eigenvectors, kernels and invertibility.
 
 
 %=======================================
 \subsection{Marking operators}
 %=======================================
 
-The building block of the operators are coefficient extractions $[x_I^J]$ and in our case we see term extractions $\ext{x_I^J}$. We'll use the notation
+The building block of the operators are coefficient extractions $[x_I^J]$ and term extractions $\ext{x_I^J}$. We'll use the following notation.
 \begin{definition} For sets $I$ and $J$ of equal size we define the term extraction operator as
 \begin{align}
 	[[x_I^J]] \equiv \ext{x_I^J}\,.
 \end{align}
 \end{definition}
-The main question here is how to compose these term extractions. Suppose that we want to perform the extractions with monomials $x_I^P$ and $x_J^Q$. Then the composition will contain three extractions - one for the $x$ powers appearing in $x_I^P$ but not in $x_J^Q$, one for the reversed situation, and one for the common terms between the two monomials. However the resulting composition will be the zero operator if the power sequences for the common variables don't match.
+The first question we'll answer is what happens when we compose term extraction operators. Suppose that we want to perform the extractions with monomials $x_I^P$ and $x_J^Q$. Then the composition will contain three extractions - one for the $x$ powers appearing in $x_I^P$ but not in $x_J^Q$, one for the reversed situation, and one for the common terms between the two monomials. However the resulting composition will be the zero operator if the power sequences for the common variables don't match.
 \begin{example} We compute
 \begin{align}
 	[[x_{1,2}^{3,4}]][[x_{2,3}^{4,1}]] = [[x_{1,2,3}^{3,4,1}]]
@@ -38,7 +38,7 @@ The next highly-technical lemma makes the composition precise.
 \begin{align}
 	[[x_I^P]][[x_J^Q]] = \delta(P'',Q'')[[x_{I'}^{P'}x_{J'}^{Q'}x_K^{P''}]]
 \end{align}
-That is, the resulting operator is zero if the power sequences $P$ and $Q$ don't match over the variables common to the two extractions. Furthermore the two term extraction operators commute.
+That is, the resulting operator is zero if the power sequences $P$ and $Q$ don't match over the variables common to the two extractions. Furthermore, the two term extraction operators commute.
 \end{lemma}
 
 Combinatorially speaking, it should be clear that if a marking operator marks several different monomials we may express this operator as a product of marking operators each marking a single monomial. We can make this notion precise with the algebraic form of the marking operators.
@@ -58,8 +58,8 @@ A finite marking operator is one marking finitely many monomials. An infinite ma
 \begin{proof} This can be seen from their combinatorial nature. Since multiplication is commutative and the marking is done via multiplication, the order of applying the marking operators doesn't matter. Algebraically this is a consequence of the commutativity the term extraction operators.
 \end{proof}
 
-Combinatorially speaking, we can find some of the eigenvalues and eigenfunctions easily by looking at single monomials. Every non-marked monomial is an eigenfunction with eigenvalue 1. Every marked monomial is an eigenfunction with eigenvalue equal to the label. If we seek eigenfunctions among polynomials of the $x$ variables by linear independence of the indeterminates we'll have that the eigenpairs listed so far are all we have. However this doesn't say anything about eigenvalues for eigenfunctions that are power series or Laurent series in the variables $x$. Although the analysis is straight-forward for operators marking single monomials.
-\begin{prop} Let $\Gamma$ be an operator marking a single monomial $x_I^J$ with label $a$. Let $\lambda$ and $u_\lambda$ be an eigenvalue and $u$ be an eigenfunction corresponding to that eigenvalue. Then $\lambda = a$ with $u_\lambda = x_I^J$ or $\lambda = 1$ with $u_\lambda$ a function not containing $x_I^J$ (in the formal power series sense). In particular every monomial other than $x_I^J$ is an eigenfunction with eigenvalue 1.
+Combinatorially speaking, we can find some of the eigenvalues and eigenfunctions easily by looking at single monomials. If a monomial is not marked by $\Gamma$, then it is an eigenfunction with eigenvalue 1, since $\Gamma$ doesn't change it; if it is, then it is an eigenfunction with eigenvalue equal to the label given by $\Gamma$. These are all the polynomial eigenfunctions. This doesn't mean there can't be more eigenfunctions among those expressible by power/Laurent series and beyond.
+\begin{prop} Let $\Gamma$ be an operator marking a single monomial $x_I^J$ with label $a$. Let $\lambda$ and $u_\lambda$ be an eigenpair. Then $\lambda = a$ with $u_\lambda = x_I^J$ or $\lambda = 1$ with $u_\lambda$ a function not containing $x_I^J$, in the formal power series sense. In particular, every monomial other than $x_I^J$ is an eigenfunction with eigenvalue 1.
 \end{prop}
 \begin{proof}
 Let $u_\lambda = u' + u''x_I^J$ where $u \neq 0$ and $u''$ doesn't share variables with $x_I^J$. Then
@@ -72,7 +72,7 @@ which we may write as
 \end{align}
 We have two cases.
 \begin{itemize}
-\item If $u' = 0$ then $u'' \neq 0$ and $\lambda = a$. The eigenfunction is $x_I^J$.
+\item If $u' = 0$, then $u'' \neq 0$ and $\lambda = a$. The eigenfunction is $x_I^J$.
 \item If $u' \neq 0$ and there is no term in $u''x_I^J$ that can compesate for this. Therefore $\lambda = 1$ and $u'' = 0$.
 \end{itemize}
 \end{proof}
@@ -89,7 +89,7 @@ The proofs can be extended for finite marking operators. It's not entirely clear
  \begin{align}
 	\Gamma S(u) = \Gamma(Su)\quad\text{or}\quad S\Gamma u = S\cdot \Gamma u\,.
  \end{align}
-This kind of operator is important because it can be found in the functional equations for random walk models. We seek to find the eigenpairs for  inhomogeneous operators.  We first show that the two definitions are equivalent when it comes to finding eigenpairs.
+This kind of operator is important because it can be found in the functional equations for random walk models. To find their eigenpairs we'll first show that the definitions are equivalent when it comes to this task.
 \begin{prop} The two operators have the same eigenvalues with eigenfunctions differing by a multiple of $S$. That is $(\lambda,u)$ is an eigenpair for $\Gamma S$ if and only of $(\lambda, Su)$ is an eigenpair for $S \Gamma$. In particular, if $\lambda = 0$ we have
 \begin{align}
 	\ker(\Gamma S) = \ol{S} \ker(\Gamma)\,.
@@ -101,9 +101,9 @@ This kind of operator is important because it can be found in the functional equ
 \end{align}
 Therefore the operators have the same eigenvalues and they have the eigenfunctions $u$ and $Su$ respectively. Now if we pick $\lambda = 0$ to find the kernels of the operators we find that $u \in \ker(\Gamma S)$ if and only if $Su \in \ker(S\Gamma) = \ker(\Gamma)$ which completes the proof.
 \end{proof}
-It is a rather difficult task to find the eigenpairs for such operators as the next example shows
+As the next example shows, it may not be easy to find the eigenpairs for such operators.
 \begin{example}
-Let $\Gamma$ and an eigenfunction $u$ of $\Gamma S$ where 
+Let $\Gamma$ be a marking operator and let $u$ be an eigenfunction of $\Gamma S$, where 
 \begin{align}
 	S = x\com u = \sum_k u_k x^k\,.
 \end{align}
@@ -126,18 +126,19 @@ The situation becomes more complicated for more complicated functions $S$.
 %=======================================
 \subsection{Random Walks Operator}
 %=======================================
-In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laurent polynomial $S$ and some random walk operator $\Gamma$. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$. Then we calculate
+In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laurent polynomial $S$ and some marking operator $\Gamma$. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$. Then we calculate
 \begin{align}\begin{split}
 	(\mc{L}-\lambda I) u &= u - \lambda u -t\Gamma Su\\
 	t \Gamma S u &= (1-\lambda)u = \mu u\,.
 \end{split}\end{align}
 If $\lambda = 1$ we would have to compute the kernel of $\Gamma S$ which we did in the previous section - the eigenfunctions of $\mc{L}$ for eigenvalue $\lambda = 1$ are the functions $u \in \ol{S}\ker{\Gamma}$. Let $u$ be given by a finite order Laurent series
 \begin{align}
-	u = u_n t^n + u_{n+1}t^{n+1} + \ldots
+	u = u_n t^n + u_{n+1}t^{n+1} + \ldots\,,
 \end{align}
-where $u_n \neq 0$. Then we can re-write the functional equation as
+where $u_n \neq 0$. Then we can rewrite the functional equation as
 \begin{align}
-	t^{-n}(1-t\Gamma S)u = \lambda t^{-n}u\,.
+	t^{-n}(1-t\Gamma S)u &= \lambda t^{-n}u\\
+	(\lambda -1) t^{-n}u &= -t^{1-n}\Gamma Su\,.
 \end{align}
 Letting $t \to 0$ in this equation yields
 \begin{align}

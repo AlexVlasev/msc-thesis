@@ -9,7 +9,7 @@
 \label{sec:DerFxnEqn}
 %=======================================
 
-Before we tackle the higher dimensional random walk problems, it will be instructive to first visit the one-dimensional case, which will help illustrate the methods and ideas that we will employ throughout this work. We'll focus on one dimensional random walk models with smalls steps (the size of each step is at most one unit in any horizontal or vertical direction). Here the step set is $\mc S \subseteq \{\um 1, 0, 1\}$, which can also be represented via the step polynomial
+Before we tackle the higher-dimensional random walk problems, it will be instructive to first visit the one-dimensional case, which will help illustrate the methods and ideas that we will employ throughout this work. We'll focus on one-dimensional random walk models with smalls steps (the size of each step is at most one unit in any horizontal or vertical direction). Here the step set is $\mc S \subseteq \{\um 1, 0, 1\}$, which can also be represented via the step polynomial
 \begin{align}
 	S = S_{\um 1}\ol{x} + S_0 + S_1 x\,.
 \end{align}
@@ -39,7 +39,7 @@ In other words $Q_{k+1} = \Gamma (SQ_k)$ for all $k\ge 0$. We may sum both sides
 	Q &= 1 + t\Gamma (SQ)
 \end{split}
 \end{align}
-where we factor out the $t$ since the operator only acts on monomials $x^n$ and not on $t$. We've also assumed that we could factor out $\Gamma$ from the infinite summation. We are working with formal series after all and we are looking for the easiest approach. In fact we'll use this to define how $\Gamma$ acts as an operator - it acts term-wise on the series. We may re-write the functional equation as
+where we factor out the $t$ since the operator only acts on monomials $x^n$ and not on $t$. We've also assumed that we could factor out $\Gamma$ from the infinite summation. We are working with formal series after all and we are looking for the easiest approach. In fact we'll use this to define how $\Gamma$ acts as an operator - it acts term-wise on the series. We may rewrite the functional equation as
 \begin{align}
 	\mc L Q = (1-t\Gamma S)Q = 1\,,
 \end{align}
@@ -49,7 +49,7 @@ which highlights the operator nature of the equation. We can invert this operato
 \end{align}
 where the operator $\Gamma S$ acts by multiplying by $S$ first and then by applying $\Gamma$ on the result. The power here indicates iteration.
 
-All that is left to do is to find a good representation of the operator $\Gamma$. First, we need to remove all walks that end outside of the domain of interest. For illustrative purposes we'll use the domain of the non-negative integer coordinates. We must remove any walks that venture outside of this region. However, starting with a valid walk we cannot go too far - the furthest we may go with one step is the coordinate $\um 1$ where the walk will now have monomial $a^i \ol{x} t^j$ for some $i,j\ge 0$. So, at worst, when we multiply $Q_k$ by $S$ we may pick up some terms with monomials that contain $\ol{x}$. Since we don't want these, it's enough to remove terms with monomials $\ol x$. This can easily be represented as follows. Let
+All that is left to do is to find a good representation of the operator $\Gamma$. First, we need to remove all walks that end outside of the domain of interest. For illustrative purposes we'll use the domain of the nonnegative integer coordinates. We must remove any walks that venture outside of this region. However, starting with a valid walk we cannot go too far - the furthest we may go with one step is the coordinate $\um 1$ where the walk will now have monomial $a^i \ol{x} t^j$ for some $i,j\ge 0$. So, at worst, when we multiply $Q_k$ by $S$ we may pick up some terms with monomials that contain $\ol{x}$. Since we don't want these, it's enough to remove terms with monomials $\ol x$. This can easily be represented as follows. Let
 \begin{align}
 	E = 1 - \ext{\ol x}
 \end{align}
@@ -141,7 +141,7 @@ If we apply this to the functional equation, the RHS is simply $L^{\um 1} (1) = 
 	&= (1-tS)Q - (c-t\ol{x}S_{\um 1})Q_0\,. 
 \end{align}
 We've arrived at the master functional equation in cleaner way.
-\begin{prop} The one-dimensional random walk model restricted to the non-negative axis, with Laurent step polynomial $S = S_{\um 1}\ol{x}+S_0 + S_1 x$, has a generating function $Q$ satisfying the functional equations
+\begin{prop} The one-dimensional random walk model restricted to the nonnegative axis, with Laurent step polynomial $S = S_{\um 1}\ol{x}+S_0 + S_1 x$, has a generating function $Q$ satisfying the functional equations
 \begin{align}
 	(L^{\um 1}-tES)Q &= \ol{a}\,,\\
 	(1-tS)Q-(c-t\ol{x}S_{\um 1})Q_0 &= \ol{a}\,.
@@ -203,7 +203,7 @@ where $k\ge 1$ in the second equation.
 \section{Solving the functional equation for various $S$}
 \label{sec:Solving1D}
 %=======================================
-The one-dimensional random walk models have algebraic generating functions while the higher-dimensional generalizations may not even have D-finite generating function (in the variable $t$). Nevertheless the one-dimensional models allow us to showcase some of the methods we'll use later on in the higher dimensional settings. This is just an observation, but the difficulties in retrieving the solutions tend to scale up when we have more steps with negative coordinates. Those are steps that allow random walks to go back closer to the axes and origin. Although it may be surprising, this is a consequence of the form of the master functional equation - the coefficients become more complicated. We begin with the easier case.
+The one-dimensional random walk models have algebraic generating functions while the higher-dimensional generalizations may not even have D-finite generating function (in the variable $t$). Nevertheless the one-dimensional models allow us to showcase some of the methods we'll use later on in the higher-dimensional settings. This is just an observation, but the difficulties in retrieving the solutions tend to scale up when we have more steps with negative coordinates. Those are steps that allow random walks to go back closer to the axes and origin. Although it may be surprising, this is a consequence of the form of the master functional equation - the coefficients become more complicated. We begin with the easier case.
 %=======================================
 \subsection{The $S_{-1} = 0$ case.}
 %=======================================
@@ -246,7 +246,7 @@ Even such small examples already show connections between $Q$ and $\wh Q$. It wi
 %=======================================
 \subsection{The $S_{-1} \neq 0$ case.}
 %=======================================
-In this case we will apply the Obstinate Kernel as is done in the two dimensional cases in \cite{tabbara2014exact}, page 11 of \cite{wong2014confining}. ZZCITEZZ It requires finding an $x$ value that makes the kernel $K = 1 - tS$ vanish in the functional equation
+In this case we will apply the Obstinate Kernel as is done in the two-dimensional cases in \cite{tabbara2014exact}, page 11 of \cite{wong2014confining}. ZZCITEZZ It requires finding an $x$ value that makes the kernel $K = 1 - tS$ vanish in the functional equation
 \begin{align}
 	(1-tS)Q - (c -t\ol{x})Q_0 = \ol{a}\,.
 \end{align}
@@ -358,7 +358,7 @@ With two different approaches we obtained slightly different relationships upon 
 %=======================================
 In this section we were able to find explicit solutions for $Q_0, Q$ and also $B$-operator relationships for $Q$ and $\wh Q$. In higher dimensions this analysis will be more difficult, but we will find some $B$-operator relationships for the functions equivalent to $Q_0$ and $\wh{Q_0}$. Here is a table showing the resuls for the one-dimensional random walk models with small steps and interaction with the origin. Here $\sigma$ depends on $S_1$ and $S_0$.
  \begin{table}[H]
-    \caption{Generating functions for walks with small steps on the non-negative half-life.}
+    \caption{Generating functions for walks with small steps on the nonnegative half-line.}
     \label{tbl:table1d}
     \centering
     \begin{tabular}{ccccc}

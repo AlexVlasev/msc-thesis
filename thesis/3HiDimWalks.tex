@@ -14,7 +14,7 @@ We can easily generalize the one-dimensional results to two or more dimensions. 
     \label{fig:plane}
 \end{figure}
 
-In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation see \cite{tabbara2014exact} where the authors have to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the noninteracting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. As in the one-dimensional problem we may start with the generating function $Q$ for the random walks on the quarter-plane. Then we extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$. However, we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$.
+In the past we've performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error (for a view of difficulties involved in not using the operator notation see \cite{tabbara2014exact} where the authors have to wrestle with case-by-case analysis). Instead, we use operators to derive the functional equations cleanly and without pain. First, we'll illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the random walks on the quarter-plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To do this we can subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we've removed too many walks. We need to add back in those walks that end on $(\um 1,\um 1)$.
  
 \begin{figure}[H]
     \centering
@@ -23,30 +23,30 @@ In the past we've performed inclusion-exclusion to arrive at functional equation
     \label{fig:inclusion}
 \end{figure}
 
-The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term we start with $Q_1^0$ and multiply by $t\ol{x}_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally we add back in those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step so we multiply $\Qf{0,0}$ by $t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}$. What we've obtained is $Q$ again but with the $t^0$ term missing.
+The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term, we start with $Q_1^0$ and multiply by $t\ol{x}_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally we add back in those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step so we multiply $\Qf{0,0}$ by $t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}$. We've obtained $Q$ again but with the $t^0$ term missing.
 
 This leads to the functional equation for $Q$
 \begin{align}
 	Q = 1 + tSQ - t\ol{x}_1S_1^{\um 1}Q_1^0 - t\ol{x}_2S_2^{\um 2}Q_2^0 + t\ol{x}_1\ol{x}_2\Sf{\um 1,\um 1}\Qf{0,0}
 \end{align}
-which is rather large even for two dimensions. Contrast this notation to the one in \cite{bousquet2010walks} (page 10). The problem quickly runs into notational difficulties for $d$-dimensional problems, but that can be dealt with by writing the equation as a sum over subsets of $[d]$ as is done for the noninteracting case in \cite{melczer2014variants}. This method really runs into trouble when we start considering interactions. We take the functional equation for the noninteracting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$, but we won't go into the messy details. Instead we'll use the operator notation to handle the problem in a slicker manner.
+which is rather large even for two dimensions. Contrast this notation to the one in \cite{bousquet2010walks} (page 10). The problem quickly runs into notational difficulties for $d$-dimensional problems, but that can be dealt with by writing the equation as a sum over subsets of $[d]$, like it is done for the non-interacting case in \cite{melczer2014variants}. This method runs into trouble when we start considering interactions. We take the functional equation for the non-interacting case and modify it to add interactions. This has been done before in ZZCITEZZ by adding in terms like $(a_1-1)T$ where $T$ is some expression involving extractions of $Q$ and $S$, but we won't go into the messy details. Instead, we'll use the operator notation to handle the problem in a much more efficient manner.
 %=======================================
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
-If we use operators we can retrieve the generalizations to higher-dimensions in a straight-forward manner. As before we start with $Q$ and extend the random walks by multiplying by $tS$. Then we apply some abstract operator $E$ to remove all the walks that venture outside of the positive orthant (nonzero coordinates $x_k$). Finally we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we've extended all walks by one step we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
+If we use operators we can build the generalizations to higher-dimensions in a straight-forward manner. As we've done before, we multiply $Q$ by $tS$ so we can extend the random walks by one step. Then we apply an operator $E$, to be determined later, to remove all the walks venturing outside of the positive orthant (nonzero coordinates $x_k$). Finally, we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we've extended all walks by one step, we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
 \begin{align}
 	Q = 1 + LE(tSQ)
 \end{align}
-and the only remaining task is to find $L$ and $E$. Like in the one-dimensional problem we start removing monomials with coordinates outside of the positive orthant. The important idea here is that if we have an operator that just removes monomials, then it doesn't matter in which order we end up removing them. Let $E_k = 1 - \ext{\ol{x}_k}$ be the operator removing monomials with $x_k$ coordinate equal to $\um 1$. Then we may write $E = E_1\cdots E_d$. For example
+and the only remaining task is to find $L$ and $E$. Like in the one-dimensional problem, we start removing monomials with coordinates outside of the positive orthant. The important idea here is that if we have operators that just remove monomials, then it doesn't matter in which order we end up removing them. Let $E_k = 1 - \ext{\ol{x}_k}$ be the operator removing monomials with $x_k$ coordinate equal to $\um 1$. Then we may write $E = E_1\cdots E_d$. For example,
 \begin{align}
 	E_1E_2 = (1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2}) = 1-\ext{\ol{x}_1}-\ext{\ol{x}_2}+\ext{\ol{x}_1\ol{x}_2}
 \end{align}
-and this shows that the inclusion-exclusion is a natural consequence of how the operator is set up. Similarly if we let $L_k = 1 + (a_k-1)[x_k^0]$ then we may write $L = L_1\cdots L_d$. Here order does not matter since we are marking monomials with variables $a_k$. It doesn't matter if we first multiply by $a_1$ and then by $a_2$ or vice-versa. As in the one-dimensional case the operators $L_k$ are invertible with inverses $L_k^{\um 1} = 1 - c_k[x_k^0]$ and thus $L$ is also invertible. We can apply the operator $L^{\um 1}$ to the functional equation
+and this shows that the inclusion-exclusion is a natural consequence of how the operator is set up. Similarly, if we let $L_k = 1 + (a_k-1)[x_k^0]$, then we may write $L = L_1\cdots L_d$. Here order does not matter since we are marking monomials with variables $a_k$. It doesn't matter if we first multiply by $a_1$ and then by $a_2$ or vice-versa. As in the one-dimensional case, the operators $L_k$ are invertible with inverses $L_k^{\um 1} = 1 - c_k[x_k^0]$, and thus the operator $L$ is also invertible. We can apply the operator $L^{\um 1}$ to the functional equation
 \begin{align}
 	L^{\um 1}(1-tLES)Q = (L^{\um 1}- tES)Q = L^{\um 1}(1) = \sum_{I\subseteq [d]}c_I = \ol{a}_{[d]}
 \end{align}
-which allows us to write down the following result.
-\begin{prop} The $d-$dimensional random walk model with small steps in the positive orthant and marking of hyperplane $x_k=0$ interactions has a generating function $Q$ satisfying the functional equations
+and this allows us to write down the following result.
+\begin{prop} The $d$-dimensional random walk model, with small steps in the positive orthant and marking of hyperplane $x_k=0$ interactions, has a generating function $Q$ satisfying the functional equations
 \begin{align}
 	(1-tLES)Q &= 1\,,\\
 	(L^{\um 1}-tES)Q &= \ol{a}_{[d]}
@@ -55,9 +55,9 @@ where $L$, $E$, $L^{\um 1}$ are of the form $\Gamma = \Gamma_1\cdots \Gamma_d$.
 \end{prop}
 Previously we've had to deal with coefficient extractions and back-substitution to find the expanded form of the second functional equation (page 9 of \cite{tabbara2014exact} and page 12 of \cite{wong2014confining}). Using the operator notation allows us to skip this process. In general the second functional equation has many less terms.To see this we take a look at the $L_kE_k$ operator
 \begin{align}
-	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}
+	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol{x}_k}\,,
 \end{align}
-which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand once we apply the operator $L^{\um 1}$ we introduce $2^d$ terms relating to $Q$, but since we only have $E$ applied on $SQ$, we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
+which increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand, once we apply the operator $L^{\um 1}$, we introduce $2^d$ terms relating to $Q$, but since we only have $E$ applied on $SQ$, we'd only have at most $2^d$ terms from this. For the case of walks of step size at most 1 and labelling the hyperplane interactions we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case we can write out the functional equation explicitly. Firstly,
 \begin{align}\begin{split}
 	L^{\um 1} Q &= (1-c_1[x_1^0])\ldots(1-c_d[x_d^0])Q \\
 	&=  \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo
@@ -66,21 +66,21 @@ and
 \begin{align}\begin{split}
 	 ESQ &= (1-\ext{\ol{x}_1})\ldots(1-\ext{\ol{x}_d})(SQ) \\
 	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I [x_I^{\um \one}](SQ) \\
-	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I S_I^{\um \one}Q_I^\oo
+	 &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol{x}_I S_I^{\um \one}Q_I^\oo\,,
 \end{split}\end{align}
 where the last line follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$.
 Therefore the functional equation is
 \begin{align}
     \sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol{x}_IS_{I}^{\um \one})Q_I^\oo = \ol{a}_{[d]}\,.
 \end{align}
-As in the two-dimensional case we let $K_I = c_I-t \ol{x}_IS_{I}^{\um \one}$ where if $I =\emptyset$ we have the empty products and empty extractions leaving us with $K_{\emptyset} = K$. Finally we can write the master equation in $d$-dimensions.
+As in the two-dimensional case we let $K_I = c_I-t \ol{x}_IS_{I}^{\um \one}$ where if $I =\emptyset$, we have the empty products and empty extractions, leaving us with $K_{\emptyset} = K$. Finally we can write the master equation in $d$-dimensions.
 \begin{theorem} The full generating function $Q$ for random walks with interactions satisfies the functional equation
 \begin{align}
    \sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo= \ol{a}_{[d]}
 \end{align}
 where $K_I = (c_I-t \ol{x_I}S_{I}^{\um \one})$.
 \end{theorem}
-This is the interacting version of the functional equation found in \cite{melczer2014variants} which written our notation is
+This is the interacting version of the functional equation found in \cite{melczer2014variants}. In our notation this is
 \begin{align}
 	KQ - \sum_{\substack{I \subseteq [d]\\ I \neq \emptyset}}(-1)^{|I|}\ol{x}_IS_I^{\um \one}Q_I^{\oo} = 1\,.
 \end{align}
@@ -92,31 +92,31 @@ This is the interacting version of the functional equation found in \cite{melcze
 %=======================================
 \subsection{Using operator notation for fast coefficient extraction}
 %=======================================
-As in the two-dimensional case we can now perform coefficient extractions with $[x_I^\oo]$ to attain further functional equations relating $Q_I^\oo$ to other $Q$ terms of the same variables or fewer variables. The operator $[x_i^k]$ commutes with all $M_j, E_j$ with $j\neq i$ so we only need to consider the action on the operators $M_i = L_i^{\um 1}$ and $E_i$. We've already done so in the one-dimensional case. The zeroth power extraction yields
+As in the two-dimensional case, we can now perform coefficient extractions with $[x_I^\oo]$ to attain further functional equations relating $Q_I^\oo$ to other $Q$ terms of the same variables or fewer variables. The operator $[x_i^k]$ commutes with all $M_j, E_j$ with $j\neq i$ so we only need to consider the action on the operators $M_i = L_i^{\um 1}$ and $E_i$. We've already done so in the one-dimensional case. The zeroth power extraction yields
 \begin{align}
 	[x_i^0]M_i &= [x_i^0]-[x_i^0]c_i[x_i^0] = [x_i^0]-c_i[x_i^0] = \ol{a_i}[x_i^0]\,,\\
-	[x_i^0]E_i &= [x_i^0] - [x_i^0]\ext{\ol{x}_i} = [x_i^0]
+	[x_i^0]E_i &= [x_i^0] - [x_i^0]\ext{\ol{x}_i} = [x_i^0]\,,
 \end{align}
 and the $k$-th power extraction for $k\ge 1$ yields
 \begin{align}
 	[x_i^k]M_i &= [x_i^k]-[x_i^k]c_i[x_i^0] = [x_i^k]\,,\\
 	[x_i^k]E_i &= [x_i^k] - [x_i^k]\ext{\ol{x}_i} = [x_i^k]\,.
 \end{align}
-So, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ from the picture while for $k = 0$ it removes $E_i$ but leaves a residual $\ol{a_i}$ behind for $M_i$. Therefore if we extract $[x_I^\oo]$ from the functional equation we have
+Therefore, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ from the picture, while for $k = 0$ it removes $E_i$ but leaves a residual $\ol{a_i}$ behind for $M_i$. Therefore if we extract $[x_I^\oo]$ from the functional equation, we have
 \begin{align}\begin{split}
 	[x_I^\oo]a_{[d]} =\ol{a}_{[d]} &= [x_I^\oo](M_{[d]} - tE_{[d]}S)Q \\
 	= &\left(\ol{a}_{I}M_{[d]\backslash I}[x_I^\oo] - tE_{[d]\backslash I}[x_I^\oo]S\right)Q\\
-	= &[x_I^\oo](\ol{a}_{I}M_{[d]\backslash I}- tE_{[d]\backslash I}S)Q
+	= &[x_I^\oo](\ol{a}_{I}M_{[d]\backslash I}- tE_{[d]\backslash I}S)Q\,,
 \end{split}\end{align}
 so that
 \begin{align}
 	\ol{a}_{[d]\backslash I} = [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q\,.
 \end{align}
-Written in another way this becomes
+If we rewrite this, we have
 \begin{align}
 	\ol{a}_I = [x_{[d]\backslash I}^\oo](M_I - a_{[d]\backslash I} tE_I S)Q
 \end{align}
-and we can use whichever notation is more useful at the time. The latter notation underscores the idea that when we extract coefficients for walks that end at some hyperplane intersection we are having a reduced version of the functional equation at the cost of an added $a$ term. When we extract a general term we can use the operator $[x_I^\oo x_J^P]$ where $P$ is a set of powers greater than 0 and $I\cap J = \emptyset$, $|P| \ge 1$ and $I\cup J = K$. We find
+and we can use whichever notation is more useful at the time. The latter notation underscores the idea tha,t when we extract coefficients for walks that end at some hyperplane intersection, we are having a reduced version of the functional equation at the cost of an added $a$ term. When we extract a general term we can use the operator $[x_I^\oo x_J^P]$, where $P$ is a set of powers greater than 0 and $I\cap J = \emptyset$, $|P| \ge 1$ and $I\cup J = K$. We find that
 \begin{align}\begin{split}
 	 [x_I^\oo x_J^P] a_{[d]} = 0 &= [x_I^\oo x_J^P](M_{[d]} - tE_{[d]}S)Q \\
 	 &= [x_I^\oo x_J^P](\ol{a}_{I} M_{[d]\backslash K} - t E_{[d]\backslash K} S)Q
@@ -125,7 +125,7 @@ which we can write as
 \begin{align}
 	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0\,.
 \end{align}
-If $I$ is empty then
+If $I$ is empty, then
 \begin{align}
 	[x_J^P]( M_{[d]\backslash J} - t E_{[d]\backslash J} S)Q = 0\,.
 \end{align}
@@ -136,17 +136,17 @@ The main role of these calculations is to provide a shortcut for manual calculat
 %=======================================
 We need to go further in order to find equations similar to the master functional equation. We know that
 \begin{align}
-	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I
+	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I\,,
 \end{align}
-where $R_I$ is a collection of $S_I^{\um P} Q_I^{P}$ terms that involves sets $P$ whose terms are not all zero. We can use this inside the functional equation
+where $R_I$ is a collection of $S_I^{\um P} Q_I^{P}$ terms that involves sets $P$, whose terms are not all zero. We can use this inside the functional equation
 \begin{align}\begin{split}
 	\ol{a}_{[d]\backslash I} &= M_{[d]\backslash I}[x_I^\oo]Q- a_{I}t E_{[d]\backslash I}[x_I^\oo](SQ)\\
 	& = M_{[d]\backslash I}Q_I^\oo- a_{I}t E_{[d]\backslash I}(S_I^\oo Q_I^\oo + R_I)\\
 	& = (M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo  -a_{I}t E_{[d]\backslash I}R_I
 \end{split}\end{align}
-so we can re-write the functional equation as
+so we can rewrite it as
 \begin{align}
-	(M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo = a_I(\ol{a}_{[d]}+t R_I')
+	(M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo = a_I(\ol{a}_{[d]}+t R_I')\,,
 \end{align}
 where $R_I' =  E_{[d]\backslash I}R_I$. We compute the following terms
 \begin{align}
@@ -159,21 +159,21 @@ and the functional equation can be written as
 \begin{align}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}(c_J - a_I t\ol{x}_J S_{I,J}^{\oo,\um \one})Q_{I,J}^{\oo,\oo} = a_I(\ol{a}_{[d]}+t R_I')\,.
 \end{align}
-This suggests the notation
+This suggests the following notation.
 \begin{definition} For sets $I$ and $J$ we write
 \begin{align}
 	K_J(I) = c_J - a_I t\ol{x}_J S_{I,J}^{\oo,\um\one}
 \end{align}
-where when $I = \emptyset$, $K_J(I) = K_J$.
+where if $I = \emptyset$, then $K_J(I) = K_J$.
 \end{definition}
- This notation allows us to write the $2^d$ functional equations in a simplified form.
+ This notation allows us to write the $2^d$ functional equations in simplified form.
 \begin{corollary} For $I \subseteq [d]$ the function $Q$ satisfies the functional equation
 \begin{align}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}K_J (I) Q_{I,J}^{\oo,\oo} = \ol{a}_{[d]\backslash I}+a_I t  R_I'
 \end{align}
-where the $R_I'$ term involves only higher order coefficient extractions from $Q$, that is not all the powers are zero.
+where the $R_I'$ term involves only higher order coefficient extractions from $Q$; that is, not all the powers are zero.
 \end{corollary}
-To compute the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{\um P} Q_I^{P}$ for various nonnegative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables so they don't have non-negative coefficients. Let $sq = S_I^{\um P} Q_I^{P}$. Then
+To compute the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{\um P} Q_I^{P}$ for various nonnegative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables, so they don't have nonnegative coefficients. Let $sq = S_I^{\um P} Q_I^{P}$. Then
 \begin{align}\begin{split}
 	E_j sq &= sq - \ol{x}_j(sq)_j^{\um 1} \\ 
 	&= sq - \ol{x}_j(s_j^{\um 1}q_j^0+s_j^{0}q_j^{\um 1}+s_j^{1}q_j^{-2})\\
@@ -195,7 +195,7 @@ Finally we can write
 	R_I' =  \sum_{J \subseteq [d]\backslash I}(-1)^{|J|}\sum_{P > \oo} S_{I,J}^{\um P,\um \one}Q_{I,J}^{P,\oo}\,.
 \end{align}
 \end{prop}
-This formula is mostly of theoretical value although it can be used to speed up manual calculations.
+This formula is mostly of theoretical value, although it can be used to speed up manual calculations.
 %=======================================
 \section{Simple Solutions}
 %=======================================
@@ -214,7 +214,7 @@ We can write the series solution
 \begin{align}
 Q = \sum_{k=0}^{\infty}t^k (\Gamma S)^k(1)
 \end{align}
-where $(\Gamma S)^k(1) = \Gamma S(\ldots (\Gamma S(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $\Gamma S$ applied to it. It can be easily implemented in symbolic calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way - by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane and finally mark the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We haven't been able to find closed forms for the repeated operator applications in general. Here's an example that illustrates the use of the operators.
+where $(\Gamma S)^k(1) = \Gamma S(\ldots (\Gamma S(1))\ldots)$. This allows us to compute the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $\Gamma S$ applied to it. It can be implemented easily in symbolic calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way - by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane, and finally mark the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We haven't been able to find closed forms for the repeated operator applications in general. Here's an example that illustrates the use of the operators.
 \begin{example} Let $S = x_1+\ol{x}_1+x_2+\ol{x}_2 = S_1(x_1)+S_2(x_2)$. We start with $\Gamma S^0(1) = 1$. Then
 \begin{align*}
 	\Gamma S^1(1) &= LE(S_1+S_2) =L(x_1+x_2) = a_2x_1+a_1x_2\,,\\
@@ -236,7 +236,7 @@ which allows us to write
 We take a moment to mention a result that falls out of the operator notation and which was covered in more generality in \cite{bostan2014three} where the authors consider a generalization of the situation $S(x_1,x_2) = S_0(x_1)+S_1(x_1)S_2(x_2)$. We'll consider the simpler case $S = S_1(x_1)S_2(x_2)$ and its generalizations to many dimensions.
 \begin{example} When $d = 2$ we have the special case $S = S_1(x_1)S_2(x_2)$. The operator $\Gamma S$ factors as
 \begin{align}
-	 \Gamma S = \Gamma_1\Gamma_2S_1S_2 = (\Gamma_1S_1)(\Gamma_2S_2)
+	 \Gamma S = \Gamma_1\Gamma_2S_1S_2 = (\Gamma_1S_1)(\Gamma_2S_2)\,,
 \end{align}
 because $\Gamma_2$ doesn't interact with $S_1$ and the operators commute. Then
 \begin{align}
@@ -244,13 +244,13 @@ because $\Gamma_2$ doesn't interact with $S_1$ and the operators commute. Then
 \end{align}
 and we use the Neumann series to find
 \begin{align}
-	Q = \sum_{k = 0}^{\infty} t^k (\Gamma S)^k = \sum_{k = 0}^{\infty} t^k (\Gamma_1S_1)^k(\Gamma_2S_2)^k = \left(\sum_{k = 0}^{\infty} t^k (\Gamma_1S_1)^k\right) \odot_t  \left(\sum_{k = 0}^{\infty} t^k (\Gamma_2S_2)^k\right)
+	Q = \sum_{k = 0}^{\infty} t^k (\Gamma S)^k = \sum_{k = 0}^{\infty} t^k (\Gamma_1S_1)^k(\Gamma_2S_2)^k = \left(\sum_{k = 0}^{\infty} t^k (\Gamma_1S_1)^k\right) \odot_t  \left(\sum_{k = 0}^{\infty} t^k (\Gamma_2S_2)^k\right)\,,
 \end{align}
 where $\odot_t$ denotes the Hadamard product of two power series with respect to variable $t$. From now on we'll drop the subscript $t$ unless it is needed. Here we may write
 \begin{align}
 	Q_i(a_i,x_i;t)= \sum_{k = 0}^{\infty} t^k (\Gamma_iS_i)^k
 \end{align}
-and by reversing the iteration we reach the functional equations
+and by reversing the iteration, we reach the functional equations
 \begin{align}
 	(1-t\Gamma_iS_i)Q_i = 1
 \end{align}
@@ -281,15 +281,15 @@ Then we substitute $ L^{\um 1}_i Q_i = \ol{a}_i + tE_iS_iQ_i$ into the first ter
 	 & = \ol{a}_1\odot\ol{a}_2 + \ol{a}_1\odot (t E_2 S_2 Q_2) + \ol{a}_2\odot(t E_1 S_1 Q_1) \\
 	 &\quad+ (t E_1 S_1 Q_1)\odot(t E_2 S_2 Q_2))\,.
 \end{split}\end{align}
-Since we are working with power series
+Since we are working with power series,
 \begin{align}
-	\ol{a}_i\odot (t E_j S_j Q_j) = \ol{a}_i [t^0]t E_j S_j Q_j = 0
+	\ol{a}_i\odot (t E_j S_j Q_j) = \ol{a}_i [t^0]t E_j S_j Q_j = 0\,,
 \end{align}
 and thus
 \begin{align}
-	(L^{\um 1}_1Q_1\odot L^{\um 1}_2Q_2) =  \ol{a}_1\ol{a}_2 +t ((E_1 S_1 Q_1)\odot (E_2 S_2 Q_2))\,.
+	(L^{\um 1}_1Q_1\odot L^{\um 1}_2Q_2) =  \ol{a}_1\ol{a}_2 +t ((E_1 S_1 Q_1)\odot (E_2 S_2 Q_2))\,,
 \end{align}
-and this establishes that $Q$ is indeed a solution to the equation.
+establishing that $Q$ is indeed a solution to the equation.
 \end{example}
 
 \begin{lemma} Let $Q$ be the generating function for a two-dimensional random walk model with small steps and interactions on the quarter plane with $S = S_1(x_1)S_2(x_2)$. Let $Q_i$ be the generating function for a one-dimensional random walk model with small steps and interaction with the origin and step polynomial $S_i$. Then
@@ -305,7 +305,7 @@ This allows us to prove the following result via induction.
 where $Q_k$ is the sub $d$-dimensional problem with smalls steps restricted to the region with $x_i \ge 0$ and having interactions with the $x_i = 0$ hyperplane where $x_i$ is a varible present in $S_k$.
 \end{theorem}
 
-\begin{example} Consider the two-dimensional model with $S = (x_1+\ol{x}_1)(x_2+\ol{x}_2)$. The one dimensional problems are the same and have solutions
+\begin{example} Consider the two-dimensional model with $S = (x_1+\ol{x}_1)(x_2+\ol{x}_2)$. The one-dimensional problems are the same and have solutions
 \begin{align}
 	\widetilde{Q}_0 = \frac{\sigma}{at-b\sigma}\com \widetilde{Q} = \frac{t(x-\sigma)}{x(1-t(x+\ol{x})(at-b\sigma)}
 \end{align}
@@ -330,7 +330,7 @@ This allows us to write
 		&+x_1x_2(1+a_1+x_1^2)(1+a_2+x_2^2)t^3 + \cdots\,.
 \end{split}
 \end{align}
-However obtaining an explicit function via the Hadamard product seems to be rather messy. The function will not be algebraic since the unmarked variant is not algebraic. But at least the function $Q$ is D-finite since both functions in the product are.
+However, obtaining an explicit function via the Hadamard product seems to be rather messy. The function will not be algebraic since the unmarked variant is not algebraic. But at least the function $Q$ is D-finite since both functions in the product are.
 \end{example}
 
 %==============================================================================
@@ -340,7 +340,7 @@ However obtaining an explicit function via the Hadamard product seems to be rath
 %=======================================
 \section{Specializing to 2 dimensions}
 %=======================================
-Until the end of the chapter we'll focus on the 2-dimensional models with interactions. 
+Until the end of the chapter we'll focus on the two-dimensional models with interactions. 
 \begin{corollary} The generating function function $Q$ satisfies the master functional equation
 \begin{align}
 	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{1,2} \Qf{0,0} = \ol{a}_1\ol{a}_2\,.
@@ -359,31 +359,31 @@ where $\Sf{0,0} = 1$ if we have resting steps and zero otherwise.
 \subsection{First examples in the plane}
 %=======================================
 
-Quarter-plane models with small steps and without interactions have been investigated extensively but the case with interaction has not been investigated as much and we are interested in finding the generating function $Q$ explicitly, or at least $\Qf{0,0}$. This appears to be difficult in most nontrivial cases so in general we may have to resort to finding if $Q$ or $\Qf{0,0}$ is D-finite in the $t$ variable. Apart from that recent research into two-dimensional random walks with interactions has shown that there are models where we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter the on-dimensional cases admit a linear relationship with polynomial coefficients. There two-dimensional models that exhibit a rational relationship. It is possible that other models don't even have such a relationship with their unmarked counterparts.
+Quarter-plane models with small steps and without interactions have been investigated extensively, but the case with interaction has not been investigated as much and we are interested in finding the generating function $Q$ explicitly, or at least $\Qf{0,0}$. This appears to be difficult in most nontrivial cases so in general we may have to resort to finding if $Q$ or $\Qf{0,0}$ is D-finite in the $t$ variable. Apart from that, recent research into two-dimensional random walks with interactions has shown that there are models where we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are two-dimensional models that exhibit a rational relationship. It is possible that other models don't even have such a relationship with their unmarked counterparts.
 
-Our work can be split into several cases of increasing difficulty. We start with trivial models, continue through some semi-trivial models, go through some nontrivial models and finish at some difficult problems in the latter chapter. The trivial models are those where we don't have to do any work to find the generating functions. There are models with walks that never leave the origin. However complicated $\mc S$ it doesn't matter because $Q = 1$ when we don't have resting steps and $1/(1-a_1a_2S_0t)$ when we have a resting step. There are also the semi-triviall models where walks leave the origin but never come back to any axis. We'll solve such models explicitly later on but for now it suffices to say that $\Qf{0,0} = 1$ in the case with no resting steps and $\Qf{0,0} = 1/(1-a_1a_2S_0t)$ in the case with resting steps. In each of these situations we have a relationship between the interacting and noninteracting models. In any of these simple cases we can write $B\Qf{0,0} = 0$ and sometimes $BQ = 0$ where $B = B_1 B_2$ and $B_k = 1-[b_k^0]$ as in the one-dimensional case.
+Our work can be split into several cases of increasing difficulty. We start with trivial models, continue through some semi-trivial models, go through some nontrivial models and finish with some more difficult problems in the latter chapters. The trivial models are those where we don't have to do any work to find the generating functions. There are models with walks that never leave the origin. However complicated $\mc S$ is, it doesn't matter because $Q = 1$ when we don't have resting steps and $1/(1-a_1a_2S_0t)$ when we have a resting step. There are also the semi-triviall models where walks leave the origin but never come back to any axis. We'll solve such models explicitly later on but for now, it suffices to say that $\Qf{0,0} = 1$ in the case with no resting steps and $\Qf{0,0} = 1/(1-a_1a_2S_0t)$ in the case with resting steps. In each of these situations we have a relationship between the interacting and non-interacting models. In any of these simple cases we can write $B\Qf{0,0} = 0$ and sometimes $BQ = 0$ where $B = B_1 B_2$ and $B_k = 1-[b_k^0]$ as in the one-dimensional case.
 
-Here are all the easy cases of step sets that lead to walks that either don't leave the origin or leave it and never come back. We're not allowing resting steps here. There are 80 such sets among the 256 non-resting possible cases. Of course we could use symmetries to eliminate cases bu we won't do that.
+Here are all the easy cases of step sets that lead to walks that either don't leave the origin or leave it and never come back. We're not allowing resting steps here. There are 80 such sets among the 256 non-resting possible cases. Of course we could use symmetries to eliminate cases but we won't do that.
 
-There are $2^5 = 32$ types of walks that don't leave the origin. Those are walks with steps among the set $\{$NW,W,SW,S,SE$\}$. Next we look at the walks that leave the origin but never come back.  There is the case of $S = \{NE\}$ that never comes back to any axis. Let's look at those walks that never come back to the $x_1$ axis. We have some steps that go in the positive $x_2$ direction, that is one of $\{$N, NE, E$\}$ together with some steps from $\{$NW, W, SW$\}$. If we were to include any other steps we would come back to the $x_1$ axis. If we only have a N step, we have 8 new cases, if we have only a NE step we have 3 new cases and if we have both, we have 4 new cases. This gives a total of 15 new cases. There's an equivalent number of walks that leave the $x_2$ axis and never come back to it. The running total is $32 + 1  + 15 + 15 = 63$.
+There are $2^5 = 32$ types of walks that don't leave the origin. Those are walks with steps among the set $\{$NW,W,SW,S,SE$\}$. Next we look at the walks that leave the origin but never come back.  There is the case of $S = \{NE\}$ that never comes back to any axis. Let's look at those walks that never come back to the $x_1$ axis. We have some steps that go in the positive $x_2$ direction, that is, one of $\{$N, NE, E$\}$ together with some steps from $\{$NW, W, SW$\}$. If we were to include any other steps we would come back to the $x_1$ axis. If we only have an N step, we have 8 new cases. If we have only a NE step, we have 3 new cases. If we have both, we have 4 new cases. This gives a total of 15 new cases. There's an equivalent number of walks that leave the $x_2$ axis and never come back to it. The running total is $32 + 1  + 15 + 15 = 63$.
 
-To finish off we have 17 cases of walks that leave the origin, eventually interact with both axes but never come back to the origin. For this we must only include steps in such a way that we cannot pick a selection of steps that will decrease both the $x_1$ and $x_2$ coordinates. We have to pick a subset of steps from $\{$N, NE, E$\}$ so the only other steps allowed are NW and SE. The new cases coming from $\{$N, NE, E$\}$, $\{$N,E$\}$, $\{$N, NE $\}$, $\{$NE, E$\}$, $\{$N$\}$, $\{$NE$\}$, $\{$E$\}$ are 4, 4, 2, 2, 1, 2, 2 respectively.
+To finish off, we have 17 cases of walks that leave the origin and eventually interact with both axes but never come back to the origin. For this we must only include steps in such a way that we cannot pick a selection of steps that will decrease both the $x_1$ and $x_2$ coordinates. We have to pick a subset of steps from $\{$N, NE, E$\}$ so the only other steps allowed are NW and SE. The new cases coming from $\{$N, NE, E$\}$, $\{$N,E$\}$, $\{$N, NE $\}$, $\{$NE, E$\}$, $\{$N$\}$, $\{$NE$\}$, $\{$E$\}$ are 4, 4, 2, 2, 1, 2, 2 respectively.
 
 Before we consider walks that come back to the origin we'll look at the behavior $Q$ depending on whether $S$ factors in some nice way or not.
 
 %=======================================
 \subsection{Kernel Group Considerations}
 %=======================================
-It is important to find more functional equations if we can. One way to do this is by applying a transformation on the pair $(x_1,x_2)$ that leaves as many parts of the functional equation as we can but still adding some information in the form of a new equation. One way to do this is to cosider mapping $x_1$ and $x_2$ to some quantities separately and then consider the full group generated by such maps. Since we usually eliminate the kernel in front of $Q$ it is useful to consider transformations that preserve the kernel. This is a fruitful approach in the noninteracting case and it has been covered in ZZCITEZZ. We'll call this group $G(K)$, although it won't be the full group of rational transformations preserving the kernel. For example $(x_1,x_2) \mapsto (x_2,x_1)$ will not be in the group. Any transformation on $(x_1,x_2)$ that preserves the kernel $K = 1 -tS$ must necessarily preserve the step polynomial $S$. Here
+It is important to find more functional equations if we can. One way to do this is by applying a transformation on the pair $(x_1,x_2)$ that leaves as many parts of the functional equation as we can but still adding some information in the form of a new equation. One way to do this is to cosider mapping $x_1$ and $x_2$ to some quantities separately and then consider the full group generated by such maps. Since we usually eliminate the kernel in front of $Q$, it is useful to consider transformations that preserve the kernel. This is a fruitful approach in the non-interacting case and it has been covered in ZZCITEZZ. We'll call this group $G(K)$, although it won't be the full group of rational transformations preserving the kernel. For example $(x_1,x_2) \mapsto (x_2,x_1)$ will not be in the group. Any transformation on $(x_1,x_2)$ that preserves the kernel $K = 1 -tS$ must necessarily preserve the step polynomial $S$. Here
 \begin{align}
 	S = \alpha \ol{x} + \beta + \gamma x
 \end{align}
-where $x = x_1$ or $x_2$ and $\alpha,\beta,\gamma$ change correspondingly. We consider sending $x \mapsto y$ and solve for $y$ to determine the possible transformations we can perform. That is we have
+where $x = x_1$ or $x_2$ and $\alpha,\beta,\gamma$ change correspondingly. We consider sending $x \mapsto y$ and solve for $y$ to determine the possible transformations we can perform. That is, we have
 \begin{align}
 	\alpha \ol{x} + \gamma x &=\alpha \ol{y} + \gamma y\\
 	(\alpha - \gamma xy)(y-x) &= 0\,.
 \end{align}
-We have cases
+We have the following cases
 \begin{itemize}
 \item $\alpha = 0, \gamma = 0$. The equation is then trivially true and any transformation preserves the kernel although this is not very useful though.
 \item $\alpha = 0, \gamma \neq 0$. Then $ y = x$ and only the identity transformation preserves the kernel.
@@ -394,7 +394,7 @@ In conclusion, either every transformation works and we don't have an interestin
 \begin{align}
 	g_1 : x_1 \mapsto \ol{x}_1\frac{S_1^{\um 1}}{S_1^{1}},\quad g_2 : x_2 \mapsto \ol{x}_2\frac{S_2^{\um 1}}{S_2^{1}}
 \end{align}
-whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that is they are involutions. Contrast this suggestive notation to the notation in previous approaches in ZZCITEZZ and ZZCITEZZ. We have three cases for each $x$
+whenever the $S$ quantities are nonzero. Note that $g_i(g_i(x_1)) = x_1$ so the $g_i$'s are involutions. Contrast this suggestive notation to the notation in previous approaches in ZZCITEZZ and ZZCITEZZ. We have three cases for each $x$.
 \begin{itemize}
 \item 1: Any transformation can be applied.
 \item 2: We only have the identity transformation.
@@ -403,10 +403,10 @@ whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that 
  We'll combine cases for analysis in the form "case $i.j$" to mean we have case $i$ for $x_1$ and case $j$ for $x_2$.
 
 \begin{itemize}
-\item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus means that we have no steps that go away from the origin. Therefore $S = \Sf{0,0}$. Thus we have only two models - no steps or a resting step. 
-\item[Case 1.2:] Here any transformation applies on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ so the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$ in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x}_1$ step with a possible resting step.
-\item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$ and this means $S_2^{\um 1}, S_2^1 \neq 0$. This means we must have either both vertical steps $x_2$ and $\ol{x}_2$ in the 1.3 case or two horizontal steps $x_1$ and $\ol{x}_1$ in the 3.1 case.
-\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be differ by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
+\item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus we have no steps that go away from the origin. Therefore $S = \Sf{0,0}$. Thus we have only two models - no steps or a resting step. 
+\item[Case 1.2:] Here any transformation can be applied on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ and the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation, we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$, in which case the model consists of only an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol{x}_1$ step with a possible resting step.
+\item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$, that is, $S_2^{\um 1}, S_2^1 \neq 0$. This means we must have either both vertical steps $x_2$ and $\ol{x}_2$ in the 1.3 case or two horizontal steps $x_1$ and $\ol{x}_1$ in the 3.1 case.
+\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore, exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. WLOG, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be differ by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
 \begin{figure}[H]
     \centering
 \[
@@ -415,7 +415,7 @@ whenever the $S$ quantities are non-zero. Note that $g_i(g_i(x_1)) = x_1$, that 
     \caption{Models from case 2.2}
 \end{figure}
 This is a case of group $G(K)$ or order 1.
-\item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. Also $S_1^{\um 1}, S_2^1 \neq 0$ so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed. This is a case of group $G(K)$ of order 2. Here are some but not all of these models.
+\item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. Also, $S_1^{\um 1}$ and $S_2^1 \neq 0$ so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course, in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed. This is a case of group $G(K)$ of order 2. Here are some but not all of these models.
 \begin{figure}[H]
     \centering
 \[
@@ -423,10 +423,10 @@ This is a case of group $G(K)$ or order 1.
 \]
     \caption{Models from case 2.3}
 \end{figure}
-\item[Case 3.3:] This is the most interesting case with two transformations for $x_1$ and $x_2$ each. This means that there must be at least one step going in a positive and one going in a negative coordinate for each of $x_1$ and $x_2$. There are a lot of such cases (in the hundreds). Previous results show that the group $G(K)$ has orders 4, 6, 8 and infinity depending on the step set in question.
+\item[Case 3.3:] This is the most interesting case with two transformations for $x_1$ and $x_2$ each. This means that there must be at least one step going in a positive and one going in a negative direction for each of $x_1$ and $x_2$. There are a lot of such cases (in the hundreds). Previous results show that the group $G(K)$ has orders 4, 6, 8 and infinity, depending on the step set in question.
  \end{itemize}
  
- Later we'll see that these cases correspond to the idea of dimensionality of the model. Case 1.1 is zero-dimensional. Cases 1.2, 1.3 (and 3.1) are one-dimensional. Cases 2.2, 2.3 and 3.3 are two-dimensional. It should not be a suprise that the 0 and 1-dimensional cases will be easy while the two-dimensional cases will become progressively more difficult.
+Later we'll see that these cases correspond to the idea of dimensionality of the model. Case 1.1 is zero-dimensional. Cases 1.2, 1.3 (and 3.1) are one-dimensional. Cases 2.2, 2.3 and 3.3 are two-dimensional. It should not be a suprise that the zero and one-dimensional cases will be easy while the two-dimensional cases will become progressively more difficult.
  
  %=======================================
 \section{Solving basic 2D models}
@@ -453,7 +453,7 @@ Similarly in the 2.1, 3.1 cases
 	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
 	& =  q(x_1,a_1,t) \odot \frac{1}{1-a_2 t}= q(x_1,a_1,a_2 t)
 \end{split}\end{align}
-and this completes the solution. What about the relationship with the $B_1B_2$ transformation? If $f(a,t)$ is the function that goes together with $q(x,a,t)$ then the function $F(a_1,a_2,t)$ that goes together with $Q(x_1,x_2,a_1,a_2,t)$ is given by
+and this completes the solution. What about the relationship with the $B_1B_2$ transformation? If $f(a,t)$ is the function that goes together with $q(x,a,t)$, then the function $F(a_1,a_2,t)$ that goes together with $Q(x_1,x_2,a_1,a_2,t)$ is given by
 \begin{align}
 	F(a_1,a_2,t) = f(a_2,a_1 t)\,.
 \end{align}
@@ -475,15 +475,15 @@ Then we have
 	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
 	&=  q(x_1,a_1,t) \odot \frac{1}{1-a_2 t}= q(x_1,a_1,a_2 t)
 \end{split}\end{align}
-and therefore
+and therefore,
 \begin{align}
 	Q(x_1,x_2,a_1,a_2,t) = \frac{1-a_2 \Sf{0,0} t}{(1-(x_1+\Sf{0,0})a_2 t)(1-a_1a_2 \Sf{0,0}t)}\,.
 \end{align}
-The interesting models in case 2.2 are those with non-negative steps that we listed. Here
+The interesting models in case 2.2 are those with nonnegative steps that we listed. Here
 \begin{align}
 	S = \alpha x_1 + \beta x_2 + \gamma x_1 x_2 + \delta\,.
 \end{align}
-The functional equation and its zero extractions are
+The functional equation and its zeroth term extractions are
 \begin{align}\begin{split}
 (1-tS)Q - c_1 Q_1^0- c_2 Q_2^0+ c_1c_2 Q_{1,2}^{0,0}  &= \ol{a}_1\ol{a}_2\,,\\
 (1-ta_1 (\delta+\beta x_2))Q_1^0 - c_2Q_{1,2}^{0,0} &=\ol{a}_2\,,\\
@@ -499,7 +499,7 @@ Q &= \frac{1}{1-tS}(\ol{a}_1\ol{a}_2 + c_1 Q_1^0 + c_2 Q_2^0 - c_1 c_2 Q_{1,2}^{
 &=\frac{1}{1-tS}\left (\ol{a}_1\ol{a}_2 + \frac{1}{1-ta_1a_2 \delta}\left(c_1 \frac{1 -  a_1 \delta t}{1-t a_1S_1^0} + c_2 \frac{1 -  a_2 \delta t}{1-t a_2S_1^0} - c_1 c_2 \right) \right)\\
 &= \frac{1}{1-tS}\left(\ol{a}_1\ol{a}_2 + \frac{1}{1-a_1a_2\delta t}(c_1 f_1(a_1,t) + c_2 f_2(a_2,t)-c_1c_2)\right)
 \end{align}
-where the last line explicitly shows that $Q$ is composed of functions that depend only on one of $a_1$, $a_2$. If we want to find a relation of the type $B(FQ) = 0$ then we must first find a suitable function $F$. First of all the $1-tS$ part doesn't play a role since it doesn't depend on $a_1$ or $a_2$. Then later the variables $c_1$ and $c_2$ will vanish when extracting the coefficients of $b_1^0$ and $b_2^0$. We'll now show that the function
+where the last line explicitly shows that $Q$ is composed of functions that depend only on one of $a_1$, $a_2$. If we want to find a relation of the type $B(FQ) = 0$, then we must first find a suitable function $F$. First of all, the $1-tS$ part doesn't play a role since it doesn't depend on $a_1$ or $a_2$. Then later the variables $c_1$ and $c_2$ will vanish when extracting the coefficients of $b_1^0$ and $b_2^0$. We'll now show that the function
 \begin{align}
 	F(a_1,a_2,t) = 1 - a_1 a_2 \delta t
 \end{align}
@@ -516,7 +516,7 @@ Putting the two quantities together along with dividing by $1-tS$ shows that $B(
 %=======================================
 \subsection{Case 2.3 - group of order 2}
 %=======================================
-There are two possibilities here - positive and negative. In the negative case $S_1^1 = 0$ and the steps have a non-positive $x_1$ component. Due to the fact that a lot of steps are not going to be taken by random walks in those models, all of these models reduce to the cases of $S$ consising of a rest step and maybe a single step in a positive direction. This takes care of 34 models (or 68 if we include a rest step). The interesting models are those with a positive $x_1$ component, or in other words, models where $S_1^{\um 1} = 0$. The calculations for these models become increasingly more complicated. The functional equation and its extracted forms read as
+There are two possibilities here - positive and negative. In the negative case $S_1^1 = 0$ and the steps have a nonpositive $x_1$ component. Due to the fact that a lot of steps are not going to be taken by random walks in those models, all of these models reduce to the cases of $S$ consising of a rest step and maybe a single step in a positive direction. This takes care of 34 models (or 68 if we include a rest step). The interesting models are those with a positive $x_1$ component, or in other words, models where $S_1^{\um 1} = 0$. The calculations for these models become increasingly more complicated. The functional equation and its extracted forms read as
 \begin{align}\begin{split}
 (1-tS)Q - c_1 Q_1^0- (c_2 -t\ol{x}_2 S_1^{\um 1})Q_2^0+ c_1c_2 Q_{1,2}^{0,0}  &= \ol{a}_1\ol{a}_2\,,\\
 (1-ta_1 S_1^0)Q_1^0 - (c_2 - ta_1 \ol{x}_2 \Sf{0,-1})Q_{1,2}^{0,0} &=\ol{a}_2\,,\\
@@ -526,21 +526,21 @@ There are two possibilities here - positive and negative. In the negative case $
 We can identify a subproblem that is essentially one-dimensional and therefore already solved. For this we look at the second and fourth equations with the substitution $a_i = a, c_i = c, x_2 = x, ta_1 = \tau, S_1^0 = T, Q_1^0 (x_2)= q(x)$. These equations become
 \begin{align}
 (1-\tau T)q - (c - \tau  \ol{x} T_{-1})q_0 &=\ol{a}\,,\\
-(1-a \tau T_0)q_0 - a\tau \Sf{0,-1} q_1 &= 1
+(1-a \tau T_0)q_0 - a\tau \Sf{0,-1} q_1 &= 1\,,
 \end{align}
-where $q_0 = q(a,\tau)$. This is the one-dimensional problem again. The solution here is $q(x,a,\tau)$ obtained by the methods in the previous chapter so the original problem has a solution
+where $q_0 = q(a,\tau)$. This is the one-dimensional problem again. The solution here is $q(x,a,\tau)$, obtained by the methods in the previous chapter, so the original problem has a solution
 \begin{align}
 	Q_1^0(x_2) = q(x_2,a_2,a_1t),\quad Q_{1,2}^{0,0} = q_0(a_2,a_1t)\,.
 \end{align}
-The reason the method worked in this case is that we have steps that keep a random walk staying on the $x_2$ axis and steps that take it away from the $x_2$ but no steps that have it return to it. This is similar to the case where a random walk leaves the $x_2$ axis never to come back. Essentially the problem splits into a one-dimensional one regarding the $x_2$ axis and a further 2D one once we step off the axis. We re-write the master equation as
+The reason the method worked in this case is that we have steps that keep a random walk staying on the $x_2$ axis and steps that take it away from the $x_2$ but no steps that let it return. This is similar to the case where a random walk leaves the $x_2$ axis never to come back. Essentially the problem splits into a one-dimensional one regarding the $x_2$ axis and a further two-dimensional one once we step off the axis. We rewrite the master equation as
 \begin{align}
 	(1-tS)Q - (c_2 -t\ol{x}_2 S_1^{\um 1})Q_2^0  &= \ol{a}_1(\ol{a}_2 + b_1 q  -b_1c_2q_0)  =\ol{a}_1\phi(x_2)\,.
 \end{align}
-Since $S_1^{\um 1},S_2^1 \neq 0$ we have a root $x_2 = \sigma_2$ that allows us to remove the $(1-tS)Q$ term and find that
+Since $S_1^{\um 1},S_2^1 \neq 0$ we have a root $x_2 = \sigma_2$ that allows us to remove the $(1-tS)Q$ term. We find that
 \begin{align}
 	Q_2^0  &=-\frac{\ol{a}_1\phi(\sigma_2)}{ c_2 -t\ol{\sigma}_2 S_1^{\um 1}}
 \end{align}
-so this allows us to write $Q$ as
+and we can write $Q$ as
 \begin{align}
 	Q = \frac{1}{1-tS}\left(\ol{a}_1\phi(x_2) - \frac{c_2 -t\ol{x}_2 S_1^{\um 1}}{c_2 -t\ol{\sigma}_2 S_1^{\um 1}}\ol{a}_1\phi(\sigma_2)\right)\,.
 \end{align}
@@ -606,11 +606,11 @@ If $n\leq 0$ taking derivatives will yield ever greater powers of $\ol{x}$ so we
 \begin{align}
 	\del x^{-n} \Gamma_{n}(a) = \del x^{-n} + b\del [x^n] = \del x^{-n} = -nx^{-n-1} + x^{-n}\del\,.
 \end{align}
-If we have more terms in an operator then we need to multiply by a power of $x$ to clear out any negative powers of $x$. Then we take the lowest order derivative in order to clear out all the extraction terms. Suppose that
+If we have more terms in an operator, then we need to multiply by a power of $x$ to clear out any negative powers of $x$. Then we take the lowest order derivative in order to clear out all the extraction terms. Suppose that
 \begin{align}
 	\Gamma = 1 + \sum_{i=0}^{m} a_i \ext{x^i} - \sum_{i=1}^n b_i\ext{\ol{x}^i}
 \end{align}
-where $m$ and $n$ are non-negative. We need to pre-multiply by $x^n$ to clear out all the negative powers of $x$. Then we have
+where $m$ and $n$ are nonnegative. We need to pre-multiply by $x^n$ to clear out all the negative powers of $x$. Then we have
 \begin{align}
 	x^n\Gamma = x^n + \sum_{i=0}^{m} a_i \ext{x^{i+n}} - \sum_{i=1}^n b_i\ext{x^{n-i}}\,.
 \end{align}
