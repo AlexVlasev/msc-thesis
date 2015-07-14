@@ -61,7 +61,7 @@
 \contentsline {subsection}{\numberline {7.1.1}Some Calculations}{97}{subsection.7.1.1}
 \contentsline {section}{\numberline {7.2}Group of order 6}{99}{section.7.2}
 \contentsline {section}{\numberline {7.3}Group of order 8}{100}{section.7.3}
-\contentsline {chapter}{\numberline {8}OKM in Highly symmetric 2D models}{104}{chapter.8}
+\contentsline {chapter}{\numberline {8}OKM in Highly-symmetric 2D models}{104}{chapter.8}
 \contentsline {section}{\numberline {8.1}Cartesian model: steps N, S, E, W}{106}{section.8.1}
 \contentsline {section}{\numberline {8.2}Diagonal model: steps NE, NW, SE, SW}{108}{section.8.2}
 \contentsline {section}{\numberline {8.3}The full model}{115}{section.8.3}
