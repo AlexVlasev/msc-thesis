@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {4.2}Marking Operators}{50}{section.4.2}
 \contentsline {section}{\numberline {4.3}Kernel Forms}{54}{section.4.3}
 \contentsline {section}{\numberline {4.4}Walks without interactions}{55}{section.4.4}
-\contentsline {section}{\numberline {4.5}Examples of regions we can consider}{58}{section.4.5}
+\contentsline {section}{\numberline {4.5}Examples of regions we can consider}{57}{section.4.5}
 \contentsline {chapter}{\numberline {5}Further research directions}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Operators}{61}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Marking operators}{61}{subsection.5.1.1}

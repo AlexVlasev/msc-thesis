@@ -11,7 +11,7 @@
 
 Before we tackle the higher-dimensional random walk problems, it will be instructive to first visit the one-dimensional case, which will help illustrate the methods and ideas that we will employ throughout this work. We will focus on one-dimensional random walk models with smalls steps where the size of each step is at most one unit in both the horizontal and vertical directions. Here the step set is $\mc S \subseteq \{\um 1, 0, 1\}$, which can also be represented via the step polynomial
 \begin{align}
-	S = S_{\um 1}\ol{x} + S_0 + S_1 x\,.
+	S = S_{\um 1}\ol x+ S_0 + S_1 x\,.
 \end{align}
 \begin{figure}[H]
     \centering
@@ -19,9 +19,9 @@ Before we tackle the higher-dimensional random walk problems, it will be instruc
     \caption{Regions on the line}
     \label{fig:line}
 \end{figure}
-Here $S_k = 1$ if $k \in \mc S$, or $S_k = 0$ otherwise. Suppose that we have a walk ending on integer coordinate $n$. Then we may extend it by stepping back, staying in one place or moving forward. In the full generating function we keep track of the location of the walk with the monomial $x^n$. Stepping back would be the same as multiplying the monomial $x^n$ by $\ol{x}$. That is, adding of coordinates corresponds to multiplication of monomials. Since each possible step is either in $\mc S$ or not, the number of possible models with small steps on the axis is $2^3 = 8$. For random walks with interactions, we will also mark every visit to the origin. For example, if we have a walk ending on 1, with monomial $x$, and take a step back, we multiply by $\ol x$ and obtain $x^0$. To mark this visit, we also multiply by a variable $a$ that acts as a label. Therefore, repeated visits will result in an increase of the power of $a$.
+Here $S_k = 1$ if $k \in \mc S$, or $S_k = 0$ otherwise. Suppose that we have a walk ending on integer coordinate $n$. Then we may extend it by stepping back, staying in one place or moving forward. In the full generating function we keep track of the location of the walk with the monomial $x^n$. Stepping back would be the same as multiplying the monomial $x^n$ by $\ol x$. That is, adding of coordinates corresponds to multiplication of monomials. Since each possible step is either in $\mc S$ or not, the number of possible models with small steps on the axis is $2^3 = 8$. For random walks with interactions, we will also mark every visit to the origin. For example, if we have a walk ending on 1, with monomial $x$, and take a step back, we multiply by $\ol x$ and obtain $x^0$. To mark this visit, we also multiply by a variable $a$ that acts as a label. Therefore, repeated visits will result in an increase of the power of $a$.
 
-One basic way we can build the generating function for a specific model is by a brute-force iteration. Beginning with the empty walk, we will obtain all other walks by a growth process. The monomial for the empty walk is $1$ since it has length $0$ (so we have $t^0$), ends at the origin (so we have $x^0$) and has not visited the origin yet (so we have $a^0$). We can acquire more walks by extending the walk with one of the possible steps. If we have all three possible steps, we will have three new monomials $xt$, $t$ and $\ol xt$, since each walk is now of length 1. However, if the region is restricted, we will have to remove some walks. Then we can repeat the procedure - extend all walks of length $n$ by one step, remove those that venture out of the domain of interest, and mark the ones that step onto the origin. This iteration will eventually produce as many terms of the generating function as we wish, by way of brute force. 
+One basic way we can build the generating function for a specific model is by a brute-force iteration. Beginning with the empty walk, we will obtain all other walks by a growth process. The monomial for the empty walk is $1$ since it has length $0$ (so we have $t^0$), ends at the origin (so we have $x^0$) and has not visited the origin yet (so we have $a^0$). We can acquire more walks by extending the walk with one of the possible steps. If we have all three possible steps, we will have three new monomials $xt$, $t$ and $\ol x t$, since each walk is now of length 1. However, if the region is restricted, we will have to remove some walks. Then we can repeat the procedure - extend all walks of length $n$ by one step, remove those that venture out of the domain of interest, and mark the ones that step onto the origin. This iteration will eventually produce as many terms of the generating function as we wish, by way of brute force. 
 
 The pivotal idea is to encapsulate this process in an equation that we can then manipulate algebraically and interpret in other ways. This idea helped produce all the generating function analysis we have in this work. Suppose that the generating function of walks of length $k$ is $Q_kt^k$. Then the full generating function is
 \begin{align}
@@ -43,13 +43,13 @@ Here we factor out the $t$ since the operator only acts on monomials $x^n$,  not
 \begin{align}
 	\mc L Q = (1-t\Gamma S)Q = 1\,,
 \end{align}
-so as to highlights the operator nature of the equation. We can invert this operator $\mc L$ formally in the following way.
+so as to highlights the operator nature of the equation. We can invert the operator $\mc L$ formally in the following way.
 \begin{align}
-	Q = \sum_{k=0}^\infty (t\Gamma S)^k(1) =   \sum_{k=0}^\infty t^k(\Gamma S)^k(1) 
+	Q = \sum_{k=0}^\infty (t\Gamma S)^k(1) =   \sum_{k=0}^\infty t^k(\Gamma S)^k(1)\,, 
 \end{align}
 where the operator $\Gamma S$ acts by multiplying by $S$ first, and then by applying $\Gamma$ on the result. The power here indicates iteration.
 
-All that is left to do is to find a good representation of the operator $\Gamma$. First, we need to remove all walks that end outside of the domain of interest. For illustrative purposes, we will use the domain of the non-negative integer coordinates. We must remove all walks that venture outside of this region. However, starting with a valid walk, we cannot go too far. The furthest we may go with one step is the coordinate $\um 1$ where the walk will have monomial $a^i \ol{x} t^j$ for some $i,j\ge 0$. At worst, when we multiply $Q_k$ by $S$, we may pick up some terms with monomials that contain $\ol{x}$. Since we do not want these, it is enough to remove terms with monomials $\ol x$. This can easily be represented as follows. Let
+All that is left to do is to find a good representation of the operator $\Gamma$. First, we need to remove all walks that end outside of the domain of interest. For illustrative purposes, we will use the domain of the non-negative integer coordinates. We must remove all walks that venture outside of this region. However, starting with a valid walk, we cannot go too far. The furthest we may go with one step is the coordinate $\um 1$ where the walk will have monomial $a^i \ol xt^j$ for some $i,j\ge 0$. At worst, when we multiply $Q_k$ by $S$, we may pick up some terms with monomials that contain $\ol x$. Since we do not want these, it is enough to remove terms with monomials $\ol x$. This can easily be represented as follows. Let
 \begin{align}
 	E = 1 - \ext{\ol x}
 \end{align}
@@ -60,24 +60,24 @@ where $1$ is the identity operator and $\ext{\ol x}$ acts on generating function
 where $b = a-1$. This operator takes a function and add to it $(a-1)$ times the function's $x^0$ term. The final function has a $x^0$ term with coefficient $1 + (a-1) = a$. We may write $\Gamma = LE$ where $L$ and $E$ act term-wise on power series in $t$ because that is the constraint we put on $\Gamma$. These operators make it easier to perform computations. For example, we may expand the product $LE$ as
 \begin{align}
 \begin{split}
-	\Gamma &= LE = (1 - \ext{\ol{x}})(1 + b[x^0]) \\
-	&= 1 + b[x^0] - \ext{\ol{x}}-\ext{\ol{x}}b[x^0]\\
-	&=1 + b[x^0] -\ext{\ol{x}}\,,
+	\Gamma &= LE = (1 - \ext{\ol x})(1 + b[x^0]) \\
+	&= 1 + b[x^0] - \ext{\ol x}-\ext{\ol x}b[x^0]\\
+	&=1 + b[x^0] -\ext{\ol x}\,,
 \end{split}
 \end{align}
 and this shows that the marking and removing of terms are done in parallel. The last term vanished  because once we have made the first extraction $[x^0]$, that term no longer contains a variable $x$, and the $[\ol x]$ extraction will pick out nothing. We would have found the same result if we computed $EL$ instead, and this shows that the operators commute.
-\begin{example} We will now illustrate how the operators work. Suppose that $S = x + \ol{x}$. Starting with $Q_0 = 1$ we have
+\begin{example} We will now illustrate how the operators work. Suppose that $S = x + \ol x$. Starting with $Q_0 = 1$ we have
 \begin{align}
-Q_1 = LES(1) &= (1+b[x^0]-\ext{\ol{x}})(x+\ol{x}) = x+\ol{x} -\ol{x} = x\\
-Q_2 = LES(Q_1) &=  (1+b[x^0]-\ext{\ol{x}})(x^2+1) = x^2 + 1 + b = a + x^2\\
-Q_3 = LES(Q_2) &=  (1+b[x^0]-\ext{\ol{x}})(a\ol{x}+ax+x+x^3) \\
-&= a\ol{x}+ax+x+x^3 -a\ol{x} = (1+a)x+x^3\,.
+Q_1 = LES(1) &= (1+b[x^0]-\ext{\ol x})(x+\ol x) = x+\ol x-\ol x= x\\
+Q_2 = LES(Q_1) &=  (1+b[x^0]-\ext{\ol x})(x^2+1) = x^2 + 1 + b = a + x^2\\
+Q_3 = LES(Q_2) &=  (1+b[x^0]-\ext{\ol x})(a\ol x+ax+x+x^3) (?) \\
+&= a\ol x+ax+x+x^3 -a\ol x= (1+a)x+x^3\,.
 \end{align}
 Therefore,
 \begin{align}
 \begin{split}
 	Q &= Q_0 + Q_1 t +Q_2 t^2+ Q_3t^3 + \cdots\\
-	&= 1 + xt + (a+x^2)t^2+((1+a)x+x^3)t^3+ \cdots\,.
+	&= 1 + xt + (a+x^2)t^2+(ax+x+x^3)t^3+ \cdots\,.
 \end{split}
 \end{align}
 Note that if we apply $\Gamma$ to the resulting function $Q$, we obtain $Q$ again but with the first term $Q_0 = 1$ missing.
@@ -86,22 +86,22 @@ The theory so far is consistent with the present methods for finding functional 
 \begin{align}
 \begin{split}
 	[x^0] SQ &= [x^0]((S_{\um 1}\ol x+S_0 +S_1 x)Q) \\
-	& = (S_{\um 1}\ext x +S_0\ext{\ol x} +S_1 \ext{\ol{x}^2})Q\\
+	& = (S_{\um 1}\ext x +S_0\ext{\ol x} +S_1 \ext{\ol x^2})Q\\
 	& = S_{\um 1}Q_1 + S_0 Q_0
 \end{split}
 \end{align}
-where last line follows since $Q_{\um 1}= 0$ since that would include walks ending on $\ol x$. A similar computation shows that $\ext{\ol x}SQ = S_{\um 1} Q_0$ and this gives the functional equation
+where last line follows since $Q_{\um 1}= 0$ since that would include walks ending on $\ol x$. A similar computation shows that $[\ol x]SQ = S_{\um 1} Q_0$ (?) and this gives the functional equation
 \begin{align}
 \begin{split}
 	1 &= Q - tLE(SQ) = Q - t(SQ + b[x^0]SQ - \ext{\ol x}SQ\\
-	&= Q - t(SQ + b(S_{\um 1}Q_1 + S_0Q_0) - \ol{x}(S_{\um 1}Q_0))\,.
+	&= Q - t(SQ + b(S_{\um 1}Q_1 + S_0Q_0) - \ol x(S_{\um 1}Q_0))\,.
 \end{split}
 \end{align}
 We can rewrite it in the following form
 \begin{align}
-	(1-tS)Q - t(bS_0-\ol{x}S_{\um 1})Q_0 -btS_{\um 1}Q_1 = 1\,.
+	(1-tS)Q - t(bS_0-\ol xS_{\um 1})Q_0 -btS_{\um 1}Q_1 = 1\,.
 \end{align}
-Here $Q = Q(x)$, $Q_0 = Q(0)$ and $Q_1 = Q'(0)$. It turns out that the $Q_1$ term is not needed. To see this, we first eliminate the $Q_1^1$ term by applying $[x^0]$ to both sides of the equation.
+Here $Q = Q(x)$, $Q_0 = Q(0)$ and $Q_1 = Q'(0)$. It turns out that the $Q_1$ term is not needed. To see this, we first eliminate the $Q_1$ term by applying $[x^0]$ to both sides of the equation.
 \begin{align}
 \begin{split}
 	 1 &= Q_1^0 - t(S_{\um 1}Q_1 +S_0 Q_0) - tbS_0Q_0 - btS_{\um 1}Q_1\\
@@ -110,41 +110,41 @@ Here $Q = Q(x)$, $Q_0 = Q(0)$ and $Q_1 = Q'(0)$. It turns out that the $Q_1$ ter
 \end{align}
 We can solve this equation for $Q_1$, that is, 
 \begin{align}
-	tS_{\um 1}Q_1 = \ol{a}((1-atS_0)Q_0-1)\,,
+	tS_{\um 1}Q_1 = \ol a((1-atS_0)Q_0-1)\,,
 \end{align}
-and substitute the result into the first functional equation. For now we do not worry about the possibility of $S_{\um 1} = 0$ because it leads to the same conclusion anyway. Then
+and substitute the result into the first functional equation. For now we do not worry about the possibility of $S_{\um 1} = 0$, because it leads to the same conclusion anyway. Then
 \begin{align}
 \begin{split}
-	1 &= (1-tS)Q - t(bS_0-\ol{x}S_{\um 1})Q_0 - c((1-atS_0)Q_0-1)\\
-	& = (1-tS)Q - (c -t\ol{x}S_{\um 1})Q_0 + c
+	1 &= (1-tS)Q - t(bS_0-\ol xS_{\um 1})Q_0 - c((1-atS_0)Q_0-1)\\
+	& = (1-tS)Q - (c -t\ol xS_{\um 1})Q_0 + c
 \end{split}
 \end{align}
 and we can rewrite the equation as
 \begin{align}
-	(1-tS)Q - (c -t\ol{x}S_{\um 1})Q_0 = \ol{a}\,,
+	(1-tS)Q - (c -t\ol xS_{\um 1})Q_0 = \ol a\,,
 \end{align}
-since $1 - c = 1 - (1-\ol{a}) = \ol{a}$. We will call this the master functional equation. 
+since $1 - c = 1 - (1-\ol a) = \ol a$. We will call this the master functional equation. 
 
 \begin{example} When $S = x+\ol x$ we have the functional equation
 \begin{align}
-	(1-t(x+\ol x))Q - (c -t\ol{x})Q_0 = \ol{a}\,.
+	(1-t(x+\ol x))Q - (c -t\ol x)Q_0 = \ol a\,.
 \end{align}
 \end{example}
 It turns out that the back-substitution is unnecesary. This is a good thing because in higher dimensions we would have to perform an exponential number of back-substitutions to obtain such an equation: $2^d$ substitutions for a $d$-dimensional problem. Previous approaches in \cite{tabbara2014exact} and \cite{wong2014confining} have only dealt with two-dimensional problems that have only a few back-substitutions. It is the use of operators that allows us to circumvent the problem with back-substitution. To see why, consider the action of the marking operator $L$. To mark a monomial, just multiply it by $a$. This means that to undo the marking we only need to multiply by $1/a$. That is, $L$ has an inverse and we can write it immediately.
 \begin{align}
 	L^{\um 1} = M = 1 + \left(\frac 1a - 1\right)[x^0] = 1- c[x^0]\,.
 \end{align}
-If we apply this to the functional equation, the right-hand side is simply $L^{\um 1} (1) = 1 - c = \ol{a}$ and the left-hand side is
+If we apply this to the functional equation, the right-hand side is simply $L^{\um 1} (1) = 1 - c = \ol a$ and the left-hand side is
 \begin{align}
 	L^{\um 1}(1-tLES)Q &= L^{\um 1}Q - tESQ \\
-	&= (Q-cQ_0) - t(SQ - \ol{x}S_{\um 1}Q_0) \\
-	&= (1-tS)Q - (c-t\ol{x}S_{\um 1})Q_0\,. 
+	&= (Q-cQ_0) - t(SQ - \ol xS_{\um 1}Q_0) \\
+	&= (1-tS)Q - (c-t\ol xS_{\um 1})Q_0\,. 
 \end{align}
 We have arrived at the master functional equation in cleaner way.
-\begin{prop} The one-dimensional random walk mode, restricted to the non-negative axis, with Laurent step polynomial $S = S_{\um 1}\ol{x}+S_0 + S_1 x$, has a generating function $Q$ satisfying the functional equations
+\begin{prop} The one-dimensional random walk mode, restricted to the non-negative axis, with Laurent step polynomial $S = S_{\um 1}\ol x+S_0 + S_1 x$, has a generating function $Q$ satisfying the functional equations
 \begin{align}
-	(L^{\um 1}-tES)Q &= \ol{a}\,,\\
-	(1-tS)Q-(c-t\ol{x}S_{\um 1})Q_0 &= \ol{a}\,.
+	(L^{\um 1}-tES)Q &= \ol a\,,\\
+	(1-tS)Q-(c-t\ol xS_{\um 1})Q_0 &= \ol a\,.
 \end{align}
 We call them the operator and master functional equations respectively.
 \end{prop}
@@ -152,16 +152,16 @@ The operator notation/perspective is powerful. It will allow us to derive functi
 
 We can also deal with coefficient extraction in a neater way. Instead of extracting $[x^k]$ from the master functional equation, it is better to first go through the operator equation, since $[x^k]$ interacts with $L$ and $E$ in a nice way. We have
 \begin{align}
-	[x^0]L^{\um 1} &= [x^0]-[x^0]c[x^0] = [x^0]-c[x^0] = \ol{a}[x^0]\\
-	[x^0]E &= [x^0] - [x^0]\ol{x}[\ol{x}] = [x^0]\,.
+	[x^0]L^{\um 1} &= [x^0]-[x^0]c[x^0] = [x^0]-c[x^0] = \ol a[x^0]\\
+	[x^0]E &= [x^0] - [x^0]\ol x[\ol x] = [x^0]\,.
 \end{align}
 When we extract the $x^0$ term from the functional equation, we have
 \begin{align}
 \begin{split}
-	[x^0]\ol{a} &= \ol{a} = [x^0](L^{\um 1} - tES)Q \\
+	[x^0]\ol a &= \ol a = [x^0](L^{\um 1} - tES)Q \\
 	&= ([x^0]L^{\um 1} - t[x^0]ES)Q \\
-	&= (\ol{a}[x^0]-t[x^0]S)Q\\ 
-	&= [x^0](\ol{a}-tS)Q\,.
+	&= (\ol a[x^0]-t[x^0]S)Q\\ 
+	&= [x^0](\ol a-tS)Q\,.
 \end{split}
 \end{align}
 Therefore, we have a functional equation for the first coefficient
@@ -175,12 +175,12 @@ We can perform the extraction immediately and it simplifies to
 Extracting higher coefficients is not difficult. If $k \ge 1$, we have
 \begin{align}
 	[x^k]L^{\um 1} &= [x^k]-[x^k]c[x^0] = [x^k]\,,\\
-	[x^k]E &= [x^k] - [x^k]\ol{x}[\ol{x}] = [x^k]\,,
+	[x^k]E &= [x^k] - [x^k]\ol x[\ol x] = [x^k]\,,
 \end{align}
 and
 \begin{align}
 \begin{split}
-	[x^k]\ol{a} = 0 &= [x^k](L^{\um 1} - tES)Q \\
+	[x^k]\ol a = 0 &= [x^k](L^{\um 1} - tES)Q \\
 	&= ([x^k] - t[x^k]S)Q \\
 	&= [x^k](1-tS)Q\,.
 \end{split}
@@ -191,7 +191,7 @@ This extraction translates to the equation
 	 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1}) &= 0\,.
 \end{split}\end{align}
 
-\begin{prop} The one-dimensional model with  $S = S_{\um 1}\ol{x}+S_0 + S_1 x$ has generating functions $[x^k]Q = Q_k$ for the walks ending at coordinate $k$ satisfying the following functional equations
+\begin{prop} The one-dimensional model with  $S = S_{\um 1}\ol x+S_0 + S_1 x$ has generating functions $[x^k]Q = Q_k$ for the walks ending at coordinate $k$ satisfying the following functional equations
 \begin{align}
 	(1-atS_0)Q_0-atS_{\um 1}Q_1 = 1\,,\\
 	 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1}) &= 0\,,
@@ -214,16 +214,16 @@ This condition allows us to find $Q_0$ directly from the $[x^0]$ equation.
 We can substitute this into the master functional equation.
 \begin{prop} The generating function $Q$ for random walk models with small steps on the half-line with $S_{\um 1} = 0$ is given by
 \begin{align}
-	Q(x,a;t) =\frac{\ol{a}}{1-tS}\left(1 + \frac{b}{{1-atS_0}}\right) = \frac{1-tS_0}{(1-tS)(1-atS_0)}\,.
+	Q(x,a;t) =\frac{\ol a}{1-tS}\left(1 + \frac{b}{{1-atS_0}}\right) = \frac{1-tS_0}{(1-tS)(1-atS_0)}\,.
 \end{align}
 \end{prop}
 This takes care of the less interesting half of all 8 models. Note the relationship between $Q(x,a;t)$ and $Q(x,1;t)$ where the latter function is the generating function for the unmarked problem. When we set $a = 1$ in the above equation, we find
 \begin{align}
-	[b^0]Q = \wh{Q} =  \frac{1-S_0t}{(1-st)(1-S_0t)}\,.
+	[b^0]Q = \wh Q =  \frac{1-S_0t}{(1-st)(1-S_0t)}\,.
 \end{align}
 By inspection we can see that
 \begin{align}
-	(1-aS_0t)Q-(1-S_0t)\wh{Q} = 0\,,
+	(1-aS_0t)Q-(1-S_0t)\wh Q = 0\,,
 \end{align}
 and we may write it as $B((1-aS_0t)Q)  = 0$ using the operator $B = 1- [b^0]$. There is a similar relationship for $Q_0$. Extracting $[x^0]$ from the last equation leads to
 \begin{align}
@@ -231,7 +231,7 @@ and we may write it as $B((1-aS_0t)Q)  = 0$ using the operator $B = 1- [b^0]$. T
 \end{align}
 and thus, we have
 \begin{align}
-	Q_0 = \frac{1-aS_0t}{1-S_0t}\wh{Q}_0\,.
+	Q_0 = \frac{1-aS_0t}{1-S_0t}\wh Q_0\,.
 \end{align}
 \begin{prop} Let $B = 1 - [b^0]$ and let $Q$ be the generating function for a random walk model with small steps on the half-line with $S_{\um 1} = 0$. Then $Q$ satisfies the functional equations
 \begin{align}
@@ -239,7 +239,7 @@ and thus, we have
 \end{align}
 In other words,
 \begin{align}
-	Q = \frac{1-aS_0t}{1-S_0t}\wh{Q}\com Q_0 = \frac{1-aS_0t}{1-S_0t}\wh{Q_0}\,.
+	Q = \frac{1-aS_0t}{1-S_0t}\wh Q\com Q_0 = \frac{1-aS_0t}{1-S_0t}\wh Q_0\,.
 \end{align}
 \end{prop}
 Even such small examples already show connections between $Q$ and $\wh Q$. It will be interesting to find such relationships for higher-dimensional random walk models.
@@ -248,38 +248,38 @@ Even such small examples already show connections between $Q$ and $\wh Q$. It wi
 %=======================================
 In this case we will apply the Obstinate Kernel, as is done in the two-dimensional cases in \cite{tabbara2014exact}, page 11 of \cite{wong2014confining}. ZZCITEZZ It requires finding an $x$ value that makes the kernel $K = 1 - tS$ vanish in the functional equation
 \begin{align}
-	(1-tS)Q - (c -t\ol{x})Q_0 = \ol{a}\,.
+	(1-tS)Q - (c -t\ol x)Q_0 = \ol a\,.
 \end{align}
 Such a solution will exist since $S_{\um 1} = 1$ and therefore, the equation $1 - tS = 0$ is nontrivial and has degree in $x$ at least 1. Let one such solution be $x = \sigma$ and suppose that we can substitute it into the functional equation. ZZCITEZZ For now we have to assume that the whole term $KQ$ vanishes and we obtain
 \begin{align}
-	- (c - t\ol{\sigma})Q_0 = \ol{a}\,.
+	- (c - t\ol \sigma)Q_0 = \ol a\,.
 \end{align}
 Then
 \begin{align}
-	Q_0 = \frac{\ol{a}}{\ol{\sigma}t-c}
+	Q_0 = \frac{\ol a}{\ol \sigma t-c}
 \end{align}
 and now we can solve for $Q$ explicitly
 \begin{align}
-	Q = \frac{\ol{a}}{1-tS}\left(1 - \frac{t\ol{x}-c}{t\ol{\sigma}-c}\right) = \frac{t}{1-tS}\left(\frac{\ol{x}-\ol{\sigma}}{b-a\ol{\sigma}t}\right) = \frac{t(\sigma-x)}{x(1-tS)(b\sigma-at)}\,.
+	Q = \frac{\ol a}{1-tS}\left(1 - \frac{t\ol x -c}{t\ol \sigma-c}\right) = \frac{t}{1-tS}\left(\frac{\ol x -\ol \sigma}{b-a\ol \sigma t}\right) = \frac{t(\sigma-x)}{x(1-tS)(b\sigma-at)}\,.
 \end{align}
-\begin{prop} For a random walk model with small steps on the half-line with $S_{\um 1} = 1$, let $\sigma$ be a root of $K$ that makes $KQ$ vanish. Then generating function $Q$ is given by
+\begin{prop} For a random walk model with small steps on the half-line with $S_{\um 1} = 1$, let $\sigma$ be a root of $K$ that makes $KQ$ vanish. The generating function $Q$ is given by
 \begin{align}
-	Q &= \frac{t}{1-tS}\left(\frac{\ol{x}-\ol{\sigma}}{b-a\ol{\sigma}t}\right)
+	Q &= \frac{t}{1-tS}\left(\frac{\ol x -\ol \sigma}{b-a\ol \sigma t}\right)
 \end{align}
 and it has a first term
 \begin{align}
-	Q_0 = \frac{\ol{a}}{\ol{\sigma}t-c}\,.
+	Q_0 = \frac{\ol a}{\ol \sigma t-c}\,.
 \end{align}
-Here $\sigma$ depends on the rest of the step set $\mc S$.
+Here $\sigma$ depends on the whole step set $\mc S$.
 \end{prop}
-As before we can find a linear relationship between $Q(x,a;t)$ and $Q(x,1;t)$.
+As before, we can find a linear relationship between $Q(x,a;t)$ and $Q(x,1;t)$.
 \begin{prop} Let $B = 1 - [b^0]$ and let $Q$ be the generating function for a random walk model with small steps on the half-line with $S_{\um 1} = 1$. Then $Q$ satisfies the functional equations
 \begin{align}
-	B((a\ol{\sigma}t-b)Q) = 0\com B((a\ol{\sigma}t-b)Q_0) = 0\,.
+	B((a\ol \sigma t-b)Q) = 0\com B((a\ol \sigma t-b)Q_0) = 0\,.
 \end{align}
 In other words
 \begin{align}
-	Q = \frac{t}{at-b\sigma}\wh Q \com Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}\,.
+	Q = \frac{t}{at-b\sigma}\wh Q \com Q_0 = \frac{t}{at-b\sigma}\wh Q_0\,.
 \end{align}
 \end{prop}
 
@@ -299,36 +299,36 @@ When $S_1 = 1$, the equation $tx^2 -(1-S_0t)x + t = 0$ is quadratic with two roo
 \begin{align}
 \sigma = \frac{1-S_0t - \sqrt{(1-S_0t)^2-4t^2}}{2t}, \quad \sigma^\ast = \frac{1-S_0t + \sqrt{(1-S_0t)^2-4t^2}}{2t}\,,
 \end{align}
-and they multiply to 1, so $\ol{\sigma} = \sigma^\ast$. Note that in the relationship between the marked and unmarked $Q_0$ we have
+and they multiply to 1, so $\ol \sigma = \sigma^\ast$. Note that in the relationship between the marked and unmarked $Q_0$ we have
 \begin{align}
-	Q_0 = \frac{t}{at-b\sigma}\wh{Q_0}
+	Q_0 = \frac{t}{at-b\sigma}\wh Q_0
 \end{align}
-where $\sigma$ is a function containing a square root, that is, not a polynomial. However, we can look at the problem from a different angle - that of the Algebraic Kernel method used extensively in the quarter-plane model classification ZZCITEZZ. We find a polynomial $f(a,t)$, for which $B(fQ_0) = c$. This will serve to illustrate the group approach together with the kernel method. Both of the cases we need to consider have $S_{\um 1} = S_1 = 1$ with $S_0$ equal to 0 or 1. This means that $S$ is invariant under the map $\ast: x \mapsto \ol{x}$. This map allows us to write another functional equation and we have the system
+where $\sigma$ is a function containing a square root, that is, not a polynomial. However, we can look at the problem from a different angle - that of the Algebraic Kernel method used extensively in the quarter-plane model classification ZZCITEZZ. We find a polynomial $f(a,t)$, for which $B(fQ_0) = c$. This will serve to illustrate the group approach together with the kernel method. Both of the cases we need to consider have $S_{\um 1} = S_1 = 1$ with $S_0$ equal to 0 or 1. This means that $S$ is invariant under the map $\ast: x \mapsto \ol x$. This map allows us to write another functional equation and we have the system
 \begin{align}
-	(1-tS)Q - (c -t\ol{x})Q_0 - \ol{a}=0\,,\\
-	(1-tS)Q^\ast - (c -tx)Q_0 -\ol{a}=0\,.
+	(1-tS)Q - (c -t\ol x)Q_0 - \ol a=0\,,\\
+	(1-tS)Q^\ast - (c -tx)Q_0 -\ol a=0\,.
 \end{align}
-To eliminate the $Q_0$ term we multiply the first equation by $c -tx$, the second by $c -t\ol{x}$ and subtract one equation from the other. We divide everything by $1-tS$ and the equation that remains is
+To eliminate the $Q_0$ term we multiply the first equation by $c -tx$, the second by $c -t\ol x$ and subtract one equation from the other. We divide everything by $1-tS$ and the equation that remains is
 \begin{align}
-	(c-tx)Q(x) - (c-t\ol{x})Q(\ol{x}) -\ol{a}\delta &= 0\,,
+	(c-tx)Q(x) - (c-t\ol x)Q(\ol x) -\ol a\delta &= 0\,,
 \end{align}
 where
 \begin{align}
-	\delta =\frac{t(\ol{x}-x)}{1-tS}
+	\delta =\frac{t(\ol x -x)}{1-tS}
 \end{align}
-and crucially $\delta$ does not depent on $a$. We extract the $x^1$ coefficient from the equation to acquire an equation relating $Q_1$ and $Q_0$
+and crucially, $\delta$ does not depent on $a$. We extract the $x^1$ coefficient from the equation to acquire an equation relating $Q_1$ and $Q_0$
 \begin{align}
-	c Q_1 - t Q_0 - \ol{a}\delta_1 = 0\,.
+	c Q_1 - t Q_0 - \ol a\delta_1 = 0\,.
 \end{align}
 We can set $a = 1$ here to find that
 \begin{align}
-	-\delta_1 = t \wh{Q_0}
+	-\delta_1 = t \wh Q_0
 \end{align}
-and we can back-substitute this quantity into the origina equation.
+and we can back-substitute this quantity into the original equation.
 \begin{align}
 \begin{split}
-	c Q_1 &= t Q_0 - \ol{a} t \wh{Q_0}\\
-	b Q_1 &= t (aQ_0 - \wh{Q_0})\,.
+	c Q_1 &= t Q_0 - \ol a t \wh Q_0\\
+	b Q_1 &= t (aQ_0 - \wh Q_0)\,.
 \end{split}
 \end{align}
 Earlier we had the equation
@@ -337,13 +337,13 @@ Earlier we had the equation
 \end{align}
 which we can solve for $Q_1$ this time and insert the solution into the above equation
 \begin{align}
-	b ((1-aS_0t)Q_0-1) = t^2 a (aQ_0 - \wh{Q_0})\,.
+	b ((1-aS_0t)Q_0-1) = t^2 a (aQ_0 - \wh Q_0)\,.
 \end{align}
 Collecting coefficients and simplifying leads us to the equations
 \begin{align}
 \begin{split}
-	(b(1-aS_0t)-a^2 t^2) Q_0 -(-at^2)\wh{Q_0} =& b\,,\\
-	(c(1-aS_0t)-a t^2) Q_0 -(-t^2)\wh{Q_0} =& c\,.
+	(b(1-aS_0t)-a^2 t^2) Q_0 -(-at^2)\wh Q_0 =& b\,,\\
+	(c(1-aS_0t)-a t^2) Q_0 -(-t^2)\wh Q_0 =& c\,.
 \end{split}
 \end{align}
 This gives $f(a,t) = c(1-aS_0t)-a t^2$.
@@ -356,7 +356,7 @@ With two different approaches we obtained slightly different relationships upon 
 %=======================================
 \subsection{Conclusion}
 %=======================================
-In this section we were able to find explicit solutions for $Q_0, Q$ and also $B$-operator relationships for $Q$ and $\wh Q$. In higher dimensions this analysis will be more difficult, but we will find some $B$-operator relationships for the functions equivalent to $Q_0$ and $\wh{Q_0}$. Here is a table showing the resuls for the one-dimensional random walk models with small steps and interaction with the origin. Here $\sigma$ depends on $S_1$ and $S_0$.
+In this section we were able to find explicit solutions for $Q_0, Q$ and also $B$-operator relationships for $Q$ and $\wh Q$. In higher dimensions this analysis will be more difficult, but we will find some $B$-operator relationships for the functions equivalent to $Q_0$ and $\wh Q_0$. Here is a table showing the resuls for the one-dimensional random walk models with small steps and interaction with the origin. Here $\sigma$ depends on $S_1$ and $S_0$.
  \begin{table}[H]
     \caption{Generating functions for walks with small steps on the non-negative half-line.}
     \label{tbl:table1d}

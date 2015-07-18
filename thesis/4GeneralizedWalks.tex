@@ -6,9 +6,9 @@
 \section{Introduction}
 %================================
 We will push the operator notation further to see what kinds of random walk models we can handle. Some of the models have more general step sets while others are set in more complicated regions. For example, Definition 1.1 of \cite{mishna2009classifying} has a functional equation for the non-interacting random walks on the quarter plane, which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly, \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps. We start with the following definition for a random walk model in $\ze^d$.
-\begin{definition} Let $\mc{D}_0 \subseteq \mc{D}$ be regions in $\ze^d$ and $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model $\mc{M}$ with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location later on.
+\begin{definition} Let $\mc{D}_0$ and $\mc{D}$ be regions in $\ze^d$, with $\mc{D}_0 \subseteq \mc D$, and $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model $\mc{M}$ with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location within $\mc D$ later on.
 \end{definition}
-In other words, we are given a set of steps $\mc{S}$ and a starting location in $\mc{D}$. Then we want to evolve the random walks restricted to the region $\mc{D}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$, and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
+In other words, given a starting location in $\mc D$ we can evolve random walks in the region $\mc D$ with steps from $\mc{S}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$, and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
 
 \begin{figure}[H]
     \centering
@@ -24,11 +24,11 @@ For example, we may consider a semi-infinite strip on the plane as in \cite{brak
 \end{align}
 where $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
 \end{definition}
-\begin{definition} Suppose that $\Gamma$ is an operator involving the $x$ and $a$ variables but not $t$. We shall apply $D$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following linearized way
+\begin{definition} Suppose that $\Gamma$ is an operator involving the $x$ and $a$ variables but not $t$. We shall apply $\Gamma$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following linearized way
 \begin{align}
-	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k
+	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k\,.
 \end{align}
-to avoid problems in expanding $F$ in Laurent series in some of the $x$ variables.
+This is to avoid problems in expanding $F$ in Laurent series in some of the $x$ variables.
 \end{definition}
 
 \begin{definition} Let $\mc{M}$ be a given model. We will denote with $S$ the Laurent polynomial (or series) keeping inventory of the steps $\mc{S}$. Let $K = 1-tS$ be the Kernel of $\mc{M}$. Let $E$ be an operator that eliminates monomials $x_{[d]}^P$ when $P$ is not in $\mc{D}$. Let $L$ be an operator that marks (or labels) monomials $x_{[d]}^P$ for $P \in \mc{D}_0$ in a specified way in the model. Note that $L$ is invertible with inverse $L^{\um 1}$ that is given by marking with $1/a$ instead.
@@ -48,7 +48,7 @@ This operator notation allows us to write down functional equations for $Q$ real
 and to complete the proof, we rewrite the equation to the form at the start of the theorem.
 \end{proof}
 
-\begin{example} Also, we can consider a different approach where instead of removing walks that venture outside of $\mc{D}$ we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc{M}$ and we want to frame the analysis in this new way. We have a new random walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc{D}_0 \cup \mc{D}^c$, where we mark monomials in $\mc{D}^c$ with $z$ and those in $\mc{D}_0$ in the same way as in model $\mc{M}$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
+\begin{example} Also, we can consider a different approach where, instead of removing walks that venture outside of $\mc{D}$, we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc{M}$ and we want to frame the analysis in this new way. We have a new random walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc{D}_0 \cup \mc{D}^c$, where we mark monomials in $\mc{D}^c$ with $z$ and those in $\mc{D}_0$ in the same way as in model $\mc{M}$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
 \begin{align}
 (1-t\widetilde{L} S)\widetilde Q &= q\,,\\
 (\widetilde{L}^{\um 1}-tS) Q &= \widetilde{\alpha}\,.
@@ -71,9 +71,9 @@ The example in the previous section shows that we can talk about marking operato
 The form $a_p-1$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion, $P = {\mc{D}}^c$ and $a_p = a$. In the models we have investigated so far we saw that we do not really need the whole operator but just some terms near the boundaries.
 \begin{example} If we consider random walks with small steps on the half-line in one dimension, we have the operator
 \begin{align}
-	E = 1 - \sum_{n=1}^\infty \ext{\ol{x}_1^n}\,,
+	E = 1 - \sum_{n=1}^\infty \ext{\ol x_1^n}\,,
 \end{align}
-but since we only have small steps, there are no walks that go past $\ol{x}_1$ in the negative direction. Therefore, we can use the operator $E' = 1- \ext{\ol{x}_1}$ to the same effect instead. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We will say they are model-equivalent.
+but since we only have small steps, there are no walks that go past $\ol x_1$ in the negative direction. Therefore, we can use the operator $E' = 1- \ext{\ol x_1}$ to the same effect instead. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We will say they are model-equivalent.
 \end{example}
 To make things easier, we may think of the random walk models as living completely within the sumset $\mc{S}+\mc{D}$ of points that are combinations of points in $\mc{D}$ and steps $\mc{S}$. This is how far walks from the model can reach from within $\mc{D}$ by taking a single step.
 \begin{definition} Given sets $A$ and $B$, we let their sumset be defined as
@@ -86,18 +86,18 @@ To make things easier, we may think of the random walk models as living complete
 With this in mind, we can define a notion of equivalence for operators.
 \begin{definition} Let $\mc{M}$ be a random walk model in $\ze^d$ and let $\Gamma$ and $\Gamma'$ be two operators acting on $\ze^d$. Then $\Gamma \equiv_{\mc{M}} \Gamma'$ if and only if $\Gamma$ and $\Gamma'$ act the same way on monomials from the reach of $\mc{M}$. That is, we call these operators model-equivalent if and only if $\Gamma  x^P = \Gamma' x^P$ for all $P\in \mc{D}+\mc{S}$.
 \end{definition}
-In the preceding example $E\equiv E'$ since they act the same way on monomials from the reach of $\mc{M}$, that is, monomials $x_1^n$ for $n\ge \um 1$. Similarly, in the two-dimensional problem we have an equivalence between the operator $E$ and the operator $E' = (1-\ext{\ol{x}_1})(1-\ext{\ol{x}_2})$.
+In the preceding example $E\equiv E'$ since they act the same way on monomials from the reach of $\mc{M}$, that is, monomials $x_1^n$ for $n\ge \um 1$. Similarly, in the two-dimensional problem we have an equivalence between the operator $E$ and the operator $E' = (1-\ext{\ol x_1})(1-\ext{\ol x_2})$.
 \begin{align}
-	\Gamma = 1 + (a-1)\sum_{k=1}^{\infty} \ext{\ol{x}^k} = 1 + (a-1)\sum_{k=1}^{n} \ext{\ol{x}^k}
+	\Gamma = 1 + (a-1)\sum_{k=1}^{\infty} \ext{\ol x^k} = 1 + (a-1)\sum_{k=1}^{n} \ext{\ol x^k}
 \end{align}
-When the boundary of $\mc{D}$ is complicated, we may not find nice model-equivalent operators, but there are some cases where we can say something. In the usual problem we have an operator $E$ with infinitely many terms, but instead, we find that there is a model-equivalent operator $E'$ that is only comprised of finitely many terms. We will investigate which operators have finite equivalent operators.
-\begin{definition} Given a model $\mc{M}$, a coefficient extraction operator $\Gamma$ in the variables $\row xd$ is of finite type if it is equivalent to an operator $\Gamma'$ that only has finitely many coefficient extraction terms. That is,
+When the boundary of $\mc{D}$ is complicated, we may not find nice model-equivalent operators, but there are some cases where we can say something. In problems featuring half-planes, we have an operator $E$ with infinitely many terms, and we find that there is a model-equivalent operator $E'$ that is only comprised of finitely many terms. We will investigate which operators have finite equivalent operators.
+\begin{definition} Given a model $\mc{M}$, a coefficient extraction operator $\Gamma$ in the variables $\row xd$ is of finite type if it is equivalent to an operator $\Gamma'$ comprised of finitely many coefficient extraction terms. That is,
 \begin{align}
 	\Gamma \equiv_{\mc M} \Gamma' = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} \ext{x_I^J}
 \end{align}
 where each $|J| < \infty$. We will say that $\Gamma'$ is of infinite type if it is not of finite type.
 \end{definition}
-For most purposes we will not distinguish between $\Gamma$ and $\Gamma'$. A natural question is to consider which models $\mc{M}$ lead to operators of finite type. This very much depends on the region $\mc D$ and the nature of the marking of region $\mc D_0$. We have some cases where it is easy to say.
+For most purposes, we will not distinguish between $\Gamma$ and $\Gamma'$. A natural question is to consider which models $\mc{M}$ lead to finite operators. This very much depends on the region $\mc D$ and the nature of the marking of region $\mc{D}_0$. We have some cases where it is easy to say.
 
 \begin{lemma} Let $\mc D$ be a $d$-dimensional box in $\ze^d$ and $|\mc S| < \infty$. Then the operator $\Gamma = LE$ is of finite type.
 \end{lemma}
@@ -110,22 +110,22 @@ For most purposes we will not distinguish between $\Gamma$ and $\Gamma'$. A natu
     \label{fig:finitebox}
 \end{figure}
 
-This immediately gives us the operator
+We can then write the operator as
 \begin{align}
 	E_k = 1 - \sum_{j=1}^{n_k} \ext{x_k^{a_k-j}}+\ext{x_k^{b_k+j}}\,,
 \end{align}
-which is equal to $E_k = 1$ when $n = 0$. Applying $E_1,\ldots, E_d$ sequentially ensures that we remove all monomials outside of $\mc D$. That is, $E = E_1\cdots E_d$. Since each of the operators is finite, their composition $\Gamma = LE$ is as well.
+which is equal to $E_k = 1$ when $n = 0$. Applying $\row Ed$ sequentially ensures that we remove all monomials outside of $\mc D$. That is, $E = \mon Ed$. Since each of the operators is finite, their composition $\Gamma = LE$ is as well.
 \end{proof}
 \begin{theorem} Let $\mc D$ be a finite region in $\ze^d$ and $|\mc S| <\infty$. Then the operator $\Gamma = LE$ is of finite type.
 \end{theorem}
-\begin{proof} The region $\mc D$ lies within a bounding box $B$, so we may write $E = E' E''$, where $E' = E_1\cdots E_d$ from the lemma and $E''$ is the operator removing all monomials outside of $\mc D$ but inside the interior of $B$. $E''$ is finite since there are only finitely many points in that region. Since we are marking only finitely many points $\mc D_0 \subseteq \mc D$, $L$ is finite and finally, $\Gamma$ is finite.
+\begin{proof} The region $\mc D$ lies within a bounding box $B$, so we may write $E = E' E''$, where $E' = \mon Ed$ from the lemma and $E''$ is the operator removing all monomials outside of $\mc D$ but inside the interior of $B$. $E''$ is finite since there are only finitely many points in that region. Since we are marking only finitely many points $\mc D_0 \subseteq \mc D$, $L$ is finite, and finally, $\Gamma$ is finite.
 \end{proof}
 
 Also, we may handle semi-infinite regions if we are only marking finitely many points $\mc D_0$. The analysis is the same as above except that now one or more of $a_k, b_k$ may be infinite, and in this case we actually lose parts of $\Gamma_{B^c}$ and the operator is still finite.
 
 \begin{definition} A random walk model with finitely many steps is of finite type if its extraction and marking operators $E$ and $L$ are of finite type, and its starting condition $q$ is of finite degree. Otherwise, we say the model is of infinite type.
 \end{definition}
-\begin{example} All the models so far has been of finite type, but not all models are of finite type. Consider a one-dimensional model on the whole line where we mark points $x_1^i$ with monomials $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)\ext{x_1^i}$; otherwise, it would not act the same way on monomials in the model's reach $\ze$. Therefore, we must not have a finite operator $L'$ either.
+\begin{example} All the models so far has been of finite type, but not all models are of finite type. Consider a one-dimensional model on the whole line where we mark points $x_1^i$ with monomials $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)\ext{x_1^i}$; otherwise, it would not act the same way on monomials in the model's reach $\ze$. Therefore, $L$ is not equivalent to a finite operator.
 \end{example}
 Finite models are somewhat nice because they will have functional equations with finitely many terms and there is a chance that they will be amenable to the sort of analysis we have performed for quarter-plane walk models in the past. What follows is a rather easy application of the theory so far.
 
@@ -171,18 +171,17 @@ The Kernel forms above suggest an easier route for dealing with the models witho
 \end{align}
 This suggests using the following substitution
 \begin{align}
-	Q = \frac{W}{x_{[d]} K}
+	Q = \frac{W}{x_{[d]} K}\,.
 \end{align}
-so we have
+We multiply both sides by $x_{[d]}$ and use the substitution. Then
 \begin{align}
-	x_{[d]} = x_{[d]}E(KQ) = x_{[d]}E\ol{x}_{[d]}W = \Gamma W\,,
+	x_{[d]} = x_{[d]}E(KQ) = x_{[d]}E\ol x_{[d]}W = \Gamma W\,,
 \end{align}
-where  $\Gamma = \Gamma_1\ldots\Gamma_d$ and 
+where  $\Gamma = \mon \Gamma d$ and 
 \begin{align}
-	\Gamma_k = x_kE_k\ol{x}_k = x_k(1-\ext{\ol{x}_k})\ol{x}_k = 1 - [x_k]^0\,.
+	\Gamma_k = x_kE_k\ol x_k = x_k(1-\ext{\ol x_k})\ol x_k = 1 - [x_k]^0\,.
 \end{align}
-Therefore, we have the functional equation for $W$ as
-\begin{prop} Let $W = x_{[d]}KQ$, where $Q$ is the generating function for walks without interactions in the positive orthant
+\begin{prop} Let $W = x_{[d]}KQ$, where $Q$ is the generating function for walks without interactions in the positive orthant. Then
 \begin{align}
 	\Gamma W = \sum_{I\subseteq [d]}(-1)^{|I|} W_I^\oo= x_{[d]}\,.
 \end{align}
@@ -204,16 +203,14 @@ Interestingly enough, this calculation points to a differential equation. Clearl
 \begin{align}
 	\del_1\del_2 W &= 1
 \end{align}
-\begin{prop} The function $Q$ for walks without interactions is D-finite in the $x_1,\ldots,x_d$ variables since it satisfies the inhomogeneous PDE
+\begin{prop} The function $Q$ for walks without interactions in the positive orthant, in $d$ dimensions, satisfies the inhomogeneous PDE
 \begin{align}
-	\del_1\ldots\del_d W = \del_1\ldots\del_d (x_1\ldots x_d KQ) = 1\,.
+	\mon \del d W = \mon \del d (\mon xd KQ) = 1\,.
 \end{align}
 \end{prop}
-We will see a more general relationship in a later chapter.
+We can go further. We have the following theorem.
 
-%=============================================
-
-\begin{theorem} The generating function $Q$ for a random walk model of finite type is D-finite in the variables $\row xd$.
+\begin{theorem} The $d$-dimensional generating function $Q$ for a random walk model of finite type with no interactions satisfies a finite-order inhomogeneous PDE in the variables $\row xd$.
 \end{theorem}
 \begin{proof} We will use the kernel form for the functional equation
 \begin{align}
@@ -225,7 +222,7 @@ Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and it is of finite
 \end{align}
 and we attain a polynomial equation in the variables $\row xd$. We take the derivative operator
 \begin{align}
-	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\ldots\del_d^{A_d+B_d+1}
+	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\cdots\del_d^{A_d+B_d+1}
 \end{align}
 and apply it to both sides of the equation to retrieve
 \begin{align}
@@ -236,13 +233,14 @@ which follows since we are applying a larger number of derivatives than the degr
 	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)\,.
 \end{align}
 \end{proof}
-For example, let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the left-hand side and right-hand side respectively. We see that $A_k = 3$ and $B_k = 6$. Then we are taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In the second scheme we take $A_k = 3$ still, but $B_k = 4$ and we are taking the 8-th derivative with respect to $x_k$ this time. Even in the quarter-plane, we have models with non D-finite generating function (in the $t$ variable), but it turns out that every model so far considered is D-finite in the variables $\row xd$.
+\begin{example} For example, let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the left-hand side and right-hand side respectively. We see that $A_k = 3$ and $B_k = 6$. Then we are taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In the second scheme we take $A_k = 3$ still, but $B_k = 4$ and we are taking the 8-th derivative with respect to $x_k$ this time. 
+\end{example}
 
-In order to solve the differential equation we need to investigate the kernel of the differential operator.
+Even in the quarter-plane, we have models with non D-finite generating function (in the $t$ variable), but it turns out that every model so far considered is D-finite in the variables $\row xd$. In order to solve the differential equation we need to investigate the kernel of the differential operator.
 \begin{corollary}
 The generating function $Q$ of a finite random model is given by
 \begin{align}
-	x_{[d]}^{A}KQ(x_1,\ldots,x_d;t) = \sum_{i=1}^d \sum_{j=0}^{B_i}Aij(x_1,\ldots,x_{i-1},x_i,\ldots, x_d,t) x_i^j\,,
+	x_{[d]}^{A}KQ(\row xd;t) = \sum_{i=1}^d \sum_{j=0}^{B_i}Aij(x_1,\ldots,x_{i-1},x_i,\ldots, x_d,t) x_i^j\,,
 \end{align}
 where $A_{ij}$ are functions that need to be determined.
 \end{corollary}
@@ -316,7 +314,7 @@ It is not clear if the operator $R\Gamma$ is of finite type. Now it is enough to
 
 The discussion lends itself nicely to generalization where we have $d$ variables and operators $\Gamma_{i_1,\ldots,l_d}$, $R_{i_1,\ldots,i_d}$, and so on, defined analogously. The eigenpair discussion works out in the same way with eigenfunctions for $\lambda = 1$
 \begin{align}
-	u = \frac{a_{i_1,\ldots,i_d}^2 a_{j_1,\ldots,j_d}^m}{a_{k_1,\ldots,k_d}S}x_1^{r_1}\ldots x_d^{r_d} t^n
+	u = \frac{a_{i_1,\ldots,i_d}^2 a_{j_1,\ldots,j_d}^m}{a_{k_1,\ldots,k_d}S}x_1^{r_1}\cdots x_d^{r_d} t^n
 \end{align}
 Also, we can constrain the SAWs on a part of $\ze^d$ with an extraction operator $E$ and mark special locations with an operator $L$. The functional equation is
 \begin{align}
@@ -422,7 +420,7 @@ where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\the
 %================================
 
 \subsection{Using marking operators instead of extraction operators}
-An initially promising idea is to use a marking operator instead of an extraction operator with the goal of removing those marked walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and $Q$ will no longer be a power series in the $x$ variables. We may get further problems. Instead of $E = 1- \ext{\ol{x}}$ we take $\tilde E = 1 + (a_{\um 1}-1)\ext{x}$ with the idea that if we set $a_{\um 1} = 0$ we will obtain $E$. To this end the functional equation is
+An initially promising idea is to use a marking operator instead of an extraction operator with the goal of removing those marked walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and $Q$ will no longer be a power series in the $x$ variables. We may get further problems. Instead of $E = 1- \ext{\ol x}$ we take $\tilde E = 1 + (a_{\um 1}-1)\ext{x}$ with the idea that if we set $a_{\um 1} = 0$ we will obtain $E$. To this end the functional equation is
 \begin{align}
 	(1-tL\tilde E S)\tilde Q = 1
 \end{align}
@@ -479,17 +477,17 @@ The typical solution to the problem specifies initial conditions $F_0$ and $F_1$
 \end{align}
 That is, it relies on the initial condition for $\mc{E}$ in order to solve the equation. We also see that if we do not specify the initial conditions we do not get a unique solution. In the random walks models we have unique solutions because of the iterative nature of the problems. With these points in mind we may try the vanishing kernel method by supplying a root of $K$ namely $x = \sigma$. These roots are
 \begin{align}
-\sigma_1 = -\varphi, \sigma_2 = \ol{\varphi}
+\sigma_1 = -\varphi, \sigma_2 = \ol \varphi
 \end{align}
 where $\varphi$ is the golden ratio. Then plugging either one of these into the OCE leads to
 \begin{align}
 (\sigma-1)F_0 = \sigma F_1
 \end{align}
 \begin{align}
-	 F_1 &= (1-\ol{\sigma}_1)F_0 = \varphi F_0\\
-	 \text{ or } F_1 &=(1-\ol{\sigma}_2)F_0 = -\ol{\varphi} F_0
+	 F_1 &= (1-\ol \sigma_1)F_0 = \varphi F_0\\
+	 \text{ or } F_1 &=(1-\ol \sigma_2)F_0 = -\ol \varphi F_0
 \end{align}
-That is, if we want the vanishing kernel method to work we must have that $F_1$ is related to $F_0$ directly via the golden ratio. By induction we can show that $F_n = \varphi^n F_0$ in the first case and $F_n = (-\ol{\varphi})^n F_0$ in the second case.
+That is, if we want the vanishing kernel method to work we must have that $F_1$ is related to $F_0$ directly via the golden ratio. By induction we can show that $F_n = \varphi^n F_0$ in the first case and $F_n = (-\ol \varphi)^n F_0$ in the second case.
 
 What about the persistent kernel method? We want to apply a transformation $y = y(x)$ to $K$ that leaves it the same. That is,
 \begin{align}
@@ -499,40 +497,40 @@ Collecting terms on one side yields
 \begin{align}
 	(y-x)(1+x+y) = 0
 \end{align}
-That is, the group $G$ that preserves the kernel is composed of the identity transformation and the the transformation $g(x) = -x-1$. We want a $F(-1-x)$ to converge which may not necessarily be true. Instead we multiply the whole functional equation by $\ol{x}$ to find
+That is, the group $G$ that preserves the kernel is composed of the identity transformation and the the transformation $g(x) = -x-1$. We want a $F(-1-x)$ to converge which may not necessarily be true. Instead we multiply the whole functional equation by $\ol x$ to find
 \begin{align}
-\ol{x} \mc{L} = (\ol{x}-1-x) + (1-\ol{x})[x^0]-[x^1]
+\ol x \mc{L} = (\ol x-1-x) + (1-\ol x)[x^0]-[x^1]
 \end{align}
 This new kernel $K$ is nicer. We have
 \begin{align}
-	K = \ol{x}-1-x = \ol{y}-1-y
+	K = \ol x-1-x = \ol y-1-y
 \end{align}
 rearranging this equality gives
 \begin{align}
-	(y-x)(1+\ol{x}\ol{y}) = 0
+	(y-x)(1+\ol x\ol y) = 0
 \end{align}
-and thus, the group $G$ is generated by the identity transformation and $g(x) = -\ol{x}$ which is of order 2, so $|G| = 2$. We have the two equation
+and thus, the group $G$ is generated by the identity transformation and $g(x) = -\ol x$ which is of order 2, so $|G| = 2$. We have the two equation
 \begin{align}
-KF +(1-\ol{x})F_0 - F_1 &= 0\\
+KF +(1-\ol x)F_0 - F_1 &= 0\\
 KgF + (1+x)F_0  - F_1 &=0
 \end{align}
 Furthermore, emulating the orbit method, we have
 \begin{align}
-	(1-g)xKF = K(xF+\ol{x}gF)  = (x+\ol{x})(F_1-F_0)
+	(1-g)xKF = K(xF+\ol xgF)  = (x+\ol x)(F_1-F_0)
 \end{align}
 If $F_1 \neq F_0$ we can write
 \begin{align}
-	xF+\ol{x}gF &= \frac{(x+\ol{x})}{K}(F_1-F_0) \\
+	xF+\ol xgF &= \frac{(x+\ol x)}{K}(F_1-F_0) \\
 	&= \frac{1+x^2}{1-x-x^2}(F_1-F_0) \\
 	&= (1+x+3x^2+O(x^3))(F_1-F_0)
 \end{align}
 Extracting the $[x]$ coefficient yields
 \begin{align}
-	F_0 +[x^2]F(-\ol{x}) = F_0 = F_1 - F_0
+	F_0 +[x^2]F(-\ol x) = F_0 = F_1 - F_0
 \end{align}
 so $F_1= 2 F_0$ and we find
 \begin{align}
-	xF+\ol{x}F(-\ol{x}) = F_0 \frac{1+x^2}{1-x-x^2}
+	xF+\ol xF(-\ol x) = F_0 \frac{1+x^2}{1-x-x^2}
 \end{align}
 Taking the positive part of this yields
 \begin{align}

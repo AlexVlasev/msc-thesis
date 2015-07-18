@@ -68,9 +68,9 @@ We will work in the setting of formal power and Laurent series. Problems with co
 \item $R[[x]]$: Ring of formal power series with monomials $x^k$ for integers $k \ge 0$.
 \item $R((x))$: Field of formal Laurent series with monomials $x^k$ for integers $k$.
 \end{itemize}
-We can also define their multivariate analogues $\Rpring{x}{n}$ and $\Rlring{x}{n}$, and their series counterparts $\Rpsring{x}{n}$ and $\Rlsring{x}{n}$. For a thorough treatment of the subject, please see \cite{monforte2013formal}. When we work with a combination of objects coming from different rings/fields over the indeterminate $x$, we will consider all objects as part of the most general ring/field at the time. If in doubt, we will always work in the field of formal Laurent series. Given a sequence $(w_n)$, we may consider its generating function $W(x)$ given by $\sum_{n} w_n x^n$, which lives appropriately in one of the rings over $x$. The multivariate case for a multi-index sequence $(w_{n_1,\ldots,n_m})$ is defined analogously as
+We can also define their multivariate analogues $\Rpring{x}{n}$ and $\Rlring{x}{n}$, and their series counterparts $\Rpsring{x}{n}$ and $\Rlsring{x}{n}$. For a thorough treatment of the subject, please see \cite{monforte2013formal}. When we work with a combination of objects coming from different rings/fields over the indeterminate $x$, we will consider all objects as part of the most general ring/field at the time. If in doubt, we will always work in the field of formal Laurent series. Given a sequence $(w_n)$, we may consider its generating function $W(x)$ given by $\sum_{n} w_n x^n$, which lives appropriately in one of the rings over $x$. The multivariate case for a multi-index sequence $(w_{\row nm})$ is defined analogously as
 \begin{align}
-	W(x_1,\ldots,x_d) = \sum_{n_1,\ldots,n_m} w_{n_1,\ldots,n_m} x_1^{n_1}\ldots x_m^{n_m}
+	W(\row xm) = \sum_{\row nm} w_{\row nm} x_1^{n_1}\cdots x_m^{n_m}
 \end{align}
 whenever this is a formal Laurent series. We often need to extract particular coefficients from the formal polynomial/series when we solve enumeration problems via generating functions . In the one-variable case we have the coefficient extraction operators on formal series
 \begin{align}
@@ -82,7 +82,7 @@ The multivariate case is handled analogously with the caveat that, whenever the 
 %========================
 In this work we will investigate random walk models on the $n$-dimensional lattice $\ze^n$. A specific model $\mc{M}$ will consist of several ingredients
 \begin{itemize}
-\item $\mc{S}$ : a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, this step set may differ from point to point, \eg a honeycomb lattice embedded in $\ze^2$. The steps themselves are written as vectors $s = (s_1,\ldots, s_n)$. For example, $\mc{S}$ could be a set of small steps defined by coordinates among $\{-1,0,1\}$. Another example is when we have more than one step of a given kind. 
+\item $\mc{S}$ : a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, this step set may differ from point to point, \eg a honeycomb lattice embedded in $\ze^2$. The steps themselves are written as vectors $s = (\row sn)$. For example, $\mc{S}$ could be a set of small steps defined by coordinates among $\{-1,0,1\}$. Another example is when we have more than one step of a given kind. 
 \item $\mc{D}$ : a domain for the random walks. This is the region in $\ze^n$ where the random walks will live. The easiest cases involve the whole space or a half-space. Starting with quarter-plane regions, the analysis becomes rather complicated. One can further constrain the walks to live on semi-infinite strips.
 \item $\mc{D}_0$ : an interaction domain for the random walks. This is a sub-region in $\mc{D}$ and we will want to count how many times random walks interact with it by stepping on coordinates that are part of it. We may count different points from $\mc{D}_0$ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
 \item $\mc Q$ : a set of random walks acting as an initial condition from which all other random walks evolve. This could be as trivial as starting with the empty walk ending at the origin to a set of infinitely many walks with some pattern.
@@ -95,19 +95,19 @@ In this work we will investigate random walk models on the $n$-dimensional latti
     \label{fig:fig1}
 \end{figure}
 
-It is natural to consider the generating function that will keep track of all the information characterizing the random walks in the model. For each random walk $w$, its length $|w|$ will be the total number of steps that it has taken and we will keep track of this with a parameter $t$. We will keep track of the walk's endpoint coordinates in $\ze^n$ by the indeterminates $\row xn$, and its interactions with $\mc{D}_0$ via marking parameters $a_m$, where $m$ is some specific subscript index. The marking is highly dependent on the geometry of $\mc{D}_0$ and the way we want to count interactions. If the end coordinates of the random walk are $(m_1,\ldots,m_n)$, and if the marking monomial (a product of $a_m$'s) is $a(w)$, we can write the generating  function for the random walk model as
+It is natural to consider the generating function that will keep track of all the information characterizing the random walks in the model. For each random walk $w$, its length $|w|$ will be the total number of steps that it has taken and we will keep track of this with a parameter $t$. We will keep track of the walk's endpoint coordinates in $\ze^n$ by the indeterminates $\row xn$, and its interactions with $\mc{D}_0$ via marking parameters $a_m$, where $m$ is some specific subscript index. The marking is highly dependent on the geometry of $\mc{D}_0$ and the way we want to count interactions. If the end coordinates of the random walk are $(\row mn)$, and if the marking monomial (a product of $a_m$'s) is $a(w)$, we can write the generating  function for the random walk model as
 \begin{align}
-	Q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{M}} a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}\,.
+	Q(\row xn;t) = \sum_{w \in \mc{M}} a(w) x_1^{m_1}\cdots x_n^{m_n} t^{|w|}\,.
 \end{align}
-Other important objects are the step polynomial, or characteristic polynomial, $S(x_1,\ldots,x_n)$ defined by
+Other important objects are the step polynomial, or characteristic polynomial, $S(\row xn)$ defined by
 \begin{align}
-	S(x_1,\ldots,x_n) = \sum_{s \in \mc{S}} x_1^{s_1}\ldots x_n^{s_n}\,,
+	S(\row xn) = \sum_{s \in \mc{S}} x_1^{s_1}\cdots x_n^{s_n}\,,
 \end{align}
 and the starting polynomial defined by
 \begin{align}
-	q(x_1,\ldots,x_n;t) = \sum_{w \in \mc{Q}}  a(w) x_1^{m_1}\ldots x_n^{m_n} t^{|w|}\,.
+	q(\row xn;t) = \sum_{w \in \mc{Q}}  a(w) x_1^{m_1}\cdots x_n^{m_n} t^{|w|}\,.
 \end{align}
-Usually, we see $S$ a Laurent polynomial of degree (or valuation) 1 in each variable and we have $q = 1$. Note that in all of these quantities the variables $a_m$ have been supressed. We can include those too, whenever necessary; for example, when there are only finitely many of them. Furthermore, it will be useful to use the quantities $b = a - 1$ and $c = b/a = 1- \ol{a}$.
+Usually, we see $S$ a Laurent polynomial of degree (or valuation) 1 in each variable and we have $q = 1$. Note that in all of these quantities the variables $a_m$ have been supressed. We can include those too, whenever necessary; for example, when there are only finitely many of them. Furthermore, it will be useful to use the quantities $b = a - 1$ and $c = b/a = 1- \ol a$.
 \begin{example} To illustrate the notation, we will investigate a random walk model in the plane. We will look at random walks restricted to the quarter plane, starting at the origin, and which only have small diagonal steps. We will count their interactions with the axes. In our terminology we have a random walk model $\mc{M}$ with $\mc{S}$ given by
 \begin{align}
 	\mc{S} = \{(-1,-1),(1,-1),(-1,1),(1,1)\}\,.
@@ -121,14 +121,14 @@ Usually, we see $S$ a Laurent polynomial of degree (or valuation) 1 in each vari
 \end{figure}
 The region $\mc{D}$ consists of all points in $\ze^2$ with non-negative coordinates. Next, $\mc{D}_0$ is composed of the two non-negative axes with overlap at the origin; we will count visits to the origin as visits to each axis. Finally, $\mc{Q}$ consists of the empty walk. In the language of generating functions we have $q = 1$ and
 \begin{align}
-	S &= S(x_1,x_2)  = x_1+\ol{x}_1+x_2+\ol{x}_2 = (x_1+\ol{x}_1)(x_2 + \ol{x}_2)\,.
+	S &= S(x_1,x_2)  = x_1x_2+\ol x_1x_2+x_1\ol x_2+\ol x_1 \ol x_2 = (x_1+\ol x_1)(x_2 + \ol x_2)\,.
 \end{align}
 There is a choice in naming the variables counting the interactions and, as it will prove notationally simpler, we will go with their defining quality: we mark the locations where one coordinate is zero. That is, mark walks ending on $x_k = 0$ by incrementing the power of $a_k$ in the generating function. In this model, the only step we can take at first is $(1,1)$ and this contributes a monomial $x_1x_2t$. From here on we can build on the single random walk of size one by taking a step in one of the four directions. This action leads to the following monomials.
 ZZPICTUREZZ
 \begin{itemize}
 	\item $(1,1)$: monomial $x_1^2x_2^2 t^2$ since there are no interactions.
-	\item $(1,\um1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$-axis with coordinate $x_2 = 0$.
-	\item $(\um 1,1)$: monomial  $a_1x_2^2 t^2$ since the walk lands on the $x_2$-axis with coordinate $x_1 = 0$.
+	\item $(1,\um1)$: monomial  $a_2x_1^2t^2$ since the walk lands on the $x_1$ axis with coordinate $x_2 = 0$.
+	\item $(\um 1,1)$: monomial  $a_1x_2^2 t^2$ since the walk lands on the $x_2$ axis with coordinate $x_1 = 0$.
 	\item $(\um1,\um1)$: monomial  $a_1a_2 t^2$ since the walk lands on the origin, which is on both axes.
 \end{itemize}
 Since we have seen all the random walks of size at most 2, we see that the generating function $Q = Q(x_1,x_2;t)$ starts as
@@ -146,13 +146,13 @@ It may be unexpected, that the first few coefficients factor, but this phenomeno
 In the interest of generalizing the problem-solving strategies involved in random walk enumeration, we will need powerful notation to handle all the intricacies of the problem. In fact, it is the notation itself that paved the way towards generalization in our originla research because it is suggestive and points towards the deeper connections between the generating functions and quantities involved. With this thesis we aim to make this kind of notation more common in higher-dimensional random walk analysis. Typically, in the multivariate setting we see multi-index notation where a bolded, vectorial or even supressed notation denotes the collection of variables involved. We would use this notation as well, but it is insufficient when working with restricted geometries for $\mc{D}$ and $\mc{D}_0$. Therefore, we have the following notation.
 \begin{definition} Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$ where we have as many terms in these sequences as needed in the specific context, and let $[n] = \{1,\ldots, n\}$
 \end{definition}
-\begin{definition} For sequences $I = (i_1,\ldots, i_m)$ and $J = (j_1,\ldots, j_m)$ and a symbol $x$, we denote the monomial
+\begin{definition} For sequences $I = (\row im)$ and $J = (\row jm)$ and a symbol $x$, we denote the monomial
 \begin{align}
 	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,,
 \end{align}
 with the special cases
 \begin{align}
-	x_I^{\one} = x_I, \quad x_I^{\um\one} = \frac{1}{x_I} = \ol{x}_I\,.
+	x_I^{\one} = x_I, \quad x_I^{\um\one} = \frac{1}{x_I} = \ol x_I\,.
 \end{align}
 \end{definition}
 \begin{definition} For sequences $I$ and $J$ as before, and indeterminate $x$, we denote the coefficient extraction 
@@ -173,7 +173,7 @@ We will primarily be using this notation for extractions with respect to the $x$
 \end{align}
 Furthermore, we may write
 \begin{align}
-	S_1^{\um 1} &= [\ol{x}_1](x_1+\ol{x}_1)(x_2+\ol{x}_2) = x_2+\ol{x}_2
+	S_1^{\um 1} &= [\ol x_1](x_1+\ol x_1)(x_2+\ol x_2) = x_2+\ol x_2
 \end{align}
 and $\Sf{\pm 1,\pm1}  = 1$.
 \end{example}
