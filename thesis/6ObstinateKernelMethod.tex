@@ -8,19 +8,19 @@
 
 We have another tool at our disposal, the Obstinate Kernel method, which was used in the interacting case in \cite{tabbara2014exact}. The idea is similar to the weighted algebraic kernel method in that we produce more functional equations from the master equation via group actions $g \in G$. The difference is that here we also set one of $x_1 = \sigma_1$, $x_2 = \sigma_2$ equal to a root of $K$ in order to eliminate the $KQ$ term from the equations. This leaves equations that only include the other variable. It turns out that some combinations of substitutions and group operations do not lead to valid functional equations. This happens when one of the $Q_k^0$ terms is not a formal power series in $t$. In all the cases with finite groups of order 4, 6 and 8 we find that there are 2 roots of $K$ for each $x_k$ and that one root is in $O(t)$ and the other in $O(1/t)$. Generally, it works out better if we use the $O(t)$ roots because that at least guarantees that the $Q_k^0$ terms remain as formal power series in $t$. However, sometimes (page 11 of \cite{tabbara2014exact}) even the $O(1/t)$ term may lead to a valid power series. 
 
-It may not be necessary, but it will be sufficient if a combination of a substitution $x_k = \sigma_k$ and a group action $g_L$ together give a power series in $t$ when applied to single variables like $x_1$ or $x_2$. For example, we would hope that $g_L(x_j)|_{x_k=\sigma_k}$ is a power series in $t$ for some $i,j,L$. Again, this is not a necessary condition, but it will be sufficient to show that a lot of the cases involved produce enough different equations to allow us to go through the Obstinate Kernel method. For those cases that we find less equations, it is likely that we will be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in (two friendly walks).
+It may not be necessary, but it will be sufficient if a combination of a substitution $x_k = \sigma_k$ and a group action $g_L$ together give a power series in $t$ when applied to single variables like $x_1$ or $x_2$. For example, we would hope that $g_L(x_j)|_{x_k=\sigma_k}$ is a power series in $t$ for some $i,j,L$. Again, this is not a necessary condition, but it will be sufficient to show that a lot of the cases involved produce enough different equations to allow us to go through the Obstinate Kernel method. For those cases where we find less equations, it is likely that we will be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in (two friendly walks).
 
-\begin{definition} A function $f(\row xd;t)$ is admissible if it is a power series in $t$. Furthermore, $f$ is $k$-admissible if $f|_{x_k=\sigma_k}$ is admissible for an admissible $\sigma_k$ root. A tuple of functions is admissible if each element of the tuple is admissible.
+\begin{definition} A function $f(\row xd;t)$ is admissible if it is a power series in $t$. If $\sigma_k$ is a root of $K$, we say $f$ is $k$-admissible if $f|_{x_k=\sigma_k}$ is admissible. A set of functions is admissible if each element is admissible.
 \end{definition}
 
-\begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating steps and group $G$ of order 4. The actions $g \in G$ that preserve the admissibility are given in the following table
+\begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating (?) steps and group $G$ of order 4. The actions $g \in G$ that preserve the admissibility are given in the following table.
 \end{prop}
 
 When $|G| = 6$ we have a richer situation.
 
 \begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating steps and group $G$ of order 4, 6 or 8. Models with the same group have the same admissibility properties with respect to admissible when it comes to $x_1$, $x_2$ or the pair $(x_1,x_2)$.
 \end{prop}
-\begin{proof} We do not know of a conceptual proof of this fact, so we performed the calculations on a computer. They are trivial computationally speaking. For a given model $\mc{M}$ we construct its $S$-polynomial, which can be used to find the admissible roots $\sigma_k$ for $k =1,2$. We can use $S$ to express the generators $g_k$ and their action on the pair $(x_1,x_2)$. Once we have the generators we form the group $G$. Next, to check the admissibility of $f\in \{x_1$, $x_2$, $(x_1,x_2)\}$ all we need to do is find $|\orb_G(f)|$ and see if substituting $x_k = \sigma_k$ in the resulting expressions leads to admissible functions. The calculations can be done by hand, but they are tedious, so we have employed a computer to do the legwork. It becomes a trivial matter to check the admissibility properties for the various models and compare the results, summarized in the following tables.
+\begin{proof} We do not know of a conceptual proof of this fact, so we performed the calculations on a computer. They are trivial computationally speaking. For a given model $\mc{M}$, we construct its $S$-polynomial, which can be used to find the admissible roots $\sigma_k$ for $k =1,2$. We can use $S$ to express the generators $g_k$ and their action on the pair $(x_1,x_2)$. Once we have the generators we form the group $G$. Next, to check the admissibility of $f\in \{x_1$, $x_2$, $(x_1,x_2)\}$ all we need to do is find $|\orb_G(f)|$ and see if substituting $x_k = \sigma_k$ in the resulting expressions leads to admissible functions. The calculations can be done by hand, but they are tedious, so we have employed a computer to do the legwork. It becomes a trivial matter to check the admissibility properties for the various models and compare the results, summarized in the following tables.
 \end{proof}
 
 \begin{table}[H]
@@ -99,16 +99,16 @@ We will perform the first steps in the analysis of the Obstinate Kernel method f
 %=======================================
 \section{Group of order 4}
 %=======================================
-The analysis in this case is the same whether we work with the $\sigma_1$ or $\sigma_2$ substitutions. We will just work with the $\sigma_1$ substitution and group actions $1$, $ g_2$, where we let $g_2(F) = F^\ast$ to keep the notation cleaner. The functional equations corresponding the the group actions are
+The analysis in this case is the same whether we work with the $\sigma_1$ or $\sigma_2$ substitutions. We will just work with the $\sigma_1$-substitution and group actions $1$, $ g_2$, where we let $g_2(F) = F^\ast$ to keep the notation cleaner. The functional equations corresponding the the group actions are
 \begin{align}
 	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0} &= \alpha\,,\\
 	KQ^\ast - K_1^\ast Q_1^{0,\ast}- K_2^\ast Q_2^0 - K_{12}^\ast \Qf{0,0} &= \alpha\,.
 \end{align}
-We will eliminate $Q_2^0$ because once we maket the $\sigma_1$ substitution we would have a tough time trying to expand this into series. We do this by taking $K_2^\ast$ times the first equation and subtract $K_2$ times the second equation. This leads to the functional equation
+We will eliminate $Q_2^0$ because once we make the $\sigma_1$-substitution, we would have a tough time trying to expand $Q_2^0$ into series. We do this by taking $K_2^\ast$ times the first equation and subtract $K_2$ times the second equation. This leads to the functional equation
 \begin{align}
 	K_2^\ast KQ - K_2 K Q^\ast- (K_2^\ast K_1 Q_1^0 - K_2 K_1^\ast Q_1^{0,\ast}) + (K_2^\ast K_{12}-K_2 K_{12}^\ast)\Qf{0,0} - \alpha(K_2^\ast - K_2) = 0
 \end{align}
-where we can set $x_1 = \sigma_1$ to eliminate the $K$ term. We will overload notation by not changing any of the symbols. From now on we will know that $x_1 = \sigma_1$ in the equations that follow. We have
+where we can set $x_1 = \sigma_1$ to eliminate the $K$ term. We overload notation by not changing any of the symbols. From now on we will know that $x_1 = \sigma_1$ in the equations that follow. We have
 \begin{align}
 	(K_2^\ast K_1 Q_1^0 - K_2 K_1^\ast Q_1^{0,\ast}) - (K_2^\ast K_{12}-K_2 K_{12}^\ast)\Qf{0,0} + \alpha(K_2^\ast - K_2) = 0.
 \end{align}
@@ -122,14 +122,14 @@ where the weights are given by pre-multiplying an expression by $K_2^\ast$ befor
 	0 &= D_2(K_1Q_1^0) - D_2(K_{12})\Qf{0,0} + D(\alpha)	    
 \end{split}\end{align}
 where the second one follow from substituting $x_1 = \sigma_1$.
-The situation is similar to the Algebraic Kernel method except that the operators there retain the $KQ$ term and its orbit, while they eliminate the $Q_1^0$ and $Q_2^0$ terms and their orbits. Since we will be using operators like $D_2$, we will have some notation.
-\begin{definition} For a concatenated list $L = L_1L_2\ldots$ of positive integer indices let $g_L = g_{L_1}g_{L_2}\cdots$ whenever this group action makes sense. That is, either the list is finite or there is some form of convergence when $L$ is infinite.
+The situation is similar to the Algebraic Kernel method except that the operators there retain the $KQ$ term and its orbit, while they eliminate the $Q_1^0$ and $Q_2^0$ terms and their orbits.
+\begin{definition} (?) For a concatenated list $L = L_1L_2\ldots$ of positive integer indices, let $g_L = g_{L_1}g_{L_2}\cdots$ whenever this group action makes sense. That is, either the list is finite or there is some form of convergence when $L$ is infinite.
 \end{definition}
 \begin{definition} Let $L$ be a concatenated list. Definte $\Delta_L = 1 - g_L$. Now let $X$ be some function. The operator $D_L[X]$ is defined by its action on functions $F$ as
 \begin{align}
 	D_L[X](F) =\Delta_L(XF) = (1-g_L)(XF) = XF-g_L(XF)\,.
 \end{align}
-We will drop the $X$ from the notation if it is clear in context. In particular, $D_L[1] = \Delta_L$.
+We will drop the $X$ from the notation if it is clear from context. In particular, $D_L[1] = \Delta_L$.
 \end{definition}
 For example, $D_2 = D_2[g_2(K_2)]$.
 \begin{example} If we use $g_L(X)$ instead of $X$ in the above definition, we find that
@@ -162,7 +162,7 @@ Then
 \end{split}
 \end{align}
 If the model is symmetric in both directions, we see that $g_2 S_1^{\um 1} = S_1^{\um 1}$ and therefore, $g_2 K_1 = K_1$, and we may bring that factor outside of $D_2(K_1^\ast F) = K_1 D_2(F)$. It is worth investigating if this happens in other cases since this will make it easier to perform coefficient extraction later. We can answer this in the negative.
-\begin{prop} Suppose that a model with group of order 4 has symmetry around the $x_i$ axis and $j\neq i$. Then $D_i[g_iK_j] = K_jD_i[1] = K_j \Delta_i$ in the $\sigma_j$ substitution. Also, $D_j[g_j(K_i)] = K_i D_j[1] = K_i \Delta_j$ if and only if the model is also symmetric around the $x_j$ axis. Thus, we can bring out the $K$ term out of both operators if and only if the model is highly symmetric.
+\begin{prop} Suppose that a model with group of order 4 has symmetry around the $x_i$ axis and $j\neq i$. Then $D_i[g_iK_j] = K_jD_i[1] = K_j \Delta_i$ in the $\sigma_j$-substitution. Also, $D_j[g_j(K_i)] = K_i D_j[1] = K_i \Delta_j$ if and only if the model is also symmetric around the $x_j$ axis. Thus, we can bring out the $K$ term out of both operators if and only if the model is highly symmetric.
 \end{prop}
 \begin{proof} Assume that the model is symmetric around the $x_1$ axis, that is, it is vertically symmetric. This implies that $S_1^{\um 1} = S_1^1$ and $g_1(S_2^k) = S_2^k$ for all $k$. This immediately tells us that $g_1(K_2) = K_2$ and $D_1[g_1K_2] = K_2 \Delta_1$. This remains true when we substitute $x_2 = \sigma_2$. This would also be true for the other operator if the model is symmetric around the $x_2$ axis. Thus, we only need to show the forward direction of the statement. We will show that if the model is not highly symmetric, the factoring will not happen. It is enough to show that $g_2(K_1) \neq K_1$ even after the $x_1 = \sigma_1$ substitution is made.
 
@@ -205,7 +205,7 @@ We can perform the Obstinate Kernel method on the three models in the first grou
 \]
     \caption{Models $S11$, $S12$, $S13$ with group of order 6}
 \end{figure}
-The $k$-admissibility of $(x_1,x_2)$ is preserved by actions $1$, $ g_j$, $ g_{jk}$ for $j \neq k$. For consistency we will work on the $1$-admissible case. The actions are $1$, $ g_2$, $ g_{21}$. We have the table from the Algebraic Kernel method.
+The $k$-admissibility of $(x_1,x_2)$ is preserved by actions $1$, $ g_j$, $ g_{jk}$ for $j \neq k$. For consistency, we will work on the $1$-admissible case. The actions are $1$, $ g_2$, $ g_{21}$. We have the table from the Algebraic Kernel method.
 \begin{table}[H]
     \caption{Reductions of group actions $g \in G$ on $Q_1^0$ and $Q_2^0$.}
     \label{tbl:tableG6}
@@ -287,7 +287,7 @@ Let $\beta = K_{12}\Qf{0,0} - \alpha = \alpha(b_1b_2\Qf{0,0}-1)$, $X = Q_1^0$ an
 	A_{21}X_2+ B_{21}Y_{21} &= \beta\,, \\
 	A_{212} X_{212} + B_{212} Y_{21}&= \beta\,,
 \end{align}
-where we wish to eliminate variables $X$, $Y$ that contain $\sigma_1$ in their input. Those are $X_2$, $Y$ and $Y_{21}$ and we can eliminate them by first eliminating $Y$ and $Y_{21}$ from the first two and second two equations, and then eliminating $X_2$ from the resulting two equations. That is, we compute $B_2$ times the first equation minus $B$ times the second equation, and $B_{212}$ times the third equation minus $B_{21}$ from the last equation. In other words this is the same as if we apply the operators
+where we wish to eliminate variables $X$, $Y$ that contain $\sigma_1$ in their input. Those are $X_2$, $Y$ and $Y_{21}$, and we can eliminate them by first eliminating $Y$ and $Y_{21}$ from the first two and second two equations, and then eliminating $X_2$ from the resulting two equations. That is, we compute $B_2$ times the first equation minus $B$ times the second equation, and $B_{212}$ times the third equation minus $B_{21}$ from the last equation. In other words this is the same as if we apply the operators
 \begin{align}
 	D_2[B_2] &= B_2 - B g_2\,,\\
 	- g_{212}D_2[B_2] &= g_{212}\,B g_2 - g_{212}\,B_2 =  B_{212} \,g_{21} - B_{21}\,  g_{212} 
@@ -308,13 +308,14 @@ We could recover the same result by applying the following operator $D$ to both 
 	   &= (A_{21}B_{212} - g_{212}A_{21}B_{212})D_2[B_2]\\
 	   &= D_{212}[A_{21}B_{212}]D_2[B_2]\,.
 \end{split}\end{align}
-Starting from the master functional equation we have
+Starting from the master functional equation, we have The right-hand side
 \begin{align}
-	D(right-hand side) &= D(\beta) = \beta D_{212}[A_{21}B_{212}](B_2-B)
+	D(\beta) = \beta D_{212}[A_{21}B_{212}](B_2-B)
 \end{align}
+and the left-hand side
 \begin{align}
 \begin{split}
-	D(left-hand side) &= D(AX+BY) = D(AX) \\
+		 D(AX+BY) &= D(AX) \\
 		&= D_{212}[A_{21}B_{212}]D_2[B_2](AX)\\
 		&=D_{212}[A_{21}B_{212}](AB_2X - A_2BX_2)\\
 		&=D_{212}[A_{21}B_{212}](AB_2X)\\
@@ -322,67 +323,16 @@ Starting from the master functional equation we have
 \end{split}
 \end{align}
 We note that $A_{212} = A$, so we can actually factor out $A$ from the operator. Finally, we have the following theorem.
-\begin{theorem} For the first model with group of order 8 we have
+\begin{theorem} For the first model with group of order 8, we have
 \begin{align}
 	D_{212}[A_{21}B_2B_{212}]\left(Q_1^0\right) = \frac{\beta}{A} D_{212}[A_{21}B_{212}](B_2-B)
 \end{align}
-where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$, and we only obtain an equality once we set $x_1 = \sigma_1$ in this expression.
+where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$, and the equality is valid only once we set $x_1 = \sigma_1$ in this expression.
 \end{theorem}
-If we went through the $\sigma_2$ substitution instead, we would have obtained an analogous statement, which we show here without proof.
-\begin{theorem} For the first model with group of order 8 we have
-\begin{align}
-	D_{121}[B_{12}A_1A_{121}]\left(Q_2^0\right) = \frac{\beta}{B} D_{121}[B_{12}A_{121}](A_1-A)
-\end{align}
-where $A_L = g_L(K_1)$, $B_L = g_L(K_2)$ and $\beta = \alpha (b_1b_2\Qf{0,0}-1)$, and we only obtain an equality once we set $x_2 = \sigma_2$ in this expression.
-\end{theorem}
-The interesting fact (as found in \cite{tabbara2014exact}) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$ substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and would be too long to be done by hand. The square root part does not depend on $a_2$ in the first case, and $a_1$ in the second case. This is what allows the authors to find relationships between $\Qf{0,0}$ and expressions where one or more of $a_1$ and $a_2$ equal to 1.
+If we went through the $\sigma_2$ substitution instead, we would have obtained an analogous statement. Just switch the $A$'s and the $B$'s, and the 1's and the 2's.
+
+The interesting fact (as found in \cite{tabbara2014exact}) is that the coefficients in front of the $Q$'s become Laurent polynomials once we take into consideration the $\sigma_k$-substitutions, even though the $\sigma_k$'s contain square roots. The coefficient in front of $\beta$ can be reduced to a rational function plus a rational function times a square root after properly conjugating. The calculations are exceedingly complicated and would be too long to be done by hand. The square root part does not depend on $a_2$ in the first case, and $a_1$ in the second case. This is what allows the authors to find relationships between $\Qf{0,0}$ and expressions where one or more of $a_1$ and $a_2$ equal to 1.
 
 
 
 \endinput
-
-%================================================================
-%================================================================
-%================================================================
-
-Here
-\begin{align}
-	S_1^{\um 1} &= 1+x_2\com S_1^0 = 0\com S_1^1 = 1+\ol x_2\,,\\
-	S_2^{\um 1} &= x_1\com S_2^0 = x_1+\ol x_1\com S_2^1 = \ol x_1\,,
-\end{align}
-which give
-\begin{align}
-	A = K_1 = c_1 - t\ol x_1(1+x_2)\com B = K_2 = c_2 - t x_1\ol x_2\,.
-\end{align}
-Note that since $\Sf{\um 1,\um 1} = 0$,
-\begin{align}
-	K_{12} = c_1c_2
-\end{align}
-and we can combine the $\alpha$ term with $K_{1,2}Q_{1,2}^{0,0}$ in one with
-\begin{align}
-	\gamma = \ol a_1\ol a_2(1-b_1b_2\Qf{0,0})
-\end{align}
-The master functional equation is
-\begin{align}
--KQ + K_1 Q_1^0 + K_2 Q_2^0 +\gamma = 0\,.
-\end{align}
-The roots of the kernel are
-\begin{align}
-	\sigma_1^\pm &= \frac{1\pm\sqrt{1-4t^2(1+x_2)(1+\ol x_2)}}{2t(1+\ol x_2)}\,,\\
-	\sigma_2^\pm &= \frac{1-t(x_1+\ol x_1) \pm \sqrt{(1-t(x_1+\ol x_1))^2 - 4t^2}}{2t\ol x_1}\,,
-\end{align}
-and as in the paper we pick $\sigma_k = \sigma_k^{-}$ because they are power series in $t$. Next we determine the birational transformations that leave the kernel unchanged. They are
-\begin{align}
-	g_1: x_1 \mapsto \ol x_1x_2\com g_2: x_2 \mapsto x_1^2 \ol x_2\,.
-\end{align}
-Simply iterating $g_1$ and $g_2$  shows that the group $G$ has order 8. For the rest of the analysis we will need the following notation.
-The elements in the orbit are $id$, $g_1$, $g_{21}$, $g_{121}$, and so on. Since we eventually reach the identity again, we can work backwards and have the $g$ terms meet in the middle. The orbit is then given by
-\begin{align}
-	\orb(G) = \{id, g_1, g_{21},g_{121},g_{2121}=g_{1212}, g_{212},g_{12},g_{2}\}\,.
-\end{align}
-In the rest of this calculation we need to eliminate the kernel term via a substitution of $\sigma_k$ in the master equation (we will overload the notation as before). Then we will need some extra functional equations that are obtained by application of terms from the orbit. However, not all such applications are valid. We require that the $\sigma_k$ term appears in the numerator inside the functions $Q$. We can check that to use the sigma values we need to use the following transformations
-\begin{align}
-	\sigma_1: id, g_2, g_{21}, g_{212}\,,\\
-	\sigma_2: id, g_1, g_{12}, g_{121}
-\end{align}
-For each $\sigma_k$ we are going to find 3 additional functional equations to complement the master equation and then we will substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just will not include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We will also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note, we will also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra, but because of the complexity and symmetry involved in the coefficients, it is best to investigate the explicit simplification of the equations.

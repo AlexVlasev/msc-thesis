@@ -235,4 +235,45 @@ where $m$ and $n$ are non-negative. We need to pre-multiply by $x^n$ to clear ou
 	x^n\Gamma = x^n + \sum_{i=0}^{m} a_i \ext{x^{i+n}} - \sum_{i=1}^n b_i\ext{x^{n-i}}\,.
 \end{align}
 This operator is cleared by $\del^{m+n+1}$.
+
+
+
+%=======================================
+\subsection{Interaction with $\del_t$}
+%=======================================
+Here we will investigate $\del_t$ interacts with $\mc{L}$.
+\begin{align}
+	\del_t \mc{L} &= \del_t - \del_t(t\Gamma S) = \del_t - \Gamma S- t\Gamma S\del_t = \mc{L}\del_t - \Gamma S\,,\\
+	\del_t^2 \mc{L} &= \mc{L}\del_t^2 - 2\del_t \Gamma S\,,\\
+	\del_t^n \mc{L} &=\mc{L} \del_t^n - n\del_t^{n-1}\Gamma S
+\end{align}
+for integer $n$. Another way to write these is with bracket notation
+\begin{align}
+	[\mc{L},\del_t^n] = \mc{L}\del_t^n-\del_t^n\mc{L} = n\del_t^{n-1}\Gamma S\,.
+\end{align}
+
+%=======================================
+\subsection{Interaction with $\del_i$}
+%=======================================
+We take the operator $\Gamma_n(a) = 1 + b x^n[x^n]$ again. Let $\del_k = \del/\del_k$ and in this case just $\del$. We have
+\begin{align}
+	\del \Gamma_n(a) = \del + b\del(x^n[x^n]) = \del + bnx^{n-1}[x^n]\,.
+\end{align}
+Now if $n\ge 0$ we have
+\begin{align}
+	\del^{n+1}\Gamma_n(a)  = \del^{n+1} + b\del^{n+1}(x^n)[x^n] = \del^{n+1}\,.
+\end{align}
+If $n\leq 0$ taking derivatives will yield ever greater powers of $\ol x$ so we want to pre-multiply by a power of $x$ first.
+\begin{align}
+	\del x^{-n} \Gamma_{n}(a) = \del x^{-n} + b\del [x^n] = \del x^{-n} = -nx^{-n-1} + x^{-n}\del\,.
+\end{align}
+If we have more terms in an operator, then we need to multiply by a power of $x$ to clear out all the negative powers of $x$. Then we take the lowest order derivative in order to clear out all the extraction terms. Suppose that
+\begin{align}
+	\Gamma = 1 + \sum_{i=0}^{m} a_i \ext{x^i} - \sum_{i=1}^n b_i\ext{\ol x^i}
+\end{align}
+where $m$ and $n$ are non-negative. We need to pre-multiply by $x^n$ to clear out all the negative powers of $x$. Then we have
+\begin{align}
+	x^n\Gamma = x^n + \sum_{i=0}^{m} a_i \ext{x^{i+n}} - \sum_{i=1}^n b_i\ext{x^{n-i}}\,.
+\end{align}
+This operator is cleared by $\del^{m+n+1}$.
 \endinput

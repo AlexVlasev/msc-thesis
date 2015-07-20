@@ -8,10 +8,10 @@
 
 We will explore the algebraic kernel method as seen in \cite{bostan2014three} with extensions to interacting random walk models.
 %========================================
-\section{Groups for walks with small steps}
+\section{Groups for walks with small steps (REWRITE)}
 %========================================
 
-Suppose that the random walk model has a step Laurent polynomial $S$ in the variables $\row xd$. We are interested in the bi-rational transformations that leave the kernel $K = 1 - tS$ intact in much the same way as it is done in \cite{bousquet2010walks} but with a slightly different notaion. For some $x = x_k$ we have bi-rational transformations sending $g: x \mapsto y$ that preserse $K$. That is, $K(y) = K(x)$. Expanding the definition we have
+Suppose that the random walk model has a step Laurent polynomial $S$ in the variables $\row xd$. We are interested in the bi-rational transformations that leave the kernel $K = 1 - tS$ intact in much the same way as it is done in \cite{bousquet2010walks} but with a slightly different notaion. For some $x = x_k$, we have bi-rational transformations sending $g: x \mapsto y$ that preserse $K$. That is, $K(y) = K(x)$. Expanding the definition we have
 \begin{align}\begin{split}
 		1- tS(y) &= 1- tS(x)\\
 		S(y) &= S(x)\\
@@ -39,16 +39,16 @@ We have several cases.
 \begin{align}
 	ESQ = SQ - \ol x(S_{\um 1}Q_0 + S_0 Q_{\um 1}) = SQ
 \end{align}
-since $Q_{\um 1} = 0$, so the extraction does not see the variable $x$. This is equivalent to saying that even though we are working in the positive orthant we can relax the constraint for the $x$ to the whole space since there are no steps going back in that direction. The variable $x$ is still present in the functional equation. If we have no steps that stay in the $x = 0$ hyperplane, then $x$ essentially acts as a parameter in the problem and we can ignore it. Otherwise we will have
+since $Q_{\um 1} = 0$, so the extraction does not see the variable $x$. This is equivalent to saying that even though we are working in the positive orthant we can relax the constraint for the $x$ to the whole space since there are no steps going back in that direction. The variable $x$ is still present in the functional equation. If we have no steps that stay in the $x = 0$ hyperplane, then $x$ essentially acts as a parameter in the problem and we can ignore it. Otherwise, we will have
 \begin{align}\begin{split}
 	LESQ = LSQ &= (1+b[x^0])SQ \\&= SQ + b(S_{\um 1}Q_1+S_0Q_0+S_1Q_{\um 1}) \\&= SQ + bS_0Q_0 \neq SQ\,.
 \end{split}\end{align}
 \item[3)] If $S_{\um 1}\neq 0$ and $S_1 = 0$, then $ESQ$ is nontrivial, but since we cannot take any steps away from the $x = 0$, hyperplane we can eliminate the $S_{\um 1}$ term in the analysis of the problem.
 \end{itemize}
-In all the cases the random walk model behaves as if $S_{\um 1} = 0$. In the non-interacting version of the problem we can fully ignore the $x$ coordinate in the analysis since it acts like a parameter. The problem is essentially one of lower dimension. In the interacting case we have a bit extra because of the marking operator. In either case we will define the dimension of the group to be the number of nontrivial generators.
+In all the cases the random walk model behaves as if $S_{\um 1} = 0$. In the non-interacting version of the problem we can fully ignore the $x$ coordinate in the analysis since it acts like a parameter. The problem is essentially one of lower dimension. In the interacting case we have a bit extra because of the marking operator. In either case we define the dimension of the group to be the number of nontrivial generators.
 \begin{definition} Let the \emph{dimension} of the model or the group be the number of nontrivial generators of $G_S$ in the defining representation.
 \end{definition}
-Without loss of generality we will speak of models set in $d$ dimensions that have a full set of generators. Firstly, we can easily show that there are infinitely many different group sizes that are manifested among the different dimensions. Let $S$ be a $(d-1)$-dimensional model with group $G$ of largest finite order (number of elements) for that dimension. Set this model in $d$ dimensions and define a new model $S' = S(x_d+\ol x_d)$. This model has a nontrivial generator $g_d$ that $S$ lacks. Therefore, the group $G'$ of this new model satisfies
+Without loss of generality, we consider models set in $d$ dimensions that have a full set of generators. Firstly, we can easily show that there are infinitely many different group sizes that are manifested among the different dimensions. Let $S$ be a $(d-1)$-dimensional model with group $G$ of largest finite order (number of elements) for that dimension. Set this model in $d$ dimensions and define a new model $S' = S(x_d+\ol x_d)$. This model has a nontrivial generator $g_d$ that $S$ lacks. Therefore, the group $G'$ of this new model satisfies
 \begin{align}
 	G' \cong G \times \langle g_d \rangle
 \end{align}
@@ -58,7 +58,7 @@ This discussion would be short without briefly going into the subject of Coxeter
 \begin{align}
 	G = \langle \row rd |(r_ir_j)^{m_{i,j}} = 1\rangle
 \end{align}
-where $m_{i,i} = 1$ and $m_{i,j} \ge 2$ for all $i\neq j$, and $m_{i,j}$ could also be infinite. We can call these $r$'s reflections. When $m_{i,j} = 2$ the reflections commute. Also, $m_{i,j} = m_{j,i}$. The \emph{rank} of $G$ is the number of generators of in this specific representation of $G$. Often $G$ will have more than one representation with different numbers of generators. So in our discussion of groups for random walks with small steps the rank of $G$ is the dimension of the model. We can draw a graph for each Coxeter group by the following procedure.
+where $m_{i,i} = 1$ and $m_{i,j} \ge 2$ for all $i\neq j$, and $m_{i,j}$ could also be infinite. We can call these $r$'s reflections. When $m_{i,j} = 2$ the reflections commute. Also, $m_{i,j} = m_{j,i}$. The \emph{rank} of $G$ is the number of generators of in this specific representation of $G$. Often $G$ has more than one representation with different numbers of generators. So in our discussion of groups for random walks with small steps the rank of $G$ is the dimension of the model. We can draw a graph for each Coxeter group by the following procedure.
 \begin{itemize}
 \item Label vertices with the generators of $G$.
 \item Connect the vertices $g_i$ and $g_j$ if $m_{i,j} \ge 3$.
@@ -68,7 +68,7 @@ If the graph has different components, the Coxeter group factors as a direct pro
 \begin{align}
 	S = T(\row xk)R(x_{k+1},\ldots,x_d)\,.
 \end{align}
-For a fixed $1 \leq i \leq k$ we have
+For a fixed $1 \leq i \leq k$, we have
 \begin{align}
 	S_i^j = [x_i^j]S = R[x_i^j]T = R T_i^j
 \end{align}
@@ -91,7 +91,7 @@ since they do not interfere with each other. Since $i$ and $j$ were arbitrary, t
 where the subscripts highlight which parts of $S$ they groups are generated by. This factoring also allows us to write the generating function $Q$ as a Hadamard product of lower-dimensional generating functions. We can call each component of the graph a prime model. We can say that a simple small component is one whose group does not split nontrivially (its graph has one component).
 
 %=======================================
-\section{Noninteracting Models}
+\section{Non-interacting Models}
 %=======================================
 %=======================================
 \subsection{Walks with small steps}
@@ -103,15 +103,15 @@ At the core of the Algebraic Kernel method we have the idea that we can apply gr
 \end{align}
 in the sense of group actions. Here $|g|$ is the sign of the group element $g$.
 \end{definition}
-In two dimensions we can find the whole group by iterating over the two generators 1, $g_i$, $g_jg_i$, $g_ig_jg_i$. It is cleaner to write $g_{iji}$ instead of $g_ig_jg_i$, so we have the following notation
-\begin{definition} For a sequence $L = (l_1,l_2,\ldots)$ of positive integers define 
+In two dimensions we can find the whole group by iterating over the two generators 1, $g_i$, $g_jg_i$, $g_ig_jg_i$. It is cleaner to write $g_{iji}$ instead of $g_ig_jg_i$, so we have the following notation.
+\begin{definition} For a sequence $L = (l_1,l_2,\ldots)$ of positive integers, define 
 \begin{align}
 	g_L = g_{l_1l_2\ldots} = g_{l_1}g_{l_2}\cdots
 \end{align} 
 whenever this makes sense - when the list is finite or when there is a convergence in the case of an infinite list.
 \end{definition}
 In the case of a finite group in two dimensions we have $(g_1g_2)^n = 1$ for some minimal $n$. This allows us to rewrite $D_G$ in a useful way. The following lemma is just a restatement of the orbit sum method on page 11 of \cite{bousquet2010walks} but in operator notation.
-\begin{lemma} For a two-dimensional random walk model with small steps possessing a finite group of order $2n$ and generators $g_1$, $g_2$ we can write the operator $D_G$ as
+\begin{lemma} For a two-dimensional random walk model with small steps possessing a finite group of order $2n$ and generators $g_1$ and $g_2$, we can write the operator $D_G$ as
 \begin{align}
 	D_G = (1+g_{ij}+\cdots+(g_{ij})^{n-1})(1-g_i)\,.
 \end{align}
@@ -136,7 +136,7 @@ When $|G| = 6$ the orbit is $\{1$, $g_1$, $g_{21}$, $g_{121}=g_{212}$, $g_{12}$,
 \end{split}\end{align}
 \end{example}
 We can generalize the lemma for a multidimensional group $G$.
-\begin{lemma}Let $\mc{M}$ be a model with small steps in $\ze^d$ and let $G$ be its asociated group. For a nontrivial generator $g_k$ we can write the operator as $D_G = D_H(1-g_k)$ for a subgroup $H$ of $G$.
+\begin{lemma}Let $\mc{M}$ be a random walk model with small steps in $\ze^d$, and let $G$ be its asociated group. For a subgroup $H$ of $G$ and a nontrivial generator $g_k$ of $G$, we have $D_G = D_H(1-g_k)$.
 \end{lemma}
 \begin{proof} Simpler proof: each element in the fixed representation of $G$ either ends in $g_k$ or does not. We have a bijection between the two sets by using the involution $g_k$ applied on the right. The elements ending in $g_k$ have opposite parity to those not ending on $g_k$, so we can split $G$ into two parts $H$ and $Hg_k$. We can split the defining sum into two parts and keep track of the sign changes via $e_g = (-1)^{|g|}$. We have
 \begin{align}\begin{split}
@@ -145,16 +145,20 @@ We can generalize the lemma for a multidimensional group $G$.
 	&= \left(\sum_{g \in H} e_g g\right)(1-g_k)\\
 	&= D_H(1-g_k)\,.
 \end{split}\end{align}
-I will have to provide a different proof maybe. Take $H = G/\langle g_k \rangle$. Since $g_k$ is of order 2, the resulting group has $|G|/2$ elements. Consider the elements of $G$ that commute with $g_k$, that is, $h\in G$ where $g_k h = h g_k$. Multiplying by $g_k^{\um 1} = g_k$ we see that $h = g_k h g_k$. Let $H$ be the subgroup of $G$ generated by those elements. There are two cosets $H$ and $Hg_k$.
+(PROOF) Take $H = G/\langle g_k \rangle$. Since $g_k$ is of order 2, the resulting group has $|G|/2$ elements. Consider the elements of $G$ that commute with $g_k$, that is, $h\in G$ where $g_k h = h g_k$. Multiplying by $g_k^{\um 1} = g_k$ we see that $h = g_k h g_k$. Let $H$ be the subgroup of $G$ generated by those elements. There are two cosets $H$ and $Hg_k$.
 \end{proof}
-\begin{lemma} The operator $D_G$ eliminates the term $t S_I^{-\one}Q_I^\oo$ for $I \neq \emptyset$.
+\begin{lemma} If $I$ is a nonempty subset of $\{1,\ldots, d\}$, then the operator $D_G$ eliminates the term $t S_I^{-\one}Q_I^\oo$.
 \end{lemma}
-\begin{proof} By the previous lemma, for some $i\in I$, $D_G(t S_I^{-\one}Q_I^\oo) = D_H((1-g_i)t S_I^{-\one}Q_I^\oo)) = D_H(0) = 0$ since the variable $x_i$ is not present in the function.
+\begin{proof} By the previous lemma, for some $i\in I$,
+\begin{align}
+D_G(t S_I^{-\one}Q_I^\oo) = D_H((1-g_i)t S_I^{-\one}Q_I^\oo)) = D_H(0) = 0\,,
+\end{align}
+ since the variable $x_i$ is not present in the function.
 \end{proof}
 We acquire the $d$-dimensional generalization to Proposition 5 in \cite{bousquet2010walks}.
-\begin{theorem} For a model with small steps we have
+\begin{theorem} For a $d$-dimensional random walk model with small steps, we have
 \begin{align}
-D_G(\mon xd KQ) = D_G(\mon xd)
+D_G(\mon xd KQ) = D_G(\mon xd)\,,
 \end{align}
 where the right-hand side may be zero sometimes.
 \end{theorem}
@@ -163,7 +167,7 @@ where the right-hand side may be zero sometimes.
 
 This is a generalization of the orbit summation found in \cite{melczer2014variants}. The authors in \cite{bousquet2010walks} and \cite{bostan2014three} have found that sometimes the algebraic kernel method fails. That is, $D_G(\mon xd) = 0$ and the equation does not give us new information. We can generalize this as follows.
 
-\begin{corollary} Suppose that there is a group element $h \in G$ with odd parity that permutes the variables $\row xd$ in some way and has order 2. Then the regular Algebraic Kernel method fails. That is,
+\begin{corollary} Suppose that there is a group element $h \in G$ with odd parity that permutes the variables $\row xd$ and has order 2. Then the regular Algebraic Kernel method fails. That is,
 \begin{align}
 D_G(\mon xd KQ) = 0\,.
 \end{align}
@@ -174,7 +178,7 @@ D_G(\mon xd KQ) = 0\,.
 \begin{example} The two-dimensional models for which the algebraic kernel method fails are precisely those where we have a permutation as in the corollary. That is, $h(x_1,x_2)= h(x_2,x_1)$ and $h$ has order three. Proposition 6 in \cite{bousquet2010walks} follows.
 \end{example}
 
-\begin{example} In three dimensions and models with at most 6 steps we see that the algebraic kernel method fails in 62 three-dimensional models (page 13 of \cite{bostan2014three}). For example, there is a model with group size 12 for which the algebraic kernel method fails. For that model one of the group element is a permutation of two of the variables - in that case $x_2$ and $x_3$. Strangely enough, $G$ contain the group seen in the previous example for the variables $x_2$ and $x_3$. This means that every higher-dimensional model that has group $G$ containing the group above will fail in the regular Algebraic Kernel method.
+\begin{example} In three dimensions and models with at most 6 steps we see that the algebraic kernel method fails in 62 three-dimensional models (page 13 of \cite{bostan2014three}). For example, there is a model with group size 12 for which the algebraic kernel method fails. For that model, one of the group element is a permutation of two of the variables - in that case $x_2$ and $x_3$. Strangely enough, $G$ contain the group seen in the previous example for the variables $x_2$ and $x_3$. This means that every higher-dimensional model that has group $G$, containing the group above, will fail in the regular Algebraic Kernel method.
 \end{example}
 A natural question is to consider taking $D_H$ instead of $D_G = D_H(1-h)$ and checking if we can perfom a half-orbit summation in general. The answer is yes. The operatro $D_H$ eliminates some of the $Q$ variables and introduces others, but the result is a function symmetric under permutation by $h$. One may hope to perform a method analogous to the half-orbit summation method to prove algebraicity or D-finiteness.
 
@@ -195,12 +199,12 @@ since the $W_I^\oo$ terms have missing variables. Let us think about this for a 
 \begin{definition} Let $g_k(x_k) = \ol x_k$. Define the operator $\Delta_k = 1 - g_k$ for this specific $g_k$. Let $\Delta = \mon \Delta d$.
 \end{definition}
 
-\begin{theorem} Let $G$ be the group generated by $g_k(x_k) = \ol x_k$ for $1 \leq k \leq d$. Let $\Delta_k = 1 - g_k$. Then we have $D_G = \Delta$
+\begin{theorem} Let $G$ be the group generated by $g_k(x_k) = \ol x_k$ for $1 \leq k \leq d$. Then we have $D_G = \Delta$
 and
 \begin{align}
 	\Delta(\mon xd KQ) = \Delta(\mon xd) = (x_1 - \ol x_1)\cdots(x_d-\ol x_d)
 \end{align}
-for any small-step random walk model in dimension $d$ with no interactions.
+for all $d$-dimensional non-interacting random walk models with small steps in the positive orthant.
 \end{theorem}
 \begin{proof} It is enough to see that $\Delta$ annihilates terms of the form $W_I^\oo$ for $I \neq \emptyset$. Since the operators $\Delta_k$ commute, we only need to apply one $\Delta_i$ for some $i$ first, and find
 \begin{align}
@@ -208,7 +212,7 @@ for any small-step random walk model in dimension $d$ with no interactions.
 \end{align}
 since the term is missing variable $x_i$. The rest follows by linearity.
 \end{proof}
-This will not help show a specific model has a D-finite solution because, in general, we cannot factor out the $K$ term from the left-hand side. However, the idea is important.
+This will not help to show a specific model has a D-finite solution because, in general, we cannot factor out the $K$ term from the left-hand side. However, the idea is important.
 \begin{corollary} All random walk models of dimension $d$ satisfy the functional equation 
 \begin{align}
 E'(\mon xd KQ) = \mon xd\,.
@@ -219,7 +223,7 @@ Therefore, the only difference between the models is in the initial conditions t
 We will extend these ideas in the next section, but first, we will look into generalizing the ideas involved in the algebraic kernel method.
 \begin{definition} Let $G$ be a group acting on $\row xd$. Then we define a weighted orbit summation operator to be an operator of the form
 \begin{align}
-	D = \sum_{g\in G}R_g g
+	D = \sum_{g\in G}R_g g\,,
 \end{align}
 where $R_g$ are functions in the variables $\row xd$.
 \end{definition}
@@ -271,7 +275,7 @@ Thus, we reach a linear system of $|\orb_G(f)|$ equations in $|G|$ unknowns. Of 
 \begin{align}
 	G = \{1, g_1, g_2, g_{12} = g_{21}\}\,.
 \end{align}
-We will write the operator $D$ as 
+We write the operator $D$ as 
 \begin{align}
 	D = R - R_1 g_1 - R_2 g_2 + R_{12} g_{12}\,.
 \end{align}
@@ -291,9 +295,9 @@ This means we have the equations
 \end{align}
 Folowing the implications provided from these operators we find $R= R_1 = R_2 = R_{12}$. The simplest choice is to set $R = 1$ and we find that every weighted orbit summation operator for this group $G$ must be trivially-weighted if it were to annihilate generic functions with missing variables.
 \end{example}
-\begin{definition} If all the weights are the same, we call a weighted operator trivial. We can also call trivial operators unweighted or regular.
+\begin{definition} A trivial weighted operator is one where all the weights are the same. We can also call these operators unweighted.
 \end{definition}
-\begin{lemma} Let $G$ be a finite group with $d$ generators for a random walk model in $d$ dimensions with small steps and no interactions. Then all orbital operators are trivial.
+\begin{lemma} Consider a $d$-dimensional noninteracting random walk model with small steps in the positive orthant. If its group is finite and has $d$ generators, then all orbital operators are trivial.
 \end{lemma}
 We need to check this proof.
 \begin{proof}It is enough to show that $D(W_k^0) = 0$ for all $k$ implies that the operator is trivial. To this end suppose that $D(f) = 0$ where $f = W_k^0$. Then we can partition the group $G$ as before into sets $H$ and $Hg_k$. We see that $hg_k (f) = h(f)$, so the orbit of $f$ contains at most $|G|/2$ elements. However, these elements must all be distinct otherwise they would come from the same operations, but the group elements in $H$ are all distinct.Therefore, $|\orb(f) = |G|/2$. This means that we have the equations $R_h = R_{hg_k}$ for every $h \in H$. Once we go through every $k$ we have overlaps $R = R_1 =\cdots = R_d$ and $R_1 = R_{12} = R_{13}$, and so on. This means that all the $R$'s are the same and the operator is trivial.
@@ -319,7 +323,7 @@ so in the kernel equation we have
 \begin{align}
 	x_{[d]}^N = x_{[d]}^N E \ol x_{[d]}^N W = E' W = W +  \sum_{\emptyset \neq I\subseteq [d]} (-1)^{|I|} \mc{E}_I(W)\,.
 \end{align}
-Here we have various powers $x_k^i$ along with terms with $x_k = 0$ for $k \in I$. Hence, if we seek an operator $D$ that does the same job as the orbit summation operator, we need $D$ to annihilate all the terms with $x_k$'s missing in $W$ on the right-hand side. So then we will have
+Here we have various powers $x_k^i$ along with terms with $x_k = 0$ for $k \in I$. Hence, if we seek an operator $D$ that does the same job as the orbit summation operator, we need $D$ to annihilate all the terms with $x_k$'s missing in $W$ on the right-hand side. So then we have
 \begin{align}
 	D(x_{[d]}KQ) = D(W) = D\left(x_{[d]}^N-\sum_{\emptyset \neq I\subseteq [d]} (-1)^{|I|} \mc{E}_k(W)\right) = D(x_{[d]}^N)\,.
 \end{align}
@@ -328,10 +332,10 @@ In other words we want $D$ to behave (in some sense) similarly to the derivative
 \del_{[d]}^N = \del_1^{N_1}\cdots \del_d^{N_d}\,.
 \end{align}
 This suggests some definitions.
-\begin{definition}For a sequence $N = (\row Nd)$ of positive integers we say that a model $\mc{M}$ is of type $N$ that the longest step in $\mc{S}$ in the negative $k$-th direction has length $N_k$ in that coordinate. In particular, we may say that a model is of type $n$ if $N_k = n$ for all $k$.
+\begin{definition}For a sequence $N = (\row Nd)$ of positive integers, we say that a model $\mc{M}$ is of type $N$ if the longest step in $\mc{S}$ in the negative $k$-th direction has length $N_k$ in that coordinate. In particular, we may say that a model is of type $n$ if $N_k = n$ for all $k$.
 \end{definition}
-For example, full random walks with small steps are of type 1.
-\begin{definition}For sequences $N = (\row Nd)$ and $M = (\row Md)$ of positive integers we say that a model $\mc{M}$ is of type $(N,M)$ if it is of type $N$ and the longest step in $\mc{S}$ in the positive $k$-th direction has length $N_k$ in that coordinate. In particular, we may say that a model is of type $(n,m)$ is of type $n$ and $M_k = m$ for all $k$.
+For example, the model for full random walks with small steps is of type 1.
+\begin{definition}For sequences $N = (\row Nd)$ and $M = (\row Md)$ of positive integers, we say that a model $\mc{M}$ is of type $(N,M)$ if it is of type $N$ and the longest step in $\mc{S}$ in the positive $k$-th direction has length $N_k$ in that coordinate. In particular, we may say that a model is of type $(n,m)$ if it is of type $n$, and $M_k = m$ for all $k$.
 \end{definition}
 For example, full random walks with small steps are of type $1,1$. The notation is still a little awful. Anyway, it allows us to write things in the following form
 \begin{theorem} A random walk model of type $N$ satisfies the functional equation
@@ -341,7 +345,7 @@ For example, full random walks with small steps are of type $1,1$. The notation 
 where $E' = \fullx xdN E \fullox xdN$ and $W  = \fullx xdN KQ$.
 \end{theorem}
 
-\begin{corollary} For a random walk model of type $N$ the generating function $Q$ for the non-interacting case satisfies the PDE
+\begin{corollary} For a random walk model of type $N$, the generating function $Q$ for the non-interacting case satisfies the PDE
 \begin{align}
 	\fullx{\del}dN\left(\fullx xdN KQ\right) = 1
 \end{align}
@@ -349,9 +353,8 @@ and is therefore, D-finite in the $x$ variables.
 \end{corollary}
 Here $\fullx{\del}dN$ is an example of an operator $D$ that eliminates all the unnecessary terms but does not eliminate $\mon xd$. It is possible to discuss weighted operators in this setting too, but the situation becomes more complicated. However, we may investigate type $(N,M)$ problems by finding a suitable model whose orbital operator is nice enough. This will show that all type $(N,M)$ satisfy an orbital equation with that particular operator, not just a PDE. 
 
-\begin{example} Consider the random walk model of type $(N,N)$ with $S = \sum_{k=1}^d \ol x_k^{n_k} + x_k^{n_k}$. Its group $G$ will is generated by the elements of groups $G_k$ with $2n_k$ elements each - each of the elements $g_{k,j,l} = \omega_{n_k}^jx_k^l$ where $\omega_{n_k} = \exp(2\pi i/n_k)$ and $l\in\{-1,1\}$. These elements commute and allow us to find an orbital operator that annihilates all terms on the left-hand side except  $\fullx xdN KQ$ and also spares the $\fullx xdN$ term on the right-hand side.
+\begin{example} Consider the random walk model of type $(N,N)$ with $S = \sum_{k=1}^d \ol x_k^{n_k} + x_k^{n_k}$. Its group $G$ is generated by the elements of groups $G_k$ with $2n_k$ elements each - each of the elements $g_{k,j,l} = \omega_{n_k}^jx_k^l$ where $\omega_{n_k} = \exp(2\pi i/n_k)$ and $l\in\{-1,1\}$. These elements commute and allow us to find an orbital operator that annihilates all terms on the left-hand side except  $\fullx xdN KQ$ and also spares the $\fullx xdN$ term on the right-hand side.
 \end{example}
-
 %====================================
 \section{Interacting Models}
 %====================================
@@ -366,7 +369,7 @@ From a previous section we found that
 \begin{align}
 	D_G = 1-g_1-g_2+g_1g_2 = (1-g_1)(1-g_2) = \Delta_1\Delta_2
 \end{align}
-where we defined $\Delta_i = 1- g_i$. In the non-interacting orbit summation method we had a direct application of $D_G$ on the equations to perform the required cancellations. Here we will attempt to do something similar for the interacting case. Since the cancellations do not happen automatically if we use $D_G$ directly, we will instead find a linear system of equations by applying the group operations on the original functional equation. Then we will use linear algebra to find a solution where our variables will be the ones we wish to eliminate $Q_i^0$ and their images under the group actions. If the associated matrix has nonzero determinant, we have a unique solution and unfortunately, we will not be able to eliminate variables. However, there are some cases where the determinant will be zero. Because of symmetry we expect to be able eliminate the desired variables. The group operations commute, so we have
+where we defined $\Delta_i = 1- g_i$. In the non-interacting orbit summation method we had a direct application of $D_G$ on the equations to perform the required cancellations. Here we will attempt to do something similar for the interacting case. Since the cancellations do not happen automatically if we use $D_G$ directly, we will instead find a linear system of equations by applying the group operations on the original functional equation. Then we will use linear algebra to find a solution where our variables will be the ones we wish to eliminate $Q_i^0$ and their images under the group actions. If the associated matrix has a nonzero determinant, we have a unique solution and unfortunately, we will not be able to eliminate variables. However, there are some cases where the determinant is actually zero. Because of symmetry we expect to be able eliminate the desired variables. The group operations commute, so we have
 \begin{align}
 	g_i Q_i^0 = Q_i^0,\quad g_ig_j Q_i^0 = g_j Q_i^0
 \end{align}
@@ -378,7 +381,7 @@ This is looking promising since we have four equations and four unknowns that we
 \begin{align}
 	 K_1 Q_1^0 +  K_2 Q_2^0 = KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha = \beta\,.
 \end{align}
-For brevity let $g_{12} = g_1g_2$
+For brevity, let $g_{12} = g_1g_2$
 \begin{table}[H]
 \caption{Effects of group actions $g\in G$ on $Q_1^0$ and $Q_2^0$.}
 \label{tbl:actions4}
@@ -423,7 +426,7 @@ where the last equation comes from doing the process in the same way but with $g
 \subsubsection{When is $\det M_4 = 0$?}
 %====================================
 
-Now our task is to find where this determinant is zero. Clearly the expression within each $\Delta$ must be in the kernel of the operator. To that end let us determine when that happens. For a Laurent polynomial $f$ in the variables $x_i$ and $t$ we have
+Now our task is to find where this determinant is zero. Clearly the expression within each $\Delta$ must be in the kernel of the operator. To that end let us determine when that happens. For a Laurent polynomial $f$ in the variables $x_i$ and $t$, we have
 \begin{align}
 	\Delta_k f = \sum_n f_n (1-g_k)x_k^n = \sum_n (f_n - f_{- n}\mu_k^{- n})x_i^n
 \end{align}
@@ -472,7 +475,7 @@ that can be re-written succinctly as
 	\Sf{\um 1, \um 1} = \mu_2 S_{\um 1,1}\,.
 \end{align}
 If one of the $S$'s is zero, so is the other, and therefore, by symmetry, the model does not have diagonal steps. Since we have two nontrivial generators, this implies that both $x_2$ and $\ol x_2$ are present in $S$, so the model trivially exhibits a symmetry about the $x_1$ axis. If the $S$'s are nonzero, this implies $\mu_2$ is a constant and therefore, $S_2^{\um 1} = S_2^1$. Again the model exhibits symmetry about the $x_1$ axis. 
-\begin{theorem} $\det M_4 = 0$ if and only if the model is highly-symmetric.
+\begin{theorem} We have that $\det M_4 = 0$ if and only if the model is highly-symmetric.
 \end{theorem}
 
 \begin{corollary} The algebraic kernel method extends to the non-interacting case for $|G| = 4$ if and only if the model is highly-symmetric.
@@ -484,7 +487,7 @@ If one of the $S$'s is zero, so is the other, and therefore, by symmetry, the mo
 \]
     \caption{The highly symmetric models on the plane}
 \end{figure}
-We are now ready to attempt using the orbit summation method in the highly symmetric cases. There are 8 such models, but only 5 of them have dimension 2. Furthermore, 2 of the models are reflections of each other, so we are really left with 4 interesting cases - diagonal walks, full walks, full walks minus two horizontal steps. If we are able to eliminate all the variables, then we will be left with a linear relation
+We are now ready to attempt using the orbit summation method in the highly symmetric cases. There are 8 such models, but only 5 of them have dimension 2. Furthermore, 2 of the models are reflections of each other, so we are really left with 4 interesting cases - diagonal walks, full walks, full walks minus two horizontal steps. If we are able to eliminate all the variables, we will be left with a linear relation like
 \begin{align}
 	\gamma \beta- \gamma_1 \beta_1-\gamma_2 \beta_2 + \gamma_{12}\beta_{12} = 0\,.
 \end{align}
@@ -519,9 +522,9 @@ where we have successfully eliminated $Q_1^0, Q_2^0, Q_1^{0,\ast}$, and $  Q_2^{
 	K_1^{\bullet}K_2^{\ast}\beta^{}-K_1^{}K_2^{\ast}\beta^{\bullet}-K_1^{\bullet}K_2^{}\beta^{\ast}+K_1^{}K_2^{}\beta^{\bullet\ast} = 0\,.
 \end{align}
 We can rewrite this equation in the following nicer way.
-\begin{theorem} For highly-symmetric models with small steps we have the functional equation
+\begin{theorem} For highly-symmetric models with small steps, we have the functional equation
 \begin{align}
-	\Delta(K_1^\bullet K_2^\ast \beta) = 0
+	\Delta(K_1^\bullet K_2^\ast \beta) = 0\,,
 \end{align}
 where $\beta = KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha$.
 \end{theorem}
@@ -571,7 +574,7 @@ Combining terms and simplifying a bit leads us to
 \begin{align}
 	K\Delta(K_0 Q) = \alpha t(\ol x_1-x_1)(\ol x_2-x_2)(tS_1^{\um 1}S_2^{\um 1} - b_1b_2(tS_1^{\um 1}S_2^{\um 1}-\Sf{\um 1, \um 1})\Qf{0,0})
 \end{align}
-\begin{corollary} For a highly-symmetric model with $K_0 = K_1^\bullet K_2^\ast$ we have the functional equation
+\begin{corollary} For a highly-symmetric model with $K_0 = K_1^\bullet K_2^\ast$, we have the functional equation
 \begin{align}
 	K\Delta(K_0 Q) = \alpha t(\ol x_1-x_1)(\ol x_2-x_2)(tS_1^{\um 1}S_2^{\um 1}(1 - b_1b_2\Qf{0,0}) + \Sf{\um 1, \um 1}\Qf{0,0})\,.
 \end{align}
@@ -579,11 +582,11 @@ Combining terms and simplifying a bit leads us to
 %====================================
 \subsection{Groups of order 6}
 %====================================
-Since we have 6 group actions, it is worth taking the time to see what kinds of expressions we develop by applying $g$ on $Q_i^0$ or $K_i$ for each $i$. For example, $g_i Q_i^0 = Q_i^0$, so we will say the action of $g_i$ is reduced to $g_{\emptyset} = 1$ on $Q_i^0$. Using the sequences $L$ produced in one orbit of a representation of $G$ and their alternatives, we can tabulate their reductions on the different expresions. For example,
+Since we have 6 group actions, it is worth taking the time to see what kinds of expressions we develop by applying $g$ on $Q_i^0$ or $K_i$ for each $i$. For example, $g_i Q_i^0 = Q_i^0$, so we say the action of $g_i$ is reduced to $g_{\emptyset} = 1$ on $Q_i^0$. Using the sequences $L$ produced in one orbit of a representation of $G$ and their alternatives, we can tabulate their reductions on the different expresions. For example,
 \begin{align}
 g_{2121}Q_1^0 = g_{212}Q_1^0 = g_{121} Q_1^0 = g_{12}Q_1^0
 \end{align}
-where on the second step we have used the alternative form $g_{212} = g_{121}$. The table has $12$  in the row and column corresponding to $2121$ and $Q_1^0$. We will omit the row corresponding to the identity.
+where on the second step we have used the alternative form $g_{212} = g_{121}$. The table has $12$  in the row and column corresponding to $2121$ and $Q_1^0$. We omit the row corresponding to the identity.
 \begin{table}[H]
     \caption{Reductions of group actions $g \in G$ on $Q_i^0$ and $K_i$}
     \label{tbl:tableG6}
@@ -675,14 +678,14 @@ This system of equations does not have a nontrivial symbolic solution, so we nee
 Here we have picked the respresentations of $A$'s and $B$' with the least number of group operations $g_i$ to reach the resulting expression. We also tried finding a possible $K_0$ by brute force for $S13$ and $S23$, but we did not find any among products of distinct $A$'s and $B$'s. It is likely that such a weight does not exist for these cases.
 \begin{theorem} The algebraic kernel method extends for interacting random walk models with small steps and group $G$ of size 6 if and only if $\det M_6 = 0$. In those cases we have the functional equation
 \begin{align}
-	D_G(K_0 \beta) = 0
+	D_G(K_0 \beta) = 0\,,
 \end{align}
 where $\beta =  KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha$ and $K_0$ depends on the specific model.
 \end{theorem}
 %====================================
 \subsection{Groups of order 8}
 %====================================
-The analysis for groups of order 8 is quite similar, so we will omit it. Here are the results. 
+The analysis for groups of order 8 is quite similar, so we omit it. Here are the results. 
 \begin{table}[H]
     \caption{Models with group of size 8}
     \label{tbl:tableWeight6}
@@ -727,43 +730,9 @@ In both cases we retrieved the same $\gamma$ operator that we have written in a 
 \end{align}
 \begin{theorem} The algebraic kernel method extends for all interacting random walk models with small steps and group $G$ of size 8. The functional equation is
 \begin{align}
-	D_G(K_0 \beta) = 0
+	D_G(K_0 \beta) = 0\,,
 \end{align}
 where $\beta =  KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha$ and $K_0 = g_1(K_1) g_{21}(K_1) g_{212}(K_2) g_{1212}(K_2)$.
 \end{theorem}
 
 \endinput
-
-%================================================================================
-%================================================================================
-%================================================================================
-%================================================================================
-%================================================================================
-
-
-It is worth mentioning that it does not seem that all Coxeter groups are manifested in random walk models. Looking at the classification of finite Coxeter groups, those of rank 2 have orders 4, 6, 8, 12, 10 and 2$p$ (manifested in a $p$-gon). Namely the groups of orders 10,12 and 2$p$ (for most $p$) are not manifested in random walk models with small steps on the quarter plane. It appears that the $p$-gon symmetries are not present for most $p$ because of the crystallographic nature of the problem. It is quite possible that the Crystallographic restriction theorem will apply to the random walk model groups in all dimensions. However, as can be seen, a lot of random walk model groups in 2 dimensions have generators that do not map the lattice back onto itself in a simple way because the transformations are bi-rational. We can define classes of groups.
-
-\begin{itemize}
-\item a model is "nice" iff $g_i(x_i) \in \ze[x_1,\ol x_1\ldots,x_d,\ol x_d]$
-\item a model is "crystallographic" iff $g_i(x_1^{n_1}\ldots x_d^{n_d}) = x_1^{m_1}\ldots x_d^{m_d}$ for some integers $n_j$ and $m_j$.
-\end{itemize}
-The names are suggestive because the generators in crystallographic random walk models map monomials to monomials and we can see if $G$ is crystallographic. The next step up are "nice" models where monomials are mapped to Laurent polynomials. The rest of the classes have a generator mapping some monomials to rational functions. Perhaps those first two types of models can be represented via reflections and will thus, have Weyl group.
-
-%================================================================================
-
-
-
-This discussion suggest a deeper theory of which we may just give the first few definitions
-\begin{definition} For a model $\mc{M}$ of type $N$ with pure operator $\mc{E} = 1- E'$, where $W = \fullx xdN  +\mc{E}W$, let
-\begin{align}
-	X_{d,\mc{M}} = \{\text{Operators $D$}| D\mc{E} \equiv 0 \text{ on generic functions with $\leq d -1$ variables missing}\}
-\end{align}
-\end{definition}
-This space is not empty since $\fullx{\del} dN \in X_{\mc{M}}$ as shown already. Also, we have the orbital operator for type $N$ models.
-\begin{definition} For any type $N$ model in $d$ dimensions define
-\begin{align}
-	X_d  = \{\text{Operators $D$}| D\mc{E} \equiv 0 \text{ on generic functions with $\leq d -1$ variables missing}\}
-\end{align}
-where $\mc{E}$ is for any model $\mc{M}$.
-\end{definition}
-We can define similar spaces $X_{d,\mc{M}}(F)$ and $X_d(F)$ where we want the extra property $D(Ff) = FD(f)$ for any function $f$. We can further define spaces $X^\ast$ where in addition to having that nice property on $K$ we have that $D(\fullx xdN) \neq 0$. This will help characterize all problems which have a useful orbit summation for example. And in the case where such summation does not exist we may look towards other useful operators that let us perform an analysis on the D-finiteness of $Q$.

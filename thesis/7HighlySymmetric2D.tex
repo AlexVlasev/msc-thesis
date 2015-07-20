@@ -2,9 +2,9 @@
 %%!TEX root = diss.tex
 
 %=======================================
-\chapter{OKM in Highly-symmetric 2D models}
+\chapter{Highly-symmetric Two-dimensional Models}
 %=======================================
-We will continue further with the OKM for highly-symmetric models. There are only a few such models. If $x_k$ is in $S$, then so is $\ol x_k$. If one of the diagonal terms is in $S$, then so are the others. To have a group of order 4 we need to have both an $x_1$ and $x_2$ variable in $S$, so we have several nonisomorphic models. One with cartesian steps, one with diagonal steps, one with diagonal step and $x_1$,$\ol x_1$ and finally, the model with all steps. The notation will be the same as in previous chapters. We derived the following equations
+We will continue further with the OKM for highly-symmetric models. There are only a few such models. If $x_k$ is in $S$, then so is $\ol x_k$. If one of the diagonal terms is in $S$, then so are the others. To have a group of order 4 we need to have both an $x_1$ and $x_2$ variable in $S$, so we have several nonisomorphic models. One with cartesian steps, one with diagonal steps, one with diagonal step and $x_1$,$\ol x_1$ and finally, the model with all steps. The notation is the same as in previous chapters. We derived the following equations
 \begin{align}
 	x_1 = \sigma_1:\quad\Delta_2(K2^\ast Q_1^0) &=\frac{1}{K_1} \left(\Delta_2(K_2^\ast K_{12})\Qf{0,0} - \alpha(K_2^\ast-K_2)\right)\,,\\
 	x_2 = \sigma_2:\quad\Delta_1(K1^\bullet Q_2^0) &=\frac{1}{K_2} \left(\Delta_1(K_1^\bullet K_{12})\Qf{0,0} - \alpha(K_1^\bullet-K_1)\right)\,.
@@ -18,7 +18,7 @@ To compute $\Delta_2(K2^\ast Q_1^0)$ we need to compute $K_2(\sigma_1,x_2)$ and 
 \begin{align}
 	K_2 = c_2 -t\ol x_2S_2^{\um 1}(\sigma_1) \com K_2^\ast = c_2 -t x_2S_2^{\um 1}(\sigma_1)\,.
 \end{align}
-Therefore, we will focus on computing $S_2^{\um 1}(\sigma)$ first.
+Therefore, we focus on computing $S_2^{\um 1}(\sigma)$ first.
 \begin{align}
 \begin{split}
 	S_2^{\um 1}(\sigma_1) &= \Sf{0,1}+ \Sf{1,1}(\ol \sigma_1+\sigma_1)\\
@@ -44,7 +44,7 @@ Therefore, the function $S_2^{\um 1}(\sigma_1)$ is a rational function of $x_2$.
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{lemma} For highly-symmetric models with  $e = \Sf{1,1}$, $f = \Sf{1,0}$, $g = \Sf{0,1}$ we have
+\begin{lemma} For highly-symmetric models with $e = \Sf{1,1}$, $f = \Sf{1,0}$ and $g = \Sf{0,1}$, we have
 \begin{align}
 	\frac{\alpha(K_2^\ast -K_2)}{K_1}  &= \frac{\alpha (\ol x_2 - x_2)(e+tfg)}{S_1^1K_1}\,,\\
 	\frac{\Delta_2(K_2^\ast K_{12})}{K_1} &= \frac{c_2(\ol x_2-x_2)(c_1(e+tfg)- et \ol \sigma_1S_1^1)}{S_1^1(c_1-t\ol \sigma_1S_1^1)}\,.
@@ -53,7 +53,7 @@ Therefore, the function $S_2^{\um 1}(\sigma_1)$ is a rational function of $x_2$.
 %=======================================
 \section{Cartesian model: steps N, S, E, W}
 %=======================================
-In this case $S_2^{\um 1}(\sigma_1) = 1$, so a lot of the calculations will be simpler and this is a good place to start further work. Here $K_{12} = c_1c_2$, so it behaves like $\alpha$ and we have
+In this case $S_2^{\um 1}(\sigma_1) = 1$, so a lot of the calculations will be simpler, and this is a good place to start further work. Here $K_{12} = c_1c_2$, so it behaves like $\alpha$ and we have
 \begin{align}
 	\Delta_2(K2^\ast Q_1^0) + \frac{\alpha\beta(K_2^\ast-K_2)}{K_1}=0\,,
 \end{align}
@@ -159,7 +159,7 @@ The functional equation becomes
 \begin{align}
    K_2^\ast Q_1 - K_2 Q_1^\ast -\frac{c_2(\ol x_2-x_2)}{\ol x_2+x_2}Q_{1,2}+\alpha\frac{\ol x_2-x_2}{(\ol x_2+x_2)K_1}= 0\,.
 \end{align}
-Surprisingly enough, the only term that depends on $\sigma_1$ remaining in this expression is $K_1$ and this will be of no consequence to the rest of the analysis. We just need to take care of the remaining terms. We will do this by multiplying the equation by $\ol x_2+x_2$. We have
+Surprisingly enough, the only term depending on $\sigma_1$, that remains in this expression, is $K_1$, so this will be of no consequence to the rest of the analysis. We just need to take care of the remaining terms. We will do this by multiplying the equation by $\ol x_2+x_2$. We have
 \begin{align}
 	R^\ast \exx= (\ol x_2+x_2) K_2^\ast &= c_2(\ol x_2+x_2)-x_2 = c_2\ol x_2- \ol a_2x_2\,,\\
 	R = (\ol x_2+x_2) K_2 &= c_2(\ol x_2+x_2)-\ol x_2 = c_2x_2- \ol a_2\ol x_2\,.
@@ -200,7 +200,7 @@ We can rewrite the last one in a form more convenient for the next few steps
 \begin{align}\label{formula}
 	Q_1^k = tv(Q_1^{k+1}+Q_1^{k-1}) + c_2 \Qf{k,0} - t\ol x_2(\Qf{k+1,0}+\Qf{k-1,0})\,.
 \end{align}
-We will use induction to prove a nice formula, but for that, we will first need to establish another base case because of this splitting of cases for the coefficient extraction. We have
+We will use induction to prove a nice formula, but for that, we first need to establish another base case because of this splitting of cases for the coefficient extraction. We have
 \begin{align}
 	Q_1^0 &=  \ol a_2+c_2\Qf{0,0} + a_1tvQ_1^1\,,\\
 	Q_1^{0,\ast} \exx&=  \ol a_2+c_2\Qf{0,0} + a_1tvQ_1^{1,\ast}\,.
@@ -226,13 +226,13 @@ where
    \delta_1 = \frac{(\ol x_2-x_2)+\delta_0}{a_1tv}\,.
 \end{align}
 This equation together with equation (\ref{zero-order}) form the base cases for the following lemma
-\begin{lemma} Let $m\ge 0$ be an integer. Then
+\begin{lemma} Let $m$ be an integer greater than zero. Then
 \begin{align}\label{coeff-eqn}
 	R^\ast Q_1^m -R Q_1^{m,\ast} - c_2(\ol x_2-x_2)\Qf{m,0} + \ol a_2\delta_m = 0
 \end{align}
 where $\delta_m$ is not a function of $a_2$.
 \end{lemma}
-\begin{proof}We will show this by induction. We have the base cases $m = 0$ and $m=1$. The latter one fits the pattern because $\Qf{1,0} = 0$ since we cannot have walks ending on $(1,0)$. Now we assume that the formula is true for all cases up to and including $m$. Then we use formula (\ref{formula})
+\begin{proof}We show this by induction. We have the base cases $m = 0$ and $m=1$. The latter one fits the pattern because $\Qf{1,0} = 0$ since we cannot have walks ending on $(1,0)$. Now we assume that the formula is true for all cases up to and including $m$. Then we use formula (\ref{formula})
 \begin{align}
 \begin{split}
 	& R^\ast Q_1^m -R Q_1^{m,\ast}\\
@@ -278,7 +278,7 @@ Substituting this back into the above equation gives
 	b_2 Q_{1,2}^{m,n+2} = Q_{1,2}^{m,n} - \wc Q_{1,2}^{m,n}\,.
 \end{align}
 An equivalent formula can be derived if the process is followed through the use of $x_1$ instead of $x_2$ in the analysis.
-\begin{corollary} For integers $m,n \ge 0$ we have the following relations
+\begin{corollary} For integers $m$ and $n$ greater than zero, we have the following relations
 \begin{align}
 	b_1 \Qf{m+2,n} &= Q_{1,2}^{m,n}-\wh Q_{1,2}^{m,n}\,,\\
 	b_2 \Qf{m,n+2} &= Q_{1,2}^{m,n}-\wc Q_{1,2}^{m,n}\,.
@@ -286,7 +286,7 @@ An equivalent formula can be derived if the process is followed through the use 
 \end{corollary}
 
 We can sum up those equations to retrieve the following functional equations.
-\begin{corollary} For integers $m \ge 0$ we have the following relations
+\begin{corollary} For integers $m$ greater than zero, we have the following relations
 \begin{align}
 	Q_1^m - \wh Q_1^m &= b_1 Q_1^{m+2}\,,\\
 	\wc Q_1^m - \wch Q_1^m &= b_1 \wc Q_1^{m+2}\,,\\
@@ -297,7 +297,7 @@ We can sum up those equations to retrieve the following functional equations.
 \end{align}
 \end{corollary}
 
-\begin{corollary} For integers $n \ge 0$ we have the following relations
+\begin{corollary} For integers $n$ greater than zero, we have the following relations
 \begin{align}
 	Q_2^n-\wc Q_2^n &= b_2 Q_2^{n+2}\,,\\
 	\wh Q_2^n-\wch Q_2^n &= b_2 \wh Q_2^{n+2}\,,\\
@@ -376,7 +376,7 @@ We skip right to the final model - the one with all the possible small step. Her
 	\frac{\Delta_2(K_2^\ast K_{12})}{K_1} &= \frac{c_2(\ol x_2-x_2)(c_1(1+t)- t \ol \sigma_1S_1^1)}{S_1^1(c_1-t\ol \sigma_1S_1^1)}\\
 	&=\frac{c_2(\ol x_2-x_2))}{S_1^1}\left(1-\frac{t}{c_1-t\ol \sigma_1S_1^1}\right)\,.
 \end{align}
-We will need to do some more work to find a representation for that last fraction. For that we will need the $\sigma_1$ root, which is
+We will need to do some more work to find a representation for that last fraction. For that we need the $\sigma_1$ root, which is
 \begin{align}
 \begin{split}
 	\sigma_1 &= \frac{(1-tS_1^0)-\sqrt{(1-tS_1^0)^2-4t^2(S_1^1)^2}}{2tS_1^1} \\
@@ -421,7 +421,7 @@ That is,
 	=& \sum_{n=0}^\infty \frac{t^n}{4^n}\sum_{k=0}^n \frac{(-1)^k(2k)!(2n-2k)!}{(1-2k)(1-2n+2k)k!^2 (n-k)!^2}(v+2)^k(3v+2)^{n-k}\,,
 \end{split}
 \end{align}
-However, we are not sure if a closed form exists for these coefficients. If we want to extract $x_2$ coefficients from this expression, we would not have an easy time (?). Now, $K_2$ and $K_2^\ast$ will have $1+v$ in their denominators, so we can multiply the whole functional equation by $1+v$ to clear out these denominator. We have
+However, we are not sure if a closed form exists for these coefficients. If we want to extract $x_2$ coefficients from this expression, we would not have an easy time (?). Now, $K_2$ and $K_2^\ast$ have $1+v$ in their denominators, so we can multiply the whole functional equation by $1+v$ to clear out these denominator. We have
 \begin{align}
 	(1+v)K_2 &= c_2(1+v)-\ol x_2(1+t) = (c_2-1-t)\ol x_2+c_2+c_2x_2\,,\\
 	(1+v)K_2^\ast &= c_2(1+v)-x_2(1+t) = c_2\ol x_2+c_2+(c_2-1-t)x_2\,,

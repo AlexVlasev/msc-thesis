@@ -61,4 +61,326 @@ and after careful book-keeping all the terms cancel out one by one. This complet
 %=======================================
 
 
+%================================================================
+%================================================================
+%================================================================
+%================================================================
+%================================================================
+
+%================================
+\section{Coefficient Extraction Equations}
+%================================
+
+The work so far is strongly hinting towards a theory of ordinary and partial coefficient extraction equations - OCEs and PCEs. Here we will work out some of the theory. We start with a partial coefficient extraction operator of finite type
+\begin{definition}$\mc{L}$ is a coefficient operator if
+\begin{align}
+	\mc{L} = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J}[x_I^J] = K + \mc{E}
+\end{align}
+where $K$ is the kernel of the operator, $\mc{E}$ is the pure extraction part
+\begin{align}
+	\mc{E}  = \sum_{\substack{I\subseteq [d],I\neq \emptyset\\ J \subseteq \ze^d}}a_{I,J}[x_I^J]
+\end{align}
+and all the coefficients are Laurent polynomials in the $x$ variables and perhaps some other variables. The operator is ordinary if $d = 1$ and partial if $d \ge 2$. The operator is either of monomial type where the coefficients are monomials or of polynomial type if one or more coefficients is a Laurent polynomial in $x_1,\ldots,x_d$.
+\end{definition}
+\begin{definition} An ordinary/partial coefficient equation (OCE/PCE) is one of the form $\mc{L} Q = q$ for some functions $Q$ and $q$ where $\mc{L}$ is an ordinary/partial coefficient operator. The equation is homogeneous if $q = 0$ and inhomogeneous if $q \neq 0$.
+\end{definition}
+The question is whether we can solve these kinds of equations in general, and what their solutions may look like. In the previous section we found that if $\mc{L}$ is finite then the function $Q$ is D-finite in the $x$ variables while it may not necessarily be D-finite in the $t$ variable or any other variable (parameter) that appears in the coefficients.
+
+\begin{example} The operator $\Gamma$ in this section is a partial coefficient operator with monomial coefficients.
+\end{example}
+
+\begin{example} We can transform the functional equation for a finite random walk model into a PCE. To do so, we note that $K$ is the same in both forms. The part requiring some work is the one that has to do with the term $(1-\Gamma)SQ$ which is a pure extraction of $SQ$. We can expand $S$ into its monomials. Then $(1-\Gamma)S$ fully expands into monomials of the form
+\begin{align}
+	a_{I,J}\ext{x_I^J}x_A^B
+\end{align}
+we can pull terms inside $[x_I^J]$ from the right. In the end the $S$ is absorbed within the operator and istead of having monomial coefficients it now has polynomial coefficients. It may be useful to write an operator $\mc{L}$ in the form
+\begin{align}
+	\mc{L} = K + \Gamma'S
+\end{align}
+for some monomial operator $\Gamma'$.
+\end{example}
+
+%================================
+\section{Connection with Fredholm Theory}
+%================================
+Suppose that we are given the equation in the form
+\begin{align}
+	KQ +t\Gamma'SQ = q
+\end{align}
+where
+\begin{align}
+	\Gamma' = \sum_{I,J}a_{I,J} x_I^J[x_I^J]
+\end{align}
+where we only have finite-sized $J$'s and $\emptyset \neq I\subseteq [d]$. From complex analysis we know that for a function $f(x)$ given by a power series and for $x$ within the region of convergence
+\begin{align}
+	[x^n]f(x) = f_n = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z^{n+1}}dz
+\end{align}
+and
+\begin{align}
+	f(x) = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z-x}dz
+\end{align}
+where in the first case $\gamma$ winds CCW around the origin within the region of convergence and in the second case $\gamma$ winds around $x$ within the region of convergence. The idea is to combine these two expressions for many dimensions (at least formally) to represent the operator $\mc{L}$ in integral form. We have for $|I| = n$
+\begin{align}
+	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^{n}}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}}dz_I
+\end{align}
+where $f$ has $x_i = z_i$ for $i \in I$ and the rest are still $x$'s. If we use this representation we will have different numbers of iterations of the integral for different coefficient. We might as well go all-out and write
+\begin{align}
+	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}(z-x)_{I^c}}dz_{[d]}
+\end{align}
+where now $x_i = z_i$ in $f$ and 
+\begin{align}
+	(z-x)_P = \prod_{p\in P} (z_p-x_p)
+\end{align}
+This allows us to write The operator like this
+\begin{align}
+	(K+t\Gamma'S)Q&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \left(\frac{K}{(z-x)_{[d]}} +t S\sum_{I,J}\frac{a_{I,J}}{z_I^{J+1}(z-x)_{I^c}}\right)Q dz_{[d]}\\
+	& = \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{1}{(z-x)_{[d]}}\left(K +t S\sum_{I,J}\frac{a_{I,J}(z-x)_I}{z_I^{J+1}}\right)Q dz_{[d]}\\
+	&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma R_0Q dz_{[d]}
+\end{align}
+Now to turn this into a $d$-dimensional Fredholm problem we will need to parametrize the integral. One way that might work is to set $z_k = r_k \exp(i\theta_k)$ and $x_k = s_k e^{i\phi_k}$. Since $dz_k = r_k i e^{i\theta_k}$, we have
+\begin{align}
+(K+t\Gamma'S)Q = \frac{r_{[d]}}{(2\pi)^d}\int_0^{2\pi}\cdots\int_0^{2\pi} e^{i\theta_1}\ldots e^{i\theta_d}R_0Q d\theta_{[d]} = q(\phi_1,\ldots,\phi_d)\,,
+\end{align}
+so if we write
+\begin{align}
+R = \exp(i(\theta_1+\ldots + \theta_d))R_0(\phi_1,\ldots,\phi_d,\theta_1,\ldots,\theta_d)
+\end{align}
+we have the inhomogeneous Fredholm equation of the first kind in $d$ dimensions
+\begin{align}
+	\int_0^{2\pi}\cdots\int_0^{2\pi} RQ d\theta_1\ldots d\theta_d= g
+\end{align}
+where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\theta_k$'s. Perhaps Fredholm theory can be applied in solving the random walk models in man dimensions. Perhaps this will also lead to a good inner product on the space where $Q$ lives.
+
+%================================
+\section{Reformulations of Problems}
+%================================
+
+\subsection{Using marking operators instead of extraction operators}
+An initially promising idea is to use a marking operator instead of an extraction operator with the goal of removing those marked walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and $Q$ will no longer be a power series in the $x$ variables. We may get further problems. Instead of $E = 1- \ext{\ol x}$ we take $\tilde E = 1 + (a_{\um 1}-1)\ext{x}$ with the idea that if we set $a_{\um 1} = 0$ we will obtain $E$. To this end the functional equation is
+\begin{align}
+	(1-tL\tilde E S)\tilde Q = 1
+\end{align}
+which after inversion turns into
+\begin{align}
+	(\tilde E^{\um 1} L^{\um 1} -tS) \tilde Q = \tilde E^{\um 1} L^{\um 1} 1 = \alpha
+\end{align}
+One benefit of this is that we do not have a mixing between the $E$, $L$ operators and $S$. The downside is we have more $Q$ extractions on their own. We can write this in kernel form as
+\begin{align}
+	K \tilde Q = \alpha + (1 - L^{\um 1}\tilde E^{\um 1}) \tilde Q
+\end{align}
+where the operator $1- L^{\um 1}\tilde E^{\um 1}$ is composed entirely of coefficient extractions.
+\subsection{Considering a symmetrical super-problem}
+An extension of the previous idea is to symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines where one coordinate is $-1$ we can also mark walks on lines with one coordinate $+1$. This leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
+\begin{align}
+	(1- tLS)\tilde Q = (1- t L_{\um 1}L_0L_1 S)\tilde Q = 1
+\end{align}
+We can skip the marking of the axes with $L_0$ if we do not wish to investigate wall interactions. In general, we may mark more locations in space so we can combine all of these operators into one called $L$. Then we have
+\begin{align}
+	(1- tLS)\tilde Q = 1
+\end{align}
+or in kernel forms
+\begin{align}
+	K\tilde Q = L^{\um 1}(1) + (1- L^{\um 1})\tilde Q
+\end{align}
+
+\endinput
+\begin{example} Here is an example that may hint at the flavour of the OCE/PCE problems. Suppose we start with the fibonacci recurrence relation
+\begin{align}
+F_{n+2} =F_{n+1}+F_n
+\end{align}
+with some initial conditions for $f_0$ and $f_1$. We can perform the standard generating function solution approach via summing all equations. Let
+\begin{align}
+	F(x) = \sum_{n=0}^\infty F_n x^n
+\end{align}
+be the generating function for the fibonacci-like numbers. Note that $[x^n] F(x) = F_n$. We have
+\begin{align}
+	F_{n+2} &= F_{n+1}+F_n\\
+	F_{n+2} x^{n+2}&= F_{n+1}x^{n+2}+F_nx^{n+2}\\
+	\sum_{n=0}^{\infty} F_{n+2} x^{n+2}&= x\sum_{n=0}^{\infty}F_{n+1}x^{n+1}+x^2\sum_{n=0}^{\infty}F_nx^n\\
+	F - F_1 x - F_0 &= x (F-F_0) + x^2 F
+\end{align}
+Pulling like terms together and putting everything on one side gives
+\begin{align}
+	(1-x - x^2) F - x F_1 + (x-1) F_0 = 0
+\end{align}
+This is a homogeneous OCE with ordinary coefficient operator$\mc{L}$ (Fibonacci operator?) with kernel $K = 1 - x - x^2$ and polynomial coefficients
+\begin{align}
+	\mc{L} = (1-x-x^2) + (x-1)[x^0]-x[x] = K + \mc{E}
+\end{align}
+The typical solution to the problem specifies initial conditions $F_0$ and $F_1$ and solves the problem as
+\begin{align}
+	F(x) = \frac{(x-1)F_0-x F_1}{1-x-x^2} = \frac{{\mc{E}}(F)}{K}
+\end{align}
+That is, it relies on the initial condition for $\mc{E}$ in order to solve the equation. We also see that if we do not specify the initial conditions we do not get a unique solution. In the random walks models we have unique solutions because of the iterative nature of the problems. With these points in mind we may try the vanishing kernel method by supplying a root of $K$ namely $x = \sigma$. These roots are
+\begin{align}
+\sigma_1 = -\varphi, \sigma_2 = \ol \varphi
+\end{align}
+where $\varphi$ is the golden ratio. Then plugging either one of these into the OCE leads to
+\begin{align}
+(\sigma-1)F_0 = \sigma F_1
+\end{align}
+\begin{align}
+	 F_1 &= (1-\ol \sigma_1)F_0 = \varphi F_0\\
+	 \text{ or } F_1 &=(1-\ol \sigma_2)F_0 = -\ol \varphi F_0
+\end{align}
+That is, if we want the vanishing kernel method to work we must have that $F_1$ is related to $F_0$ directly via the golden ratio. By induction we can show that $F_n = \varphi^n F_0$ in the first case and $F_n = (-\ol \varphi)^n F_0$ in the second case.
+
+What about the persistent kernel method? We want to apply a transformation $y = y(x)$ to $K$ that leaves it the same. That is,
+\begin{align}
+	K(y) = 1 - y - y^2 = K(x) = 1 - x - x^2
+\end{align}
+Collecting terms on one side yields
+\begin{align}
+	(y-x)(1+x+y) = 0
+\end{align}
+That is, the group $G$ that preserves the kernel is composed of the identity transformation and the the transformation $g(x) = -x-1$. We want a $F(-1-x)$ to converge which may not necessarily be true. Instead we multiply the whole functional equation by $\ol x$ to find
+\begin{align}
+\ol x \mc{L} = (\ol x-1-x) + (1-\ol x)[x^0]-[x^1]
+\end{align}
+This new kernel $K$ is nicer. We have
+\begin{align}
+	K = \ol x-1-x = \ol y-1-y
+\end{align}
+rearranging this equality gives
+\begin{align}
+	(y-x)(1+\ol x\ol y) = 0
+\end{align}
+and thus, the group $G$ is generated by the identity transformation and $g(x) = -\ol x$ which is of order 2, so $|G| = 2$. We have the two equation
+\begin{align}
+KF +(1-\ol x)F_0 - F_1 &= 0\\
+KgF + (1+x)F_0  - F_1 &=0
+\end{align}
+Furthermore, emulating the orbit method, we have
+\begin{align}
+	(1-g)xKF = K(xF+\ol xgF)  = (x+\ol x)(F_1-F_0)
+\end{align}
+If $F_1 \neq F_0$ we can write
+\begin{align}
+	xF+\ol xgF &= \frac{(x+\ol x)}{K}(F_1-F_0) \\
+	&= \frac{1+x^2}{1-x-x^2}(F_1-F_0) \\
+	&= (1+x+3x^2+O(x^3))(F_1-F_0)
+\end{align}
+Extracting the $[x]$ coefficient yields
+\begin{align}
+	F_0 +[x^2]F(-\ol x) = F_0 = F_1 - F_0
+\end{align}
+so $F_1= 2 F_0$ and we find
+\begin{align}
+	xF+\ol xF(-\ol x) = F_0 \frac{1+x^2}{1-x-x^2}
+\end{align}
+Taking the positive part of this yields
+\begin{align}
+	xF= F_0 \frac{1+x^2}{1-x-x^2}
+\end{align}
+\end{example}
+I think there is something wrong with the example but that is just me. We can demonstrate the D-finiteness by taking the second derivative of $xKF$
+\begin{align}
+	\del_x^2((1-x - x^2) F - x F_1 + (x-1) F_0) = \del_x^2(xKF) = 0
+\end{align}
+
+%================================
+\subsection{Eigenpairs}
+%================================
+We can try finding eigenvalues and eigenfunctions of $\mc{L}$. Let $\mc{L}u = \lambda u$. Writing it out leaves us with
+\begin{align}
+	t\Sigma u = (1-\lambda)u
+\end{align}
+So if $\lambda = 1$, $u\in \ker(\Sigma)$. That is, $R\Gamma S u = 0$. In other words, $\Gamma S u$ only has terms that involve powers greater than 1 of $a_{i,j}$ for various $i,j$. Suppose that
+\begin{align}
+	\Gamma S u = a_{i,j}^2 f(x_1,x_2)
+\end{align}
+Then
+\begin{align}
+	u  = \frac{a_{i,j}^2}{S}\Gamma^{\um 1}(f)
+\end{align}
+So we here we can let
+\begin{align}
+		f = a_{k,l}^m x_1^rx_2^s t^n
+\end{align}
+and we find that
+\begin{align}
+	u =  \frac{a_{i,j}^2 a_{k,l}^m}{a_{r,s}S}x_1^r x_2^s t^n
+\end{align}
+Thus, the kernel of $\Sigma$ is generated by these functions for all coefficients $i,j,k,l,r,s,n \in \ze$ and $m\ge 0$. This may perhaps prove useful later on. Now, if we look at eigenvalues $\lambda \neq 1$ we have to solve the equation
+\begin{align}
+	t \Sigma u = (1-\lambda) u
+\end{align}
+Because of the $t$, if $u$ is a finite order laurent series in $t$ with first nonzero coeficient $u_n$. We find that since $\Sigma$ does not interact with the $t$ monomials
+\begin{align}
+	\Sigma u_n = \mu u_{n-1} = 0
+\end{align}
+and this forces all $u_k$ coefficients to be zero. Therefore, $\Sigma$ has no other eigenvalues except 1 among the finite order power series in $t$.
+
+%================================================================================
+
+It is worth mentioning that it does not seem that all Coxeter groups are manifested in random walk models. Looking at the classification of finite Coxeter groups, those of rank 2 have orders 4, 6, 8, 12, 10 and 2$p$ (manifested in a $p$-gon). Namely the groups of orders 10,12 and 2$p$ (for most $p$) are not manifested in random walk models with small steps on the quarter plane. It appears that the $p$-gon symmetries are not present for most $p$ because of the crystallographic nature of the problem. It is quite possible that the Crystallographic restriction theorem will apply to the random walk model groups in all dimensions. However, as can be seen, a lot of random walk model groups in 2 dimensions have generators that do not map the lattice back onto itself in a simple way because the transformations are bi-rational. We can define classes of groups.
+
+\begin{itemize}
+\item a model is "nice" iff $g_i(x_i) \in \ze[x_1,\ol x_1\ldots,x_d,\ol x_d]$
+\item a model is "crystallographic" iff $g_i(x_1^{n_1}\ldots x_d^{n_d}) = x_1^{m_1}\ldots x_d^{m_d}$ for some integers $n_j$ and $m_j$.
+\end{itemize}
+The names are suggestive because the generators in crystallographic random walk models map monomials to monomials and we can see if $G$ is crystallographic. The next step up are "nice" models where monomials are mapped to Laurent polynomials. The rest of the classes have a generator mapping some monomials to rational functions. Perhaps those first two types of models can be represented via reflections and will thus, have Weyl group.
+
+%================================================================================
+
+
+
+This discussion suggest a deeper theory of which we may just give the first few definitions
+\begin{definition} For a model $\mc{M}$ of type $N$ with pure operator $\mc{E} = 1- E'$, where $W = \fullx xdN  +\mc{E}W$, let
+\begin{align}
+	X_{d,\mc{M}} = \{\text{Operators $D$}| D\mc{E} \equiv 0 \text{ on generic functions with $\leq d -1$ variables missing}\}
+\end{align}
+\end{definition}
+This space is not empty since $\fullx{\del} dN \in X_{\mc{M}}$ as shown already. Also, we have the orbital operator for type $N$ models.
+\begin{definition} For any type $N$ model in $d$ dimensions define
+\begin{align}
+	X_d  = \{\text{Operators $D$}| D\mc{E} \equiv 0 \text{ on generic functions with $\leq d -1$ variables missing}\}
+\end{align}
+where $\mc{E}$ is for any model $\mc{M}$.
+\end{definition}
+We can define similar spaces $X_{d,\mc{M}}(F)$ and $X_d(F)$ where we want the extra property $D(Ff) = FD(f)$ for any function $f$. We can further define spaces $X^\ast$ where in addition to having that nice property on $K$ we have that $D(\fullx xdN) \neq 0$. This will help characterize all problems which have a useful orbit summation for example. And in the case where such summation does not exist we may look towards other useful operators that let us perform an analysis on the D-finiteness of $Q$.
+
+
+Here
+\begin{align}
+	S_1^{\um 1} &= 1+x_2\com S_1^0 = 0\com S_1^1 = 1+\ol x_2\,,\\
+	S_2^{\um 1} &= x_1\com S_2^0 = x_1+\ol x_1\com S_2^1 = \ol x_1\,,
+\end{align}
+which give
+\begin{align}
+	A = K_1 = c_1 - t\ol x_1(1+x_2)\com B = K_2 = c_2 - t x_1\ol x_2\,.
+\end{align}
+Note that since $\Sf{\um 1,\um 1} = 0$,
+\begin{align}
+	K_{12} = c_1c_2
+\end{align}
+and we can combine the $\alpha$ term with $K_{1,2}Q_{1,2}^{0,0}$ in one with
+\begin{align}
+	\gamma = \ol a_1\ol a_2(1-b_1b_2\Qf{0,0})
+\end{align}
+The master functional equation is
+\begin{align}
+-KQ + K_1 Q_1^0 + K_2 Q_2^0 +\gamma = 0\,.
+\end{align}
+The roots of the kernel are
+\begin{align}
+	\sigma_1^\pm &= \frac{1\pm\sqrt{1-4t^2(1+x_2)(1+\ol x_2)}}{2t(1+\ol x_2)}\,,\\
+	\sigma_2^\pm &= \frac{1-t(x_1+\ol x_1) \pm \sqrt{(1-t(x_1+\ol x_1))^2 - 4t^2}}{2t\ol x_1}\,,
+\end{align}
+and as in the paper we pick $\sigma_k = \sigma_k^{-}$ because they are power series in $t$. Next we determine the birational transformations that leave the kernel unchanged. They are
+\begin{align}
+	g_1: x_1 \mapsto \ol x_1x_2\com g_2: x_2 \mapsto x_1^2 \ol x_2\,.
+\end{align}
+Simply iterating $g_1$ and $g_2$  shows that the group $G$ has order 8. For the rest of the analysis we will need the following notation.
+The elements in the orbit are $id$, $g_1$, $g_{21}$, $g_{121}$, and so on. Since we eventually reach the identity again, we can work backwards and have the $g$ terms meet in the middle. The orbit is then given by
+\begin{align}
+	\orb(G) = \{id, g_1, g_{21},g_{121},g_{2121}=g_{1212}, g_{212},g_{12},g_{2}\}\,.
+\end{align}
+In the rest of this calculation we need to eliminate the kernel term via a substitution of $\sigma_k$ in the master equation (we will overload the notation as before). Then we will need some extra functional equations that are obtained by application of terms from the orbit. However, not all such applications are valid. We require that the $\sigma_k$ term appears in the numerator inside the functions $Q$. We can check that to use the sigma values we need to use the following transformations
+\begin{align}
+	\sigma_1: id, g_2, g_{21}, g_{212}\,,\\
+	\sigma_2: id, g_1, g_{12}, g_{121}
+\end{align}
+For each $\sigma_k$ we are going to find 3 additional functional equations to complement the master equation and then we will substitute $x_k = \sigma_k$ into the results to eliminate the kernel term. Because of this we just will not include the kernel term from the start. The variable elimination method involving the different equations will work with or without the substitution $x_k = \sigma_k$. We will also ignore the $\gamma$ term for now and just work with the $Q_1^0$ and $Q_2^0$ terms. On this note, we will also drop the 0s from the exponents and write $Q_k^0 = Q_k$. The method is essentially linear algebra, but because of the complexity and symmetry involved in the coefficients, it is best to investigate the explicit simplification of the equations.
+
 \endinput
