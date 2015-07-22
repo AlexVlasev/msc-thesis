@@ -361,22 +361,63 @@ where $\Sf{0,0} = 1$ if we have resting steps, and zero otherwise.
 \subsection{First examples in the plane}
 %=======================================
 
-The ZZCLASSICZZ two-dimensional random walk models have been investigated thoroughly but the interacting version has not. We want to extend the ZZCLASSICZZ model methods to the interacting setting or create new ones. Since the generating functions for the interacting models need to reduce to those for the non-interacting models, we do not expect to find solutions for every model. In fact, some of the ZZCLASSICZZ models lead to generating functions that are not even D-finite, so their interacting counterparts will not be D-finite either. For the rest of the problems we hope to find the generating functions $Q$ explicitly, or at least the functions $\Qf{0,0}$. This appears to be difficult in most nontrivial cases. Recent research ZZCITEZZ has shown that there are models where we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are other two-dimensional models that exhibit a rational relationship. The way things have turned with regards to the ZZCLASSICZZ models, it would not be surprising if there are two-dimensional interacting models for which neither a linear nor a rational relationship would exist between $Q$, $\Qf{0,0}$ and various unmarked variants.
+The ZZCLASSICZZ two-dimensional random walk models have been investigated thoroughly but the interacting version has not. We want to extend the ZZCLASSICZZ model methods to the interacting setting or create new ones. Since the generating functions for the interacting models need to reduce to those for the non-interacting models, we do not expect to find solutions for every model. In fact, some of the ZZCLASSICZZ models lead to generating functions that are not even D-finite, so their interacting counterparts will not be D-finite either. For the rest of the problems we hope to find the generating functions $Q$ explicitly, or at least the functions $\Qf{0,0}$. This appears to be difficult in most nontrivial cases. Recent research ZZCITEZZ has shown that there are models where we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are other two-dimensional models that exhibit a rational relationship. The way things have turned with regards to the ZZCLASSICZZ models, it would not be surprising if there are two-dimensional interacting models for which neither a linear nor a rational relationship would exist between $Q$, $\Qf{0,0}$ and various unmarked variants. In this section we will cover the first few examples of quarter-plane models with interactions. 
 
-Our work can be split into several cases of increasing difficulty. The first case is for random walk models where the walks never leave the origin. However complicated $\mc S$ is, it does not matter, because the walks do not leave the origin and $Q = 1/(1-a_1a_2\Sf{0,0}t)$. This is because if $\Sf{0,0} = 1$ the random walks are allowed to take resting steps, so the random walks in this models are those which take resting steps only, interacting with the origin every time. There are $2^5 = 32$ such models and their steps come from the set $\{$NW, W, SW, S, SE$\}$.
+Our first observation is that if the model has some steps that cannot be used in the construction of the walks, then we may safely remove them from the step set, and we would still have the same generating function $Q$.
+\begin{definition}Given a model $\mc M$ with step set $\mc S$, we define the minimal step set $\mc S'$ for the model to be the subset of steps that can be taken by walks from the model. A reducible model is one where $\mc S \neq \mc S'$.
+\end{definition}
 
-
-Next up are the models where walks can leave the origin but can never return to either axis. We will solve such models explicitly later on but for now, it suffices to say that $\Qf{0,0} = 1/(1-a_1a_2\Sf{0,0}t)$. In each of these situations we have a relationship between the interacting and non-interacting models. There is the case of $S = \{$N, E$\}$ that never comes back to either axis. Let us look at those walks that never return to the $x_1$ axis. We have some steps that go in the positive $x_2$ direction, that is, one of $\{$N, NE, E$\}$ together with some steps from $\{$NW, W, SW$\}$ (some of them actually can return to the origin. what the hell am i doing). If we were to include any other steps, we would be able to return to the $x_1$ axis. If we only have an N step, we have 8 new cases. If we only have a NE step, we have 3 new cases. If we have both, we have 4 new cases. This gives a total of 15 new cases. There's an equivalent number of walks that leave the $x_2$ axis and never return to it. The running total is $32 + 1  + 15 + 15 = 63$.
-
- In all of these simple cases we can write $B\Qf{0,0} = 0$ and sometimes $BQ = 0$ where $B = B_1 B_2$ and $B_k = 1-[b_k^0]$ as in the one-dimensional case. 
-%Here are all the easy cases of step sets that lead to walks that either do not leave the origin or leave it and never return. we are not allowing resting steps here. There are 80 such sets among the 256 non-resting possible cases. Of course, we could use symmetries to eliminate cases, but we will not do that.
-
-\begin{lemma} Let $\mc S'$ subset of $\mc S$ such that none of the steps in $\mc S$ but not in $\mc S'$ are taken by walks in the model. Then the generating functions for the two models are the same.
+\begin{lemma} The full generating function for a random walk model is the same whether we use the a step set or its minimal version.
 \end{lemma}
 
-%To finish off, we have 17 cases of walks that leave the origin and eventually interact with both axes but never return to the origin. For this we must only include steps in such a way that we cannot pick a selection of steps that decrease both the $x_1$ and $x_2$ coordinates. We have to pick a subset of steps from $\{$N, NE, E$\}$, so the only other steps allowed are NW and SE. The new cases coming from $\{$N, NE, E$\}$, $\{$N,E$\}$, $\{$N, NE $\}$, $\{$NE, E$\}$, $\{$N$\}$, $\{$NE$\}$, $\{$E$\}$ are 4, 4, 2, 2, 1, 2, 2 respectively.
+We can easily find the reducible sets by partitioning the models based in classes. For example, if there are no steps that take us to positive coordinates, then all steps will negative coordinates can be removed. Because of this, it makes sense to consider the eight classes of models based on the presence of steps from $\{$N, NE, E$\}$. We have the following cases.
 
-Before we consider walks that return to the origin, we will look at the behavior $Q$ depending on whether $S$ factors in some nice way or not.
+\begin{itemize}
+\item[1.] None of the three steps are present. We have models where walks cannot leave the origin and they are equivalent to ones with $\mc S = \emptyset$. There are $2^5 = 32$ such models.
+\begin{figure}[H]
+    \centering
+\[
+	\modelgraphB 10010111
+\]
+    \caption{Set of steps allowed in models that do not leave the origin.}
+\end{figure}
+\item[2.] There is a N or E step but no S or W step, respectively. We have models where walks can leave the origin along one of the axes but they can never return to the origin. The models are equivalent to ones where $\mc S = \{$N$\}$ or $\mc S = \{$E$\}$, respectively. There are $2\cdot2^3 = 16$ such models.
+\begin{figure}[H]
+    \centering
+\[
+	\modelgraphB 11010100 \quad \modelgraphB 00001111
+\]
+    \caption{Sets of steps allowed in models where walks can leave the origin along one axis but then they can never return. The N and E steps must be present, respectively}
+\end{figure}
+\item[3.] There is a N or E step together with a S or W step, respectively. These models are also confined to an axis, but this time walks can return to the origin. The models are equivalent to ones where $\mc S = \{$N, S$\}$ or $\mc S = \{$E, W$\}$, respectively.  There are $2\cdot2^3 = 16$ such models.
+\begin{figure}[H]
+    \centering
+\[
+	\modelgraphB 11010110 \quad \modelgraphB 00011111
+\]
+    \caption{Sets of steps allowed in models where walks are confined to an axis, with possible returns to the origin. The N and S, and E and W steps must be present, respectively}
+\end{figure}
+\item[4.] There are two or more steps from $\{$N, NE, E$\}$ or NE $\subseteq \mc S$. In this case the models feature walks that can leave both axes. Therefore the models are not reducible, since walks can take any steps in $\mc S$ once they leave the axes.
+ \end{itemize}
+
+Cases 1, 2 and 3 contain all of the reducible quarter-plane models, which are equivalent to one-dimensional problems, so they can be solved via a simple Hadamard product. Note that all these models are factorable. That is,
+\begin{align}
+	S(x_1,x_2) = 1\cdot S(x_2)\quad\text{or}\text  S(x_1,x_2) = S(x_1)\cdot 1\,.
+\end{align}
+Both $Q_1$ and $Q_2$ are functions we solved for in the one-dimensional case, so
+\begin{align}
+	Q_1(x_1,a_1,t) = \frac{1}{1-a_1 t},\quad Q_2(x_2,a_2,t) = q(x_2,a_2,t)
+\end{align}
+for some solution $q$ from that section. Therefore,
+\begin{align}\begin{split}
+	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
+	&= \frac{1}{1-a_1 t}\odot q(x_2,a_2,t) = q(x_2,a_2,a_1 t)\,.
+\end{split}\end{align}
+What about the relationship with the $B_1$ and $B_2$ operators? If $f(a,t)$ is the function that goes together with $q(x,a,t)$, then the function $F(a_1,a_2,t)$ that goes together with $Q(x_1,x_2,a_1,a_2,t)$ is given by
+\begin{align}
+	F(a_1,a_2,t) = f(a_2,a_1 t)\,.
+\end{align}
+Then we have $B_2 (FQ) = 0$ and $B_1B_2(FQ) = 0$.
 
 %=======================================
 \subsection{Kernel Group Considerations}
@@ -404,10 +445,10 @@ Whenever the $S$ quantities in the denominators are not zero, we let
 Note that $g_i(g_i(x_1)) = x_1$, so the maps are involutions. Contrast this suggestive notation to the notation in previous approaches in ZZCITEZZ and ZZCITEZZ. We will combine cases for analysis in the form "case $i.j$": we have case $i$ for $x_1$ and case $j$ for $x_2$.
 
 \begin{itemize}
-\item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus, we have no steps that go away from the origin. Therefore, $S = \Sf{0,0}$.
-\item[Case 1.2:] Here any transformation can be applied on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ and the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation, we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$, in which case the model only consists of an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol x_1$ step with a possible resting step.
-\item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$; that is, $S_2^{\um 1}$ and $S_2^1 \neq 0$. This means that either we must have both vertical steps $x_2$ and $\ol x_2$ in the 1.3 case, or two horizontal steps $x_1$ and $\ol x_1$ in the 3.1 case.
-\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore, exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. Without loss of generality, assume that $S_1^1 \neq 0, S_2^1 \neq 0$ (the other models can be differ by a rotation around the origing of 90, 180 and 270 degrees). The possible models are the ones with steps in $\{$N,E,NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
+\item [Case 1.1:] Here we can apply any transformation on both $x_1$ and $x_2$. From the transformation analysis this means that $S_1^{\um 1} = S_1^1 = S_2^{\um 1} = S_2^1 = 0$ and thus, we have no steps that go away from the origin. Therefore, $S = \Sf{0,0}$. The models here are reducible.
+\item[Case 1.2:] Here any transformation can be applied on $x_1$, so $S_1^{\um 1} = S_1^1 = 0$ and the model has no steps that step away from the origin in the $x_1$-direction. Since the only transformation on $x_2$ is the identity transformation, we either have $S_2^{\um 1} = 0$ or $S_2^1 = 0$, in which case the model only consists of an up step or a down step, together with a possible resting step. Similarly, the 2.1 case involves a single $x_1$ or $\ol x_1$ step with a possible resting step. The models here are reducible.
+\item[Case 1.3:] (and 3.1): This case is similar to the previous one except that now we have two transformations for $x_2$; that is, $S_2^{\um 1}$ and $S_2^1 \neq 0$. This means that either we must have both vertical steps $x_2$ and $\ol x_2$ in the 1.3 case, or two horizontal steps $x_1$ and $\ol x_1$ in the 3.1 case. The models here are reducible.
+\item[Case 2.2:] In this case both transformations are the identity transformations. Therefore, exactly one of $S_1^{\um 1}$ and $S_1^1$ is zero and exactly one of $S_2^{\um 1}$ and $S_2^1$ is zero. The models where $S_1^1 = 0$ or $S_2^1 = 0$ already have solutions since they are reducible. The only case that remains is when $S_1^{\um 1} = 0$ and $S_2^{\um 1} = 0$. The possible models are the ones with steps in $\{$N, E, NE$\}$ except the ones going either only in the N direction or only in the E direction. Here are the models in the positive quadrant
 \begin{figure}[H]
     \centering
 \[
@@ -415,72 +456,29 @@ Note that $g_i(g_i(x_1)) = x_1$, so the maps are involutions. Contrast this sugg
 \]
     \caption{Models from case 2.2}
 \end{figure}
-This is a case of group $G(K)$ or order 1.
-\item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. Also, $S_1^{\um 1}$ and $S_2^1 \neq 0$, so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. We have 17 cases (and another 17 including a resting step). Of course, in the 3.2 case we have the meaning of $x_1$ and $x_2$ reversed. This is a case of group $G(K)$ of order 2. Here are some but not all of these models.
+None of the models are reducible and this is a case of group $G(K)$ of order 1.
+\item[Case 2.3:] In this case there is only one transformation for $x_1$ and two for $x_2$. This means $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. The negative case is reducible, so we only seek solutions for the positive one. Furthermore, $S_1^{\um 1} \neq 0$ and $S_2^1 \neq 0$, so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. If both NE and SE are in $\mc S$, then we have 8 cases. If one of NE and SE is in $\mc S$ but not both, then we have another 8 cases. Finally, if neither is in $\mc S$, we must have the other three steps present, in order to satisfy the conditions. We have 17 cases in total. The group size is 2. Here are all of these models.
 \begin{figure}[H]
     \centering
-\[
-	\modelgraphB 01101011\quad\modelgraphB 00101011\quad\modelgraphB 01001011\quad\modelgraphB 01100011\quad \modelgraphB 01101010\quad \modelgraphB 01101001
-\]
-    \caption{Models from case 2.3}
+\begin{align*}
+	\modelgraph 01101011 \quad \modelgraph 00101011 \quad\modelgraph 01001011 &\quad\modelgraph 01100011 \quad \modelgraph 01101010 \quad \modelgraph 01101001 \\
+	\modelgraph 00100011 \quad \modelgraph 00101010 \quad \modelgraph 00101001 \quad \modelgraph 01000011 &\quad \modelgraph 01001010  \quad \modelgraph 01001001 \quad \modelgraph 01100010 \quad \modelgraph 01100001\\
+	 \modelgraph 00100001 \quad &\modelgraph 00100010 \quad \modelgraph 01000001
+\end{align*}
+    \caption{Models from case 2.3 ordered by number of steps missing from the five steps allowed.}
 \end{figure}
-\item[Case 3.3:] This is the most interesting case with two transformations for $x_1$ and $x_2$ each. This means that there must be at least one step going in a positive and one going in a negative direction, for each of $x_1$ and $x_2$. There are a lot of such cases (in the hundreds). Previous results show that the group $G(K)$ has orders 4, 6, 8 and infinity, depending on the step set in question.
+Note that none of the models are reducible.
+\item[Case 3.3:] This is the most interesting case with two transformations for $x_1$ and $x_2$ each. This means that there must be at least one step going in a positive and one going in a negative direction, for each of $x_1$ and $x_2$. If we look at which diagonal steps are present, similarly to case 2.2, we find that there are 145 such models. Previous results show that the group $G(K)$ has orders 4, 6, 8 and infinity, depending on the step set in question. None of these cases are reducible.
  \end{itemize}
- 
-The easy cases are 1.1, 1.2 and 1.3. A little bit of work needs to be done to solve cases 2.2 and 2.3. Finally, case 3.3 is the richest and most-difficult one. We'll start with the easier ones and cover case 3.3 in the end of the thesis.
  
  %=======================================
 \section{Solving basic 2D models}
 %=======================================
 
 %=======================================
-\subsection{Cases 1.1, 1.2 and 1.3}
-%=======================================
-A quick glance at the step models involved shows that we are dealing with essentially one-dimensional problems. This means they can be easily be solved explicitly. Note that all these models are factorable; that is,
-\begin{align}
-	S(x_1,x_2) = 1\cdot S(x_2)\,.
-\end{align}
-Both $Q_1$ and $Q_2$ are functions we solved for in the one-dimensional case, so
-\begin{align}
-	Q_1(x_1,a_1,t) = \frac{1}{1-a_1 t},\quad Q_2(x_2,a_2,t) = q(x_2,a_2,t)
-\end{align}
-for some solution $q$ from that section. Therefore,
-\begin{align}\begin{split}
-	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
-	&= \frac{1}{1-a_1 t}\odot q(x_2,a_2,t) = q(x_2,a_2,a_1 t)\,.
-\end{split}\end{align}
-Similarly, in the 2.1 and 3.1 cases
-\begin{align}\begin{split}
-	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
-	& =  q(x_1,a_1,t) \odot \frac{1}{1-a_2 t}= q(x_1,a_1,a_2 t)\,,
-\end{split}\end{align}
-and this completes the solution. What about the relationship with the $B_1B_2$ transformation? If $f(a,t)$ is the function that goes together with $q(x,a,t)$, then the function $F(a_1,a_2,t)$ that goes together with $Q(x_1,x_2,a_1,a_2,t)$ is given by
-\begin{align}
-	F(a_1,a_2,t) = f(a_2,a_1 t)\,.
-\end{align}
-Then we have $B_2 (FQ) = 0$ and $B_1B_2(FQ) = 0$.
-
-%=======================================
 \subsection{Case 2.2 -- group of order 1}
 %=======================================
-A quick glance at the step models reveals that this case is mostly trivial. We have a lot of models that never leave the origin and those have a trivial solution
-\begin{align}
-	Q(x_1,x_2,a_1,a_2) = \frac{1}{1-a_1a_2 \Sf{0,0} t}\,.
-\end{align}
-We also have a lot of models that are essentially one-dimensional with a single step going along an axis and some steps going off-axis, where the latter steps can never be taken by a random walk in this model. They are essentially cases already covered in the previous section. Suppose that the single step is taken in the positive $x_1$ direction. This is equivalent to the $s_{\um1} = 0$ case in 1D with function
-\begin{align}
-	q(x,a,t) = \frac{1-s_0 t}{(1-x_1s_1 t)(1-a s_0 t)}\,.
-\end{align}
-Then we have
-\begin{align}\begin{split}
-	Q(x_1,x_2,a_1,a_2,t) &= Q_1(x_1,a_1,t) \odot Q_2(x_2,a_2,t) \\
-	&=  q(x_1,a_1,t) \odot \frac{1}{1-a_2 t}= q(x_1,a_1,a_2 t)
-\end{split}\end{align}
-and therefore,
-\begin{align}
-	Q(x_1,x_2,a_1,a_2,t) = \frac{1-a_2 \Sf{0,0} t}{(1-(x_1+\Sf{0,0})a_2 t)(1-a_1a_2 \Sf{0,0}t)}\,.
-\end{align}
-The interesting models in case 2.2 are those with non-negative steps that we listed. Here
+The only models that are not reducible are those where $S_1^{\um 1} = 0$ and $S_2^{\um 1} = 0$. Here
 \begin{align}
 	S = \alpha x_1 + \beta x_2 + \gamma x_1 x_2 + \delta\,.
 \end{align}
@@ -518,7 +516,7 @@ Putting the two quantities together, along with dividing by $1-tS$, shows that $
 %=======================================
 \subsection{Case 2.3 - group of order 2}
 %=======================================
-There are two possibilities here: positive and negative. In the negative case $S_1^1 = 0$ and the steps have a non-positive $x_1$ component. Due to the fact that a lot of steps are not going to be taken by random walks in those models, all of these models reduce to the cases of $S$ consisting of a rest step and maybe a single step in a positive direction. This takes care of 34 models (or 68 if we include a rest step). The interesting models are those with a positive $x_1$ component, or in other words, models where $S_1^{\um 1} = 0$. The calculations for these models become increasingly more complicated. The functional equation and its extracted forms read as
+The functional equation and its extracted forms read as
 \begin{align}\begin{split}
 (1-tS)Q - c_1 Q_1^0- (c_2 -t\ol x_2 S_1^{\um 1})Q_2^0+ c_1c_2 Q_{1,2}^{0,0}  &= \ol a_1\ol a_2\\\
 (1-ta_1 S_1^0)Q_1^0 - (c_2 - ta_1 \ol x_2 \Sf{0,\um 1})Q_{1,2}^{0,0} &=\ol a_2\\
@@ -549,7 +547,7 @@ and we can write $Q$ as
 Of course, this can be expanded and simplified based on what $q$ and $q_0$ are from the one-dimensional setting, but the important thing is that we can build the solution in this case via one-dimensional equations.
 
 %=======================================
-\subsection{Summary}
+\subsection{Summary REWRITE}
 %=======================================
 We can give a short summary of the result in a table. Here $q$ stands for a one-dimensional solution and $f$ for its associated function, such that $B(fq) = 0$.
  \begin{table}[H]
