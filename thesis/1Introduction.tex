@@ -50,9 +50,9 @@ where $\Gamma$ is an operator on the variables of $Q$, $S$ is the Laurent step p
 \section{Layout of Thesis}
 %=======================================
 
-In the first few chapters we will go through motivating examples that will serve as a springboard into further generalizations. First, we will start off with one-dimensional random walks with and without interactions in \autoref{ch:1DExample}. Then we will quickly move on to two-dimensional random walks in \autoref{ch:2DWalks}. On the way we will develop some of the basic operator theory involved in the random walk models. In Chapter 5 we will tackle the $d$-dimensional random walk model functional equations using operators. In chapter 6 we will finally go through operators in a much generality as we can, deriving all sorts of properties for them along the way. In chapter 7 we will discuss generalizations of the random walk models and we will push the operator notation as far as we can to see what kind of problem we can hope to tackle with the theory.
+In the first few chapters we will go through motivating examples that will serve as a springboard into further generalizations. First, we will start off with one-dimensional random walks with and without interactions in \autoref{ch:OneD}. Then we will quickly move on to two-dimensional random walks, and beyond, in \autoref{ch:HighD}. On the way we will develop some of the basic operator theory involved in the random walk models. In \autoref{ch:General} we will tackle some generalization of the problem and show that they all satisfy a similar functional equation.
 
-In Chapter 8 we will take a more practical route and deal with group-theoretic operators relevant to both two-dimensional and higher-dimensional random walk models. In Chapter 9 we extend the persistent kernel method as much as we can for the two-dimensional interacting walks. Then in Chapter 10 we attempt to solve as many highly-symmetrical two-dimensional interacting models as we can via the vanishing kernel method. In Chapter 11 we work on some models with higher group orders.
+In \autoref{ch:AKM} we will take a more practical route to deal with group-theoretic operators relevant tol random walk models with small steps, and then deal with extending the Algebraic Kernel method to more dimensions and interactions. In \autoref{ch:OKM} we will look at the Obstinate Kernel method. Then in \autoref{ch:HighSym} we solve some highly-symmetrical two-dimensional interacting models.
 
 %========================
 \section{Notation and Conventions}
@@ -91,7 +91,7 @@ In this work we will investigate random walk models on the $n$-dimensional latti
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{image1}
-    \caption{The regions}
+    \caption{Illustration of regions in the plane.}
     \label{fig:fig1}
 \end{figure}
 
@@ -117,7 +117,7 @@ Usually, we see $S$ a Laurent polynomial of degree (or valuation) 1 in each vari
 \[
 	\modelgraphB 10100101
 \]
-    \caption{The model $\{$NW, NE, SW, SE$\}$}
+    \caption{The model $\{$NW, NE, SW, SE$\}$.}
 \end{figure}
 The region $\mc{D}$ consists of all points in $\ze^2$ with non-negative coordinates. Next, $\mc{D}_0$ is composed of the two non-negative axes with overlap at the origin; we count visits to the origin as visits to each axis. Finally, $\mc{Q}$ consists of the empty walk. In the language of generating functions we have $q = 1$ and
 \begin{align}
