@@ -14,53 +14,56 @@
 \contentsline {subsection}{\numberline {1.4.2}Random Walk Models}{5}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Thesis Notation}{8}{subsection.1.4.3}
 \contentsline {chapter}{\numberline {2}One-dimensional Random Walk Models}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Derivation of the functional equation}{11}{section.2.1}
-\contentsline {section}{\numberline {2.2}Solving functional equations for various step sets.}{18}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}The $S_{-1} = 0$ case.}{18}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}The $S_{-1} \neq 0$ case.}{19}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.1}Derivation of the Functional Equation}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}Solving Functional Equations For Various Step Sets}{18}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}The $S_{-1} = 0$ Case}{18}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}The $S_{-1} \neq 0$ Case}{19}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Conclusion}{23}{subsection.2.2.3}
 \contentsline {chapter}{\numberline {3}Higher-dimensional Random Walk Models}{24}{chapter.3}
 \contentsline {section}{\numberline {3.1}Using Operators to Derive the Functional Equation}{26}{section.3.1}
-\contentsline {section}{\numberline {3.2}Coefficient extractions}{28}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Using operator notation for fast coefficient extraction}{28}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Further functional equations}{30}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Basic Solutions}{32}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Formal Neumann series solution}{32}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Hadamard product solutions}{33}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Specializing to 2 dimensions}{36}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}First examples in the plane}{37}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Kernel Group Considerations}{39}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Solving basic 2D models}{42}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Case 2.2 -- group of order 1}{42}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Case 2.3 - group of order 2 (CHECK)}{44}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Random Walk Models With General Constraints}{46}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{46}{section.4.1}
-\contentsline {section}{\numberline {4.2}Marking Operators}{49}{section.4.2}
-\contentsline {section}{\numberline {4.3}Kernel Forms}{52}{section.4.3}
-\contentsline {section}{\numberline {4.4}Walks without interactions (MOVE or REMOVE)}{53}{section.4.4}
-\contentsline {section}{\numberline {4.5}Examples of regions we can consider}{56}{section.4.5}
-\contentsline {section}{\numberline {4.6}Further research directions}{59}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Marking operators}{59}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Marking operators with multiplication}{62}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Random Walks Operator}{63}{subsection.4.6.3}
-\contentsline {chapter}{\numberline {5}The Algebraic Kernel Method}{65}{chapter.5}
-\contentsline {section}{\numberline {5.1}Groups for walks with small steps (REWRITE)}{65}{section.5.1}
-\contentsline {section}{\numberline {5.2}Non-interacting Models}{69}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Walks with small steps}{69}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Walks with unconstrained steps}{77}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Interacting Models}{79}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Groups of order 4}{80}{subsection.5.3.1}
-\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{81}{subsubsection*.20}
-\contentsline {subsection}{\numberline {5.3.2}Groups of order 6}{86}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Groups of order 8}{89}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}The Obstinate Kernel Method}{91}{chapter.6}
-\contentsline {section}{\numberline {6.1}Group of order 4}{93}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Some Calculations}{95}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Group of order 6}{97}{section.6.2}
-\contentsline {section}{\numberline {6.3}Group of order 8}{98}{section.6.3}
-\contentsline {chapter}{\numberline {7}Highly-symmetric Two-dimensional Models}{102}{chapter.7}
-\contentsline {section}{\numberline {7.1}Cartesian model: steps N, S, E, W}{104}{section.7.1}
-\contentsline {section}{\numberline {7.2}Diagonal model: steps NE, NW, SE, SW}{106}{section.7.2}
-\contentsline {section}{\numberline {7.3}The full model}{113}{section.7.3}
-\contentsline {chapter}{\numberline {8}Epilogue}{117}{chapter.8}
-\contentsline {chapter}{Bibliography}{118}{chapter*.23}
+\contentsline {section}{\numberline {3.2}Coefficient Extractions}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Using Operator Notation For Fast Coefficient Extraction}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Further Functional Equations}{30}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}First Solutions}{32}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Formal Neumann Series}{32}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Hadamard Products}{33}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Groups For Walks With Small Steps (REWRITE)}{36}{section.3.4}
+\contentsline {section}{\numberline {3.5}Specializing to Two Dimensions}{40}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}First Examples in the Plane}{40}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Kernel Group Considerations}{43}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Solving Basic Two-dimensional Models}{46}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Case 2.2 -- Group of Order One}{46}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Case 2.3 -- Group of Order Two}{48}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Miscellaneous Case}{49}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Counting Classes of Models}{49}{subsection.3.6.4}
+\contentsline {chapter}{\numberline {4}Random Walk Models With General Constraints}{52}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{52}{section.4.1}
+\contentsline {section}{\numberline {4.2}Marking Operators}{55}{section.4.2}
+\contentsline {section}{\numberline {4.3}Kernel Forms}{58}{section.4.3}
+\contentsline {section}{\numberline {4.4}Examples of Regions}{59}{section.4.4}
+\contentsline {section}{\numberline {4.5}Further Research Directions}{62}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Marking Operators}{62}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Marking Operators With Multiplication}{65}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Random Walks Operator}{66}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {5}The Algebraic Kernel Method}{68}{chapter.5}
+\contentsline {section}{\numberline {5.1}Non-interacting Models}{68}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Walks With Small Steps}{68}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Kernel Forms}{77}{section.5.2}
+\contentsline {section}{\numberline {5.3}Walks Without Interactions (MOVE or REMOVE)}{78}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Walks With Unconstrained Steps}{80}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Interacting Models}{82}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Groups of Order Four}{83}{subsection.5.4.1}
+\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{84}{subsubsection*.23}
+\contentsline {subsection}{\numberline {5.4.2}Groups of Order Six}{89}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Groups of Order Eight}{92}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}The Obstinate Kernel Method}{94}{chapter.6}
+\contentsline {section}{\numberline {6.1}Group of Order Four}{96}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Some Calculations}{98}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Group of Order Six}{100}{section.6.2}
+\contentsline {section}{\numberline {6.3}Group of Order Eight}{101}{section.6.3}
+\contentsline {section}{\numberline {6.4}Highly-symmetric Two-dimensional Models}{104}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Cartesian Model -- N, S, E, W}{105}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Diagonal Cartesian Model -- NE, NW, SE, SW}{108}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}The Full Model}{114}{subsection.6.4.3}
+\contentsline {chapter}{\numberline {7}Epilogue}{118}{chapter.7}
+\contentsline {chapter}{Bibliography}{119}{chapter*.26}

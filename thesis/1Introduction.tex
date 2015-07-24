@@ -5,8 +5,10 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 %=======================================
-	
-Why do we study random walks? Apart from being an interesting mathematical object that leads to a lot of interesting mathematics, they have some real world applications. A lot of processes can be modeled via random walks: from stock market objects to proteins and polymers. There is a rich theory of continuous and discrete random walks. Specifically, in random walk enumeration, we attempt to find out things about the numbers of walks of some length and of certain type with certain geometrical constraints. The topic often leads to the use of generating functions as a powerful tool in the analysis. In the end, we gain insight into what makes certain random walk models "easy" and others more difficult. In this thesis we look at the enumeration for constrained random walks with interactions, in order to gain insight into the deeper workings of random walk enumeration problems.
+
+
+
+Why do we study random walks? Apart from being an interesting mathematical object that leads to a lot of interesting mathematics, they have some real- world applications. A lot of processes can be modeled via random walks: from stock market objects to proteins and polymers. There is a rich theory of continuous and discrete random walks. Specifically, in random walk enumeration, we attempt to find out things about the numbers of walks of some length and of certain type with certain geometrical constraints. The topic often leads to the use of generating functions as a powerful tool in the analysis. In the end, we gain insight into what makes certain random walk models "easy" and others more difficult. In this thesis we look at the enumeration for constrained random walks with interactions, in order to gain insight into the deeper workings of random walk enumeration problems.
 %=======================================
 \section{Recent History}
 %=======================================
@@ -52,7 +54,7 @@ where $\Gamma$ is an operator on the variables of $Q$, $S$ is the Laurent step p
 
 In the first few chapters we will go through motivating examples that will serve as a springboard into further generalizations. First, we will start off with one-dimensional random walks with and without interactions in \autoref{ch:OneD}. Then we will quickly move on to two-dimensional random walks, and beyond, in \autoref{ch:HighD}. On the way we will develop some of the basic operator theory involved in the random walk models. In \autoref{ch:General} we will tackle some generalization of the problem and show that they all satisfy a similar functional equation.
 
-In \autoref{ch:AKM} we will take a more practical route to deal with group-theoretic operators relevant tol random walk models with small steps, and then deal with extending the Algebraic Kernel method to more dimensions and interactions. In \autoref{ch:OKM} we will look at the Obstinate Kernel method. Then in \autoref{ch:HighSym} we solve some highly-symmetrical two-dimensional interacting models.
+In \autoref{ch:AKM} we will take a more practical route to deal with group-theoretic operators relevant tol random walk models with small steps, and then deal with extending the Algebraic Kernel method to more dimensions and interactions. In \autoref{ch:OKM} we will look at the Obstinate Kernel method and solve some highly-symmetrical two-dimensional interacting models.
 
 %========================
 \section{Notation and Conventions}
@@ -181,5 +183,8 @@ Furthermore, we may write
 \end{align}
 and $\Sf{\pm 1,\pm1}  = 1$.
 \end{example}
+
+\begin{definition}(MOVE) Let $\mc{D}_0$ and $\mc{D}$ be regions in $\ze^d$, with $\mc{D}_0 \subseteq \mc D$, and let $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location within $\mc D$ later on.
+\end{definition}
 
 \endinput

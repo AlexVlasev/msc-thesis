@@ -5,7 +5,7 @@
 %================================
 \section{Introduction}
 %================================
-We will push the operator notation further to see what kinds of random walk models we can handle. Some of the models have more general step sets while others are set in more complicated regions. For example, Definition 1.1 of \cite{mishna2009classifying} has a functional equation for the non-interacting random walks on the quarter plane, which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly, \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps. We start with the following definition for a random walk model in $\ze^d$.
+We will push the operator notation further to see what kinds of random walk models we can handle. Some of the models have more general step sets while others are set in more complicated regions. For example, Definition 1.1 of \cite{mishna2009classifying} has a functional equation for the non-interacting random walks on the quarter plane, which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly, \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps. We start with the following definition for a random walk model in $\ze^d$. Recall the definition from \autoref{ch:Introduction}.
 \begin{definition}(MOVE) Let $\mc{D}_0$ and $\mc{D}$ be regions in $\ze^d$, with $\mc{D}_0 \subseteq \mc D$, and let $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location within $\mc D$ later on.
 \end{definition}
 In other words, given a starting location in $\mc D$ we can evolve random walks in the region $\mc D$ with steps from $\mc{S}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$, and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
@@ -162,93 +162,8 @@ We can apply the inverse $L^{\um 1}$ to those equations too, in particular on th
 
 The second form of the functional equation involving $L^{\um 1}$ should have less terms than the first one by virtue of separating $L$ and $E$ from one another. Using extraction operators, we can constrain random walks to lie within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes, of course). Furthermore, using marking operators, we can easily track the behavior of random walks as they cross or interact with boundaries or interact with regions within. For example, we may consider walks interacting with the boundary of a box within some region in space. 
 
-%=======================================
-\section{Walks without interactions (MOVE or REMOVE)}
-%=======================================
-The Kernel forms above suggest an easier route for dealing with the models without interactions. Those models are equivalent to setting all the $a_k$'s to 1, and this is equivalent to removing all marking or unmarking operators. The first kernel form reduces to the simple functional equation
-\begin{align}
-	 E(KQ) = 1\,.
-\end{align}
-This suggests using the following substitution
-\begin{align}
-	Q = \frac{W}{x_{[d]} K}\,.
-\end{align}
-We multiply both sides by $x_{[d]}$ and use the substitution. Then
-\begin{align}
-	x_{[d]} = x_{[d]}E(KQ) = x_{[d]}E\ol x_{[d]}W = \Gamma W\,,
-\end{align}
-where  $\Gamma = \mon \Gamma d$ and 
-\begin{align}
-	\Gamma_k = x_kE_k\ol x_k = x_k(1-\ext{\ol x_k})\ol x_k = 1 - [x_k]^0\,.
-\end{align}
-\begin{prop} Let $W = x_{[d]}KQ$, where $Q$ is the generating function for walks without interactions in the positive orthant. Then
-\begin{align}
-	\Gamma W = \sum_{I\subseteq [d]}(-1)^{|I|} W_I^\oo= x_{[d]}\,.
-\end{align}
-\end{prop}
-For example, in two dimensions we have
-\begin{align}
-	W(x_1,x_2) - W_1^0(x_2) -W_2^0(x_1) + W_{1,2}^{0,0} = x_1x_2\,.
-\end{align}
-Thus, we can write the solution to the problem as
-\begin{align}
-	Q = \frac{1}{x_{[d]}K}\left(x_{[d]}-\sum_{\emptyset \neq I\subseteq [d]}(-1)^{|I|} W_I^\oo\right)\,.
-\end{align}
-In two dimensions this becomes
-\begin{align}
-	Q(x_1,x_2) = \frac{x_1x_2+W_1^0(x_2)+W_2^0(x_1)-W_{1,2}^{0,0}}{x_1x_2(1-tS)}\,.
-\end{align}
-Of course, each $W_I^\oo$ depends on $Q_I^\oo$, so we could have seen this relationship from the master functional equation for $Q$ too.
-Interestingly enough, this calculation points to a differential equation. Clearly, $W$ satisfies the differential equation
-\begin{align}
-	\del_1\del_2 W &= 1
-\end{align}
-\begin{prop} The full generating function $Q$ for $d$-dimensional non-interacting random walks in the positive orthant with small steps, satisfies the inhomogeneous PDE
-\begin{align}
-	\mon \del d W = \mon \del d (\mon xd KQ) = 1\,.
-\end{align}
-\end{prop}
-We can go further. We have the following theorem.
-
-\begin{theorem} The full generating function $Q$ for a $d$-dimensional, finite, non-interacting random walk model, satisfies a finite-order inhomogeneous PDE in the variables $\row xd$.
-\end{theorem}
-\begin{proof} We will use the kernel form for the functional equation
-\begin{align}
-	KQ + t(1- \Gamma)SQ = q.
-\end{align}
-Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and it is finite, since $L$ and $E$ are finite. We will prove the theorem by finding the differential equation explicitly. Since the model is finite, we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ we see on either side. Once we multiply by $x_k^{A_k}$, we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$. That is,
-\begin{align}
-	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
-\end{align}
-and we attain a polynomial equation in the variables $\row xd$. We take the derivative operator
-\begin{align}
-	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\cdots\del_d^{A_d+B_d+1}
-\end{align}
-and apply it to both sides of the equation to retrieve
-\begin{align}
-	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0\,,
-\end{align}
-which follows since we are applying a larger number of derivatives than the degrees of the monomials and this clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of homogeneity, if the degrees of $q$ are large. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the left-hand side of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before, but this time it may have lower $A$ and $B$ values, since we are not taking $q$ into account. We have
-\begin{align}
-	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)\,.
-\end{align}
-\end{proof}
-\begin{example} For example, let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the left-hand side and right-hand side respectively. We see that $A_k = 3$ and $B_k = 6$. Then we are taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In the second scheme we take $A_k = 3$ still, but $B_k = 4$ and we are taking the 8-th derivative with respect to $x_k$ this time. 
-\end{example}
-
-Even in the quarter-plane, we have models with non D-finite generating function (in the $t$ variable), but it turns out that every model so far considered is D-finite in the variables $\row xd$. In order to solve the differential equation we need to investigate the kernel of the differential operator.
-\begin{corollary}
-The generating function $Q$ of a finite random model is given by
-\begin{align}
-	x_{[d]}^{A}KQ(\row xd;t) = \sum_{i=1}^d \sum_{j=0}^{B_i}Aij(x_1,\ldots,x_{i-1},x_i,\ldots, x_d,t) x_i^j\,,
-\end{align}
-where $A_{ij}$ are functions that need to be determined.
-\end{corollary}
-This kind of solution would have also appeared if we went through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof, we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
-
-
 %================================
-\section{Examples of regions we can consider}
+\section{Examples of Regions}
 %================================
 
 ZZPICTUREZZ
@@ -325,7 +240,7 @@ for arbitrary number of dimensions, with regional constraints and marking of spe
 \end{example}
 
 %==============================================================================
-\section{Further research directions}
+\section{Further Research Directions}
 %==============================================================================
 
 So far we have explored using operators to simplify the derivation of functional equations pertaining to random walk models on $\ze^d$, and to simplify the first steps in solutions to these problems. It would be great to know if we can further extend the work into a territory like Sturm-Liouville theory, where we may investigate the spectra of operators and find alternative solutions to the functional equations via eigenfunction expansions. For this to work, we need a suitable inner product that will allow us to answer questions like are the operators self-adjoint. Unfortunately, we have not found such suitable inner products apart from those on symmetric functions. While they seem promising, we have not been able to go far enough with them. In this chapter we will provide the start of such analysis which may be continued in future research.
@@ -334,7 +249,7 @@ The operators we have seen so far are marking operators, like $L$ and $E$, in co
 
 
 %=======================================
-\subsection{Marking operators}
+\subsection{Marking Operators}
 %=======================================
 
 The building block of the operators are coefficient extractions $[x_I^J]$ and term extractions $\ext{x_I^J}$. We will use the following notation for brevity.
@@ -403,7 +318,7 @@ We have two cases.
 The proofs can be extended for finite marking operators. It is not entirely clear how we may prove a similar result for operators marking infinitely many monomials.
 
 %=======================================
-\subsection{Marking operators with multiplication}
+\subsection{Marking Operators With Multiplication}
 %=======================================
 We call an operator inhomogeneous if it consists of a homogeneous operator $\Gamma$ and a (possibly infinite) laurent polynomial $S$, and acts in one of the following ways
  \begin{align}
