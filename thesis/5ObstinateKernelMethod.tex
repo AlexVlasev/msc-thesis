@@ -13,12 +13,12 @@ It may not be necessary, but it will be sufficient if a combination of a substit
 \begin{definition} A function $f(\row xd;t)$ is admissible if it is a power series in $t$. If $\sigma_k$ is a root of $K$, we say $f$ is $k$-admissible if $f|_{x_k=\sigma_k}$ is admissible. A set of functions is admissible if each element is admissible.
 \end{definition}
 
-\begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating (?) steps and group $G$ of order 4. The actions $g \in G$ that preserve the admissibility are given in the following table.
+\begin{prop} Let $\mc{M}$ be a lattice walk model with small nonrepeating (?) steps and group $G$ of order 4. The actions $g \in G$ that preserve the admissibility are given in the following table.
 \end{prop}
 
 When $|G| = 6$ we have a richer situation.
 
-\begin{prop} Let $\mc{M}$ be a random walk model with small nonrepeating steps and group $G$ of order 4, 6 or 8. Models with the same group have the same admissibility properties with respect to admissible when it comes to $x_1$, $x_2$ or the pair $(x_1,x_2)$.
+\begin{prop} Let $\mc{M}$ be a lattice walk model with small nonrepeating steps and group $G$ of order 4, 6 or 8. Models with the same group have the same admissibility properties with respect to admissible when it comes to $x_1$, $x_2$ or the pair $(x_1,x_2)$.
 \end{prop}
 \begin{proof} We do not know of a conceptual proof of this fact, so we performed the calculations on a computer. They are trivial computationally speaking. For a given model $\mc{M}$, we construct its $S$-polynomial, which can be used to find the admissible roots $\sigma_k$ for $k =1,2$. We can use $S$ to express the generators $g_k$ and their action on the pair $(x_1,x_2)$. Once we have the generators we form the group $G$. Next, to check the admissibility of $f\in \{x_1$, $x_2$, $(x_1,x_2)\}$ all we need to do is find $|\orb_G(f)|$ and see if substituting $x_k = \sigma_k$ in the resulting expressions leads to admissible functions. The calculations can be done by hand, but they are tedious, so we have employed a computer to do the legwork. It becomes a trivial matter to check the admissibility properties for the various models and compare the results, summarized in the following tables.
 \end{proof}
@@ -102,7 +102,7 @@ We will perform the first steps in the analysis of the Obstinate Kernel method f
 The analysis in this case is the same whether we work with the $\sigma_1$ or $\sigma_2$ substitutions. We will just work with the $\sigma_1$-substitution and group actions $1$, $ g_2$, where we let $g_2(F) = F^\ast$ to keep the notation cleaner. The functional equations corresponding the the group actions are
 \begin{align}
 	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0} &= \alpha\,,\\
-	KQ^\ast - K_1^\ast Q_1^{0,\ast}- K_2^\ast Q_2^0 - K_{12}^\ast \Qf{0,0} &= \alpha\,.
+	KQ^\ast \exxx - K_1^\ast Q_1^{0,\ast}\exxxx- K_2^\ast \!Q_2^0 - K_{12}^\ast \Qf{0,0} &= \alpha\,.
 \end{align}
 We will eliminate $Q_2^0$ because once we make the $\sigma_1$-substitution, we would have a tough time trying to expand $Q_2^0$ into series. We do this by taking $K_2^\ast$ times the first equation and subtract $K_2$ times the second equation. This leads to the functional equation
 \begin{align}
@@ -193,7 +193,7 @@ and
 This is a rational function in $x_2$. Using software, we can easily compute this expression and further compute $S_1^{\um 1}(\ol x_2\mu_2(x_1))$ to show that we only have equality when the model is highly-symmetric.
 
 \end{proof}
-In the next chapter we will investigate the highly-symmetric models in more detail.
+In a later section (ref) we will investigate the highly-symmetric models in more detail.
 %=======================================
 \section{Group of Order Six}
 %=======================================
@@ -450,34 +450,43 @@ If we let $F = (b_2G_1+b_1G_2)$ and perform the long division with respect to $F
 \begin{align}
 	\Qf{0,0} = \frac{1}{b_1b_2}\left(1-\frac{b_1b_2(1-b_1b_2)-t^2a_1a_2(a_1b_2+a_2b_1)}{b_1b_2+t^2a_1a_2(a_1b_2+a_2b_1+b_1b_2 F)}\right)\,.
 \end{align}
-Using arguments similar to those in the later section on diagonal steps we can find out more about the various $Q$'s.
+Using arguments similar to those in the later section on diagonal steps we can find out more about the various $Q$'s. We have
 \begin{align}
 	b_2\Qf{m,n+1} &= t(a_2\Qf{m,n}-\beta \Qc{m,n})\,,\\
 	b_1\Qf{m+1,n} &= t(a_1\Qf{m,n}-\beta \Qh{m,n})\,.
 \end{align}
-Summing the equations multiplied by their respective powers of $x_1$ and $x_2$, we find the equations
+Summing the second set of equations multiplied by $x_2^n$, we find the equations, indexed by $m$,
 \begin{align}
-	b_2 Q_2^{n+1} &= t(a_2Q_2^n-\beta \wc Q_2^n)\,,\\
 	b_1 Q_1^{m+1} &= t(a_1Q_1^m-\beta \wh Q_1^m)\,.
 \end{align}
-Now we can sum with respect to $x_2$ and $x_1$ to find
+Now we sum these equations with respect to $x_1$ to find
 \begin{align}
-	b_2 (Q-Q_2^0) &= x_2t(a_2Q - \beta \wc Q)\,,\\
-	b_1 (Q-Q_1^0) &= x_1t(a_1Q - \beta \wh Q)\,.
+	b_1 (Q-Q_1^0) &= x_1t(a_1Q - \beta \wh Q)\,,
 \end{align}
-We can solve these for $Q_2^0$ and $Q_1^0$ as follows
+ and we can solve this equation for $Q_1^0$ as follows
 \begin{align}
-	b_2Q_2^0 &= (b_2-a_2x_2t)Q + x_2t\beta \wc Q\,,\\
 	b_1Q_1^0 &= (b_1-a_1x_1t)Q + x_1t\beta \wh Q\,.
 \end{align}
-We substitute these two expressions into the original functional equation and after some algebra we find that
+We would have found an analogous expression for $b_2Q_2^0$ if we performed the procedure on the first set of equations by summing with respect to $x_1$ first and then with respect to $x_2$. We substitute these two expressions into the original functional equation, and after some algebra we find that
 \begin{align}
 	Q = \frac{(1-b_1b_2 G)(\alpha + tx_1\ol b_1K_1\wh Q+tx_2\ol b_2K_2 \wc Q)}{K-(1-\ol c_1x_1t)K_1-(1-\ol c_2x_2t)K_2}
 \end{align}
-and after recognizing some of the quantities as modified $K_1$ and $K_2$'s we finally stop at the solution for $Q$
+We recognize some of the quantities as modified $K_1$ and $K_2$'s, so we can finally write down the full solution for $Q$.
+\begin{theorem}The Cartesian model in two dimensions has generating functions satisfying the equations
+\begin{align}
+	\Qf{0,0} = G = \frac{1}{b_1b_2}\left(1-\frac{b_1b_2(1-b_1b_2)-t^2a_1a_2(a_1b_2+a_2b_1)}{b_1b_2+t^2a_1a_2(a_1b_2+a_2b_1+b_1b_2 F)}\right)\,,
+\end{align}
+where $F = (b_2\wh G+b_1\wc G)$,
+\begin{align}
+	b_1Q_1^0 &= (b_1-a_1x_1t)Q + x_1t\beta \wh Q\,,\\
+	b_2Q_2^0 &= (b_2-a_2x_2t)Q + x_2t\beta \wc Q\,,
+\end{align}
+and 
 \begin{align}
 	Q = \frac{(1-b_1b_2 \Qf{0,0})(\alpha - \ol b_1 K_1 \wh K_1^\bullet \wh Q-\ol b_2K_2\wc K_2^\ast \wc Q)}{K - \ol c_1 K_1 K_1^\bullet - \ol c_2 K_2 K_2^\ast}\,.
 \end{align}
+\end{theorem}
+
 This rather complicated expression shows that the generating function$Q$ is built from copies of $Q$ that have some of their marking variables set to 1.
 %=======================================
 \subsection{Diagonal Cartesian Model -- NE, NW, SE, SW}
@@ -629,28 +638,18 @@ We can sum up those equations to retrieve the following functional equations.
 \end{align}
 \end{corollary}
 
-\begin{corollary} For integers $n$ greater than zero, we have the following relations
-\begin{align}
-	Q_2^n-\wc Q_2^n &= b_2 Q_2^{n+2}\,,\\
-	\wh Q_2^n-\wch Q_2^n &= b_2 \wh Q_2^{n+2}\,,\\
-	x_2^2(Q_1^m-\wc Q_1^m) &=  b_2 (Q_1^m - Q_{1,2}^{m,1}x_1 - Q_{1,2}^{m,0})\,,\\
-	x_2^2(\wh Q_1^m-\wch Q_1^m) &=  b_2 (\wh Q_1^m - \wh Q_{1,2}^{m,1}x_1 - \wh Q_{1,2}^{m,0})\,,\\
-	x_2^2(Q-\wc Q) &= b_2(Q-x_2Q_2^1-Q_2^0)\,,\\
-	x_2^2(\wh Q-\wch Q) &= b_2(\wh Q-x_2\wh Q_2^1-\wh Q_2^0)\,.
-\end{align}
-\end{corollary}
-Every other equation results from the previous one by either setting $a_1 = 1$ or $a_2 = 1$. Here we can hope to find some telescoping sum type of thing in order to say more about $Q_{1,2}^{0,0}$
+Every other equation results from the previous one by either setting $a_1 = 1$ or $a_2 = 1$. We have an equivalent set of equations for the second coordinate --- just replace the subscript 1 with 2 and $m$ with $n$, to have consistent notation.
 
 Now we can move onto the main result about the diagonal walks, that is, the function for labelled walks ending at $(0,0)$ is connected to the functions for semi-labelled and unlabelled walks ending on $(0,0)$. We can use the master equation to extract the $[x_1^0x_2^0]$ and $[x_1^1x_2^1]$ coefficients, which will produce the following two relations
 \begin{align}
-	\Qf{0,0} &= 1 + ta_1a_2 \Qf{1,1}\,,\\
+	\Qf{0,0} &= 1 + ta_1a_2 \Qf{1,1}\\
 	\Qf{1,1} &= t(\Qf{0,0}+\Qf{2,0}+\Qf{0,2}+\Qf{2,2})\,.
 \end{align}
 We also have
 \begin{align}
 \begin{split}
-	b_1b_2\Qf{2,2} &= b_1(\Qf{2,0}-\wc Q_{1,2}^{2,0})\,,\\
-	&= b_1 \Qf{2,0} - b_1\wc Q_{1,2}^{2,0}\,,\\
+	b_1b_2\Qf{2,2} &= b_1(\Qf{2,0}-\wc Q_{1,2}^{2,0})\\
+	&= b_1 \Qf{2,0} - b_1\wc Q_{1,2}^{2,0}\\
 	&= \Qf{0,0}-\wh Q_{1,2}^{0,0}-\wc Q_{1,2}^{0,0}+\wch Q_{1,2}^{0,0}\,,
 \end{split}
 \end{align}
@@ -659,7 +658,7 @@ together with
 	b_1b_2\Qf{2,0} &= b_2 \Qf{0,0} - b_2 \wh Q_{1,2}^{0,0}\,,\\
 	b_1b_2\Qf{0,2} &= b_1 \Qf{0,0} - b_1 \wc Q_{1,2}^{0,0}\,.
 \end{align}
-We we have
+We also have
 \begin{align}
 \begin{split}
 b_1b_2\Qf{1,1} &= t(b_1b_2\Qf{0,0}+b_1b_2\Qf{2,0}+b_1b_2\Qf{0,2}+b_1b_2\Qf{2,2})\\
@@ -679,9 +678,9 @@ We can finally write
 \end{align}
 Let $G(b_1,b_2)$ stand for $Q(0,0,b_1,b_2)$ and $G_k$ has $b_k = 0$. Then we can write it all as
 \begin{align}
-	b_1b_2 G = b_1b_2 + t^2a_1a_2(a_1a_2G-a_2G_1-a_1G_2+G_{1,2})
+	b_1b_2 G = b_1b_2 + t^2a_1a_2(a_1a_2G-a_2G_1-a_1G_2+G_{1,2})\,,
 \end{align}
-or written as a linear combination
+or written as a linear combination,
 \begin{align}
 	(b_1b_2-t^2a_1^2a_2^2)G+t^2a_1a_2^2G_1 + t^2a_1^2a_2G_2 - t^2a_1a_2G_{1,2} = b_1b_2\,.
 \end{align}
@@ -689,20 +688,16 @@ We can divide by $a_1a_2$ and obtain the equation
 \begin{align}
 	(c_1c_2-a_1a_2t^2)G + a_2t^2G_1+a_1t^2G_2-t^2G_{1,2}=c_1c_2\,,
 \end{align}
-from which we can read off
-\begin{align}
-	f(a_1,a_2,t) = c_1c_2-a_1a_2t^2
-\end{align}
-and
-\begin{align}
-	G = \frac{(c_1c_2-t^2(a_2G_1+a_1G_2-G_{1,2})}{f(a_1,a_2,t)}
-\end{align}
-where $B(fG) = c_1c_2$. Also, we can solve for $Q_k^j$ and other terms, in terms of various $[b_k^l]$ extractions, so overall, it should lead to a relationship of the form $B(FQ) = 0$.
+To conclude, we have the following result.
+
+\begin{theorem} Let $G = \Qf{0,0}$ be the generating function for walks ending at the origin in the Diagonal Cartesian model. Let $f(a_1,a_2,t) = c_1c_2-a_1a_2t^2$ and let $B = B_1B_2$. Then $B(fG) = c_1c_2$.
+\end{theorem}
+We can also solve for $Q_k^j$ and other terms, in terms of various $[b_k^l]$ extractions, so overall, it should be possible to find a relationship of the form $B(FQ) = 0$.
 
 %=======================================
 \subsection{The Full Model}
 %=======================================
-We skip right to the final model - the one with all the possible small step. Here we have the most complicated functions. Here
+We will finally take a look at the model with all the steps.Here we have the most complicated functions. Here
 \begin{align}
 	\frac{\alpha(K_2^\ast -K_2)}{K_1}  &= \frac{\alpha (\ol x_2 - x_2)(1+t)}{S_1^1K_1}\,,\\
 	\frac{\Delta_2(K_2^\ast K_{12})}{K_1} &= \frac{c_2(\ol x_2-x_2)(c_1(1+t)- t \ol \sigma_1S_1^1)}{S_1^1(c_1-t\ol \sigma_1S_1^1)}\\
@@ -736,7 +731,7 @@ and the numerator has
 	u^2-4w^2 &= (1-tv)^2-4t^2(1+v)^2 \\&= 1-2tv-(3v+2)(v+2)t^2 \\&= (1-(3v+2)t)(1+(v+2)t)\,.
 \end{split}
 \end{align}
-Thus, the square root has the expansion
+We can find the first few terms of the square root.
 \begin{align}
 \begin{split}
 	\sqrt{u^2-4w^2} = 1 - vt-2(1+v)^2 t^2-2v(1+v)^2t^3+\cdots
@@ -783,7 +778,7 @@ When we finally substitute this quantity back into the equation, we can simplify
 \begin{align}
 	b_2(\Qf{0,2}+\Qf{0,1}) = (b_2(f_2^2-f_2^0)-a_2(1+t))\Qf{0,0}-(1+t)\Qc{0,0}\,.
 \end{align}
-The question is can we find the quantity $f_2^2-f_2^0$? It appears that
+The question is can we find the quantity $f_2^2-f_2^0$. It appears that
 \begin{align}
 	-(f_2^2-f_2^0) =1+a_1t+\frac{a_1^2}{b_1}(a_1^2-a_1-4)t^3 +\frac{4a_1^2}{b_1^2}(a_1^3-3a_1^2+1)t^4+\cdots\,.
 \end{align}

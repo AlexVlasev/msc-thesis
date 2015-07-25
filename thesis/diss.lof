@@ -6,23 +6,22 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of regions in the plane.\relax }}{6}{figure.caption.8}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces The model $\{$NW, NE, SW, SE$\}$.\relax }}{7}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of regions on the line.\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of regions on the line.\relax }}{10}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Two-dimensional random walk model constraints.\relax }}{24}{figure.caption.11}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Inclusion-exclusion of regions.\relax }}{25}{figure.caption.12}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Set of steps allowed in models that do not leave the origin.\relax }}{41}{figure.caption.13}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Sets of steps allowed in models where walks can leave the origin along one axis but then they can never return. The N and E steps must be present, respectively.\relax }}{42}{figure.caption.14}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Sets of steps allowed in models where walks are confined to an axis, with possible returns to the origin. The N and S, and E and W steps must be present, respectively.\relax }}{42}{figure.caption.15}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Models from case 2.2.\relax }}{45}{figure.caption.16}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Models from case 2.3 ordered by number of steps missing from the five steps allowed.\relax }}{46}{figure.caption.17}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Reducible models with an infinite group.\relax }}{50}{figure.caption.18}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Models with group of size four, six and eight.\relax }}{50}{figure.caption.19}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Models with an infinite group. To get the rest of them, apply one of the symmetries of the square.\relax }}{51}{figure.caption.20}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Two-dimensional lattice walk model constraints.\relax }}{22}{figure.caption.11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Inclusion-exclusion of regions.\relax }}{22}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Set of steps allowed in models that do not leave the origin. The models are equivalent to a model without steps.\relax }}{41}{figure.caption.13}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sets of steps allowed in models with an N step or an E step. The models are essentially one-dimensional.\relax }}{41}{figure.caption.14}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Models from case 2.2.\relax }}{42}{figure.caption.15}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Models from case 2.3.\relax }}{43}{figure.caption.16}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Reducible models with an infinite group.\relax }}{47}{figure.caption.17}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Models with a finite group.\relax }}{47}{figure.caption.18}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Models with an infinite group. To get the rest of them, apply one of the symmetries of the square.\relax }}{48}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces General regions in $\mathbb {Z}^2$.\relax }}{53}{figure.caption.21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Finite region enclosed in box $B$.\relax }}{57}{figure.caption.22}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The highly-symmetric models on the plane.\relax }}{61}{figure.caption.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The highly-symmetric models on the plane.\relax }}{86}{figure.caption.24}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Models $S11$, $S12$, $S13$ with group of order 6.\relax }}{75}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Models $S11$, $S12$, $S13$ with group of order 6.\relax }}{100}{figure.caption.25}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces General regions in $\mathbb {Z}^2$.\relax }}{93}{figure.caption.23}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Finite region enclosed in box $B$.\relax }}{98}{figure.caption.24}
 \addvspace {10\p@ }

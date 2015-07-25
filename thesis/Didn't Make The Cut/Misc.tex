@@ -151,37 +151,6 @@ we have the inhomogeneous Fredholm equation of the first kind in $d$ dimensions
 \end{align}
 where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\theta_k$'s. Perhaps Fredholm theory can be applied in solving the random walk models in man dimensions. Perhaps this will also lead to a good inner product on the space where $Q$ lives.
 
-%================================
-\section{Reformulations of Problems}
-%================================
-
-\subsection{Using marking operators instead of extraction operators}
-An initially promising idea is to use a marking operator instead of an extraction operator with the goal of removing those marked walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and $Q$ will no longer be a power series in the $x$ variables. We may get further problems. Instead of $E = 1- \ext{\ol x}$ we take $\tilde E = 1 + (a_{\um 1}-1)\ext{x}$ with the idea that if we set $a_{\um 1} = 0$ we will obtain $E$. To this end the functional equation is
-\begin{align}
-	(1-tL\tilde E S)\tilde Q = 1
-\end{align}
-which after inversion turns into
-\begin{align}
-	(\tilde E^{\um 1} L^{\um 1} -tS) \tilde Q = \tilde E^{\um 1} L^{\um 1} 1 = \alpha
-\end{align}
-One benefit of this is that we do not have a mixing between the $E$, $L$ operators and $S$. The downside is we have more $Q$ extractions on their own. We can write this in kernel form as
-\begin{align}
-	K \tilde Q = \alpha + (1 - L^{\um 1}\tilde E^{\um 1}) \tilde Q
-\end{align}
-where the operator $1- L^{\um 1}\tilde E^{\um 1}$ is composed entirely of coefficient extractions.
-\subsection{Considering a symmetrical super-problem}
-An extension of the previous idea is to symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines where one coordinate is $-1$ we can also mark walks on lines with one coordinate $+1$. This leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
-\begin{align}
-	(1- tLS)\tilde Q = (1- t L_{\um 1}L_0L_1 S)\tilde Q = 1
-\end{align}
-We can skip the marking of the axes with $L_0$ if we do not wish to investigate wall interactions. In general, we may mark more locations in space so we can combine all of these operators into one called $L$. Then we have
-\begin{align}
-	(1- tLS)\tilde Q = 1
-\end{align}
-or in kernel forms
-\begin{align}
-	K\tilde Q = L^{\um 1}(1) + (1- L^{\um 1})\tilde Q
-\end{align}
 
 \endinput
 \begin{example} Here is an example that may hint at the flavour of the OCE/PCE problems. Suppose we start with the fibonacci recurrence relation
@@ -340,6 +309,7 @@ where $\mc{E}$ is for any model $\mc{M}$.
 \end{definition}
 We can define similar spaces $X_{d,\mc{M}}(F)$ and $X_d(F)$ where we want the extra property $D(Ff) = FD(f)$ for any function $f$. We can further define spaces $X^\ast$ where in addition to having that nice property on $K$ we have that $D(\fullx xdN) \neq 0$. This will help characterize all problems which have a useful orbit summation for example. And in the case where such summation does not exist we may look towards other useful operators that let us perform an analysis on the D-finiteness of $Q$.
 
+%============================================
 
 Here
 \begin{align}

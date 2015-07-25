@@ -1,24 +1,28 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
-\chapter{Random Walk Models With General Constraints}
+
+%================================
+\chapter{Generalizations}
 \label{ch:General}
+%================================
+
 %================================
 \section{Introduction}
 %================================
-We will push the operator notation further to see what kinds of random walk models we can handle. Some of the models have more general step sets while others are set in more complicated regions. For example, Definition 1.1 of \cite{mishna2009classifying} has a functional equation for the non-interacting random walks on the quarter plane, which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly, \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps. We start with the following definition for a random walk model in $\ze^d$. Recall the definition from \autoref{ch:Introduction}.
-\begin{definition}(MOVE) Let $\mc{D}_0$ and $\mc{D}$ be regions in $\ze^d$, with $\mc{D}_0 \subseteq \mc D$, and let $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a random walk model with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location within $\mc D$ later on.
+We will push the operator notation further to see what kinds of lattice walk models we can handle. Some of the models have more general step sets while others are set in more complicated regions. For example, Definition 1.1 of \cite{mishna2009classifying} has a functional equation for the non-interacting lattice walks on the quarter plane, which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly, \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps. We start with the following definition for a lattice walk model in $\ze^d$. Recall the definition from \autoref{ch:Introduction}.
+\begin{definition}(MOVE) Let $\mc{D}_0$ and $\mc{D}$ be regions in $\ze^d$, with $\mc{D}_0 \subseteq \mc D$, and let $\mc S$ be a set of $d$-tuples in $\ze^d$. A triple $\mc{M} = (\mc{S}, \mc{D},\mc{D}_0)$ is a lattice walk model with steps $\mc{S}$, living in the region $\mc{D}$ and interacting with region $\mc{D}_0$. We may impose a starting location within $\mc D$ later on.
 \end{definition}
-In other words, given a starting location in $\mc D$ we can evolve random walks in the region $\mc D$ with steps from $\mc{S}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$, and we wish to count the interactions of the random walks with points in this region. The interactions may be further specified later on.
+In other words, given a starting location in $\mc D$ we can evolve lattice walks in the region $\mc D$ with steps from $\mc{S}$. We also have some special locations $\mc{D}_0$ within $\mc{D}$, and we wish to count the interactions of the lattice walks with points in this region. The interactions may be further specified later on.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.5]{image1}
+    \includegraphics[scale = 0.5]{placeholder}
     \caption{General regions in $\ze^2$.}
 \end{figure}
 
-For example, we may consider a semi-infinite strip on the plane as in \cite{brak2005directed}, \cite{wong2014confining} and \cite{owczarek2012enumeration}. In \cite{niederhausen2005note} the author considers random walks in an octant with interactions with the diagonal.
+For example, we may consider a semi-infinite strip on the plane as in \cite{brak2005directed}, \cite{wong2014confining} and \cite{owczarek2012enumeration}. In \cite{niederhausen2005note} the author considers lattice walks in an octant with interactions with the diagonal.
 
-\begin{definition} Let $\mc{M}$ be a random walk model and $Q$ its associated generating function counting random walks' lengths with $t$, ending locations with $\row xd$, and interactions with $\mc{D}_0$ with some multi-index variable $a$. We write
+\begin{definition} Let $\mc{M}$ be a lattice walk model and $Q$ its associated generating function counting lattice walks' lengths with $t$, ending locations with $\row xd$, and interactions with $\mc{D}_0$ with some multi-index variable $a$. We write
 \begin{align}
 	Q = Q(\row xd,a;t) = \sum_{k=0}^{\infty} q_k(\row xd, a)t^k\,,
 \end{align}
@@ -35,31 +39,62 @@ This is to avoid problems in expanding $F$ in Laurent series in some of the $x$ 
 \end{definition}
 
 This operator notation allows us to write down functional equations for $Q$ really quickly.
-\begin{theorem} Let $\mc{M}$ be a random walk model and $Q$ its associated generating function with an initial term $q_0 = q$. Then $Q$ satisfies the following functional equations
+\begin{theorem} Let $\mc{M}$ be a lattice walk model and $Q$ its associated generating function with an initial term $q_0 = q$. Then $Q$ satisfies the following functional equations
 \begin{align}
 	(1-tLES)Q &= q\\
 	(L^{\um 1}-tES)Q &= L^{\um 1}(q) = \alpha
 \end{align}
 \end{theorem}
-\begin{proof} The second functional equation is obtained by applying $L^{\um 1}$ on the first one, so it only remains to show that the first functional equation holds. We do this via iteration. We start with $Q$ and multiply it with $tS$. This gives $tSQ$ or an enumeration of all walks extended by a single step. Here the power of $t$ is raised by one to keep track of this extension. Then we apply $E$ to this result to eliminate all random walks that venture outside of the region $\mc{D}$. Finally, we mark those walks that have arrived at locations in $\mc{D}_0$ by applying $L$ to $E(tSQ)$. The resulting expression is almost $Q$, but one term is missing - namely, $q_0 = q$. That is, we have transformed $Q$ to itself in a nontrivial way and we have the equation
+\begin{proof} The second functional equation is obtained by applying $L^{\um 1}$ on the first one, so it only remains to show that the first functional equation holds. We do this via iteration. We start with $Q$ and multiply it with $tS$. This gives $tSQ$ or an enumeration of all walks extended by a single step. Here the power of $t$ is raised by one to keep track of this extension. Then we apply $E$ to this result to eliminate all lattice walks that venture outside of the region $\mc{D}$. Finally, we mark those walks that have arrived at locations in $\mc{D}_0$ by applying $L$ to $E(tSQ)$. The resulting expression is almost $Q$, but one term is missing - namely, $q_0 = q$. That is, we have transformed $Q$ to itself in a nontrivial way and we have the equation
 \begin{align}
 	Q = q + LE(tSQ) = q + tLE(SQ)\,,
 \end{align}
 and to complete the proof, we rewrite the equation to the form at the start of the theorem.
 \end{proof}
 
-\begin{example} Also, we can consider a different approach where, instead of removing walks that venture outside of $\mc{D}$, we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc{M}$ and we want to frame the analysis in this new way. We have a new random walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc{D}_0 \cup \mc{D}^c$, where we mark monomials in $\mc{D}^c$ with $z$ and those in $\mc{D}_0$ in the same way as in model $\mc{M}$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
+\begin{example} Also, we can consider a different approach where, instead of removing walks that venture outside of $\mc{D}$, we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc{M}$ and we want to frame the analysis in this new way. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc{D}_0 \cup \mc{D}^c$, where we mark monomials in $\mc{D}^c$ with $z$ and those in $\mc{D}_0$ in the same way as in model $\mc{M}$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
 \begin{align}
 (1-t\widetilde{L} S)\widetilde Q &= q\,,\\
 (\widetilde{L}^{\um 1}-tS) Q &= \widetilde{\alpha}\,.
 \end{align}
-It is not clear how one would proceed and if this would be a better way to handle the problem. The upside is that the operators are invertible, but the downside is that we now have more extracted terms in the functional equation, since the random walks can now go anywhere.
+It is not clear how one would proceed and if this would be a better way to handle the problem. The upside is that the operators are invertible, but the downside is that we now have more extracted terms in the functional equation, since the lattice walks can now go anywhere.
 \end{example}
 
 Next, we can talk about some of the abstract properties of the operators $L$ and $E$. The operator $E$ has the eigenvalues 1 or 0 for monomials $x_{[d]}^P$ where $P \in \mc{D}$ or $P \in \mc{D}^c$ respectively. The latter characterizes the monomials contained in $\ker E$. Similarly, $L$ has eigenvalues 1 for when $P \in \mc{D}_0^c$, and the marking monomial $a$ for when $P\in \mc{D}_0$. Here $a$ varies from point to point. Also, $L^{\um 1}$ has the reciprocal eigenvalues of $L$.
 
 The task for the rest of the chapter is to come up with representations for the operators involved. In general, this should not be an easy task because if we could express arbitrary operators $L$ and $E$ with a small number of coefficient extractions, we would also be able to use this scheme to compress data without loss, and this is impossible in general.
 
+%================================
+\section{Reformulations of Problems}
+%================================
+
+\subsection{Using marking operators instead of extraction operators}
+An initially promising idea is to use a marking operator instead of an extraction operator with the goal of removing those marked walks at a later stage. The added benefit is that we would be working with invertible operators throughout the majority of the analysis. The downside is that now the walks will not be constrained and $Q$ will no longer be a power series in the $x$ variables. We may get further problems. Instead of $E = 1- \ext{\ol x}$ we take $\tilde E = 1 + (a_{\um 1}-1)\ext{x}$ with the idea that if we set $a_{\um 1} = 0$ we will obtain $E$. To this end the functional equation is
+\begin{align}
+	(1-tL\tilde E S)\tilde Q = 1
+\end{align}
+which after inversion turns into
+\begin{align}
+	(\tilde E^{\um 1} L^{\um 1} -tS) \tilde Q = \tilde E^{\um 1} L^{\um 1} 1 = \alpha
+\end{align}
+One benefit of this is that we do not have a mixing between the $E$, $L$ operators and $S$. The downside is we have more $Q$ extractions on their own. We can write this in kernel form as
+\begin{align}
+	K \tilde Q = \alpha + (1 - L^{\um 1}\tilde E^{\um 1}) \tilde Q
+\end{align}
+where the operator $1- L^{\um 1}\tilde E^{\um 1}$ is composed entirely of coefficient extractions.
+\subsection{Considering a symmetrical super-problem}
+An extension of the previous idea is to symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines where one coordinate is $-1$ we can also mark walks on lines with one coordinate $+1$. This leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
+\begin{align}
+	(1- tLS)\tilde Q = (1- t L_{\um 1}L_0L_1 S)\tilde Q = 1
+\end{align}
+We can skip the marking of the axes with $L_0$ if we do not wish to investigate wall interactions. In general, we may mark more locations in space so we can combine all of these operators into one called $L$. Then we have
+\begin{align}
+	(1- tLS)\tilde Q = 1
+\end{align}
+or in kernel forms
+\begin{align}
+	K\tilde Q = L^{\um 1}(1) + (1- L^{\um 1})\tilde Q
+\end{align}
 
 %================================
 \section{Marking Operators}
@@ -69,22 +104,22 @@ The example in the previous section shows that we can talk about marking operato
 	\Gamma_P = 1 + \sum_{p\in P}(a_p-1) \ext{x_{[d]}^p}\,.
 \end{align}
 The form $a_p-1$ follows from the fact that we have the original term and we need to remove it before marking with $a_p$. In the case where we mark points for deletion, $P = {\mc{D}}^c$ and $a_p = a$. In the models we have investigated so far we saw that we do not really need the whole operator but just some terms near the boundaries.
-\begin{example} If we consider random walks with small steps on the half-line in one dimension, we have the operator
+\begin{example} If we consider lattice walks with small steps on the half-line in one dimension, we have the operator
 \begin{align}
 	E = 1 - \sum_{n=1}^\infty \ext{\ol x_1^n}\,,
 \end{align}
 but since we only have small steps, there are no walks that go past $\ol x_1$ in the negative direction. Therefore, we can use the operator $E' = 1- \ext{\ol x_1}$ to the same effect instead. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We say they are model-equivalent.
 \end{example}
-To make things easier, we may think of the random walk models as living completely within the sumset $\mc{S}+\mc{D}$ of points that are combinations of points in $\mc{D}$ and steps $\mc{S}$. This is how far walks from the model can reach from within $\mc{D}$ by taking a single step.
+To make things easier, we may think of the lattice walk models as living completely within the sumset $\mc{S}+\mc{D}$ of points that are combinations of points in $\mc{D}$ and steps $\mc{S}$. This is how far walks from the model can reach from within $\mc{D}$ by taking a single step.
 \begin{definition} Given sets $A$ and $B$, we let their sumset be
 \begin{align}
 	A+ B = \{a+b\,|\,a\in A,\, b\in B\}\,.
 \end{align}
 \end{definition}
-\begin{definition} Given a random walk model $\mc{M}$ with domain $\mc{D}$ and step set $\mc{S}$, define the reach of model $\mc{M}$ to be the sumset $\mc{D}+\mc{S}$.
+\begin{definition} Given a lattice walk model $\mc{M}$ with domain $\mc{D}$ and step set $\mc{S}$, define the reach of model $\mc{M}$ to be the sumset $\mc{D}+\mc{S}$.
 \end{definition}
 With this in mind, we can define a notion of equivalence for operators.
-\begin{definition} Let $\mc{M}$ be a random walk model in $\ze^d$ and let $\Gamma$ and $\Gamma'$ be two operators acting on $\ze^d$. Then $\Gamma \equiv_{\mc{M}} \Gamma'$ if and only if $\Gamma$ and $\Gamma'$ act identically on monomials from the reach of $\mc{M}$. That is, we call these operators model-equivalent if and only if $\Gamma  x^P = \Gamma' x^P$ for all $P\in \mc{D}+\mc{S}$.
+\begin{definition} Let $\mc{M}$ be a lattice walk model in $\ze^d$ and let $\Gamma$ and $\Gamma'$ be two operators acting on $\ze^d$. Then $\Gamma \equiv_{\mc{M}} \Gamma'$ if and only if $\Gamma$ and $\Gamma'$ act identically on monomials from the reach of $\mc{M}$. That is, we call these operators model-equivalent if and only if $\Gamma  x^P = \Gamma' x^P$ for all $P\in \mc{D}+\mc{S}$.
 \end{definition}
 In the preceding example $E\equiv E'$ since they act the same way on monomials from the reach of $\mc{M}$, that is, monomials $x_1^n$ for $n\ge \um 1$. Similarly, in the two-dimensional problem we have an equivalence between the operator $E$ and the operator $E' = (1-\ext{\ol x_1})(1-\ext{\ol x_2})$.
 \begin{align}
@@ -105,7 +140,7 @@ For most purposes we will not distinguish between $\Gamma$ and $\Gamma'$. A natu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.5]{image5}
+    \includegraphics[scale = 0.5]{placeholder}
     \caption{Finite region enclosed in box $B$.}
     \label{fig:finitebox}
 \end{figure}
@@ -123,7 +158,7 @@ which is equal to $E_k = 1$ when $n = 0$. Applying $\row Ed$ sequentially ensure
 
 Also, we may handle semi-infinite regions if we are only marking finitely many points $\mc D_0$. The analysis is the same as above except that now one or more of $a_k, b_k$ may be infinite, and in this case we actually lose parts of $\Gamma_{B^c}$ and the operator is still finite.
 
-\begin{definition} A random walk model with finitely many steps is finite if its extraction and marking operators $E$ and $L$ are finite, and its starting condition $q$ has a finite degree. Otherwise, we say the model is infinite.
+\begin{definition} A lattice walk model with finitely many steps is finite if its extraction and marking operators $E$ and $L$ are finite, and its starting condition $q$ has a finite degree. Otherwise, we say the model is infinite.
 \end{definition}
 \begin{example} All the models so far has been finite, but not all models are finite. Consider a one-dimensional model on the whole line where we mark points $x_1^i$ with monomials $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)\ext{x_1^i}$; otherwise, it would not act the same way on monomials in the model's reach $\ze$. Therefore, $L$ is not equivalent to a finite operator.
 \end{example}
@@ -160,7 +195,7 @@ We can apply the inverse $L^{\um 1}$ to those equations too, in particular on th
 \end{split}	
 \end{align}
 
-The second form of the functional equation involving $L^{\um 1}$ should have less terms than the first one by virtue of separating $L$ and $E$ from one another. Using extraction operators, we can constrain random walks to lie within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes, of course). Furthermore, using marking operators, we can easily track the behavior of random walks as they cross or interact with boundaries or interact with regions within. For example, we may consider walks interacting with the boundary of a box within some region in space. 
+The second form of the functional equation involving $L^{\um 1}$ should have less terms than the first one by virtue of separating $L$ and $E$ from one another. Using extraction operators, we can constrain lattice walks to lie within a finite region, semi-infinite strip, a semi-infinite sector or any other discrete shape (with diminishing returns for more complicated shapes, of course). Furthermore, using marking operators, we can easily track the behavior of lattice walks as they cross or interact with boundaries or interact with regions within. For example, we may consider walks interacting with the boundary of a box within some region in space. 
 
 %================================
 \section{Examples of Regions}
@@ -172,7 +207,7 @@ ZZPICTUREZZ
 
 \begin{example}[Self-avoiding walks]
 
-We can handle discrete self-avoiding random walks with this theory. If we pick a marking operator $\Gamma$ that marks every location on the plane, this will allow us to track the random walks' history. All we need to do in the end is remove walks that have stepped at some location more than once. However, we will investigate this problem in a bit more detail as it serves as an example of the theory. To use the generating function iteration properly we need a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $(2n+1)^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
+We can handle discrete self-avoiding lattice walks with this theory. If we pick a marking operator $\Gamma$ that marks every location on the plane, this will allow us to track the lattice walks' history. All we need to do in the end is remove walks that have stepped at some location more than once. However, we will investigate this problem in a bit more detail as it serves as an example of the theory. To use the generating function iteration properly we need a sort of limiting argument. For the first $n$ steps we "only" require an operator covering the square region of $(2n+1)^2$ lattice points. The overall operator is defined through a limiting process of applying the full operator (or truncated version) on a finite Laurent polynomial. Let
 \begin{align}
 \Gamma_{i,j} = 1+b_{i,j}\ext{x_1^ix_2^j}
 \end{align}
@@ -204,7 +239,7 @@ and extended by linearity. The limiting process is
 \begin{align}
 	Q = a_{0,0} + t \Gamma SQ
 \end{align}
-We finally have the functional equation for random walks with full history
+We finally have the functional equation for lattice walks with full history
 \begin{align}
 	(1 -t\Gamma S)Q = a_{0,0}.
 \end{align}
@@ -243,7 +278,7 @@ for arbitrary number of dimensions, with regional constraints and marking of spe
 \section{Further Research Directions}
 %==============================================================================
 
-So far we have explored using operators to simplify the derivation of functional equations pertaining to random walk models on $\ze^d$, and to simplify the first steps in solutions to these problems. It would be great to know if we can further extend the work into a territory like Sturm-Liouville theory, where we may investigate the spectra of operators and find alternative solutions to the functional equations via eigenfunction expansions. For this to work, we need a suitable inner product that will allow us to answer questions like are the operators self-adjoint. Unfortunately, we have not found such suitable inner products apart from those on symmetric functions. While they seem promising, we have not been able to go far enough with them. In this chapter we will provide the start of such analysis which may be continued in future research.
+So far we have explored using operators to simplify the derivation of functional equations pertaining to lattice walk models on $\ze^d$, and to simplify the first steps in solutions to these problems. It would be great to know if we can further extend the work into a territory like Sturm-Liouville theory, where we may investigate the spectra of operators and find alternative solutions to the functional equations via eigenfunction expansions. For this to work, we need a suitable inner product that will allow us to answer questions like are the operators self-adjoint. Unfortunately, we have not found such suitable inner products apart from those on symmetric functions. While they seem promising, we have not been able to go far enough with them. In this chapter we will provide the start of such analysis which may be continued in future research.
 
 The operators we have seen so far are marking operators, like $L$ and $E$, in combination of multiplication by another function, like $\Gamma S$, or a combination of operators, like $L^{\um 1} - tES$. In this order, we will find out their properties - eigenvalues, eigenvectors, kernels and invertibility.
 
@@ -324,7 +359,7 @@ We call an operator inhomogeneous if it consists of a homogeneous operator $\Gam
  \begin{align}
 	\Gamma S(u) = \Gamma(Su)\quad\text{or}\quad S\,\Gamma u = S\cdot \Gamma u\,.
  \end{align}
-This kind of operator is important because it can be found in the functional equations for random walk models. To find their eigenpairs, we first show that the definitions are mostly equivalent.
+This kind of operator is important because it can be found in the functional equations for lattice walk models. To find their eigenpairs, we first show that the definitions are mostly equivalent.
 \begin{prop} The two operators $\Gamma S$ and $S\, \Gamma$ have the same eigenvalues with eigenfunctions differing by a multiple of $S$. That is, $(\lambda,u)$ is an eigenpair for $\Gamma S$ if and only if $(\lambda, Su)$ is an eigenpair for $S\,\Gamma$. In particular, if $\lambda = 0$, we have
 \begin{align}
 	\ker(\Gamma S) = \ol S \ker(\Gamma)\,.
@@ -359,7 +394,7 @@ therefore, we have an eigenfunction for each $\lambda \neq 0$. Computing $u(x)$ 
 \end{example}
 The situation becomes more complicated for more complicated functions $S$.
 %=======================================
-\subsection{Random Walks Operator}
+\subsection{Lattice Walks Operator}
 %=======================================
 In this section we explore the operator $\mc{L} = 1 - t\Gamma S$ for a step Laurent polynomial $S$ and some marking operator $\Gamma$. Let $(u, \lambda)$ be an eigenpair for $\mc{L}$. Then we calculate
 \begin{align}\begin{split}
@@ -393,6 +428,137 @@ where $\alpha(t)$ and $\beta(t)$ are algebraic functions of $t$ and $a$ since $\
 
 If we are to have a theory similar to Sturm-Liouville theory, we still need to find a suitable inner product on multivariate Laurent series that will allow us to write solutions for $Q$ in terms of those eigenfunctions with eigenvalue 1.
 
+\section{BLah}
+We can go further. We have the following theorem.
+
+\begin{theorem} The full generating function $Q$ for a $d$-dimensional, finite, non-interacting lattice walk model, satisfies a finite-order inhomogeneous PDE in the variables $\row xd$.
+\end{theorem}
+\begin{proof} We will use the kernel form for the functional equation
+\begin{align}
+	KQ + t(1- \Gamma)SQ = q.
+\end{align}
+Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and it is finite, since $L$ and $E$ are finite. We will prove the theorem by finding the differential equation explicitly. Since the model is finite, we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ we see on either side. Once we multiply by $x_k^{A_k}$, we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$. That is,
+\begin{align}
+	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
+\end{align}
+and we attain a polynomial equation in the variables $\row xd$. We take the derivative operator
+\begin{align}
+	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\cdots\del_d^{A_d+B_d+1}
+\end{align}
+and apply it to both sides of the equation to retrieve
+\begin{align}
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0\,,
+\end{align}
+which follows since we are applying a larger number of derivatives than the degrees of the monomials and this clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of homogeneity, if the degrees of $q$ are large. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the left-hand side of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before, but this time it may have lower $A$ and $B$ values, since we are not taking $q$ into account. We have
+\begin{align}
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)\,.
+\end{align}
+\end{proof}
+\begin{example} For example, let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the left-hand side and right-hand side respectively. We see that $A_k = 3$ and $B_k = 6$. Then we are taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In the second scheme we take $A_k = 3$ still, but $B_k = 4$ and we are taking the 8-th derivative with respect to $x_k$ this time. 
+\end{example}
+
+Even in the quarter-plane, we have models with non D-finite generating function (in the $t$ variable), but it turns out that every model so far considered is D-finite in the variables $\row xd$. In order to solve the differential equation we need to investigate the kernel of the differential operator.
+\begin{corollary}
+The generating function $Q$ of a finite lattice walk model is given by
+\begin{align}
+	x_{[d]}^{A}KQ(\row xd;t) = \sum_{i=1}^d \sum_{j=0}^{B_i}Aij(x_1,\ldots,x_{i-1},x_i,\ldots, x_d,t) x_i^j\,,
+\end{align}
+where $A_{ij}$ are functions that need to be determined.
+\end{corollary}
+This kind of solution would have also appeared if we went through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof, we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
+
+%=======================================
+\subsection{Walks With Unconstrained Steps}
+%=======================================
+We may go through the process again, but this time we have
+\begin{align}
+	Q = \frac{W}{x_{[d]}^N K}
+\end{align}
+where $N_k$ is the maximum negative size of steps in the set $\mc{S}$ in the direction $x_k$ or in other words, the maximum $N_k$ for which $S_k^{N_k}$ is nonzero. Then the operators that keep the walks in the quarter plane are
+\begin{align}
+	E_k = 1 - \sum_{i=1}^{N_k} \ext{\ol x_k^i}\,.
+\end{align}
+Their conjugates are
+\begin{align}
+	E_k' = x_k^{N_k} E_k \ol x_k^{N_k} = 1 - \sum_{i=0}^{N_k-1}\ext{x_k^i} = 1 -\mc{E}_k\,,
+\end{align}
+so in the kernel equation we have
+\begin{align}
+	x_{[d]}^N = x_{[d]}^N E \ol x_{[d]}^N W = E' W = W +  \sum_{\emptyset \neq I\subseteq [d]} (-1)^{|I|} \mc{E}_I(W)\,.
+\end{align}
+Here we have various powers $x_k^i$ along with terms with $x_k = 0$ for $k \in I$. Hence, if we seek an operator $D$ that does the same job as the orbit summation operator, we need $D$ to annihilate all the terms with $x_k$'s missing in $W$ on the right-hand side. So then we have
+\begin{align}
+	D(x_{[d]}KQ) = D(W) = D\left(x_{[d]}^N-\sum_{\emptyset \neq I\subseteq [d]} (-1)^{|I|} \mc{E}_k(W)\right) = D(x_{[d]}^N)\,.
+\end{align}
+In other words we want $D$ to behave (in some sense) similarly to the derivative
+\begin{align}
+\del_{[d]}^N = \del_1^{N_1}\cdots \del_d^{N_d}\,.
+\end{align}
+This suggests some definitions.
+\begin{definition}For a sequence $N = (\row Nd)$ of positive integers, we say that a model $\mc{M}$ is of type $N$ if the longest step in $\mc{S}$ in the negative $k$-th direction has length $N_k$ in that coordinate. In particular, we may say that a model is of type $n$ if $N_k = n$ for all $k$.
+\end{definition}
+For example, the model for full lattice walks with small steps is of type 1.
+\begin{definition}For sequences $N = (\row Nd)$ and $M = (\row Md)$ of positive integers, we say that a model $\mc{M}$ is of type $(N,M)$ if it is of type $N$ and the longest step in $\mc{S}$ in the positive $k$-th direction has length $N_k$ in that coordinate. In particular, we may say that a model is of type $(n,m)$ if it is of type $n$, and $M_k = m$ for all $k$.
+\end{definition}
+For example, full lattice walks with small steps are of type $1,1$. The notation is still a little awful. Anyway, it allows us to write things in the following form
+\begin{theorem} A lattice walk model of type $N$ satisfies the functional equation
+\begin{align}
+	E'W = \fullx xdN
+\end{align}
+where $E' = \fullx xdN E \fullox xdN$ and $W  = \fullx xdN KQ$.
+\end{theorem}
+
+\begin{corollary} For a lattice walk model of type $N$, the generating function $Q$ for the non-interacting case satisfies the PDE
+\begin{align}
+	\fullx{\del}dN\left(\fullx xdN KQ\right) = 1
+\end{align}
+and is therefore, D-finite in the $x$ variables.
+\end{corollary}
+Here $\fullx{\del}dN$ is an example of an operator $D$ that eliminates all the unnecessary terms but does not eliminate $\mon xd$. It is possible to discuss weighted operators in this setting too, but the situation becomes more complicated. However, we may investigate type $(N,M)$ problems by finding a suitable model whose orbital operator is nice enough. This will show that all type $(N,M)$ satisfy an orbital equation with that particular operator, not just a PDE. 
+
+\begin{example} Consider the lattice walk model of type $(N,N)$ with $S = \sum_{k=1}^d \ol x_k^{n_k} + x_k^{n_k}$. Its group $G$ is generated by the elements of groups $G_k$ with $2n_k$ elements each - each of the elements $g_{k,j,l} = \omega_{n_k}^jx_k^l$ where $\omega_{n_k} = \exp(2\pi i/n_k)$ and $l\in\{-1,1\}$. These elements commute and allow us to find an orbital operator that annihilates all terms on the left-hand side except  $\fullx xdN KQ$ and also spares the $\fullx xdN$ term on the right-hand side.
+\end{example}
+
+
+
+%=======================================
+\section{Interaction with $\del_t$}
+%=======================================
+Here we'll investigate $\del_t$ interacts with $\mc{L}$.
+\begin{align}
+	\del_t \mc{L} &= \del_t - \del_t(t\Gamma S) = \del_t - \Gamma S- t\Gamma S\del_t = \mc{L}\del_t - \Gamma S\,,\\
+	\del_t^2 \mc{L} &= \mc{L}\del_t^2 - 2\del_t \Gamma S\,,\\
+	\del_t^n \mc{L} &=\mc{L} \del_t^n - n\del_t^{n-1}\Gamma S
+\end{align}
+for integer $n$. Another way to write these is with bracket notation
+\begin{align}
+	[\mc{L},\del_t^n] = \mc{L}\del_t^n-\del_t^n\mc{L} = n\del_t^{n-1}\Gamma S\,.
+\end{align}
+
+%=======================================
+\section{Interaction with $\del_i$}
+%=======================================
+Let's take the operator $\Gamma_n(a) = 1 + b x^n[x^n]$ again. Let $\del_k = \del/\del_k$ and in this case just $\del$. We have
+\begin{align}
+	\del \Gamma_n(a) = \del + b\del(x^n[x^n]) = \del + bnx^{n-1}[x^n]\,.
+\end{align}
+Now if $n\ge 0$ we have
+\begin{align}
+	\del^{n+1}\Gamma_n(a)  = \del^{n+1} + b\del^{n+1}(x^n)[x^n] = \del^{n+1}\,.
+\end{align}
+If $n\leq 0$ taking derivatives will yield ever greater powers of $\ol{x}$ so we want to pre-multiply by a power of $x$ first.
+\begin{align}
+	\del x^{-n} \Gamma_{n}(a) = \del x^{-n} + b\del [x^n] = \del x^{-n} = -nx^{-n-1} + x^{-n}\del\,.
+\end{align}
+If we have more terms in an operator then we need to multiply by a power of $x$ to clear out any negative powers of $x$. Then we take the lowest order derivative in order to clear out all the extraction terms. Suppose that
+\begin{align}
+	\Gamma = 1 + \sum_{i=0}^{m} a_i \ext{x^i} - \sum_{i=1}^n b_i\ext{\ol{x}^i}
+\end{align}
+where $m$ and $n$ are non-negative. We need to pre-multiply by $x^n$ to clear out all the negative powers of $x$. Then we have
+\begin{align}
+	x^n\Gamma = x^n + \sum_{i=0}^{m} a_i \ext{x^{i+n}} - \sum_{i=1}^n b_i\ext{x^{n-i}}\,.
+\end{align}
+This operator is cleared by $\del^{m+n+1}$.
 
 
 \endinput
