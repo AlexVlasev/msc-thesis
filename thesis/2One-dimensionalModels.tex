@@ -39,8 +39,8 @@ In other words, $Q_{k+1} = \Gamma (SQ_k)$ for all $k\ge 0$. We may sum both side
 \end{align}
 We are working with formal series, after all, and we are looking for the easiest approach right now. It will be safe to assume that $\Gamma$ does not interact with $t$ and that we may factor $\Gamma$ outside of the summation. After all, we are looking for an operator that will be able to work with the whole generating function. With these assumptions in hand, we may manipulate the equation as follows.
 \begin{align}
-Q - Q_0 &= t\Gamma  S\sum_{k=0}^\infty Q_kt^k\\
-	Q &= 1 + t\Gamma (SQ)\,.
+	Q - Q_0 &= t\Gamma  S\sum_{k=0}^\infty Q_kt^k\\
+		Q &= 1 + t\Gamma (SQ)\,.
 \end{align}
 We may rewrite the functional equation as
 \begin{align}
@@ -74,10 +74,10 @@ Finally, to find $\Gamma$ it is enough to multiply out the operators $L$ and $E$
 We would have obtained the same result if expaned the product $EL$ instead. The last term vanished  because once we have made the first extraction using $[x^0]$, that term no longer contains a variable $x$, and the $[\ol x]$ extraction picks out nothing. Here is an example that illustrates how the operators work in an actual problem.
 \begin{example}Suppose that $S = x + \ol x$. Starting with $Q_0 = 1$ we have
 \begin{align}
-Q_1 = LES(1) &= (1+b[x^0]-\ext{\ol x})(x+\ol x) = x+\ol x-\ol x= x\\
-Q_2 = LES(Q_1) &=  (1+b[x^0]-\ext{\ol x})(x^2+1) = x^2 + 1 + b = a + x^2\\
-Q_3 = LES(Q_2) &=  (1+b[x^0]-\ext{\ol x})(a\ol x+ax+x+x^3) (?) \\
-&= a\ol x+ax+x+x^3 -a\ol x= (1+a)x+x^3\,.
+	Q_1 = LES(1) &= (1+b[x^0]-\ext{\ol x})(x+\ol x) = x+\ol x-\ol x= x\\
+	Q_2 = LES(Q_1) &=  (1+b[x^0]-\ext{\ol x})(x^2+1) = x^2 + 1 + b = a + x^2\\
+	Q_3 = LES(Q_2) &=  (1+b[x^0]-\ext{\ol x})(a\ol x+ax+x+x^3) (?) \\
+	&= a\ol x+ax+x+x^3 -a\ol x= (1+a)x+x^3\,.
 \end{align}
 Therefore,
 \begin{align}
@@ -192,10 +192,12 @@ and
 \end{split}
 \end{align}
 Expanding this yields
-\begin{align}\begin{split}
+\begin{align}
+\begin{split}
 	Q_k - t(S_{\um 1}Q_{k+1}+S_0Q_k+S_1 Q_{k-1}) &= 0\\
 	 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1}) &= 0\,.
-\end{split}\end{align}
+\end{split}
+\end{align}
 
 \begin{prop} Let $S = S_{\um 1}\ol x+S_0 + S_1 x$ be the Laurent step polynomial for a one-dimensional lattice walk model. Let $Q_k = [x^k]Q$ be the generating functions for the walks ending at coordinate $k$. These functions satisfy the equations
 \begin{align}
@@ -260,7 +262,7 @@ In this case we will apply the Obstinate Kernel method, as is done in the two-di
 \end{align}
 The equation $1- tS = tx^2 -(1-\delta t)x + t = 0$ is quadratic with two roots that are functions of $t$. We have to pick the one that has no singularity at $t = 0$. The roots are
 \begin{align}
-\sigma = \frac{1-\delta t - \sqrt{(1-\delta t)^2-4t^2}}{2t} \quad\text{and}\quad \sigma^\ast = \frac{1-\delta t + \sqrt{(1-\delta t)^2-4t^2}}{2t}\,,
+	\sigma = \frac{1-\delta t - \sqrt{(1-\delta t)^2-4t^2}}{2t} \quad\text{and}\quad \sigma^\ast = \frac{1-\delta t + \sqrt{(1-\delta t)^2-4t^2}}{2t}\,,
 \end{align}
 and they multiply to 1, so $\ol \sigma = \sigma^\ast$. 
 

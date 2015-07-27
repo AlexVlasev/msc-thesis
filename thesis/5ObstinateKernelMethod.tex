@@ -302,12 +302,14 @@ To eliminate the $X_2$ terms we take $A_{21}B_{212}$ times the first equation an
 	A_{21}B_{212}AB_2 X - A_2 BA_{212} B_{21} X_{212} = \beta(A_{21}B_{212}(B-B_2)+A_2 B(B_{212}-B_{21}))
 \end{align}
 We could recover the same result by applying the following operator $D$ to both sides of the master functional equation.
-\begin{align}\begin{split}
+\begin{align}
+\begin{split}
 	D &=A_{21}B_{212} D_2[B_2] - A_2 B g_{212}D_2[B_2]\\
 	   &= (A_{21}B_{212} - A_2 B g_{212})D_2[B_2]\\
 	   &= (A_{21}B_{212} - g_{212}A_{21}B_{212})D_2[B_2]\\
 	   &= D_{212}[A_{21}B_{212}]D_2[B_2]\,.
-\end{split}\end{align}
+\end{split}
+\end{align}
 Starting from the master functional equation, we have The right-hand side
 \begin{align}
 	D(\beta) = \beta D_{212}[A_{21}B_{212}](B_2-B)
@@ -498,7 +500,7 @@ The next case in terms of difficulty is when we have diagonal steps. This model 
 \end{align}
 The functional equation becomes
 \begin{align}
-   K_2^\ast Q_1 - K_2 Q_1^\ast -\frac{c_2(\ol x_2-x_2)}{\ol x_2+x_2}Q_{1,2}+\alpha\frac{\ol x_2-x_2}{(\ol x_2+x_2)K_1}= 0\,.
+	K_2^\ast Q_1 - K_2 Q_1^\ast -\frac{c_2(\ol x_2-x_2)}{\ol x_2+x_2}Q_{1,2}+\alpha\frac{\ol x_2-x_2}{(\ol x_2+x_2)K_1}= 0\,.
 \end{align}
 Surprisingly enough, the only term depending on $\sigma_1$, that remains in this expression, is $K_1$, so this will be of no consequence to the rest of the analysis. We just need to take care of the remaining terms. We will do this by multiplying the equation by $\ol x_2+x_2$. We have
 \begin{align}
@@ -513,23 +515,23 @@ There are a couple of relations here
 \end{align}
 The equation becomes
 \begin{align}
-(c_2\ol x_2- \ol a_2x_2)Q_1^0(x_2)+ ( \ol a_2\ol x_2-c_2x_2) Q_1^0(\ol x_2)+(\alpha \ol K_1 - c_2Q_{1,2}^{0,0})(\ol x_2-x_2)= 0
+	(c_2\ol x_2- \ol a_2x_2)Q_1^0(x_2)+ ( \ol a_2\ol x_2-c_2x_2) Q_1^0(\ol x_2)+(\alpha \ol K_1 - c_2Q_{1,2}^{0,0})(\ol x_2-x_2)= 0
 \end{align}
 and it is ready for extraction. Let $\delta_0 =  \ol a_1(\ol x_2-x_2)\ol K_1$. We rewrite the equation as
 \begin{align}\label{zero-order}
-    R^\ast Q_1^0 -R Q_1^{0,\ast} - c_2(\ol x_2-x_2)\Qf{0,0} + \ol a_2\delta_0 = 0\,.
+	R^\ast Q_1^0 -R Q_1^{0,\ast} - c_2(\ol x_2-x_2)\Qf{0,0} + \ol a_2\delta_0 = 0\,.
 \end{align}
 We will use the master equation
 \begin{align}
-(1-tS)Q - (c_1-t\ol x_1S_1^{\um 1}) Q_1^0- (c_2-t\ol x_2S_2^{\um 1}) Q_2^0+ (c_1c_2-t\ol x_1\ol x_2S_{1,2}^{\um 1,\um 1})Q_{1,2}^{0,0}  = \ol a_1\ol a_2
+	(1-tS)Q - (c_1-t\ol x_1S_1^{\um 1}) Q_1^0- (c_2-t\ol x_2S_2^{\um 1}) Q_2^0+ (c_1c_2-t\ol x_1\ol x_2S_{1,2}^{\um 1,\um 1})Q_{1,2}^{0,0}  = \ol a_1\ol a_2
 \end{align}
 to further our work here. For diagonal steps it is
 \begin{align}
- (1-tS)Q - (c_1-tv\ol x_1) Q_1^0- (c_2-t\ol x_2S_2^{\um 1}) Q_2^0+ (c_1c_2-t\ol x_1\ol x_2)Q_{1,2}^{0,0}  = \ol a_1\ol a_2
+	(1-tS)Q - (c_1-tv\ol x_1) Q_1^0- (c_2-t\ol x_2S_2^{\um 1}) Q_2^0+ (c_1c_2-t\ol x_1\ol x_2)Q_{1,2}^{0,0}  = \ol a_1\ol a_2
 \end{align}
 extracting the $[x_1^0]$ coefficient yields
 \begin{align}
-   Q_1^0 =  \ol a_2+c_2\Qf{0,0} + a_1tvQ_1^1\,.
+	Q_1^0 =  \ol a_2+c_2\Qf{0,0} + a_1tvQ_1^1\,.
 \end{align}
 We can extract higher coefficients too. Let $k\geq 1$. Then the $[x_2^k]$ coefficient is
 \begin{align}\begin{split}
@@ -560,11 +562,11 @@ Combining them with equation (\ref{zero-order}) gives
 \end{align}
 So we can write the equation
 \begin{align}
-        R^\ast Q_1^1-R Q_1^{1,\ast}+ \ol a_2\delta_1 = 0
+	R^\ast Q_1^1-R Q_1^{1,\ast}+ \ol a_2\delta_1 = 0
 \end{align}
 where
 \begin{align}
-   \delta_1 = \frac{(\ol x_2-x_2)+\delta_0}{a_1tv}\,.
+	\delta_1 = \frac{(\ol x_2-x_2)+\delta_0}{a_1tv}\,.
 \end{align}
 This equation together with equation (\ref{zero-order}) form the base cases for the following lemma
 \begin{lemma} Let $m$ be an integer greater than zero. Then
@@ -592,20 +594,24 @@ Combining this with equation (\ref{coeff-eqn}) leads to
 \end{align}
 where
 \begin{align}
-  \delta_{m+1} =\frac{\delta_m}{tv}-\delta_{m-1}\,.
+	\delta_{m+1} =\frac{\delta_m}{tv}-\delta_{m-1}\,.
 \end{align}
 This function $\delta_{m+1}$ is also independent from $a_2$ and this completes the proof!
 \end{proof}
 There is an equivalent statement for $Q_2^n$. We can expand $R^\ast$ and $R$ to a form we can use
-\begin{align}\begin{split}
+\begin{align}
+\begin{split}
 	0 &=(c_2\ol x_2- \ol a_2x_2)Q_1^m(x_2) -( c_2x_2- \ol a_2\ol x_2)Q_1^m(\ol x_2) \\
 	&\quad- c_2(\ol x_2-x_2)\Qf{m,0} + \ol a_2\delta_m \,.
-\end{split}\end{align}
+\end{split}
+\end{align}
 We start by extracting the $[x_2^1]$ coefficient
-\begin{align}\begin{split}
+\begin{align}
+\begin{split}
 	& c_2\Qf{m,2}- \ol a_2\Qf{m,0}-c_2\Qf{m,0} +c_2\Qf{m,0}+ [x_2^1] \ol a_2\delta_m = 0\\
 	& c_2\Qf{m,2}- \ol a_2\Qf{m,0}+ [x_2^1] \ol a_2\delta_m = 0\,.
-\end{split}\end{align}
+\end{split}
+\end{align}
 We can also extract the $[x_2^{n+1}]$ coefficient for $n\geq 2$
 \begin{align}
  	c_2 Q_{1,2}^{m,n+2}- \ol a_2Q_{1,2}^{m,n}+[x_2^{n+1}] \ol a_2\delta_m= 0\,.

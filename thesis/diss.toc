@@ -41,7 +41,6 @@
 \contentsline {section}{\numberline {4.1}Models Without Interactions}{49}{section.4.1}
 \contentsline {section}{\numberline {4.2}Models with interactions}{57}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Groups of Order Four}{58}{subsection.4.2.1}
-\contentsline {subsubsection}{When is $\qopname \relax m{det}M_4 = 0$?}{59}{subsubsection*.20}
 \contentsline {subsection}{\numberline {4.2.2}Groups of Order Six}{64}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Groups of Order Eight}{67}{subsection.4.2.3}
 \contentsline {chapter}{\numberline {5}The Obstinate Kernel Method}{69}{chapter.5}
@@ -54,20 +53,15 @@
 \contentsline {subsection}{\numberline {5.4.2}Diagonal Cartesian Model -- NE, NW, SE, SW}{83}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}The Full Model}{89}{subsection.5.4.3}
 \contentsline {chapter}{\numberline {6}Generalizations}{93}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction}{93}{section.6.1}
-\contentsline {section}{\numberline {6.2}Reformulations of Problems}{95}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Using marking operators instead of extraction operators}{95}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Considering a symmetrical super-problem}{96}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Marking Operators}{97}{section.6.3}
-\contentsline {section}{\numberline {6.4}Kernel Forms}{100}{section.6.4}
-\contentsline {section}{\numberline {6.5}Examples of Regions}{101}{section.6.5}
-\contentsline {section}{\numberline {6.6}Further Research Directions}{103}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Marking Operators}{104}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Marking Operators With Multiplication}{106}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Lattice Walks Operator}{107}{subsection.6.6.3}
-\contentsline {section}{\numberline {6.7}BLah}{108}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Walks With Unconstrained Steps}{110}{subsection.6.7.1}
-\contentsline {section}{\numberline {6.8}Interaction with $\partial _t$}{112}{section.6.8}
-\contentsline {section}{\numberline {6.9}Interaction with $\partial _i$}{112}{section.6.9}
-\contentsline {chapter}{\numberline {7}Epilogue}{114}{chapter.7}
-\contentsline {chapter}{Bibliography}{115}{chapter*.25}
+\contentsline {section}{\numberline {6.1}Constraint Generalizations}{93}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Marking Operators}{97}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Examples of Regions}{100}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Connections With Other Theories}{105}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Properties of Marking Operators}{105}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Marking Operators With Multiplication}{106}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Lattice Walks Operator}{108}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Coefficient Extraction Equations}{109}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Walks With Unconstrained Steps}{110}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Connection with Fredholm Theory}{113}{subsection.6.3.2}
+\contentsline {chapter}{\numberline {7}Epilogue}{116}{chapter.7}
+\contentsline {chapter}{Bibliography}{117}{chapter*.24}
