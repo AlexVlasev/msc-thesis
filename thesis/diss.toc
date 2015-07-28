@@ -37,17 +37,16 @@
 \contentsline {subsection}{\numberline {3.5.2}Case 2.3 -- Group of Order Two}{45}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}Miscellaneous Case}{46}{subsection.3.5.3}
 \contentsline {subsection}{\numberline {3.5.4}Counting Classes of Models}{46}{subsection.3.5.4}
-\contentsline {chapter}{\numberline {4}The Algebraic Kernel Method}{49}{chapter.4}
+\contentsline {chapter}{\numberline {4}The Algebraic kernel Method}{49}{chapter.4}
 \contentsline {section}{\numberline {4.1}Models Without Interactions}{49}{section.4.1}
 \contentsline {section}{\numberline {4.2}Models with interactions}{57}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Groups of Order Four}{58}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Groups of Order Six}{64}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Groups of Order Eight}{67}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {5}The Obstinate Kernel Method}{69}{chapter.5}
-\contentsline {section}{\numberline {5.1}Group of Order Four}{71}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Some Calculations}{73}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Group of Order Six}{75}{section.5.2}
-\contentsline {section}{\numberline {5.3}Group of Order Eight}{76}{section.5.3}
+\contentsline {chapter}{\numberline {5}The Obstinate kernel Method}{69}{chapter.5}
+\contentsline {section}{\numberline {5.1}Groups of Order Four}{70}{section.5.1}
+\contentsline {section}{\numberline {5.2}Group of Order Six}{73}{section.5.2}
+\contentsline {section}{\numberline {5.3}Group of Order Eight}{75}{section.5.3}
 \contentsline {section}{\numberline {5.4}Highly-symmetric Two-dimensional Models}{79}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Cartesian Model -- N, S, E, W}{80}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Diagonal Cartesian Model -- NE, NW, SE, SW}{83}{subsection.5.4.2}
