@@ -69,7 +69,7 @@ and its initial term is $q_0 = q$.
 since the operators do not interact with $t$.
 \end{proof}
 
-\begin{example} Also, we can consider a different approach where, instead of removing walks that venture outside of $\mc D $, we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc M$ and we want to frame the analysis in this new way. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc D_0  \cup \mc D ^c$, where we mark monomials in $\mc D ^c$ with $z$ and those in $\mc D_0 $ in the same way as in model $\mc M$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
+\begin{example} Also, we can consider a different approach. Instead of removing walks that venture outside of $\mc D $, we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc M$ and we want to frame the analysis in this new way. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc D_0  \cup \mc D ^c$, where we mark monomials in $\mc D ^c$ with $z$ and those in $\mc D_0 $ in the same way as in model $\mc M$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
 \begin{align}
 	(1-t\widetilde{L} S)\widetilde Q &= q\,,\\
 	(\widetilde{L}^{\um 1}-tS) Q &= \widetilde{\alpha}\,.
@@ -77,21 +77,23 @@ since the operators do not interact with $t$.
 It is not clear how one would proceed and if this method will be a better way to handle the problem. The upside is that the operators are invertible, but the downside is that we now have more extracted terms in the functional equation, since the lattice walks can now go anywhere.
 \end{example}
 
-\begin{example} Consider a the lattice walk models in two dimensions from previous chapters. Another way we can look at the quarter plane models is to us the idea from the previous example and also symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines where one coordinate is $-1$, we can also mark walks on lines with one coordinate $+1$. This process leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
+\begin{example} Consider a the lattice walk models in two dimensions from previous chapters. Another way we can look at the quarter plane models is to us the idea from the previous example and also symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines, where one coordinate is $-1$, we can also mark walks on lines with one coordinate $+1$. This process leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
 \begin{align}
 	(1- tLS)\widetilde Q = (1- t L_{\um 1}L_0L_1 S)\widetilde Q = 1\,.
 \end{align}
 We can skip the marking of the axes with $L_0$ if we do not wish to investigate wall interactions. In general, we may mark more locations in space so we can combine all of these operators into one called $L$. Then we have
+\begin{gather}
 \begin{align}
 	(1- tLS)\widetilde Q = 1\,,
 \end{align}
-or in an alternative form,
+\shortintertext{or alternatively,}
 \begin{align}
 	K\widetilde Q = L^{\um 1}(1) + (1- L^{\um 1})\widetilde Q\,.
 \end{align}
+\end{gather}
 \end{example}
 
-Before the end of this section, we will take a moment to talk about some of the abstract properties of the operators $L$ and $E$. The operator $E$ has the eigenvalues 1 or 0 for monomials $x_{[d]}^P$ where $P \in \mc D $ or $P \in \mc D ^c$, respectively. The latter eigenvalue characterizes the monomials contained in $\ker E$. Similarly, $L$ has eigenvalue 1 for when $P \in \mc D_0 ^c$, and the marking monomial $a$ for when $P\in \mc D_0$, where we keep in mind that $a$ is a multi-index variable and it varies from point to point. Also, $L^{\um 1}$ has the reciprocal eigenvalues of $L$.
+Before the end of this section, we will take a moment to talk about some of the abstract properties of the operators $L$ and $E$. The operator $E$ has the eigenvalues 1 or 0 for monomials $x_{[d]}^P$, where $P \in \mc D $ or $P \in \mc D ^c$, respectively. The latter eigenvalue characterizes the monomials contained in $\ker E$. Similarly, $L$ has eigenvalue 1 for when $P \in \mc D_0 ^c$, and the marking monomial $a$ for when $P\in \mc D_0$, where we keep in mind that $a$ is a multi-index variable and it varies from point to point. Also, $L^{\um 1}$ has the reciprocal eigenvalues of $L$.
 
 The task for the rest of the chapter is to find representations for the operators involved. In general, this should will not be an easy task because if we could express arbitrary operators $L$ and $E$ with a small number of coefficient extractions, we would also be able to use this scheme to compress data without loss, and this is impossible in general.
 
@@ -125,7 +127,7 @@ This form of the operator is rather inefficient --- just consider one-dimensiona
 but since we only have small steps, there are no walks that go past $\ol x_1$ in the negative direction. Therefore, we can use the operator $E' = 1- \ext{\ol x_1}$ to the same effect instead. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We will say the two operators are model-equivalent.
 \end{example}
 
-To make the equivalence work we need to consider the whole model. With that in mind, we may think of the lattice walk models as living completely within the sumset $\mc S +\mc D $ of points that are combinations of points in $\mc D $ and steps $\mc S $. This is how far walks from the model can reach from within $\mc D $ by taking a single step. We will call this sumset the range of the model.
+To make the equivalence work, we need to consider the whole model. With that in mind, we may think of the lattice walk models as living completely within the sumset $\mc S +\mc D $ of points that are combinations of points in $\mc D $ and steps $\mc S $. This is how far walks from the model can reach from within $\mc D $ by taking a single step. We will call this sumset the range of the model.
 \begin{definition} Given sets $A$ and $B$, we let their sumset be
 \begin{align}
 	A+ B = \{a+b\,|\,a\in A,\, b\in B\}\,.
@@ -142,7 +144,7 @@ In the preceding example $E$ is equivalent to $ E'$, since both operators act th
 When the boundary of $\mc D $ is complicated, we may not find nice equivalent operators, but there are some cases where we can say something. In problems featuring half-planes, we have an operator $E$ with infinitely many terms, and we find that there is a model-equivalent operator $E'$ that is only comprised of finitely many terms. We will investigate which operators are equivalent to finite ones.
 \begin{definition} Given a model $\mc M$, a coefficient extraction operator $\Gamma$ in the variables $\row xd$ is finite if it is equivalent to an operator $\Gamma'$ comprised of finitely many coefficient extraction terms. That is,
 \begin{align}
-	\Gamma \equiv_{\mc M} \Gamma' = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} \ext{x_I^J}
+	\Gamma \equiv_{\mc M} \Gamma' = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} \ext{x_I^J}\,,
 \end{align}
 where each $|J| < \infty$. Also, $\Gamma'$ is infinite if it is not finite.
 \end{definition}
@@ -170,13 +172,13 @@ which is equal to $E_k = 1$ when $n = 0$. Applying $\row Ed$ sequentially ensure
 \begin{proof} The region $\mc D$ lies within a bounding box $B$, so we may write $E = E' E''$, where $E' = \mon Ed$ from the lemma and $E''$ is the operator removing all monomials outside of $\mc D$ but inside the interior of $B$. $E''$ is finite since there are only finitely many points in that region. Since we are marking only finitely many points $\mc D_0 \subseteq \mc D$, $L$ is finite, and finally, $\Gamma$ is finite.
 \end{proof}
 
-Also, we may handle semi-infinite regions if we are marking only finitely many points. The analysis is the same as above, except now one or more of $a_k, b_k$ may be infinite, and in this case, we actually lose parts of $\Gamma_{B^c}$ and the operator is still finite.
+Also, we may handle semi-infinite regions if we are marking only finitely many points. The analysis is the same as the one above, except now one or more of $a_k, b_k$ may be infinite, and in this case, we actually lose parts of $\Gamma_{B^c}$ and the operator is still finite.
 
 \begin{definition} A lattice walk model with finitely many steps is finite if its extraction and marking operators $E$ and $L$ are finite, and its starting condition $q$ has a finite degree. Otherwise, we say the model is infinite.
 \end{definition}
-\begin{example} All the models so far has been finite, but not all models are finite. Consider a one-dimensional model on the whole line where, for each integer $i$, we mark point $x^i$ with parameter $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)[[x^i]]$; otherwise, it would not act the same way on monomials in the model's range $\ze$. Therefore, $L$ is not equivalent to a finite operator.
+\begin{example} All the models so far has been finite, but not all models are finite. Consider a one-dimensional model on the whole line where for each integer $i$, we mark point $x^i$ with parameter $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)[[x^i]]$; otherwise, it would not act the same way on monomials in the model's range $\ze$. Therefore, $L$ is not equivalent to a finite operator.
 \end{example}
-Finite models are nicer because they have functional equations with finitely many terms and there is a chance that they will be amenable to the sort of analysis we have performed for quarter-plane walk models in the past. What follows is a rather easy application of the theory so far.
+Finite models are nicer because they have functional equations with finitely many terms and there is a chance that they will be amenable to the sort of analysis we have performed for quarter plane walk models in the past. What follows is a rather easy application of the theory so far.
 
 %================================
 \subsection{Examples of Regions}
@@ -200,15 +202,17 @@ If we extract the $[x_2^n]$ term, we find that
 	(1-a_ntS_2^0)Q_2^n = tS_2^1Q_2^{n-1}\,.
 \end{align}
 Similarly, we can extract the $[x_2^k]$ terms for $1 \leq k \leq n-1$. We will have $n+1$ equations in $n+1$ unknown functions $Q_2^0,\ldots, Q_2^n$, and we would be able to solve them to find out what all those functions are. Of course, we only need $Q_2^0$ and $Q_2^n$ to obtain a solution for $Q$. In the simplest case, $n = 1$ and the term extraction equations become
+\begin{gather}
 \begin{align}
 (1-a_0tS_2^0)Q_2^0  &= 1 + tS_2^{\um 1}Q_2^1\,,\\
 	(1-a_1tS_2^0)Q_2^1 &= tS_2^1Q_2^0\,.
 \end{align}
-These solutions are
+\shortintertext{These solutions are}
 \begin{align}
 	Q_2^0 &=\frac{1-a_1tS_2^0}{(1-a_0tS_2^0)(1-a_1 t S_2^0)-S_2^1S_2^{\um 1}t^2}\,,\\
 	Q_2^1 &=\frac{S_2^1 t}{(1-a_0tS_2^0)(1-a_1 t S_2^0)-S_2^1S_2^{\um 1}t^2}\,,
 \end{align}
+\end{gather}
 and we can find $Q$ explicitly from
 \begin{align}
 	Q = \frac{1}{K}(\ol a_0 + (c_0 - t\ol x_2 S_2^{\um 1})Q_2^0 + x_2(c_1-tx_2 S_2^1)Q_2^1)\,.
@@ -278,7 +282,7 @@ for those case and the extracted functional equations become
 \end{align}
 or in other words, $[x^i](1-a_itS)Q = [x^i] K(a_it)Q = a_iq_i$. The explicit equations are
 \begin{align}
-	Q_i - a_it\sum_{j = -n}^n S_{i-j}Q_j
+	Q_i - a_it\sum_{j = -n}^n S_{i-j}Q_j\,.
 \end{align}
 We may write all of those equations as the system
 \begin{align}
@@ -298,14 +302,16 @@ and the determinant of $I - tH$ is $1- (a_0+a_1)t$. Therefore,
 \begin{align}
 	X = \frac{1}{1-(a_0+a_1)t}\begin{bmatrix}(1-a_1t)q_0 - a_0 t q_1\\ (1-a_0t)q_1 - a_1 tq_0\end{bmatrix}
 \end{align}
-and from the master functional equation 
+and from the master functional equationg,
+\begin{gather}
 \begin{align}
 	KQ - (c_0-t\ol x)Q_0 - x(c_1-t x) Q_1 = q_0 + x q_1\,,
 \end{align}
-we find that
+\shortintertext{we find that}
 \begin{align}
 	Q = \frac{1}{(1-(a_0 +a_1)t)K}(f_0 q_0  + f_1 q_1)\,,
 \end{align}
+\end{gather}
 and if we expand the function into series we find that there is a stabilization of the coefficients involving $x$ in front of $t^k$. We expect that such stabilization will occur for all finite region models.
 
 \end{example}
@@ -316,7 +322,7 @@ and if we expand the function into series we find that there is a stabilization 
 \section{Connections With Other Theories}
 %================================
 
-So far we have explored using operators to simplify the derivation of functional equations pertaining to lattice walk models on $\ze^d$, and to simplify the first steps in solutions to these problems. It would be great to know if we can say more about the solutions. It seems that the work so far points to connections with Fredholm and Sturm-Liouville theory. For example, if we interpret coefficient extractions from a complex analysis point of view, by using Cauchy integrals, we may obtain an equation that looks much like a Fredholm integral equation of the first kind. The connection is made stronger by noting that both theories involve a possible Neumann series solution, written differently in each case. Using the Neumann series expansion, we have been able to show that $Q$ may be formed as a Hadamard product of generating functions for lower-dimensional lattice walk models. However, using the Neumann series expansion is unwieldy, so our other hope is to find another kind of series expansion. For example, since the marking operators have eigenvalues and eigenfunctions, we may hope to find some sort of eigenfunction expansion for $Q$, along the lines of Sturm-Liouville theory. For that, we would need a suitable inner product and find the adjoints of the marking operators, with respect to the inner product. Unfortunately, time was insufficient to pursue either of these approaches with much effort, and we only have the following writeup with the hopes of inspiring future mathematicians to work along those lines and find out if the approaches are fruitful.
+So far we have explored using operators to simplify the derivation of functional equations pertaining to lattice walk models on $\ze^d$, and to simplify the first steps in solutions to these problems. It would be great to know if we can say more about the solutions. It seems that the work so far points to connections with Fredholm and Sturm-Liouville theory. For example, if we interpret coefficient extractions from a complex analysis point of view, by using Cauchy integrals, we may obtain an equation that looks much like a Fredholm integral equation of the first kind. The connection is made stronger by noting that both theories involve a possible Neumann series solution, written differently in each case. Using the Neumann series expansion, we have been able to show that $Q$ may be formed as a Hadamard product of generating functions for lower-dimensional lattice walk models. However, using the Neumann series expansion is unwieldy, so our other hope is to find another kind of series expansion. For example, since the marking operators have eigenvalues and eigenfunctions, we may hope to find some sort of eigenfunction expansion for $Q$, along the lines of Sturm-Liouville theory. For that, we would need a suitable inner product and find the adjoints of the marking operators, with respect to the inner product. Unfortunately, time was insufficient to pursue either of these approaches with effort, and we only have the following writeup in hopes of inspiring future mathematicians to work along those lines and find out if the approaches are fruitful.
 
 
 %=======================================
@@ -328,22 +334,24 @@ Combinatorially speaking, we can easily find some of the eigenvalues and eigenfu
 \begin{prop} Let $\Gamma$ be an operator marking a single monomial $x_I^J$ with label $a$. Let $\lambda$ and $u_\lambda$ be an eigenpair. Then $\lambda = a$ with $u_\lambda = x_I^J$, or $\lambda = 1$ with $u_\lambda$ a function not containing $x_I^J$, in the formal power series sense. In particular, every monomial other than $x_I^J$ is an eigenfunction with eigenvalue 1.
 \end{prop}
 \begin{proof}
-Let $u_\lambda = u' + u''x_I^J$ where $u \neq 0$ and $u''$ does not share variables with $x_I^J$. Then
+Let $u_\lambda = u' + u''x_I^J$, where $u \neq 0$ and $u''$ does not share variables with $x_I^J$. Then
+\begin{gather}
 \begin{align}
 	\Gamma(u) = u' + au''x_I^J  = \lambda (u' + u''x_I^J)\,,
 \end{align}
-which we may write as
+\shortintertext{which we may write as}
 \begin{align}
 	(1-\lambda) u' + (a-\lambda)u''x_I^J  = 0\,.
 \end{align}
+\end{gather}
 We have two cases.
 \begin{itemize}
 \item If $u' = 0$, then $u'' \neq 0$ and $\lambda = a$. The eigenfunction is $x_I^J$.
-\item If $u' \neq 0$ and there is no term in $u''x_I^J$ that can compesate for this, then $\lambda = 1$ and $u'' = 0$.
+\item If $u' \neq 0$ and there is no term in $u''x_I^J$ that can compesate for this, then $\lambda = 1$ and $u'' = 0$.\qedhere
 \end{itemize}
 \end{proof}
 
-\begin{corollary} The kernel of a finite marking operator $\Gamma$ is generated by the monomials marked with label 0.
+\begin{corollary} $\ker \Gamma$ is generated by the monomials marked with 0.
 \end{corollary}
 
 %=======================================
@@ -379,12 +387,12 @@ Computing $(\Gamma S-\lambda I)u$ leads to the system of equations
 	\lambda u_n &= a u_{n-1}\,,\\
 	\lambda u_k &= u_{k-1}, \quad \text{if } k \neq n\,.
 \end{align}
-We have a doubly-infinite recursion, so we can pick an arbitrary initial condition. If $u_n = 0$, the rest of the terms will be zero as well, so we must have $u_n \neq 0$. Set $u_n = 1$. Then via induction we can find
+We have a doubly-infinite recursion, so we can pick an arbitrary initial condition. If $u_n = 0$, the rest of the terms will be zero as well, so we must have $u_n \neq 0$. Set $u_n = 1$. Then via induction,
 \begin{align}
 	u_{n+k} &= 1/\lambda^{k}, \quad \text{for $k \ge 0$}\,,\\
-	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,;
+	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,,
 \end{align}
-therefore, we have an eigenfunction for each $\lambda \neq 0$. Computing $u(x)$ formally leads to
+and therefore, we have an eigenfunction for each $\lambda \neq 0$. Computing $u(x)$ formally leads to
 \begin{align}
 	u(x) &=-\frac{\lambda b x^{n+1}}{(\lambda-x)(\lambda-ax)}\,,
 \end{align}
@@ -413,14 +421,14 @@ Letting $t \to 0$ in this equation yields
 \begin{align}
 	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0\,.
 \end{align}
-Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will indeed be finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.
+Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will  be a finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.
 \begin{example} Let $\Gamma = LE$ in the one-dimensional problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that (?)
 \begin{align}
-	Q = \frac{t(\ol x - \ol \sigma)}{(1-tS)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{tS}{1-tS}
+	Q = \frac{t(\ol x - \ol \sigma)}{(1-tS)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{tS}{1-tS}\,,
 \end{align}
 where we may write
 \begin{align}
-	\frac{\sigma - x}{b\sigma - at} = \alpha(t) + \beta(t)x
+	\frac{\sigma - x}{b\sigma - at} = \alpha(t) + \beta(t)x\,,
 \end{align}
 where $\alpha(t)$ and $\beta(t)$ are algebraic functions of $t$ and $a$ since $\sigma = \sigma(t)$. This observation at least suggests the possibility of connecting the eigenfunctions of $\mc L$ to the solution $Q$.
 \end{example}
@@ -434,26 +442,22 @@ If we are to have a theory similar to Sturm-Liouville theory, we still need to f
 The work so far is strongly hinting towards a theory of ordinary and partial coefficient extraction equations - OCEs and PCEs. Here we will work out some of the theory. We start with a partial coefficient extraction operator of finite type
 \begin{definition}$\mc L$ is a coefficient operator if
 \begin{align}
-	\mc L = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J}[x_I^J] = K + \mc E
+	\mc L = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J}[x_I^J] = K + \mc E\qandq \mc E  = \sum_{\substack{I\subseteq [d],I\neq \emptyset\\ J \subseteq \ze^d}}a_{I,J}[x_I^J]\,,
 \end{align}
-where $K$ is the kernel of the operator and $\mc E$ is the pure extraction part
-\begin{align}
-	\mc E  = \sum_{\substack{I\subseteq [d],I\neq \emptyset\\ J \subseteq \ze^d}}a_{I,J}[x_I^J]
-\end{align}
-and all the coefficients are Laurent polynomials in the $x$ variables and perhaps some other variables. The operator is ordinary if $d = 1$ and partial if $d \ge 2$. The operator is either of monomial type where the coefficients are monomials or of polynomial type if one or more coefficients is a Laurent polynomial in $x_1,\ldots,x_d$.
+where $K$ is the kernel of the operator and $\mc E$ is the pure extraction part. All the coefficients are Laurent polynomials in the $x$ variables and perhaps some other variables. The operator is ordinary if $d = 1$ and partial if $d \ge 2$. The operator is either of monomial type, where the coefficients are monomials, or of polynomial type, if one or more coefficients is a Laurent polynomial in $x_1,\ldots,x_d$.
 \end{definition}
-\begin{definition} An ordinary/partial coefficient equation (OCE/PCE) is one of the form $\mc L Q = q$ for some functions $Q$ and $q$ where $\mc L$ is an ordinary/partial coefficient operator. The equation is homogeneous if $q = 0$ and inhomogeneous if $q \neq 0$.
+\begin{definition} An ordinary/partial coefficient equation (OCE/PCE) is one of the form $\mc L Q = q$ for some functions $Q$ and $q$, where $\mc L$ is an ordinary/partial coefficient operator. The equation is homogeneous if $q = 0$ and inhomogeneous if $q \neq 0$.
 \end{definition}
 The question is whether we can solve these kinds of equations in general, and what their solutions may look like. In the previous section we found that if $\mc L$ is finite then the function $Q$ is D-finite in the $x$ variables while it may not necessarily be D-finite in the $t$ variable or any other variable (parameter) that appears in the coefficients.
 
-\begin{example} The operator $\Gamma$ in this section is a partial coefficient operator with monomial coefficients.
+\begin{example} The operator $\Gamma$ is a partial coefficient operator with monomial coefficients.
 \end{example}
 
 \begin{example} We can transform the functional equation for a finite random walk model into a PCE. To do so, we note that $K$ is the same in both forms. The part requiring some work is the one that has to do with the term $(1-\Gamma)SQ$ which is a pure extraction of $SQ$. We can expand $S$ into its monomials. Then $(1-\Gamma)S$ fully expands into monomials of the form
 \begin{align}
-	a_{I,J}\ext{x_I^J}x_A^B
+	a_{I,J}\ext{x_I^J}x_A^B\,,
 \end{align}
-we can pull terms inside $[x_I^J]$ from the right. In the end the $S$ is absorbed within the operator and istead of having monomial coefficients it now has polynomial coefficients. It may be useful to write an operator $\mc L$ in the form
+where we can pull terms inside $[x_I^J]$ from the right. In the end the $S$ is absorbed within the operator and istead of having monomial coefficients it now has polynomial coefficients. It may be useful to write an operator $\mc L$ in the form
 \begin{align}
 	\mc L = K + \Gamma'S
 \end{align}
@@ -465,16 +469,18 @@ for some monomial operator $\Gamma'$.
 %=======================================
 We may go through the process again, but this time we have
 \begin{align}
-	Q = \frac{W}{x_{[d]}^N K}
+	Q = \frac{W}{x_{[d]}^N K}\,,
 \end{align}
 where $N_k$ is the maximum negative size of steps in the set $\mc S $ in the direction $x_k$ or in other words, the maximum $N_k$ for which $S_k^{N_k}$ is nonzero. Then the operators that keep the walks in the quarter plane are
+\begin{gather}
 \begin{align}
 	E_k = 1 - \sum_{i=1}^{N_k} \ext{\ol x_k^i}\,.
 \end{align}
-Their conjugates are
+\shortintertext{Their conjugates are}
 \begin{align}
 	E_k' = x_k^{N_k} E_k \ol x_k^{N_k} = 1 - \sum_{i=0}^{N_k-1}\ext{x_k^i} = 1 -\mc E_k\,,
 \end{align}
+\end{gather}
 so in the kernel equation we have
 \begin{align}
 	x_{[d]}^N = x_{[d]}^N E \ol x_{[d]}^N W = E' W = W +  \sum_{\emptyset \neq I\subseteq [d]} (-1)^{|I|} \mc E_I(W)\,.
@@ -490,40 +496,40 @@ In other words we want $D$ to behave (in some sense) similarly to the derivative
 
 \begin{theorem} A lattice walk model with steps of size at most $N$ in each coordinate, satisfies the functional equation
 \begin{align}
-	E'W = \fullx xdN
+	E'W = \fullx xdN\,,
 \end{align}
 where $E' = \fullx xdN E \fullox xdN$ and $W  = \fullx xdN KQ$.
 \end{theorem}
 
 \begin{corollary} The generating function $Q$ for the non-interacting case satisfies the PDE
 \begin{align}
-	\fullx{\del}dN\left(\fullx xdN KQ\right) = 1
+	\fullx{\del}dN\left(\fullx xdN KQ\right) = 1\,.
 \end{align}
 \end{corollary}
 Here $\fullx{\del}dN$ is an example of an operator $D$ that eliminates all the unnecessary terms but does not eliminate $\mon xd$. It is possible to discuss weighted operators in this setting too, but the situation becomes more complicated. However, we may investigate type $(N,M)$ problems by finding a suitable model whose orbital operator is nice enough. This will show that all type $(N,M)$ satisfy an orbital equation with that particular operator, not just a PDE. 
 
-\begin{example} Consider the lattice walk model with $S = \sum_{k=1}^d \ol x_k^{n_k} + x_k^{n_k}$. Its group $G$ is generated by the elements of groups $G_k$ with $2n_k$ elements each - each of the elements $g_{k,j,l} = \omega_{n_k}^jx_k^l$ where $\omega_{n_k} = \exp(2\pi i/n_k)$ and $l\in\{-1,1\}$. These elements commute and we can find an orbital operator that annihilates all terms on the left-hand side except  $\fullx xdN KQ$ and also spares the $\fullx xdN$ term on the right-hand side.
+\begin{example} Consider the lattice walk model with $S = \sum_{k=1}^d \ol x_k^{n_k} + x_k^{n_k}$. Its group $G$ is generated by the elements of groups $G_k$ with $2n_k$ elements each - each of the elements $g_{k,j,l} = \omega_{n_k}^jx_k^l$, where $\omega_{n_k} = \exp(2\pi i/n_k)$ and $l\in\{-1,1\}$. These elements commute and we can find an orbital operator that annihilates all terms on the left-hand side except  $\fullx xdN KQ$ and also spares the $\fullx xdN$ term on the right-hand side.
 \end{example}
 We can generalize this somewhat.
 \begin{theorem} The full generating function $Q$ for a $d$-dimensional, finite, non-interacting lattice walk model, satisfies a finite-order inhomogeneous PDE in the variables $\row xd$.
 \end{theorem}
 \begin{proof} We will use the kernel form for the functional equation
 \begin{align}
-	KQ + t(1- \Gamma)SQ = q.
+	KQ + t(1- \Gamma)SQ = q\,.
 \end{align}
 Here $\Gamma' = 1- \Gamma$ is purely a coefficient extractor and it is finite, since $L$ and $E$ are finite. We will prove the theorem by finding the differential equation explicitly. Since the model is finite, we can bound the degree of $x_k$ that we see on either side of the functional equation. In one scheme we let $A_k$ be the largest power of $x_k$ that we need to clear a negative power of $x_k$ in $\Gamma'$ and in $q$. Then we let $B_k$ be the largest power of $x_k$ we see on either side. Once we multiply by $x_k^{A_k}$, we see that the degree of $x_k$ in the equation is $A_k+B_k$. We take the functional equation and multiply both sides by $x_{[d]}^{A}$. That is,
 \begin{align}
 	x_{[d]}^{A}(KQ + t\Gamma'SQ) = x_{[d]}^{A}q
 \end{align}
-and we attain a polynomial equation in the variables $\row xd$. We take the derivative operator
+and we have a polynomial equation in the variables $\row xd$. We take the derivative operator
 \begin{align}
 	D = \del_{[d]}^{A+B+\one} = \del_1^{A_1+B_1+1}\cdots\del_d^{A_d+B_d+1}
 \end{align}
 and apply it to both sides of the equation to retrieve
 \begin{align}
-	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0\,,
+	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q) = 0\,.
 \end{align}
-which follows since we are applying a larger number of derivatives than the degrees of the monomials and this clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of homogeneity, if the degrees of $q$ are large. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the left-hand side of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before, but this time it may have lower $A$ and $B$ values, since we are not taking $q$ into account. We have
+This works because we are applying a larger number of derivatives than the degrees of the monomials and this clears all of them. The other scheme lets us obtain a potentially lower degree differential equation at the cost of homogeneity, if the degrees of $q$ are large. Let $A_k$ be the power of $x_k$ that we need to clear denominators on the left-hand side of the functional equation and $B_k$ be the largest power of $x_k$ on that side. Then we have $D$ as before, but this time it may have lower $A$ and $B$ values, since we are not taking $q$ into account. We have
 \begin{align}
 	D(x_{[d]}^{A}(KQ + t\Gamma'SQ)  = D(x_{[d]}KQ) = D(x_{[d]}^{A}q)\,.
 \end{align}
@@ -531,7 +537,7 @@ which follows since we are applying a larger number of derivatives than the degr
 \begin{example} For example, let the powers of $x_k$ be $\{-3,-1,4\}$ and $\{-2,0,6\}$ on the left-hand side and right-hand side respectively. We see that $A_k = 3$ and $B_k = 6$. Then we are taking the $A_k + B_k + 1 = 10$-th derivative of both sides of the functional equation. In the second scheme we take $A_k = 3$ still, but $B_k = 4$ and we are taking the 8-th derivative with respect to $x_k$ this time. 
 \end{example}
 
-Even in the quarter-plane, we have models with non D-finite generating function (in the $t$ variable), but it turns out that every model so far considered is D-finite in the variables $\row xd$. In order to solve the differential equation we need to investigate the kernel of the differential operator.
+Even in the quarter plane, we have models with non D-finite generating function (in the $t$ variable), but it turns out that every model so far considered is D-finite in the variables $\row xd$. In order to solve the differential equation, we need to investigate the kernel of the differential operator.
 \begin{corollary}
 The generating function $Q$ of a finite non-interacting lattice walk model is given by
 \begin{align}
@@ -542,31 +548,35 @@ where $A_{ij}$ are functions that need to be determined.
 This kind of solution would have also appeared if we went through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof, we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
 
 %================================
-\subsection{Connection with Fredholm Theory}
+\subsection{Connection With Fredholm Theory}
 %================================
 Suppose that we are given the equation in the form
+\begin{gather}
 \begin{align}
-	KQ +t\Gamma'SQ = q
+	KQ +t\Gamma'SQ = q\,,
 \end{align}
-where
+\shortintertext{where}
 \begin{align}
-	\Gamma' = \sum_{I,J}a_{I,J} x_I^J[x_I^J]
+	\Gamma' = \sum_{I,J}a_{I,J} x_I^J[x_I^J]\,,
 \end{align}
-where we only have finite-sized $J$'s and $\emptyset \neq I\subseteq [d]$. From complex analysis we know that for a function $f(x)$ given by a power series and for $x$ within the region of convergence
+\end{gather}
+where we only have finite-sized $J$'s and $\emptyset \neq I\subseteq [d]$. From complex analysis, we know that for a function $f(x)$ given by a power series and for $x$ within the region of convergence,
+\begin{gather}
 \begin{align}
 	[x^n]f(x) = f_n = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z^{n+1}}dz
 \end{align}
-and
+\shortintertext{and}
 \begin{align}
-	f(x) = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z-x}dz
+	f(x) = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z-x}dz\,,
 \end{align}
-where in the first case $\gamma$ winds CCW around the origin within the region of convergence and in the second case $\gamma$ winds around $x$ within the region of convergence. The idea is to combine these two expressions for many dimensions (at least formally) to represent the operator $\mc L$ in integral form. We have for $|I| = n$
+\end{gather}
+where in the first case, $\gamma$ winds CCW around the origin within the region of convergence, and in the second case, $\gamma$ winds around $x$ within the region of convergence. The idea is to combine these two expressions for many dimensions, at least formally, to represent the operator $\mc L$ in integral form. We have for $|I| = n$
 \begin{align}
-	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^{n}}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}}dz_I
+	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^{n}}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}}dz_I\,,
 \end{align}
 where $f$ has $x_i = z_i$ for $i \in I$ and the rest are still $x$'s. If we use this representation we will have different numbers of iterations of the integral for different coefficient. We might as well go all-out and write
 \begin{align}
-	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}(z-x)_{I^c}}dz_{[d]}
+	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}(z-x)_{I^c}}dz_{[d]}\,,
 \end{align}
 where now $x_i = z_i$ in $f$ and 
 \begin{align}
@@ -576,19 +586,21 @@ Therefore we may write the operator as
 \begin{align}
 	(K+t\Gamma'S)Q&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \left(\frac{K}{(z-x)_{[d]}} +t S\sum_{I,J}\frac{a_{I,J}}{z_I^{J+1}(z-x)_{I^c}}\right)Q dz_{[d]}\\
 	& = \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{1}{(z-x)_{[d]}}\left(K +t S\sum_{I,J}\frac{a_{I,J}(z-x)_I}{z_I^{J+1}}\right)Q dz_{[d]}\\
-	&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma R_0Q dz_{[d]}
+	&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma R_0Q dz_{[d]}\,.
 \end{align}
 Now to turn this into a $d$-dimensional Fredholm problem we will need to parametrize the integral. One way that might work is to set $z_k = r_k \exp(i\theta_k)$ and $x_k = s_k e^{i\phi_k}$. Since $dz_k = r_k i e^{i\theta_k}$, we have
+\begin{gather}
 \begin{align}
 	(K+t\Gamma'S)Q = \frac{r_{[d]}}{(2\pi)^d}\int_0^{2\pi}\cdots\int_0^{2\pi} e^{i\theta_1}\ldots e^{i\theta_d}R_0Q d\theta_{[d]} = q(\phi_1,\ldots,\phi_d)\,,
 \end{align}
-so if we write
+\shortintertext{so if we write}
 \begin{align}
-	R = \exp(i(\theta_1+\ldots + \theta_d))R_0(\phi_1,\ldots,\phi_d,\theta_1,\ldots,\theta_d)
+	R = \exp(i(\theta_1+\ldots + \theta_d))R_0(\phi_1,\ldots,\phi_d,\theta_1,\ldots,\theta_d)\,,
 \end{align}
+\end{gather}
 we have the inhomogeneous Fredholm equation of the first kind in $d$ dimensions
 \begin{align}
-	\int_0^{2\pi}\cdots\int_0^{2\pi} RQ d\theta_1\ldots d\theta_d= g
+	\int_0^{2\pi}\cdots\int_0^{2\pi} RQ d\theta_1\ldots d\theta_d= g\,,
 \end{align}
 where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\theta_k$'s. Perhaps Fredholm theory can be applied in solving the random walk models in man dimensions. Perhaps this will also lead to a good inner product on the space where $Q$ lives.
 
@@ -616,11 +628,11 @@ for integer $n$. Another way to write these is with bracket notation
 %=======================================
 \section{Interaction with $\del_i$}
 %=======================================
-Let's take the operator $\Gamma_n(a) = 1 + b x^n[x^n]$ again. Let $\del_k = \del/\del_k$ and in this case just $\del$. We have
+Let's take the operator $\Gamma_n(a) = 1 + b x^n[x^n]$ again. Let $\del_k = \del/\del_k$ and in this case, just $\del$. We have
 \begin{align}
 	\del \Gamma_n(a) = \del + b\del(x^n[x^n]) = \del + bnx^{n-1}[x^n]\,.
 \end{align}
-Now if $n\ge 0$ we have
+Now, if $n\ge 0$ we have
 \begin{align}
 	\del^{n+1}\Gamma_n(a)  = \del^{n+1} + b\del^{n+1}(x^n)[x^n] = \del^{n+1}\,.
 \end{align}
@@ -628,9 +640,9 @@ If $n\leq 0$ taking derivatives will yield ever greater powers of $\ol{x}$ so we
 \begin{align}
 	\del x^{-n} \Gamma_{n}(a) = \del x^{-n} + b\del [x^n] = \del x^{-n} = -nx^{-n-1} + x^{-n}\del\,.
 \end{align}
-If we have more terms in an operator then we need to multiply by a power of $x$ to clear out any negative powers of $x$. Then we take the lowest order derivative in order to clear out all the extraction terms. Suppose that
+If we have more terms in an operator then we need to multiply by a power of $x$ to clear out any negative powers of $x$. Then we take the lowest order derivative, so that we may clear out all the extraction terms. Suppose that
 \begin{align}
-	\Gamma = 1 + \sum_{i=0}^{m} a_i \ext{x^i} - \sum_{i=1}^n b_i\ext{\ol{x}^i}
+	\Gamma = 1 + \sum_{i=0}^{m} a_i \ext{x^i} - \sum_{i=1}^n b_i\ext{\ol{x}^i}\,,
 \end{align}
 where $m$ and $n$ are non-negative. We need to pre-multiply by $x^n$ to clear out all the negative powers of $x$. Then we have
 \begin{align}

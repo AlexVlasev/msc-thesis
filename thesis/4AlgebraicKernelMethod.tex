@@ -118,7 +118,7 @@ We immediately see that
 	D_G(\mon xd KQ) = D_G(W) &= D_G\left(\mon xd - \sum_{\emptyset \neq I \subseteq [d]}W_I^\oo\right) \\&= D_G(\mon xd)\,,
 \end{split}
 \end{align}
-since the $W_I^\oo$ terms have missing variables. Let us think about this for a moment. The form of $W$ is the same for all lattice walk models with small steps so, if there are two models whose operators both annihilate expressions of the form $W_I^\oo$ for all nonempty $I\subseteq [d]$, then both models have equations of the above type with each other's operators. In particular, we may take the group $G$ of the highly-symmetric models and apply it via the operator $D_G$ to another model, and we retrieve an equation of the type aboe. We will look into this further.
+since the $W_I^\oo$ terms have missing variables. Let us think about this for a moment. The form of $W$ is the same for all lattice walk models with small steps so, if there are two models whose operators both annihilate expressions of the form $W_I^\oo$ for all nonempty $I\subseteq [d]$, then both models have equations of the type above with each other's operators. In particular, we may take the group $G$ of the highly-symmetric models and apply it via the operator $D_G$ to another model, and we retrieve an equation of the type aboe. We will look into this further.
 \end{example}
 \begin{definition} Consider the group $G$ for a highly-symmetric model, where $g_k(x_k) = \ol x_k$. Define the operator $\Delta_k = 1 - g_k$. Let $\Delta = \mon \Delta d$.
 \end{definition}
@@ -163,7 +163,7 @@ which is also an operator of this form once we collect terms corresponding to th
 
 The main question is whether the weighted summation operators will help us in analyzing the models where the Algebraic kernel method fails. We will answer this question in the negative. In general, there is no other weighted orbital operator that eliminates all the unwanted terms of the master functional equation, except the operator with weights $R_g = 1$, that does not also eliminate $\mon xd$. However, this setback does not diminish the usefulness of weighted operators, because their strength is in the analysis of interacting models.
 
-Here is the strategy we will employ. If we apply the operator $D$ on the master functional equation, we need to eliminate all terms except $KQ$. That is, $D$ needs to annihilate all the $Q$ terms that are missing variables. It is enough to work on the fundamental functional equation for $W = \mon xd KQ$. To go back to the master functional equation case we pre-divide by $\mon xd$. The resulting operator is also weighted.
+Here is the strategy we will employ. If we apply the operator $D$ on the master functional equation, we need to eliminate all terms except $KQ$. That is, $D$ needs to annihilate all the $Q$ terms that are missing variables. It is enough to work on the fundamental functional equation for $W = \mon xd KQ$. To go back to the master functional equation case, we pre-divide the equation by $\mon xd$. The resulting operator is also weighted.
 
 \begin{lemma}A weighted operator $D$ exists such that $D( KQ) = D(1)$ if and only if a weighted operator $D'$ exists such that $D'(f_I^\oo)$ for generic functions $f_I^\oo$ which are missing the variables indexed by $I$, for all $I$.
 \end{lemma}
@@ -191,13 +191,15 @@ In the two-dimensional problem we have the generic functions $W(0,0) = c$, a con
 	D = R - R_1 g_1 - R_2 g_2 + R_{12} g_{12}\,.
 \end{align}
 Consider the different orbits. The orbit of 1 under $G$ is trivial  since the function does not change under the group actions. Next, we have
+\begin{gather}
 \begin{align}
 	\orb_G(f(x_1)) = \{f(x_1),f(\ol x_1),f(\ol x_1), f(\ol x_1)\} = \{f(x_1),f(\ol x_1)\}
 \end{align}
-and similarly,
+\shortintertext{and similarly,}
 \begin{align}
 	\orb_G(f(x_2)) = \{f(x_2),f(\ol x_2)\}\,.
 \end{align}
+\end{gather}
 Therefore, the equations for the weights are
 \begin{align}
 	R - R_1 &+ R_2 - R_{12} = 0\,,\\
@@ -206,7 +208,7 @@ Therefore, the equations for the weights are
 \end{align}
 When we solve this system of equations, we find $R= R_1 = R_2 = R_{12}$ and the operator is essentially trivial. The simplest choice is to set $R = 1$ and we find that every weighted orbit summation operator for this group $G$ must have identical weights if it is to annihilate generic functions with missing variables.
 \end{example}
-\begin{definition} A trivial, or unweighted, operator is a weighted operator with weights that are all the same.
+\begin{definition} A trivial/unweighted, operator is a weighted operator with weights that are all equal.
 \end{definition}
 \begin{lemma} Consider a $d$-dimensional non-interacting lattice walk model with small steps in the positive orthant. If its group is finite and has $d$ generators, then all weighted orbital operators are trivial.
 \end{lemma}
@@ -215,9 +217,9 @@ When we solve this system of equations, we find $R= R_1 = R_2 = R_{12}$ and the 
 This analysis shows that, in general, there is no clever weighted summation operator that also satisfies the condition $D(\mon xd) \neq 0$. However, the idea will be fruitful in that we may find nontrivial partial solution in the interacting case.
 
 %=======================================
-\section{Models with interactions}
+\section{Models With Interactions}
 %=======================================
-It is natural to consider extending the algebraic kernel method to one working for interacting models, but we quickly see that the regular orbit summation operator is not sufficient. This is where the power of the weighted orbital summation operators starts to show. The analysis for two-dimensional models is particularly nice because we end up having the same number of equations as unknowns, and we are able to find the required weights. The linear systems can be written as matrix equations where the determinant of the matrix tells us when we have a useful orbit summation operator. In the end, the method does not extend fully because we do not eliminate the $\Qf{0,0}$ term. The D-finiteness of the full generating function $Q$ depends on the D-finiteness of the function $\Qf{0,0}$. We will only consider the models with finite groups that have two nontrivial generators. Therefore, the group $G$ has order 4, 6 or 8, and the functional equation in two dimensions is
+It is natural to consider extending the algebraic kernel method to one working for interacting models, but we quickly see that the regular orbit summation operator is not sufficient. This is where the power of the weighted orbital summation operators starts to show. The analysis for two-dimensional models is particularly nice because we end up having the same number of equations as unknowns, and we are able to find the required weights. The linear systems can be written as matrix equations, where the determinant of the matrix tells us when we have a useful orbit summation operator. In the end, the method does not extend fully because we do not eliminate the $\Qf{0,0}$ term. The D-finiteness of the full generating function $Q$ depends on the D-finiteness of the function $\Qf{0,0}$. We will only consider the models with finite groups that have two nontrivial generators. Therefore, the group $G$ has order 4, 6 or 8, and the functional equation in two dimensions is
 \begin{align}
 	KQ  - K_1 Q_1^0 -  K_2 Q_2^0 + K_{1,2}Q_{1,2}^{0,0} = \alpha\,.
 \end{align}
@@ -262,6 +264,7 @@ Then we apply the transformations to produce the system of equations
 	 g_{12}K_1 g_2Q_1^0 + g_{12}K_2 g_1Q_2^0 &= g_{12}\beta = \beta_{12}\,.
 \end{align}
 Using the order of variables in $E$, we can write the associated matrix $M$ of the linear system as
+\begin{gather}
 \begin{align}
 	M_4 = \begin{bmatrix}
 	K_1 & K_2 & 0 & 0 \\
@@ -270,7 +273,7 @@ Using the order of variables in $E$, we can write the associated matrix $M$ of t
 	0 & 0 & g_{12}K_1 & g_{12} K_2
 	\end{bmatrix}\,.
 \end{align}
-Then
+\shortintertext{Then}
 \begin{align}
 \begin{split}
 	\det M_4 &= K_1 g_{12}K_1 g_1K_2g_2K_2 -g_1K_1g_2K_1K_2g_{12}K_2\\
@@ -279,11 +282,12 @@ Then
 	&=\Delta_2 (g_1 K_1 g_2 K_1K_2 g_{12} K_2 )\,,
 \end{split}
 \end{align}
+\end{gather}
 where the last equation is obtained by using $g_2$ instead of $g_1$ in the factoring..
 
 In order to be able to eliminate some variables, the determinant must equal zero, and that only happens when the expression in $\Delta_1$ or $\Delta_2$ is in the kernel of the respective operator. Suppose that $f$ is a Laurent polynomial in the variables $x_i$ and $t$ and that $f$ is in the kernel of $\Delta_k$ for one of the $k$'s. We have
 \begin{align}
-	\Delta_k f = \sum_n f_n (1-g_k)x_k^n = \sum_n (f_n - f_{- n}\mu_k^{- n})x_i^n
+	\Delta_k f = \sum_n f_n (1-g_k)x_k^n = \sum_n (f_n - f_{- n}\mu_k^{- n})x_i^n\,,
 \end{align}
 where $\mu_k = S_k^{\um 1}/S_k^1$. This implies that
 \begin{align}
@@ -316,14 +320,16 @@ This quantity is zero if and only if $\Delta_1  (K_1 g_{12}K_1) = 0$, so we have
 \end{split}
 \end{align}
 Therefore, this equation is true if and only if
+\begin{gather}
 \begin{align}
 	g_2 S_1^{\um 1} = S_1^{\um 1}\,.
 \end{align}
-We have
+\shortintertext{We have}
 \begin{align}
 	g_2 (\Sf{\um 1, \um 1}\ol x_2+\Sf{\um 1,0}+\Sf{\um 1,1}x_2) &= \Sf{\um 1, \um 1}x_2 \ol \mu_2+\Sf{\um 1,0}+\Sf{\um 1,1}\ol x_2\mu_2\\
 	\Sf{\um 1, \um 1}x_2 \ol \mu_2+\Sf{\um 1,1}\ol x_2\mu_2 &= \Sf{\um 1, \um 1}\ol x_2+\Sf{\um 1,1}x_2\,,
 \end{align}
+\end{gather}
 and we can write it succinctly as
 \begin{align}
 	\Sf{\um 1, \um 1} = \mu_2 \Sf{\um 1,1}\,.
@@ -348,13 +354,15 @@ We are finally ready to use the orbit summation method. There are 8 highly-symme
 	\gamma \beta- \gamma_1 \beta_1-\gamma_2 \beta_2 + \gamma_{12}\beta_{12} = 0\,.
 \end{align}
 Here the choice of signs is inspired by the orbit summation operators. Let $\bullet$ and $\ast$ stand for applications of $g_1$ and $g_2$, respectively. Note that we have $K_2^\bullet = K_2$ and $K_1^\ast = K_1$. Next, we let
+\begin{gather}
 \begin{align}
 	x = Q_1^0\,,\quad y= Q_2^0\,, \quad u= Q_1^{0,\ast}\,,\quad v = Q_2^{0,\bullet}\,,
 \end{align}
-and
+\shortintertext{and}
 \begin{align}
 	a = K_1\,,\quad b = K_1^\bullet\,,\quad c=K_2 \,, \quad d = K_2^\ast\,.
 \end{align}
+\end{gather}
 The original equations attain a simplified format given by
 \begin{align}
 	\beta &= a x + c y\,,\quad \beta_1 = b x + c v\,,\\
@@ -395,16 +403,18 @@ This is a generalization of the result in \cite{wong2014confining}, where the au
 \end{split}
 \end{align}
 where the last equality follows since $\Delta$ commutes with $K$ and functions with some variables $x_i$ missing. All that remains is to expand the various quantities involved.
+\begin{gather}
 \begin{align}
 	\Delta g_iK_i = - \Delta K_i = - (c_i-tx_iS_i^{\um 1}-c_i + t\ol x_i S_i^{\um 1}) = -t(\ol x_i-x_i)S_i^{\um 1}
 \end{align}
-and
+\shortintertext{and}
 \begin{align}
 	\Delta K_0 = \Delta_1 (K_1^\bullet) \Delta_2 (K_2^\ast) = t^2(\ol x_1-x_1)(\ol x_2-x_2)S_1^{\um 1}S_2^{\um 1}\,.
 \end{align}
+\end{gather}
 Next,
 \begin{align}
-	\Delta(K_0 K_{1,2}) = \Delta_1 K_1^\bullet \Delta_2 K_2^\ast K_{1,2} = \Delta_1 K_1^\bullet (K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast)\,.
+	\Delta(K_0 K_{1,2}) = \Delta_1 K_1^\bullet \Delta_2 K_2^\ast K_{1,2} = \Delta_1 K_1^\bullet (K_2^\ast K_{1,2}- K_2 K_{1,2}^\ast)\,,
 \end{align}
 where the quantity in parentheses is
 \begin{align}
@@ -415,21 +425,25 @@ where the quantity in parentheses is
 	=& c_2t(\ol x_2-x_2)(c_1S_2^{\um 1}-\ol x_1S_{1,2}^{\um 1, \um 1})\,.
 \end{split}
 \end{align}
-Finally,
+\begin{gather}
+\shortintertext{Finally,}
 \begin{align}
 \begin{split}
 	\Delta(K_0 K_{1,2})  &= c_2t(\ol x_2-x_2) \Delta_1 K_1^\bullet (c_1S_2^{\um 1}-\ol x_1S_{1,2}^{\um 1, \um 1})\\
 	&=c_2t(\ol x_2-x_2) \Delta_1 K_1^\bullet (c_1S_2^{\um 1}-\ol x_1S_{1,2}^{\um 1, \um 1})\,.(?)
 \end{split}
 \end{align}
-To simplify this quantity note that
+\end{gather}
+To simplify this quantity, note that
+\begin{gather}
 \begin{align}
 	\Delta_1 K_1^\bullet c_1 S_2^{\um 1} = c_1 S_2^{\um 1}\Delta_1 K_1^\bullet = -c_1t S_2^{\um 1}(\ol x_1-x_1)
 \end{align}
-and
+\shortintertext{and}
 \begin{align}
 	\Delta_1 K_1^\bullet \ol x_1S_{1,2}^{\um 1, \um 1} = S_{1,2}^{\um 1, \um 1}\Delta_1 K_1^\bullet \ol x_1 = c_1 (\ol x_1-x_1)S_{1,2}^{\um 1, \um 1}\,.
 \end{align}
+\end{gather}
 Therefore, we find that
 \begin{align}
 	\Delta(K_0 K_{1,2}) = c_1c_2t(\ol x_1-x_1)(\ol x_2-x_2)(t S_1^{\um 1} S_2^{\um 2}-S_{1,2}^{\um 1, \um 1})\,,
@@ -484,7 +498,7 @@ and it has determinant
 \begin{align}
 	\det M_6 = A_2A_4A_6 B_1 B_3 B_5 - A_1 A_3 A_5 B_2 B_4 B_6\,.
 \end{align}
-The even index $A$'s are found by applying $g_1$ on the odd index $A$'s, and vice versa for the $B$'s. That is,
+The even index $A$'s are found by applying $g_1$ on the odd index $A$'s, and vice versa for the $B$'s. Then
 \begin{align}
 	\det M_6 = \Delta_1 (A_2A_4A_6 B_1 B_3 B_5) = \Delta_1(g_1(K_1) g_{121}(K_1)g_{12}(K_1) K_2 g_{21}(K_2) g_{12}(K_2))\,.
 \end{align}

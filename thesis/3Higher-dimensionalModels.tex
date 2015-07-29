@@ -15,7 +15,7 @@ We can easily generalize the one-dimensional results to two or more dimensions. 
     \label{fig:plane}
 \end{figure}
 
-In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact} where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter-plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter-plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
+In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
  
 \begin{figure}[H]
     \centering
@@ -57,7 +57,7 @@ We can write down the following result.
 \end{align}
 where $L$, $E$, $L^{\um 1}$ are of the form $\Gamma = \mon{\Gamma}{d}$.
 \end{prop}
-Previously, we have had to cope with coefficient extractions and back-substitution to find the expanded form of the second functional equation (page 9 of \cite{tabbara2014exact} and page 12 of \cite{wong2014confining}). Using the operator notation lets us skip this process. In general, the second functional equation has many less terms. To see this, we take a look at the operator $L_kE_k$. We have
+Previously, we have had to cope with coefficient extractions and back-substitution to find the expanded form of the second functional equation (page 9 of \cite{tabbara2014exact} and page 12 of \cite{wong2014confining}). We can skip this process by using operators. In general, the second functional equation has many less terms. To see this, we take a look at the operator $L_kE_k$. We have
 \begin{align}
 	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol x_k}
 \end{align}
@@ -80,11 +80,11 @@ where the last equality follows from the fact that there are no negative powers 
 \begin{align}
 	\sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol x_IS_{I}^{\um \one})Q_I^\oo = \ol a_{[d]}\,.
 \end{align}
-As in the two-dimensional case, we let $K_I = c_I-t \ol x_IS_{I}^{\um \one}$ where, if $I =\emptyset$, we have the empty products and empty extractions, leaving us with $K_{\emptyset} = K$. Finally, we can write the master equation in $d$ dimensions.
+As in the two-dimensional case, we let $K_I = c_I-t \ol x_IS_{I}^{\um \one}$, where, if $I =\emptyset$, we have the empty products and empty extractions, leaving us with $K_{\emptyset} = K$. Finally, we can write the master equation in $d$ dimensions.
 \begin{theorem} The ZZCLASSICZZ interacting $d$-dimensional lattice walk model, has a full generating function $Q$ satisfying the functional equation
 \begin{align}
 \label{eqn:Master}
-	\sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo= \ol a_{[d]}
+	\sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo= \ol a_{[d]}\,,
 \end{align}
 where $K_I = (c_I-t \ol x_I S_{I}^{\um \one})$.
 \end{theorem}
@@ -113,39 +113,37 @@ Therefore, for $k\ge 0$ the operator $[x_i^k]$ eliminates both $M_i$ and $E_i$ f
 \begin{align}
 \begin{split}
 	[x_I^\oo]a_{[d]} =\ol a_{[d]} &= [x_I^\oo](M_{[d]} - tE_{[d]}S)Q \\
-	= &\left(\ol a_{I}M_{[d]\backslash I}[x_I^\oo] - tE_{[d]\backslash I}[x_I^\oo]S\right)Q\\
-	= &[x_I^\oo](\ol a_{I}M_{[d]\backslash I}- tE_{[d]\backslash I}S)Q\,,
+	&= \left(\ol a_{I}M_{[d]\backslash I}[x_I^\oo] - tE_{[d]\backslash I}[x_I^\oo]S\right)Q\\
+	&= [x_I^\oo](\ol a_{I}M_{[d]\backslash I}- tE_{[d]\backslash I}S)Q\,,
 \end{split}
-\end{align}
-so that
-\begin{align}
-	\ol a_{[d]\backslash I} = [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q\,.
+\shortintertext{so that}
+	\ol a_{[d]\backslash I} &= [x_I^\oo](M_{[d]\backslash I}- a_{I}tE_{[d]\backslash I}S)Q\,.
 \end{align}
 If we rewrite the equation, we have
 \begin{align}
-	\ol a_I = [x_{[d]\backslash I}^\oo](M_I - a_{[d]\backslash I} tE_I S)Q
+	\ol a_I &= [x_{[d]\backslash I}^\oo](M_I - a_{[d]\backslash I} tE_I S)Q
 \end{align}
 and we can use whichever notation is more useful at the time. The latter notation underscores the idea that, when we extract coefficients for walks that end at some hyperplane intersection, we are having a reduced version of the functional equation at the cost of an added $a$ term. When we extract a general term, we can use the operator $[x_I^\oo x_J^P]$, where $P$ is a set of powers greater than 0 and $I\cap J = \emptyset$, $|P| \ge 1$ and $I\cup J = K$. We find that
+\begin{gather}
 \begin{align}
 \begin{split}
 	 [x_I^\oo x_J^P] a_{[d]} = 0 &= [x_I^\oo x_J^P](M_{[d]} - tE_{[d]}S)Q \\
 	 &= [x_I^\oo x_J^P](\ol a_{I} M_{[d]\backslash K} - t E_{[d]\backslash K} S)Q\,,
 \end{split}
 \end{align}
-which we can write as
+\shortintertext{which we can write as}
 \begin{align}
-	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0\,.
-\end{align}
-If $I$ is empty, then
-\begin{align}
+	[x_I^\oo x_J^P]( M_{[d]\backslash K} - a_I t E_{[d]\backslash K} S)Q = 0\,.\\
+\shortintertext{If $I$ is empty,}
 	[x_J^P]( M_{[d]\backslash J} - t E_{[d]\backslash J} S)Q = 0\,.
 \end{align}
+\end{gather}
 The main role of these calculations is to provide a shortcut for manual calculations. After all, we need these to obtain functional equations for $Q_I^\oo$ for $I \subseteq [d]$.
 
 %=======================================
 \subsection{Further Functional Equations}
 %=======================================
-We need to go further in order to find equations similar to the master functional equation. We know that
+We need to go further in order to find equations similar to the master functional equation. First,
 \begin{align}
 	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I\,,
 \end{align}
@@ -175,28 +173,26 @@ and the functional equation can be written as
 The form of this expression suggests the following notation.
 \begin{definition} For sets $I$ and $J$ that do not share any elements, we write
 \begin{align}
-	K_J(I) = c_J - a_I t\ol x_J S_{I,J}^{\oo,\um\one}
+	K_J(I) = c_J - a_I t\ol x_J S_{I,J}^{\oo,\um\one}\,,
 \end{align}
 where if $I = \emptyset$, then $K_J(I) = K_J$.
 \end{definition}
-With this notation, we can write the $2^d$ functional equations for $Q_I^\oo$ and $I\subseteq [d]$ in simplified form.
+With this notation, we can write the $2^d$ equations for $Q_I^\oo$ and $I\subseteq [d]$ in simplified form.
 \begin{corollary} Let $I$ be a subset of $\{1,\ldots,d\}$. Then the generating function $Q_I^{\oo}$ for the $d$-dimensional interacting ZZCLASSICZZ lattice walk model satisfies the functional equation
 \begin{align}
 \label{eqn:FullEqns}
-	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}K_J (I) Q_{I,J}^{\oo,\oo} = \ol a_{[d]\backslash I}+a_I t  R_I'
+	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}K_J (I) Q_{I,J}^{\oo,\oo} = \ol a_{[d]\backslash I}+a_I t  R_I'\,,
 \end{align}
 where the $R_I'$ term only involves higher-order coefficient extractions from $Q$; that is, where not all the powers of variables $x$ are zero.
 \end{corollary}
-This is a clean way to write down all the equations for $Q_I^\oo$ in a unifying way. To compute the $R_I'$ terms we first determine what $R_I$ is. It is a sum of terms $S_I^{\um P} Q_I^{P}$ for various non-negative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$ we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables, so they do not have non-negative coefficients. Let $sq = S_I^{\um P} Q_I^{P}$. Then
+This is a clean way to write down all the equations for $Q_I^\oo$ in a unifying way. To compute the $R_I'$ terms, we first determine what $R_I$ is. It is a sum of terms $S_I^{\um P} Q_I^{P}$ for various non-negative $P$ with size $|I|$ whose elements are not all 0. To calculate $R_I'$, we apply the operator $E_{[d]\backslash I}$ on $R_I$. We can try calculating some of these quantities. A key observation is that the terms $Q_I^P$ are power series in the remaining variables, so they do not have non-negative coefficients. Let $sq = S_I^{\um P} Q_I^{P}$. Then
 \begin{align}
 \begin{split}
 	E_j sq &= sq - \ol x_j(sq)_j^{\um 1} \\ 
 	&= sq - \ol x_j(s_j^{\um 1}q_j^0+s_j^{0}q_j^{\um 1}+s_j^{1}q_j^{-2})\\
 	& = sq - \ol x_js_j^{\um 1}q_j^0\,.
 \end{split}
-\end{align}
-Hence
-\begin{align}
+\shortintertext{Hence,}
 	E_{K} sq &= \sum_{J\subseteq K} (-1)^{|J|}\ol x_J s_J^{\um \one} q_J^\oo\,.
 \end{align}
 Finally, we can write
@@ -309,9 +305,9 @@ Let $\Gamma = LE$. Then we can think of the formal inverse of this operator give
 \end{align}
 We can write the series solution
 \begin{align}
-	Q = \sum_{k=0}^{\infty}t^k (\Gamma S)^k(1)\,
+	Q = \sum_{k=0}^{\infty}t^k (\Gamma S)^k(1)\,,
 \end{align}
-where $(\Gamma S)^k(1) = \Gamma S(\cdots (\Gamma S(1))\cdots)$. Therefore, we can computer the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $\Gamma S$ applied to it. It can be implemented easily in symbolic calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way: by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter-plane, and finally by marking the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We have not been able to find closed forms for the repeated operator applications in general. Here is an example that illustrates the use of the operators.
+where $(\Gamma S)^k(1) = \Gamma S(\cdots (\Gamma S(1))\cdots)$. Therefore, we can computer the series expansion for $Q$ directly using an iteration. The next coefficient is the previous one with $\Gamma S$ applied to it. It can be implemented easily in symbolic calculation software like Maple or Mathematica. The iteration is a formalized way of finding the first few terms of the series in the naive way: by taking a set of walks of length $n$, extending them by 1 step, removing the ones that end outside of the quarter plane, and finally by marking the ones that interact with the hyperplanes $x_i = 0$ at their endpoint. We have not been able to find closed forms for the repeated operator applications in general. Here is an example that illustrates the use of the operators.
 \begin{example} Let $S = x_1+\ol x_1+x_2+\ol x_2 = S_1(x_1)+S_2(x_2)$. We start with $\Gamma S^0(1) = 1$. Then
 \begin{align*}
 	\Gamma S^1(1) &= LE(S_1+S_2) =L(x_1+x_2) = a_2x_1+a_1x_2\,,\\
@@ -382,13 +378,11 @@ Then we substitute $ L^{\um 1}_i Q_i = \ol a_i + tE_iS_iQ_i$ into the first term
 \end{align}
 Since we are working with power series,
 \begin{align}
-	\ol a_i\odot (t E_j S_j Q_j) = \ol a_i [t^0]t E_j S_j Q_j = 0\,,
+	\ol a_i\odot (t E_j S_j Q_j) &= \ol a_i [t^0]t E_j S_j Q_j = 0\,,
+\shortintertext{and thus,}
+	(L^{\um 1}_1Q_1\odot L^{\um 1}_2Q_2) &=  \ol a_1\ol a_2 +t ((E_1 S_1 Q_1)\odot (E_2 S_2 Q_2))\,,
 \end{align}
-and thus,
-\begin{align}
-	(L^{\um 1}_1Q_1\odot L^{\um 1}_2Q_2) =  \ol a_1\ol a_2 +t ((E_1 S_1 Q_1)\odot (E_2 S_2 Q_2))\,,
-\end{align}
-establishing that $Q$ is indeed a solution to the equation.
+establishing that $Q$ is a solution to the equation.
 \end{example}
 
 \begin{lemma} Let $Q$ be the generating function for a ZZCLASSICZZ two-dimensional interacting lattice walk model, with $S = S_1(x_1)S_2(x_2)$. Let $Q_i$ be the generating function for a ZZCLASSICZZ one-dimensional lattice walk model with step polynomial $S_i$. Then
@@ -397,9 +391,9 @@ establishing that $Q$ is indeed a solution to the equation.
 \end{align}
 \end{lemma}
 With this identity, we can prove the following result via induction.
-\begin{theorem} Consider a ZZCLASSICZZ interacting $d$-dimensional lattice walk model. Suppose that $S(\row xd) = \mon Sr$ where $S_i$ and $S_j$ do not share variables when $i\neq j$. Then the full generating function $Q$ is given by
+\begin{theorem} Consider a ZZCLASSICZZ interacting $d$-dimensional lattice walk model. Suppose that $S(\row xd) = \mon Sr$, where $S_i$ and $S_j$ do not share variables when $i\neq j$. Then the full generating function $Q$ is given by
 \begin{align}
-	Q = Q_1 \odot \cdots \odot Q_r
+	Q = Q_1 \odot \cdots \odot Q_r\,,
 \end{align}
 where $Q_k$ is the full generating function for the ZZCLASSICZZ interacting sub-$d$-dimensional problem for the variables present in $S_k$.
 \end{theorem}
@@ -407,9 +401,7 @@ where $Q_k$ is the full generating function for the ZZCLASSICZZ interacting sub-
 \begin{example} Consider the two-dimensional model with diagonal steps, that is, $S = (x_1+\ol x_1)(x_2+\ol x_2)$. We will look at this case in more detail in \autoref{ch:OKM}. The one-dimensional problems are the same and have solutions
 \begin{align}
 	\widetilde{Q}_0 = \frac{\sigma}{at-b\sigma}\qandq \widetilde{Q} = \frac{t(x-\sigma)}{x(1-t(x+\ol x)(at-b\sigma)}\,,
-\end{align}
-where
-\begin{align}
+\shortintertext{where}
 	\sigma = \frac{1-\sqrt{1-4t^2}}{2t}\,.
 \end{align}
 We can expand and simplify $\widetilde{Q}_0$ and $\widetilde{Q}$ to find
@@ -424,9 +416,9 @@ We have the expansion
 Finally, the solution for the two-dimensional model can be expressed as
 \begin{align}
 \begin{split}
-	Q(x_1,x_2,a_1,a_2;t) =& \widetilde{Q}(x_1,a_1;t) \odot \widetilde{Q}(x_1,a_2;t)\\
-		=&1 + x_1x_2t + (a_1+x_1^2)(a_2+x_2^2)t^2\\
-		&+x_1x_2(1+a_1+x_1^2)(1+a_2+x_2^2)t^3 + \cdots\,.
+	Q(x_1,x_2,a_1,a_2;t) &= \widetilde{Q}(x_1,a_1;t) \odot \widetilde{Q}(x_1,a_2;t)\\
+		&=1 + x_1x_2t + (a_1+x_1^2)(a_2+x_2^2)t^2\\
+		&\quad+x_1x_2(1+a_1+x_1^2)(1+a_2+x_2^2)t^3 + \cdots\,.
 \end{split}
 \end{align}
 However, obtaining an explicit function via the Hadamard product seems to be rather messy. The function is not algebraic since the unmarked variant is not algebraic. However, the function $Q$ is D-finite since both functions in the product are.
@@ -502,13 +494,13 @@ We call these $r$'s reflections and $m_{i,j} = 2$, they commute. Also, $m_{i,j} 
 \end{itemize}
 If the graph has different components, the Coxeter group factors as a direct product of Coxeter groups, represented by the individual components. We can see this phenomenon in terms of the step polynomial $S$. 
 \begin{prop} If the step polynomia $S$ factors into two disjoint step polynomials $T$ and $R$ as
+\begin{gather}
 \begin{align}
-	S = T(\row xk)R(x_{k+1},\ldots,x_d)\,,
+	S = T(\row xk)&R(x_{k+1},\ldots,x_d)\,,
+\shortintertext{then the group $G_S$ factors as}
+	G_S = G_T& \times G_R\,,
 \end{align}
-then the group $G_S$ factors as
-\begin{align}
-	G_S = G_T \times G_R\,,
-\end{align}
+\end{gather}
 where $G_S$, $G_T$ and $G_R$ are the groups for the step polynomials $S$, $T$ and $R$, respectively.
 \end{prop}
 \begin{proof} For a fixed integer $1 \leq i \leq k$,
@@ -523,12 +515,8 @@ Similarly, if $k+1 \leq j \leq d$, then
 \begin{align}
 	g_j(x_j) = \ol x_j\frac{R_i^{\um 1}}{R_i^1}\,.
 \end{align}
-Furthermore, $g_i$ and $g_j$ commute since they do not affect each other's variables. Since $i$ and $j$ were arbitrary, the generators from different sets commute and the Coxeter graph of the group factors into two pieces, that is, the group itself factors. We can write
-\begin{align}
-	G_S = G_T \times G_R\,.
-\end{align}
+Furthermore, $g_i$ and $g_j$ commute since they do not affect each other's variables. Since $i$ and $j$ were arbitrary, the generators from different sets commute and the Coxeter graph of the group factors into two pieces, that is, the group itself factors. We can write $G_S = G_T \times G_R$.
 \end{proof}
-Perhaps a similar result can be proven in the other direction.
 
 
 %=======================================
@@ -554,12 +542,12 @@ Until the end of the chapter we will focus on the two-dimensional models with in
 \subsection{First Examples in the Plane}
 %=======================================
 
-The ZZCLASSICZZ two-dimensional lattice walk models have been investigated thoroughly but the interacting version has not. We want to extend the ZZCLASSICZZ model methods to the interacting setting or create new ones. Since the generating functions for the interacting models need to reduce to those for the non-interacting models, we do not expect to find solutions for every model. In fact, some of the ZZCLASSICZZ models lead to generating functions that are not even D-finite, so their interacting counterparts will not be D-finite either. For the rest of the problems, we hope to find the generating functions $Q$ explicitly, or at least the functions $\Qf{0,0}$. This appears to be difficult in most nontrivial cases. Recent research ZZCITEZZ has shown that there are models where we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are other two-dimensional models that exhibit a rational relationship. The way things have turned with regards to the ZZCLASSICZZ models, it would not be surprising if there are two-dimensional interacting models for which neither a linear nor a rational relationship would exist between $Q$, $\Qf{0,0}$ and various unmarked variants. In this section we will cover the first few examples of quarter-plane models with interactions. 
+The ZZCLASSICZZ two-dimensional lattice walk models have been investigated thoroughly but the interacting version has not. We want to extend the ZZCLASSICZZ model methods to the interacting setting or create new ones. Since the generating functions for the interacting models need to reduce to those for the non-interacting models, we do not expect to find solutions for every model. In fact, some of the ZZCLASSICZZ models lead to generating functions that are not even D-finite, so their interacting counterparts will not be D-finite either. For the rest of the problems, we hope to find the generating functions $Q$ explicitly, or at least the functions $\Qf{0,0}$. This appears to be difficult in most nontrivial cases. Recent research ZZCITEZZ has shown that there are models, for which we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are other two-dimensional models that exhibit a rational relationship. The way things have turned with regards to the ZZCLASSICZZ models, it would not be surprising if there are two-dimensional interacting models for which neither a linear nor a rational relationship would exist between $Q$, $\Qf{0,0}$ and various unmarked variants. In this section we will cover the first few examples of quarter plane models with interactions. 
 
 Our first step is to find all the reducible models and we can do this  by looking at which of the steps $\{$N, NE, E$\}$ they have in their step set.
 
 \begin{itemize}
-\item[1.] None of the three steps are present. We have models where walks cannot leave the origin and they are equivalent to ones with $\mc S = \emptyset$. There are $2^5 = 32$ such models and they are all reducible.
+\item[1.] None of the three steps are present. We have $2^5$ such models, in which walks cannot leave the origin and they are reducible to ones with $\mc S = \emptyset$.
 \begin{figure}[H]
     \centering
 \[
@@ -602,7 +590,7 @@ We can partition the two-dimensional lattice walk models in another way --- with
 \]
     \caption{Models from case 2.2.}
 \end{figure}
-\item[Case 2.3:] In this case, there is only one transformation for $x_1$ and two for $x_2$. Therefore, $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. The negative case is reducible, so we only seek solutions for the positive one. Furthermore, $S_2^{\um 1} \neq 0$ and $S_2^1 \neq 0$, so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. If both NE and SE are in $\mc S$, then we have 8 cases. If one of NE and SE is in $\mc S$ but not both, then we have another 8 cases. Finally, if neither is in $\mc S$, we must have the other three steps present, in order to satisfy the conditions. We have 17 cases in total, the group size is two, and none of the models are reducible. Here are all of these models.
+\item[Case 2.3:] In this case, there is only one transformation for $x_1$ and two for $x_2$. Therefore, $S_1^{\um 1} = 0$ (positive case) or $S_1^{1} = 0$ (negative case) but not both. The negative case is reducible, so we only seek solutions for the positive one. Furthermore, $S_2^{\um 1} \neq 0$ and $S_2^1 \neq 0$, so there must be at least one step going in the positive $x_2$ direction and one in the negative $x_2$ direction. If both NE and SE are in $\mc S$, then we have 8 cases. If one of NE and SE is in $\mc S$ but not both, then we have another 8 cases. Finally, if neither is in $\mc S$, we must have the other three steps present in order to satisfy the conditions. We have 17 cases in total, the group size is two, and none of the models are reducible. Here are all of these models.
 \begin{figure}[H]
     \centering
 \begin{align*}
@@ -648,30 +636,29 @@ Note how $Q$ has a dependency on functions $f_1$ and $f_2$ that do not depend on
 	F(a_1,a_2,t) = 1 - a_1 a_2 \delta t\,.
 \end{align}
 First,
+\begin{gather}
 \begin{align}
 \begin{split}
 	B((1 - a_1 a_2 \delta t)\ol a_1\ol a_2) &= B(\ol a_1\ol a_2 - t \delta) = B(\ol a_1\ol a_2) - B(t \delta) \\
 	&= \ol a_1\ol a_2- \ol a_2-\ol a_1 + 1 = c_1 c_2\,.
 \end{split}
 \end{align}
-Then
+\shortintertext{Then}
 \begin{align}
 	B(c_1 f_1+ c_2 f_2-c_1c_2) = c_1 f_1 + c_2 f_2 -c_1c_2 - c_2 f_2 - c_1 f_1 = -c_2 c_2\,.
 \end{align}
+\end{gather}
 Putting the two quantities together, along with dividing by $1-tS$, shows that $B(FQ) = 0$. Of course, this works for $G = \Qf{0,0}$ too.
 \begin{example} Consider the model with $S = x_1+x_2+x_1x_2$. Then
 \begin{align}
-	\Qf{0,0} = 1,\quad Q_1^0 = \frac{1}{1-ta_1x_2},\quad Q_2^0 = \frac{1}{1-ta_2x_1}\,,
-\end{align}
-and finally,
-\begin{align}
+	\Qf{0,0} = 1,\quad Q_1^0 = \frac{1}{1-ta_1x_2},\quad Q_2^0 = \frac{1}{1-ta_2x_1}\,,\\
 	Q = \frac{1}{1-tS}\left(\ol a_1 \ol a_2 + \frac{c_1}{1-ta_1x_2} + \frac{c_2}{1-ta_2x_1}\right)\,.
 \end{align}
 \end{example}
 %=======================================
 \subsection{Case 2.3 -- Group of Order Two}
 %=======================================
-In this case the functional equation and its extracted forms read as
+In this case, the functional equation and its extracted forms read as
 \begin{align}
 \begin{split}
 	(1-tS)Q - c_1 Q_1^0- (c_2 -t\ol x_2 S_1^{\um 1})Q_2^0+ c_1c_2 Q_{1,2}^{0,0}  &= \ol a_1\ol a_2\\\
@@ -694,13 +681,15 @@ The reason the method worked in this case is that we have steps that keep a latt
 	(1-tS)Q - (c_2 -t\ol x_2 S_2^{\um 1})Q_2^0  &= \ol a_1(\ol a_2 + b_1 q  -b_1c_2q_0)  =\ol a_1\phi(x_2)\,.
 \end{align}
 Since $S_1^{\um 1} \neq 0$ and $S_2^1 \neq 0$, we have a root $x_2 = \sigma_2$ that allows us to eliminate the $(1-tS)Q$ term. That is, we are finding a root for $x_2$ again, since $x = x_2$ in the previous equations. We find that
+\begin{gather}
 \begin{align}
 	Q_2^0  &=-\frac{\ol a_1\phi(\sigma_2)}{ c_2 -t\ol \sigma_2 S_2^{\um 1}}
 \end{align}
-and we write $Q$ as
+\shortintertext{and}
 \begin{align}
 	Q = \frac{1}{1-tS}\left(\ol a_1\phi(x_2) - \frac{c_2 -t\ol x_2 S_2^{\um 1}}{c_2 -t\ol \sigma_2 S_2^{\um 1}}\ol a_1\phi(\sigma_2)\right)\,.
 \end{align}
+\end{gather}
 Of course, this form can be expanded and simplified based on what $q$ and $q_0$ are from the one-dimensional setting, but the important thing is that we can build the solution in this case via one-dimensional model equations.
 
 %=======================================
@@ -716,7 +705,7 @@ There is one case that is easy to solve, is not reducible, but has an infinite g
 \subsection{Counting Classes of Models}
 %=======================================
 
-We can tally all the classes of lattice walk models on the quarter-plane. First, we have 64 reducible models. Then we have 5 new cases with group of order one, and 34 new cases with group of order two. Also, there are 29 models with group of order four, 6 with group of order six, and 4 with group of order eight. We also have the easy-to-solve miscellaneous case above. So far we have 143 cases of models we can solve for easily or models with a finite group, some of which w ecan solve easily. Next, by inspection of the table in ZZCITEZZ (walks w/ small steps), we see that there are 120 models with group of infinite order: 12 with three steps, 40 with four steps, 44 with five steps, and 24 with six steps. Adding all of those together yields 263 cases, so we must have over-counted. There are 7 reducible models with an infinite group. The total count is 256 and we are done.
+We can tally all the classes of lattice walk models on the quarter plane. First, we have 64 reducible models. Then we have 5 new cases with group of order one, and 34 new cases with group of order two. Also, there are 29 models with group of order four, 6 with group of order six, and 4 with group of order eight. We also have the easy-to-solve miscellaneous case. So far we have 143 cases of models we can solve for easily or models with a finite group, some of which w ecan solve easily. Next, by inspection of the table in ZZCITEZZ (walks w/ small steps), we see that there are 120 models with group of infinite order: 12 with three steps, 40 with four steps, 44 with five steps, and 24 with six steps. Adding all of those together yields 263 cases, so we must have over-counted. There are 7 reducible models with an infinite group. The total count is 256 and we are done.
 \begin{figure}[H]
     \centering
 \begin{align*}

@@ -2,26 +2,25 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of regions in the plane.\relax }}{6}{figure.caption.7}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The model $\{$NW, NE, SW, SE$\}$.\relax }}{7}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of regions in the plane.\relax }}{6}{figure.caption.8}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces The model $\{$NW, NE, SW, SE$\}$.\relax }}{7}{figure.caption.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of regions on the line.\relax }}{10}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of regions on the line.\relax }}{10}{figure.caption.10}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Two-dimensional lattice walk model constraints.\relax }}{21}{figure.caption.10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Inclusion-exclusion of regions.\relax }}{21}{figure.caption.11}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Set of steps allowed in models that do not leave the origin. The models are equivalent to a model without steps.\relax }}{39}{figure.caption.12}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sets of steps allowed in models with an N step or an E step. The models are essentially one-dimensional.\relax }}{39}{figure.caption.13}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Models from case 2.2.\relax }}{41}{figure.caption.14}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Models from case 2.3.\relax }}{41}{figure.caption.15}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Reducible models with an infinite group.\relax }}{45}{figure.caption.16}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Models with a finite group.\relax }}{45}{figure.caption.17}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Models with an infinite group. To get the rest of them, apply one of the symmetries of the square.\relax }}{46}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Two-dimensional lattice walk model constraints.\relax }}{22}{figure.caption.11}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Inclusion-exclusion of regions.\relax }}{22}{figure.caption.12}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Set of steps allowed in models that do not leave the origin. The models are equivalent to a model without steps.\relax }}{41}{figure.caption.13}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Sets of steps allowed in models with an N step or an E step. The models are essentially one-dimensional.\relax }}{41}{figure.caption.14}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Models from case 2.2.\relax }}{42}{figure.caption.15}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Models from case 2.3.\relax }}{43}{figure.caption.16}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Reducible models with an infinite group.\relax }}{47}{figure.caption.17}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Models with a finite group.\relax }}{47}{figure.caption.18}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Models with an infinite group. To get the rest of them, apply one of the symmetries of the square.\relax }}{48}{figure.caption.19}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The highly-symmetric models on the plane with two nontrivial generators for the group $G$.\relax }}{59}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The highly-symmetric models on the plane with two nontrivial generators for the group $G$.\relax }}{61}{figure.caption.20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Steps for models $S11$, $S12$, $S13$.\relax }}{72}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Steps for models $S11$, $S12$, $S13$.\relax }}{74}{figure.caption.21}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces General regions in $\mathbb {Z}^2$.\relax }}{94}{figure.caption.22}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Finite region enclosed in box $B$.\relax }}{99}{figure.caption.23}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces General regions in $\mathbb {Z}^2$.\relax }}{90}{figure.caption.21}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Finite region enclosed in box $B$.\relax }}{95}{figure.caption.22}
 \addvspace {10\p@ }
