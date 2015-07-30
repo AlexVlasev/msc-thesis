@@ -6,33 +6,33 @@
 \label{ch:Introduction}
 %=======================================
 
-Why do we study lattice walks? Apart from being an interesting mathematical object that leads to a lot of interesting mathematics, they have some real- world applications. A lot of processes can be modeled via lattice walks: from stock market objects to proteins and polymers. There is a rich theory of continuous and discrete lattice walks. Specifically, in lattice walk enumeration, we attempt to find out things about the numbers of walks of some length and of certain type with certain geometrical constraints. The topic often leads to the use of generating functions as a powerful tool in the analysis. In the end, we gain insight into what makes certain lattice walk models "easy" and others more difficult. In this thesis we look at the enumeration for constrained lattice walks with interactions in order to gain insight into the deeper workings of lattice walk enumeration problems.
+Why do we study lattice walks? Apart from being an interesting mathematical object that leads to a lot of interesting mathematics, they have some real- world applications. A lot of processes can be modeled via lattice walks: from stock market objects to proteins and polymers. There is a rich theory of continuous and discrete lattice walks. Specifically, in lattice walk enumeration, we attempt to find out things about the numbers of walks of some length and of certain type with certain geometrical constraints. The topic often leads to the use of generating functions as a powerful tool in the analysis. In the end, we gain insight into what makes certain lattice walk models easier and others more difficult. In this thesis we look at the enumeration for constrained lattice walks with interactions in order to gain insight into the deeper workings of lattice walk enumeration problems.
 %=======================================
 \section{Recent History}
 %=======================================
 
 In the most basic case, lattice walks starting at the origin on $d$ dimensions have no restrictions, $\mc{D}$ is the whole space, and there are no interactions. We can enumerate these walks easily by writing the full generating function
 \begin{align}
-\begin{split}
-	Q(\row xd;t) &= \frac{1}{1-tS(\row xd)} \\
-			&= 1 + tS(\row xd) + t^2 S(\row xd)^2 + \cdots\,.
-\end{split}
+	\begin{split}
+		Q(\row xd;t) &= \frac{1}{1-tS(\row xd)} \\
+				&= 1 + tS(\row xd) + t^2 S(\row xd)^2 + \cdots\,.
+	\end{split}
 \end{align}
 This is a valid series, since we can use each individual steps and every walk is uniquely represented by a sequence of steps from $\mc{S}$. The process works for arbitrary initial conditions too, since we can start the walks at any point and evolve them. The coefficients of each power of $t$ are Laurent polynomials in the variables $\row xd$. If we have the generating function for a lattice walk model, we have a lot of information at our hands. Replacing $x_k$ with $0$ for each $k$ gives the generating function for walks returning to the origin. Similarly, taking higher derivatives and evaluating at zero allows us to find the number of walks ending at specific points. If we set all the $x_k = 1$ inf $Q$, we obtain the length generating function for the lattice walks in the plane. There are numerous questions we can ask about each of those characteristics of the model.
 
-The next step up is to investigate half-spaces: $\mc{D}$ is the region where one of the $x_k \ge 0$. These cases are not as simple to solve, but they are doable. Check \cite{gessel1980factorization}, \cite{bousquet2000linear}, \cite{duchon2000enumeration} and \cite{banderier2002basic} for work on the one-dimensional case that can be extended to general $d$. The generating functions we can obtain are algebraic. Naturally, we are led to consider cases where $\mc{D}$ is an intersection of half-spaces. Even for $d=2$, the problem has generated a rich theory of quadrant (or quarter plane) walks. We obtain functional equations for the function $Q$ that are not easy to solve in general. Often, the generating functions here are not even D-finite, although there are D-finite examples. The main object of study in these cases has been a group $G$ of bi-rational transformations preserving the polynomial $K = 1- tS$, called the kernel of the model. 
+The next step up is to investigate half-spaces: $\mc{D}$ is the region where one of the $x_k \ge 0$. These cases are not as simple to solve, but they are doable. Check \cite{gessel1980factorization,bousquet2000linear, duchon2000enumeration, banderier2002basic} for work on the one-dimensional case that can be extended to general $d$. The generating functions we can obtain are algebraic. Naturally, we are led to consider cases where $\mc{D}$ is an intersection of half-spaces. Even for $d=2$, the problem has generated a rich theory of quadrant (or quarter plane) walks. We obtain functional equations for the function $Q$ that are not easy to solve in general. Often, the generating functions here are not even D-finite, although there are D-finite examples. The main object of study in these cases has been a group $G$ of bi-rational transformations preserving the polynomial $K = 1- tS$, called the kernel of the model. 
 
-When $G$ is finite, in the 23 non-equivalent cases, we obtain a D-finite generating function (full?), as can be seen in the classifications \cite{mishna2009classifying},\cite{bousquet2010walks} and \cite{bousquet2005walks}, \cite{bostan2010complete} for specific cases. The main tool in the study of the finite group cases is the algebraic kernel method, in which we sum different functional equations produced by group actions by elements of $G$. This is done to cancel the majority of the terms in the functional equation. See \cite{kauers2014walks} for a treatment of models with finite groups and repeated steps.
+When $G$ is finite, in the 23 non-equivalent cases, we obtain a D-finite generating function, as can be seen in the classifications \cite{mishna2009classifying, bousquet2010walks, bousquet2005walks, bostan2010complete} for specific cases. The main tool in the study of the finite group cases is the algebraic kernel method, in which we sum different functional equations produced by group actions by elements of $G$. This is done to cancel the majority of the terms in the functional equation. See \cite{kauers2014walks} for a treatment of models with finite groups and repeated steps.
 
-There are 56 non-equivalent cases of quarter plane walks with an infinite group. For 51 of them, both the full generating function \cite{kurkova2011explicit} and the length generating function, for walks returning to the origin, are not D-finite \cite{bostan2014non}. The remaining 5 cases have been dealt with in \cite{melczer2014singularity} and \cite{melczer2014variants}. The main tool used to tackle these 5 cases is the iterated kernel method, in which we use the roots of the kernel $K$ to show the generating function is not D-finite.
+There are 56 non-equivalent cases of quarter plane walks with an infinite group. For 51 of them, both the full generating function and the length generating function, for walks returning to the origin, are not D-finite \cite{bostan2014non} . The remaining 5 cases have been dealt with in \cite{melczer2014singularity, melczer2014variants}. The main tool used to tackle these 5 cases is the iterated kernel method, in which we use the roots of the kernel $K$ to show the generating function is not D-finite.
 
-Naturally, we are led to invesitigating higher-dimensional variants of this problem. See \cite{gessel1992random} and \cite{grabiner1993random} for when $\mc{D}$ is a Weyl chamber. In three dimensions we have the recent partial classification \cite{bostan2014three} of lattice walk models with up to six steps, where the authors extend the algebraic kernel method to handle the majority of finite group cases encountered.
+Naturally, we are led to invesitigating higher-dimensional variants of this problem. See \cite{gessel1992random,grabiner1993random} for when $\mc{D}$ is a Weyl chamber. In three dimensions we have the recent partial classification \cite{bostan2014three} of lattice walk models with up to six steps, where the authors extend the algebraic kernel method to handle the majority of finite group cases encountered.
 
-Another generalization is to consider walks with interactions and/or self-avoiding walks (or SAWs). These two types of generalizations have important applications in physics (?) because they can be used to model polymers, proteins and other chains. For some research on SAWs with various interactions, see \cite{van2004multiple},\cite{brak2009self}, \cite{wong2014confining}, \cite{chan2012monte}, \cite{bacher2011weakly}, \cite{bedini2014lattice} and \cite{dagrosa2015writhe}. The topic of SAWs does not lend itself as nicely to using generating functions like the ones considered so far, so, as a simpler first step, we can consider regular lattice walks with interactions. See \cite{niederhausen2005random} and \cite{niederhausen2005note} for walks with interactions in an octant. See \cite{brak2005directed}, \cite{owczarek2012enumeration}, and \cite{tabbara2014exact} for walks with interactions in the plane.
+Another generalization is to consider walks with interactions and/or self-avoiding walks (or SAWs). These two types of generalizations have important applications in physics (?) because they can be used to model polymers, proteins and other chains. For some research on SAWs with various interactions, see \cite{van2004multiple, brak2009self, wong2014confining, chan2012monte, bacher2011weakly, bedini2014lattice, dagrosa2015writhe}. The topic of SAWs does not lend itself as nicely to using generating functions like the ones considered so far, so, as a simpler first step, we can consider regular lattice walks with interactions. See \cite{niederhausen2005random, niederhausen2005note} for walks with interactions in an octant. See \cite{brak2005directed,owczarek2012enumeration,tabbara2014exact} for walks with interactions in the plane.
 
-A long-standing dream goal in lattice walk enumeration research is the automatization of the process of determining characteristics of the models and similar problems. There has been some progress in this direction. For examples see \cite{gessel1990symmetric} and \cite{chyzak2005effective} for details on symmetric functions, \cite{mishna2005holonomic} for a holonomic approach to combinatorics, \cite{bostan2009automatic} for automatic classification of lattice walks, and finally, \cite{kauers2011computational} for some of the computational challenges involved in automation.
+A long-standing dream goal in lattice walk enumeration research is the automatization of the process of determining characteristics of the models and similar problems. There has been some progress in this direction. For examples, see \cite{gessel1990symmetric, chyzak2005effective} for details on symmetric functions, \cite{mishna2005holonomic} for a holonomic approach to combinatorics, \cite{bostan2009automatic} for automatic classification of lattice walks, and finally, \cite{kauers2011computational} for some of the computational challenges involved in automation.
 
-Some automation can be performed in the related subject of the study of lattice walk asymptotics. For examples of the theory, see \cite{johnson2013towards}, \cite{melczer2014asymptotic} and \cite{melczer2014enumerating}. A lot of the works mentioned so far have also discussed asymptotics.
+Some automation can be performed in the related subject of the study of lattice walk asymptotics. For examples of the theory, see \cite{melczer2014asymptotic, melczer2014enumerating}. A lot of the works mentioned so far have also discussed asymptotics.
 
 %=======================================
 \section{Thesis Objectives}
@@ -52,7 +52,7 @@ where $\Gamma$ is an operator on the variables of $Q$, $S$ is the Laurent step p
 
 In the first few chapters we will go through motivating examples that will serve as a springboard into further generalizations. First, we will start off with one-dimensional lattice walks with and without interactions in \autoref{ch:OneD}. Then we will quickly move on to two-dimensional lattice walks, and beyofnd, in \autoref{ch:HigherD}. On the way we will develop some of the basic operator theory involved in the lattice walk models. In \autoref{ch:General} we will tackle some generalization of the problem and show that they all satisfy a similar functional equation.
 
-In \autoref{ch:AKM} we will take a more practical route to analyze group-theoretic operators relevant tol lattice walk models with small steps, and then we will extend the Algebraic kernel method to more dimensions and interactions. In \autoref{ch:OKM} we will look at the Obstinate kernel method and solve some highly-symmetrical two-dimensional interacting models.
+In \autoref{ch:AKM} we will take a more practical route to analyze group-theoretic operators relevant tol lattice walk models with small steps, and then we will extend the algebraic kernel method to more dimensions and interactions. In \autoref{ch:OKM} we will look at the obstinate kernel method and solve some highly-symmetrical two-dimensional interacting models.
 
 %========================
 \section{Notation and Conventions}
@@ -63,10 +63,10 @@ In \autoref{ch:AKM} we will take a more practical route to analyze group-theoret
 %========================
 We will work in the setting of formal power and Laurent series. Problems with convergence will not be studied in much detail; formal convergence will suffice. Given a ring $R$, we may construct several formal objects with a commutative indeterminate $x$ with coefficients in $R$.
 \begin{itemize}
-\item $R[x]$: Ring of polynomials with monomials $x^k$ for integers $k\ge 0$.
-\item $R[x,1/x]$: Ring of Laurent polynomials with monomials $x^k$ for integers $k$.
-\item $R[[x]]$: Ring of formal power series with monomials $x^k$ for integers $k \ge 0$.
-\item $R((x))$: Field of formal Laurent series with monomials $x^k$ for integers $k$.
+	\item $R[x]$: Ring of polynomials with monomials $x^k$ for integers $k\ge 0$.
+	\item $R[x,1/x]$: Ring of Laurent polynomials with monomials $x^k$ for integers $k$.
+	\item $R[[x]]$: Ring of formal power series with monomials $x^k$ for integers $k \ge 0$.
+	\item $R((x))$: Field of formal Laurent series with monomials $x^k$ for integers $k$.
 \end{itemize}
 We can also define their multivariate analogues $\Rpring{x}{n}$ and $\Rlring{x}{n}$, and their series counterparts $\Rpsring{x}{n}$ and $\Rlsring{x}{n}$. For a thorough treatment of the subject, please see \cite{monforte2013formal}. When we work with a combination of objects coming from different rings/fields over the indeterminate $x$, we will consider all objects as part of the most general ring/field at the time. If in doubt, we will always work in the field of formal Laurent series. Given a sequence $(w_n)$, we may consider its generating function $W(x)$ given by $\sum_{n} w_n x^n$, which lives appropriately in one of the rings over $x$. The multivariate case for a multi-index sequence $(w_{\row nm})$ is defined analogously as
 \begin{align}
@@ -82,18 +82,18 @@ The multivariate case is handled analogously with the caveat that, whenever the 
 %========================
 In this work we will investigate lattice walk models on the $n$-dimensional lattice $\ze^n$. A specific model $\mc{M}$ consists of several ingredients
 \begin{itemize}
-\item $\mc{S}$ : a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, the step set may differ from point to point, \eg a honeycomb lattice embedded in $\ze^2$. The steps themselves are written as vectors $s = (\row sn)$. For example, $\mc{S}$ could be a set of small steps defined by coordinates among $\{-1$, $0$, $1\}$. Another example is when we have more than one step of a given kind. 
-\item $\mc{D}$ : a domain for the lattice walks. This is the region in $\ze^n$ where the lattice walks live. The easiest cases involve the whole space or a half-space. Starting with quarter plane regions, the analysis becomes rather complicated. One can further constrain the walks to live on semi-infinite strips.
-\item $\mc{D}_0$ : an interaction domain for the lattice walks. This is a sub-region in $\mc{D}$ and we want to count how many times lattice walks interact with it by stepping on coordinates that are part of it. We may count different points from $\mc{D}_0$ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
-\item $\mc Q$ : a set of lattice walks acting as an initial condition from which all other lattice walks evolve. The situation can be as trivial as starting with the empty walk ending at the origin to a set of infinitely many walks with some pattern.
+	\item $\mc{S}$ : a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, the step set may differ from point to point, \eg a honeycomb lattice embedded in $\ze^2$. The steps themselves are written as vectors $s = (\row sn)$. For example, $\mc{S}$ could be a set of small steps defined by coordinates among $\{-1$, $0$, $1\}$. Another example is when we have more than one step of a given kind. 
+	\item $\mc{D}$ : a domain for the lattice walks. This is the region in $\ze^n$ where the lattice walks live. The easiest cases involve the whole space or a half-space. Starting with quarter plane regions, the analysis becomes rather complicated. One can further constrain the walks to live on semi-infinite strips.
+	\item $\mc{D}_0$ : an interaction domain for the lattice walks. This is a sub-region in $\mc{D}$ and we want to count how many times lattice walks interact with it by stepping on coordinates that are part of it. We may count different points from $\mc{D}_0$ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
+	\item $\mc Q$ : a set of lattice walks acting as an initial condition from which all other lattice walks evolve. The situation can be as trivial as starting with the empty walk ending at the origin to a set of infinitely many walks with some pattern.
 \end{itemize}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.5]{placeholder}
-    \caption{Illustration of regions in the plane.}
-    \label{fig:fig1}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[scale = 0.5]{placeholder}
+%    \caption{Illustration of regions in the plane.}
+%    \label{fig:fig1}
+%\end{figure}
 
 It is natural to consider the generating function that keeps track of all the information characterizing the lattice walks in the model. For each lattice walk $w$, its length $|w|$ is the total number of steps that it has taken and we keep track of them with a parameter $t$. We keep track of the walk's endpoint coordinates in $\ze^n$ by the indeterminates $\row xn$, and its interactions with $\mc{D}_0$ via marking parameters $a_m$, where $m$ is some specific subscript index. The marking is highly dependent on the geometry of $\mc{D}_0$ and the way we want to count interactions. If the end coordinates of the lattice walk are $(\row mn)$, and if the marking monomial (a product of $a_m$'s) is $a(w)$, we can write the generating  function for the lattice walk model as
 \begin{align}
@@ -108,16 +108,16 @@ and the starting polynomial defined by
 	q(\row xn;t) = \sum_{w \in \mc{Q}}  a(w) x_1^{m_1}\cdots x_n^{m_n} t^{|w|}\,.
 \end{align}
 Usually, we see $S$ a Laurent polynomial of degree (or valuation) 1 in each variable and we have $q = 1$. Note that in all of these quantities the variables $a_m$ have been supressed. We can include those too, whenever necessary; for example, when there are only finitely many of them. Furthermore, it will be useful to use the quantities $b = a - 1$ and $c = b/a = 1- \ol a$. (?)
-\begin{example} To illustrate the notation, we shall investigate a lattice walk model in the plane. Consider the problem of lattice walks, which are restricted to the quarter plane, start at the origin, and which only have small diagonal steps. We will count their interactions with the axes. In our terminology we have a lattice walk model $\mc{M}$ with $\mc{S}$ given by
+\begin{exa} To illustrate the notation, we shall investigate a lattice walk model in the plane. Consider the problem of lattice walks, which are restricted to the quarter plane, start at the origin, and which only have small diagonal steps. We will count their interactions with the axes. In our terminology we have a lattice walk model $\mc{M}$ with $\mc{S}$ given by
 \begin{align}
 	\mc{S} = \{(-1,-1),(1,-1),(-1,1),(1,1)\}\,.
 \end{align}
 \begin{figure}[H]
-    \centering
-\[
-	\modelgraphB 10100101
-\]
-    \caption{The model $\{$NW, NE, SW, SE$\}$.}
+	\centering
+	\[
+		\modelgraphB 10100101
+	\]
+    	\caption{The model $\{$NW, NE, SW, SE$\}$.}
 \end{figure}
 The region $\mc{D}$ consists of all points in $\ze^2$ with non-negative coordinates. Next, $\mc{D}_0$ is composed of the two non-negative axes with overlap at the origin; we count visits to the origin as visits to each axis. Finally, $\mc{Q}$ consists of the empty walk. In the language of generating functions we have $q = 1$ and
 \begin{align}
@@ -133,26 +133,23 @@ ZZPICTUREZZ
 \end{itemize}
 Since we have seen all the lattice walks of size at most 2, we see that the generating function $Q = Q(x_1,x_2;t)$ starts as
 \begin{align}
-\begin{split}
-	Q  &=  1 + x_1x_2 t + (a_1a_2 + a_1x_2+a_2x_1 +x_1x_2)t^2 + \cdots\\
-	& = 1 + x_1x_2 t+ (a_1+x_1)(a_2+x_2)t^2 + \cdots\,.
-\end{split}
+	Q  &= 1 + x_1x_2 t+ (a_1+x_1)(a_2+x_2)t^2 + \cdots\,.
 \end{align}
 It may be unexpected, that the first few coefficients factor, but this phenomenon is due to the factoring of $S(x_1,x_2)$ itself. We will see a more general result later. (?)
-\end{example}
+\end{exa}
 %========================
 \subsection{Thesis Notation}
 %========================
 In the interest of generalizing the problem-solving strategies involved in lattice walk enumeration, we need powerful notation to handle all the intricacies of the problem. In fact, it is the notation itself that paved the way towards generalization in our originla research because it is suggestive and points towards the deeper connections between the generating functions and quantities involved. With this thesis we aim to make this kind of notation more common in higher-dimensional lattice walk analysis. Typically, in the multivariate setting we see multi-index notation where a bolded, vectorial or even supressed notation denotes the collection of variables involved. We would use this notation as well, but it is insufficient when working with restricted geometries for $\mc{D}$ and $\mc{D}_0$. Therefore, we have the following notation.
-\begin{definition} Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$ where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
-\end{definition}
-\begin{definition} For sequences $I = (\row im)$ and $J = (\row jm)$, and an indeterminate $x$, we have the monomial
+\begin{defn}Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$ where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
+\end{defn}
+\begin{defn} For sequences $I = (\row im)$ and $J = (\row jm)$, and an indeterminate $x$, we have the monomial
 \begin{align}
 	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,,
 \end{align}
 with special cases $x_I^{\oo} = 1$ and $x_I^{\one} = x_I$ and $x_I^{\um\one} = 1/x_I = \ol x_I$.
-\end{definition}
-\begin{definition} For sequences $I = (\row im)$ and $J = (\row jm)$, and an indeterminate $x$, we have the coefficient extraction operator
+\end{defn}
+\begin{defn} For sequences $I = (\row im)$ and $J = (\row jm)$, and an indeterminate $x$, we have the coefficient extraction operator
 \begin{align}
 	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J\,,
 \end{align}
@@ -161,16 +158,16 @@ with special cases:
 	\item $F_I^{J} = F$, if $I$ is empty.
 	\item $F_I^J = F_J$, if $I$ is the full set of variables ordered unambiguously.
 \end{itemize}
-\end{definition}
+\end{defn}
 We will primarily be using the notation for extractions with respect to the $x$ variables in the generating functions but, sometimes, we will be using such a coefficient extraction with respect to other variables, most commonly $t$. We will never mix such extractions with this notation.
-\begin{definition}  (?) For sequences $I = (\row im)$ and $J = (\row jm)$, we define the term extraction operator as
+\begin{defn}  (?) For sequences $I = (\row im)$ and $J = (\row jm)$, we define the term extraction operator as
 \begin{align}
 	[[x_I^J]] = \ext{x_I^J}\,.
 \end{align}
 That is, $[[x_I^J]]F = x_I^J F_I^J$.
-\end{definition}
+\end{defn}
 
-\begin{example}Here is an illustrative example of the notation. If $Q(x_1,x_2;t)$ is given as in the previous example, we have
+\begin{exa}Here is an illustrative example of the notation. If $Q(x_1,x_2;t)$ is given as in the previous example, we have
 \begin{align}
 	Q_1^0 = [x_1^0]Q(x_1,x_2) = Q(0,x_2) &= 1 + a_1(x_2+a_2)t^2+\cdots\,,\\
 	\Qf{0,0} = Q_{0,0} = Q(0,0) &= 1 + a_1a_2 t^2+\cdots\,.
@@ -180,5 +177,5 @@ Furthermore, we may write
 	S_1^{\um 1} &= [\ol x_1](x_1+\ol x_1)(x_2+\ol x_2) = x_2+\ol x_2
 \end{align}
 and $\Sf{\pm 1,\pm1}  = 1$.
-\end{example}
+\end{exa}
 \endinput

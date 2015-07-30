@@ -60,15 +60,13 @@
 
 %My Own Stuff
 
-
-\newtheorem{theorem}{Theorem}
-\theoremstyle{theorem} \newtheorem{definition}[theorem]{Definition}
-\theoremstyle{theorem} \newtheorem{lemma}[theorem]{Lemma}
-\theoremstyle{theorem} \newtheorem{corollary}[theorem]{Corollary}
-\theoremstyle{theorem} \newtheorem{prop}[theorem]{Proposition}
-\theoremstyle{definition} \newtheorem{example}[theorem]{Example}
-
-\numberwithin{theorem}{chapter}
+\newtheorem{thm}{Theorem}
+\theoremstyle{plain} \newtheorem{defn}[thm]{Definition}
+\theoremstyle{plain} \newtheorem{lem}[thm]{Lemma}
+\theoremstyle{plain} \newtheorem{cor}[thm]{Corollary}
+\theoremstyle{plain} \newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition} \newtheorem{exa}[thm]{Example}
+\numberwithin{thm}{chapter}
 
 \newcommand{\en}{\mathbb{N}}
 \newcommand{\ze}{\mathbb{Z}}
