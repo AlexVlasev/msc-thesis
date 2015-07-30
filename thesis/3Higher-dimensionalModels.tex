@@ -6,28 +6,86 @@
 \label{ch:HigherD}
 %=======================================
 
-We can easily generalize the one-dimensional results to two or more dimensions. The following diagram illustrates the two-dimensional case.
+We can easily generalize the one-dimensional results to two or more dimensions, but first, we need to spend some time building good notation that will make our work easier.
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale = 0.5]{placeholder}
-%    \caption{Two-dimensional lattice walk model constraints.}
-%    \label{fig:plane}
-%\end{figure}
+\begin{itemize}
+	\item Set $\mc S $. This is a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, this step set may differ from point to point; for example, a honeycomb lattice embedded in $\ze^2$. We will assume that there is one set of steps allowed for every point of the space. The set may involve arbitrarily-many finitely-sized steps with multiplicities at least one. Its polynomial version is denoted by $S$.
+	\item Set $\mc D $. This is the region in $\ze^d$ that the lattice walks can occupy. They are not allowed to venture outside. We have already seen half-spaces and orthants. Other interesting regions are semi-infinite strips, finite boxes and wedges.
+	\item Set $\mc D_0 $. This is a sub-region in $\mc D $ where lattice walk interactions take place --- we may track how many times lattice walks visit coordinates from this region. We may count visits to different points from $\mc D_0 $ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
+	\item Set $\mc Q$. This is a polynomial or series from which we evolve lattice walks. Each monomial may be interpeted as some lattice walk with some iterated counters; for example, $x_1x_2t^2$ may indicate a walk that has started somewhere and ended on $(1,1)$ after two steps. This term could be as trivial as 1, indicating the empty walk ending at the origin, to a series representing a set of infinitely many walks with some pattern. Its polynomial version is denoted by $q$.
+\end{itemize}
 
-In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far, like in \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
- 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale = 0.5]{placeholder}
-%    \caption{Inclusion-exclusion of regions.}
-%    \label{fig:inclusion}
-%\end{figure}
+We will be growing lattice walks from an initial condition $\mc Q$, with steps $\mc S$, within $\mc D$ in $\ze^d$, while counting interactions with $\mc D_0$. Of course, $\mc Q$ may be a more general term, so we will not restrict it yet. The quadruple of sets should serve as a complete picture of a lattice walk model, so we encapsulate it in a definition.
+
+\begin{defn}Let $\mc M = (\mc S, \mc D,\mc D_0, \mc Q)$ denote a lattice walk model with step set $\mc S $, living in the region $\mc D $, interacting with region $\mc D_0 $, where $\mc Q$ is an initial condition.
+\end{defn}
+
+
 
 \begin{defn} The (?model) $d$-dimensional lattice walk model is the one with small steps in the positive orthant in $\ze^d$. The interacting (?model) model is the (?model) $d$-dimensional model with interactions with the hyperplanes $x_k = 0$ bounding the positive orthant.
 \end{defn}
 
+Of course, we need to keep track of all these quantities inside a generating functions, so we continue using $Q$ for the name.
+\begin{defn} Let $\mc M$ be a lattice walk model and $Q$ its associated generating function counting lattice walks' lengths with $t$, ending locations with $\row xd$, and interactions with $\mc D_0 $ with some multi-index variable $a$. We write
+\begin{align}
+	Q = Q(\row xd,a;t) = \sum_{k=0}^{\infty} q_k(\row xd, a)t^k\,,
+\end{align}
+where $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
+\end{defn}
+
+In the most basic case, lattice walks starting at the origin on $d$ dimensions have no restrictions and there are no interactions. We can enumerate these walks easily by writing the full generating function as
+\begin{align}
+	\begin{split}
+		Q(\row xd;t) &= \frac{1}{1-tS(\row xd)} \\
+				&= 1 + tS(\row xd) + t^2 S(\row xd)^2 + \cdots\,.
+	\end{split}
+\end{align}
+
+In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far, like in \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
+ 
+
 The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term, we start with $Q_1^0$ and multiply by $t\ol x_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally, we re-add those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step, so we multiply $\Qf{0,0}$ by $t\ol x_1\ol x_2\Sf{\um 1,\um 1}$. We have obtained $Q$ again but with the $t^0$ term missing.
+
+In the interest of generalizing the problem-solving strategies involved in lattice walk enumeration, we need powerful notation to handle all the intricacies of the problem. In fact, it is the notation itself that paved the way towards generalization in our original research because it is suggestive and points towards the deeper connections between the generating functions and quantities involved. With this thesis we aim to make this kind of notation more common in higher-dimensional lattice walk analysis. Typically, in the multivariate setting we see multi-index notation where a bolded, vectorial or even supressed notation denotes the collection of variables involved. We would use this notation as well, but it is insufficient when working with restricted geometries for region and marking subregions. Therefore, we have the following notation.
+
+\begin{defn}Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$ where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
+\end{defn}
+\begin{defn} For sequences $I = (\row im)$ and $J = (\row jm)$, and an indeterminate $x$, we have the monomial
+\begin{align}
+	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,,
+\end{align}
+with special cases $x_I^{\oo} = 1$ and $x_I^{\one} = x_I$ and $x_I^{\um\one} = 1/x_I = \ol x_I$.
+\end{defn}
+\begin{defn} For sequences $I = (\row im)$ and $J = (\row jm)$, and an indeterminate $x$, we have the coefficient extraction operator
+\begin{align}
+	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J\,,
+\end{align}
+with special cases:
+\begin{itemize}
+	\item $F_I^{J} = F$, if $I$ is empty.
+	\item $F_I^J = F_J$, if $I$ is the full set of variables ordered unambiguously.
+\end{itemize}
+\end{defn}
+We will primarily be using the notation for extractions with respect to the $x$ variables in the generating functions but, sometimes, we will be using such a coefficient extraction with respect to other variables, most commonly $t$. We will never mix such extractions with this notation.
+\begin{defn}  (?) For sequences $I = (\row im)$ and $J = (\row jm)$, we define the term extraction operator as
+\begin{align}
+	[[x_I^J]] = \ext{x_I^J}\,.
+\end{align}
+That is, $[[x_I^J]]F = x_I^J F_I^J$.
+\end{defn}
+
+\begin{exa}Here is an illustrative example of the notation. If $Q(x_1,x_2;t)$ is given as in the previous example, we have
+\begin{align}
+	Q_1^0 = [x_1^0]Q(x_1,x_2) = Q(0,x_2) &= 1 + a_1(x_2+a_2)t^2+\cdots\,,\\
+	\Qf{0,0} = Q_{0,0} = Q(0,0) &= 1 + a_1a_2 t^2+\cdots\,.
+\end{align}
+Furthermore, we may write
+\begin{align}
+	S_1^{\um 1} &= [\ol x_1](x_1+\ol x_1)(x_2+\ol x_2) = x_2+\ol x_2
+\end{align}
+and $\Sf{\pm 1,\pm1}  = 1$.
+\end{exa}
+
 
 This analysis leads to the following functional equation for $Q$
 \begin{align}
@@ -37,6 +95,13 @@ which is rather large even for two dimensions. Contrast this notation to the one
 %=======================================
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
+
+\begin{defn} Suppose that $\Gamma$ is an operator involving $x$ and $a$ variables but not $t$. We apply $\Gamma$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following way:
+\begin{align}
+	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k\,.
+\end{align}
+\end{defn}
+
 If we use operators we can build the generalizations to higher dimensions in a straight-forward manner. As we have done before, we multiply $Q$ by $tS$, so we can extend the lattice walks by one step. Then we apply an operator $E$, to be determined later, to remove all the walks venturing outside of the positive orthant (nonzero coordinates $x_k$). Finally, we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we have extended all walks by one step, we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
 \begin{align}
 	Q = 1 + LE(tSQ)
@@ -690,3 +755,15 @@ So far we have solved the 64 reducible models, the 39 other models with group of
 %=====================================================================================
 \endinput
 
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[scale = 0.5]{placeholder}
+%    \caption{Two-dimensional lattice walk model constraints.}
+%    \label{fig:plane}
+%\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[scale = 0.5]{placeholder}
+%    \caption{Inclusion-exclusion of regions.}
+%    \label{fig:inclusion}
+%\end{figure}

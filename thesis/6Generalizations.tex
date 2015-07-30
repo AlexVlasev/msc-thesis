@@ -11,47 +11,12 @@
 %================================
 In this final chapter we will finally analyze the kinds of generalizations that we can explore with the help of the operator perspective. There is already some work that hints at those more general situations. For example, Definition 1.1 of \cite[p.~2]{mishna2009classifying} has a functional equation for the non-interacting lattice walks on the quarter plane, which is valid for models with $\mc S$ containing negative coordinates of size at most $\um 1$. Similarly, \cite{kauers2014walks} covers walks in the quarter plane with multiple copies of small steps. Also, we may consider the region of a semi-infinite strip on the plane as in \cite{brak2005directed, wong2014confining, owczarek2012enumeration}. In \cite{niederhausen2005note} the author considers lattice walks in an octant with interactions with the diagonal.
 
-Before we begin the general treatment, we must specify what kinds of generalizations we are ready to make.
-
-\begin{itemize}
-	\item Set $\mc S $. This is a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, this step set may differ from point to point; for example, a honeycomb lattice embedded in $\ze^2$. We will assume that there is one set of steps allowed for every point of the space. The set may involve arbitrarily-many finitely-sized steps with multiplicities at least one. Its polynomial version is denoted by $S$.
-	\item Set $\mc D $. This is the region in $\ze^d$ that the lattice walks can occupy. They are not allowed to venture outside. We have already seen half-spaces and orthants. Other interesting regions are semi-infinite strips, finite boxes and wedges.
-	\item Set $\mc D_0 $. This is a sub-region in $\mc D $ where lattice walk interactions take place --- we may track how many times lattice walks visit coordinates from this region. We may count visits to different points from $\mc D_0 $ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
-	\item Set $\mc Q$. This is a polynomial or series from which we evolve lattice walks. Each monomial may be interpeted as some lattice walk with some iterated counters; for example, $x_1x_2t^2$ may indicate a walk that has started somewhere and ended on $(1,1)$ after two steps. This term could be as trivial as 1, indicating the empty walk ending at the origin, to a series representing a set of infinitely many walks with some pattern. Its polynomial version is denoted by $q$.
-\end{itemize}
-
-%\begin{figure}[H]
-    %\centering
-    %\includegraphics[scale = 0.5]{placeholder}
-    %\caption{General regions in $\ze^2$.}
-%\end{figure}
-
-We will be growing lattice walks from an initial condition $\mc Q$, with steps $\mc S$, within $\mc D$ in $\ze^d$, while counting interactions with $\mc D_0$. Of course, $\mc Q$ may be a more general term, so we will not restrict it yet. The quadruple of sets should serve as a complete picture of a lattice walk model, so we encapsulate it ina definition.
-
-\begin{defn}Let $\mc M = (\mc S, \mc D,\mc D_0, \mc Q)$ denote a lattice walk model with step set $\mc S $, living in the region $\mc D $, interacting with region $\mc D_0 $, where $\mc Q$ is an initial condition.
-\end{defn}
-
-Of course, we need to keep track of all these quantities inside a generating functions, so we continue using $Q$ for the name.
-
-\begin{defn} Let $\mc M$ be a lattice walk model and $Q$ its associated generating function counting lattice walks' lengths with $t$, ending locations with $\row xd$, and interactions with $\mc D_0 $ with some multi-index variable $a$. We write
-\begin{align}
-	Q = Q(\row xd,a;t) = \sum_{k=0}^{\infty} q_k(\row xd, a)t^k\,,
-\end{align}
-where $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
-\end{defn}
-
 The analysis is analogous to the one in \autoref{ch:OneD} and \autoref{ch:HigherD} --- we start with the initial condition $\mc Q$, that is represented by the function $q$, and grow lattice walks from it by multiplying by $tS$. Those walks may venture outside of $\mc D$ and may interact with $\mc D_0$. Just like in the previous analysis, we will need operators to help us remove or mark walks.
 
 \begin{defn} Let $\mc M$ be a given model set in $d$ dimensions. Let $E$ be an operator that eliminates monomials $x_{[d]}^P$ when $P$ is not in $\mc D $. Similarly, let $L$ be an operator that marks monomials $x_{[d]}^P$ for $P \in \mc D_0$ in the way specified by the model. Let $K = 1 - tS$ be the kernel of the lattice walk model.
 \end{defn}
 
 From what we have seen in previous chapters, it should be clear that the operator $L$ is invertible --- just take an operator marking the same locations in $\mc D_0$ but with inverted labels. That is, if the operator marks a monomial with the label $a$, then the inverse operator is one marking the same monomial with the label $1/a$. Also, the caution in the definition is there because it may be possible to imagine such convoluted constraints that an operator may no exist. It is not difficult to come up with constraints that lead to unwieldy operators. To make the analysis work, we need the operators to act term-wise on series with respect to the variable $t$.
-
-\begin{defn} Suppose that $\Gamma$ is an operator involving the $x$ and $a$ variables but not $t$. We shall apply $\Gamma$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following way:
-\begin{align}
-	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k\,.
-\end{align}
-\end{defn}
 
 We can dive into the main result concerning the general models delineated so far.
 
@@ -77,7 +42,7 @@ since the operators do not interact with $t$.
 It is not clear how one would proceed and if this method will be a better way to handle the problem. The upside is that the operators are invertible, but the downside is that we now have more extracted terms in the functional equation, since the lattice walks can now go anywhere.
 \end{exa}
 
-\begin{exa} Consider a the lattice walk models in two dimensions from previous chapters. Another way we can look at the quarter plane models is to us the idea from the previous example and also symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines, where one coordinate is $-1$, we can also mark walks on lines with one coordinate $+1$. This process leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
+\begin{exa} Conside the lattice walk models in two dimensions from previous chapters. Another way we can look at the quarter plane models is to us the idea from the previous example and also symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines, where one coordinate is $-1$, we can also mark walks on lines with one coordinate $+1$. This process leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
 \begin{align}
 	(1- tLS)\widetilde Q = (1- t L_{\um 1}L_0L_1 S)\widetilde Q = 1\,.
 \end{align}
@@ -267,8 +232,8 @@ That is, in the master functional equation we have all of the unknown functions.
 
 \begin{align}
 	E & = 1 - \sum_{k=1}^n ([[x^{u-k}]]  + [[x^{v+k}]])\,,\\
-	L & = 1 + \sum_{k=u}^v a_k [[x^k]]\,,
-	L^{\um 1} = 1 - \sum_{k=u}^v c_k [[x^k]]\,.
+	L & = 1 + \sum_{k=u}^v a_k [[x^k]]\,,\\
+	L^{\um 1} &= 1 - \sum_{k=u}^v c_k [[x^k]]\,.
 \end{align}
 We do not need to use all the variables $a_k$ but we may as well do that. The master functional equation is $(L^{\um 1} - tES)Q = L^{\um 1}(q)$, as usual. The only extraction equations we obtain here are those coming from the coefficient extraction with $[x^i]$ with $u \leq i \leq v$. We have
 \begin{align}
@@ -435,34 +400,6 @@ where $\alpha(t)$ and $\beta(t)$ are algebraic functions of $t$ and $a$ since $\
 
 If we are to have a theory similar to Sturm-Liouville theory, we still need to find a suitable inner product on multivariate Laurent series that will let us write solutions for $Q$ in terms of those eigenfunctions with eigenvalue 1.
 
-%================================
-\section{Coefficient Extraction Equations}
-%================================
-
-The work so far is strongly hinting towards a theory of ordinary and partial coefficient extraction equations - OCEs and PCEs. Here we will work out some of the theory. We start with a partial coefficient extraction operator of finite type
-\begin{defn}$\mc L$ is a coefficient operator if
-\begin{align}
-	\mc L = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J}[x_I^J] = K + \mc E\qandq \mc E  = \sum_{\substack{I\subseteq [d],I\neq \emptyset\\ J \subseteq \ze^d}}a_{I,J}[x_I^J]\,,
-\end{align}
-where $K$ is the kernel of the operator and $\mc E$ is the pure extraction part. All the coefficients are Laurent polynomials in the $x$ variables and perhaps some other variables. The operator is ordinary if $d = 1$ and partial if $d \ge 2$. The operator is either of monomial type, where the coefficients are monomials, or of polynomial type, if one or more coefficients is a Laurent polynomial in $x_1,\ldots,x_d$.
-\end{defn}
-\begin{defn} An ordinary/partial coefficient equation (OCE/PCE) is one of the form $\mc L Q = q$ for some functions $Q$ and $q$, where $\mc L$ is an ordinary/partial coefficient operator. The equation is homogeneous if $q = 0$ and inhomogeneous if $q \neq 0$.
-\end{defn}
-The question is whether we can solve these kinds of equations in general, and what their solutions may look like. In the previous section we found that if $\mc L$ is finite then the function $Q$ is D-finite in the $x$ variables while it may not necessarily be D-finite in the $t$ variable or any other variable (parameter) that appears in the coefficients.
-
-\begin{exa} The operator $\Gamma$ is a partial coefficient operator with monomial coefficients.
-\end{exa}
-
-\begin{exa} We can transform the functional equation for a finite random walk model into a PCE. To do so, we note that $K$ is the same in both forms. The part requiring some work is the one that has to do with the term $(1-\Gamma)SQ$ which is a pure extraction of $SQ$. We can expand $S$ into its monomials. Then $(1-\Gamma)S$ fully expands into monomials of the form
-\begin{align}
-	a_{I,J}\ext{x_I^J}x_A^B\,,
-\end{align}
-where we can pull terms inside $[x_I^J]$ from the right. In the end the $S$ is absorbed within the operator and istead of having monomial coefficients it now has polynomial coefficients. It may be useful to write an operator $\mc L$ in the form
-\begin{align}
-	\mc L = K + \Gamma'S
-\end{align}
-for some monomial operator $\Gamma'$.
-\end{exa}
 
 %=======================================
 \subsection{Walks With Unconstrained Steps}
@@ -547,62 +484,6 @@ where $A_{ij}$ are functions that need to be determined.
 \end{cor}
 This kind of solution would have also appeared if we went through the calculations in the functional equation and extracted coefficients. However, this method is more efficient. If we had used the second scheme in the proof, we would have ended up with a slightly different form but maybe it would have had a slightly lower degree. It would involve an indefinite integral of $q$ and elements in the kernel of the differential operator.
 
-%================================
-\subsection{Connection With Fredholm Theory}
-%================================
-Suppose that we are given the equation in the form
-\begin{gather}
-	\begin{align}
-		KQ +t\Gamma'SQ = q\,,
-	\end{align}
-	\shortintertext{where}
-	\begin{align}
-		\Gamma' = \sum_{I,J}a_{I,J} x_I^J[x_I^J]\,,
-	\end{align}
-\end{gather}
-where we only have finite-sized $J$'s and $\emptyset \neq I\subseteq [d]$. From complex analysis, we know that for a function $f(x)$ given by a power series and for $x$ within the region of convergence,
-\begin{gather}
-	\begin{align}
-		[x^n]f(x) = f_n = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z^{n+1}}dz
-	\end{align}
-	\shortintertext{and}
-	\begin{align}
-		f(x) = \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z-x}dz\,,
-	\end{align}
-\end{gather}
-where in the first case, $\gamma$ winds CCW around the origin within the region of convergence, and in the second case, $\gamma$ winds around $x$ within the region of convergence. The idea is to combine these two expressions for many dimensions, at least formally, to represent the operator $\mc L$ in integral form. We have for $|I| = n$
-\begin{align}
-	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^{n}}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}}dz_I\,,
-\end{align}
-where $f$ has $x_i = z_i$ for $i \in I$ and the rest are still $x$'s. If we use this representation we will have different numbers of iterations of the integral for different coefficient. We might as well go all-out and write
-\begin{align}
-	[x_I^J]f(x_1,\ldots,x_d)= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{f}{z_I^{J+1}(z-x)_{I^c}}dz_{[d]}\,,
-\end{align}
-where now $x_i = z_i$ in $f$ and 
-\begin{align}
-	(z-x)_P = \prod_{p\in P} (z_p-x_p)\,.
-\end{align}
-Therefore we may write the operator as
-\begin{align}
-	(K+t\Gamma'S)Q&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \left(\frac{K}{(z-x)_{[d]}} +t S\sum_{I,J}\frac{a_{I,J}}{z_I^{J+1}(z-x)_{I^c}}\right)Q dz_{[d]}\\
-	& = \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma \frac{1}{(z-x)_{[d]}}\left(K +t S\sum_{I,J}\frac{a_{I,J}(z-x)_I}{z_I^{J+1}}\right)Q dz_{[d]}\\
-	&= \frac{1}{(2\pi i)^d}\int\cdots\int_\gamma R_0Q dz_{[d]}\,.
-\end{align}
-Now to turn this into a $d$-dimensional Fredholm problem we will need to parametrize the integral. One way that might work is to set $z_k = r_k \exp(i\theta_k)$ and $x_k = s_k e^{i\phi_k}$. Since $dz_k = r_k i e^{i\theta_k}$, we have
-\begin{gather}
-	\begin{align}
-		(K+t\Gamma'S)Q = \frac{r_{[d]}}{(2\pi)^d}\int_0^{2\pi}\cdots\int_0^{2\pi} e^{i\theta_1}\ldots e^{i\theta_d}R_0Q d\theta_{[d]} = q(\phi_1,\ldots,\phi_d)\,,
-	\end{align}
-	\shortintertext{so if we write}
-	\begin{align}
-		R = \exp(i(\theta_1+\ldots + \theta_d))R_0(\phi_1,\ldots,\phi_d,\theta_1,\ldots,\theta_d)\,,
-	\end{align}
-\end{gather}
-we have the inhomogeneous Fredholm equation of the first kind in $d$ dimensions
-\begin{align}
-	\int_0^{2\pi}\cdots\int_0^{2\pi} RQ d\theta_1\ldots d\theta_d= g\,,
-\end{align}
-where $R$ is the kernel and $g = (2\pi)^dq/r_{[d]}$ and $Q$ is in terms of $\theta_k$'s. Perhaps Fredholm theory can be applied in solving the random walk models in man dimensions. Perhaps this will also lead to a good inner product on the space where $Q$ lives.
 
 
 \endinput

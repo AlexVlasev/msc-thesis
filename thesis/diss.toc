@@ -5,61 +5,57 @@
 \contentsline {chapter}{List of Figures}{viii}{chapter*.5}
 \contentsline {chapter}{Acknowledgments}{ix}{chapter*.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Recent History}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Thesis Objectives}{3}{section.1.2}
-\contentsline {section}{\numberline {1.3}Layout of Thesis}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}Notation and Conventions}{4}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Formal Series}{4}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Lattice Walk Models}{5}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Thesis Notation}{8}{subsection.1.4.3}
-\contentsline {chapter}{\numberline {2}One-dimensional Lattice Walk Models}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}Derivation of the Functional Equation}{10}{section.2.1}
-\contentsline {section}{\numberline {2.2}Solving Functional Equations For Various Step Sets}{16}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}The $S = \delta $ or $S = \delta + x$ case}{16}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}The $S = \delta + \overline {x} + x$ case}{17}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Conclusion}{20}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Higher-dimensional Lattice Walk Models}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Using Operators to Derive the Functional Equation}{22}{section.3.1}
-\contentsline {section}{\numberline {3.2}Coefficient Extractions}{24}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Using Operator Notation For Fast Coefficient Extraction}{24}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Further Functional Equations}{25}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Kernel Forms}{27}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}First Solutions}{29}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Formal Neumann Series}{29}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Hadamard Products}{30}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Reducible Models and Groups For Walks With Small Steps}{33}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Specializing to Two Dimensions}{36}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}First Examples in the Plane}{36}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Kernel Group Considerations}{38}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Solving Basic Two-dimensional Models}{40}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Case 2.2 -- Group of Order One}{40}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Case 2.3 -- Group of Order Two}{41}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Miscellaneous Case}{42}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Counting Classes of Models}{42}{subsection.3.5.4}
-\contentsline {chapter}{\numberline {4}The Algebraic Kernel Method}{44}{chapter.4}
-\contentsline {section}{\numberline {4.1}Models Without Interactions}{44}{section.4.1}
-\contentsline {section}{\numberline {4.2}Models With Interactions}{51}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Groups of Order Four}{52}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Groups of Order Six}{57}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Groups of Order Eight}{60}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {5}The Obstinate Kernel Method}{61}{chapter.5}
-\contentsline {section}{\numberline {5.1}Groups of Order Four}{62}{section.5.1}
-\contentsline {section}{\numberline {5.2}Group of Order Six}{65}{section.5.2}
-\contentsline {section}{\numberline {5.3}Group of Order Eight}{67}{section.5.3}
-\contentsline {section}{\numberline {5.4}Highly-symmetric Two-dimensional Models}{70}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Cartesian Model -- N, S, E, W}{71}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Diagonal Cartesian Model -- NE, NW, SE, SW}{74}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}The Full Model}{79}{subsection.5.4.3}
-\contentsline {chapter}{\numberline {6}Generalizations}{82}{chapter.6}
-\contentsline {section}{\numberline {6.1}Constraint Generalizations}{82}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Marking Operators}{86}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Examples of Regions}{89}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Connections With Other Theories}{94}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Properties of Marking Operators}{94}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Marking Operators With Multiplication}{95}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Lattice Walks Operator}{96}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Coefficient Extraction Equations}{98}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Walks With Unconstrained Steps}{99}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Connection With Fredholm Theory}{102}{subsection.6.3.2}
-\contentsline {chapter}{\numberline {7}Epilogue}{104}{chapter.7}
-\contentsline {chapter}{Bibliography}{105}{chapter*.17}
+\contentsline {section}{\numberline {1.1}Recent History}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Roadmap}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}One-dimensional Lattice Walk Models}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Derivation of the Functional Equation}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Solving Functional Equations For Various Step Sets}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}The $S = \delta $ or $S = \delta + x$ case}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}The $S = \delta + \overline {x} + x$ case}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Conclusion}{15}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Higher-dimensional Lattice Walk Models}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}Using Operators to Derive the Functional Equation}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}Coefficient Extractions}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Using Operator Notation For Fast Coefficient Extraction}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Further Functional Equations}{23}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Kernel Forms}{25}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}First Solutions}{27}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Formal Neumann Series}{27}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Hadamard Products}{28}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Reducible Models and Groups For Walks With Small Steps}{30}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Specializing to Two Dimensions}{34}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}First Examples in the Plane}{34}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Kernel Group Considerations}{36}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Solving Basic Two-dimensional Models}{37}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Case 2.2 -- Group of Order One}{37}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Case 2.3 -- Group of Order Two}{39}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Miscellaneous Case}{40}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Counting Classes of Models}{40}{subsection.3.5.4}
+\contentsline {chapter}{\numberline {4}The Algebraic Kernel Method}{42}{chapter.4}
+\contentsline {section}{\numberline {4.1}Models Without Interactions}{42}{section.4.1}
+\contentsline {section}{\numberline {4.2}Models With Interactions}{49}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Groups of Order Four}{50}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Groups of Order Six}{55}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Groups of Order Eight}{58}{subsection.4.2.3}
+\contentsline {chapter}{\numberline {5}The Obstinate Kernel Method}{59}{chapter.5}
+\contentsline {section}{\numberline {5.1}Groups of Order Four}{60}{section.5.1}
+\contentsline {section}{\numberline {5.2}Group of Order Six}{63}{section.5.2}
+\contentsline {section}{\numberline {5.3}Group of Order Eight}{65}{section.5.3}
+\contentsline {section}{\numberline {5.4}Highly-symmetric Two-dimensional Models}{68}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Cartesian Model -- N, S, E, W}{69}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Diagonal Cartesian Model -- NE, NW, SE, SW}{72}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}The Full Model}{77}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}Generalizations}{80}{chapter.6}
+\contentsline {section}{\numberline {6.1}Constraint Generalizations}{80}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Marking Operators}{82}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Examples of Regions}{86}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Connections With Other Theories}{90}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Properties of Marking Operators}{91}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Marking Operators With Multiplication}{92}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Lattice Walks Operator}{93}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Walks With Unconstrained Steps}{94}{subsection.6.2.4}
+\contentsline {chapter}{\numberline {7}Further Work}{98}{chapter.7}
+\contentsline {section}{\numberline {7.1}Coefficient Extraction Equations}{98}{section.7.1}
+\contentsline {section}{\numberline {7.2}Connection With Fredholm Theory}{99}{section.7.2}
+\contentsline {chapter}{\numberline {8}Epilogue}{102}{chapter.8}
+\contentsline {chapter}{Bibliography}{103}{chapter*.16}
