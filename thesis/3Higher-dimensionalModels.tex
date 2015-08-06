@@ -6,47 +6,59 @@
 \label{ch:HigherD}
 %=======================================
 
-We can easily generalize the one-dimensional results to two or more dimensions, but first, we need to spend some time building good notation that will make our work easier.
+We begin the exploration of higher-dimensional models by making some useful definitions. Here are the main ingredients for a model set in $\ze^d$.
 
 \begin{itemize}
-	\item Set $\mc S $. This is a finite set of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, this step set may differ from point to point; for example, a honeycomb lattice embedded in $\ze^2$. We will assume that there is one set of steps allowed for every point of the space. The set may involve arbitrarily-many finitely-sized steps with multiplicities at least one. Its polynomial version is denoted by $S$.
-	\item Set $\mc D $. This is the region in $\ze^d$ that the lattice walks can occupy. They are not allowed to venture outside. We have already seen half-spaces and orthants. Other interesting regions are semi-infinite strips, finite boxes and wedges.
-	\item Set $\mc D_0 $. This is a sub-region in $\mc D $ where lattice walk interactions take place --- we may track how many times lattice walks visit coordinates from this region. We may count visits to different points from $\mc D_0 $ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
-	\item Set $\mc Q$. This is a polynomial or series from which we evolve lattice walks. Each monomial may be interpeted as some lattice walk with some iterated counters; for example, $x_1x_2t^2$ may indicate a walk that has started somewhere and ended on $(1,1)$ after two steps. This term could be as trivial as 1, indicating the empty walk ending at the origin, to a series representing a set of infinitely many walks with some pattern. Its polynomial version is denoted by $q$.
+	\item A finite set $\mc S$ of steps that we can take from a point in $\ze^n$ to another point in $\ze^n$. In general, this step set may differ from point to point; for example, a honeycomb lattice embedded in $\ze^2$. We will assume that there is one global set of steps for all points. The set may involve arbitrarily-many finitely-sized steps with multiplicities at least one. Its Laurent polynomial version is denoted by $S$.
+	\item A region $\mc D \subseteq \ze^d$. This is the region in $\ze^d$ that the lattice walks can occupy. They are not allowed to venture outside. We have already seen half-spaces and orthants. Other interesting regions are semi-infinite strips, finite boxes and wedges.
+	\item A subset $\mc D_0 $ of $\mc D$. This is a sub-region in $\mc D $ where lattice walk interactions take place --- we may track how many times lattice walks visit coordinates from this region. We may count visits to different points from $\mc D_0 $ in different ways. This less-studied paradigm may involve marking visits to various places: the origin, the axes in two dimensions, various higher-dimensional hyperplanes, a cone, an infinite strip, the sides of a box and so on.
+	\item A set $\mc Q$ of initial walks that we can evolve. This could be as simple as an empty walk or complicated as some infinite set of walks. The set has a corresponding polynomial or series $q$.
 \end{itemize}
 
 We will be growing lattice walks from an initial condition $\mc Q$, with steps $\mc S$, within $\mc D$ in $\ze^d$, while counting interactions with $\mc D_0$. Of course, $\mc Q$ may be a more general term, so we will not restrict it yet. The quadruple of sets should serve as a complete picture of a lattice walk model, so we encapsulate it in a definition.
 
-\begin{defn}Let $\mc M = (\mc S, \mc D,\mc D_0, \mc Q)$ denote a lattice walk model with step set $\mc S $, living in the region $\mc D $, interacting with region $\mc D_0 $, where $\mc Q$ is an initial condition.
+\begin{defn} Let a lattice walk model $\mc M$ be characterized by its step set $\mc S$, region $\mc D $, region $\mc D_0 $, and initial walk set $\mc Q$.
 \end{defn}
 
-
-
-\begin{defn} The (?model) $d$-dimensional lattice walk model is the one with small steps in the positive orthant in $\ze^d$. The interacting (?model) model is the (?model) $d$-dimensional model with interactions with the hyperplanes $x_k = 0$ bounding the positive orthant.
+\begin{defn} The CLASSIC $d$-dimensional lattice walk model is the one with small steps in the positive orthant in $\ze^d$. The interacting CLASSIC model is the CLASSIC $d$-dimensional model with interactions with the hyperplanes $x_k = 0$ bounding the positive orthant.
 \end{defn}
+\FIXME{Think hard of a better name than CLASSIC.}
 
-Of course, we need to keep track of all these quantities inside a generating functions, so we continue using $Q$ for the name.
-\begin{defn} Let $\mc M$ be a lattice walk model and $Q$ its associated generating function counting lattice walks' lengths with $t$, ending locations with $\row xd$, and interactions with $\mc D_0 $ with some multi-index variable $a$. We write
+\begin{exa} Consider one of the one-dimensional models from the previous chapter. This is an example of a CLASSIC one-dimensional model. Here $\mc D$ is the set of non-negative integers, $\mc D_0$ consists of the point at the origin, where the marking variable is $a$, $\mc Q$ consists of the empty walk. Finally, $\mc S$ is one of the subsets of $\{\um 1, 0, 1\}$.
+\end{exa}
+
+\begin{exa} Consider the models with $d = 2$. Here $\mc D = \{(x_1,x_2)\in \ze^2\mid x_1,\, x_2 \ge 0\}$ and $\mc D_0$ consists of marking points on the non-negative axes --- $x_1$ with label $a_2$, since $x_2 = 0$ here, and $x_2$ with label $a_1$, since $x_1 = 0$. Note that the origin is marked with both labels. As in the previous example, $\mc Q$ consists of the empty walk and $\mc S$ is some set of small steps, where each step has coordinates of size at most 1.
+\end{exa}
+
+Of course, we need to keep track of all the quantities tracking properties of the walks inside a generating functions, so we continue using $Q$ for its name.
+\begin{defn} Let $\mc M$ be a lattice walk model and $Q$ its associated generating function counting lattice walks' lengths with $t$, ending locations with $\row xd$, and interactions with $\mc D_0 $ with some multi-index variable $a$. Then we write
 \begin{align}
 	Q = Q(\row xd,a;t) = \sum_{k=0}^{\infty} q_k(\row xd, a)t^k\,,
 \end{align}
-where $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
+where the coefficients $q_k$ are Laurent poynomials in the $x$ and $a$ variables. 
 \end{defn}
 
-In the most basic case, lattice walks starting at the origin on $d$ dimensions have no restrictions and there are no interactions. We can enumerate these walks easily by writing the full generating function as
+\begin{exa} In this example we will examine the simplest kind of model --- one where $\mc D$ is the whole space and there are no interactions, that is, $\mc D_0$ is empty, and finally, $\mc Q$ consists of the empty walk. Since the lattice walks may pick any step from the step set $\mc S$, the walks of length one are enumerated via $tS$, the walks of length two, via $t^2S^2$, and so on, where $S = S(\row xd)$. Then the full generating function is
 \begin{align}
-	\begin{split}
-		Q(\row xd;t) &= \frac{1}{1-tS(\row xd)} \\
-				&= 1 + tS(\row xd) + t^2 S(\row xd)^2 + \cdots\,.
-	\end{split}
+	Q(\row xd;t) = 1 + St + S^2t^2 + \cdots = \frac{1}{1-St}\,.
 \end{align}
+\end{exa}
 
-In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far, like in \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
- 
+\begin{exa} Consider the two-dimensional CLASSIC model with $\mc S = \{$NE, NW, SE, SW$\}$, that is, $S = (\ol x_1 + x_1)(\ol x_2 + x_2)$. The only walk of length one is the one with step NW, enumerated via $x_1x_2$. To obtain the walks of length two, we grow this walk for an extra step. The walk may take any of the four steps, so the walks of length two are enumerated via $a_1a_2$, $a_1x_2$, $a_2x_1$ and $x_1^2x_2^2$. Therefore,
+\begin{align}
+	Q = 1 + x_1x_2t + (a_1+x_1)(a_2+x_2)t^2+\cdots\,,
+\end{align}
+We may extract coefficients too. For example, the walks ending on the $x_1$ axis are given by setting $x_2 = 0$ or extracting the $x_2^0$ term. That is,
+\begin{align}
+	[x_2^0]Q = 1 + a_2(a_1+x_1)t^2+\cdots\,.
+\end{align}
+The walks returning to the origin are given by
+\begin{align}
+	[x_1^0x_2^0]Q = 1 + a_1a_2t^2+\cdots\,.
+\end{align}
+\end{exa}
 
-The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term, we start with $Q_1^0$ and multiply by $t\ol x_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally, we re-add those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step, so we multiply $\Qf{0,0}$ by $t\ol x_1\ol x_2\Sf{\um 1,\um 1}$. We have obtained $Q$ again but with the $t^0$ term missing.
-
-In the interest of generalizing the problem-solving strategies involved in lattice walk enumeration, we need powerful notation to handle all the intricacies of the problem. In fact, it is the notation itself that paved the way towards generalization in our original research because it is suggestive and points towards the deeper connections between the generating functions and quantities involved. With this thesis we aim to make this kind of notation more common in higher-dimensional lattice walk analysis. Typically, in the multivariate setting we see multi-index notation where a bolded, vectorial or even supressed notation denotes the collection of variables involved. We would use this notation as well, but it is insufficient when working with restricted geometries for region and marking subregions. Therefore, we have the following notation.
+The calculations will be difficult to handle without extra notation, so in the interest of generalizing the problem-solving strategies involved in lattice walk enumeration, we need powerful notation to handle all the intricacies of the problem. Curiously, it was the notation itself that paved the way towards generalization in our original research because it is suggestive and points towards the deeper connections between the generating functions and quantities involved. With this thesis we aim to make this kind of notation more common in higher-dimensional lattice walk analysis. Typically, in the multivariate setting we see multi-index notation where a bolded, vectorial or even supressed notation denotes the collection of variables involved \awk. We would use this notation as well, but it is insufficient when working with restricted geometries for region and marking subregions. Therefore, we have the following notation.
 
 \begin{defn}Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$ where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
 \end{defn}
@@ -66,41 +78,43 @@ with special cases:
 	\item $F_I^J = F_J$, if $I$ is the full set of variables ordered unambiguously.
 \end{itemize}
 \end{defn}
-We will primarily be using the notation for extractions with respect to the $x$ variables in the generating functions but, sometimes, we will be using such a coefficient extraction with respect to other variables, most commonly $t$. We will never mix such extractions with this notation.
-\begin{defn}  (?) For sequences $I = (\row im)$ and $J = (\row jm)$, we define the term extraction operator as
+\begin{exa}In the previous example we had $[x_2^0]Q = Q_2^0$ and $[x_1^0x_2^0]Q = \Qf{0,0}$. Furthermore, we may write
+\begin{align}
+	S_1^{\um 1} &= [\ol x_1](x_1+\ol x_1)(x_2+\ol x_2) = x_2+\ol x_2
+\end{align}
+and $\Sf{\pm 1,\pm1}  = 1$.
+\end{exa}
+\awk We will mainly use the notation for extractions with respect to the $x$ variables in the generating functions but, sometimes, we will be using such a coefficient extraction with respect to other variables, most commonly $t$. We will never mix such extractions with this notation.
+\begin{defn} For sequences $I = (\row im)$ and $J = (\row jm)$, we define the term extraction operator as
 \begin{align}
 	[[x_I^J]] = \ext{x_I^J}\,.
 \end{align}
 That is, $[[x_I^J]]F = x_I^J F_I^J$.
 \end{defn}
 
-\begin{exa}Here is an illustrative example of the notation. If $Q(x_1,x_2;t)$ is given as in the previous example, we have
-\begin{align}
-	Q_1^0 = [x_1^0]Q(x_1,x_2) = Q(0,x_2) &= 1 + a_1(x_2+a_2)t^2+\cdots\,,\\
-	\Qf{0,0} = Q_{0,0} = Q(0,0) &= 1 + a_1a_2 t^2+\cdots\,.
-\end{align}
-Furthermore, we may write
-\begin{align}
-	S_1^{\um 1} &= [\ol x_1](x_1+\ol x_1)(x_2+\ol x_2) = x_2+\ol x_2
-\end{align}
-and $\Sf{\pm 1,\pm1}  = 1$.
-\end{exa}
-
-
-This analysis leads to the following functional equation for $Q$
-\begin{align}
-	Q = 1 + tSQ - t\ol x_1S_1^{\um 1}Q_1^0 - t\ol x_2S_2^{\um 2}Q_2^0 + t\ol x_1\ol x_2\Sf{\um 1,\um 1}\Qf{0,0}\,,
-\end{align}
-which is rather large even for two dimensions. Contrast this notation to the one in \cite[p.~10]{bousquet2010walks}. The problem quickly runs into notational difficulties for $d$-dimensional problems, but that can be dealt with by writing the equation as a sum over subsets of $\{1,\ldots, d\}$, like it is done for the non-interacting case in Equation 5.1 in \cite[p.~58]{melczer2014variants}. This method runs into trouble when we start considering interactions. We take the functional equation for the non-interacting case and modify it to add interactions. This analysis has been done before in Section 3 of \cite[p.~7]{tabbara2014exact} and Section 3.2 of \cite[p.~11]{wong2014confining}, where the authors add in terms like $(a_1-1)T$, where $T$ is some expression involving extractions of $Q$ and $S$, but we will not go into the messy details. Instead, we will use the operator notation to handle the problem in a much more efficient manner.
-%=======================================
-\section{Using Operators to Derive the Functional Equation}
-%=======================================
-
+Because there are different variables involved, there may be some ambiguity in the result, depending on the order of extraction. We will always perform coefficient extractions with respect to the $x$ or $a$ variables by first expanding any series in $t$, and then applying the extraction on the coefficients \awk. The following notation makes this precise.
 \begin{defn} Suppose that $\Gamma$ is an operator involving $x$ and $a$ variables but not $t$. We apply $\Gamma$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following way:
 \begin{align}
 	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k\,.
 \end{align}
 \end{defn}
+
+\begin{exa} In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to higher dimensions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly and without pain. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far, like in \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter plane. Then we can extend the walks by one step via a multiplication by $tS$ and remove those that step outside of the quarter plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
+ 
+
+The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term, we start with $Q_1^0$ and multiply by $t\ol x_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally, we re-add those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step, so we multiply $\Qf{0,0}$ by $t\ol x_1\ol x_2\Sf{\um 1,\um 1}$. We have obtained $Q$ again but with the $t^0$ term missing.
+
+This analysis leads to the following functional equation for $Q$
+\begin{align}
+	Q = 1 + tSQ - t\ol x_1S_1^{\um 1}Q_1^0 - t\ol x_2S_2^{\um 2}Q_2^0 + t\ol x_1\ol x_2\Sf{\um 1,\um 1}\Qf{0,0}\,,
+\end{align}
+which is rather large even for two dimensions. 
+\end{exa}
+
+Contrast this notation to the one in \cite[p.~10]{bousquet2010walks}. The problem quickly runs into notational difficulties for $d$-dimensional problems, but that can be dealt with by writing the equation as a sum over subsets of $\{1,\ldots, d\}$, like it is done for the non-interacting case in Equation 5.1 in \cite[p.~58]{melczer2014variants}. This method runs into trouble when we start considering interactions. We take the functional equation for the non-interacting case and modify it to add interactions. This analysis has been done before in Section 3 of \cite[p.~7]{tabbara2014exact} and Section 3.2 of \cite[p.~11]{wong2014confining}, where the authors add in terms like $(a_1-1)T$, where $T$ is some expression involving extractions of $Q$ and $S$, but we will not go into the messy details. Instead, we will use the operator notation to handle the problem in a much more efficient manner.
+%=======================================
+\section{Using Operators to Derive the Functional Equation}
+%=======================================
 
 If we use operators we can build the generalizations to higher dimensions in a straight-forward manner. As we have done before, we multiply $Q$ by $tS$, so we can extend the lattice walks by one step. Then we apply an operator $E$, to be determined later, to remove all the walks venturing outside of the positive orthant (nonzero coordinates $x_k$). Finally, we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we have extended all walks by one step, we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
 \begin{align}
@@ -115,7 +129,7 @@ and therefore, the inclusion-exclusion is a natural consequence of how the opera
 	L^{\um 1}(1-tLES)Q = (L^{\um 1}- tES)Q = L^{\um 1}(1) = \sum_{I\subseteq [d]}c_I = \ol a_{[d]}\,.
 \end{align}
 We can write down the following result.
-\begin{prop} The (?model) interacting $d$-dimensional lattice walk model has a full generating function $Q$ satisfying the functional equations
+\begin{prop} The CLASSIC interacting $d$-dimensional lattice walk model has a full generating function $Q$ satisfying the functional equations
 \begin{align}
 	(1-tLES)Q &= 1\,,\\
 	(L^{\um 1}-tES)Q &= \ol a_{[d]}\,,
@@ -141,7 +155,7 @@ where the last equality follows from the fact that there are no negative powers 
 	\sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol x_IS_{I}^{\um \one})Q_I^\oo = \ol a_{[d]}\,.
 \end{align}
 As in the two-dimensional case, we let $K_I = c_I-t \ol x_IS_{I}^{\um \one}$, where, if $I =\emptyset$, we have the empty products and empty extractions, leaving us with $K_{\emptyset} = K$. Finally, we can write the master equation in $d$ dimensions.
-\begin{thm} For subsets $I$ of $\{1,\ldots,d\}$, let $K_I = c_I-t \ol x_I S_{I}^{\um \one}$. Then the (?model) interacting $d$-dimensional lattice walk model, has a full generating function $Q$ satisfying the functional equation
+\begin{thm} For subsets $I$ of $\{1,\ldots,d\}$, let $K_I = c_I-t \ol x_I S_{I}^{\um \one}$. Then the CLASSIC interacting $d$-dimensional lattice walk model, has a full generating function $Q$ satisfying the functional equation
 \begin{align}
 	\label{eqn:Master}
 	\sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo= \ol a_{[d]}\,.
@@ -155,6 +169,8 @@ As in the two-dimensional case, we let $K_I = c_I-t \ol x_IS_{I}^{\um \one}$, wh
 %=======================================
 \section{Coefficient Extractions}
 %=======================================
+
+In this section we will see how the extraction and marking operators interact with basic coefficient extraction to produce quicker coefficient extraction of the functional equation. That is, it is faster to use the operator form of the functional equation in order to extract coefficients than it is to use the explicit form. However, this section is not essential for our understanding of the enumeration of lattice walk models. \FIXME{See if this section may be compressed a bit, since it looks horrible right now.}
 %=======================================
 \subsection{Using Operator Notation For Fast Coefficient Extraction}
 %=======================================
@@ -235,7 +251,7 @@ The form of this expression suggests the following notation.
 where if $I = \emptyset$, then $K_J(I) = K_J$.
 \end{defn}
 With this notation, we can write the $2^d$ equations for $Q_I^\oo$ and $I\subseteq [d]$ in simplified form.
-\begin{cor} Let $I$ be a subset of $\{1,\ldots,d\}$. The generating function $Q_I^{\oo}$ for the $d$-dimensional interacting (?model) lattice walk model satisfies the functional equation
+\begin{cor} Let $I$ be a subset of $\{1,\ldots,d\}$. The generating function $Q_I^{\oo}$ for the $d$-dimensional interacting CLASSIC lattice walk model satisfies the functional equation
 \begin{align}
 	\label{eqn:FullEqns}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}K_J (I) Q_{I,J}^{\oo,\oo} = \ol a_{[d]\backslash I}+a_I t  R_I'\,,
@@ -321,7 +337,7 @@ Interestingly enough, the calculation points to a differential equation. Clearly
 	\mon \del d W = \mon \del d (\mon xd KQ) = 1\,.
 \end{align}
 \end{prop}
-For further generalization, see \autoref{ch:General}.
+The result is not difficult to generalize. If we have walks with larger steps, we will have a similar partial differential equation where the orders of variables and orders of the derivatives will be higher. If we have interactions, we will also have higher order terms.
 %=======================================
 \section{First Solutions}
 %=======================================
@@ -405,17 +421,17 @@ Since we are working with power series,
 establishing that $Q$ is a solution to the equation.
 \end{exa}
 
-\begin{lem} Let $Q$ be the generating function for a (?model) two-dimensional interacting lattice walk model, with $S = S_1(x_1)S_2(x_2)$. Let $Q_i$ be the generating function for a (?model) one-dimensional lattice walk model with step polynomial $S_i$. Then
+\begin{lem} Let $Q$ be the generating function for a CLASSIC two-dimensional interacting lattice walk model, with $S = S_1(x_1)S_2(x_2)$. Let $Q_i$ be the generating function for a CLASSIC one-dimensional lattice walk model with step polynomial $S_i$. Then
 \begin{align}
 	Q(x_1,x_2,a_1,a_2;t) = Q_1(x_1,a_1;t)\odot Q_2(x_2,a_2;t)\,.
 \end{align}
 \end{lem}
 With this identity, we can prove the following result via induction.
-\begin{thm} Consider a (?model) interacting $d$-dimensional lattice walk model. Suppose that $S(\row xd) = \mon Sr$, where $S_i$ and $S_j$ do not share variables when $i\neq j$. Then the full generating function $Q$ is given by
+\begin{thm} Consider a CLASSIC interacting $d$-dimensional lattice walk model. Suppose that $S(\row xd) = \mon Sr$, where $S_i$ and $S_j$ do not share variables when $i\neq j$. Then the full generating function $Q$ is given by
 \begin{align}
 	Q = Q_1 \odot \cdots \odot Q_r\,,
 \end{align}
-where $Q_k$ is the full generating function for the (?model) interacting sub-$d$-dimensional problem for the variables present in $S_k$.
+where $Q_k$ is the full generating function for the CLASSIC interacting sub-$d$-dimensional problem for the variables present in $S_k$.
 \end{thm}
 
 \begin{exa} Consider the two-dimensional model with diagonal steps, that is, $S = (x_1+\ol x_1)(x_2+\ol x_2)$. We will look at this case in more detail in \autoref{ch:OKM}. The one-dimensional problems are the same and have solutions
@@ -544,12 +560,12 @@ Similarly, if $k+1 \leq j \leq d$, then $g_j(x_j) = \ol x_j(R_i^{\um 1})(R_i^1)$
 \section{Specializing to Two Dimensions}
 %=======================================
 Until the end of the chapter we will focus on the two-dimensional models with interactions. We can set $d=2$ in \autoref{eqn:Master} and \autoref{eqn:FullEqns} to find the two-dimensional master functional equations.
-\begin{cor} The full generating function $Q$ for the (?model) interacting two-dimensional models satisfies the master functional equation
+\begin{cor} The full generating function $Q$ for the CLASSIC interacting two-dimensional models satisfies the master functional equation
 \begin{align}
 	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{1,2} \Qf{0,0} = \ol a_1\ol a_2\,.
 \end{align}
 \end{cor}
-\begin{cor} The full generating function $Q$ for the (?model) interacting two-dimensional models satisfies the additional functional equations
+\begin{cor} The full generating function $Q$ for the CLASSIC interacting two-dimensional models satisfies the additional functional equations
 \begin{align}
 	\begin{split}
 		(1-ta_1 S_1^0)Q_1^0 - (c_2-ta_1\ol x_2S_{1,2}^{0,\um 1})Q_{1,2}^{0,0} - a_1 t(S_1^{\um 1}Q_1^1-\ol x_2S_{1,2}^{\um 1,\um 1}Q_{1,2}^{1,0}) &=\ol a_2\,,\\
@@ -563,7 +579,7 @@ Until the end of the chapter we will focus on the two-dimensional models with in
 \subsection{First Examples in the Plane}
 %=======================================
 
-The (?model) two-dimensional lattice walk models have been investigated thoroughly but the interacting version has not. We want to extend the (?model) model methods to the interacting setting or create new ones. Since the generating functions for the interacting models need to reduce to those for the non-interacting models, we do not expect to find solutions for every model. In fact, some of the (?model) models lead to generating functions that are not even D-finite, so their interacting counterparts will not be D-finite either. For the rest of the problems, we hope to find the generating functions $Q$ explicitly, or at least the functions $\Qf{0,0}$. This appears to be difficult in most nontrivial cases. Recent research \cite{tabbara2014exact} has shown that there are models, for which we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are other two-dimensional models that exhibit a rational relationship. The way things have turned with regards to the (?model) models, it would not be surprising if there are two-dimensional interacting models for which neither a linear nor a rational relationship would exist between $Q$, $\Qf{0,0}$ and various unmarked variants. In this section we will cover the first few examples of quarter plane models with interactions. 
+The CLASSIC two-dimensional lattice walk models have been investigated thoroughly but the interacting version has not. We want to extend the CLASSIC model methods to the interacting setting or create new ones. Since the generating functions for the interacting models need to reduce to those for the non-interacting models, we do not expect to find solutions for every model. In fact, some of the CLASSIC models lead to generating functions that are not even D-finite, so their interacting counterparts will not be D-finite either. For the rest of the problems, we hope to find the generating functions $Q$ explicitly, or at least the functions $\Qf{0,0}$. This appears to be difficult in most nontrivial cases. Recent research \cite{tabbara2014exact} has shown that there are models, for which we have an explicit relationship between $Q$ or $\Qf{0,0}$ and unmarked variants. As we saw in the previous chapter, the one-dimensional cases admit a linear relationship with polynomial coefficients. There are other two-dimensional models that exhibit a rational relationship. The way things have turned with regards to the CLASSIC models, it would not be surprising if there are two-dimensional interacting models for which neither a linear nor a rational relationship would exist between $Q$, $\Qf{0,0}$ and various unmarked variants. In this section we will cover the first few examples of quarter plane models with interactions. 
 
 Our first step is to find all the reducible models and we can do this  by looking at which of the steps $\{$N, NE, E$\}$ they have in their step set.
 
@@ -732,11 +748,12 @@ We can tally all the classes of lattice walk models on the quarter plane. First,
 \end{figure}
 
 So far we have solved the 64 reducible models, the 39 other models with group of order one or two, and the single new case of easy-to-solve model with an infinite group, for a grand total of 104 trivial or easy models. Out of the remaining 152 models, 113 have an infinite group, and their analysis will not be a part of this thesis. Finally, we have 39 cases left, with a group of size four, six or eight. The rest of the thesis will handle the analysis of those cases.
+
 \begin{figure}[H]
 	\centering
 	\begin{align*}
 		\modelgraph 01011010 \quad \modelgraph 10100101  \quad \modelgraph 11100111 \quad \modelgraph 11111111 \quad \modelgraph 10100010 \quad &\modelgraph 10111010 \quad \modelgraph 11111010 \quad \modelgraph 11100010  \quad \modelgraph 11100101  \quad \modelgraph 11111101\\
-	 	\modelgraph 00110010 \quad \modelgraph 11011011 &\quad \modelgraph 10011001
+	 	\modelgraph 00110010 \quad \modelgraph 11011011 \!\exxxx&\, \quad\quad \modelgraph 10011001
 	\end{align*}
 	\caption{Models with a finite group.}
 \end{figure}
@@ -744,9 +761,9 @@ So far we have solved the 64 reducible models, the 39 other models with group of
 \begin{figure}[H]
 	\centering
 	\begin{align*}
-		\modelgraph 11000001 \quad \modelgraph 10100001 \quad\modelgraph 10011010  \quad \modelgraph 00110011 \quad \modelgraph 00110110 \quad \modelgraph 10110001 \quad \modelgraph 11001001 \quad \modelgraph 11100001\\
-		\modelgraph 11110001 \quad \modelgraph 11101010 \quad \modelgraph 11101001 \quad\modelgraph 01111010 \quad \modelgraph 11001011 \quad \modelgraph 10111100 \quad \modelgraph 10110011 \\
-		\modelgraph 11111001 \quad \modelgraph 11110011 \quad \modelgraph 10110111 \quad \modelgraph 11111011
+		\modelgraph 11000001 \quad \modelgraph 10100001 \quad\modelgraph 10011010  \quad \modelgraph 00110011 &\quad \modelgraph 00110110 \quad \modelgraph 10110001 \quad \modelgraph 11001001 \quad \modelgraph 11100001\\
+		\modelgraph 11110001 \quad \modelgraph 11101010 \quad \modelgraph 11101001 \quad\, \quad&\!\exxxx \modelgraph 01111010 \quad \modelgraph 11001011 \quad \modelgraph 10111100 \quad \modelgraph 10110011 \\
+		\modelgraph 11111001 \quad \modelgraph 11110011 &\quad \modelgraph 10110111 \quad \modelgraph 11111011
 	\end{align*}
 	\caption{Models with an infinite group. To get the rest of them, apply one of the symmetries of the square.}
 \end{figure}
