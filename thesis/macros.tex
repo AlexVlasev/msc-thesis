@@ -62,12 +62,33 @@
 %My Own Stuff
 
 \newtheorem{thm}{Theorem}
-\theoremstyle{plain} \newtheorem{defn}[thm]{Definition}
-\theoremstyle{plain} \newtheorem{lem}[thm]{Lemma}
-\theoremstyle{plain} \newtheorem{cor}[thm]{Corollary}
-\theoremstyle{plain} \newtheorem{prop}[thm]{Proposition}
-\theoremstyle{definition} \newtheorem{exa}[thm]{Example}
 \numberwithin{thm}{chapter}
+
+\newaliascnt{defn}{thm}
+\newtheorem{defn}[defn]{Definition}
+\aliascntresetthe{defn}
+\providecommand*{\defnautorefname}{Definition}
+
+\newaliascnt{lem}{thm} 
+\newtheorem{lem}[lem]{Lemma}
+\aliascntresetthe{lem}
+\providecommand*{\lemautorefname}{Lemma}
+
+\newaliascnt{cor}{thm} 
+\newtheorem{cor}[cor]{Corollary}
+\aliascntresetthe{cor}
+\providecommand*{\corautorefname}{Corollary}
+
+\newaliascnt{prop}{thm} 
+\newtheorem{prop}[prop]{Proposition}
+\aliascntresetthe{prop}
+\providecommand*{\propautorefname}{Proposition}
+
+\theoremstyle{definition}
+\newaliascnt{exa}{thm}
+\newtheorem{exa}[exa]{Example}
+\aliascntresetthe{exa}
+\providecommand*{\exaautorefname}{Example}
 
 \newcommand{\en}{\mathbb{N}}
 \newcommand{\ze}{\mathbb{Z}}
@@ -76,6 +97,7 @@
 \newcommand{\qu}{\mathbb{Q}}
 \newcommand{\oo}{\mathbb{0}}
 \newcommand{\one}{\mathbb{1}}
+
 \newcommand{\del}{\partial}
 
 \newcommand{\mc}[1]{\mathcal{#1}}
@@ -97,6 +119,7 @@
 
 \newcommand{\deff}{\mathop{\mathrm{def}}}
 \newcommand{\mdeff}{\mathop{\mathrm{mdef}}}
+\newcommand{\supp}{\mathop{\mathrm{supp}}}
 \newcommand{\orb}{\mathrm{Orbit}}
 
 \newcommand{\ol}[1]{\overline{#1}}
