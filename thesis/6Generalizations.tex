@@ -57,6 +57,11 @@ In the extreme case, $\sum_p [[x^p]] = 1$ is the identity.
 \end{gather}
 \end{proof}
 
+\begin{lem} A marking operator is invertible if and only if all the labels it uses are nonzero.
+\end{lem}
+\begin{proof} The inverse of a marking operator $\Gamma$ is given by $\Gamma^{\um 1} = \sum_p (1/a(p))[[x^p]]$ whenever $a(p)$ is nonzero. To check that this is the inverse, just perform the calculation $\Gamma \Gamma^{\um 1} = 1$.
+\end{proof}
+
 \begin{lem}The marking operator $\Gamma_a$ is well-defined and has the secondary form $\Gamma = 1 + \sum_p (a(p)-1)[[x^p]]$, where the sum runs over all points in $\ze^d$ with $a(p) \neq 1$.
 \end{lem}
 \begin{proof} Assume that another operator $\Gamma'$ behaves in the same way as in the definition. Then
@@ -94,7 +99,7 @@ Sometimes, depending on the model, we may even have a smaller operator that does
 However, since the lattice walk may never reach negative coordinates beyond negative one, we have the equivalent form $\Gamma' = 1 - [[\ol x]]$. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We will say the two operators are model-equivalent.
 \end{exa}
 
-To make the equivalence work, we need to consider the whole model. With that in mind, we may think of the lattice walk models as living completely within the sumset $\mc S +\mc D $ of points that are combinations of points in $\mc D $ and steps $\mc S $. This is how far walks from the model can reach from within $\mc D $ by taking a single step. We will call this sumset the range of the model. Then we must eliminate all walks that take as step outside of $\mc D$ but still inside the range of the model.
+To make the equivalence work, we need to consider the whole model. With that in mind, we may think of the lattice walk models as living completely within the sumset $\mc S +\mc D $ of points that are combinations of points in $\mc D $ and steps $\mc S $. This is how far walks from the model can reach from within $\mc D $ by taking a single step. We will call this sumset the range of the model. Then we must eliminate all walks that take as step outside of $\mc D$ but still inside the range of the model. \FIXME{What if we have a reduced step set?}
 \begin{defn} Given sets $A$ and $B$, we let their sumset be
 \begin{align}
 	A+ B = \{a+b\,|\,a\in A,\, b\in B\}\,.
@@ -153,7 +158,6 @@ The analysis is analogous to the one in \autoref{ch:OneD} and \autoref{ch:Higher
 \begin{defn} Let $\mc M$ be a given model set in $d$ dimensions. Let $E$ be an operator that eliminates monomials $x_{[d]}^P$ when $P$ is not in $\mc D $. Similarly, let $L$ be an operator that marks monomials $x_{[d]}^P$ for $P \in \mc D_0$ in the way specified by the model.
 \end{defn}
 
-\awk From what we have seen in previous chapters, it should be clear that the operator $L$ is invertible --- just take an operator marking the same locations in $\mc D_0$ but with inverted labels. That is, if the operator marks a monomial with the label $a$, then the inverse operator is one marking the same monomial with the label $1/a$. 
 We can dive into the main result concerning the general models delineated so far.
 
 \begin{thm} Let $\mc M$ be a lattice walk model and $Q$ its associated generating function. Then $Q$ satisfies the following functional equations

@@ -147,19 +147,18 @@ The first one we call an operator equation, and the second, master functional eq
 The operator notation/perspective is powerful. With it, we can derive functional equations for many lattice walk models in arbitrary dimensions with ease. Usually, derivations have employed inclusion-exclusion and careful book-keeping (Lemma 4 in \cite[p.~10]{bousquet2010walks} ,\cite[p.~58]{melczer2014variants}) to write master functional equations, or their precursors, in a direct manner. Unfortunately, that approach is difficult to generalize to arbitrary dimensions and more dificult restrictions/marking.
 
 We can also attend to coefficient extraction in a neater way. Instead of extracting $[x^k]$ from the master functional equation, it is better to first go through the operator equation, since $[x^k]$ interacts with $L$ and $E$ in a nice way. We have
-\begin{align}
-	[x^0]L^{\um 1} &= [x^0]-[x^0]c[x^0] = [x^0]-c[x^0] = \ol a[x^0]\\
-	[x^0]E &= [x^0] - [x^0]\ol x[\ol x] = [x^0]\,.
-\end{align}
+\begin{subequations}
+	\label{eq:OpExt1}
+	\begin{align}
+		[x^0]L^{\um 1} &= [x^0]-[x^0]c[x^0] = [x^0]-c[x^0] = \ol a[x^0]\\
+		[x^0]E &= [x^0] - [x^0]\ol x[\ol x] = [x^0]\,.
+	\end{align}
+\end{subequations}
 When we extract the $x^0$ term from the functional equation, we have
 \begin{align}
-	\begin{split}
-		[x^0]\ol a &= \ol a = [x^0](L^{\um 1} - tES)Q \\
-		&= (\ol a[x^0]-t[x^0]S)Q\\ 
-		&= [x^0](\ol a-tS)Q\,.
-	\end{split}
+	[x^0](L^{\um 1} - tES)Q = (\ol a[x^0]-t[x^0]S)Q = [x^0](\ol a-tS)Q\,.
 \end{align}
-Therefore, we have a functional equation for the first coefficient
+Therefore, we have a functional equation for the first coefficient:
 \begin{align}
 	[x^0](1-atS)Q = 1\,.
 \end{align}
@@ -168,29 +167,29 @@ We can perform the extraction immediately and it simplifies to
 	(1-atS_0)Q_0-atS_{\um 1}Q_1 = 1\,.
 \end{align}
 Extracting higher coefficients is not difficult either. If $k \ge 1$, we have
-\begin{gather}
+\begin{subequations}
+	\label{eq:OpExt2}
 	\begin{align}
 		[x^k]L^{\um 1} &= [x^k]-[x^k]c[x^0] = [x^k]\,,\\
 		[x^k]E &= [x^k] - [x^k]\ol x[\ol x] = [x^k]\,,
 	\end{align}
-	\shortintertext{and}
-	\begin{align}
-		[x^k](1-tS)Q = 0\,.
-	\end{align}
-\end{gather}
-We expand this term to find
+\end{subequations}
+When we apply the extraction on the functional equation we obtain
 \begin{align}
-	\begin{split}
-		Q_k - t(S_{\um 1}Q_{k+1}+S_0Q_k+S_1 Q_{k-1}) &= 0\\
-		 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1}) &= 0\,.
-	\end{split}
+	[x^k](1-tS)Q = 0,
 \end{align}
-
-\begin{prop} Let $S = S_{\um 1}\ol x+S_0 + S_1 x$ be the Laurent step polynomial for a one-dimensional lattice walk model. Let $Q_k = [x^k]Q$ be the generating functions for the walks ending at coordinate $k$. For $k \ge 1$, these functions satisfy the equations
+and after we expand and simplify the expression, we have
 \begin{align}
-	(1-atS_0)Q_0-atS_{\um 1}Q_1 = 1\,,\\
 	 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1}) &= 0\,.
 \end{align}
+
+\begin{prop} Let $S = S_{\um 1}\ol x+S_0 + S_1 x$ be the Laurent step polynomial for a one-dimensional lattice walk model. Then the function $Q_0$ and $Q_k$ for $k\ge 1$ satisfy the equations
+\begin{subequations}
+	\begin{align}
+		(1-atS_0)Q_0-atS_{\um 1}Q_1 = 1\,,\\
+		 (1-S_0t) Q_k -t(S_{\um 1}Q_{k+1} + S_1 Q_{k-1}) &= 0\,.
+	\end{align}
+\end{subequations}
 \end{prop}
 
 %=======================================
