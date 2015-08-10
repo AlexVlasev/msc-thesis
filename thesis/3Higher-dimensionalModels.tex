@@ -57,30 +57,22 @@ The walks returning to the origin are given by
 \end{align}
 \end{exa}
 
-While it is possible to handle the analysis of higher-dimensional \classic models without extra notation, it will greatly help us to have it. In fact, notation conventions paved the way to finding the functional equations for higher-dimensional models and later, the operators. With this thesis, we aim to make this kind of notation more common in the enumeration of lattice walks. Typically, in the multivariate setting we see multi-index notation where a bolded or vectorial form denotes the collection of variables involved, but such notation is not enough when working with restricted geometries for regions and marking subregions. We have the following notation.
+While it is possible to handle the analysis of higher-dimensional \classic models without extra notation, it will greatly help us to have it. In fact, notation conventions paved the way to finding the functional equations for higher-dimensional models and later, the operators. With this thesis, we aim to make this kind of notation more common in the enumeration of lattice walks. Typically, in the multivariate setting we see multi-index notation where a bolded or vectorial form denotes the collection of variables involved, but such notation is not enough when working with restricted geometries for regions and marking subregions. We have the following notation. 
 
 \begin{defn}Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$, where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
 \end{defn}
-\begin{defn} For $\row xd$ and sequences $I = (\row im)$ and $J = (\row jm)$, let
+
+\begin{defn} Let $\row xd$ be some indeterminates and let $I = (\row im)$ and $J = (\row jm)$ be sequences of positive integers. Define the monomial $x_I^J$ as
 \begin{align}
-	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,,
+	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,.
 \end{align}
-where as a special case, $x_I^{\oo} = 1$ and $x_I^{\one} = x_I$ and $x_I^{\um\one} = 1/x_I = \ol x_I$.
+Then let the coefficient and term extraction operators be defined as
+\begin{align}
+	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J \qandq [[x_I^J]] = x_I^J [x_I^J]\,.
+\end{align}
+For the monomial, we have the special cases $x_I^{\oo} = 1$ and $x_I^{\one} = x_I$ and $x_I^{\um\one} = 1/x_I = \ol x_I$. For the coefficient extraction, we have the special cases $F_I^J = F$ if $I$ is empty, and $F_I^J = F_J$ if $I$ is the full set of variables.
 \end{defn}
-\begin{defn} For $\row xd$ and sequences $I = (\row im)$ and $J = (\row jm)$, we have the coefficient extraction operator
-\begin{align}
-	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J\,,
-\end{align}
-with special cases:
-\begin{itemize}
-	\item $F_I^{J} = F$, if $I$ is empty.
-	\item $F_I^J = F_J$, if $I$ is the full set of variables ordered unambiguously.
-\end{itemize}
-We also define the term extraction operator as
-\begin{align}
-	[[x_I^J]] = \ext{x_I^J}\,.
-\end{align}
-\end{defn}
+
 \begin{exa}In the previous example we had $[x_2^0]Q = Q_2^0$ and $[x_1^0x_2^0]Q = \Qf{0,0}$. Furthermore, we have $\Sf{\pm 1,\pm1}  = 1$ and 
 \begin{align}
 	S_1^{\um 1} &= [\ol x_1](x_1 + \ol x_1)(x_2 + \ol x_2) = x_2 + \ol x_2\,.
@@ -94,12 +86,11 @@ Because there are different variables involved, there may be some ambiguity in t
 \end{align}
 \end{defn}
 
-\begin{exa} In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems, but when it comes to generalizing to models with interactions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly. First, we will illustrate the inclusion-exclusion with the non-interacting two-dimensional problem. This is the usual procedure carried out in problems so far, like in \cite{bousquet2010walks}. Similarly to the one-dimensional problem, we start with the generating function $Q$ for the lattice walks on the quarter plane. Then we can extend the walks by one step via a multiplication by $t S$ and remove those that step outside of the quarter plane. To perform the removal, we subtract the walks that end on coordinates $(\um 1,k)$ or $(k,\um 1)$ for integers $k$. However, we removed too many walks. We need to re-add those walks that end on $(\um 1,\um 1)$.
- 
-
-The walks that step on $(\um 1,k)$ are those coming from the boundary and stepping with steps in the negative $x_1$ direction. To compute the generating function term, we start with $Q_1^0$ and multiply by $t\ol x_1S_1^{\um 1}$. The situation is similar for the $(k,\um 1)$ coordinates. Finally, we re-add those walks that step on $(\um 1,\um 1)$. Those are walks coming from the origin in a diagonal step, so we multiply $\Qf{0,0}$ by $t\ol x_1\ol x_2\Sf{\um 1,\um 1}$. We have obtained $Q$ again but with the $t^0$ term missing.
-
-This analysis leads to the following functional equation for $Q$
+\begin{exa} In the past we have performed inclusion-exclusion to arrive at functional equations for the two-dimensional problems. This is the usual procedure carried out in problems so far, like in \cite{bousquet2010walks}, but when it comes to generalizing to models with interactions, the process is difficult and prone to error. For a view of difficulties involved in not using the operator notation, see \cite{tabbara2014exact}, where the authors had to wrestle with case-by-case analysis. Instead, we use operators to derive the functional equations cleanly. As in the one-dimensional case with generating function $Q = \sum_{k=0}^{\infty} q_k t^k$, we may grow the set of walks by performing the multiplication $Sq_k$. Then we assume that an operator $\Gamma$ exists such that it cleans up the terms in $Sq_k$. We obtain the functional equation $(1-t\Gamma S)Q = 1$ again and all that is left to be determined is the operator $\Gamma$ itself. We can make and observations that will allow us to find it easily. The one-dimensional operator $1- [[\ol x]]$ is idempotent, that is $E^2 = E$, and combinatorially-speaking, once we remove certain terms,  we do not remove them again. In two dimensions this means that with the use of one-dimensional operators, we may remove terms with negative $x_1$ coordinate first, and ones with negative $x_2$ coordinate second, without performing inclusion-exclusion. That is, the operator $E$ here is given by $E_1E_2$ where $E_k = 1 - [[\ol x_k]]$. Multiplying these out, we find that 
+\begin{align}
+	E = 1 - [[\ol x_1]] - [[\ol x_2] + [[\ol x_1 \ol x_2]]
+\end{align}
+and the operator iteslf encodes the inclusion-exclusion. The situation is analogous for the marking operator $L = L_1 L_2$, where $L_k = 1+b_k[x_k^0]$. Again, the operator $L$ is invertible and analogously, we may write the functional equation as $(L^{\um 1} - tES)Q = \ol a_1 \ol a_2$. If we perform the coefficient extractions, we will find the equation
 \begin{align}
 	Q = 1 + t SQ - t\ol x_1S_1^{\um 1}Q_1^0 - t\ol x_2S_2^{\um 2}Q_2^0 + t\ol x_1\ol x_2\Sf{\um 1,\um 1}\Qf{0,0}\,.
 \end{align}
@@ -110,19 +101,11 @@ Contrast this notation to the one in \cite[p.~10]{bousquet2010walks}. The proble
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
 
-If we use operators, we can build the generalizations to higher dimensions in a straight-forward manner. As we have done before, we multiply $Q$ by $t S$, so we can extend the lattice walks by one step. Then we apply an operator $E$, to be determined later, to remove all the walks venturing outside of the positive orthant (nonzero coordinates $x_k$). Finally, we apply a marking operator to this term that marks the walks on the boundary hyperplanes $x_k = 0$. Since we have extended all walks by one step, we no longer have walks of size 0. Adding that term to the expression leads us back to $Q$ itself. That is,
+As we have seen in the previous example, it is not difficult to generalize the derivation of the functional equations if we use operators. The derivation of general case for $d$ dimensions is analogous to the one in the example, so we will omit it most of it. In $d$ dimensions, the interactions take place on the hyperplanes where $x_k = 0$, so we will use the labels $a_k$ to mark those interactions. The operators here are $L = \mon Ld$ and $E = \mon Ed$, where order does not matter. We need to compute the quantity $L^{\um 1}(1)$, so we have
 \begin{align}
-	Q = 1 + LE(t SQ)
+	L^{\um 1}(1) = \sum_{I\subseteq [d]}c_I = \ol a_{[d]}\,.
 \end{align}
-and the only task remaining is to find $L$ and $E$. Like in the one-dimensional problem, we start removing monomials with coordinates outside of the positive orthant. The important idea here is that, if we have operators that just remove monomials, then it does not matter in what order we remove them. Let $E_k = 1 - \ext{\ol x_k}$ be the operator removing monomials with $x_k$ coordinate equal to $\um 1$. Then we may write $E = \mon Ed$. For example,
-\begin{align}
-	E_1E_2 = (1-\ext{\ol x_1})(1-\ext{\ol x_2}) = 1-\ext{\ol x_1}-\ext{\ol x_2} + \ext{\ol x_1\ol x_2}\,,
-\end{align}
-and therefore, the inclusion-exclusion is a natural consequence of how the operator is set up. Similarly, if we let $L_k = 1 + (a_k-1)[x_k^0]$, then we may write $L = \mon Ld$. Here order does not matter since we are marking monomials with variables $a_k$. It does not matter if we first multiply by $a_1$ and then by $a_2$, or vice-versa. As in the one-dimensional case, the operators $L_k$ are invertible with inverses $L_k^{\um 1} = 1 - c_k[x_k^0]$, and thus, the operator $L$ is also invertible. We can apply the operator $L^{\um 1}$ to the functional equation
-\begin{align}
-	L^{\um 1}(1-tLES)Q = (L^{\um 1}- t ES)Q = L^{\um 1}(1) = \sum_{I\subseteq [d]}c_I = \ol a_{[d]}\,.
-\end{align}
-We can write down the following result.
+The higher-dimensional functional equation for the interacting \classic model is given as follows.
 \begin{prop} The \classic interacting $d$-dimensional lattice walk model has a full generating function $Q$ satisfying the functional equations
 \begin{align}
 	(1-tLES)Q &= 1\,,\\
@@ -134,7 +117,7 @@ Previously, we have had to cope with coefficient extractions and back-substituti
 \begin{align}
 	L_kE_k = 1 + b_k[x_k^0]-\ext{\ol x_k}
 \end{align}
-and if we apply the operator to an equation, we increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand, once we apply the operator $L^{\um 1}$, we introduce $2^d$ terms relating to $Q$, but since we only have $E$ applied on $SQ$, we would only have at most $2^d$ terms. For the case of walks of step size at most 1 and labelling the hyperplane interactions, we have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case, we can write out the functional equation explicitly. First,
+and if we apply the operator to an equation, we increases the number of terms in the equation by a factor of 3. We have $3^d$ terms relating to $SQ$ by the end of applying $LE$. On the other hand, once we apply the operator $L^{\um 1}$, we introduce $2^d$ terms relating to $Q$, but since we only have $E$ applied on $SQ$, we would only have at most $2^d$ terms. We have exactly $2^d$ terms $Q_{I}^\oo$, one for each subset $I \subseteq [d]$. In this case, we can write out the functional equation explicitly. First,
 \begin{subequations}
 	\label{eq:ExpExt}
 	\begin{align}
@@ -142,12 +125,12 @@ and if we apply the operator to an equation, we increases the number of terms in
 		 ESQ &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol x_I [\ol x_I^{\one}](SQ)= \sum_{I\subseteq [d]} (-1)^{|I|} \ol x_I S_I^{\um \one}Q_I^\oo\,,
 	\end{align}
 \end{subequations}
-where the last equality follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$. Therefore, the functional equation is
+where the last equality follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$. Then the functional equation is
 \begin{align}
 	\sum_{I \subseteq [d]}(-1)^{|I|}(c_I-t \ol x_IS_{I}^{\um \one})Q_I^\oo = \ol a_{[d]}\,.
 \end{align}
 We let $K_I = c_I-t \ol x_IS_{I}^{\um \one}$, where, if $I =\emptyset$, we have the empty products and empty extractions, leaving us with $K_{\emptyset} = K$. Finally, we can write the master equation in $d$ dimensions.
-\begin{thm} For subsets $I$ of $\{1,\ldots,d\}$, let $K_I = c_I-t \ol x_I S_{I}^{\um \one}$. Then the \classic interacting $d$-dimensional lattice walk model, has a full generating function $Q$ satisfying the functional equation
+\begin{thm} For subsets $I$ of $\{1,\ldots,d\}$, let $K_I = c_I-t \ol x_I S_{I}^{\um \one}$. Then the \classic interacting $d$-dimensional lattice walk model has a generating function satisfying 
 \begin{align}
 	\label{eqn:Master}
 	\sum_{I\subseteq [d]}(-1)^{|I|} K_I Q_I^\oo= \ol a_{[d]}\,.
