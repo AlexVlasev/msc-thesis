@@ -103,7 +103,7 @@ Contrast this notation to the one in \cite[p.~10]{bousquet2010walks}. The proble
 
 As we have seen in the previous example, it is not difficult to generalize the derivation of the functional equations if we use operators. The derivation of general case for $d$ dimensions is analogous to the one in the example, so we will omit it most of it. In $d$ dimensions, the interactions take place on the hyperplanes where $x_k = 0$, so we will use the labels $a_k$ to mark those interactions. The operators here are $L = \mon Ld$ and $E = \mon Ed$, where order does not matter. We need to compute the quantity $L^{\um 1}(1)$, so we have
 \begin{align}
-	L^{\um 1}(1) = \sum_{I\subseteq [d]}c_I = \ol a_{[d]}\,.
+	L^{\um 1}(1) = \sum_{I\subseteq [d]}(-1)^{|I|}c_I = \ol a_{[d]}\,.
 \end{align}
 The higher-dimensional functional equation for the interacting \classic model is given as follows.
 \begin{prop} The \classic interacting $d$-dimensional lattice walk model has a full generating function $Q$ satisfying the functional equations
@@ -122,7 +122,7 @@ and if we apply the operator to an equation, we increases the number of terms in
 	\label{eq:ExpExt}
 	\begin{align}
 		L^{\um 1} Q &= (1-c_1[x_1^0])\cdots(1-c_d[x_d^0])Q = \sum_{I\subseteq [d]} (-1)^{|I|} c_I Q_I^\oo\,,\\
-		 ESQ &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol x_I [\ol x_I^{\one}](SQ)= \sum_{I\subseteq [d]} (-1)^{|I|} \ol x_I S_I^{\um \one}Q_I^\oo\,,
+		 ESQ &= \sum_{I\subseteq [d]} (-1)^{|I|} \ol x_I [\ol x_I](SQ)= \sum_{I\subseteq [d]} (-1)^{|I|} \ol x_I S_I^{\um \one}Q_I^\oo\,,
 	\end{align}
 \end{subequations}
 where the last equality follows from the fact that there are no negative powers of $x_k$ in $Q$ for any $k$. Then the functional equation is

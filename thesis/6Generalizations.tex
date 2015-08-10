@@ -331,47 +331,57 @@ The operators we have seen so far are marking operators, like $L$ and $E$, in co
 %=======================================
 \subsection{Marking Operators With Multiplication}
 %=======================================
-The operators we see in the theory of lattice walk models often feature application on generating functions that are pre-multiplied by a Laurent polynomial, like $S$. This leads us to definite such combinations of operators in the following way.
 \begin{defn}
-We call an operator inhomogeneous if it consists of a homogeneous operator $\Gamma$ and a (possibly infinite) Laurent polynomial $S$, and acts in one of the following ways
+We call an operator inhomogeneous if it consists of a homogeneous operator $\Gamma$ and a Laurent polynomial $S$, and acts in one of the following ways
 \begin{align}
 	\Gamma S(u) = \Gamma(Su)\qorq S\,\Gamma u = S\cdot \Gamma u\,.
 \end{align}
 \end{defn}
-This kind of operator is important because it can be found in the functional equations for lattice walk models. To find their eigenpairs, we first show that the definitions are mostly equivalent.
-\begin{prop} The two operators $\Gamma S$ and $S\, \Gamma$ have the same eigenvalues with eigenfunctions differing by a multiple of $S$. That is, $(\lambda,u)$ is an eigenpair for $\Gamma S$ if and only if $(\lambda, Su)$ is an eigenpair for $S\,\Gamma$. In particular, if $\lambda = 0$, we have
-\begin{align}
-	\ker(\Gamma S) = \ol S \ker(\Gamma)\,.
-\end{align}
+The two definitions are equivalent when it comes to finding the eigenpairs.
+\begin{prop} The pair $(\lambda,u)$ is an eigenpair for $\Gamma S$ if and only if $(\lambda, Su)$ is an eigenpair for $S\,\Gamma$. In particular, if $\lambda = 0$, then $\ker(\Gamma S) = \ol S \ker(\Gamma)$.
 \end{prop}
-\begin{proof} Note that
-\begin{align}
-	\Gamma Su = \lambda u \quad \Longleftrightarrow \quad S\,\Gamma (Su) = \lambda (Su)\,.
-\end{align}
-Therefore, the operators have the same eigenvalues, and they have the eigenfunctions $u$ and $Su$ respectively. Now, if we pick $\lambda = 0$ to find the kernels of the operators, we find that $u \in \ker(\Gamma S)$ if and only if $Su \in \ker(S\,\Gamma) = \ker(\Gamma)$, and this completes the proof.
+\begin{proof} Note that $\Gamma Su = \lambda u$ is equivalent to $S\,\Gamma (Su) = \lambda (Su)$. Therefore, the operators have the same eigenvalues and their eigenfunctions are $u$ and $Su$, respectively. Next, we pick $\lambda = 0$ to find the kernels of the operators. We find that $u \in \ker(\Gamma S)$ if and only if $Su \in \ker(S\,\Gamma) = \ker(\Gamma)$.
 \end{proof}
-As the next example shows, it may not be easy to find the eigenpairs for such operators.
-\begin{exa}
-Let $\Gamma$ be a marking operator and let $u$ be an eigenfunction of $\Gamma S$, where 
+Since this characterizes the kernel of the operator, we will assume that $\lambda \neq 0$ from here on. We will now work towards finding some eigenpairs. Let $\Gamma = LE$ as before. Recall that $E^2 = E$, since once the terms are removed, they cannot be removed again. We can apply $E$ to both sides of $LES u = \lambda u$ to find that
 \begin{align}
-	S = x\com u = \sum_k u_k x^k\,.
+	E(\lambda u) = \lambda Eu = ELES u = LE^2S u = LES u = \lambda u
 \end{align}
-Computing $(\Gamma S-\lambda I)u$ leads to the system of equations
+and therefore, $Eu = u$.
+\begin{prop} \label{prop:EfixU}If $u$ is an eigenfunction of the operator $LES$, then $Eu = u$ and $u \in \ker E'$, where $E' = E - 1$ is the pure coefficient extraction part of $E$.
+\end{prop}
+
+
+
+Suppose that $\Gamma = LE$. In the interest of performing fewer extractions, we rewrite the eigenproblem $\Gamma S u = \lambda u$ as $ESu = \lambda M u$, where $M = L^{\um 1}$. Since each operator is the identity plus a sum of extractions, we rewrite the operators as $E = E-1 +1 = 1 + E'$ and $M = 1 + M'$, where $E'$ and $M'$ are purely extractions. Using these relations, we can rewrite the function $u$ as
 \begin{align}
-	\lambda u_n &= a u_{n-1}\,,\\
-	\lambda u_k &= u_{k-1}, \quad \text{if } k \neq n\,.
+	u = \frac{(\lambda M' - E'S)u}{S-\lambda}\,,
 \end{align}
-We have a doubly-infinite recursion, so we can pick an arbitrary initial condition. If $u_n = 0$, the rest of the terms will be zero as well, so we must have $u_n \neq 0$. Set $u_n = 1$. Then via induction,
+where if the operators are finite, the extraction in the numerator leads to a Laurent polynomial in the variables $\row xd$. Because we used $M'$ and $E'$ instead of the equivalent for $LE$, we have fewer coefficients in the numerator. The resulting eigenfunction $u$ depends on finitely many coefficients. We may expand $u$ in Laurent series around the origin, set the coefficients to zero and then solve the resulting system of equations to find the terms in the numerator. Curiously, if we apply $D = \lambda M - ES$ to $u$ we should find that $Du = 0$, but here $u$ has a new form and we will obtain some condition on the terms in the numerator.
+
+\begin{exa} Consider one of the one-dimensional classic model with interactions, where $S = \ol x + x$ and $M' = -c[x^0]$. First we will use the equivalent operator $E' = - \sum_{k=1}^\infty [[\ol x^k]]$. Since $u$ has no terms $u_k$ for $k\leq \um 1$, we see that
 \begin{align}
-	u_{n + k} &= 1/\lambda^{k}, \quad \text{for $k \ge 0$}\,,\\
-	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,,
+	-E'Su = \sum_{k=1}^\infty \ol x^k ([\ol x^{k+1}]+[\ol x^{k-1}])u = \sum_{k=1}^\infty \ol x^k (u_{-k-1} + u_{-k+1}) = \ol x u_0\,.
 \end{align}
-and therefore, we have an eigenfunction for each $\lambda \neq 0$. Computing $u(x)$ formally leads to
+Then
 \begin{align}
-	u(x) &=-\frac{\lambda b x^{n + 1}}{(\lambda-x)(\lambda-ax)}\,,
+	u = \frac{-\lambda c u_0 +\ol x u_0}{\ol x + x - \lambda} = \frac{(1-c\lambda x)u_0}{1- \lambda x +x^2} = u_0 + \ol a\lambda u_0 x + \cdots
 \end{align}
-and the situation becomes more complicated for more complicated functions $S$.
+where $u_0$ is a free variable, and we have an eigenfunction for every $\lambda$. Next, we will use the equivalent operator $E = - [[\ol x]]$. We have no reason to believe that the operator will have the same eigenfunctions, but it does. Here we have
+\begin{align}
+	u = \frac{(\lambda M' - E'S) u}{S_\lambda} &= \frac{-c\lambda u_0 + (u_{-2}+u_0)\ol x}{\ol x + x - \lambda} = \frac{u_{-2} + (1 - c \lambda x)u_0}{1-\lambda x  + x^2}\,,
+\end{align}
+We can apply the operator $D$ on $u$ to find that $-b\lambda u_{-2} = 0$, so $u_{-2} = 0$ and the eigenfunctions are the same.
 \end{exa}
+
+It turns out that this is not a coincidence and we have the following striking result.
+
+\begin{prop} The set if eigenpairs of the full marking operator associated with a lattice walk model is a subset of the set of eigenpairs for any equivalent but reduced operator. Here reduced means a change to the marking portion and a reduction of terms in the extraction portion.
+\end{prop}
+\begin{proof} Let $\Gamma_1 = L_1 E_1$ be the full operator and $\Gamma_2 = L_2 E_2$ be the reduced one. Here $L_1$ and $L_2$ agree on $\mc D$, and $E_1$ and $E_2$ agree on the range $\mc D + \mc S$. Suppose that $\Gamma_1 Su = \lambda u$ for some $\lambda$ and $u$. Since $u$ contains terms from $\mc D$ only (by \autoref{prop:EfixU}), then $Su$ contains terms from the range of the model. Therefore, $\Gamma_1 Su = L_1 E_1 Su = L_2 E_2 Su$ due to the agreement of operators. Therefore, $\Gamma_2 Su = \lambda u$ too.
+\end{proof}
+
+The proof here also shows us that $\Gamma_2$ may have other eigenfunctions $v$, since here $v$ may contain terms from outside of the range of the model. However, if $\Gamma_2$ is finite, we see that $(\lambda M' - E'S)u$ has finitely many terms. Thus each eigenvalue $\lambda$ may lead to at most a finite-dimensional eigenspace.
+
 %=======================================
 \subsection{Lattice Walks Operator}
 %=======================================
@@ -379,23 +389,15 @@ In this section we explore the operator $\mc L = 1 - t\Gamma S$ for a step Laure
 \begin{align}
 	\begin{split}
 		(\mc L-\lambda I) u &= u - \lambda u -t\Gamma Su\\
-		t \Gamma S u &= (1-\lambda)u = \mu u\,.
+		t \Gamma S u &= (1-\lambda)u\,.
 	\end{split}
 \end{align}
-If $\lambda = 1$, we would have to compute the kernel of $\Gamma S$, which we did in the previous section. The eigenfunctions of $\mc L$ for eigenvalue $\lambda = 1$ are the functions $u \in \ol S\ker{\Gamma}$. Let $u$ be given by a finite order Laurent series
+If $\lambda = 1$, then $u$ is in $\ker(t\Gamma S) = \ol S \ker \Gamma$ and we already know how to find these. If $\lambda \neq 1$, we may find the eigenpairs by the method in the previous section. Let $\mu = 1-\lambda$. Then
 \begin{align}
-	u = u_n t^n + u_{n + 1}t^{n + 1} + \cdots\,,
+	u = \frac{((1-\lambda) M' - tE'S)u}{\lambda - K}\,,
 \end{align}
-where $u_n \neq 0$. Then we can rewrite the functional equation as
-\begin{align}
-	t^{-n}(1-t\Gamma S)u &= \lambda t^{-n}u\\
-	(\lambda -1) t^{-n}u &= -t^{1-n}\Gamma Su\,.
-\end{align}
-Letting $t \to 0$ in this equation yields
-\begin{align}
-	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0\,.
-\end{align}
-Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will  be a finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.
+where $K = 1 - tS$.
+
 \begin{exa} Let $\Gamma = LE$ in the one-dimensional problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that (?)
 \begin{align}
 	Q = \frac{t(\ol x - \ol \sigma)}{(1-t S)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{t S}{1-t S}\,,
@@ -413,3 +415,37 @@ If we are to have a theory similar to Sturm-Liouville theory, we still need to f
 
 
 \endinput
+
+%=============================================================
+\begin{exa} Let $S = x$ and $u = \sum_k u_k x^k$ be an eigenfunction of $\Gamma x$, where $\Gamma$ is an operator marking $x^n$ with $a$. Computing $(\Gamma x-\lambda I)u$ leads to the system of equations
+\begin{align}
+	\lambda u_n &= a u_{n-1}\,,\\
+	\lambda u_k &= u_{k-1}, \quad \text{if } k \neq n\,.
+\end{align}
+If $u_n = 0$, all the terms are zero as well, so $u_n \neq 0$. Via induction, we can show that if $u_n = 1$,
+\begin{align}
+	u_{n + k} &= 1/\lambda^{k}, \quad \text{for $k \ge 0$}\,,\\
+	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,,
+\end{align}
+and therefore, each $\lambda \neq 0$ is an eigenfunction for
+\begin{align}
+	u_\lambda(x) &=-\frac{\lambda b x^{n + 1}}{(\lambda-x)(\lambda-ax)}\,,
+\end{align}
+and the situation becomes more complicated for more complicated functions $S$. The version of $\Gamma$ without marking has no eigenfunctions.
+\end{exa}
+
+%=============================================================
+Let $u$ be given by a finite order Laurent series
+\begin{align}
+	u = u_n t^n + u_{n + 1}t^{n + 1} + \cdots\,,
+\end{align}
+where $u_n \neq 0$. Then we can rewrite the functional equation as
+\begin{align}
+	t^{-n}(1-t\Gamma S)u &= \lambda t^{-n}u\\
+	(\lambda -1) t^{-n}u &= -t^{1-n}\Gamma Su\,.
+\end{align}
+Letting $t \to 0$ in this equation yields
+\begin{align}
+	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0\,.
+\end{align}
+Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will  be a finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.

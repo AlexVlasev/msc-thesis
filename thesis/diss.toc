@@ -51,11 +51,11 @@
 \contentsline {subsection}{\numberline {6.0.5}Several Examples of Generalized Models}{81}{subsection.6.0.5}
 \contentsline {section}{\numberline {6.1}Further Properties of Marking Operators}{88}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Marking Operators With Multiplication}{88}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Lattice Walks Operator}{89}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {7}Epilogue}{91}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research}{91}{section.7.1}
-\contentsline {subsubsection}{Algebraic kernel method}{92}{subsubsection*.16}
-\contentsline {subsubsection}{Obstinate kernel method}{92}{subsubsection*.17}
-\contentsline {subsubsection}{Kernel methods in general}{92}{subsubsection*.18}
-\contentsline {subsubsection}{Connection with other theory}{92}{subsubsection*.19}
-\contentsline {chapter}{Bibliography}{94}{chapter*.20}
+\contentsline {subsection}{\numberline {6.1.2}Lattice Walks Operator}{90}{subsection.6.1.2}
+\contentsline {chapter}{\numberline {7}Epilogue}{92}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research}{92}{section.7.1}
+\contentsline {subsubsection}{Algebraic kernel method}{93}{subsubsection*.16}
+\contentsline {subsubsection}{Obstinate kernel method}{93}{subsubsection*.17}
+\contentsline {subsubsection}{Kernel methods in general}{93}{subsubsection*.18}
+\contentsline {subsubsection}{Connection with other theory}{93}{subsubsection*.19}
+\contentsline {chapter}{Bibliography}{95}{chapter*.20}
