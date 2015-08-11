@@ -160,36 +160,24 @@ This follows because there are only finitely many extractions in the marking ope
 \subsection{Several Examples of Generalized Models}
 %================================
 
-\begin{exa} We can consider a different approach for models with interactions. Instead of using operators like $L$ and $E$, we can just mark walks for later deletion. That is, instead of removing walks that venture outside of $\mc D $, we just mark them with some variable $z$ for later deletion. Suppose that we are given some model $\mc M$ and we want to frame the analysis in this new way. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc D_0  \cup \mc D ^c$, where we mark monomials in $\mc D ^c$ with $z$ and those in $\mc D_0 $ in the same way as in model $\mc M$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
+In the first two examples, we will see some more general analysis on models. After that we will consider some more concrete situations.
+
+\begin{exa} Typically, we have an operator $\Gamma = LE$ where $E$ removes unwanted terms. The problem is that $E$ is not invertible. We can recast the analysis in a way that circumvents that but at some cost. Instead of using an operator $E$ to remove walks, we may just just a marking operator that labels walks for later deletion, for example, with a variable $z$. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc D_0  \cup \mc D^c$, where we mark monomials in $\mc D^c$ with $z$ and those in $\mc D_0 $ in the same way as in model $\mc M$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
 \begin{align}
 	(1-t\widetilde{L} S)\widetilde Q &= q\,,\\
-	(\widetilde{L}^{\um 1}-t S) Q &= \widetilde{\alpha}\,.
+	(\widetilde{L}^{\um 1}-t S) \widetilde Q &= \widetilde{\alpha}\,.
 \end{align}
-It is not clear how one would proceed and if this method will be a better way to handle the problem. The upside is that the operators are invertible, but the downside is that we now have more extracted terms in the functional equation, since the lattice walks can now go anywhere.
+The downside is that we have more extractions  than if we split the operator as $\Gamma = LE$ and only applied $L^{\um 1}$. If we obtained a solution for $\widetilde Q$, then we could find the original $Q$ by taking $Q = [z^0]\widetilde Q$.
 \end{exa}
 
-\begin{exa} Consider the lattice walk models in two dimensions from previous chapters. Another way we can look at the quarter plane models is to use the idea from the previous example and also symmetrize the problem by also marking parts on the other side of the origin. Instead of just marking walks on the axes and on lines, where one coordinate is $-1$, we can also mark walks on lines with one coordinate $ + 1$. This process leads to a symmetrical arrangement of marking operations on both sides of the origin. We have the equation
-\begin{align}
-	(1- tLS)\widetilde Q = (1- t L_{\um 1}L_0L_1 S)\widetilde Q = 1\,.
-\end{align}
-We can skip the marking of the axes with $L_0$ if we do not wish to investigate wall interactions. In general, we may mark more locations in space so we can combine all of these operators into one called $L$. Then we have
-\begin{gather}
-	\begin{align}
-		(1- tLS)\widetilde Q = 1\,,
-	\end{align}
-	\shortintertext{or alternatively,}
-	\begin{align}
-		K\widetilde Q = L^{\um 1}(1) + (1- L^{\um 1})\widetilde Q\,.
-	\end{align}
-\end{gather}
+\begin{exa} We can also keep track of the walks' histories of where they have been. To do this, we let $\Gamma$ give a generic label to each point in space, that is, $\Gamma x^p = a_p$. In this setup, a growing lattice walk picks up a label at each point that it steps on. As in example blah \FIXME{autoref}, the operator is not finite, so we would not have an explicit functional equation with finitely many terms. Nevertheless, this allows us to frame self-avoiding within our theory. 
+
+Suppose that $Q$ is the generating function for walks with histories and let $W$ be the generating function for self-avoiding walks on the same space. Then we can obtain $W$ from $Q$ by setting all higher powers of $a_p$ to zero. This is equivalent to picking out the $a_p^0$ and $a_p$ coefficients from $Q$ via some operator $A$. Since there are only finitely many walks of a given length and they are bounded, for each step size, $A$ reduces to a finite operator $A_k$, that is, $W = AQ = \sum_{k=0}^\infty A_k(q_k) t^k$.
 \end{exa}
 
-\begin{exa} Next, we will keep track of where the lattice walks have been, although we will not keep track of the order of their steps. Here the operator $\Gamma$ gives a generic label to each point in space. That is $\Gamma x^p = a_p$. In this setup, a growing lattice walk picks up a label at each point that it steps on. As in example blah \FIXME{autoref}, the operator is not finite so we would not have an explicit functional equation with finitely many terms. Nevertheless, this allows us to frame self-avoiding within our theory. 
+The following examples will look at particular models with small steps in the plane.
 
-Suppose that $Q$ is the generating function for walks with histories and let $W$ be the generating function for self-avoiding walks on the same space. Then we can obtain $W$ from $Q$ by setting all higher powers of $a_p$ to zero. This is equivalent to picking out the $a_p^0$ and $a_p$ coefficients from $Q$ via some operator $A$. Since there are only finitely many walks of a given length and they are bounded, we can represent the operator $A$ via a finite version $A_k$ for each step size. That is, $AQ = \sum_{k=0}^\infty A_k(q_k) t^k$.
-\end{exa}
-
-\begin{exa} Here is an example of an infinite strip. The region $\mc D$ is comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq j \leq n$. Maybe we have interactions with the lines $x_2 = 0$ and $x_2 = n$. The operators are
+\begin{exa} Consider an infinite strip comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq j \leq n$, where the model interacts with the lines $x_2 = 0$ and $x_2 = n$. The operators are
 \begin{align}
 	E &= E_{\um 1}E_{n + 1} = (1-[[\ol x_2]])(1-[[x_2^{n + 1}]]) = 1-[[\ol x_2]]-[[x_2^{n + 1}]]\,,\\
 	L &= L_0 L_n = (1 + b_0[[x_2^0]])(1 + b_n[[x_2^n]]) = 1 + b_0[[x_2^0]] + b_n[[x_2^n]]\,,
@@ -200,19 +188,19 @@ and the functional equation for $Q$ is given by
 \end{align}
 If we extract the $[x_2^0]$ term, we find that
 \begin{align}
-	(1-a_0t S_2^0)Q_2^0 - t S_2^{\um 1}Q_2^1 = 1\,.
+	(1-a_0t S_2^0)Q_2^0 - t S_2^{\um 1}Q_2^1 = 1
 \end{align}
-If we extract the $[x_2^n]$ term, we find that
+and if we extract the $[x_2^n]$ term, we find that
 \begin{align}
 	(1-a_nt S_2^0)Q_2^n = t S_2^1Q_2^{n-1}\,.
 \end{align}
-Similarly, we can extract the $[x_2^k]$ terms for $1 \leq k \leq n-1$. We will have $n + 1$ equations in $n + 1$ unknown functions $Q_2^0,\ldots, Q_2^n$, and we would be able to solve them to find out what all those functions are. Of course, we only need $Q_2^0$ and $Q_2^n$ to obtain a solution for $Q$. In the simplest case, $n = 1$ and the term extraction equations become
+Similarly, we can extract the $[x_2^k]$ terms for $1 \leq k \leq n-1$. We will have $n + 1$ equations where we need to solve for the $n + 1$ unknown functions $Q_2^0,\ldots, Q_2^n$. Of course, we only need $Q_2^0$ and $Q_2^n$ to obtain a solution for $Q$. In the simplest case, $n = 1$ and the term extraction equations become
 \begin{gather}
 	\begin{align}
 		(1-a_0t S_2^0)Q_2^0  &= 1 + t S_2^{\um 1}Q_2^1\,,\\
 		(1-a_1t S_2^0)Q_2^1 &= t S_2^1Q_2^0\,.
 	\end{align}
-	\shortintertext{These solutions are}
+	\shortintertext{The solutions are}
 	\begin{align}
 		Q_2^0 &=\frac{1-a_1t S_2^0}{(1-a_0t S_2^0)(1-a_1 t S_2^0)-S_2^1S_2^{\um 1}t^2}\,,\\
 		Q_2^1 &=\frac{S_2^1 t}{(1-a_0t S_2^0)(1-a_1 t S_2^0)-S_2^1S_2^{\um 1}t^2}\,,
@@ -224,101 +212,25 @@ and we can find $Q$ explicitly from
 \end{align}
 \end{exa}
 
-\begin{exa}Another example is a finite box. The region $\mc D$ is comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq i \leq m$ and $0 \leq j \leq n$, for some positive integers $m$ and $n$. The lattice walks interact with all four sides of the box, each with its own label. As in the previous example, we may write a functional equation directly via the following operators
+\begin{exa}In the plane, consider a finite rectangle comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq i \leq m$ and $0 \leq j \leq n$, for some positive integers $m$ and $n$. There are also interactions like in the previous example. We will use the operators
 \begin{align}
 	E_{i,j} = 1 - [[x_i^j]]\qandq L_{i,j} = 1 + b_{i,j}[[x_i^j]]\,.
 \end{align}
-For the model itself, we have
+to find the functional equation. For the model itself, we have
 \begin{align}
 	E &=E_{1,\um 1}E_{1,m + 1}E_{2,\um 1}E_{2,n}\,,\\
 	L &= L_{1,0}L_{1,m}L_{2,0}L_{2,n}\,.
 \end{align}
-We may attempt a solution similar to that of the previous example. The function $Q$ should be rational here as well.
+Once we obtain a functional equation, we will find that it has terms of the form $Q_i^j$ and $\Qf{i,j}$. If we perform the extractions $[x_i^j]$ only we will have even more $Q$ terms. However, if we perform the extractions $[x_i^j]$ for all points $(i,j)$ in the rectangle, we will obtain $(m+1)(n+1)$ equations in that many $\Qf{i,j}$ terms. Since there is a unique solution $Q$, we can solve this system and write $Q$ directly. The difficulty lies is in solving this system symbolically.
 \end{exa}
 
-\begin{exa}Suppose that $\mc D$ is a finite region in $\ze^2$. If we set $x_1 = 0$ for points in $\mc D$, we obtain the projection of the set onto the $x_2$ axis, and this tells us how many $x_2$ coordinates we have in functions in the functional equation. Suppose that the number of points is $m_1$ and define $m_2$ analogously. Lastly, let there be $m$ lattice points in $\mc D$. Next, we examine the number of unknown functions $Q_i^j$ and $\Qf{i,j}$ that we have in the functional equation and its various extractions. The master functional equation may only have $m_1$ functions $Q_2^i$ and $m_2$ functions $Q_1^i$, together with $m$ functions $\Qf{i,j}$, because those are the possible nonzero functions $Q$ that we may find through various extractions. Similarly, when we extract terms like $[x_i^j]$ and $[x_1^i x_2^j]$, we only find a subset of the functions listed. 
-
-In general, we may even find less of those functions as we perform more extractions. In the end, we have the same number of equations as unknown functions $Q$ and various extractions of $Q$. Therefore, the problem reduces to the solution of a linear system of $1 + m_1 + m_2 + m$ equations and that many unknowns $Q$. Note that, because we have the term $KQ$ in the master functional equation, the $[x_i^j]$ extraction will have the function $Q_i^j$ with a nonzero coefficient. Because there is a unique function $Q$ for the model, this forces the uniqueness of the $Q_i^j$ and $\Qf{i,j}$ terms. Therefore, we have a unique solution to the system of equations. Furthermore, because all the the coefficients are rational functions, so is $Q$. We will generalize this observation in the following theorem.
-\end{exa}
-
-\begin{defn} Given a $d$-dimensional region $\mc D$ and a finite set $I$ from $\{1,\ldots, d\}$, let $\mc D_I$ be defined as follows
-\begin{align}
-	\mc D_I = \{(\row xd)_{x_I = 0} | (\row xd \in \mc D)\}\,.
-\end{align}
- $\mc D_I$ is the projection of $\mc D$ onto the space generated by coordinates $x_i$ for $i$ in $[d]\backslash I$. Let $m_I = |\mc D_I|$.
-\end{defn}
-
-Note that $I = \emptyset$ corresponds to the set of points in $\mc D$, and $I = [d]$ corresponds to exactly one point and the master functional equation.
-
-\begin{thm} If $\mc D$ is finite, then the generating function $Q$ is rational in its variables. To find the solution, we solve a system of $N = \sum_{I\subseteq [d]} m_I$ equations and unknowns $Q_I^J$, with a unique solution.
+This example paves the way towards the following result for finite models on finite regions.
+\begin{thm}The generating function for a finite lattice walk model set on a finite region is a rational function in its variables
 \end{thm}
-\begin{proof} The master functional equation may at most contain all the possible nonzero functions $Q_I^J$. Each possible extraction $[x_K^P]$ may contain at most a portion of these variables --- all terms of the form $Q_{I,K}^{J,P}$. We just need to count the number of equations and unknowns. The projections $\mc D_I$ helps us in determining these numbers. The set $\mc D_I$, with $m_I$ points corresponds to all the functions $Q_{[d]\backslash I}^P$ for $P \in \mc D_I$. In fact, we have $m_I$ unknowns of the form $Q_{[d]\backslash I}^P$, because the master functional equation contains a term $Q$, and so we have all the possible extractions among the extraction equations.  Thus, have $N$ equations and $N$ unknowns.
-
-Next, since there is a unique generating function solution $Q$ to the master functional equation for the model at hand, the various extractions $Q_I^J$ are also unique, and overall, there must be a unique solution to the system of equations. Therefore, $Q$ is a rational function in its variables because all the coefficients in the system are rational functions.
+\begin{proof}Let $n$ be the number of points in $\mc D$. Then for each point $P$, we may extract the $x_{[d]}^P$ term from the functional equation $(1-t\Gamma S)Q = q$ and we will only have $Q$ terms of the form $Q_{[d]}^I$ for points $I$ in $\mc D$. We have a system of $n$ equations in $n$ unknowns, and since the function $Q$ is unique, we may solve this system uniquely. Each of the coefficients is a rational function of the variables $\row xd$, the labels $a_P$, and $t$, and therefore, the solution is rational too.
 \end{proof}
 
-Starting with the master functional equation, we have $N$ unknown functions. When we perform an extraction $[x_i^j]$ in one of $m_{1,\ldots,i-1,i + 1,\ldots,d}$ ways, we no longer see the function $Q$ or any of the functions $Q_k^l$ for $k$ not equal to $i$. This kind of pattern continues on with further extractions. We can write out a schematic version of the system of equations. For example, in two dimensions we have
-\begin{align}
-	\begin{bmatrix}
-		Q & Q_1^i & Q_2 ^i & \Qf{i,j}\\
-		& Q_1^i & & \Qf{i,j}\\
-		& & Q_2^i & \Qf{i,j}\\
-		& & & \Qf{i,j}
-	\end{bmatrix}\,.
-\end{align}
-That is, in the master functional equation we have all of the unknown functions. In the next $m_2$ equations we have variables $Q_1^i$ and $\Qf{i,j}$ only, and so on. If we take the last set of equations only involving functions of the form $\Qf{i,j}$, we have a system of equations that we can solve for the various functions. Then we may back-substitute these quantities in the rest of the systems of equations. Next, we may solve for the functions $Q_1^i$ and $Q_2^i$. When we do this, we may finally back-substitute all the quantities in the master functional equation. The procedure is reminiscent of the long-winded approach to finding the transformation from $(1-tLES)Q = 1$ to $(L^{\um 1} - t ES)Q = \alpha$ that we avoided through the use of operator notation. We are hopeful that such an approach exists in this case too.
-
-\begin{exa} Consider the one-dimensional model set on $\mc D = \{u,\ldots, v\}$. Here the step set must have steps of size at most $n = v-u$ in either direction, because any larger steps will always step outside of the region, and therefore, we may discard them. We have $S = \sum_{k= -n}^n S_k x^k$. The operators $E$ and $L$ are given by
-
-\begin{align}
-	E & = 1 - \sum_{k=1}^n ([[x^{u-k}]]  + [[x^{v + k}]])\,,\\
-	L & = 1 + \sum_{k=u}^v a_k [[x^k]]\,,\\
-	L^{\um 1} &= 1 - \sum_{k=u}^v c_k [[x^k]]\,.
-\end{align}
-We do not need to use all the variables $a_k$ but we may as well do that. The master functional equation is $(L^{\um 1} - t ES)Q = L^{\um 1}(q)$, as usual. The only extraction equations we obtain here are those coming from the coefficient extraction with $[x^i]$ with $u \leq i \leq v$. We have
-\begin{align}
-	[x^i]E & = [x^i]\,,\\
-	[x^i]L^{\um 1} &= [x^i] - c_i [x^i] = \ol a_i [x^i]\,,
-\end{align}
-for those case and the extracted functional equations become
-
-\begin{align} 
-	[x^i](L^{\um 1} - t ES)Q = [x^i] (\ol a_i - t S)Q = [x^i]L^{\um 1}(q) = q_i\,,
-\end{align}
-or in other words, $[x^i](1-a_it S)Q = [x^i] K(a_it)Q = a_iq_i$. The explicit equations are
-\begin{align}
-	Q_i - a_it\sum_{j = -n}^n S_{i-j}Q_j\,.
-\end{align}
-We may write all of those equations as the system
-\begin{align}
-	IX - tHX = (I - tH)X = \alpha\,,
-\end{align}
-where $I$ is the $n \times n$ identity matrix, $H$ is the matrix with entries $H_{i,j} = a_i S_{i-j}$ for $u \leq i, j \leq v$, and $\alpha$ is the vector with entries $q_i$. Because of the uniqueness of the solution, the matrix $(I-tH)$ must be invertible. We may write the master functional equation as $KQ + F\cdot X = q$ and thus, the function $Q$ is given by
-\begin{align}
-	Q = \frac{1}{K}(q - F\cdot X)\,.
-\end{align}
-\end{exa}
-
-\begin{exa} Consider the one-dimensional model set on $\mc D = \{0,\ldots, 1\}$. Here $X^T = [Q_0 \quad\!\! Q_1]$ and
-\begin{align}
-	H = \begin{bmatrix}a_0 & a_0\\ a_1 & a_1\end{bmatrix}\,,
-\end{align}
-and the determinant of $I - tH$ is $1- (a_0 + a_1)t$. Therefore,
-\begin{align}
-	X = \frac{1}{1-(a_0 + a_1)t}\begin{bmatrix}(1-a_1t)q_0 - a_0 t q_1\\ (1-a_0t)q_1 - a_1 tq_0\end{bmatrix}
-\end{align}
-and from the master functional equation,
-\begin{gather}
-	\begin{align}
-		KQ - (c_0-t\ol x)Q_0 - x(c_1-t x) Q_1 = q_0 + x q_1\,,
-	\end{align}
-	\shortintertext{we find that}
-	\begin{align}
-		Q = \frac{1}{(1-(a_0 + a_1)t)K}(f_0 q_0  + f_1 q_1)\,,
-	\end{align}
-\end{gather}
-and if we expand the function into series we find that there is a stabilization of the coefficients involving $x$ in front of $t^k$. We expect that such stabilization will occur for all finite region models.
-\end{exa}
+Of course, once the region grows to even a moderate size, it becomes prohibitively complicated to solve this system. For a box of side $m$, the number of equations is $m^d$, making this a rather difficult way of solving the problem. If the size of the region is large and the number of steps in $S$ is small, then each $\Qf{i,j}$ depends on a few neighbours only, so the resulting linear system will be rather sparse. Still, the solution fills a whole page for a three-by-three square, so this result is mostly of theoretical value.
 
 
 %=======================================
@@ -398,22 +310,6 @@ If $\lambda = 1$, then $u$ is in $\ker(t\Gamma S) = \ol S \ker \Gamma$ and we al
 \end{align}
 where $K = 1 - tS$.
 
-\begin{exa} Let $\Gamma = LE$ in the one-dimensional problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that (?)
-\begin{align}
-	Q = \frac{t(\ol x - \ol \sigma)}{(1-t S)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{t S}{1-t S}\,,
-\end{align}
-where we may write
-\begin{align}
-	\frac{\sigma - x}{b\sigma - at} = \alpha(t) + \beta(t)x\,,
-\end{align}
-where $\alpha(t)$ and $\beta(t)$ are algebraic functions of $t$ and $a$ since $\sigma = \sigma(t)$. This observation at least suggests the possibility of connecting the eigenfunctions of $\mc L$ to the solution $Q$.
-\end{exa}
-
-If we are to have a theory similar to Sturm-Liouville theory, we still need to find a suitable inner product on multivariate Laurent series that will let us write solutions for $Q$ in terms of those eigenfunctions with eigenvalue 1.
-
-
-
-
 \endinput
 
 %=============================================================
@@ -449,3 +345,106 @@ Letting $t \to 0$ in this equation yields
 	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0\,.
 \end{align}
 Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will  be a finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.
+
+%=============================================================
+
+\begin{exa} Let $\Gamma = LE$ in the one-dimensional problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that (?)
+\begin{align}
+	Q = \frac{t(\ol x - \ol \sigma)}{(1-t S)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{t S}{1-t S}\,,
+\end{align}
+where we may write
+\begin{align}
+	\frac{\sigma - x}{b\sigma - at} = \alpha(t) + \beta(t)x\,,
+\end{align}
+where $\alpha(t)$ and $\beta(t)$ are algebraic functions of $t$ and $a$ since $\sigma = \sigma(t)$. This observation at least suggests the possibility of connecting the eigenfunctions of $\mc L$ to the solution $Q$.
+\end{exa}
+
+If we are to have a theory similar to Sturm-Liouville theory, we still need to find a suitable inner product on multivariate Laurent series that will let us write solutions for $Q$ in terms of those eigenfunctions with eigenvalue 1.
+
+%=============================================================
+% Superseeded
+
+\begin{exa}Suppose that $\mc D$ is a finite region in $\ze^2$. If we set $x_1 = 0$ for points in $\mc D$, we obtain the projection of the set onto the $x_2$ axis, and this tells us how many $x_2$ coordinates we have in functions in the functional equation. Suppose that the number of points is $m_1$ and define $m_2$ analogously. Lastly, let there be $m$ lattice points in $\mc D$. Next, we examine the number of unknown functions $Q_i^j$ and $\Qf{i,j}$ that we have in the functional equation and its various extractions. The master functional equation may only have $m_1$ functions $Q_2^i$ and $m_2$ functions $Q_1^i$, together with $m$ functions $\Qf{i,j}$, because those are the possible nonzero functions $Q$ that we may find through various extractions. Similarly, when we extract terms like $[x_i^j]$ and $[x_1^i x_2^j]$, we only find a subset of the functions listed. 
+
+In general, we may even find less of those functions as we perform more extractions. In the end, we have the same number of equations as unknown functions $Q$ and various extractions of $Q$. Therefore, the problem reduces to the solution of a linear system of $1 + m_1 + m_2 + m$ equations and that many unknowns $Q$. Note that, because we have the term $KQ$ in the master functional equation, the $[x_i^j]$ extraction will have the function $Q_i^j$ with a nonzero coefficient. Because there is a unique function $Q$ for the model, this forces the uniqueness of the $Q_i^j$ and $\Qf{i,j}$ terms. Therefore, we have a unique solution to the system of equations. Furthermore, because all the the coefficients are rational functions, so is $Q$. We will generalize this observation in the following theorem.
+\end{exa}
+
+\begin{defn} Given a $d$-dimensional region $\mc D$ and a finite set $I$ from $\{1,\ldots, d\}$, let $\mc D_I$ be defined as follows
+\begin{align}
+	\mc D_I = \{(\row xd)_{x_I = 0} | (\row xd \in \mc D)\}\,.
+\end{align}
+ $\mc D_I$ is the projection of $\mc D$ onto the space generated by coordinates $x_i$ for $i$ in $[d]\backslash I$. Let $m_I = |\mc D_I|$.
+\end{defn}
+
+Note that $I = \emptyset$ corresponds to the set of points in $\mc D$, and $I = [d]$ corresponds to exactly one point and the master functional equation.
+
+\begin{thm} If $\mc D$ is finite, then the generating function $Q$ is rational in its variables. To find the solution, we solve a system of $N = \sum_{I\subseteq [d]} m_I$ equations and unknowns $Q_I^J$, with a unique solution.
+\end{thm}
+\begin{proof} The master functional equation may at most contain all the possible nonzero functions $Q_I^J$. Each possible extraction $[x_K^P]$ may contain at most a portion of these variables --- all terms of the form $Q_{I,K}^{J,P}$. We just need to count the number of equations and unknowns. The projections $\mc D_I$ helps us in determining these numbers. The set $\mc D_I$, with $m_I$ points corresponds to all the functions $Q_{[d]\backslash I}^P$ for $P \in \mc D_I$. In fact, we have $m_I$ unknowns of the form $Q_{[d]\backslash I}^P$, because the master functional equation contains a term $Q$, and so we have all the possible extractions among the extraction equations.  Thus, have $N$ equations and $N$ unknowns.
+
+Next, since there is a unique generating function solution $Q$ to the master functional equation for the model at hand, the various extractions $Q_I^J$ are also unique, and overall, there must be a unique solution to the system of equations. Therefore, $Q$ is a rational function in its variables because all the coefficients in the system are rational functions.
+\end{proof}
+
+Starting with the master functional equation, we have $N$ unknown functions. When we perform an extraction $[x_i^j]$ in one of $m_{1,\ldots,i-1,i + 1,\ldots,d}$ ways, we no longer see the function $Q$ or any of the functions $Q_k^l$ for $k$ not equal to $i$. This kind of pattern continues on with further extractions. We can write out a schematic version of the system of equations. For example, in two dimensions we have
+\begin{align}
+	\begin{bmatrix}
+		Q & Q_1^i & Q_2 ^i & \Qf{i,j}\\
+		& Q_1^i & & \Qf{i,j}\\
+		& & Q_2^i & \Qf{i,j}\\
+		& & & \Qf{i,j}
+	\end{bmatrix}\,.
+\end{align}
+That is, in the master functional equation we have all of the unknown functions. In the next $m_2$ equations we have variables $Q_1^i$ and $\Qf{i,j}$ only, and so on. If we take the last set of equations only involving functions of the form $\Qf{i,j}$, we have a system of equations that we can solve for the various functions. Then we may back-substitute these quantities in the rest of the systems of equations. Next, we may solve for the functions $Q_1^i$ and $Q_2^i$. When we do this, we may finally back-substitute all the quantities in the master functional equation. The procedure is reminiscent of the long-winded approach to finding the transformation from $(1-tLES)Q = 1$ to $(L^{\um 1} - t ES)Q = \alpha$ that we avoided through the use of operator notation. We are hopeful that such an approach exists in this case too.
+
+%==========================================================
+% Not sure if I care about including this example here 
+
+\begin{exa} Consider the one-dimensional model set on $\mc D = \{u,\ldots, v\}$. Here the step set must have steps of size at most $n = v-u$ in either direction, because any larger steps will always step outside of the region, and therefore, we may discard them. We have $S = \sum_{k= -n}^n S_k x^k$. The operators $E$ and $L$ are given by
+
+\begin{align}
+	E & = 1 - \sum_{k=1}^n ([[x^{u-k}]]  + [[x^{v + k}]])\,,\\
+	L & = 1 + \sum_{k=u}^v a_k [[x^k]]\,,\\
+	L^{\um 1} &= 1 - \sum_{k=u}^v c_k [[x^k]]\,.
+\end{align}
+We do not need to use all the variables $a_k$ but we may as well do that. The master functional equation is $(L^{\um 1} - t ES)Q = L^{\um 1}(q)$, as usual. The only extraction equations we obtain here are those coming from the coefficient extraction with $[x^i]$ with $u \leq i \leq v$. We have
+\begin{align}
+	[x^i]E & = [x^i]\,,\\
+	[x^i]L^{\um 1} &= [x^i] - c_i [x^i] = \ol a_i [x^i]\,,
+\end{align}
+for this case and the extracted functional equations become
+
+\begin{align} 
+	[x^i](L^{\um 1} - t ES)Q = [x^i] (\ol a_i - t S)Q = [x^i]L^{\um 1}(q) = q_i\,,
+\end{align}
+or in other words, $[x^i](1-a_it S)Q = [x^i] K(a_it)Q = a_iq_i$. The explicit equations are
+\begin{align}
+	Q_i - a_it\sum_{j = -n}^n S_{i-j}Q_j = a_i q_i\,.
+\end{align}
+We may write all of those equations as the system
+\begin{align}
+	IX - tHX = (I - tH)X = \alpha\,,
+\end{align}
+where $I$ is the $n \times n$ identity matrix, $H$ is the matrix with entries $H_{i,j} = a_i S_{i-j}$ for $u \leq i, j \leq v$, and $\alpha$ is the vector with entries $q_i$. Because of the uniqueness of the solution, the matrix $(I-tH)$ must be invertible. We may write the master functional equation as $KQ + F\cdot X = q$ and thus, the function $Q$ is given by
+\begin{align}
+	Q = \frac{1}{K}(q - F\cdot X)\,.
+\end{align}
+Here is a specific example. Let $\mc D = \{0, 1\}$. Here $X^T = [Q_0 \quad\!\! Q_1]$ and
+\begin{align}
+	H = \begin{bmatrix}a_0 & a_0\\ a_1 & a_1\end{bmatrix}\,,
+\end{align}
+and the determinant of $I - tH$ is $1- (a_0 + a_1)t$. Therefore,
+\begin{align}
+	X = \frac{1}{1-(a_0 + a_1)t}\begin{bmatrix}(1-a_1t)q_0 - a_0 t q_1\\ (1-a_0t)q_1 - a_1 tq_0\end{bmatrix}
+\end{align}
+and from the master functional equation,
+\begin{gather}
+	\begin{align}
+		KQ - (c_0-t\ol x)Q_0 - x(c_1-t x) Q_1 = q_0 + x q_1\,,
+	\end{align}
+	\shortintertext{we find that}
+	\begin{align}
+		Q = \frac{1}{(1-(a_0 + a_1)t)K}(f_0 q_0  + f_1 q_1)\,,
+	\end{align}
+\end{gather}
+and if we expand the function into series we find that there is a stabilization of the coefficients involving $x$ in front of $t^k$. We expect that such stabilization will occur for all finite region models.
+\end{exa}
