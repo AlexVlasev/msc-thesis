@@ -10,7 +10,7 @@ In this final chapter we will analyze lattice walk models in more generality and
 We will start by discussing marking operators in more generality. Then we will move onto finding functional equations for general models. Finally, we will look at some examples and ideas generated from them. Unfortunately, time did not suffice to explore this area to its full potential.
 
 %================================
-\subsection{Marking Operators And Functional Equations}
+\section{Marking Operators And Functional Equations}
 %================================
 
 We start with the observation that operators that remove monomials are just marking operators with labels set to zero, and therefore, we will only consider marking operators for the rest of this work. A rather general operator is one that marks each point $p$ in $\ze^d$ with a unique label $a_p$. This will serve as our most general definition. We will work with marking functions first and then express their action on monomials via operators.
@@ -138,7 +138,7 @@ Also, we may handle partially-infinite regions, corresponding to boxes extended 
 
 \begin{defn} A lattice walk model with finitely many steps is finite if its marking operator $\gamma = LE$ is finite, and its initial condition $q$ has finitely many terms. Otherwise, the model is infinite.
 \end{defn}
-\begin{exa} All the models so far have been finite, but not all models are finite. Consider a one-dimensional model on the whole line, where for each integer $i$, we mark point $x^i$ with parameter $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)[[x^i]]$; otherwise, it would not act the same way on monomials in the model's range $\ze$. Therefore, $L$ is not equivalent to a finite operator.
+\begin{exa}\label{ex:InfiniteOperator} All the models so far have been finite, but not all models are finite. Consider a one-dimensional model on the whole line, where for each integer $i$, we mark point $x^i$ with parameter $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)[[x^i]]$; otherwise, it would not act the same way on monomials in the model's range $\ze$. Therefore, $L$ is not equivalent to a finite operator.
 \end{exa}
 Finite models are nicer because they have functional equations with finitely many terms and there is a chance that they will be amenable to the sort of analysis we have performed for quarter plane walk models in the past.
 
@@ -170,7 +170,7 @@ In the first two examples, we will see some more general analysis on models. Aft
 The downside is that we have more extractions  than if we split the operator as $\Gamma = LE$ and only applied $L^{\um 1}$. If we obtained a solution for $\widetilde Q$, then we could find the original $Q$ by taking $Q = [z^0]\widetilde Q$.
 \end{exa}
 
-\begin{exa} We can also keep track of the walks' histories of where they have been. To do this, we let $\Gamma$ give a generic label to each point in space, that is, $\Gamma x^p = a_p$. In this setup, a growing lattice walk picks up a label at each point that it steps on. As in example blah \FIXME{autoref}, the operator is not finite, so we would not have an explicit functional equation with finitely many terms. Nevertheless, this allows us to frame self-avoiding within our theory. 
+\begin{exa} We can also keep track of the walks' histories of where they have been. To do this, we let $\Gamma$ give a generic label to each point in space, that is, $\Gamma x^p = a_p$. In this setup, a growing lattice walk picks up a label at each point that it steps on. As in \autoref{ex:InfiniteOperator}, the operator is not finite, so we would not have an explicit functional equation with finitely many terms. Nevertheless, this allows us to frame self-avoiding within our theory. 
 
 Suppose that $Q$ is the generating function for walks with histories and let $W$ be the generating function for self-avoiding walks on the same space. Then we can obtain $W$ from $Q$ by setting all higher powers of $a_p$ to zero. This is equivalent to picking out the $a_p^0$ and $a_p$ coefficients from $Q$ via some operator $A$. Since there are only finitely many walks of a given length and they are bounded, for each step size, $A$ reduces to a finite operator $A_k$, that is, $W = AQ = \sum_{k=0}^\infty A_k(q_k) t^k$.
 \end{exa}
@@ -236,7 +236,7 @@ Of course, once the region grows to even a moderate size, it becomes prohibitive
 %=======================================
 \section{Further Properties of Marking Operators}
 %=======================================
-Since the function $Q$ is given by Neumann series \FIXME{write more about this in this chapter}, which is connected to integral equations, it may be possible to find an analogue to Fredholm theory. Also, it may be possible to find a sort of Sturm-Liouville theory for lattice walk enumeration problems. In the next few pages we will look at the first few steps of such a theory, although there was insufficient time to analyze this problem in more detail. For that we would need a suitable inner product that would allow us to see if certain operators are self-adjoint. Finally, we would find eigenfunction expansions for the functions involved.
+Since the function $Q$ is given by Neumann series  \bonus{Write more about this in this chapter}, which is connected to integral equations, it may be possible to find an analogue to Fredholm theory. Also, it may be possible to find a sort of Sturm-Liouville theory for lattice walk enumeration problems. In the next few pages we will look at the first few steps of such a theory, although there was insufficient time to analyze this problem in more detail. For that we would need a suitable inner product that would allow us to see if certain operators are self-adjoint. Finally, we would find eigenfunction expansions for the functions involved.
 
 The operators we have seen so far are marking operators, like $L$ and $E$, in combination of multiplication by another function, like $\Gamma S$, or a combination of operators, like $L^{\um 1} - t ES$. We will look at their eigenvalues, eigenvectors, kernels and invertibility.
 

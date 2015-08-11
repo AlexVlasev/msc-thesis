@@ -71,7 +71,7 @@ With the previous generalization of the operator form, we obtain the $d$-dimensi
 	D_G(\mon xd KQ) = D_G(\mon xd)\,.
 \end{align}
 \end{thm}
-\begin{proof} When we multiply the master equation by $\mon xd$ and apply $D_G$, all terms except $KQ$ and 1 will vanish because terms like $\mon xd \ol x_I t S_I^{\um \one} Q_I^\oo$ are missing the variables $x_i$ for $i$ in $I$, and they are annihilated by $D_G$. \awk
+\begin{proof} With the application of $D_G \mon xd$, all terms except $KQ$ and 1 vanish since terms like $x_{[d]} \ol x_I t S_I^{\um \one} Q_I^\oo$ are annihilated by $D_G$ because they miss one or more variable $x_i$.
 \end{proof}
 
 In \cite[p.~11]{bousquet2010walks} and \cite[p.~13]{bostan2014three}, the authors have found that sometimes the algebraic kernel method fails. That is, $D_G(\mon xd) = 0$ and the equation does not give us new information. The operator form of the method allows us to find a more general instance of when this situation occurs.
@@ -138,7 +138,7 @@ This observation turns the task of finding the weights into a linear algebra pro
 \end{gather}
 Thus, we reach a linear system of $|\orb_G(f)|$ equations in $|G|$ unknowns. We can do this for each of the $2^d - 1$ terms $W_I$ and solve the system of equation. Here is an example
 
-\begin{exa} Consider the two-dimensional \classic model with $S = \ol x_1 + \ol x_2 + x_1x_2$, where the algebraic kernel method fails \FIXME{cite}. Here both of the generators map$x_i$ to $\ol x_1 \ol x_2$ and the group is given by the orbit $\{1$, $g_1$, $g_{21}$, $g_{121}$, $g_{12}$, $g_2\}$ of $(x_1,x_2)$. The orbit of 1 under $G$ is trivial and by symmetry of the group actions, the orbit of each of $W_1 = f_1(x_2)$ and $W_2 = f_2(x_1)$ is given by $\{f(x_1),\, f(x_2),\, f(\ol x_1 \ol x_2)\}$. The relations we obtain are
+\begin{exa} Consider the two-dimensional \classic model with $S = \ol x_1 + \ol x_2 + x_1x_2$, where the algebraic kernel method fails \cite[p.12]{bousquet2010walks}. Here both of the generators map $x_i$ to $\ol x_1 \ol x_2$ and the group is given by the orbit $\{1$, $g_1$, $g_{21}$, $g_{121}$, $g_{12}$, $g_2\}$ of $(x_1,x_2)$. The orbit of 1 under $G$ is trivial and by symmetry of the group actions, the orbit of each of $W_1 = f_1(x_2)$ and $W_2 = f_2(x_1)$ is given by $\{f(x_1),\, f(x_2),\, f(\ol x_1 \ol x_2)\}$. The relations we obtain are
 \begin{align}
 	R - R_1 + R_{21} - R_{121} + R_{12} - R_2 &= 0\,,\\
 	(R-R_2)f(x_1) + (R_{21}-R_{121}) f(x_2) + (R_{12}-R_1)f(\ol x_1 \ol x_2) &= 0\,,\\

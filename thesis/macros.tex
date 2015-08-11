@@ -53,13 +53,16 @@
 	\end{minipage}
 	\end{flushright}}
 \makeatother
+% Macros for noting things needing to be changed.
+% The following definitions will also output a warning to the console
 
-% \FIXME{} is a useful macro for noting things needing to be changed.
-% The following definition will also output a warning to the console
-\newcommand{\FIXME}[1]{\typeout{**FIXME** #1}\textbf{[FIXME: #1]}}
-\newcommand{\awk}{\typeout{**AWKWARD**}\textbf{[AWKWARD]}}
+\newcommand{ \fixme}[1]{\typeout{**FIXME** #1}\textbf{[fix: #1]}}
+\newcommand{\awk}{\typeout{**AWKWARD**}\textbf{[awk]}}
+\newcommand{\citeme}{\typeout{**CITATION**}\textbf{[cite]}}
+\newcommand{\refme}{\typeout{**REFER**}\textbf{[ref]}}
+\newcommand{\bonus}[1]{\typeout{**BONUS**}\textbf{[Bonus: #1]}}
 
-%My Own Stuff
+%Theorems, definitions and other stuff. This ares is finicky, don't touch!
 
 \newtheorem{thm}{Theorem}
 \numberwithin{thm}{chapter}
@@ -89,6 +92,8 @@
 \newtheorem{exa}[exa]{Example}
 \aliascntresetthe{exa}
 \providecommand*{\exaautorefname}{Example}
+
+% Useful commands for shorter writing
 
 \newcommand{\en}{\mathbb{N}}
 \newcommand{\ze}{\mathbb{Z}}
@@ -156,9 +161,7 @@
 \newcommand{\classic}{classic }
 \newcommand{\ug}{U}
 
-%==========================================================
 % DRAWING STUFF
-
 
 \newcommand{\modelgraph}[8]{
 \raisebox{-0.35\height}{\begin{tikzpicture}[scale=0.4]

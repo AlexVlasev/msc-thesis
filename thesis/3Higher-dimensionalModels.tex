@@ -62,7 +62,7 @@ While it is possible to handle the analysis of higher-dimensional \classic model
 \begin{defn}Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$, where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
 \end{defn}
 
-\begin{defn} Let $\row xd$ be some indeterminates and let $I = (\row im)$ and $J = (\row jm)$ be sequences of positive integers. Define the monomial $x_I^J$ as
+\begin{defn} Let $\row xd$ be indeterminates and let $I = (\row im)$ and $J = (\row jm)$ be sequences of positive integers. Define the monomial $x_I^J$ as
 \begin{align}
 	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,.
 \end{align}
@@ -370,16 +370,14 @@ Since we are working with power series,
 and we are done.
 \end{exa}
 
-\begin{lem} Let $Q$ be the generating function for an interacting \classic model, with $S = S_1(x_1)S_2(x_2)$, and $Q_i$, with step polynomial $S_i$. Then
+\begin{lem} Given an interacting \classic model, with $S = S_1(x_1)S_2(x_2)$, the function $Q$ satisfies
 \begin{align}
-	Q(x_1,x_2,a_1,a_2;t) = Q_1(x_1,a_1;t)\odot Q_2(x_2,a_2;t)\,.
+	Q(x_1,x_2,a_1,a_2;t) = Q_1(x_1,a_1;t)\odot Q_2(x_2,a_2;t)\,,
 \end{align}
+where $Q_i$ is the one-dimensional generating function for the model with for step polynomial $S_i$.
 \end{lem}
 This identity will serve as the base case for the following general case.
-\begin{thm} Let $Q$ be the generating function for an interacting \classic model with $S = \mon Sr$, where $S_i$ and $S_j$ do not share variables when $i\neq j$, and $Q_i$, for a model with step polynomial $S_i$. Then
-\begin{align}
-	Q = Q_1 \odot \cdots \odot Q_r\,.
-\end{align}
+\begin{thm} Given an  interacting \classic model with $S = \mon Sr$, where $S_i$ and $S_j$ do not share variables when $i\neq j$, let $Q$ and $Q_i$ be the generating functions for models with step polynomials $S$ and $S_i$, respectively. Then $Q = Q_1 \odot \cdots \odot Q_r$.
 \end{thm}
 
 \begin{exa} Consider the two-dimensional model with diagonal steps, that is, $S = (x_1 + \ol x_1)(x_2 + \ol x_2)$. We will look at this case in more detail in \autoref{ch:OKM}. The one-dimensional problems are the same and have solutions
@@ -411,13 +409,13 @@ We have the expansion
 		\end{split}
 	\end{align}
 \end{gather}
-However, obtaining an explicit function via the Hadamard product seems to be rather messy. The function is not algebraic since the unmarked variant is not algebraic \FIXME{cite something}. However, the function $Q$ is D-finite since both functions in the product are.
+However, obtaining an explicit function via the Hadamard product seems to be rather messy. The function is not algebraic since the unmarked variant is not algebraic \cite[p.~26]{bousquet2010walks}. However, the function $Q$ is D-finite since both functions in the product are.
 \end{exa}
 
 %========================================
 \subsection{Reducible Models and Groups For Walks With Small Steps}
 %========================================
-Here is another observation that will allow us to find solutions to models in an easier way. As observed in \FIXME{cite walks with small steps, page so and so}, if the model has some steps that cannot be used in the construction of lattice walks, then we can safely remove them from the step set, and we would still have the same generating function enumerating the lattice walks. This procedure works for any step set and any regional constraints. 
+Here is another observation that will allow us to find solutions to models in an easier way. As observed in \cite[p.5]{bousquet2010walks}, if the model has some steps that cannot be used in the construction of lattice walks, then we can safely remove them from the step set, and we would still have the same generating function enumerating the lattice walks. This procedure works for any step set and any regional constraints, so we make a definition.
 
 \begin{defn}For a model with a step set $\mc S$, let the minimal step set $\mc S'$ for be the set of steps that can eventually be used by lattice walks. A model is reducible if $\mc S'$ is a proper subset of $S$.
 \end{defn}
@@ -516,7 +514,7 @@ The \classic two-dimensional lattice walk models have been investigated thorough
 Our first step is to find all the reducible models and we can do this  by looking at which of the steps $\{$N, NE, E$\}$ they have in their step set.
 
 \begin{itemize}
-	\item[1.] None of the three steps are present. We have $2^5$ such models, in which walks cannot leave the origin and they are reducible to ones with $\mc S = \emptyset$. \awk
+	\item[1.] There are 32 models reducible models, where none of the three steps are present and walks cannot leave the origin.
 	\begin{figure}[H]
 		\centering
 		\[
@@ -524,7 +522,7 @@ Our first step is to find all the reducible models and we can do this  by lookin
 		\]
 		\caption{Set of steps allowed in models that do not leave the origin. The models are equivalent to a model without steps.}
 	\end{figure}
-	\item[2.] There is a $N$ step or an $E$ step. The models are equivalent to one-dimensional ones. There are $2\cdot2^4 = 32$ such models.
+	\item[2.] There is a $2\cdot 2^4 = 16$ reducible models with an $N$ step or an $E$ step, where the models are equivalent to one-dimensional ones.
 	\begin{figure}[H]
 		\centering
 		\[
@@ -532,7 +530,7 @@ Our first step is to find all the reducible models and we can do this  by lookin
 		\]
 		\caption{Sets of steps allowed in models with an N step or an E step. The models are essentially one-dimensional.}
 	\end{figure}
-	\item[3.] There are two or more steps from $\{$N, NE, E$\}$ or NE $\subseteq \mc S$. In this case, the models feature walks that leave both axes and once that happens, such walks may use any step from the step set. Therefore, these models are never reducible.
+	\item[3.] There are two or more steps from $\{$N, NE, E$\}$ or NE $\subseteq \mc S$. In this case, the models feature walks that leave both axes and once that happens, such walks may use any step from the step set. Therefore, these models are not reducible.
  \end{itemize}
 
 Cases 1 and 2 contain all of the quarter plane models reducible to one-dimensional models. We will look at the case of a model equivalent to a one-dimensional model along the $x_2$ axis. From the analysis in the previous section, since both $S_1^{\um 1} = 0$ and $S_1^1 = 0$, we have the first situation. If the solution to the one-dimensional problem is $q(x,a;t) = q(x_2,a_2;t)$, then the solution to the models in cases 1 and 2 is $Q(x_1,x_2,a_1,a_2;t) = q(x_2,a_2;a_1t)$. To see it in another way, consider the polynomial $S$ itself in the reduced models. Since $S$ factors, the function $Q$ is a Hadamard product between two one-dimensional models.
@@ -542,7 +540,8 @@ Since the models are essentially one-dimensional, we also have a linear relation
 	F(a_1,a_2,t) = f(a_2,a_1 t)\,.
 \end{align}
 Then we have $B_2 (F Q) = 0$ and consequently, $B_1B_2(F Q) = 0$. We wrap this section up with the following proposition.
-\begin{prop} Each of the 64  reducible models is equivalent to a one-dimensional model confined on the $x_1$ or $x_2$ axis. Their solutions are $Q = q(x_1,a_1;a_2t)$ or $Q = q(x_2,a_2;a_1t)$, respectively, for a generating function $q(x,a;t)$ for a one-dimensional model. Furthermore, they all satisfy a linear relation $B(F Q) = 0$ for operator $B = B_1 B_2$ and function $F$, corresponding to $q$. That is, $F = f(a_2,a_1t)$ or $f(a_1,a_2t)$, respectively. \awk
+
+\begin{prop} All 64 reducible models are equivalent to ones confined to an axis. Their generating functions $Q$ and their functions $F$, such that $B(FQ) =0$, are given by one-dimensional ones with $t$ scaled by one of $a_1$ or $a_2$.
 \end{prop}
 
 %=======================================
@@ -658,7 +657,7 @@ Since $q = q(x_2,a_2;a_1t)$, there is a function $f$ depending on $a$'s and $t$ 
 \end{thm}
 
 %=======================================
-\subsection{Miscellaneous Case}
+\subsubsection{Miscellaneous Case}
 %=======================================
 
 There is one case with an infinite group that is both easy to solve and not reducible --- the model with $S = x_1x_2 + \ol x_1 \ol x_2$. The transformations are $g_1= \ol x_1 \ol x_2^2$ and $g_2= \ol x_2 \ol x_1^2$. If we apply them on $(x_1,x_2)$ in an alternating sequence, each time the absolute powers of $x_1$ and $x_2$ will increase in one of the coordinates, and therefore, the group is infinite. However, this case is easy to solve because the model is essentially one-dimensional. It is equivalent to the model on the non-negative line with $S = x + \ol x$ and marking visits to the origin with $a$, where $x = x_1 x_2$ and $a = a_1 a_2$. The solution is
