@@ -41,7 +41,7 @@ To find the operator $\Gamma$, note that when we multiply $q_k$ by $S$, the fart
 \begin{align}
 	\Gamma = 1 - \ol x [\ol x] + (a-1)[x^0]\,,
 \end{align}
-where $1$ is the identity operator. When we apply it on some Laurent polynomial $F$, the identity makes a copy of $F$, the $-\ol x[\ol x]$ part removes the $\ol x$ term from it, and the $(a-1)[x^0]$ part multiplies the coefficient of the $x^0$ term by $a$. This completes our derivation of the functional equation. We will make the extractions explicit later on, but for now, we will analyze the operator $\Gamma$ in more detail.
+where $1$ is the identity operator. When we apply it on some Laurent polynomial $F$, the identity makes a copy of $F$, the $-\ol x[\ol x]$ part removes the $\ol x$ term from it, and the $(a-1)[x^0]$ part multiplies the $x^0$ coefficient by $a$. This completes our derivation of the functional equation. We will make the extractions explicit later on, but for now, we will analyze the operator $\Gamma$ in more detail.
 
 Suppose that we decided to obtain the operator step-by-step by finding operators $E$ and $L$ that remove monomials with $\ol x$ and mark monomials with $x^0$, respectively, and applying them sequentially. Then $\Gamma = LE$ or $\Gamma = EL$ by composition. The operators are given by
 \begin{align}
@@ -65,7 +65,7 @@ Therefore $\Gamma = LE$. Similarly, $\Gamma = EL$, so the operators commute. The
 		&= 1 + xt + (a + x^2)t^2 + (ax + x + x^3)t^3 + \cdots\,.
 	\end{split}
 \end{align}
-Note that if we apply $\Gamma$ to $t SQ$, we obtain $Q$ with the first term missing.
+Note that if we apply $\Gamma$ on $t SQ$, we obtain $Q$ with the first term missing.
 \end{exa}
 The theory we have presented so far is consistent with present methods for finding the functional equation for $Q$ because once we compute the explicit extractions in $\Gamma S Q$, we obtain the classical explicit equations. The difference lies in the ease of use of operators versus the trickier inclusion-exclusion process that becomes unwieldy for models with interactions in higher dimensions.
 
@@ -88,7 +88,7 @@ We can rewrite it in the following form:
 \begin{align}
 	(1-t S)Q - t(bS_0-\ol xS_{\um 1})Q_0 -bt S_{\um 1}Q_1 = 1\,.
 \end{align}
-Here $Q = Q(x)$, $Q_0 = Q(0)$ and $Q_1 = Q'(0)$. It turns out that we can eliminate $Q_1$ by finding an equation for it via applying $[x^0]$ to both sides of the explicit equation. That is,
+Here $Q = Q(x)$, $Q_0 = Q(0)$ and $Q_1 = Q'(0)$. It turns out that we can eliminate $Q_1$ by finding an equation for it via applying $[x^0]$ on both sides of the explicit equation. That is,
 \begin{align}
 	\begin{split}
 		1 &= Q_1^0 - t(S_{\um 1}Q_1 + S_0 Q_0) - tbS_0Q_0 - bt S_{\um 1}Q_1\\
@@ -119,12 +119,12 @@ It might seem like a similar amount of work, but in higher dimensions we need to
 		(1-t S)Q-(c-t\ol xS_{\um 1})Q_0 &= \ol a\,.
 	\end{align}
 \end{subequations}
-The first one is an operator equation and the second one we call the master functional equation.
+We call them the operator equation and the master functional equation for the model, respectively.
 \end{prop}
 
 The operator notation/perspective is powerful. With it, we can derive functional equations for many lattice walk models in arbitrary dimensions with ease. Usually, derivations have employed inclusion-exclusion and careful book-keeping (Lemma 4 in \cite[p.~10]{bousquet2010walks}, \cite[p.~58]{melczer2014variants}) to write master functional equations, or their precursors, in a direct manner. Unfortunately, that approach is difficult to generalize to arbitrary dimensions and more difficult restrictions/marking.
 
-We can also attend to coefficient extraction in a neater way. Instead of extracting the $x^k$ term from the master functional equation, it is better to first go through the operator equation, since $[x^k]$ interacts with $L$ and $E$ in a nice way. We have
+We can also do the coefficient extraction in a neater way. Instead of extracting the $x^k$ coefficient from the master functional equation, it is better to first go through the operator equation, since $[x^k]$ interacts with $L$ and $E$ in a nice way. We have
 \begin{subequations}
 	\label{eq:OpExt1}
 	\begin{align}
@@ -152,7 +152,7 @@ Extracting higher coefficients is not difficult either. If $k \ge 1$, we have
 		[x^k]E &= [x^k] - [x^k]\ol x[\ol x] = [x^k]\,.
 	\end{align}
 \end{subequations}
-When we apply the coefficient extraction to the functional equation, we obtain
+When we apply the extractions on both sides of the functional equation, we obtain
 \begin{align}
 	[x^k](1-t S)Q = 0,
 \end{align}
@@ -161,7 +161,7 @@ and after we expand and simplify the expression, we have
 	 (1-S_0t) Q_k -t(S_{\um 1}Q_{k + 1} + S_1 Q_{k-1}) &= 0\,.
 \end{align}
 
-\begin{prop} Let $S = S_{\um 1}\ol x + S_0 + S_1 x$ be the Laurent step polynomial for a \oneD lattice walk model. Then the function $Q_0$ and $Q_k$ for $k\ge 1$ satisfy the equations
+\begin{prop} Let $S = S_{\um 1}\ol x + S_0 + S_1 x$ be the step polynomial for a lattice walk model on the non-negative axis. Then the function $Q_0$ and $Q_k$ for $k\ge 1$ satisfy the equations
 \begin{subequations}
 	\begin{align}
 		(1-at S_0)Q_0-at S_{\um 1}Q_1 = 1\,,\\
@@ -176,7 +176,7 @@ and after we expand and simplify the expression, we have
 If some steps in the step set of a model cannot be taken by walks, then we can remove them and obtain a simpler model with the same lattice walks and generating function. For \oneD models with small steps we can identify three major cases: $S = \delta$ or $S = \delta + x$ or $S = \delta + \ol x + x$.
 
 %=======================================
-\subsection{The \texorpdfstring{$S = \delta$}{} or \texorpdfstring{$S = \delta + x$}{} case}
+\subsection{The \texorpdfstring{$S = \delta$}{} or \texorpdfstring{$S = \delta + x$}{} Case}
 %=======================================
 The condition allows us to find $Q_0$ directly from the $[x^0]$ equation. Then
 \begin{align}
@@ -196,15 +196,15 @@ and we have the linear relation
 \begin{align}
 	(1-a\delta t)Q-(1-\delta t)\wh Q = 0\,,
 \end{align}
-that we can rewrite as $B((1-a\delta t)Q)  = 0$ with the operator $B = 1- [b^0]$. The same relationship holds for $Q_0$.
+that we can rewrite as $B((1-a\delta t)Q)  = 0$ with the operator $B = 1- [b^0]$, and similarly for $Q_0$.
 
 \begin{prop} Let $B = 1 - [b^0]$ and let $Q$ be the generating function for a lattice walk model with $S = \delta$ or $S = \delta + x$. Then $Q$ and $Q_0$ both satisfy the equation $B((1-a\delta t)F) = 0$.
 \end{prop}
 We will find that similar relationships exist for \highD lattice walk models too.
 %=======================================
-\subsection{The \texorpdfstring{$S = \delta + \ol x + x$}{} case}
+\subsection{The \texorpdfstring{$S = \delta + \ol x + x$}{} Case}
 %=======================================
-To derive the generating function in this case, we will use the obstinate kernel method as detailed in Section 4.2 of \cite[p.~12]{tabbara2014exact} and Section 4.1 of \cite[p.~13]{wong2014confining} for \twoD models. In this method we substitute an $x$ value in the functional equation that eliminates the term $(1-tS)Q$. It is sufficient to find roots of the kernel $K = 1-tS$. The equation $K = 0$ is quadratic in $x$ and has the roots
+To derive the generating function in this case, we will use the \okm as detailed in Section 4.2 of \cite[p.~12]{tabbara2014exact} and Section 4.1 of \cite[p.~13]{wong2014confining} for \twoD models. In this method, we substitute an $x$ value in the functional equation that eliminates the term $(1-tS)Q$. It is sufficient to find roots of the kernel $K = 1-tS$. The equation $K = 0$ is quadratic in $x$ and has the roots
 \begin{align}
 	\sigma = \frac{1-\delta t - \sqrt{(1-\delta t)^2-4t^2}}{2t} \qandq \sigma^\ast = \frac{1-\delta t + \sqrt{(1-\delta t)^2-4t^2}}{2t}\,,
 \end{align}
@@ -227,7 +227,7 @@ As before, we can find a linear relationship between functions for models with i
 \begin{prop} Let $S = \delta + \ol x + x$. Then $Q$ and $Q_0$ satisfy the equation $B((a \ol \sigma t - b)F)$.
 \end{prop}
 
-In this case we may use the algebraic kernel method to obtain a linear relation for $Q_0$. This method is used extensively in the quarter plane model classification \cite{bousquet2010walks}. Here we will find a polynomial $f(a,t)$, for which $B(fQ_0) = c$, instead of zero.  Note that $K$ is invariant under the map $\ast: x \mapsto \ol x$ and we can write a second functional equation to complement the first. That is, we have the system of equations
+In this case we may use the \akm to obtain a linear relation for $Q_0$. This method is used extensively in the quarter plane model classification \cite{bousquet2010walks}. Here we will find a polynomial $f(a,t)$, for which $B(fQ_0) = c$, instead of zero.  Note that $K$ is invariant under the map $\ast: x \mapsto \ol x$ and we can write a second functional equation to complement the first. That is, we have the system of equations
 \begin{align}
 	(1-t S)Q - (c -t\ol x)Q_0 = \ol a\,,\\
 	(1-t S)Q^\ast\exxx - (c -tx)Q_0 =\ol a\,.
@@ -261,11 +261,11 @@ Collecting coefficients and simplifying the result leads us to the equation
 and therefore, $f(a,t) = c(1-a\delta t)-a t^2$.
 \begin{prop}\label{prop:1DBF Q2} Let $S = \delta + \ol x + x$. Then $B((c(1-a\delta t)-a t^2)Q_0) = c$.
 \end{prop}
-We obtained slightly different relationships upon applying the operator $B$.
+We obtained a slightly different relationships upon applying the operator $B$.
 %=======================================
 \subsection{Conclusion}
 %=======================================
-For \oneD models with small steps restricted to the non-negative axis, we were able to find explicit solutions for $Q_0$ and $Q$ and various relationships for $Q$ and $\wh Q$ with the operator $B$. In higher dimensions the analysis will be more difficult, but sometimes we will see the same situation. In more difficult examples, we will only find a relationship between the function for walks returning to the origin and its various partially-marked versions. Here is a table showing the results so far.
+For \oneD models with small steps restricted to the non-negative axis, we were able to find explicit solutions for $Q_0$ and $Q$ and various relationships for $Q$ and $\wh Q$ with the operator $B$. In higher dimensions, the analysis will be more difficult, but sometimes we will see the same situation. In more difficult examples, we will only find a relationship between the function for walks returning to the origin and its various partially-marked versions. Here is a table showing the results so far.
 \begin{table}[H]
 	\caption{Generating functions for walks with small steps on the non-negative half-line, where $B(FQ_0) = B(FQ) = 0$.}
 	\label{tbl:table1d}

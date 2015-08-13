@@ -37,7 +37,7 @@ M.~Bousquet-M{\'e}lou and M.~Mishna, ``Walks with small steps in the quarter
   plane,'' {\em Contemp. Math}, vol.~520, pp.~1--40, 2010.
 
 \bibitem{bousquet2005walks}
-M.~Bousquet-M{\'e}lou {\em et~al.}, ``Walks in the quarter plane: Kreweras’
+M.~Bousquet-M{\'e}lou {\em et~al.}, ``Walks in the quarter plane: Krewerasï¿½
   algebraic model,'' {\em The Annals of Applied Probability}, vol.~15, no.~2,
   pp.~1451--1491, 2005.
 
@@ -179,5 +179,9 @@ S.~Melczer and M.~Mishna, ``Asymptotic lattice path enumeration using
 \bibitem{melczer2014enumerating}
 S.~Melczer and M.~Mishna, ``Enumerating lattice paths with symmetries through
   multivariate diagonals,'' {\em arXiv preprint arXiv:1402.1230}, 2014.
+  
+\bibitem{johnson2013analytic}
+S.~Johnson, {\em Analytic combinatorics of planar lattice paths}.
+\newblock MSc thesis, SIMON FRASER UNIVERSITY, 2013.
 
 \end{thebibliography}
