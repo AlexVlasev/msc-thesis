@@ -120,9 +120,9 @@ The second statement of the lemma leads to the following proposition.
 \begin{proof} Composition of operators is associative and in the last example we showed that the set is closed under composition. Thus we only need to show that the set has an identity. Let $R_g = 0$ for all $g$ in $G$ except for $R_1 = 1$. Then $D_G$ for these weights is the identity operator.
 \end{proof}
 
-Because of the preceding lemma, it does not matter if we try to use a cleverly-chosen function $T$ or cleverly-chosen operators $D_1$ and $D_2$, to circumvent the failure of the algebraic kernel method. We just need to focus on a weighted operator from the start. The procedure of eliminating terms from the functional equation requires that those terms be removed generically, that is, whenever $I \neq J$, the functions $Q_I^\oo$ and $Q_J^\oo$ are treated as independent variables in a linear combination and thus, each of them needs to be eliminated by the operator on its own. The procedure requires $D'(t\ol x_I S_I^{\um 1}Q_I^\oo) = 0$ for each possible nonempty set $I$. This allows us to show that in general, when the algebraic kernel method fails, all the operators $D'$ that eliminate the unwanted terms in the functional equation also eliminate the monomial $\mon xd$. 
+Because of the preceding lemma, it does not matter if we try to use a cleverly-chosen function $T$ or operators $D_1$ and $D_2$, to circumvent the failure of the algebraic kernel method. We just need to focus on a weighted operator from the start. The procedure of eliminating terms from the functional equation requires that those terms are removed generically, that is, whenever $I \neq J$, the functions $Q_I^\oo$ and $Q_J^\oo$ are treated as independent variables and thus, each of them needs to be annihilated by $D$ on its own. Thus, we need $D'(t\ol x_I S_I^{\um 1}Q_I^\oo) = 0$ for each nonempty set $I$. This allows us to show that in general, when the method fails, all operators $D'$ that eliminate the unwanted terms in the functional equation must also eliminate the monomial $\mon xd$. 
 
-It is enough to work on the functional equation $ \mon xd KQ = \mon xd$ with some operator $D$. Then we can find the original operator $D'$ from the relation $D' = D\mon xd$, where $D'$ acts on the master functional equation by pre-multiplying it by $\mon xd$ and applying $D$. We show that all the weights of $D$ must be the same.
+It is enough to work on the functional equation $ \mon xd KQ = \mon xd$ with an operator $D$. Then we can find the original operator $D'$ from the relation $D' = D\mon xd$, where $D'$ acts on the master functional equation by pre-multiplying it by $\mon xd$ and applying $D$. We show that all the weights of $D$ must be the same.
 
 This observation turns the task into a linear algebra problem. We just need to apply $D$ on the functions $W_I = t\ol x_I S_I^{\um 1}Q_I^\oo$, which are missing the variables indexed by $I$, collect the different results and set their coefficients equal to zero. That is, for every $f = W_I$ we find the orbit
 \begin{gather}
@@ -133,12 +133,14 @@ This observation turns the task into a linear algebra problem. We just need to a
 	\begin{align}
 		0 = D(f) = \sum_{g\in G}R_g g(f) = \sum_{f' \in Orbit(f)} R_g' f'\,,
 	\end{align}
-	\shortintertext{where we set}
-	\begin{align}
-		R_g' = \sum_{\substack{g(f) = f'\\g\in G}} R_g = 0\,.
-	\end{align}
 \end{gather}
-Thus, we reach a linear system of $|\orb_G(f)|$ equations in $|G|$ unknowns. We can do this for each of the $2^d - 1$ terms $W_I$ and solve the system of equation. Here is an example
+
+where we set
+
+\begin{align}
+	R_g' = \sum_{\substack{g(f) = f'\\g\in G}} R_g = 0\,.
+\end{align}
+Thus, we reach a linear system of $|\orb_G(f)|$ equations in $|G|$ unknowns. We can do this for each of the $2^d - 1$ terms $W_I$ and solve the system of equation. Here is an example.
 
 \begin{exa} Consider the \classic \twoD model with $S = \ol x_1 + \ol x_2 + x_1x_2$, where the algebraic kernel method fails \cite[p.12]{bousquet2010walks}. Here both of the generators map $x_i$ to $\ol x_1 \ol x_2$ and the group is given by the orbit $\{1$, $g_1$, $g_{21}$, $g_{121}$, $g_{12}$, $g_2\}$ of $(x_1,x_2)$. The orbit of 1 under $G$ is trivial and by symmetry of the group actions, the orbit of each of $W_1 = f_1(x_2)$ and $W_2 = f_2(x_1)$ is given by $\{f(x_1),\, f(x_2),\, f(\ol x_1 \ol x_2)\}$. The relations we obtain are
 \begin{align}
@@ -332,6 +334,7 @@ We can rewrite this equation in the following nicer way.
 \begin{thm}For a \twoD \highSym model with a group with two nontrivial generators, we have the functional equation $\Delta(K_1^\bullet K_2^\ast \beta) = 0$, where $\beta = KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha$.
 \end{thm}
 This is a generalization of the result in Section 4.2 of \cite[p.~16]{wong2014confining}, where the authors use a weighted orbit sum to eliminate boundary terms. We can expand the functional equation to produce a different form. Let $K_0 = K_1^\bullet K_2^\ast$. We find that
+
 \begin{align}
 	\begin{split}
 		\Delta(K_0\beta) &= \Delta(K_0(KQ + K_{1,2}Q_{1,2}^{0,0} - \alpha)) \\

@@ -57,20 +57,20 @@ The walks returning to the origin are given by
 \end{align}
 \end{exa}
 
-It is difficult to handle the analysis of \classic \highD models without extra notation. In fact, the use of better notation paved the way to finding the operators and the functional equations for \highD models. Typically, in a multivariate setting we see multi-index notation, but such notation is not sufficient for working with restricted geometries for regions where we are missing some of the variables. We have the following notation. 
+It is difficult to do the analysis of \classic \highD models without extra notation. In fact, the use of better notation paved the way to finding the operators and the functional equations. We usually see multi-index notation in the multivariate setting, but this is not sufficient for working with restricted regions, where some variables are missing. We have the following notation. 
 
 \begin{defn}Let $\oo := (0,\ldots,0)$ and $\pm \one := (\pm 1,\ldots, \pm 1)$, where we have as many terms in these sequences as needed in the specific context. Also, let $[n] = \{1,\ldots, n\}$.
 \end{defn}
 
 \begin{defn} Let $\row xd$ be indeterminates and let $I = (\row im)$ and $J = (\row jm)$ be sequences of positive integers. Define the monomial $x_I^J$ as
 \begin{align}
-	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,.
+	x_I^J = x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}\,,
 \end{align}
-The \textitbf{coefficient extraction} and \textitbf{term extraction} operators are defined as
+with special cases $x_I^{\oo} = 1$ and $x_I^{\one} = x_I$ and $x_I^{\um\one} = 1/x_I = \ol x_I$. The \textitbf{coefficient extraction} and \textitbf{term extraction} operators are defined as
 \begin{align}
-	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J \qandq [[x_I^J]] = x_I^J [x_I^J]\,.
+	[x_I^J] F= [x_{i_1}^{j_1}\cdots x_{i_m}^{j_m}]F = F_I^J \qandq [[x_I^J]] = x_I^J [x_I^J]\,,
 \end{align}
-For the monomial, we have the special cases $x_I^{\oo} = 1$ and $x_I^{\one} = x_I$ and $x_I^{\um\one} = 1/x_I = \ol x_I$. For the coefficient extraction, we have the special cases $F_I^J = F$ if $I$ is empty, and $F_I^J = F_J$ if $I$ is the full set of variables.
+with special cases $F_I^J = F$ if $I$ is empty, and $F_I^J = F_J$ if $I$ is the full set of variables.
 \end{defn}
 
 \begin{exa}In the previous example we had $[x_2^0]Q = Q_2^0$ and $[x_1^0x_2^0]Q = \Qf{0,0}$. Furthermore, we have $\Sf{\pm 1,\pm1}  = 1$ and 
@@ -79,7 +79,7 @@ For the monomial, we have the special cases $x_I^{\oo} = 1$ and $x_I^{\one} = x_
 \end{align}
 \end{exa}
 
-Because there are different variables involved, there may be some ambiguity in the result, depending on the order of extraction. We always perform coefficient extractions with respect to the $x$ or $a$ variables by first expanding any series in $t$, and then applying the extraction on the coefficients. The following notation makes this precise.
+Because there are different variables involved, there may be some ambiguity in the result, depending on the order of extraction. We always perform coefficient extractions with respect to the $x$ or $a$ variables by first expanding any series in $t$, and then applying the extraction on the coefficients.
 \begin{defn} Suppose that $\Gamma$ is an operator involving $x$ and $a$ variables but not $t$. We apply $\Gamma$ on power series $F = \sum_{k=0}^\infty f_k t^k$ in the following way:
 \begin{align}
 	\Gamma F = \sum_{k=0}^\infty \Gamma (f_k) t^k\,.
@@ -96,18 +96,19 @@ To find $\Gamma$, we make use of the following observation. Since $E = 1- [[\ol 
 	E = 1 - [[\ol x_1]] - [[\ol x_2] + [[\ol x_1 \ol x_2]]\,.
 \end{align}
 
-The situation is analogous for the marking operator $L = L_1 L_2$, where $L_k = 1+b_k[x_k^0]$. We have the equation $(L^{\um 1} - tES)Q = \ol a_1 \ol a_2$ since $L$ is invertible. If we perform the coefficient extractions, we find the equation
+Analogously, the marking operator is $L = L_1 L_2$, where $L_k = 1+b_k[x_k^0]$, and finally, we have the equation $(L^{\um 1} - tES)Q = \ol a_1 \ol a_2$ since $L$ is invertible. If we expand the expressions, we find that
 \begin{align}
 	Q = 1 + t SQ - t\ol x_1S_1^{\um 1}Q_1^0 - t\ol x_2S_2^{\um 2}Q_2^0 + t\ol x_1\ol x_2\Sf{\um 1,\um 1}\Qf{0,0}\,.
 \end{align}
 \end{exa}
 
-Contrast this notation to the one in \cite[p.~10]{bousquet2010walks}. For \dD problems one can write down the functional equation as a sum over subsets of $\{1,\ldots, d\}$, like it is done for the non-interacting case in Equation 5.1 in \cite[p.~58]{melczer2014variants}, but this becomes difficult when we start working with interactions. We would have to modify the functional equation for the non-interacting case to add interactions. This analysis has been done before for a \twoD models in Section 3 of \cite[p.~7]{tabbara2014exact} and Section 3.2 of \cite[p.~11]{wong2014confining}, where the authors add in terms like $(a_1-1)T$, where $T$ is some expression involving extractions of $Q$ and $S$, but do not go into the messy details. Instead, we use the operator notation to handle the problem in a more efficient manner.
+Contrast this notation to the one in \cite[p.~10]{bousquet2010walks}. For \dD models, one can write down the functional equation as a sum over subsets of $\{1,\ldots, d\}$, as in the the non-interacting case in Equation 5.1 in \cite[p.~58]{melczer2014variants}, but this becomes difficult if we work with interactions. To add interactions, we have to modify the non-interacting functional equation. This has been done for \twoD models in Section 3 of \cite[p.~7]{tabbara2014exact} and Section 3.2 of \cite[p.~11]{wong2014confining}, where the authors add terms like $(a_1-1)T$, where $T$ is an expression involving extractions of $Q$ and $S$. Instead of doing that, we use the operator notation to handle the problem in a more efficient manner.
 %=======================================
 \section{Using Operators to Derive the Functional Equation}
 %=======================================
 
 As we have seen in the previous example, it is not difficult to generalize the derivation of the functional equations if we use operators. The derivation of general case for $d$ dimensions is analogous to the one in the example, so we omit most of it. In $d$ dimensions, the interactions take place on the hyperplanes where $x_k = 0$, so we use the labels $a_k$ to mark those interactions. The operators here are $L = \mon Ld$ and $E = \mon Ed$, where order does not matter.  We have $L^{\um 1}(1) = \ol a_{[d]}$, since each operator $L_i^{\um 1}$ marks a constant term with $\ol a_i$. Or in operator notation,
+
 \begin{align}
 	L^{\um 1}(1) = (1-c_1[x_1^0])\cdots(1-c_d[x_d^0])(1) = \sum_{I\subseteq [d]}(-1)^{|I|}c_I = \ol a_{[d]}\,.
 \end{align}
@@ -183,17 +184,19 @@ We perform the extractions explicitly in order to obtain equations like \ref{eq:
 	[x_I^\oo] SQ  = S_I^\oo Q_I^\oo + R_I\,,
 \end{align}
 where $R_I$ is a collection of $S_I^{\um P} Q_I^{P}$ terms that involve sets $P$ with some non-zero entries. When we substitute this term into \autoref{eq:OpExt3}, we find that
-\begin{align}
-	\begin{split}
-		\ol a_{[d]\backslash I} &= M_{[d]\backslash I}[x_I^\oo]Q- a_{I}t E_{[d]\backslash I}[x_I^\oo](SQ)\\
-		& = M_{[d]\backslash I}Q_I^\oo- a_{I}t E_{[d]\backslash I}(S_I^\oo Q_I^\oo + R_I)\\
-		& = (M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo  -a_{I}t E_{[d]\backslash I}R_I\,.
-	\end{split}
-\end{align}
-We can rewrite this as
-\begin{align}
-	(M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo = a_I(\ol a_{[d]} + t R_I')\,,
-\end{align}
+\begin{gather}
+	\begin{align}
+		\begin{split}
+			\ol a_{[d]\backslash I} &= M_{[d]\backslash I}[x_I^\oo]Q- a_{I}t E_{[d]\backslash I}[x_I^\oo](SQ)\\
+			& = M_{[d]\backslash I}Q_I^\oo- a_{I}t E_{[d]\backslash I}(S_I^\oo Q_I^\oo + R_I)\\
+			& = (M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo  -a_{I}t E_{[d]\backslash I}R_I\,.
+		\end{split}
+	\end{align}
+	\shortintertext{We can rewrite this as}
+	\begin{align}
+		(M_{[d]\backslash I} - a_{I}t E_{[d]\backslash I}S_I^\oo)Q_I^\oo = a_I(\ol a_{[d]} + t R_I')\,,
+	\end{align}
+\end{gather}
 where $R_I' =  E_{[d]\backslash I}R_I$. We compute the terms
 \begin{subequations}
 	\begin{align}
@@ -205,14 +208,14 @@ and rewrite the functional equation as
 \begin{align}
 	\sum_{J \subseteq [d]\backslash I}  (-1)^{|J|}(c_J - a_I t\ol x_J S_{I,J}^{\oo,\um \one})Q_{I,J}^{\oo,\oo} = a_I(\ol a_{[d]} + t R_I')\,.
 \end{align}
-The form of this expression suggests the following notation.
-\begin{defn} For integer sets $I$ and $J$ that do not share any elements, we write
+\begin{defn} For positive integer sets $I$ and $J$ that do not share any elements, we write
 \begin{align}
 	K_J(I) = c_J - a_I t\ol x_J S_{I,J}^{\oo,\um\one}\,,
 \end{align}
 where if $I = \emptyset$, then $K_J(I) = K_J$.
 \end{defn}
-With this notation, we can express  the last equation as follows.
+
+Note that this is just $[x_I^\oo]K_J(a_I t)$. We can express the last equation as follows.
 \begin{lem} Let $I$ be a subset of $\{1,\ldots,d\}$. Then the generating function $Q_I^{\oo}$ for the \classic interacting \dD lattice walk model satisfies the functional equation
 \begin{align}
 	\label{eqn:FullEqns}

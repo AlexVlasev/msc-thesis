@@ -259,7 +259,7 @@ This example paves the way towards the following result for finite models on fin
 \begin{proof}Let $n$ be the number of points in $\mc D$. Then for each point $P$, we can extract the $x_{[d]}^P$ term from the functional equation $(1-t\Gamma S)Q = q$ and we only have $Q$ terms of the form $Q_{[d]}^I$ for points $I$ in $\mc D$. We have a system of $n$ equations in $n$ unknowns, and since the function $Q$ is unique, we can solve this system uniquely. Each of the coefficients is a rational function of the variables $\row xd$, the labels $a_P$, and $t$, and therefore, the solution is rational too.
 \end{proof}
 
-Of course, once the region grows to even a moderate size, it becomes prohibitively complicated to solve this system. For a box of side $m$, the number of equations is $m^d$, making this a rather difficult way of solving the problem. If the size of the region is large and the number of steps in $S$ is small, then each $\Qf{i,j}$ depends on a few neighbours only, so the resulting linear system is rather sparse. Still, the solution fills a whole page for a three-by-three square, so this result is mostly of theoretical value.
+Of course, once the region grows to a moderate size, it becomes prohibitively complicated to solve this system. For a box of side $m$, the number of equations is $m^d$, making this a difficult way of solving the problem. If the size of the region is large and the number of steps in $S$ is small, then each $\Qf{i,j}$ depends on a few neighbours only, so the resulting linear system is rather sparse. Still, the solution fills a whole page for a three-by-three square, so the result is mostly of theoretical value.
 
 
 %=======================================
@@ -308,13 +308,13 @@ where if the operators are finite, the extraction in the numerator leads to a La
 \end{align}
 Then
 \begin{align}
-	u = \frac{-\lambda c u_0 +\ol x u_0}{\ol x + x - \lambda} = \frac{(1-c\lambda x)u_0}{1- \lambda x +x^2} = u_0 + \ol a\lambda u_0 x + \cdots
+	u = \frac{-\lambda c u_0 +\ol x u_0}{\ol x + x - \lambda} = \frac{(1-c\lambda x)u_0}{1- \lambda x +x^2} = u_0 + \ol a\lambda u_0 x + \cdots\,,
 \end{align}
-where $u_0$ is a free variable, and we have an eigenfunction for every $\lambda$. Next, we use the equivalent operator $E = - [[\ol x]]$. We have no reason to believe that the operator has  the same eigenfunctions, but it does. Here we have
+where $u_0$ is a free variable, and there is an eigenfunction for every $\lambda$. Next, we use the equivalent operator $E = 1 - [[\ol x]]$. We have no reason to believe that the operator has  the same eigenfunctions, but it does. To show this, we first write $u$ as
 \begin{align}
 	u = \frac{(\lambda M' - E'S) u}{S_\lambda} &= \frac{-c\lambda u_0 + (u_{-2}+u_0)\ol x}{\ol x + x - \lambda} = \frac{u_{-2} + (1 - c \lambda x)u_0}{1-\lambda x  + x^2}\,,
 \end{align}
-We can apply the $D$ on $u$ to find that $-b\lambda u_{-2} = 0$, so $u_{-2} = 0$ and the eigenfunctions are the same.
+We apply the $D$ on $u$ to find that $-b\lambda u_{-2} = 0$, so $u_{-2} = 0$ and the eigenfunctions are the same.
 \end{exa}
 
 It turns out that this is not a coincidence and we have the following striking result.
@@ -326,7 +326,7 @@ It turns out that this is not a coincidence and we have the following striking r
 
 The proof here also shows us that $\Gamma_2$ may have other eigenfunctions $v$, since here $v$ may contain terms from outside of the range of the model. However, if $\Gamma_2$ is finite, we see that $(\lambda M' - E'S)u$ has finitely many terms. Thus, each eigenvalue $\lambda$ may lead to at most a finite-dimensional eigenspace.
 
-In the end, we are after the operator $\mc L = 1 - t\Gamma S$ because it is the one we see in all of our equations. If we are to find a theory where we can expand $Q$ in terms of eigenfunction of operators, we need to obtain the same result whether we use the full or reduced form of the operators. That is, most likely, we do not need the extra eigenpairs that the reduced operator may have. We have the following definitions.
+In the end, we need to work with the operator $\mc L = 1 - t\Gamma S$ since it is the one that is involved in the functional equation for $Q$. If we are to find a theory where we can expand $Q$ in terms of eigenfunction of operators, we need to obtain the same results whether we use the full or reduced form of the operators. That is, most likely, we do not need the extra eigenpairs that the reduced operator may have. We have the following definitions.
 
 \begin{defn} Let $\mc L = 1 - t\Gamma S$ be a \textitbf{lattice walk} operator.
 \end{defn}
@@ -351,18 +351,19 @@ where $K = 1 - tS$ and the numerator only features monomials for points within $
 \begin{align}
 	0 = (\ol \nu M - E S)u = \sum_{I\subseteq [d]} (-1)^{|I|}(\ol \nu c_I -  \ol x_I S_I^{\um \one} u_I^\oo) = \ol \nu \sum_{I\subseteq [d]} (-1)^{|I|} K_I(\nu) u_I^\oo \,,
 \end{align}
-where $K_I = K_I(x, \nu)$ are Laurent polynomials as in the master functional equation. So the eigenfunctions $u$ satisfy an equation similar to the master functional equation for the associated lattice walk model. Take $d = 1$, for example. Then $u$ satisfies $K(x, \nu ) u - K_1(x, \nu)u_0= 0$ and $u$ is given by
+where $K_I = K_I(x, \nu)$ are Laurent polynomials as in the master functional equation. So the eigenfunctions $u$ satisfy an equation similar to the master functional equation for the associated lattice walk model. Take $d = 1$, for example. Then $u$ satisfies $K u - K_1 u_0= 0$ and it is given by
 \begin{align}
 	 u = \frac{K_1(x, \nu)}{K(x, \nu)} = \frac{c - \nu \ol x S_{\um 1}}{1 - \nu S} u_0
 \end{align}
-for every $\nu \neq 0$, where $u_0$ is a constant of our choosing, so we set it to 1. If we let $S^{\ge 0} = S - \ol x S_{\um 1}$, we can expand $u$ in terms of $\nu$ as
+for every $\nu \neq 0$. The constant $u_0$ is arbitrary, so we set it to 1. If we let $S^{\ge 0} = S - \ol x S_{\um 1}$, we can expand $u$ in terms of $\nu$ as
 \begin{align}
 	u(x, \nu) = c  - \ol a\nu (S - a S^{\ge 0})(1 + S\nu+ S^2 \nu^2 +\cdots)\,.
 \end{align}
-For the model $S = \ol x + x$ in \autoref{ch:OneD}, we can solve for $Q$ as
+For the model $S = \ol x + x$ in \autoref{ch:OneD}, we can solve for $Q$ in terms of $u$. That is,
 \begin{align}
-	Q = \frac{1}{aK(x,t)}\left(1 + \frac{K_1(x, t)}{K_1(\sigma, t)}\right) = \frac{1}{aK(x, t)} + \frac{u(x, t)}{a K_1(\sigma, t)}\,.
-\end{align}	
+	Q = \frac{1}{aK(x,t)}\left(1 + \frac{K_1(x, t)}{K_1(\sigma, t)}\right) = \frac{1}{aK(x, t)} + \frac{u(x, t)}{a K_1(\sigma, t)}
+\end{align}
+and we have found a connection between $Q$ and the eigenfunctions of the lattice walk operator. This is as far as we will go for now.
 \end{exa}
 
 \endinput

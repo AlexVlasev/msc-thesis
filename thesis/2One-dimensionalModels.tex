@@ -189,18 +189,19 @@ and we can substitute it into the master functional equation to derive the follo
 \end{align}
 \end{prop}
 Something interesting starts to happen once we consider the relationship between $Q(x, a; t)$ and $\wh Q = Q(x, 1; t)$, its version without interactions. We compute that
-\begin{align}
-	\wh Q =  \frac{1}{(1-t S)}
-\end{align}
-and we have the linear relation
-\begin{align}
-	(1-a\delta t)Q-(1-\delta t)\wh Q = 0\,,
-\end{align}
-that we can rewrite as $B((1-a\delta t)Q)  = 0$ with the operator $B = 1- [b^0]$, and similarly for $Q_0$.
+\begin{gather}
+	\begin{align}
+		\wh Q =  \frac{1}{(1-t S)}
+	\end{align}
+	\shortintertext{and we have the relation}
+	\begin{align}
+		(1-a\delta t)Q-(1-\delta t)\wh Q = 0\,,
+	\end{align}
+\end{gather}
+that we can rewrite as $B((1-a\delta t)Q)  = 0$ with the operator $B = 1- [b^0]$, and similarly for $Q_0$. We find a similar relationships exist for \highD lattice walk models too.
 
 \begin{prop} Let $B = 1 - [b^0]$ and let $Q$ be the generating function for a lattice walk model with $S = \delta$ or $S = \delta + x$. Then $Q$ and $Q_0$ both satisfy the equation $B((1-a\delta t)F) = 0$.
 \end{prop}
-We find that similar relationships exist for \highD lattice walk models too.
 %=======================================
 \subsection{The \texorpdfstring{$S = \delta + \ol x + x$}{} Case}
 %=======================================
@@ -223,11 +224,11 @@ and using this relation, we can solve for $Q$ explicitly. We compute
 \end{align}
 where $\ol \sigma = (1-\delta t + \sqrt{(1-\delta t)^2-4t^2})/(2t)$.
 \end{prop}
-As before, we can find a linear relationship between functions for models with interactions and ones without. We have the following result.
+As before, we find a relation between functions for models with interactions and ones without.
 \begin{prop} Let $S = \delta + \ol x + x$. Then $Q$ and $Q_0$ satisfy the equation $B((a \ol \sigma t - b)F)$.
 \end{prop}
 
-In this case we can use the algebraic kernel method to obtain a linear relation for $Q_0$. This method is used extensively in the quarter plane model classification \cite{bousquet2010walks}. Here we find a polynomial $f(a,t)$, for which $B(fQ_0) = c$, instead of zero.  Note that $K$ is invariant under the map $\ast: x \mapsto \ol x$ and we can write a second functional equation to complement the first. That is, we have the system of equations
+In this case we can use the algebraic kernel method to obtain a linear relation for $Q_0$. This method is used extensively in the quarter plane model classification \cite{bousquet2010walks}. Here we find a polynomial $f(a,t)$, for which $B(fQ_0) = c$, instead of zero.  Note that $K$ is invariant under the map $\ast: x \mapsto \ol x$ and we can write a second functional equation to complement the first. That is, we have the system
 \begin{align}
 	(1-t S)Q - (c -t\ol x)Q_0 = \ol a\,,\\
 	(1-t S)Q^\ast\exxx - (c -tx)Q_0 =\ol a\,.

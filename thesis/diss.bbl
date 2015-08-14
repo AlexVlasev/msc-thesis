@@ -67,7 +67,7 @@ S.~Melczer and M.~Mishna, ``Singularity analysis via the iterated kernel
 
 \bibitem{melczer2014variants}
 S.~R. Melczer, {\em Variants of the kernel method for lattice path models}.
-\newblock PhD thesis, SIMON FRASER UNIVERSITY, 2014.
+\newblock MSc thesis, Simon Fraser University, 2014.
 
 \bibitem{gessel1992random}
 I.~M. Gessel and D.~Zeilberger, ``Random walk in a weyl chamber,'' {\em
@@ -160,7 +160,7 @@ M.~Mishna, {\em A holonomic systems approach to algebraic combinatorics}.
 
 \bibitem{bostan2009automatic}
 A.~Bostan and M.~Kauers, ``Automatic classification of restricted lattice
-  walks,'' {\em DMTCS Proceedings}, no.~01, pp.~201--215, 2009.
+  walks,'' {\em DMTCS Proceedings}, no.~1, pp.~201--215, 2009.
 
 \bibitem{kauers2011computational}
 M.~Kauers and D.~Zeilberger, ``The computational challenge of enumerating
@@ -182,6 +182,6 @@ S.~Melczer and M.~Mishna, ``Enumerating lattice paths with symmetries through
   
 \bibitem{johnson2013analytic}
 S.~Johnson, {\em Analytic combinatorics of planar lattice paths}.
-\newblock MSc thesis, SIMON FRASER UNIVERSITY, 2013.
+\newblock MSc thesis, Simon Fraser University, 2013.
 
 \end{thebibliography}

@@ -6,7 +6,7 @@
 \label{ch:OKM}
 %=======================================
 
-The next tool that we explore is the obstinate kernel method. For its application in a \twoD model with interactions, see Section 4.2 of \cite[p.~16]{tabbara2014exact}. The method is similar to the algebraic kernel method  with a weighted operator, where underneath the operator notation, all we are doing is finding more valid equations. We apply kernel-preserving transformations on the master equation in both methods. However, in the obstinate kernel method we also make a substitution with one of the roots $x_k = \sigma_k(t)$ of the kernel. This is done in order to annihilate the $KQ$ terms from the resulting equations. However, some transformations, taken together with the substitutions, do not lead to valid functional equations because some of the generating functions fail to remain power series in $t$ after the substitution takes place. That is, one or more of the terms $g(Q_i^0)|_{x_k = \sigma_k}$ is not a power series in $t$ for some transformation $g$ from $G$ and some $i$ and $k$. This inspires use the following language.
+Next, we explore is the obstinate kernel method. For an application in a \twoD interacting model, see Section 4.2 of \cite[p.~16]{tabbara2014exact}. The method is similar to the algebraic kernel method  with a weighted operator, where underneath the operator notation, all we are doing is finding more valid equations. We apply kernel-preserving actions on the master equation in both methods. However, in the obstinate kernel method we also make a substitution with one of the roots $x_k = \sigma_k(t)$ of the kernel. This is done in order to annihilate the $KQ$ terms from the resulting equations. However, some transformations, taken together with the substitutions, do not lead to valid functional equations because some of the generating functions fail to remain power series in $t$ after the substitution takes place. That is, one or more of the terms $g(Q_i^0)|_{x_k = \sigma_k}$ is not a power series in $t$ for some transformation $g$ from $G$ and some $i$ and $k$. This inspires use the following language.
 
 \begin{defn} A function $f(\row xd;t)$ is \textitbf{admissible} if it is a valid power series in the variable $t$, that is, there are only non-negative orders of $t$ with non-zero coefficients. A transformation $g$ is \textitbf{admissible} if it preserves the admissibility of $f$ with respect to a root $\sigma_k$ of the kernel $K$, that is, if $g(f)|_{x_k = \sigma_k}$ is admissible.
 \end{defn}
@@ -16,6 +16,7 @@ To recap, it is necessary that when we use a substitution $x_k = \sigma_k$,  we 
 	\sigma_{k}^{\pm} = \frac{1-t S_k^0 \pm \sqrt{(1 - t S_k^0)^2-4t^2 S_k^1 S_k^{\um 1}}}{2t S_1^1}\,,
 \end{align}
 with the identities
+
 \begin{align}
 	\sigma_k^+ \sigma_k^{\um} = \frac{S_k^{\um 1}}{S_k^1} \qandq \sigma_k^+  + \sigma_k^{\um} = \frac{1-t S_k^0}{t S_k^1}\,.
 \end{align}
@@ -27,17 +28,18 @@ where the higher order terms are the same.
 
 Generally, only the $\sigma_k^{\um}$ substitution leads to admissible $Q_i^0$ terms for all $i$, but it also happens that $\sigma_k^{\um}$ can do this too. For an example of this, see \cite[p.~11]{tabbara2014exact}. We focus on the first case and leave the $\sigma_k^{+}$ root analysis for future work. If we do not have enough valid equations with the $\sigma_k^{\um}$ substitution, we would have to see if the $\sigma_k^{+}$ substitution can help. We only use $\sigma = \sigma_k^{\um}$.
 
-It is sufficient to show that some actions of $G$ preserve the admissibility of the functions $x_1$ and $x_2$, and thus the pair $(x_1,x_2)$, with respect to a root, to show that the functions $Q_k^0$ are also admissible under those actions and substitution. That is, we only need to check when $g(x_j)|_{x_k=\sigma_k}$ is admissible some $j$and $k$, and for $g$ in $G$. Luckily, a lot of the models with finite groups pass this test and we obtain enough valid functional equations, so that we can use the obstinate kernel method. For those cases where we find less equations, it may be possible to show that the $Q_k^0$ terms are power series in $t$ via another method like in \cite{tabbara2014exact}.
+It suffices to show that enough actions of $G$ preserve the admissibility of the functions $x_1$ and $x_2$, and thus, the pair $(x_1,x_2)$, with respect to a root, to show that the functions $Q_k^0$ are also admissible under the actions and substitution. That is, we only need to check for which $j$, $k$ and $g$ is $g(x_j)|_{x_k=\sigma_k}$ admissible. Luckily, some models pass this test and we obtain enough valid functional equations, so that we can use the obstinate kernel method. For those cases where we find less equations, it may be possible to show that the $Q_k^0$ terms are power series in $t$ via another method, like in \cite{tabbara2014exact}.
 
 
 \begin{prop} Consider a \classic \twoD model with group of order four, six or eight. Models with the same group have the same admissibility properties for $x_1$ and $x_2$, and the pair $(x_1,x_2)$. Models with group of order four all have the same admissibility properties.
 \end{prop}
 \begin{proof} All we need to do is compute the actions on the functions and check if substituting $\sigma_k^{\um}$ leads to admissible ones. This is tedious to do by hand but straight-forward to do on a computer. The results are summarized in tables in the following sections. However, we can perform the analysis for groups of order four without difficulty. 
 
-The transformations 1 and $g_2$ leave the function $x_1$ unchanged, but the transformations $g_1$ and $g_1g_2$ change it to $g_1(x_1) = \ol x_1 S_1^{\um 1}/S_1^1$. Note that $\ol \sigma_1 = \sigma_1^+ S_1^1/S_1^{\um 1}$, so $g_1(x_1)|_{x_1 = \sigma_1} = \sigma_1^+ $ and this function is not admissible. Therefore $x_1$'s admissibility with respect to $\sigma_1$ is preserved only by the transformations $\{1$, $g_2\}$.
+The transformations 1 and $g_2$ fix $x_1$, but the transformations $g_1$ and $g_1g_2$ change it to $\ol x_1 S_1^{\um 1}/S_1^1$. Note that $\ol \sigma_1 = \sigma_1^+ S_1^1/S_1^{\um 1}$, so $g_1(x_1)|_{x_1 = \sigma_1} = \sigma_1^+ $ and this function is not admissible. Therefore $x_1$'s admissibility with respect to $\sigma_1$ is preserved only by the transformations $\{1$, $g_2\}$.
 
 Since models with groups of order four need to have one symmetry across an axis, without loss of generality, we can assume the symmetry is across the $x_1$ axis. That is, $g_2(x_2) = \ol x_2$, and the $x_1 = \sigma_1$ substitution trivially leads to an admissible function. Therefore, all of $G$ preserves the admissibility of $x_2$ with respect to $\sigma_1$ and finally, only 1 and $g_2$ preserve the admissibility for both $x_1$ and $x_2$ with respect to $\sigma_1$. The analysis is analogous for the $\sigma_2$ substitution.
 \end{proof}
+
 %=======================================
 \section{Initial Computations}
 %=======================================
@@ -359,6 +361,7 @@ To compute $\Delta_2(K2^\ast Q_1^0)$, we need to compute $K_2(\sigma_1,x_2)$ and
 	K_2 = c_2 -t\ol x_2S_2^{\um 1}(\sigma_1) \qandq K_2^\ast = c_2 -t x_2S_2^{\um 1}(\sigma_1)\,,
 \end{align}
 where we can find that $S_2^{\um 1}(\sigma)$ is a rational function given by
+
 \begin{align}
 	S_2^{\um 1}(\sigma_1) =\frac{\Sf{1,1} + t\Sf{0,1}\Sf{1,0}}{t\left(\Sf{1,0} + \Sf{1,1}(\ol x_2 + x_2)\right)}\,.
 \end{align}
@@ -395,6 +398,7 @@ Here $K_{12} = c_1c_2$, so it behaves like $\alpha$ and we have
 	\Delta_2(K2^\ast Q_1^0) + \frac{\alpha\beta(K_2^\ast-K_2)}{K_1}=0\,,
 \end{align}
 where $\beta =  1-b_1b_2 Q_{1,2}^{0,0}$ and
+
 \begin{align}
 	\frac{\alpha\beta(K_2^\ast -K_2)}{K_1}  &= \frac{\alpha\beta t (\ol x_2 - x_2)}{K_1} = \alpha\beta f(c_1,x_2)\,,
 \end{align}
@@ -411,7 +415,7 @@ We can substitute the latter equation in the first one to obtain the identity
 \begin{align}
 	b_2 Q_{1,2}^{0,1} &= t(a_2 Q_{1,2}^{0,0} - \beta \wc Q_{1,2}^{0,0})\,.
 \end{align}
-In general, we have the following result. The analysis is similar to the one we see in the proof of \autoref{cor:partialQsDiagonalSteps}, so we omit it.
+The proof of the folwing result is similar to the one we see in \autoref{cor:partialQsDiagonalSteps}, so we omit it.
 \begin{lem} \label{lem:partialQs}For non-negative integers $m$ and $n$,
 \begin{align}
 	b_2\Qf{m,n + 1} &= t(a_2\Qf{m,n}-\beta \Qc{m,n})\,,\\
@@ -434,6 +438,7 @@ Let $G = \Qf{0,0}$, $\wh G = G_1$ and $\wc G = G_2$. From the $x_1^0 x_2^0$ term
 	\Qf{0,0} = 1 + t a_1a_2(\Qf{1,0} + \Qf{0,1})\,.
 \end{align}
 Multiplying it by $b_1b_2$ and using the relations above, leads to
+
 \begin{align}
 	\begin{split}
 		b_1b_2 G &=b_1b_2 + ta_1a_2(b_2t(a_1G-\beta G_1) + b_1t(a_2 G- \beta G_2)\\
@@ -483,7 +488,7 @@ This shows that $Q$ is built from $\Qf{0,0}$ and from versions of itself, each w
 %=======================================
 \subsection{Diagonal Cartesian Model -- Steps NE, NW, SE, SW}
 %=======================================
-This model is similar to the one covered in \cite{wong2014confining}, where we can find a model of two interacting walks confined in a semi-infinite strip. The models are different because there is an extra term in their functional equation. We go through calculations similar to the ones in the previous subsection and we find that $\Qf{0,0}$ has a linear relationship with its partially-marked versions. However we do not find an identity for $Q$. In this case,
+This model is similar to a model of two interacting walks confined in a semi-infinite strip, covered in \cite{wong2014confining}. The models are different because there is an extra term in their functional equation. Through calculations like the ones in the previous subsection, we find that $\Qf{0,0}$ has a linear relationship with its partially-marked versions. However we do not find an identity for $Q$. In this case,
 \begin{align}
 	\frac{\alpha(K_2^\ast -K_2)}{K_1}  &= \frac{\alpha (\ol x_2 - x_2)}{K_1(\ol x_2 + x_2)}\,,\\
 	\frac{\Delta_2(K_2^\ast K_{12})}{K_1} &= \frac{c_2(\ol x_2-x_2)(c_1- t \ol \sigma_1S_1^1)}{S_1^1(c_1-t\ol \sigma_1S_1^1)} = \frac{c_2(\ol x_2-x_2)}{\ol x_2 + x_2}\,,
