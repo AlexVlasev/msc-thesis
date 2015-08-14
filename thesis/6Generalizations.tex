@@ -5,22 +5,22 @@
 \chapter{Generalizations}
 \label{ch:General}
 %================================
-In this final chapter, we will examine lattice walk models in more generality and we will prove that a large class of models satisfy functional equations of the types we have seen already, namely $(1-t\Gamma S)Q = q$. There is already some work towards generalizations, but most of is on a smaller scale. For example, Definition 1.1 of \cite[p.~2]{mishna2009classifying} has a functional equation for non-interacting lattice walks on the quarter plane with larger positive steps while the negative steps are limited to size at most one. For quarter plane models with small steps where multiple copies of steps are allowed, see \cite{kauers2014walks}. For some more general regions, check \cite{brak2005directed, wong2014confining, owczarek2012enumeration} for walks on a semi-infinite strip. In \cite{niederhausen2005note} the author considers lattice walks in an octant with interactions along the diagonal. Our theory will allow us to write down functional equations for all of these cases automatically.
+In this final chapter, we examine lattice walk models in more generality and we prove that a large class of models satisfy functional equations of the types we have seen already, namely $(1-t\Gamma S)Q = q$. There is already some work towards generalizations, but most of is on a smaller scale. For example, Definition 1.1 of \cite[p.~2]{mishna2009classifying} has a functional equation for non-interacting lattice walks on the quarter plane with larger positive steps while the negative steps are limited to size at most one. For quarter plane models with small steps where multiple copies of steps are allowed, see \cite{kauers2014walks}. For some more general regions, check \cite{brak2005directed, wong2014confining, owczarek2012enumeration} for walks on a semi-infinite strip. In \cite{niederhausen2005note} the author considers lattice walks in an octant with interactions along the diagonal. Our theory allow us to write down functional equations for all of these cases automatically.
 
-We will start by examining marking operators in more generality. Then we will move onto finding functional equations for general models. Finally, we will look at some examples and ideas generated from them. Unfortunately, time did not suffice to explore this area to its full potential.
+We start by examining marking operators in more generality. Then we move onto finding functional equations for general models. Finally, we look at some examples and ideas generated from them. Unfortunately, time did not suffice to explore this area to its full potential.
 
 %================================
 \section{Marking Operators And Functional Equations}
 %================================
 
-We start with the observation that operators that remove monomials are just marking operators with labels set to zero, and therefore, we will only consider marking operators for the rest of this work. A rather general operator is one that marks each point $p$ in $\ze^d$ with a unique label $a_p$. This will serve as our most general definition. We will work with marking functions first and then express their action on monomials via operators.
+We start with the observation that operators that remove monomials are just marking operators with labels set to zero, and therefore, we only consider marking operators for the rest of this work. A rather general operator is one that marks each point $p$ in $\ze^d$ with a unique label $a_p$. This serves as our most general definition. We work with marking functions first and then express their action on monomials via operators.
 
-\begin{defn} Given a set $A$ of labels and constants from some space over indeterminates, let $a : \ze^d \to A$ be a marking function.
+\begin{defn} Given a set $A$ of labels and constants from some space over indeterminates, let $a : \ze^d \to A$ be a \textitbf{marking function}.
 \end{defn}
 
 It is sufficient that the labels and constants come from a complex space over the indeterminates.
 
-\begin{defn} Given a set of labels $A$, let $\ug_A$ be a set of marking functions on the space $\ze^d$. We define addition and multiplication term-wise on points of $\ze^d$, using the operations in the set $A$.
+\begin{defn} Given a set of labels $A$, let $\ug_A$ be a \textitbf{set of marking functions} on the space $\ze^d$. We define addition and multiplication term-wise on points of $\ze^d$, using the operations in the set $A$.
 \end{defn}
 
 \begin{prop} The set of marking functions on $\ze^d$ together with addition and multiplication forms a commutative ring with identity. Furthermore, the ring is an integral domain. The set of invertible marking functions is comprised of functions with non-zero labels.
@@ -28,9 +28,9 @@ It is sufficient that the labels and constants come from a complex space over th
 \begin{proof} If $A$ is the whole space of labels and constants, the set $\ug$ is the same as a Cartesian product of infinitely many copies of $A$, and it is not difficult to see that the properties of a commutative ring and an integral domain are satisfied. Here the additive identity is the marking function whose labels are all 0, and the multiplicative identity is one whose labels are all 1.
 \end{proof}
 
-Since we are working with marking operators on Laurent polynomials and series, we need a representation for marking operators that will allow us to compute things easily.
+Since we are working with marking operators on Laurent polynomials and series, we need a representation for marking operators that allow us to compute things easily.
 
-\begin{defn} Given a marking function $a$, let $\Gamma_a$ be a marking operator defined by its action on monomials: $\Gamma_a x^p = a(p) x^p$ for all $p$ in $\ze^d$.  We extend this definition by linearity to formal Laurent series $u = \sum_p u_px^p$, where $\Gamma_a u = \sum_p a(p)u_px^p$, and we write $\Gamma_a = \sum_p a(p)[[x^p]]$.
+\begin{defn} Given a marking function $a$, let $\Gamma_a$ be a \textitbf{marking operator} defined by its action on monomials: $\Gamma_a x^p = a(p) x^p$ for all $p$ in $\ze^d$.  We extend this definition by linearity to formal Laurent series $u = \sum_p u_px^p$, where $\Gamma_a u = \sum_p a(p)u_px^p$, and we write $\Gamma_a = \sum_p a(p)[[x^p]]$.
 \end{defn}
 
 We need to check that this formal definition for marking operators behaves as expected and that it preserve the ring of functions $U_A$. Expanding the action $\Gamma_a u$ gives
@@ -48,7 +48,7 @@ Furthermore addition and multiplication work as expected:
 	\end{split}
 \end{align}
 We just need the following notation to allow us to express certain operators easily.
-\begin{defn} Let the term extraction operator be defined as
+\begin{defn} Let the \textitbf{term extraction operator} be defined as
 \begin{align}
 	[[x_I^P]] = \sum_{K \in \ze^{d-n}}[[x_{I,J}^{P,K}]]\,,
 \end{align}
@@ -75,43 +75,43 @@ The following lemma is self-evident.
 \begin{lem} For each point $p$, the monomial $x^p$ is an eigenfunction of $\Gamma_a$ with eigenvalue $a(p)$.
 \end{lem}
 
-\begin{cor} The eigenspaces of formal Laurent series for each eigenvalue $\lambda$ of $\Gamma_a$ are generated by sums of monomials $x^p$ with $a(p) = \lambda$.
-\end{cor}
+\begin{prop} The eigenspaces of formal Laurent series for each eigenvalue $\lambda$ of $\Gamma_a$ are generated by sums of monomials $x^p$ with $a(p) = \lambda$.
+\end{prop}
 \begin{proof} Let $\Gamma u = \lambda u$ for some formal Laurent series. Then the only surviving terms in $\Gamma u - \lambda u$ are those with $a(p) \neq \lambda$. However, since the quantity is zero, they are also forced to add up to zero. Therefore, the series $u$ is comprised of terms with monomials $x^p$ for $a(p) = \lambda$ in the first place.
 \end{proof}
 
-\begin{cor} The space of Laurent series annihilated by $\Gamma_a$ is generated by series of terms $x^p$ where $a_p = 0$.
-\end{cor}
+\begin{prop} The space of Laurent series annihilated by $\Gamma_a$ is generated by series of terms $x^p$ where $a_p = 0$.
+\end{prop}
 
-For all the problems so far, we had marking operators comprised of finitely many term extractions and the identity 1, where each term extraction has less variables than the dimension $d$. As the following example shows, sometimes a marking operator comprised of infinitely many term extractions may be rewritten in terms of finitely many term extractions with less variables.
+For all the problems so far, we had marking operators comprised of finitely many term extractions and the identity 1, where each term extraction has less variables than the dimension $d$. As the following example shows, sometimes a marking operator comprised of infinitely many term extractions can sometimes be rewritten in terms of finitely many term extractions with less variables.
 \begin{exa} For example, consider the operator $\Gamma = \sum_p a[[x^p]]$ where all points receive the same label. Then $\Gamma = a$.
 \end{exa}
 
 Sometimes, depending on the model, we may even have a smaller operator that does the same work as the full marking operator because of the geometry of the regions involved.
-\begin{exa} Consider a \oneD \classic model with no interactions. Because we do not want lattice walks to step on negative coordinates, the full marking operator is given by
+\begin{exa} Consider a \classic \oneD model with no interactions. Because we do not want lattice walks to step on negative coordinates, the full marking operator is given by
 \begin{align}
 	\Gamma = 1 - \sum_{n=1}^\infty [[\ol x^n]]\,.
 \end{align}
-However, since the lattice walk may never reach negative coordinates beyond negative one, we have the equivalent form $\Gamma' = 1 - [[\ol x]]$. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We will say the two operators are model-equivalent.
+However, since the lattice walk can never reach negative coordinates beyond negative one, we have the equivalent form $\Gamma' = 1 - [[\ol x]]$. Although the operators are different in form, they are essentially the same with regards to the problem at hand. We say the two operators are model-equivalent.
 \end{exa}
 
-To make the equivalence work, we need to consider the whole model. With that in mind, we may think of the lattice walk models as living completely within the sumset $\mc D + \mc S$. This is how far walks from the model can possibly reach from within $\mc D $ by taking a single step. We will call this sumset the range of the model. In the enumeration of lattice walks, we must eliminate all walks that take a step outside of $\mc D$, but they remain in $\mc D + \mc S$, so it is enough to remove walks in the complement of $\mc D$ inside the sumset. Note that the walks do not necessarily reach all points in $\mc D + \mc S$ as one can see in the case of reducible models.
-\begin{defn} Given sets $A$ and $B$, we let their sumset be
+To make the equivalence work, we need to consider the whole model. With that in mind, we can think of the lattice walk models as living completely within the sumset $\mc D + \mc S$. This is how far walks from the model can possibly reach from within $\mc D $ by taking a single step. We call this sumset the range of the model. In the enumeration of lattice walks, we must eliminate all walks that take a step outside of $\mc D$, but they remain in $\mc D + \mc S$, so it is enough to remove walks in the complement of $\mc D$ inside the sumset. Note that the walks do not necessarily reach all points in $\mc D + \mc S$ as one can see in the case of reducible models.
+\begin{defn} Given sets $A$ and $B$, we let their \textitbf{sumset} be
 \begin{align}
 	A + B = \{a + b\,|\,a\in A,\, b\in B\}\,.
 \end{align}
 \end{defn}
-\begin{defn} Let $\mc D + \mc S$ be the range of a lattice walk model with domain $\mc D $ and step set $\mc S $.
+\begin{defn} Let $\mc D + \mc S$ be the \textitbf{range} of a lattice walk model with domain $\mc D $ and step set $\mc S $.
 \end{defn}
-\begin{defn} Let $\mc M$ be a lattice walk model in $\ze^d$ and let $\Gamma$ and $\Gamma'$ be two marking operators. Then $\Gamma \equiv_{\mc M} \Gamma'$ if and only if $\Gamma$ and $\Gamma'$ act identically on monomials from the range of $\mc M$. That is, the operators are model-equivalent if and only if $\Gamma  x^p = \Gamma' x^p$ for all $p\in \mc D + \mc S $.
+\begin{defn} Let $\mc M$ be a lattice walk model in $\ze^d$ and let $\Gamma$ and $\Gamma'$ be two marking operators. Then $\Gamma \equiv_{\mc M} \Gamma'$ if and only if $\Gamma$ and $\Gamma'$ act identically on monomials from the range of $\mc M$. That is, the operators are \textitbf{model-equivalent} if and only if $\Gamma  x^p = \Gamma' x^p$ for all $p\in \mc D + \mc S $.
 \end{defn}
 In the preceding example, the operators are equivalent because they act the same way on monomials from the range of the model, that is, monomials $x^k$ with $k \ge -1$. Similarly, in the \twoD problem we have an equivalence between the operator $E$ and the operator $E' = (1-[[\ol x_1]])(1-[[\ol x_2]])$.
 
-\begin{defn} A marking operator $\Gamma$ is finite with respect to a given  model if it is equivalent to an operator $\Gamma'$ comprised of finitely many terms. That is,
+\begin{defn} A marking operator $\Gamma$ is \textitbf{finite} with respect to a given model if it is equivalent to an operator $\Gamma'$ comprised of finitely many terms. That is,
 \begin{align}
 	\Gamma \equiv_{\mc M} \Gamma' = \sum_{\substack{I\subseteq [d]\\ J \subseteq \ze^d}}a_{I,J} [[x_I^J]]\,,
 \end{align}
-where each set $J$ is finite and $a_{I,J}$ is a label. Also, we say $\Gamma$ is infinite if it is not finite.
+where each set $J$ is finite and $a_{I,J}$ is a label. Also, we say $\Gamma$ is \textitbf{infinite} if it is not finite.
 \end{defn}
 
 \begin{lem} A finite product of finite marking operators is finite.
@@ -120,11 +120,11 @@ where each set $J$ is finite and $a_{I,J}$ is a label. Also, we say $\Gamma$ is 
 \begin{defn} Given a \dD model, let $L$ be an operator that marks locations in $\mc D_0$ and let $E$ be the operator that removes walks outside of $\mc D$. Then the marking operator corresponding to the model is $\Gamma_a = LE$ with marking function $a$ which sends points $p$ in $\mc D_0$ to their respective labels, and points outside of $\mc D$ to zero.
 \end{defn}
 
-When we work within the framework set by a specific model, we will not distinguish between $\Gamma$ and $\Gamma'$. A natural question is to consider which models lead to finite operators. This depends on the region $\mc D$ and the nature of the marking of region $\mc D_0 $. We have some cases where it is easy to say.
+When we work within the framework set by a specific model, we do not distinguish between $\Gamma$ and $\Gamma'$. A natural question is to consider which models lead to finite operators. This depends on the region $\mc D$ and the nature of the marking of region $\mc D_0 $. We have some cases where it is easy to say.
 
 \begin{lem} Let $\mc D$ be a finite box and let $\mc S$ be finite. Then the marking operator $\Gamma = LE$ is finite.
 \end{lem}
-\begin{proof} The operator $L$ is finite since it marks only finitely many points inside the box. We will find $E$ next. Let the box have $x_k$ coordinates in $[a_k,b_k]$. Suppose that the $x_k$ coordinates of the steps are bounded in size by $n_k$. If $n_k = 0$, the walks do not leave the $x_k = a_k$ hyperplane and there is nothing to remove. When $n_k > 0$, we need to remove all monomials $x_1^{P_1}\cdots x_d^{P_d}$ with $P_k \in [a_k-n_k,a_k-1]\cup [b_k + 1,b_k + n_k]$. Then $E = \row Ed$, where
+\begin{proof} The operator $L$ is finite since it marks only finitely many points inside the box. We find $E$ next. Let the box have $x_k$ coordinates in $[a_k,b_k]$. Suppose that the $x_k$ coordinates of the steps are bounded in size by $n_k$. If $n_k = 0$, the walks do not leave the $x_k = a_k$ hyperplane and there is nothing to remove. When $n_k > 0$, we need to remove all monomials $x_1^{P_1}\cdots x_d^{P_d}$ with $P_k \in [a_k-n_k,a_k-1]\cup [b_k + 1,b_k + n_k]$. Then $E = \row Ed$, where
 \begin{align}
 	E_k = 1 - \sum_{j=1}^{n_k} [[x_k^{a_k-j}]] + [[x_k^{b_k + j}]]\,,
 \end{align}
@@ -133,21 +133,21 @@ and $E_k = 1$ when $n = 0$. Each of these is finite and so is $E$.
 Note that the operators $E_k$ remove monomials outside of the range of the model too, but that allows us to write the operator down in a neater way.
 \begin{thm} The operator $\Gamma = LE$ is finite for models with finite $\mc D$ and $\mc S$.
 \end{thm}
-\begin{proof} The region $\mc D$ lies within a bounding box $B$, so we may write $E = E' E''$, where $E' = \mon Ed$ from the lemma and $E''$ is the operator removing all monomials outside of $\mc D$ but inside the interior of $B$. $E''$ is finite since there are only finitely many points in that region. Since we are marking only finitely many points, $L$ is finite too, and finally, $\Gamma$ is finite.
+\begin{proof} The region $\mc D$ lies within a bounding box $B$, so we can write $E = E' E''$, where $E' = \mon Ed$ from the lemma and $E''$ is the operator removing all monomials outside of $\mc D$ but inside the interior of $B$. $E''$ is finite since there are only finitely many points in that region. Since we are marking only finitely many points, $L$ is finite too, and finally, $\Gamma$ is finite.
 \end{proof}
 
-Also, we may handle partially-infinite regions, corresponding to boxes extended to infinity on some sides, if we are marking only finitely many points. Here one or more of $a_k$ and $b_k$ is infinite and we actually lose parts of $E_k$ since no terms need to be removed at infinity. We can push this some more and obtain the following result.
+Also, we can handle partially-infinite regions, corresponding to boxes extended to infinity on some sides, if we are marking only finitely many points. Here one or more of $a_k$ and $b_k$ is infinite and we actually lose parts of $E_k$ since no terms need to be removed at infinity. We can push this some more and obtain the following result.
 
 \begin{prop} If $L$ is finite and $\mc D$ is a box, except for a finite region, then $\Gamma = LE$ is finite too.
 \end{prop}
 \begin{proof} This follows from the observation that $E_{\mc B}$ is finite and $E_{\mc B} - E_{\mc D}$ is finite as well. The second fact is true because the regions differ in a finite region.
 \end{proof}
 
-\begin{defn} A lattice walk model with finitely many steps is finite if its marking operator $\Gamma = LE$ is finite, and its initial condition $q$ has finitely many terms. Otherwise, the model is infinite.
+\begin{defn} A lattice walk model with finitely many steps is \textitbf{finite} if its marking operator $\Gamma = LE$ is finite, and its initial condition $q$ has finitely many terms. Otherwise, the model is \textitbf{infinite}.
 \end{defn}
-\begin{exa}\label{ex:InfiniteOperator} All the models so far have been finite, but not all models are finite. Consider a \oneD model on the whole line, where for each integer $i$, we mark point $x^i$ with parameter $a_i$ using operator $L$. Then all equivalent marking operators $L'$ would have to have a term like $(a_i-1)[[x^i]]$; otherwise, it would not act the same way on monomials in the model's range $\ze$. Therefore, $L$ is not equivalent to a finite operator.
+\begin{exa}\label{ex:InfiniteOperator} All the models so far have been finite, but not all models are finite. Consider a \oneD model on the whole line, where for each integer $i$, we mark point $x^i$ with parameter $a_i$ using operator $L$. Then all equivalent marking operators $L'$ have to have a term like $(a_i-1)[[x^i]]$; otherwise, it does not act the same way on monomials in the model's range $\ze$. Therefore, $L$ is not equivalent to a finite operator.
 \end{exa}
-Finite models are nicer because they have functional equations with finitely many terms and there is a chance that they will be amenable to the sort of analysis we have performed for quarter plane walk models in the past.
+Finite models are nicer because they have functional equations with finitely many terms and there is a chance that they may be amenable to the sort of analysis we have performed for quarter plane walk models in the past.
 
 \begin{thm} The generating function $Q$ for a lattice walk model satisfies the equations
 \begin{align}
@@ -158,18 +158,18 @@ Finite models are nicer because they have functional equations with finitely man
 \begin{proof} Because of how we have set up the notation so far, the proof is analogous to the one in \autoref{ch:OneD} and \autoref{ch:HigherD}. The second functional equation is obtained by applying $L^{\um 1}$ to the first one, so it only remains to show that the first functional equation holds. When we apply $LE$ to $tSQ$ we remove all monomials for walks ending outside of $\mc D$ and we mark all monomials for walks ending in $\mc D_0$. We have almost obtained $Q$ again, but the first term $q_0 = q$ is missing, so we add it in. That is $LE(tSQ)+q = Q - q + q = Q$ and we are done.
 \end{proof}
 
-\begin{cor} When the model is finite, we may perform the coefficient extractions in the functional equations to obtain explicit equations relating $Q$ to various $Q_I^J$ terms.
+\begin{cor} When the model is finite, we can perform the coefficient extractions in the functional equations to obtain explicit equations relating $Q$ to various $Q_I^J$ terms.
 \end{cor}
 
-This follows because there are only finitely many extractions in the marking operators. It is not clear if may have explicit functional equations for models with infinite operators because there would be infinitely-many $Q_I^J$ terms in the equation. We would need more theory in order to do that.
+This follows because there are only finitely many extractions in the marking operators. It is not clear if can have explicit functional equations for models with infinite operators, because there would be infinitely-many $Q_I^J$ terms in the equation. We would need more theory in order to do that.
 
 %================================
 \subsection{Several Examples of Generalized Models}
 %================================
 
-In the first two examples, we will see some more general analysis of models. After that we will consider some more concrete situations.
+In the first two examples, we see some more general analysis of models. After that we consider some more concrete situations.
 
-\begin{exa} Typically, we have an operator $\Gamma = LE$ where $E$ removes unwanted terms. The problem is that $E$ is not invertible. We can recast the analysis in a way that circumvents that but at some cost. Instead of using an operator $E$ to remove walks, we may just just a marking operator that labels walks for later deletion, for example, with a variable $z$. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc D_0  \cup \mc D^c$, where we mark monomials in $\mc D^c$ with $z$ and those in $\mc D_0 $ in the same way as in model $\mc M$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
+\begin{exa} Typically, we have an operator $\Gamma = LE$ where $E$ removes unwanted terms. The problem is that $E$ is not invertible. We can recast the analysis in a way that circumvents that but at some cost. Instead of using an operator $E$ to remove walks, we can just just a marking operator that labels walks for later deletion, for example, with a variable $z$. We have a new lattice walk model $\wcal{M}$ with $\wcal{D} = \ze^d$ and $\wcal{D}_0 = \mc D_0  \cup \mc D^c$, where we mark monomials in $\mc D^c$ with $z$ and those in $\mc D_0 $ in the same way as in model $\mc M$. Here $\widetilde{E}$ is the identity operator since we do not remove any walks. We have the functional equations
 \begin{align}
 	(1-t\widetilde{L} S)\widetilde Q &= q\,,\\
 	(\widetilde{L}^{\um 1}-t S) \widetilde Q &= \widetilde{\alpha}\,.
@@ -180,9 +180,31 @@ The downside is that we have more extractions  than if we split the operator as 
 \begin{exa} We can also keep track of the walks' histories of where they have been. To do this, we let $\Gamma$ give a generic label to each point in space, that is, $\Gamma x^p = a_p$. In this setup, a growing lattice walk picks up a label at each point that it steps on. As in \autoref{ex:InfiniteOperator}, the operator is not finite, so we would not have an explicit functional equation with finitely many terms. Nevertheless, this allows us to frame self-avoiding within our theory. 
 
 Suppose that $Q$ is the generating function for walks with histories and let $W$ be the generating function for self-avoiding walks on the same space. Then we can obtain $W$ from $Q$ by setting all higher powers of $a_p$ to zero. This is equivalent to picking out the $a_p^0$ and $a_p$ coefficients from $Q$ via some operator $A$. Since there are only finitely many walks of a given length and they are bounded, for each step size, $A$ reduces to a finite operator $A_k$, that is, $W = AQ = \sum_{k=0}^\infty A_k(q_k) t^k$.
+
+Formally, we can write $\Gamma = \prod_p \Gamma_p$ and $A = \prod_p A_p$, where the products go over the whole space and $\Gamma_p = 1 + (a_p - 1)[[x^p]]$ and $A_p = [[a_p^0]] + [[a_p]]$. Now, suppose that $W$ is already in the form that we desire, that is, there are only $a_p^0$ and $a_p$ terms for every $p$. Now, we fix $a = a_p$ and $x = x^p$ for some $p$ to declutter the next calculation. We have
+\begin{align}
+	\Lambda_p = A_p\Gamma_p &= ([[a^0]]+[[a]])(1 + (a - 1)[[x]]) \\
+				&= [a^0] + a[a] + ([\ol a]+a[a^0] - [a^0] - a[a])[[x]] \\
+				&= (1 + (a - 1)[[x]])[a^0] + (1-[[x]])a[a]\,,
+\end{align}
+and we identify this operator as $ \Lambda_p =\Gamma_p [[a_p^0]]+ E_p[[a_p]]$ where $E_p$ removes the monomial $[[x^p]]$. We can interpret this result in terms of the actions of the operators themselves. Since $W$ contains self-avoiding walks only, when we take $tSW$, we only run into problems for points $p$ where each walk has been at $p$ at some earlier time of its growth. Thus, we may take all the walks ending on $p$ for the first time and mark them with $a$, and remove those that have been there already. This is exactly what the $\Lambda_p$ operator does. We can finally write a functional equation for the generating function for self-avoiding walks:
+\begin{align}
+	(1 - t \Lambda S)W = a_\oo\,,
+\end{align}
+where $\Lambda = \prod_p \Lambda_p$. This operator is no longer invertible, but we can write $W$ as the infinite series
+\begin{align}
+	W = \sum_{k = 0}^\infty (\Lambda S)^{(k)}(a_\oo)\,,
+\end{align}
+where $(\Lambda S)^{(k)}$ is finite because it only sees finitely many points.
+
+For example, using $S = \ol x_1 + x_1 + \ol x_2 + x_2$, we can compute the first few terms of the series:
+\begin{align}
+	W = a_{0,0} + t (a_{\um 1,0} a_{0,0} \ol x_1 + a_{1,0}
+   a_{0,0} x_1 + a_{0,\um 1} a_{0,0}\ol x_2+ a_{0,1} a_{0,0} x_2 ) \cdots\,.
+\end{align}
 \end{exa}
 
-The following examples will look at particular models with small steps in the plane.
+The following examples look at particular models with small steps in the plane.
 
 \begin{exa} Consider an infinite strip comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq j \leq n$, where the model interacts with the lines $x_2 = 0$ and $x_2 = n$. The operators are
 \begin{align}
@@ -201,7 +223,7 @@ and if we extract the $[x_2^n]$ term, we find that
 \begin{align}
 	(1-a_nt S_2^0)Q_2^n = t S_2^1Q_2^{n-1}\,.
 \end{align}
-Similarly, we can extract the $x_2^k$ coefficients for $1 \leq k \leq n-1$. We will have $n + 1$ equations where we need to solve for the $n + 1$ unknown functions $Q_2^0,\ldots, Q_2^n$. Of course, we only need $Q_2^0$ and $Q_2^n$ to obtain a solution for $Q$. In the simplest case, $n = 1$ and the term extraction equations become
+Similarly, we can extract the $x_2^k$ coefficients for $1 \leq k \leq n-1$. We have $n + 1$ equations where we need to solve for the $n + 1$ unknown functions $Q_2^0,\ldots, Q_2^n$. Of course, we only need $Q_2^0$ and $Q_2^n$ to obtain a solution for $Q$. In the simplest case, $n = 1$ and the term extraction equations become
 \begin{gather}
 	\begin{align}
 		(1-a_0t S_2^0)Q_2^0  &= 1 + t S_2^{\um 1}Q_2^1\,,\\
@@ -219,55 +241,58 @@ and we can find $Q$ explicitly from
 \end{align}
 \end{exa}
 
-\begin{exa}Consider a finite rectangle comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq i \leq m$ and $0 \leq j \leq n$, for some positive integers $m$ and $n$. There are also interactions like in the previous example. We will use the operators
+\begin{exa}Consider a finite rectangle comprised of all the points with coordinates $(i,j)$ in $\ze^2$ with $0 \leq i \leq m$ and $0 \leq j \leq n$, for some positive integers $m$ and $n$. There are also interactions like in the previous example. We use the operators
 \begin{align}
-	E_{i,j} = 1 - [[x_i^j]]\qandq L_{i,j} = 1 + b_{i,j}[[x_i^j]]\,.
+	E_{i,j} = 1 - [[x_i^j]]\qandq L_{i,j} = 1 + b_{i,j}[[x_i^j]]
 \end{align}
 to find the functional equation. For the model itself, we have
 \begin{align}
 	E &=E_{1,\um 1}E_{1,m + 1}E_{2,\um 1}E_{2,n}\,,\\
 	L &= L_{1,0}L_{1,m}L_{2,0}L_{2,n}\,.
 \end{align}
-Once we obtain a functional equation, we will find that it has terms of the form $Q_i^j$ and $\Qf{i,j}$. If we perform the extractions $[x_i^j]$ only we will have even more $Q$ terms. However, if we perform the extractions $[x_i^j]$ for all points $(i,j)$ in the rectangle, we will obtain $(m+1)(n+1)$ equations in that many $\Qf{i,j}$ terms. Since there is a unique solution $Q$, we can solve this system and write $Q$ directly. The difficulty lies is in solving this system symbolically.
+Once we obtain a functional equation, we find that it has terms of the form $Q_i^j$ and $\Qf{i,j}$. If we perform the extractions $[x_i^j]$ only, we have even more $Q$ terms. However, if we perform the extractions $[x_i^j]$ for all points $(i,j)$ in the rectangle, we obtain $(m+1)(n+1)$ equations in that many $\Qf{i,j}$ terms. Since there is a unique solution $Q$, we can solve this system and write $Q$ directly. The difficulty lies is in solving this system symbolically.
 \end{exa}
 
 This example paves the way towards the following result for finite models on finite regions.
 \begin{thm}The generating function for a finite lattice walk model set on a finite region is a rational function in its variables.
 \end{thm}
-\begin{proof}Let $n$ be the number of points in $\mc D$. Then for each point $P$, we may extract the $x_{[d]}^P$ term from the functional equation $(1-t\Gamma S)Q = q$ and we will only have $Q$ terms of the form $Q_{[d]}^I$ for points $I$ in $\mc D$. We have a system of $n$ equations in $n$ unknowns, and since the function $Q$ is unique, we may solve this system uniquely. Each of the coefficients is a rational function of the variables $\row xd$, the labels $a_P$, and $t$, and therefore, the solution is rational too.
+\begin{proof}Let $n$ be the number of points in $\mc D$. Then for each point $P$, we can extract the $x_{[d]}^P$ term from the functional equation $(1-t\Gamma S)Q = q$ and we only have $Q$ terms of the form $Q_{[d]}^I$ for points $I$ in $\mc D$. We have a system of $n$ equations in $n$ unknowns, and since the function $Q$ is unique, we can solve this system uniquely. Each of the coefficients is a rational function of the variables $\row xd$, the labels $a_P$, and $t$, and therefore, the solution is rational too.
 \end{proof}
 
-Of course, once the region grows to even a moderate size, it becomes prohibitively complicated to solve this system. For a box of side $m$, the number of equations is $m^d$, making this a rather difficult way of solving the problem. If the size of the region is large and the number of steps in $S$ is small, then each $\Qf{i,j}$ depends on a few neighbours only, so the resulting linear system will be rather sparse. Still, the solution fills a whole page for a three-by-three square, so this result is mostly of theoretical value.
+Of course, once the region grows to even a moderate size, it becomes prohibitively complicated to solve this system. For a box of side $m$, the number of equations is $m^d$, making this a rather difficult way of solving the problem. If the size of the region is large and the number of steps in $S$ is small, then each $\Qf{i,j}$ depends on a few neighbours only, so the resulting linear system is rather sparse. Still, the solution fills a whole page for a three-by-three square, so this result is mostly of theoretical value.
 
 
 %=======================================
 \section{Further Properties of Marking Operators}
 %=======================================
-Since the function $Q$ is given by Neumann series  \bonus{Write more about this in this chapter}, which is connected to integral equations, it may be possible to find an analogue to Fredholm theory. Also, it may be possible to find a sort of Sturm-Liouville theory for lattice walk enumeration problems. In the next few pages, we will look at the first few steps of such a theory, although there was insufficient time to analyze this problem in more detail. For that we would need a suitable inner product that would allow us to see if certain operators are self-adjoint. Finally, we would find eigenfunction expansions for the functions involved.
 
-The operators we have seen so far are marking operators, like $L$ and $E$, in combination of multiplication by another function, like $\Gamma S$, or a combination of operators, like $L^{\um 1} - t ES$. We will look at their eigenvalues, eigenvectors, kernels and invertibility.
+%\bonus{Write more about this in this chapter}
+
+Since the function $Q$ is given by Neumann series, which is connected to integral equations, it may be possible to find an analogue to Fredholm theory. Also, it may be possible to find a sort of Sturm-Liouville theory for lattice walk enumeration problems. In the next few pages, we look at the first few steps of such a theory, although there was insufficient time to analyze this problem in more detail. For that we would need a suitable inner product that would allow us to see if certain operators are self-adjoint. Finally, we would need to find eigenfunction expansions for the functions involved.
+
+The operators we have seen so far are marking operators, like $L$ and $E$, in combination of multiplication by another function, like $\Gamma S$, or a combination of operators, like $L^{\um 1} - t ES$. We look at their eigenvalues, eigenvectors, kernels and invertibility.
 
 %=======================================
 \subsection{Marking Operators With Multiplication}
 %=======================================
 \begin{defn}
-We call an operator inhomogeneous if it consists of a marking operator $\Gamma$ and a Laurent polynomial $S$, and acts in one of the following ways
+We call an operator \textitbf{inhomogeneous} if it consists of a marking operator $\Gamma$ and a Laurent polynomial $S$, and acts in one of the following ways
 \begin{align}
 	\Gamma S(u) = \Gamma(Su)\qorq S\,\Gamma u = S\cdot \Gamma u\,.
 \end{align}
 \end{defn}
 The two definitions are equivalent when it comes to finding the eigenpairs.
-\begin{prop} The pair $(\lambda,u)$ is an eigenpair for $\Gamma S$ if and only if $(\lambda, Su)$ is an eigenpair for $S\,\Gamma$. In particular, if $\lambda = 0$, then $\ker(\Gamma S) = \ol S \ker(\Gamma)$.
+\begin{prop} The pair $(\lambda,u)$ is an eigenpair of $\Gamma S$ if and only if $(\lambda, Su)$ is an eigenpair of $S\,\Gamma$. In particular, if $\lambda = 0$, then $\ker(\Gamma S) = \ol S \ker(\Gamma)$.
 \end{prop}
 \begin{proof} Note that $\Gamma Su = \lambda u$ is equivalent to $S\,\Gamma (Su) = \lambda (Su)$. Therefore, the operators have the same eigenvalues and their eigenfunctions are $u$ and $Su$, respectively. Next, we pick $\lambda = 0$ to find the kernels of the operators. We find that $u \in \ker(\Gamma S)$ if and only if $Su \in \ker(S\,\Gamma) = \ker(\Gamma)$.
 \end{proof}
-Since this characterizes the kernel of the operator, we will assume that $\lambda \neq 0$ from here on. We will now work towards finding some eigenpairs. Let $\Gamma = LE$ as before. Recall that $E^2 = E$, since once the terms are removed, they cannot be removed again. We can apply $E$ on both sides of $LES u = \lambda u$ to find that
+Since this characterizes the kernel of the operator, we assume that $\lambda \neq 0$ from here on. Next, we find some eigenpairs. Let $\Gamma = LE$ as before. Recall that $E^2 = E$, since once the terms are removed, they cannot be removed again. We can apply $E$ on both sides of $LES u = \lambda u$ to find that
 \begin{align}
 	E(\lambda u) = \lambda Eu = ELES u = LE^2S u = LES u = \lambda u
 \end{align}
 and therefore, $Eu = u$.
-\begin{prop} \label{prop:EfixU}If $u$ is an eigenfunction of the operator $LES$, then $Eu = u$ and $u \in \ker E'$, where $E' = E - 1$ is the pure coefficient extraction part of $E$.
-\end{prop}
+\begin{lem} \label{prop:EfixU}If $u$ is an eigenfunction of the operator $LES$, then $Eu = u$ and $u \in \ker E'$, where $E' = E - 1$ is the pure coefficient extraction part of $E$.
+\end{lem}
 
 
 
@@ -275,9 +300,9 @@ Suppose that $\Gamma = LE$. In the interest of performing fewer extractions, we 
 \begin{align}
 	u = \frac{(\lambda M' - E'S)u}{S-\lambda}\,,
 \end{align}
-where if the operators are finite, the extraction in the numerator leads to a Laurent polynomial in the variables $\row xd$. Because we used $M'$ and $E'$ instead of the equivalent for $LE$, we have fewer coefficients in the numerator. The resulting eigenfunction $u$ depends on finitely many coefficients. We may expand $u$ in Laurent series around the origin, set the coefficients to zero and then solve the resulting system of equations to find the terms in the numerator. Curiously, if we apply $D = \lambda M - ES$ on $u$ we should find that $Du = 0$, but here $u$ has a new form and we will obtain some condition on the terms in the numerator.
+where if the operators are finite, the extraction in the numerator leads to a Laurent polynomial in the variables $\row xd$. Because we used $M'$ and $E'$ instead of the equivalent for $LE$, we have fewer coefficients in the numerator. The resulting eigenfunction $u$ depends on finitely many coefficients. We can expand $u$ in Laurent series around the origin, set the coefficients to zero, and then solve the resulting system of equations to find the terms in the numerator. Curiously, if we apply $D = \lambda M - ES$ on $u$ we should find that $Du = 0$, but here $u$ has a new form and we obtain some condition on the terms in the numerator.
 
-\begin{exa} Consider one of the \classic \oneD model with interactions, where $S = \ol x + x$ and $M' = -c[x^0]$. First we will use the full  operator $E' = - \sum_{k=1}^\infty [[\ol x^k]]$. Since $u$ has no terms $u_k$ for $k\leq \um 1$, we see that
+\begin{exa} Consider one of the \classic \oneD model with interactions, where $S = \ol x + x$ and $M' = -c[x^0]$. First we use the full  operator $E' = - \sum_{k=1}^\infty [[\ol x^k]]$. Since $u$ has no terms $u_k$ for $k\leq \um 1$, we see that
 \begin{align}
 	-E'Su = \sum_{k=1}^\infty \ol x^k ([\ol x^{k+1}]+[\ol x^{k-1}])u = \sum_{k=1}^\infty \ol x^k (u_{-k-1} + u_{-k+1}) = \ol x u_0\,.
 \end{align}
@@ -285,7 +310,7 @@ Then
 \begin{align}
 	u = \frac{-\lambda c u_0 +\ol x u_0}{\ol x + x - \lambda} = \frac{(1-c\lambda x)u_0}{1- \lambda x +x^2} = u_0 + \ol a\lambda u_0 x + \cdots
 \end{align}
-where $u_0$ is a free variable, and we have an eigenfunction for every $\lambda$. Next, we will use the equivalent operator $E = - [[\ol x]]$. We have no reason to believe that the operator will have the same eigenfunctions, but it does. Here we have
+where $u_0$ is a free variable, and we have an eigenfunction for every $\lambda$. Next, we use the equivalent operator $E = - [[\ol x]]$. We have no reason to believe that the operator has  the same eigenfunctions, but it does. Here we have
 \begin{align}
 	u = \frac{(\lambda M' - E'S) u}{S_\lambda} &= \frac{-c\lambda u_0 + (u_{-2}+u_0)\ol x}{\ol x + x - \lambda} = \frac{u_{-2} + (1 - c \lambda x)u_0}{1-\lambda x  + x^2}\,,
 \end{align}
@@ -299,26 +324,45 @@ It turns out that this is not a coincidence and we have the following striking r
 \begin{proof} Let $\Gamma_1 = L_1 E_1$ be the full operator and $\Gamma_2 = L_2 E_2$ be the reduced one. Here $L_1$ and $L_2$ agree on $\mc D$, and $E_1$ and $E_2$ agree on the range $\mc D + \mc S$. Suppose that $\Gamma_1 Su = \lambda u$ for some eigenpair $(\lambda, u)$. By \autoref{prop:EfixU}, $u$ only contains terms from $\mc D$ and therefore, $Su$ only contains terms from the range of the model. Therefore, $\Gamma_1 Su = L_1 E_1 Su = L_2 E_2 Su$ due to the agreement of operators, and finally, $\Gamma_2 Su = \lambda u$.
 \end{proof}
 
-The proof here also shows us that $\Gamma_2$ may have other eigenfunctions $v$, since here $v$ may contain terms from outside of the range of the model. However, if $\Gamma_2$ is finite, we see that $(\lambda M' - E'S)u$ has finitely many terms. Thus each eigenvalue $\lambda$ may lead to at most a finite-dimensional eigenspace.
+The proof here also shows us that $\Gamma_2$ may have other eigenfunctions $v$, since here $v$ may contain terms from outside of the range of the model. However, if $\Gamma_2$ is finite, we see that $(\lambda M' - E'S)u$ has finitely many terms. Thus, each eigenvalue $\lambda$ may lead to at most a finite-dimensional eigenspace.
 
-Closely related is the lattice walk operator $\mc L = 1 - t\Gamma S$. Let $(u, \lambda)$ be an eigenpair for $\mc L$. Then we calculate
+In the end, we are after the operator $\mc L = 1 - t\Gamma S$ because it is the one we see in all of our equations. If we are to find a theory where we can expand $Q$ in terms of eigenfunction of operators, we need to obtain the same result whether we use the full or reduced form of the operators. That is, most likely, we do not need the extra eigenpairs that the reduced operator may have. We have the following definitions.
+
+\begin{defn} Let $\mc L = 1 - t\Gamma S$ be a \textitbf{lattice walk} operator.
+\end{defn}
+
+\begin{defn} The \textitbf{natural eigenpairs} of a marking operator are the eigenpairs associated with the full operator. The natural eigenpairs of a lattice walk operator are those coming from the full form of the marking operator within it.
+\end{defn}
+
+Let $(\lambda, u)$ be a natural eigenpair of $\mc L$. We find that
 \begin{align}
 	\begin{split}
 		(\mc L-\lambda I) u &= u - \lambda u -t\Gamma Su\\
-		t \Gamma S u &= (1-\lambda)u\,.
+		t \Gamma S u &= (1-\lambda)u\,,
 	\end{split}
 \end{align}
-If $\lambda = 1$, then $u$ is in $\ker(t\Gamma S) = \ol S \ker \Gamma$ and we already know how to find these. If $\lambda \neq 1$, we may find the eigenpairs by the method in the previous section. Let $\mu = 1-\lambda$. Then
+and the eigenpairs of $\mc L$ are closely related to those of $\Gamma S$. If $\lambda = 1$, then $u$ is in $\ker(t\Gamma S) = \ol S \ker \Gamma$ and we already know how to find these functions. If $\lambda \neq 1$, we can find the eigenpairs by the method in the previous section. Let $\mu = 1-\lambda$. Then
 \begin{align}
 	u = \frac{((1-\lambda) M' - tE'S)u}{\lambda - K}\,,
 \end{align}
-where $K = 1 - tS$.
+where $K = 1 - tS$ and the numerator only features monomials for points within $\mc D$.
 
-\begin{exa} Consider a \classic interacting \twoD model. The functional equation is $(\mu - t LES)u = 0$ and we may apply $M$ to both sides. If we look for eigenpairs shared by this operator and the full one, we may find
+\begin{exa} Consider a \classic interacting \twoD model. The functional equation is $(\mu - t LES)u = 0$ and we let $\mu = t/\nu$. If we apply $M$ on both sides, we find that the natural eigenpairs of $\mc L$ satisfy
 \begin{align}
-	0 = (\mu M -t E S)u = \sum_{I\subseteq [d]} (-1)^{|I|}(\mu c_I - t \ol x_I S_I^{\um \one} u_I^\oo) = \ol \mu \sum_{I\subseteq [d]} (-1)^{|I|} K_I(\mu) u_I^\oo \,,
+	0 = (\ol \nu M - E S)u = \sum_{I\subseteq [d]} (-1)^{|I|}(\ol \nu c_I -  \ol x_I S_I^{\um \one} u_I^\oo) = \ol \nu \sum_{I\subseteq [d]} (-1)^{|I|} K_I(\nu) u_I^\oo \,,
 \end{align}
-where $K_I = K_I(t)$ are Laurent polynomials. So the eigenfunctions $u$ satisfy an equation similar to the master functional equation.
+where $K_I = K_I(x, \nu)$ are Laurent polynomials as in the master functional equation. So the eigenfunctions $u$ satisfy an equation similar to the master functional equation for the associated lattice walk model. Take $d = 1$, for example. Then $u$ satisfies $K(x, \nu ) u - K_1(x, \nu)u_0= 0$ and $u$ is given by
+\begin{align}
+	 u = \frac{K_1(x, \nu)}{K(x, \nu)} = \frac{c - \nu \ol x S_{\um 1}}{1 - \nu S} u_0
+\end{align}
+for every $\nu \neq 0$, where $u_0$ is a constant of our choosing, so we set it to 1. If we let $S^{\ge 0} = S - \ol x S_{\um 1}$, we can expand $u$ in terms of $\nu$ as
+\begin{align}
+	u(x, \nu) = c  - \ol a\nu (S - a S^{\ge 0})(1 + S\nu+ S^2 \nu^2 +\cdots)\,.
+\end{align}
+For the model $S = \ol x + x$ in \autoref{ch:OneD}, we can solve for $Q$ as
+\begin{align}
+	Q = \frac{1}{aK(x,t)}\left(1 + \frac{K_1(x, t)}{K_1(\sigma, t)}\right) = \frac{1}{aK(x, t)} + \frac{u(x, t)}{a K_1(\sigma, t)}\,.
+\end{align}	
 \end{exa}
 
 \endinput
@@ -335,7 +379,7 @@ If $u_n = 0$, all the terms are zero as well, so $u_n \neq 0$. Via induction, we
 	u_{n + k} &= 1/\lambda^{k}, \quad \text{for $k \ge 0$}\,,\\
 	u_{n-k} &= \lambda^{k}/a^k, \quad \text{for $k \ge 1$}\,,
 \end{align}
-and therefore, each $\lambda \neq 0$ is an eigenfunction for
+and therefore, each $\lambda \neq 0$ is leads to an eigenfunction
 \begin{align}
 	u_\lambda(x) &=-\frac{\lambda b x^{n + 1}}{(\lambda-x)(\lambda-ax)}\,,
 \end{align}
@@ -356,29 +400,29 @@ Letting $t \to 0$ in this equation yields
 \begin{align}
 	(\lambda - 1)u_n = -\lim_{t\to 0} t^{1-n}\Gamma S u = -\Gamma S \lim_{t\to 0} (t^{1-n} u) = 0\,.
 \end{align}
-Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions will  be a finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.
+Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \Gamma$. Since $S$ is a Laurent polynomial, the resulting functions is a finite order Laurent series. The analysis shows that the only eigenfunctions of $\mc L$ among finite order Laurent series in $t$ are those that are members of $\ol S \ker \Gamma$ with eigenvalue $\lambda = 1$.
 
 %=============================================================
 
-\begin{exa} Let $\Gamma = LE$ in the \oneD problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that (?)
+\begin{exa} Let $\Gamma = LE$ in the \oneD problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that
 \begin{align}
 	Q = \frac{t(\ol x - \ol \sigma)}{(1-t S)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{t S}{1-t S}\,,
 \end{align}
-where we may write
+where we can write
 \begin{align}
 	\frac{\sigma - x}{b\sigma - at} = \alpha(t) + \beta(t)x\,,
 \end{align}
 where $\alpha(t)$ and $\beta(t)$ are algebraic functions of $t$ and $a$ since $\sigma = \sigma(t)$. This observation at least suggests the possibility of connecting the eigenfunctions of $\mc L$ to the solution $Q$.
 \end{exa}
 
-If we are to have a theory similar to Sturm-Liouville theory, we still need to find a suitable inner product on multivariate Laurent series that will let us write solutions for $Q$ in terms of those eigenfunctions with eigenvalue 1.
+If we are to have a theory similar to Sturm-Liouville theory, we still need to find a suitable inner product on multivariate Laurent series that lets us write solutions for $Q$ in terms of those eigenfunctions with eigenvalue 1.
 
 %=============================================================
 % Superseeded
 
-\begin{exa}Suppose that $\mc D$ is a finite region in $\ze^2$. If we set $x_1 = 0$ for points in $\mc D$, we obtain the projection of the set onto the $x_2$ axis, and this tells us how many $x_2$ coordinates we have in functions in the functional equation. Suppose that the number of points is $m_1$ and define $m_2$ analogously. Lastly, let there be $m$ lattice points in $\mc D$. Next, we examine the number of unknown functions $Q_i^j$ and $\Qf{i,j}$ that we have in the functional equation and its various extractions. The master functional equation may only have $m_1$ functions $Q_2^i$ and $m_2$ functions $Q_1^i$, together with $m$ functions $\Qf{i,j}$, because those are the possible non-zero functions $Q$ that we may find through various extractions. Similarly, when we use $[x_i^j]$ and $[x_1^i x_2^j]$, we only find a subset of the functions listed. 
+\begin{exa}Suppose that $\mc D$ is a finite region in $\ze^2$. If we set $x_1 = 0$ for points in $\mc D$, we obtain the projection of the set onto the $x_2$ axis, and this tells us how many $x_2$ coordinates we have in functions in the functional equation. Suppose that the number of points is $m_1$ and define $m_2$ analogously. Lastly, let there be $m$ lattice points in $\mc D$. Next, we examine the number of unknown functions $Q_i^j$ and $\Qf{i,j}$ that we have in the functional equation and its various extractions. The master functional equation can only have $m_1$ functions $Q_2^i$ and $m_2$ functions $Q_1^i$, together with $m$ functions $\Qf{i,j}$, because those are the possible non-zero functions $Q$ that we can find through various extractions. Similarly, when we use $[x_i^j]$ and $[x_1^i x_2^j]$, we only find a subset of the functions listed. 
 
-In general, we may even find less of those functions as we perform more extractions. In the end, we have the same number of equations as unknown functions $Q$ and various extractions of $Q$. Therefore, the problem reduces to the solution of a linear system of $1 + m_1 + m_2 + m$ equations and that many unknowns $Q$. Note that, because we have the term $KQ$ in the master functional equation, the $[x_i^j]$ extraction will have the function $Q_i^j$ with a non-zero coefficient. Because there is a unique function $Q$ for the model, this forces the uniqueness of the $Q_i^j$ and $\Qf{i,j}$ terms. Therefore, we have a unique solution to the system of equations. Furthermore, because all the the coefficients are rational functions, so is $Q$. We will generalize this observation in the following theorem.
+In general, we may even find less of those functions as we perform more extractions. In the end, we have the same number of equations as unknown functions $Q$ and various extractions of $Q$. Therefore, the problem reduces to the solution of a linear system of $1 + m_1 + m_2 + m$ equations and that many unknowns $Q$. Note that, because we have the term $KQ$ in the master functional equation, the $[x_i^j]$ extraction has the function $Q_i^j$ with a non-zero coefficient. Because there is a unique function $Q$ for the model, this forces the uniqueness of the $Q_i^j$ and $\Qf{i,j}$ terms. Therefore, we have a unique solution to the system of equations. Furthermore, because all the the coefficients are rational functions, so is $Q$. We generalize this observation in the following theorem.
 \end{exa}
 
 \begin{defn} Given a \dD region $\mc D$ and a finite set $I$ from $\{1,\ldots, d\}$, let $\mc D_I$ be defined as follows
@@ -392,7 +436,7 @@ Note that $I = \emptyset$ corresponds to the set of points in $\mc D$, and $I = 
 
 \begin{thm} If $\mc D$ is finite, then the generating function $Q$ is rational in its variables. To find the solution, we solve a system of $N = \sum_{I\subseteq [d]} m_I$ equations and unknowns $Q_I^J$, with a unique solution.
 \end{thm}
-\begin{proof} The master functional equation may at most contain all the possible non-zero functions $Q_I^J$. Each possible extraction $[x_K^P]$ may contain at most a portion of these variables --- all terms of the form $Q_{I,K}^{J,P}$. We just need to count the number of equations and unknowns. The projections $\mc D_I$ helps us in determining these numbers. The set $\mc D_I$, with $m_I$ points corresponds to all the functions $Q_{[d]\backslash I}^P$ for $P \in \mc D_I$. In fact, we have $m_I$ unknowns of the form $Q_{[d]\backslash I}^P$, because the master functional equation contains a term $Q$, and so we have all the possible extractions among the extraction equations.  Thus, have $N$ equations and $N$ unknowns.
+\begin{proof} The master functional equation cam at most contain all the possible non-zero functions $Q_I^J$. Each possible extraction $[x_K^P]$ can contain at most a portion of these variables --- all terms of the form $Q_{I,K}^{J,P}$. We just need to count the number of equations and unknowns. The projections $\mc D_I$ helps us in determining these numbers. The set $\mc D_I$, with $m_I$ points corresponds to all the functions $Q_{[d]\backslash I}^P$ for $P \in \mc D_I$. In fact, we have $m_I$ unknowns of the form $Q_{[d]\backslash I}^P$, because the master functional equation contains a term $Q$, and so we have all the possible extractions among the extraction equations.  Thus, have $N$ equations and $N$ unknowns.
 
 Next, since there is a unique generating function solution $Q$ of the master functional equation for the model at hand, the various extractions $Q_I^J$ are also unique, and overall, there must be a unique solution of the system of equations. Therefore, $Q$ is a rational function in its variables because all the coefficients in the system are rational functions.
 \end{proof}
@@ -406,19 +450,19 @@ Starting with the master functional equation, we have $N$ unknown functions. Whe
 		& & & \Qf{i,j}
 	\end{bmatrix}\,.
 \end{align}
-That is, in the master functional equation we have all of the unknown functions. In the next $m_2$ equations we have variables $Q_1^i$ and $\Qf{i,j}$ only, and so on. If we take the last set of equations only involving functions of the form $\Qf{i,j}$, we have a system of equations that we can solve for the various functions. Then we may back-substitute these quantities in the rest of the systems of equations. Next, we may solve for the functions $Q_1^i$ and $Q_2^i$. When we do this, we may finally back-substitute all the quantities in the master functional equation. The procedure is reminiscent of the long-winded approach to finding the transformation from $(1-tLES)Q = 1$ to $(L^{\um 1} - t ES)Q = \alpha$ that we avoided through the use of operator notation. We are hopeful that such an approach exists in this case too.
+That is, in the master functional equation we have all of the unknown functions. In the next $m_2$ equations we have variables $Q_1^i$ and $\Qf{i,j}$ only, and so on. If we take the last set of equations only involving functions of the form $\Qf{i,j}$, we have a system of equations that we can solve for the various functions. Then we can back-substitute these quantities in the rest of the systems of equations. Next, we can solve for the functions $Q_1^i$ and $Q_2^i$. When we do this, we can finally back-substitute all the quantities in the master functional equation. The procedure is reminiscent of the long-winded approach to finding the transformation from $(1-tLES)Q = 1$ to $(L^{\um 1} - t ES)Q = \alpha$ that we avoided through the use of operator notation. We are hopeful that such an approach exists in this case too.
 
 %==========================================================
 % Not sure if I care about including this example here 
 
-\begin{exa} Consider the \oneD model set on $\mc D = \{u,\ldots, v\}$. Here the step set must have steps of size at most $n = v-u$ in either direction, because any larger steps will always step outside of the region, and therefore, we may discard them. We have $S = \sum_{k= -n}^n S_k x^k$. The operators $E$ and $L$ are given by
+\begin{exa} Consider the \oneD model set on $\mc D = \{u,\ldots, v\}$. Here the step set must have steps of size at most $n = v-u$ in either direction, because any larger steps always step outside of the region, and therefore, we can discard them. We have $S = \sum_{k= -n}^n S_k x^k$. The operators $E$ and $L$ are given by
 
 \begin{align}
 	E & = 1 - \sum_{k=1}^n ([[x^{u-k}]]  + [[x^{v + k}]])\,,\\
 	L & = 1 + \sum_{k=u}^v a_k [[x^k]]\,,\\
 	L^{\um 1} &= 1 - \sum_{k=u}^v c_k [[x^k]]\,.
 \end{align}
-We do not need to use all the variables $a_k$ but we may as well do that. The master functional equation is $(L^{\um 1} - t ES)Q = L^{\um 1}(q)$, as usual. The only extraction equations we obtain here are those coming from the coefficient extraction with $[x^i]$ with $u \leq i \leq v$. We have
+We do not need to use all the variables $a_k$ but we do that. The master functional equation is $(L^{\um 1} - t ES)Q = L^{\um 1}(q)$, as usual. The only extraction equations we obtain here are those coming from the coefficient extraction with $[x^i]$ with $u \leq i \leq v$. We have
 \begin{align}
 	[x^i]E & = [x^i]\,,\\
 	[x^i]L^{\um 1} &= [x^i] - c_i [x^i] = \ol a_i [x^i]\,,
@@ -432,11 +476,11 @@ or in other words, $[x^i](1-a_it S)Q = [x^i] K(a_it)Q = a_iq_i$. The explicit eq
 \begin{align}
 	Q_i - a_it\sum_{j = -n}^n S_{i-j}Q_j = a_i q_i\,.
 \end{align}
-We may write all of those equations as the system
+We can write all of those equations as the system
 \begin{align}
 	IX - tHX = (I - tH)X = \alpha\,,
 \end{align}
-where $I$ is the $n \times n$ identity matrix, $H$ is the matrix with entries $H_{i,j} = a_i S_{i-j}$ for $u \leq i, j \leq v$, and $\alpha$ is the vector with entries $q_i$. Because of the uniqueness of the solution, the matrix $(I-tH)$ must be invertible. We may write the master functional equation as $KQ + F\cdot X = q$ and thus, the function $Q$ is given by
+where $I$ is the $n \times n$ identity matrix, $H$ is the matrix with entries $H_{i,j} = a_i S_{i-j}$ for $u \leq i, j \leq v$, and $\alpha$ is the vector with entries $q_i$. Because of the uniqueness of the solution, the matrix $(I-tH)$ must be invertible. We can write the master functional equation as $KQ + F\cdot X = q$ and thus, the function $Q$ is given by
 \begin{align}
 	Q = \frac{1}{K}(q - F\cdot X)\,.
 \end{align}
@@ -458,5 +502,5 @@ and from the master functional equation,
 		Q = \frac{1}{(1-(a_0 + a_1)t)K}(f_0 q_0  + f_1 q_1)\,,
 	\end{align}
 \end{gather}
-and if we expand the function into series we find that there is a stabilization of the coefficients involving $x$ in front of $t^k$. We expect that such stabilization will occur for all finite region models.
+and if we expand the function into series we find that there is a stabilization of the coefficients involving $x$ in front of $t^k$. We expect that such stabilization occurs for all finite region models.
 \end{exa}

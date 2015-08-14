@@ -6,12 +6,12 @@
 \label{ch:OKM}
 %=======================================
 
-The next tool that we will explore is the \okm\exx. For its application in a \twoD model with interactions, see Section 4.2 of \cite[p.~16]{tabbara2014exact}. The method is similar to the \akm  with a weighted operator, where underneath the operator notation, all we are doing is finding more valid equations. We apply kernel-preserving transformations on the master equation in both methods. However, in the \okm we also make a substitution with one of the roots $x_k = \sigma_k(t)$ of the kernel. This is done in order to annihilate the $KQ$ terms from the resulting equations. However, some transformations, taken together with the substitutions, do not lead to valid functional equations because some of the generating functions fail to remain power series in $t$ after the substitution takes place. That is, one or more of the terms $g(Q_i^0)|_{x_k = \sigma_k}$ is not a power series in $t$ for some transformation $g$ from $G$ and some $i$ and $k$. This inspires use the following language.
+The next tool that we explore is the obstinate kernel method. For its application in a \twoD model with interactions, see Section 4.2 of \cite[p.~16]{tabbara2014exact}. The method is similar to the algebraic kernel method  with a weighted operator, where underneath the operator notation, all we are doing is finding more valid equations. We apply kernel-preserving transformations on the master equation in both methods. However, in the obstinate kernel method we also make a substitution with one of the roots $x_k = \sigma_k(t)$ of the kernel. This is done in order to annihilate the $KQ$ terms from the resulting equations. However, some transformations, taken together with the substitutions, do not lead to valid functional equations because some of the generating functions fail to remain power series in $t$ after the substitution takes place. That is, one or more of the terms $g(Q_i^0)|_{x_k = \sigma_k}$ is not a power series in $t$ for some transformation $g$ from $G$ and some $i$ and $k$. This inspires use the following language.
 
-\begin{defn} A function $f(\row xd;t)$ is admissible if it is a valid power series in the variable $t$, that is, there are only non-negative orders of $t$ with non-zero coefficients. A transformation $g$ preserves the admissibility of $f$ with respect to a root $\sigma_k$ of the kernel $K$ if $g(f)|_{x_k = \sigma_k}$ is admissible.
+\begin{defn} A function $f(\row xd;t)$ is \textitbf{admissible} if it is a valid power series in the variable $t$, that is, there are only non-negative orders of $t$ with non-zero coefficients. A transformation $g$ is \textitbf{admissible} if it preserves the admissibility of $f$ with respect to a root $\sigma_k$ of the kernel $K$, that is, if $g(f)|_{x_k = \sigma_k}$ is admissible.
 \end{defn}
 
-To recap, it is necessary that when we use a substitution $x_k = \sigma_k$,  we only use transformations $g$ that preserve the admissibility of functions $g Q_i^0$ for all $i$ in the master equation. We will focus our work on models with groups of order four, six and eight, where we have two nontrivial generators $g_1$ and $g_2$. In this case, $S_i^{\pm 1} \neq 0$ for any $i$ and choice of sign, and the roots of the kernel are
+To recap, it is necessary that when we use a substitution $x_k = \sigma_k$,  we only use transformations $g$ that preserve the admissibility of functions $g Q_i^0$ for all $i$ in the master equation. We focus our work on models with groups of order four, six and eight, where we have two nontrivial generators $g_1$ and $g_2$. In this case, $S_i^{\pm 1} \neq 0$ for any $i$ and choice of sign, and the roots of the kernel are
 \begin{align}
 	\sigma_{k}^{\pm} = \frac{1-t S_k^0 \pm \sqrt{(1 - t S_k^0)^2-4t^2 S_k^1 S_k^{\um 1}}}{2t S_1^1}\,,
 \end{align}
@@ -25,12 +25,12 @@ If we expand the roots in series of $t$, we find that
 \end{align}
 where the higher order terms are the same.
 
-Generally, only the $\sigma_k^{\um}$ substitution leads to admissible $Q_i^0$ terms for all $i$, but it also happens that $\sigma_k^{\um}$ can do this too. For an example of this, see \cite[p.~11]{tabbara2014exact}. We will focus on the first case and leave the $\sigma_k^{+}$ root analysis for future work. If we do not have enough valid equations with the $\sigma_k^{\um}$ substitution, we would have to see if the $\sigma_k^{+}$ substitution can help. We will only use $\sigma = \sigma_k^{\um}$.
+Generally, only the $\sigma_k^{\um}$ substitution leads to admissible $Q_i^0$ terms for all $i$, but it also happens that $\sigma_k^{\um}$ can do this too. For an example of this, see \cite[p.~11]{tabbara2014exact}. We focus on the first case and leave the $\sigma_k^{+}$ root analysis for future work. If we do not have enough valid equations with the $\sigma_k^{\um}$ substitution, we would have to see if the $\sigma_k^{+}$ substitution can help. We only use $\sigma = \sigma_k^{\um}$.
 
-It is sufficient to show that some actions of $G$ preserve the admissibility of the functions $x_1$ and $x_2$, and thus the pair $(x_1,x_2)$, with respect to a root, to show that the functions $Q_k^0$ are also admissible under those actions and substitution. That is, we only need to check when $g(x_j)|_{x_k=\sigma_k}$ is admissible some $j$and $k$, and for $g$ in $G$. Luckily, a lot of the models with finite groups pass this test and we obtain enough valid functional equations, so that we can use the \okm. For those cases where we find less equations, it is possible that we will be able to show that the $Q_k^0$ terms are power series in $t$ via another method like in \cite{tabbara2014exact}.
+It is sufficient to show that some actions of $G$ preserve the admissibility of the functions $x_1$ and $x_2$, and thus the pair $(x_1,x_2)$, with respect to a root, to show that the functions $Q_k^0$ are also admissible under those actions and substitution. That is, we only need to check when $g(x_j)|_{x_k=\sigma_k}$ is admissible some $j$and $k$, and for $g$ in $G$. Luckily, a lot of the models with finite groups pass this test and we obtain enough valid functional equations, so that we can use the obstinate kernel method. For those cases where we find less equations, it may be possible to show that the $Q_k^0$ terms are power series in $t$ via another method like in \cite{tabbara2014exact}.
 
 
-\begin{prop} Consider a \twoD \classic model with group of order four, six or eight. Models with the same group have the same admissibility properties for $x_1$ and $x_2$, and the pair $(x_1,x_2)$. Models with group of order four all have the same admissibility properties.
+\begin{prop} Consider a \classic \twoD model with group of order four, six or eight. Models with the same group have the same admissibility properties for $x_1$ and $x_2$, and the pair $(x_1,x_2)$. Models with group of order four all have the same admissibility properties.
 \end{prop}
 \begin{proof} All we need to do is compute the actions on the functions and check if substituting $\sigma_k^{\um}$ leads to admissible ones. This is tedious to do by hand but straight-forward to do on a computer. The results are summarized in tables in the following sections. However, we can perform the analysis for groups of order four without difficulty. 
 
@@ -42,7 +42,7 @@ Since models with groups of order four need to have one symmetry across an axis,
 \section{Initial Computations}
 %=======================================
 
-This classification shows that we can treat all models with group of order four with the same method, but the analysis is more complicated for groups of order six or eight. Now, suppose that we have a set of valid equations for a substitution $x_k = \sigma_k$, forming a linear system in the unknowns $\Qf{0,0}$, $Q_1^0$, $Q_2^0$, and their orbits under the valid group actions. We hope for redundancy in these equations, because it will allow us to eliminate some of the unknowns. That is, we will find a weighted operator that, paired with the substitution $x_k = \sigma_k$, eliminates the unwanted terms. It turns out that it is enough to have $|G|/2$ transformations preserving the admissibility for both $x_1$ and $x_2$.
+This classification shows that we can treat all models with group of order four with the same method, but the analysis is more complicated for groups of order six or eight. Now, suppose that we have a set of valid equations for a substitution $x_k = \sigma_k$, forming a linear system in the unknowns $\Qf{0,0}$, $Q_1^0$, $Q_2^0$, and their orbits under the valid group actions. We hope for redundancy in these equations, because it allows us to eliminate some of the unknowns. That is, we find a weighted operator that, paired with the substitution $x_k = \sigma_k$, eliminates the unwanted terms. It turns out that it is enough to have $|G|/2$ transformations preserving the admissibility for both $x_1$ and $x_2$.
 
 %=======================================
 \subsection{Groups of Order Four}
@@ -61,17 +61,17 @@ We start with the admissibility table for groups of order four.
 		\bottomrule
 	\end{tabular}
 \end{table}
-The $\sigma$ substitution lead to essentially the same analysis, so we will only work with the $\sigma_1$ substitution, together with actions 1 and $g_2$. Let $F^\ast$ denote $g_2(F)$. The functional equations corresponding the the group actions are
+The different $\sigma$ substitutions lead to essentially the same analysis, so we will only work with the first one, together with actions 1 and $g_2$. Let $F^\ast$ denote $g_2(F)$. The functional equations corresponding the the group actions are
 \begin{align}
 	KQ - K_1 Q_1^0 - K_2 Q_2^0 + K_{12}\Qf{0,0} &= \alpha\,,\\
 	KQ^\ast \exxx - K_1^\ast Q_1^{0,\ast}\exxxx- K_2^\ast \!Q_2^0 - K_{12}^\ast \Qf{0,0} &= \alpha\,.
 \end{align}
-Once we make the substitution, the function $Q_2^0$ will be difficult to expand, so we would like to eliminate it first. We multiply the equations by $K_2^\ast$ and $K_2$, respectively, and subtract the second one from the first one. The resulting equation is
+Once we make the substitution, the function $Q_2^0$ is difficult to expand, so we want to eliminate it first. We multiply the equations by $K_2^\ast$ and $K_2$, respectively, and subtract the second one from the first one. The resulting equation is
 \begin{align}
 \label{eq:SubEq1}
 	K_2^\ast KQ - K_2 K Q^\ast \exx- (K_2^\ast K_1 Q_1^0 - K_2 K_1^\ast Q_1^{0,\ast}) + (K_2^\ast K_{12}-K_2 K_{12}^\ast)\Qf{0,0} - \alpha(K_2^\ast - K_2) = 0\,,
 \end{align}
-where we can set $x_1 = \sigma_1$ to eliminate the $K$ term. The substitution will be implicit in the notation from now on. We have
+where we can set $x_1 = \sigma_1$ to eliminate the $K$ term. The substitution is implicit in the notation from now on. We have
 \begin{align}
 	(K_2^\ast K_1 Q_1^0 - K_2 K_1^\ast Q_1^{0,\ast}) - (K_2^\ast K_{12}-K_2 K_{12}^\ast)\Qf{0,0} + \alpha(K_2^\ast - K_2) = 0.
 \end{align}
@@ -90,13 +90,13 @@ and once we make the $\sigma_1$ substitution, we find that
 \begin{align}
 	D_2(K_1Q_1^0) - D_2(K_{12})\Qf{0,0} + D(\alpha) = 0
 \end{align}
-and this is the same as \autoref{eq:SubEq1}. The following notation will be useful in the next few sections.
+and this is the same as \autoref{eq:SubEq1}. The following notation is useful.
 
 \begin{defn} Let $L$ be a concatenated list, $\Delta_L = 1 - g_L$ and let $X$ be some function. The operator $D_L[X]$ is defined by its action on functions $F$ as
 \begin{align}
 	D_L[X](F) =\Delta_L(XF) = (1-g_L)(XF) = XF-g_L(XF)\,.
 \end{align}
-We will drop the $X$ from the notation if it is clear from context. In particular, $D_L[1] = \Delta_L$.
+We drop the $X$ from the notation if it is clear from context. In particular, $D_L[1] = \Delta_L$.
 \end{defn}
 For example, $D_2 = D_2[K_2^\ast] = D_2[g_2(K_2)]$.
 \begin{exa} If we use $g_L(X)$ instead of $X$ in the definition above, we obtain the Ore operator
@@ -124,8 +124,8 @@ We can expand some of the terms in the functional equation. First,
 	\end{align}
 \end{gather}
 
-\begin{prop}
-\label{prop:Group4OpEquation}
+\begin{lem}
+\label{lem:Group4OpEquation}
 For models with groups of order four,
 \begin{gather}
 	\begin{align}
@@ -137,9 +137,9 @@ For models with groups of order four,
 		D_2(K_{12}) &= c_2t(\ol x_2-x_2\ol \mu_2(\sigma_1))(c_1S_2^{\um 1}(\sigma_1) - \ol \sigma_1\Sf{\um 1,\um 1})\,.
 	\end{align}
 \end{gather}
-\end{prop}
+\end{lem}
 
-If the model is \highSym, we see that $g_2 S_1^{\um 1} = S_1^{\um 1}$ and therefore, $g_2 K_1 = K_1$, and we may bring that factor outside of the operator, so $D_2(K_1^\ast F) = K_1 D_2(F)$ for functions $F$. It turns out that this happens for both substitutions if and only if the model is \highSym, meaning that the analysis will be easier only in those cases. This is easily verified using a computer since there are not that many models with group of order four. We will investigate the \highSym models in more detail in \autoref{sec:HighlySymmetric}.
+If the model is \highSym, we see that $g_2 S_1^{\um 1} = S_1^{\um 1}$ and therefore, $g_2 K_1 = K_1$, and we can bring that factor outside of the operator, so $D_2(K_1^\ast F) = K_1 D_2(F)$ for functions $F$. It turns out that this happens for both substitutions if and only if the model is \highSym, meaning that the analysis is easier only in those cases. This is easily verified using a computer since there are not that many models with group of order four. We investigate the \highSym models in more detail in \autoref{sec:HighlySymmetric}.
 \begin{prop} Consider a \classic model with a group of order four. If $i \neq j$, then $D_i[g_i K_j] = K_j \Delta_i$ in the $\sigma_j$ substitutions if and only if the model is symmetric across the $x_i$ axis. That is, the $K$ functions factor out of the operators in both substitutions if and only if the model is highly-symmetric.
 \end{prop}
 %=======================================
@@ -174,17 +174,17 @@ We start with the admissibility tables for the two groups of order six.
 	\end{tabular}
 \end{table}
 
-We focus on the first three models because they are amenable to the straight-forward method. The latter three would need more work, since there are too few valid actions.
+We focus on the first three models because they are amenable to the straight-forward method. The latter three need more work, since there are too few valid actions.
 \begin{figure}[H]
 	\centering
 	\[
 		\modelgraphB 01010001\quad \modelgraphB 10001010 \quad \modelgraphB 11011011
 	\]
-	\caption{Steps for models $S11$, $S12$, $S13$.}
+	\caption{Step sets for models $S11$, $S12$, $S13$.}
 \end{figure}
-For consistency, we will work with $\sigma_1$ where the actions are $1$, $ g_2$, $g_{21}$. From the previous chapter, we know these actions reduce on the function $Q_i^0$.
+For consistency, we work with $\sigma_1$ where the actions are $1$, $ g_2$, $g_{21}$. From the previous chapter, we know these actions reduce on the function $Q_i^0$.
 \begin{table}[H]
-	\caption{Reductions of group actions $g \in G$ on $Q_1^0$ and $Q_2^0$.}
+	\caption{Reductions of group actions on $Q_1^0$ and $Q_2^0$, group of order four.}
 	\centering
 	\begin{tabular}{ccc}
 		\toprule
@@ -208,12 +208,12 @@ As in the previous section, we wish to eliminate $X_2 = g_2Q_1^0$ and $Y = Q_2^0
 		 A_{21}X + B_{21}Y_{21} &= \beta_{21}\,.		
 	\end{align}
 \end{gather}
-We want a linear combination of $\beta$, $\beta_2$ and $\beta_{21}$ that eliminates $X_2$ and $Y$. In this case, we may write
+We want a linear combination of $\beta$, $\beta_2$ and $\beta_{21}$ that eliminates $X_2$ and $Y$. In this case, we can write
 \begin{align}
 	a\beta - b\beta_2 + c \beta_{21} &= aAX + (aB-bB_2)Y + (cA_{21}-bA_2)X_2 + cB_{21}Y_{21} \\
 						&= aAX + cB_{21}Y_{21}\,,
 \end{align}
-and for the elimination to work, we need $aB = bB_2$ and $cA_{21} = b A_2$. One solution for $a$, $b$ and $c$ without denominators is  \fixme{Check above}
+and for the elimination to work, we need $aB = bB_2$ and $cA_{21} = b A_2$. One solution for $a$, $b$ and $c$ without denominators is  %\fixme{Check above}
 \begin{align}
 	a = A_{21}B_2\com b= A_{21}B\com c = A_2B\,.
 \end{align}
@@ -236,7 +236,7 @@ and we can recast the whole process equation into operator notation.
 	\end{align}
 \end{gather}
 \end{prop}
-For each case, we can compute $D(1)$, but since the expressions are somewhat complicated and contain a square root, we will not list them here. Terms $AA_{21}B_2$ and $A_2BB_{21}$ contain roots too.
+For each case, we can compute $D(1)$, but since the expressions are somewhat complicated and contain a square root, we do not list them here. Terms $AA_{21}B_2$ and $A_2BB_{21}$ contain roots too.
 %=======================================
 \subsection{Groups of Order Eight}
 %=======================================
@@ -269,11 +269,11 @@ We start with the admissibility tables for the two groups of order eight.
 	\end{tabular}
 \end{table}
 
-We will work on the model with step polynomial
+We work on the model with step polynomial
 \begin{align}
 	S &= \ol x_1 + x_1 + \ol x_1x_2 + x_1\ol x_2\,,
 \end{align}
-since it has enough admissibility-preserving actions: $1$, $g_2$, $g_{21}$, $g_{212}$. Note that the model here is equivalent to the one seen in \cite{tabbara2014exact}, because they have the same step set and master functional equation, so the analysis will be the same. Using our notation and operators, we will be able to redo some of the authors' derivations in a cleaner way. First, we have the table of reductions for group action in this model.
+since it has enough admissibility-preserving actions: $1$, $g_2$, $g_{21}$, $g_{212}$. Note that the model here is equivalent to the one seen in \cite{tabbara2014exact}, because they have the same step set and master functional equation, so the analysis is the same. Using our notation and operators, we are able to redo some of the authors' derivations in a cleaner way. First, we have the table of reductions for group action in this model.
 \begin{table}[H]
 	\caption{Reductions of group actions that preserve admissibility with respect to $\sigma_1$.}
 	\centering
@@ -344,7 +344,7 @@ It was found in \cite{tabbara2014exact} that the coefficients in front of the $X
 \section{\HighSym \TwoD Models}
 \label{sec:HighlySymmetric}
 %=======================================
-For \highSym models, the first equation in \autoref{prop:Group4OpEquation} has the simplified form
+For \highSym models, the first equation in \autoref{lem:Group4OpEquation} has the simplified form
 \begin{align}
 	x_1 = \sigma_1:\quad\Delta_2(K2^\ast Q_1^0) &=\frac{1}{K_1} \left(\Delta_2(K_2^\ast K_{12})\Qf{0,0} - \alpha(K_2^\ast-K_2)\right)\,,\\
 	x_2 = \sigma_2:\quad\Delta_1(K1^\bullet Q_2^0) &=\frac{1}{K_2} \left(\Delta_1(K_1^\bullet K_{12})\Qf{0,0} - \alpha(K_1^\bullet-K_1)\right)\,.
@@ -364,7 +364,7 @@ where we can find that $S_2^{\um 1}(\sigma)$ is a rational function given by
 \end{align}
 Here is a table summarizing the values of this function for the different models.
 \begin{table}[H]
-	\caption{Function $S_2^{- 1}(\sigma_1)$ for \highSym models.}
+	\caption{Functions $S_2^{- 1}(\sigma_1)$ for \highSym models.}
 	\label{tbl:Symmetric}
 	\centering
 	\begin{tabular}{ccccc}
@@ -388,7 +388,7 @@ Here is a table summarizing the values of this function for the different models
 %=======================================
 \subsection{Cartesian Model -- Steps N, S, E, W}
 %=======================================
-This is the simplest case to solve since $S_2^{\um 1}(\sigma_1) = 1$. We will essentially do the same calculations as we did after \autoref{prop:1DBFQ} in \autoref{ch:OneD} but for two dimensions. This time we will not obtain a linear relationship between the quantities. Afterwards, we will solve for $Q$ in terms of various version of itself with partial interactions, and $\Qf{0,0}$.
+This is the simplest case to solve since $S_2^{\um 1}(\sigma_1) = 1$. We essentially do the same calculations as we did after \autoref{prop:1DBFQ} in \autoref{ch:OneD} but for two dimensions. This time we do not obtain a linear relationship between the quantities. Afterwards, we solve for $Q$ in terms of various version of itself with partial interactions, and $\Qf{0,0}$.
 
 Here $K_{12} = c_1c_2$, so it behaves like $\alpha$ and we have
 \begin{align}
@@ -411,7 +411,7 @@ We can substitute the latter equation in the first one to obtain the identity
 \begin{align}
 	b_2 Q_{1,2}^{0,1} &= t(a_2 Q_{1,2}^{0,0} - \beta \wc Q_{1,2}^{0,0})\,.
 \end{align}
-In general, we have the following result. The analysis is similar to the one we will see in the proof of \autoref{cor:partialQsDiagonalSteps}, so we omit it.
+In general, we have the following result. The analysis is similar to the one we see in the proof of \autoref{cor:partialQsDiagonalSteps}, so we omit it.
 \begin{lem} \label{lem:partialQs}For non-negative integers $m$ and $n$,
 \begin{align}
 	b_2\Qf{m,n + 1} &= t(a_2\Qf{m,n}-\beta \Qc{m,n})\,,\\
@@ -448,7 +448,7 @@ If we let $F = (b_2G_1 + b_1G_2)$ and perform the long division with respect to 
 \begin{align}
 	\Qf{0,0} = \frac{1}{b_1b_2}\left(1-\frac{b_1b_2(1-b_1b_2)-t^2a_1a_2(a_1b_2 + a_2b_1)}{b_1b_2 + t^2a_1a_2(a_1b_2 + a_2b_1 + b_1b_2 F)}\right)\,.
 \end{align}
-To find an equation for $Q$ we need to first take the second set of equations in \autoref{lem:partialQs}, multiply them by $x_2^n$ and sum them up. The resulting equations are \fixme{maybe write it as in the next section?}
+To find an equation for $Q$ we need to first take the second set of equations in \autoref{lem:partialQs}, multiply them by $x_2^n$ and sum them up. The resulting equations are %\fixme{maybe write it as in the next section?}
 \begin{align}
 	b_1 Q_1^{m + 1} &= t(a_1Q_1^m-\beta \wh Q_1^m)
 \end{align}
@@ -483,7 +483,7 @@ This shows that $Q$ is built from $\Qf{0,0}$ and from versions of itself, each w
 %=======================================
 \subsection{Diagonal Cartesian Model -- Steps NE, NW, SE, SW}
 %=======================================
-This model is similar to the one covered in \cite{wong2014confining}, where we can find a model of two interacting walks confined in a semi-infinite strip. The models are different because there is an extra term in their functional equation. We will go through calculations similar to the ones in the previous subsection and we will find that $\Qf{0,0}$ has a linear relationship with its partially-marked versions. However we will not find an identity for $Q$. In this case,
+This model is similar to the one covered in \cite{wong2014confining}, where we can find a model of two interacting walks confined in a semi-infinite strip. The models are different because there is an extra term in their functional equation. We go through calculations similar to the ones in the previous subsection and we find that $\Qf{0,0}$ has a linear relationship with its partially-marked versions. However we do not find an identity for $Q$. In this case,
 \begin{align}
 	\frac{\alpha(K_2^\ast -K_2)}{K_1}  &= \frac{\alpha (\ol x_2 - x_2)}{K_1(\ol x_2 + x_2)}\,,\\
 	\frac{\Delta_2(K_2^\ast K_{12})}{K_1} &= \frac{c_2(\ol x_2-x_2)(c_1- t \ol \sigma_1S_1^1)}{S_1^1(c_1-t\ol \sigma_1S_1^1)} = \frac{c_2(\ol x_2-x_2)}{\ol x_2 + x_2}\,,
@@ -492,7 +492,7 @@ and the functional equation becomes
 \begin{align}
 	K_2^\ast Q_1 - K_2 Q_1^\ast -\frac{c_2(\ol x_2-x_2)}{\ol x_2 + x_2}Q_{1,2} + \alpha\frac{\ol x_2-x_2}{(\ol x_2 + x_2)K_1}= 0\,.
 \end{align}
-Surprisingly enough, the only remaining term depending on $\sigma_1$ is $K_1$, so it will be of no consequence to the rest of the analysis. To clear denominators, we multiply the equation by $\ol x_2 + x_2$. Here,
+Surprisingly enough, the only remaining term depending on $\sigma_1$ is $K_1$, so it is of no consequence to the rest of the analysis. To clear denominators, we multiply the equation by $\ol x_2 + x_2$. Here,
 \begin{align}
 	R^\ast \exx= (\ol x_2 + x_2) K_2^\ast &= c_2(\ol x_2 + x_2)-x_2 = c_2\ol x_2- \ol a_2x_2\,,\\
 	R = (\ol x_2 + x_2) K_2 &= c_2(\ol x_2 + x_2)-\ol x_2 = c_2x_2- \ol a_2\ol x_2\,,
@@ -509,7 +509,7 @@ Finally, the functional equation becomes
 \end{align}
 where $\delta_0 =  \ol a_1(\ol x_2-x_2)\ol K_1$. 
 
-Next, we will work towards finding equations like those in \autoref{lem:partialQs} but for diagonal steps. To do that, we need to find higher order equations like \ref{zero-order} above. We begin our analysis with the master functional equation for diagonal steps:
+Next, we work towards finding equations like those in \autoref{lem:partialQs} but for diagonal steps. To do that, we need to find higher order equations like \ref{zero-order} above. We begin our analysis with the master functional equation for diagonal steps:
 \begin{align}
 	(1-t S)Q - (c_1-t v\ol x_1) Q_1^0- (c_2-t\ol x_2S_2^{\um 1}) Q_2^0 + (c_1c_2-t\ol x_1\ol x_2)Q_{1,2}^{0,0}  = \ol a_1\ol a_2\,.
 \end{align}
@@ -628,7 +628,7 @@ We can sum up those equations to retrieve the following functional equations.
 	x_1^2(Q_2^n-\wh Q_2^n) &= b_1 (Q_2^n - Q_{1,2}^{1,n}x_1 - Q_{1,2}^{0,n})\,,\\
 	x_1^2(Q-\wh Q) &= b_1(Q-x_1Q_1^1-Q_1^0)\,,
 \end{align}
-where we may also set $a_2 = 1$ to obtain further identities.
+where we can also set $a_2 = 1$ to obtain further identities.
 \end{cor}
 In this case, we cannot solve for $Q$ simply in terms of partially-marked variants of $Q$ and $\Qf{0,0}$ since the equations would have the terms $Q_1^1$ and $Q_2^1$. Now, we can move onto the main result about the diagonal walks --- the relation between $\Qf{0,0}$ and its non-interacting versions. We use the master equation to extract the $x_1^0x_2^0$ and $x_1^1x_2^1$ coefficients and obtain the following identities:
 \begin{gather}
@@ -677,18 +677,18 @@ We can divide by $a_1a_2$ and obtain the equation
 \begin{thm} The generating function $\Qf{0,0}$ for the Diagonal Cartesian model satisfies the equation $B(f\Qf{0,0}) = c_1c_2$, where $f(a_1,a_2,t) = c_1c_2-a_1a_2t^2$.
 
 \end{thm}
-It may be possible to find a similar combination for the function $Q$ but we will not do this here.
+It may be possible to find a similar combination for the function $Q$, but we do not do this here.
 
 %=======================================
 \subsection{The Full Model -- All Steps}
 %=======================================
-We will finally take start the analysis for the model featuring all the steps. The situation is more difficult because we will no longer have a rational function in front of the $\Qf{0,0}$ term and we are not sure how to proceed from there. We start with the following computation:
+We finally start the analysis for the model featuring all the steps. The situation is more difficult because we no longer have a rational function in front of the $\Qf{0,0}$ term and we are not sure how to proceed from there. We start with the following computation:
 \begin{align}
 	\frac{\alpha(K_2^\ast -K_2)}{K_1}  &= \frac{\alpha (\ol x_2 - x_2)(1 + t)}{S_1^1K_1}\,,\\
 	\frac{\Delta_2(K_2^\ast K_{12})}{K_1} &= \frac{c_2(\ol x_2-x_2)(c_1(1 + t)- t \ol \sigma_1S_1^1)}{S_1^1(c_1-t\ol \sigma_1S_1^1)}\\
 	&=\frac{c_2(\ol x_2-x_2))}{S_1^1}\left(1-\frac{t}{c_1-t\ol \sigma_1S_1^1}\right)\,.
 \end{align}
-We will need to do some more work to find a representation for that last fraction. For that, we need the $\sigma_1$ roots given by
+We need to do some more work to find a representation for that last fraction. For that, we need the $\sigma_1$ roots given by
 \begin{align}
 	\sigma_1 = \frac{u-\sqrt{u^2-4w^2}}{2w} \qandq \ol \sigma_1 = \frac{u + \sqrt{u^2-4w^2}}{2w}
 \end{align}
@@ -762,13 +762,13 @@ The question is can we find the quantity $f_2^2-f_2^0$. It appears that
 \end{align}
 which does not seem to have a closed form. 
 
-Unfortunately, we have not been able to go further with this case. We could try making some assumptions about the form of equations like these for $\Qf{m,n}$ in the previous cases, but even then, it is not clear if we can find a relation between $\Qf{0,0}$ and its partially-interacting versions. We would have six equations like the one above plus six more, where $b_i = 0$ for the $b_i$'s not present. Then we may use the four regular coefficient extractions from the master functional equation for $\Qf{m,n}$ and $m,n\leq 1$ plus twelve more, where we set one or more of $b_1$ and $b_2$ to zero. We have a grand total of 28 equations in 36 unknowns, of which we need to eliminate 32. A quick attempt to do this via computer yielded no results.
+Unfortunately, we have not been able to go further with this case. We can try making some assumptions about the form of equations like these for $\Qf{m,n}$ in the previous cases, but even then, it is not clear if we can find a relation between $\Qf{0,0}$ and its partially-interacting versions. We would have six equations like the one above plus six more, where $b_i = 0$ for the $b_i$'s not present. Then we may use the four regular coefficient extractions from the master functional equation for $\Qf{m,n}$ and $m,n\leq 1$ plus twelve more, where we set one or more of $b_1$ and $b_2$ to zero. We have a grand total of 28 equations in 36 unknowns, of which we need to eliminate 32. A quick attempt to do this via computer yielded no results.
 
 \endinput
 %===============================================================================
 
 %NOTE1
-Without loss of generality, assume that the models already have one symmetry, say across the $x_2$ axis where $g_1(x_1) = \ol x_1$. Because of this symmetry, $g_1(S_2^i) = S_2^i$ for all $i$ and $g_1(K_2) = K_2$. It remains to show that $g_2(K_1) = K_1$ if and only if the model is also symmetric across the $x_1$ axis. By the analysis so far, it is clear that if the model is \highSym, the condition $g_2(K_1) = K_1$ is true. We will show, via a computation, that if the model is not \highSym, the condition must be false.
+Without loss of generality, assume that the models already have one symmetry, say across the $x_2$ axis where $g_1(x_1) = \ol x_1$. Because of this symmetry, $g_1(S_2^i) = S_2^i$ for all $i$ and $g_1(K_2) = K_2$. It remains to show that $g_2(K_1) = K_1$ if and only if the model is also symmetric across the $x_1$ axis. By the analysis so far, it is clear that if the model is \highSym, the condition $g_2(K_1) = K_1$ is true. We show, via a computation, that if the model is not \highSym, the condition must be false.
 
 Due to the symmetry, $S_1^1 = S_1^{\um 1}$ and $\ol \sigma_1 = \sigma_1^+ $. In other words, if $\sigma_1 = u - v\sqrt{w}$, then  $\ol \sigma_1 = u + v\sqrt{w}$ and $\sigma_1 + \ol \sigma_1 = 2u$. Now,
 \begin{align}

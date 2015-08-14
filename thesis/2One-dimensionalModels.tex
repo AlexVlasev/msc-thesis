@@ -11,23 +11,23 @@
 \label{sec:DerFxnEqn}
 %=======================================
 
-Our analysis starts with the enumeration of \oneD lattice walk models to illustrate the methods and ideas we will employ throughout the thesis. As part of the analysis, we will use operators to simplify large portions of the work. We will focus on models with interactions and small steps, that is, models where the step size is at most one and we count interactions with the origin. The step set $\mc S \subseteq \{\um 1$, $0$, $1$\} can be represented with the polynomial
+Our analysis starts with the enumeration of \oneD lattice walk models to illustrate the methods and ideas we employ throughout the thesis. As part of the analysis, we use operators to simplify large portions of the work. We focus on models with interactions and small steps, that is, models where the step size is at most one and we count interactions with the origin. The step set $\mc S \subseteq \{\um 1$, $0$, $1$\} can be represented with the polynomial
 \begin{align}
 	S = S_{\um 1}\ol x + S_0 + S_1 x\,,
 \end{align}
 where $S_k$ is 1 or 0 if $k$ is in $\mc S$ or not, respectively. 
 
-We will first look at a basic way of generating walks and then we will find a way to encapsulate the process by an algebraic method. If we start with the empty walk at the origin, we can grow it by taking one of the steps from $\mc S$ to obtain three walks. One of them ends on the negative axis, so we remove it. We can continue growing the remaining two walks, each time producing a few more walks and removing those that end on negative coordinates. At each step, the length of a walk increases by one and if the walk steps on the origin, we increment a counter tracking the interaction. We can generate all the lattice walks in this way.
+First, we look at a basic way of generating walks and then we find a way to encapsulate the process by an algebraic method. If we start with the empty walk at the origin, we can grow it by taking one of the steps from $\mc S$ to obtain three walks. One of them ends on the negative axis, so we remove it. We can continue growing the remaining two walks, each time producing a few more walks and removing those that end on negative coordinates. At each step, the length of a walk increases by one and if the walk steps on the origin, we increment a counter tracking the interaction. We can generate all the lattice walks in this way.
 
-We may translate each of the steps in the process into some kind of transformation of polynomials, and this enables us to use the powerful of generating functions to extract information about the properties of lattice walks. We will track the length of walks via powers of $t$, their interactions via powers of $a$, and finally, their endpoints via powers of $x$. The empty walk has length zero and ends at the origin, without interacting. Therefore, its corresponding monomial is $a^0x^0t^0 = 1$. Each of the steps changes the end coordinate and this corresponds to multiplying the monomial by one of $\{\ol x$, $1$, $x\}$. The two surviving walks have monomials $at$ and $xt$. It is a good exercise to check that the next iteration of this algorithm yields the monomials $a^2 t^2$, $a x t^2$, $a t^2$, $x t^2$ and $x^2 t^2$. If $\mc S$ is not the full set, we have fewer walks.
+We translate each of the steps in the process into a transformation on polynomials, and this enables us to use the powerful of generating functions to extract information about the properties of lattice walks. We track the length of walks via powers of $t$, their interactions via powers of $a$, and finally, their endpoints via powers of $x$. The empty walk has length zero and ends at the origin, without interacting. Therefore, its corresponding monomial is $a^0x^0t^0 = 1$. Each of the steps changes the end coordinate and this corresponds to multiplying the monomial by one of $\{\ol x$, $1$, $x\}$. The two surviving walks have monomials $at$ and $xt$. It is a good exercise to check that the next iteration of this algorithm yields the monomials $a^2 t^2$, $a x t^2$, $a t^2$, $x t^2$ and $x^2 t^2$. If $\mc S$ is not the full set, we have fewer walks.
 
-Instead of working with the monomials for individual walks, it would be better to work with the whole set simultaneously. To make computations easier, we keep inventory of all the monomials inside a generating function $Q(a,x;t)$ given by
+Instead of working with the monomials for individual walks, it is better to work with the whole set simultaneously. To make computations easier, we keep inventory of all the monomials inside a generating function $Q(a,x;t)$, given by
 \begin{align}
 	Q = Q(x, a;t) = \sum_{k=0}^{\infty} q_k(x, a)t^k,
 \end{align}
 where $q_k$ is the generating function for walks of length $k$. Extending a walk corresponds to multiplying its monomial by a monomial for a step from $\mc S$. Let us see what happens when we multiply $q_k$ by $S$. When we expand this product, we obtain all combinations walks of length $k$ and possible extensions via steps from $\mc S$. That is, we have extended all walks simultaneously. 
 
-As in the algorithm above, we need to eliminate the monomials for walks that step on negative coordinates and to multiply by $a$ those for ones that step on the origin. Once we do that, we will turn $Sq_k$ into $q_{k+1}$. The next important idea, and it is the kernel of this thesis, is to use some operator $\Gamma$ for this task. Then we may simply write $q_{k+1} = \Gamma(Sq_k)$ and sum over powers of $t$. That is,
+As in the algorithm above, we need to eliminate the monomials for walks that step on negative coordinates and to multiply by $a$ those for ones that step on the origin. Once we do that, we turn $Sq_k$ into $q_{k+1}$. The next important idea, and it is the kernel of this thesis, is to use some operator $\Gamma$ for this task. Then we can simply write $q_{k+1} = \Gamma(Sq_k)$ and sum over powers of $t$. That is,
 \begin{align}
 	\sum_{k=0}^\infty q_{k + 1}t^{k + 1} &= t\sum_{k=0}^\infty\Gamma (Sq_k)t^k = t\Gamma \left(S\sum_{k=0}^{\infty}q_kt^k\right)\,.
 \end{align}
@@ -37,11 +37,11 @@ The expression on the left is $Q - q_0 = Q - 1$ and the expression on the right 
 \end{align}
 and we rewrite it as $(1-t\Gamma S)Q = 1$ to highlight the operator form.
 
-To find the operator $\Gamma$, note that when we multiply $q_k$ by $S$, the farthest a walk can go on the negative axis is the coordinate $x = \um 1$, so it is enough to remove terms from $Sq_k$ with power of $\um 1$ of $x$. For the interaction with the origin, we need to multiply the monomial without $x$ by $a$. All this can be achieved via the coefficient extraction operators $[\ol x]$ and $[x^0]$. We may write
+To find the operator $\Gamma$, note that when we multiply $q_k$ by $S$, the farthest a walk can go on the negative axis is the coordinate $x = \um 1$, so it is enough to remove terms from $Sq_k$ with power of $\um 1$ of $x$. For the interaction with the origin, we need to multiply the monomial without $x$ by $a$. All this can be achieved via the coefficient extraction operators $[\ol x]$ and $[x^0]$. We can write
 \begin{align}
 	\Gamma = 1 - \ol x [\ol x] + (a-1)[x^0]\,,
 \end{align}
-where $1$ is the identity operator. When we apply it on some Laurent polynomial $F$, the identity makes a copy of $F$, the $-\ol x[\ol x]$ part removes the $\ol x$ term from it, and the $(a-1)[x^0]$ part multiplies the $x^0$ coefficient by $a$. This completes our derivation of the functional equation. We will make the extractions explicit later on, but for now, we will analyze the operator $\Gamma$ in more detail.
+where $1$ is the identity operator. When we apply it on some Laurent polynomial $F$, the identity makes a copy of $F$, the $-\ol x[\ol x]$ part removes the $\ol x$ term from it, and the $(a-1)[x^0]$ part multiplies the $x^0$ coefficient by $a$. This completes our derivation of the functional equation. We make the extractions explicit later on, but for first, we analyze the operator $\Gamma$ in more detail.
 
 Suppose that we decided to obtain the operator step-by-step by finding operators $E$ and $L$ that remove monomials with $\ol x$ and mark monomials with $x^0$, respectively, and applying them sequentially. Then $\Gamma = LE$ or $\Gamma = EL$ by composition. The operators are given by
 \begin{align}
@@ -69,7 +69,7 @@ Note that if we apply $\Gamma$ on $t SQ$, we obtain $Q$ with the first term miss
 \end{exa}
 The theory we have presented so far is consistent with present methods for finding the functional equation for $Q$ because once we compute the explicit extractions in $\Gamma S Q$, we obtain the classical explicit equations. The difference lies in the ease of use of operators versus the trickier inclusion-exclusion process that becomes unwieldy for models with interactions in higher dimensions.
 
-We will perform the extractions to find the explicit equation. Let $Q_k = [x^k]Q$. Then,
+Next, we perform the extractions to find the explicit equation. Let $Q_k = [x^k]Q$. Then,
 \begin{align}
 	\begin{split}
 		[x^0] SQ &= [x^0]((S_{\um 1}\ol x + S_0 + S_1 x)Q) \\
@@ -119,7 +119,7 @@ It might seem like a similar amount of work, but in higher dimensions we need to
 		(1-t S)Q-(c-t\ol xS_{\um 1})Q_0 &= \ol a\,.
 	\end{align}
 \end{subequations}
-We call them the operator equation and the master functional equation for the model, respectively.
+We call them the \textitbf{operator equation} and the \textitbf{master functional equation} for the model, respectively.
 \end{prop}
 
 The operator notation/perspective is powerful. With it, we can derive functional equations for many lattice walk models in arbitrary dimensions with ease. Usually, derivations have employed inclusion-exclusion and careful book-keeping (Lemma 4 in \cite[p.~10]{bousquet2010walks}, \cite[p.~58]{melczer2014variants}) to write master functional equations, or their precursors, in a direct manner. Unfortunately, that approach is difficult to generalize to arbitrary dimensions and more difficult restrictions/marking.
@@ -200,11 +200,11 @@ that we can rewrite as $B((1-a\delta t)Q)  = 0$ with the operator $B = 1- [b^0]$
 
 \begin{prop} Let $B = 1 - [b^0]$ and let $Q$ be the generating function for a lattice walk model with $S = \delta$ or $S = \delta + x$. Then $Q$ and $Q_0$ both satisfy the equation $B((1-a\delta t)F) = 0$.
 \end{prop}
-We will find that similar relationships exist for \highD lattice walk models too.
+We find that similar relationships exist for \highD lattice walk models too.
 %=======================================
 \subsection{The \texorpdfstring{$S = \delta + \ol x + x$}{} Case}
 %=======================================
-To derive the generating function in this case, we will use the \okm as detailed in Section 4.2 of \cite[p.~12]{tabbara2014exact} and Section 4.1 of \cite[p.~13]{wong2014confining} for \twoD models. In this method, we substitute an $x$ value in the functional equation that eliminates the term $(1-tS)Q$. It is sufficient to find roots of the kernel $K = 1-tS$. The equation $K = 0$ is quadratic in $x$ and has the roots
+To derive the generating function in this case, we use the obstinate kernel method as detailed in Section 4.2 of \cite[p.~12]{tabbara2014exact} and Section 4.1 of \cite[p.~13]{wong2014confining} for \twoD models. In this method, we substitute an $x$ value in the functional equation that eliminates the term $(1-tS)Q$. It is sufficient to find roots of the kernel $K = 1-tS$. The equation $K = 0$ is quadratic in $x$ and has the roots
 \begin{align}
 	\sigma = \frac{1-\delta t - \sqrt{(1-\delta t)^2-4t^2}}{2t} \qandq \sigma^\ast = \frac{1-\delta t + \sqrt{(1-\delta t)^2-4t^2}}{2t}\,,
 \end{align}
@@ -227,7 +227,7 @@ As before, we can find a linear relationship between functions for models with i
 \begin{prop} Let $S = \delta + \ol x + x$. Then $Q$ and $Q_0$ satisfy the equation $B((a \ol \sigma t - b)F)$.
 \end{prop}
 
-In this case we may use the \akm to obtain a linear relation for $Q_0$. This method is used extensively in the quarter plane model classification \cite{bousquet2010walks}. Here we will find a polynomial $f(a,t)$, for which $B(fQ_0) = c$, instead of zero.  Note that $K$ is invariant under the map $\ast: x \mapsto \ol x$ and we can write a second functional equation to complement the first. That is, we have the system of equations
+In this case we can use the algebraic kernel method to obtain a linear relation for $Q_0$. This method is used extensively in the quarter plane model classification \cite{bousquet2010walks}. Here we find a polynomial $f(a,t)$, for which $B(fQ_0) = c$, instead of zero.  Note that $K$ is invariant under the map $\ast: x \mapsto \ol x$ and we can write a second functional equation to complement the first. That is, we have the system of equations
 \begin{align}
 	(1-t S)Q - (c -t\ol x)Q_0 = \ol a\,,\\
 	(1-t S)Q^\ast\exxx - (c -tx)Q_0 =\ol a\,.
@@ -265,7 +265,7 @@ We obtained a slightly different relationships upon applying the operator $B$.
 %=======================================
 \subsection{Conclusion}
 %=======================================
-For \oneD models with small steps restricted to the non-negative axis, we were able to find explicit solutions for $Q_0$ and $Q$ and various relationships for $Q$ and $\wh Q$ with the operator $B$. In higher dimensions, the analysis will be more difficult, but sometimes we will see the same situation. In more difficult examples, we will only find a relationship between the function for walks returning to the origin and its various partially-marked versions. Here is a table showing the results so far.
+For \oneD models with small steps restricted to the non-negative axis, we were able to find explicit solutions for $Q_0$ and $Q$ and various relationships for $Q$ and $\wh Q$ with the operator $B$. In higher dimensions, the analysis is more difficult, but sometimes we see the same situation. In more difficult examples, we only find a relationship between the function for walks returning to the origin and its various partially-marked versions. Here is a table showing the results so far.
 \begin{table}[H]
 	\caption{Generating functions for walks with small steps on the non-negative half-line, where $B(FQ_0) = B(FQ) = 0$.}
 	\label{tbl:table1d}
