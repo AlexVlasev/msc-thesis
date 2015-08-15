@@ -108,9 +108,9 @@ The normal orbit summation operator is one with weights $R_g = 1$. The action of
 \end{align}
 where the weights are $R_g = g(T)$. For the second statement, we multiply two operators as
 \begin{align}
-	D_1D_2 = \sum_{g\in G}\sum_{g\in G} e_g R_g g e_h T_h h = \sum_{g\in G}\sum_{h\in G} R_g e_{gh}T_{gh} gh = \sum_{g\in G}\left(\sum_{h\in G} e_{gh^{\um 1}}R_{gh^{\um 1}} T_{g}\right) g
+	D_1D_2 = \sum_{g\in G}\sum_{g\in G} e_g R_g g e_h T_h h = \sum_{g\in G}\sum_{h\in G} R_g e_{gh}T_{gh} gh = \sum_{g\in G}\left(\sum_{h\in G} e_{gh^{\um 1}}R_{gh^{\um 1}} T_{g}\right) g\,,
 \end{align}
-and we obtain a new weighted operator.
+so we obtain a new weighted operator.
 \end{proof}
 
 The second statement of the lemma leads to the following proposition.
@@ -129,7 +129,7 @@ This observation turns the task into a linear algebra problem. We just need to a
 	\begin{align}
 		\orb_G(f)= \{g(f)| g \in G\}
 	\end{align}
-	\shortintertext{and then find}
+	\shortintertext{and compute}
 	\begin{align}
 		0 = D(f) = \sum_{g\in G}R_g g(f) = \sum_{f' \in Orbit(f)} R_g' f'\,,
 	\end{align}
@@ -198,7 +198,7 @@ In the end, the method does not extend fully because we do not eliminate the $\Q
 %====================================
 The orbit summation operator for the non-interacting case is
 \begin{align}
-	D_G = 1-g_1-g_2 + g_1g_2 = (1-g_1)(1-g_2) = \Delta_1\Delta_2
+	D_G = 1-g_1-g_2 + g_1g_2 = (1-g_1)(1-g_2) = \Delta_1\Delta_2\,,
 \end{align}
 but this operator does not eliminate the unknown functions in the interacting case. Instead, we use a weighted one and determine its weights. We find an appropriate linear system by applying group actions on the master equation. The unknowns are the functions $Q_1^0$ and $Q_2^0$, and their orbits under $G$. If the associated matrix is invertible, the system has a unique solution and unfortunately, we cannot eliminate the variables. However, in some cases the determinant is zero and we can eliminate the unknowns. 
 
@@ -222,7 +222,7 @@ Therefore, the only variables that we need to eliminate are in the set
 \begin{align}
 	E = \{Q_1^0,\,Q_2^0,\,g_2Q_1^0,\,g_1Q_2^0\}\,.
 \end{align}
-The situation looks promising since we also have four equations. We rewrite the functional equation in a way that highlights those variables.
+The situation looks promising since we also have four equations. We rewrite the functional equation in a way that highlights those variables:
 \begin{align}
 	 K_1 Q_1^0 +  K_2 Q_2^0 = KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha = \beta\,.
 \end{align}
@@ -248,12 +248,11 @@ Using the order of variables in $E$, we can write the associated matrix $M$ of t
 		\begin{split}
 			\det M_4 &= K_1 g_{12}K_1 g_1K_2g_2K_2 -g_1K_1g_2K_1K_2g_{12}K_2\\
 			& = K_1 g_{12}K_1 g_1K_2g_2K_2  -g_1(g_1K_1g_{12}K_1g_1K_2g_{2}K_2)\\
-			&=\Delta_1  (K_1 g_{12}K_1 g_1K_2g_2K_2)
+			&=\Delta_1  (K_1 g_{12}K_1 g_1K_2g_2K_2)\,.
 			%&=\Delta_2 (g_1 K_1 g_2 K_1K_2 g_{12} K_2 )\,,
 		\end{split}
 	\end{align}
 \end{gather}
-where the last equation is obtained by using $g_2$ instead of $g_1$ in the factoring.
 
 %Suppose that $f$ is a Laurent polynomial in the variables $x_i$ and $t$ and that $f$ is in the kernel of $\Delta_k$ for one of the $k$'s. We have
 %\begin{align}
@@ -278,9 +277,12 @@ This quantity is zero if and only if $\Delta_1  (K_1 g_{12}K_1) = 0$, so we have
 	\end{split}
 \end{align}
 Therefore, this equation is true if and only if $g_2 S_1^{\um 1} = S_1^{\um 1}$. We have
+
 \begin{align}
-	g_2 (\Sf{\um 1, \um 1}\ol x_2 + \Sf{\um 1,0} + \Sf{\um 1,1}x_2) &= \Sf{\um 1, \um 1}x_2 \ol \mu_2 + \Sf{\um 1,0} + \Sf{\um 1,1}\ol x_2\mu_2\\
-	\Sf{\um 1, \um 1}x_2 \ol \mu_2 + \Sf{\um 1,1}\ol x_2\mu_2 &= \Sf{\um 1, \um 1}\ol x_2 + \Sf{\um 1,1}x_2\,,
+\begin{split}
+		g_2 (\Sf{\um 1, \um 1}\ol x_2 + \Sf{\um 1,0} + \Sf{\um 1,1}x_2) &= \Sf{\um 1, \um 1}x_2 \ol \mu_2 + \Sf{\um 1,0} + \Sf{\um 1,1}\ol x_2\mu_2\\
+		\Sf{\um 1, \um 1}x_2 \ol \mu_2 + \Sf{\um 1,1}\ol x_2\mu_2 &= \Sf{\um 1, \um 1}\ol x_2 + \Sf{\um 1,1}x_2\,,
+\end{split}
 \end{align}
 and we can write it succinctly as $\Sf{\um 1, \um 1} = \mu_2 \Sf{\um 1,1}$., where the $S$-terms are either both zero or they are both one. If both are one, since the model has vertical symmetry, then $S_2^{\um 1} = S_2^1$ and the model is \highSym. If they are both zero, the vertical symmetry ensures that $\Sf{1,1}$ and $\Sf{1,\um 1}$ are also zero. That is the model has no diagonal steps and since the group has two nontrivial generators, we must have both $\ol x_2$ and $x_2$ present in $S$. Again, the model is \highSym.
 
@@ -309,9 +311,9 @@ Here the choice of signs is inspired by the orbit summation operators. Let $\bul
 The original equations attain a simplified format given by
 \begin{align}
 	\beta &= a x + c y\,,\quad \beta_1 = b x + c v\,,\\
-	\beta_2 &= d y + a u\,,\quad \beta_{12} = b u + d v\,,
+	\beta_2 &= d y + a u\,,\quad \beta_{12} = b u + d v\,.
 \end{align}
-Pluggin these into the linear relation above yields
+Plugging these into the linear relation above yields
 \begin{align}
 	\begin{split}
 		0 &= (ax + cy)\gamma - (bx + cv)\gamma_1 - (dy + au)\gamma_2 + (bu + dv) \gamma_{12}\\
@@ -370,20 +372,24 @@ To simplify this quantity, note that
 	\Delta_1 K_1^\bullet c_1 S_2^{\um 1} &= c_1 S_2^{\um 1}\Delta_1 K_1^\bullet = -c_1t S_2^{\um 1}(\ol x_1-x_1)\,,\\
 	\Delta_1 K_1^\bullet \ol x_1S_{1,2}^{\um 1, \um 1} &= S_{1,2}^{\um 1, \um 1}\Delta_1 K_1^\bullet \ol x_1 = c_1 (\ol x_1-x_1)S_{1,2}^{\um 1, \um 1}\,.
 \end{align}
-Therefore, we find that
+Once we substitute these back into the equation, we find that
 \begin{align}
 	\Delta(K_0 K_{1,2}) = c_1c_2t(\ol x_1-x_1)(\ol x_2-x_2)(t S_1^{\um 1} S_2^{\um 2}-S_{1,2}^{\um 1, \um 1})\,,
 \end{align}
-and after we combine terms and simplify, we can write down the following corollary.
+We can write down the following corollary after we combine some of the terms and simplify them.
 \begin{cor} For a \twoD \highSym model with a group with two nontrivial generators and $K_0 = K_1^\bullet K_2^\ast$, we have the functional equation
 \begin{align}
-	K\Delta(K_0 Q) = \alpha t(\ol x_1-x_1)(\ol x_2-x_2)\left(t S_1^{\um 1}S_2^{\um 1}(1 - b_1b_2\Qf{0,0}) + \Sf{\um 1, \um 1}\Qf{0,0}\right)\,.
+	K\Delta(K_0 Q) = \alpha t(\ol x_1-x_1)(\ol x_2-x_2)\left(t S_1^{\um 1}S_2^{\um 1}(1 - b_1b_2\Qf{0,0}) + \Sf{\um 1, \um 1}\Qf{0,0}\right)\!\,.
 \end{align}
 \end{cor}
 %====================================
 \subsection{Groups of Order Six}
 %====================================
-The work here is similar to the previous case so we omit most of it. First, we tabulate all the unknowns $Q_i^0$ and their orbits under $G$. In the following table we write a sequence $L$ for $g_L$ and a reduced sequence for each unknown. For example, $g_1Q_1^0 = Q_1^0$ and we write $\emptyset$.
+The work here is similar to the previous case so we omit most of it. First, we tabulate all the unknowns $Q_i^0$ and their orbits under $G$. For example, $g_1Q_1^0 = Q_1^0$ and we write $\emptyset$. Also
+\begin{align}
+	g_{121}Q_1^0 = g_{212} Q_1^0 = g_{21} Q_1^0\,. 
+\end{align}
+In the following table we write a sequences $L$ for group actions $g_L$ and reduced sequences that produce each element in the orbit.
 \begin{table}[H]
 	\caption{Reductions of group actions on $Q_i^0$ and $K_i$ for groups of order six.}
 	\label{tbl:tableG6}
@@ -405,7 +411,7 @@ After we apply the group actions, we find six different functions that need to b
 	u_1 &= Q_1^0\,,\quad u_2 = g_2 Q_1^0\,,\quad u_3 = g_{12}Q_1^0\,,\\
 	v_1 &= Q_2^0\,,\quad v_2 = g_1 Q_2^0\,,\quad v_3 = g_{21}Q_2^0\,.
 \end{align}
-There are twelve different $K_1$'s and $K_2$'s that we label sequentially as $\row A6$ and $\row B6$. The matrix associated with the linear system of equations is
+There are twelve different $K_1$'s and $K_2$'s that we label sequentially as $\row A6$ and $\row B6$. For example, $A_1 = K_1$ and $A_2 = g_1 K_1 = K_1$ and $A_3 = g_{21} K_1$. The matrix associated with the linear system of equations is
 \begin{align}
 	M_6 = \begin{bmatrix}
 		A_1& & & B_1 & & \\
@@ -416,7 +422,7 @@ There are twelve different $K_1$'s and $K_2$'s that we label sequentially as $\r
 		&A_6 & &B_6 & & \\
 	\end{bmatrix}
 \end{align}
-with determinant
+and it has determinant
 \begin{align}
 	\det M_6 = A_2A_4A_6 B_1 B_3 B_5 - A_1 A_3 A_5 B_2 B_4 B_6\,.
 \end{align}
@@ -424,7 +430,7 @@ The even index $A$'s are found by applying $g_1$ on the odd index $A$'s, and vic
 \begin{align}
 	\det M_6 = \Delta_1 (A_2A_4A_6 B_1 B_3 B_5) = \Delta_1(g_1(K_1) g_{121}(K_1)g_{12}(K_1) K_2 g_{21}(K_2) g_{12}(K_2))\,.
 \end{align}
-In the following table we show the relations between $A$'s and $B$'s for the six models with groups of order six. $S11$, $S12$ and $S13$ have one group and $S21$, $S22$ and $S23$ have the other.
+In the following table we show the relations between $A$'s and $B$'s for the six models with groups of order six. $S11$, $S12$ and $S13$ have one group and $S21$, $S22$ and $S23$ have the other. There are no easy relations for $S13$ and $S23$. It is easy to check that when a model has nontrivial relation, $\det M_6 = 0$. Also, using a a computer, we can check that the determinant is non-zero in the last two cases where there are no relations. 
 \begin{table}[H]
 	\caption{Relations for $A = K_1$ and $B = K_2$ for groups of order six.}
 	\label{tbl:Relations6}
@@ -442,8 +448,7 @@ In the following table we show the relations between $A$'s and $B$'s for the six
 		\bottomrule
 	   \end{tabular}
 \end{table}
-
-It is easy to check that when a model has nontrivial relation, $\det M_6 = 0$. Also, using a a computer, we can check that the determinant is non-zero in the last two cases where there are no relations. For the models with zero determinant, we seek the same type of relation on $\beta$ and its orbit as in the case of groups of order four. We have the following linear relation
+For the models with zero determinant, we seek the same type of relation on $\beta$ and its orbit as in the case of groups of order four. We have the following linear relation:
 \begin{align}
 	\begin{split}
 		0=&\gamma\beta-\gamma_{1}\beta_{1} + \gamma_{21}\beta_{21}-\gamma_{121}\beta_{121} + \gamma_{12}\beta_{12}-\gamma_{2}\beta_{2}\\
@@ -475,6 +480,7 @@ It turns out that it does not have a nontrivial symbolic solution, so we need to
 Here we have picked the representations of $A$'s and $B$'s with the least number of transformations to reach the resulting expression. We also tried finding a possible $K_0$ by brute force for $S13$ and $S23$, but we did not find any among products of distinct $A$'s and $B$'s. It is likely that such a weight does not exist for these cases, and that the algebraic kernel method does not extend for them.
 \begin{thm} The algebraic kernel method extends for a \classic interacting model with group of order six if and only if $\det M_6 = 0$. If we let $\beta =  KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha$, then we have the functional equation $D_G(K_0 \beta) = 0$, where $K_0$ depends on the step set.
 \end{thm}
+\pagebreak
 %====================================
 \subsection{Groups of Order Eight}
 %====================================
@@ -510,7 +516,7 @@ As before, we omit most of the analysis. Here are the results.
 		\bottomrule
 	\end{tabular}
 \end{table}
-We name the $A = K_1$ and $B = K_2$ iterates as before. We have the same $K_0$ since the relations are the same in both models. They are
+We name the $A = K_1$ and $B = K_2$ iterates as before. We have the same $K_0$ since the relations are the same in both models. That is,
 \begin{align}
 	A_1 &= A_6\,,\quad A_2 = A_5\,,\quad A_3 = A_4\,,\quad A_7 = A_8\,,\\
 	B_1 &= B_4\,, \quad B_2 = B_3\,,\quad B_4 = B_8\,,\quad B_6 = B_7\,.
@@ -518,7 +524,7 @@ We name the $A = K_1$ and $B = K_2$ iterates as before. We have the same $K_0$ s
 
 \begin{thm} The algebraic kernel method extends for all \classic interacting models with group of order eight. If $\beta =  KQ + K_{1,2}Q_{1,2}^{0,0} -\alpha$, then the functional equation is $D_G(K_0 \beta) = 0$ and
 \begin{align}
-	K_0 = A_2A_3B_5B_6 =  g_1(K_1) g_{21}(K_1) g_{212}(K_2) g_{1212}(K_2).
+	K_0 = A_2A_3B_5B_6 =  g_1(K_1) g_{21}(K_1) g_{212}(K_2) g_{1212}(K_2)\,.
 \end{align}
 \end{thm}
 

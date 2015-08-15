@@ -23,7 +23,7 @@ We translate each of the steps in the process into a transformation on polynomia
 
 Instead of working with the monomials for individual walks, it is better to work with the whole set simultaneously. To make computations easier, we keep inventory of all the monomials inside a generating function $Q(a,x;t)$, given by
 \begin{align}
-	Q = Q(x, a;t) = \sum_{k=0}^{\infty} q_k(x, a)t^k,
+	Q = Q(x, a;t) = \sum_{k=0}^{\infty} q_k(x, a)t^k\,,
 \end{align}
 where $q_k$ is the generating function for walks of length $k$. Extending a walk corresponds to multiplying its monomial by a monomial for a step from $\mc S$. Let us see what happens when we multiply $q_k$ by $S$. When we expand this product, we obtain all combinations walks of length $k$ and possible extensions via steps from $\mc S$. That is, we have extended all walks simultaneously. 
 
@@ -33,7 +33,7 @@ As in the algorithm above, we need to eliminate the monomials for walks that ste
 \end{align}
 The expression on the left is $Q - q_0 = Q - 1$ and the expression on the right is $t\Gamma(SQ)$. This gives us a functional equation for $Q$ in terms of $S$ and the operator $\Gamma$. That is, the equation is
 \begin{align}
-	Q = 1 + t\Gamma SQ\,,
+	Q = 1 + t\Gamma SQ
 \end{align}
 and we rewrite it as $(1-t\Gamma S)Q = 1$ to highlight the operator form.
 
@@ -54,11 +54,11 @@ and if we let $b = a-1$ and multiply them out, we find that
 Therefore $\Gamma = LE$. Similarly, $\Gamma = EL$, so the operators commute. The last term in the calculation vanished because when we use $[x^0]$, the resulting term is constant with respect to $x$, and the extraction of the $\ol x$ term yields nothing. Here is an example of how the operators work.
 \begin{exa}Suppose that $S = x + \ol x$. Starting with $Q_0 = 1$, we have
 \begin{align}
-	Q_1 = LES(1) &= (1 + b[x^0]-\ext{\ol x})(x + \ol x) = x + \ol x-\ol x= x\\
-	Q_2 = LES(Q_1) &=  (1 + b[x^0]-\ext{\ol x})(x^2 + 1) = x^2 + 1 + b = a + x^2\\
+	Q_1 = LES(1) &= (1 + b[x^0]-\ext{\ol x})(x + \ol x) = x + \ol x-\ol x= x\,,\\
+	Q_2 = LES(Q_1) &=  (1 + b[x^0]-\ext{\ol x})(x^2 + 1) = x^2 + 1 + b = a + x^2\,,\\
 	Q_3 = LES(Q_2) &=  (1 + b[x^0]-\ext{\ol x})(a\ol x + ax + x + x^3) \nonumber\\
-	&= a\ol x + ax + x + x^3 -a\ol x\\
-	&= (1 + a)x + x^3\,.\\
+		&= a\ol x + ax + x + x^3 -a\ol x\nonumber\\
+		&= (1 + a)x + x^3\,.\\
 	\shortintertext{Therefore,}
 	\begin{split}
 		Q &= Q_0 + Q_1 t + Q_2 t^2 + Q_3t^3 + \cdots\\
@@ -92,7 +92,7 @@ Here $Q = Q(x)$, $Q_0 = Q(0)$ and $Q_1 = Q'(0)$. It turns out that we can elimin
 \begin{align}
 	\begin{split}
 		1 &= Q_1^0 - t(S_{\um 1}Q_1 + S_0 Q_0) - tbS_0Q_0 - bt S_{\um 1}Q_1\\
-		 &=(1-at S_0)Q_0-at S_{\um 1}Q_1\,.
+		 &=(1-at S_0)Q_0-at S_{\um 1}Q_1\,,
 	\end{split}
 \end{align}
 and substitute this solution for $tS_{\um 1}Q_1$ in the previous equation. After some simplification, we obtain the cleaner master functional equation
@@ -154,7 +154,7 @@ Extracting higher coefficients is not difficult either. If $k \ge 1$, we have
 \end{subequations}
 When we apply the extractions on both sides of the functional equation, we obtain
 \begin{align}
-	[x^k](1-t S)Q = 0,
+	[x^k](1-t S)Q = 0\,,
 \end{align}
 and after we expand and simplify the expression, we have
 \begin{align}
@@ -178,9 +178,9 @@ If some steps in the step set of a model cannot be taken by walks, then we can r
 %=======================================
 \subsection{The \texorpdfstring{$S = \delta$}{} or \texorpdfstring{$S = \delta + x$}{} Case}
 %=======================================
-The condition allows us to find $Q_0$ directly from the $[x^0]$ equation. Then
+The condition allows us to find $Q_0$ directly from the $[x^0]$ equation. That is,
 \begin{align}
-	Q_0 = \frac{1}{1-a\delta t}
+	Q_0 = \frac{1}{1-a\delta t}\,,
 \end{align}
 and we can substitute it into the master functional equation to derive the following result.
 \begin{prop} Let $S = \delta$ or $S = \delta + x$. Then the generating function is
@@ -211,7 +211,7 @@ To derive the generating function in this case, we use the obstinate kernel meth
 \end{align}
 which multiply to 1, so $\ol \sigma = \sigma^\ast$. Assuming that the substitution eliminates $K Q$, we find that
 \begin{align}
-	- (c - t\ol \sigma)Q_0 = \ol a
+	- (c - t\ol \sigma)Q_0 = \ol a\,,
 \end{align}
 and using this relation, we can solve for $Q$ explicitly. We compute
 \begin{align}
@@ -237,7 +237,7 @@ To eliminate the $Q_0$ term ,we multiply the first equation by $c -tx$, the seco
 \begin{align}
 	(c-tx)Q(x) - (c-t\ol x)Q(\ol x) = \frac{\ol a t(\ol x -x)}{1-t S} = \ol a F\,,
 \end{align}
-and crucially, $F$ does not depend on $a$. We extract the $x$ coefficient from the equation to find a relation between $Q_1$ and $Q_0$ given by
+where $F$ does not depend on $a$. We apply $[x]$ on both sides to find a relation between $Q_1$ and $Q_0$:
 \begin{align}
 	c Q_1 - t Q_0 = \ol a F_1\,.
 \end{align}
@@ -251,11 +251,11 @@ If we set $a = 1$ here, we find that $F_1 = -t \wh Q_0$ and we can substitute th
 		(1-a\delta t)Q_0 = 1 + a t Q_1 \,,
 	\end{align}
 \end{gather}
-which we can solve for $Q_1$, and insert the solution into the equation above. That is,
+which we can solve for $Q_1$ and insert the solution into the equation above. That is,
 \begin{align}
 	b ((1-a\delta t)Q_0-1) = t^2 a (aQ_0 - \wh Q_0)\,.
 \end{align}
-Collecting coefficients and simplifying the result leads us to the equation
+Collecting coefficients and simplifying the result lead to the equation
 \begin{align}
 	(c(1-a\delta t)-a t^2) Q_0 -(-t^2)\wh Q_0 =& c\,,
 \end{align}

@@ -19,39 +19,38 @@
 \contentsline {section}{\numberline {3.1}Using Operators to Derive the Functional Equation}{19}{section.3.1}
 \contentsline {section}{\numberline {3.2}Coefficient Extractions}{21}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Using Operator Notation For Fast Coefficient Extraction}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Further Functional Equations}{22}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Kernel Forms}{23}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.2}Kernel Forms}{23}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}First Solutions}{25}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Formal Neumann Series and Hadamard Products}{25}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Reducible Models and Groups For Walks With Small Steps}{28}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Specializing to Two Dimensions}{31}{section.3.4}
+\contentsline {section}{\numberline {3.4}Specializing to Two Dimensions}{30}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}First Examples in the Plane}{31}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Kernel Group Considerations}{33}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}Solving Basic Two-dimensional Models}{34}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Case 2.2 -- Group of Order One}{34}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Case 2.3 -- Group of Order Two}{35}{subsection.3.5.2}
-\contentsline {subsubsection}{Miscellaneous Case}{37}{subsubsection*.11}
-\contentsline {subsection}{\numberline {3.5.3}Counting Classes of Models}{37}{subsection.3.5.3}
-\contentsline {chapter}{\numberline {4}The Algebraic Kernel Method}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Models Without Interactions}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Models With Interactions}{45}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Groups of Order Four}{46}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Groups of Order Six}{51}{subsection.4.2.2}
+\contentsline {subsubsection}{Miscellaneous Case}{36}{subsubsection*.11}
+\contentsline {subsection}{\numberline {3.5.3}Counting Classes of Models}{36}{subsection.3.5.3}
+\contentsline {chapter}{\numberline {4}The Algebraic Kernel Method}{38}{chapter.4}
+\contentsline {section}{\numberline {4.1}Models Without Interactions}{38}{section.4.1}
+\contentsline {section}{\numberline {4.2}Models With Interactions}{44}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Groups of Order Four}{45}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Groups of Order Six}{50}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Groups of Order Eight}{53}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {5}The Obstinate Kernel Method}{55}{chapter.5}
-\contentsline {section}{\numberline {5.1}Initial Computations}{57}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Groups of Order Four}{57}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Groups of Order Six}{59}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Groups of Order Eight}{61}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Highly-symmetric Two-dimensional Models}{64}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Cartesian Model -- Steps N, S, E, W}{65}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Diagonal Cartesian Model -- Steps NE, NW, SE, SW}{68}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}The Full Model -- All Steps}{73}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Generalizations}{76}{chapter.6}
-\contentsline {section}{\numberline {6.1}Marking Operators And Functional Equations}{76}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Several Examples of Generalized Models}{82}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Further Properties of Marking Operators}{85}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Marking Operators With Multiplication}{85}{subsection.6.2.1}
-\contentsline {chapter}{\numberline {7}Conclusion}{89}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future Research}{90}{section.7.1}
-\contentsline {chapter}{Bibliography}{91}{chapter*.17}
+\contentsline {chapter}{\numberline {5}The Obstinate Kernel Method}{54}{chapter.5}
+\contentsline {section}{\numberline {5.1}Initial Computations}{56}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Groups of Order Four}{56}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Groups of Order Six}{58}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Groups of Order Eight}{60}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Highly-symmetric Two-dimensional Models}{63}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Cartesian Model -- Steps N, S, E, W}{64}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Diagonal Cartesian Model -- Steps NE, NW, SE, SW}{67}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}The Full Model -- All Steps}{71}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Generalizations}{74}{chapter.6}
+\contentsline {section}{\numberline {6.1}Marking Operators And Functional Equations}{74}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Several Examples of Generalized Models}{80}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Further Properties of Marking Operators}{83}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Marking Operators With Multiplication}{83}{subsection.6.2.1}
+\contentsline {chapter}{\numberline {7}Conclusion}{87}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future Research}{88}{section.7.1}
+\contentsline {chapter}{Bibliography}{89}{chapter*.17}

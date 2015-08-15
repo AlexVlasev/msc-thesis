@@ -266,8 +266,6 @@ Of course, once the region grows to a moderate size, it becomes prohibitively co
 \section{Further Properties of Marking Operators}
 %=======================================
 
-%\bonus{Write more about this in this chapter}
-
 Since the function $Q$ is given by Neumann series, which is connected to integral equations, it may be possible to find an analogue to Fredholm theory. Also, it may be possible to find a sort of Sturm-Liouville theory for lattice walk enumeration problems. In the next few pages, we look at the first few steps of such a theory, although there was insufficient time to analyze this problem in more detail. For that we would need a suitable inner product that would allow us to see if certain operators are self-adjoint. Finally, we would need to find eigenfunction expansions for the functions involved.
 
 The operators we have seen so far are marking operators, like $L$ and $E$, in combination of multiplication by another function, like $\Gamma S$, or a combination of operators, like $L^{\um 1} - t ES$. We look at their eigenvalues, eigenvectors, kernels and invertibility.
@@ -288,7 +286,7 @@ The two definitions are equivalent when it comes to finding the eigenpairs.
 \end{proof}
 Since this characterizes the kernel of the operator, we assume that $\lambda \neq 0$ from here on. Next, we find some eigenpairs. Let $\Gamma = LE$ as before. Recall that $E^2 = E$, since once the terms are removed, they cannot be removed again. We can apply $E$ on both sides of $LES u = \lambda u$ to find that
 \begin{align}
-	E(\lambda u) = \lambda Eu = ELES u = LE^2S u = LES u = \lambda u
+	E(\lambda u) = \lambda Eu = ELES u = LE^2S u = LES u = \lambda u\,,
 \end{align}
 and therefore, $Eu = u$.
 \begin{lem} \label{prop:EfixU}If $u$ is an eigenfunction of the operator $LES$, then $Eu = u$ and $u \in \ker E'$, where $E' = E - 1$ is the pure coefficient extraction part of $E$.
@@ -361,9 +359,9 @@ for every $\nu \neq 0$. The constant $u_0$ is arbitrary, so we set it to 1. If w
 \end{align}
 For the model $S = \ol x + x$ in \autoref{ch:OneD}, we can solve for $Q$ in terms of $u$. That is,
 \begin{align}
-	Q = \frac{1}{aK(x,t)}\left(1 + \frac{K_1(x, t)}{K_1(\sigma, t)}\right) = \frac{1}{aK(x, t)} + \frac{u(x, t)}{a K_1(\sigma, t)}
+	Q = \frac{1}{aK(x,t)}\left(1 + \frac{K_1(x, t)}{K_1(\sigma, t)}\right) = \frac{1}{aK(x, t)} + \frac{u(x, t)}{a K_1(\sigma, t)}\,,
 \end{align}
-and we have found a connection between $Q$ and the eigenfunctions of the lattice walk operator. This is as far as we will go for now.
+so we have found a connection between $Q$ and the eigenfunctions of the lattice walk operator. This is as far as we will go for now.
 \end{exa}
 
 \endinput
@@ -405,7 +403,7 @@ Since $u_n \neq 0$, then $\lambda = 1$, and again we see that $u \in \ol S\ker \
 
 %=============================================================
 
-\begin{exa} Let $\Gamma = LE$ in the \oneD problem with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that
+\begin{exa} Let $\Gamma = LE$ for the \oneD model with small steps on the non-negative line with nontrivial operator $E$. Then $\ker \Gamma = \ker E$ consists of functions $\alpha(t) \ol x$, and the eigenfunctions of $\mc L$ are $\alpha(t)\ol x \ol S$ for various $\alpha(t)$. In our case, we only look at finite order Laurent series of $\alpha(t)$. Note that
 \begin{align}
 	Q = \frac{t(\ol x - \ol \sigma)}{(1-t S)(b-a\ol \sigma t)} = \frac{1}{xS}\frac{\sigma - x}{b\sigma - at}\frac{t S}{1-t S}\,,
 \end{align}

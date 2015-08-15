@@ -41,7 +41,7 @@ There may exist lattice walk models which we cannot solve, but the idea of the e
 \end{align}
 where $\Gamma$ is an operator on the variables of $Q$ and to find an explicit functional equation for $Q$, we only need to determine how $\Gamma$ acts on $SQ$. For a lot of models, we may find a short explicit form of the operator and this allows us to find the equation quickly. Here $S$ is the Laurent step polynomial keeping inventory of the steps in polynomial form, and $q$ is a Laurent polynomial, serving as an initial condition. The generating function $Q$ is fully determined by this equation, since we can invert it formally and obtain the series solution
 \begin{align}
-	Q = \sum_{k=0}^\infty (\Gamma S)^k(1) = 1 + t\Gamma(S) + t^2 \Gamma(S\Gamma(S)) + \cdots
+	Q = \sum_{k=0}^\infty (\Gamma S)^k(1) = 1 + t\Gamma(S) + t^2 \Gamma(S\Gamma(S)) + \cdots\,.
 \end{align}
 %============================================
 \section{Roadmap}
@@ -116,7 +116,7 @@ Other important objects are the step polynomial, or characteristic polynomial, $
 	S(\row xn) = \sum_{s \in \mc{S}} x_1^{s_1}\cdots x_n^{s_n}\,.
 \end{align}
 Usually, we see $S$ a Laurent polynomial of degree (or valuation) 1 in each variable and we have $q = 1$. Note that in all of these quantities the variables $a_m$ have been suppressed. We can include those too, whenever necessary; for example, when there are only finitely many of them. Furthermore, it is useful to use the quantities $b = a - 1$ and $c = b/a = 1- \ol a$.
-\begin{exa} To illustrate the notation, we shall investigate a lattice walk model in the plane. Consider the problem of lattice walks, which are restricted to the quarter plane, start at the origin, and which only have small diagonal steps. We count their interactions with the axes. With our terminology, we have a lattice walk model with $\mc{S}$ given by
+\begin{exa} To illustrate the notation, we shall investigate a lattice walk model in the plane. Consider lattice walks restricted to the quarter plane, start at the origin, and which only have small diagonal steps. We count their interactions with the axes. With our terminology, we have a lattice walk model with $\mc{S}$ given by
 \begin{align}
 	\mc{S} = \{(-1,-1),(1,-1),(-1,1),(1,1)\}\,.
 \end{align}
