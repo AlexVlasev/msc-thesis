@@ -1,0 +1,27 @@
+# Folders
+
+.vscode/
+thesis-*/
+processed/
+
+# Files
+
+.DS_Store
+
+# LaTeX build output
+
+*.aux
+*.blg
+*.brf
+*.dvi
+*.log
+*.out
+*.synctex.gz
+*.synctex.gz(busy)
+
+# Info files from the UBC dissertation template
+
+thesis/README
+thesis/LICENSE
+thesis/FAQ
+thesis/.bzrignore
